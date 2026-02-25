@@ -21,13 +21,13 @@
   "images": [
     {
       "id": "exterior-1",
-      "alt": "Front entrance of Dr. Huang Clinic",
+      "alt": "Front entrance of Dr. Jiang Clinic",
       "src": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/gallery/hero-bg.jpg",
       "order": 1,
       "title": "Clinic Entrance",
       "category": "exterior",
       "featured": true,
-      "description": "Our welcoming entrance at 71 East Main Street, Middletown"
+      "description": "Our welcoming entrance at 143-26 41st Ave, Flushing, NY 11355"
     },
     {
       "id": "exterior-2",

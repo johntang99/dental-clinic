@@ -1,209 +1,472 @@
 {
   "cta": {
-    "title": "Ready to Start Your Healing Journey?",
+    "title": "Ready to Begin Your Healing Journey?",
     "variant": "centered",
+    "subtitle": "Take the first step towards natural wellness today",
     "primaryCta": {
       "link": "/en/contact",
       "text": "Book Your Consultation"
     },
-    "description": "Schedule your initial consultation to discuss your health goals and discover how TCM can help you feel your best.",
+    "contactInfo": "Call us at (845) 381-1106 or book online",
     "secondaryCta": {
-      "link": "tel:+18453811106",
-      "text": "Call Us Today"
+      "link": "tel:+15164664018",
+      "text": "Call Us Now"
     }
   },
-  "hero": {
-    "title": "Meet Dr. Huang",
-    "variant": "split-photo-right",
-    "subtitle": "Dedicated to Your Health & Wellness Through Traditional Chinese Medicine (TCM)",
-    "description": "Committed to healing through time-tested wisdom and personalized care.",
-    "backgroundImage": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/about/dr-huang-lecture-20.png"
+  "blog": {
+    "badge": "LEARN & EXPLORE",
+    "posts": [
+      {
+        "slug": "acupuncture-science",
+        "type": "article",
+        "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/acupuncture-10.jpeg",
+        "title": "The Science Behind Acupuncture: How It Works",
+        "excerpt": "Discover how acupuncture stimulates your body's natural healing mechanisms based on modern research.",
+        "category": "Acupuncture",
+        "readTime": "8 min read"
+      },
+      {
+        "slug": "herbal-medicine-101",
+        "type": "article",
+        "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/chinese-herb-10.webp",
+        "title": "Chinese Herbal Medicine 101",
+        "excerpt": "Learn about the fundamentals of Chinese herbal medicine and how custom formulas are created.",
+        "category": "Herbal Medicine",
+        "readTime": "6 min read"
+      },
+      {
+        "slug": "first-visit-video",
+        "type": "video",
+        "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/Acupuncture-14.webp",
+        "title": "What to Expect at Your First Acupuncture Visit",
+        "excerpt": "Watch this video to learn what happens during your initial consultation and treatment.",
+        "category": "Patient Education",
+        "readTime": "5 min watch"
+      }
+    ],
+    "title": "Latest from Our Blog & Media",
+    "variant": "cards-grid",
+    "moreLink": {
+      "url": "/en/blog",
+      "text": "Explore All Articles"
+    },
+    "subtitle": "Educational resources about TCM and wellness"
   },
-  "clinic": {
-    "title": "About Our Clinic",
-    "values": [
+  "hero": {
+    "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/home/drhuang-photo-1.jpg",
+    "stats": [
+      {
+        "icon": "Award",
+        "label": "Years Experience",
+        "number": "20"
+      },
       {
         "icon": "Heart",
-        "title": "Compassionate Care",
-        "description": "We treat every patient with respect, empathy, and genuine concern for their wellbeing."
+        "label": "Patients Helped",
+        "number": "20,000+"
       },
+      {
+        "icon": "Star",
+        "label": "Satisfaction Rate",
+        "number": "95%"
+      },
+      {
+        "icon": "Sparkles",
+        "label": "TCM Modalities",
+        "number": "8"
+      }
+    ],
+    "tagline": "Holistic Acupuncture & Traditional Chinese Medicine (TCM) Care",
+    "variant": "split-photo-right",
+    "clinicName": "Acupuncture & Traditional Chinese Medicine in Middletown, NY",
+    "primaryCta": {
+      "link": "/en/contact",
+      "text": "Book Appointment"
+    },
+    "credentials": [
       {
         "icon": "Award",
-        "title": "Clinical Excellence",
-        "description": "We maintain the highest standards of practice, using premium herbs and sterile techniques."
+        "text": "Licensed & Certified"
       },
       {
-        "icon": "Users",
-        "title": "Patient-Centered",
-        "description": "Your needs, concerns, and goals are at the center of everything we do."
+        "icon": "ShieldCheck",
+        "text": "NCCAOM Member"
       },
       {
-        "icon": "Leaf",
-        "title": "Natural Healing",
-        "description": "We believe in supporting the body's natural ability to heal itself."
+        "icon": "UserCheck",
+        "text": "Accepting New Patients"
+      },
+      {
+        "icon": "TrendingUp",
+        "text": "Evidence-Based Practice"
       }
     ],
-    "variant": "split",
-    "features": [
-      "Wheelchair accessible",
-      "Convenient parking",
-      "Multilingual services (English, Mandarin)",
-      "Accepting new patients",
-      "Clean, modern treatment rooms",
-      "Peaceful, calming atmosphere"
+    "description": "Experience the healing power of Traditional Chinese Medicine in Middletown, NY. Our holistic approach combines acupuncture, herbal medicine, and time-tested therapies to restore balance, relieve pain, and support natural healing",
+    "trustBadges": [
+      "Licensed Acupuncturist",
+      "Board Certified",
+      "20 Years Experience"
     ],
-    "description": [
-      "Dr. Huang Clinic was founded in 2010 with a simple mission: to provide accessible, high-quality Traditional Chinese Medicine care to the Middletown community.",
-      "What started as a small practice has grown into a trusted wellness center, helping over 1,000 patients achieve better health naturally."
+    "floatingTags": [
+      "Acupuncture",
+      "Chinese Herbal Medicine",
+      "Cupping Therapy",
+      "Pain Management",
+      "Stress Relief"
     ],
-    "environment": "Our clinic provides a peaceful, welcoming environment designed to promote relaxation and healing. From the moment you enter, you'll feel the difference - calming colors, comfortable treatment rooms, and a warm, friendly atmosphere that puts patients at ease."
+    "secondaryCta": {
+      "link": "tel:+18453811106",
+      "text": "Call Now"
+    }
   },
-  "journey": {
-    "story": "My path to Traditional Chinese Medicine began with a personal health challenge. As a biology student at Cornell, I suffered from chronic migraines that conventional medicine couldn't fully resolve. A friend suggested I try acupuncture, and after just a few treatments, my migraines improved dramatically. I was amazed - not just by the relief, but by the holistic approach that considered my stress levels, sleep patterns, and diet alongside the physical symptoms.\n\nThis experience sparked a deep curiosity about TCM. I began studying the theories, philosophy, and diagnostic methods during my remaining undergraduate years. After graduation, instead of pursuing medical school as originally planned, I enrolled in a Master's program in Traditional Chinese Medicine.\n\nThose years of intensive study were transformative. I learned pulse diagnosis, tongue diagnosis, acupuncture techniques, herbal pharmacology, and the intricate theories that have guided Chinese medicine for thousands of years. But more importantly, I learned to see patients as whole human beings, not just collections of symptoms.\n\nAfter earning my master's degree and passing national board certifications, I began my clinical practice. Each patient has taught me something new, and after 15 years, I remain passionate about this medicine's ability to help people heal naturally. Opening Dr. Huang Clinic in Middletown has allowed me to serve this wonderful community and share the benefits of TCM with my neighbors.",
-    "title": "My Journey to Chinese Medicine",
-    "variant": "prose"
-  },
-  "profile": {
-    "bio": "Dr. Michael Huang has dedicated over 15 years to the practice of Traditional Chinese Medicine, helping thousands of patients achieve better health through natural, holistic healing methods. His passion for TCM began during his undergraduate studies in biology, where he became fascinated by the body's innate healing abilities and the elegant wisdom of Chinese medicine.",
-    "name": "Dr. Michael Huang, L.Ac., MSTCM",
-    "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/about/dr-huang-11.png",
-    "quote": "True healing comes from addressing the root cause, not just suppressing symptoms. Every patient is unique, and treatment must reflect that individuality.",
-    "title": "Licensed Acupuncturist & TCM Practitioner",
-    "variant": "split",
-    "signature": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/about/signature.png"
-  },
-  "philosophy": {
-    "title": "Treatment Philosophy",
-    "variant": "cards",
-    "principles": [
-      {
-        "title": "Treat the Whole Person",
-        "description": "TCM recognizes that physical symptoms are often connected to emotional, mental, and spiritual factors. Dr. Huang addresses all aspects of health, not just isolated symptoms."
-      },
-      {
-        "title": "Find the Root Cause",
-        "description": "Rather than merely suppressing symptoms, treatment focuses on identifying and addressing the underlying imbalances that create disease. This approach leads to lasting results."
-      },
-      {
-        "title": "Personalized Care",
-        "description": "No two patients are alike. Each treatment plan is carefully customized based on your unique constitution, health history, and current condition."
-      },
-      {
-        "title": "Patient Education",
-        "description": "Understanding your body and condition empowers you to take an active role in your healing. Dr. Huang takes time to explain your diagnosis and treatment in clear, accessible terms."
-      },
-      {
-        "title": "Integration with Western Medicine",
-        "description": "TCM can work beautifully alongside conventional medical care. Dr. Huang collaborates with other healthcare providers to ensure comprehensive, coordinated treatment."
-      },
-      {
-        "title": "Prevention & Wellness",
-        "description": "The best medicine prevents illness before it occurs. Treatment includes guidance on diet, lifestyle, and self-care practices to maintain long-term health."
-      }
-    ],
-    "introduction": "Dr. Huang's approach to healing is rooted in the fundamental principles of Traditional Chinese Medicine while incorporating modern clinical understanding."
-  },
-  "credentials": {
+  "menu": {
+    "cta": {
+      "link": "/en/contact",
+      "text": "Book Online"
+    },
     "items": [
       {
-        "icon": "GraduationCap",
-        "year": "2008",
-        "location": "San Diego, CA",
-        "credential": "Master of Science in Traditional Chinese Medicine",
-        "institution": "Pacific College of Health and Science"
+        "url": "/en",
+        "text": "Home"
       },
       {
-        "icon": "Award",
-        "year": "2009",
-        "location": "License #12345",
-        "credential": "Licensed Acupuncturist (L.Ac.)",
-        "institution": "New York State Education Department"
+        "url": "/en/services",
+        "text": "Services"
       },
       {
-        "icon": "Certificate",
-        "year": "2009",
-        "location": "Diplomate in Acupuncture",
-        "credential": "National Board Certification in Acupuncture",
-        "institution": "NCCAOM (National Certification Commission)"
+        "url": "/en/conditions",
+        "text": "Conditions"
       },
       {
-        "icon": "Certificate",
-        "year": "2009",
-        "location": "Diplomate in Chinese Herbology",
-        "credential": "National Board Certification in Chinese Herbology",
-        "institution": "NCCAOM"
+        "url": "/en/about",
+        "text": "About"
       },
       {
-        "icon": "BookOpen",
-        "year": "2004",
-        "location": "Ithaca, NY",
-        "credential": "Bachelor of Science in Biology",
-        "institution": "Cornell University"
+        "url": "/en/case-studies",
+        "text": "Case Studies"
+      },
+      {
+        "url": "/en/gallery",
+        "text": "Gallery"
+      },
+      {
+        "url": "/en/new-patients",
+        "text": "New Visit"
+      },
+      {
+        "url": "/en/pricing",
+        "text": "Pricing"
+      },
+      {
+        "url": "/en/blog",
+        "text": "Blog"
+      },
+      {
+        "url": "/en/contact",
+        "text": "Contact"
       }
     ],
-    "title": "Education & Credentials",
-    "variant": "list"
+    "variant": "transparent"
   },
-  "affiliations": {
-    "title": "Professional Memberships & Affiliations",
-    "variant": "compact",
-    "organizations": [
+  "topBar": {
+    "badge": {
+      "text": "Accepting New Patients",
+      "visible": true
+    },
+    "email": "sancai.acu@gmail.com",
+    "phone": "(845) 381-1106",
+    "address": "71 East Main Street, Middletown, NY 10940",
+    "addressMapUrl": "https://maps.google.com/?q=71+East+Main+Street+Middletown+NY+10940"
+  },
+  "gallery": {
+    "badge": "VISIT OUR CLINIC",
+    "title": "Take a Virtual Tour",
+    "images": [
       {
-        "name": "National Certification Commission for Acupuncture and Oriental Medicine (NCCAOM)",
-        "role": "Certified Diplomate"
+        "alt": "Clinic reception area",
+        "src": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/gallery/hero-bg.jpg",
+        "label": "Reception Area"
       },
       {
-        "name": "New York State Society of Acupuncture and Integrative Medicine",
-        "role": "Active Member"
+        "alt": "Treatment room",
+        "src": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/acupuncture-11.jpeg",
+        "label": "Treatment Room"
       },
       {
-        "name": "American Association of Acupuncture and Oriental Medicine (AAAOM)",
-        "role": "Professional Member"
+        "alt": "Herbal pharmacy",
+        "src": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/chinese-herb-10.webp",
+        "label": "Herbal Pharmacy"
       },
       {
-        "name": "Council of Colleges of Acupuncture and Herbal Medicine",
-        "role": "Supporting Member"
+        "alt": "Clinic exterior",
+        "src": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/gallery/reception-area.jpg",
+        "label": "Our Location"
+      }
+    ],
+    "variant": "grid-uniform",
+    "moreLink": {
+      "url": "/en/gallery",
+      "text": "View Complete Gallery"
+    },
+    "subtitle": "See our welcoming, peaceful treatment environment"
+  },
+  "services": {
+    "badge": "TREATMENT OPTIONS",
+    "title": "Our Modalities",
+    "variant": "featured-large",
+    "featured": {
+      "id": "acupuncture",
+      "icon": "Syringe",
+      "link": "/en/services#acupuncture",
+      "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/Acupuncture-15.webp",
+      "title": "Acupuncture",
+      "subtitle": "Restore balance and stimulate healing",
+      "fullDescription": "Acupuncture involves the insertion of fine, sterile needles at specific points to restore the flow of Qi. This ancient practice stimulates natural healing, reduces pain, and promotes overall wellness.",
+      "shortDescription": "Our primary treatment modality using fine needles to restore balance and promote healing"
+    },
+    "moreLink": {
+      "url": "/en/services",
+      "text": "View All Modalities"
+    },
+    "services": [
+      {
+        "id": "herbal-medicine",
+        "icon": "Leaf",
+        "link": "/en/services#herbs",
+        "title": "Chinese Herbal Medicine",
+        "subtitle": "Nature's pharmacy for holistic healing",
+        "fullDescription": "Chinese herbal medicine uses natural plant-based remedies, carefully combined in traditional formulas, to address the root causes of health concerns. Each formula is customized to your unique constitution and current health needs.",
+        "shortDescription": "Custom herbal formulas tailored to your needs"
+      },
+      {
+        "id": "cupping",
+        "icon": "Circle",
+        "link": "/en/services#cupping",
+        "title": "Cupping Therapy",
+        "subtitle": "Release tension and promote circulation",
+        "fullDescription": "Cupping therapy uses glass or silicone cups to create suction on the skin, promoting blood flow, releasing muscle tension, and drawing out toxins. This technique has been used for thousands of years to treat pain and improve circulation.",
+        "shortDescription": "Release muscle tension and improve circulation"
+      },
+      {
+        "id": "moxibustion",
+        "icon": "Flame",
+        "link": "/en/services#moxibustion",
+        "title": "Moxibustion",
+        "subtitle": "Warming therapy to invigorate Qi",
+        "fullDescription": "Moxibustion involves burning dried mugwort (moxa) near acupuncture points to warm the meridians, strengthen Qi, and promote healing. The gentle heat penetrates deeply to nourish and invigorate the body.",
+        "shortDescription": "Warm therapy to strengthen and energize"
+      },
+      {
+        "id": "tuina",
+        "icon": "Hand",
+        "link": "/en/services#tuina",
+        "title": "Tui Na Massage",
+        "subtitle": "Therapeutic massage along meridians",
+        "fullDescription": "Tui Na is a form of Chinese therapeutic massage that uses rhythmic compression, stretching, and manipulation techniques along the body's meridian channels. It combines massage with acupressure to restore balance and relieve pain.",
+        "shortDescription": "Traditional Chinese medical massage"
+      },
+      {
+        "id": "gua-sha",
+        "icon": "Shield",
+        "link": "/en/services#gua-sha",
+        "title": "Gua Sha",
+        "subtitle": "Scraping therapy to release stagnation",
+        "fullDescription": "Gua Sha involves using a smooth-edged tool to gently scrape the skin, promoting blood flow and releasing stagnation. This technique is particularly effective for releasing muscle tension and supporting recovery.",
+        "shortDescription": "Scraping therapy for pain and inflammation"
+      }
+    ],
+    "subtitle": "Traditional healing methods backed by modern science"
+  },
+  "conditions": {
+    "title": "Conditions We Treat",
+    "variant": "grid-cards",
+    "moreLink": {
+      "url": "/en/conditions",
+      "text": "View All Conditions"
+    },
+    "subtitle": "Traditional Chinese Medicine can help with a wide range of health concerns",
+    "conditions": [
+      {
+        "id": "back-pain",
+        "icon": "Activity",
+        "link": "/en/conditions#back-pain",
+        "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/gallery/acupuncture-needles.jpg",
+        "title": "Back Pain",
+        "category": "Pain Management",
+        "symptoms": [
+          "Lower back pain",
+          "Upper back stiffness",
+          "Sciatica",
+          "Herniated disc pain"
+        ],
+        "description": "Whether acute or chronic, acupuncture and TCM therapies provide effective relief without drugs or surgery"
+      },
+      {
+        "id": "headaches-migraines",
+        "icon": "Activity",
+        "link": "/en/conditions#headaches-migraines",
+        "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/acupuncture-12.jpeg",
+        "title": "Headaches & Migraines",
+        "category": "Pain Management",
+        "symptoms": [
+          "Recurring headaches",
+          "Migraine attacks",
+          "Tension in temples",
+          "Light sensitivity"
+        ],
+        "description": "Effective treatment for tension headaches, migraines, and chronic head pain without medication"
+      },
+      {
+        "id": "anxiety",
+        "icon": "Brain",
+        "link": "/en/conditions#anxiety",
+        "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/anxiate-3.jpeg",
+        "title": "Anxiety & Panic Disorders",
+        "category": "Mental & Emotional Health",
+        "symptoms": [
+          "Excessive worry",
+          "Racing thoughts",
+          "Panic attacks",
+          "Restlessness"
+        ],
+        "description": "Natural, drug-free support for anxiety, panic attacks, and general nervousness"
+      },
+      {
+        "id": "ibs",
+        "icon": "Apple",
+        "link": "/en/conditions#ibs",
+        "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/chinese-dietary-10.jpg",
+        "title": "IBS & Digestive Issues",
+        "category": "Digestive Health",
+        "symptoms": [
+          "Abdominal pain",
+          "Bloating",
+          "Constipation or diarrhea",
+          "Gas"
+        ],
+        "description": "Effective relief for IBS, bloating, gas, and digestive discomfort"
       }
     ]
   },
-  "specializations": {
-    "areas": [
+  "firstVisit": {
+    "cta": {
+      "link": {
+        "url": "/en/new-patients",
+        "text": "New Patient Information"
+      },
+      "title": "Ready to Get Started?",
+      "description": "Download our new patient forms or book your first appointment"
+    },
+    "badge": "NEW TO TCM?",
+    "steps": [
       {
-        "icon": "Activity",
-        "title": "Pain Management",
-        "description": "Sports injuries, chronic pain, arthritis, and musculoskeletal disorders"
+        "title": "Consultation",
+        "number": 1,
+        "duration": "20-30 min",
+        "description": "Detailed health history and TCM diagnosis"
+      },
+      {
+        "title": "Examination",
+        "number": 2,
+        "duration": "10 min",
+        "description": "Pulse and tongue diagnosis"
+      },
+      {
+        "title": "Treatment",
+        "number": 3,
+        "duration": "30-40 min",
+        "description": "Your first acupuncture session"
+      },
+      {
+        "title": "Treatment Plan",
+        "number": 4,
+        "duration": "10 min",
+        "description": "Personalized recommendations"
+      }
+    ],
+    "title": "Your First Visit",
+    "subtitle": "Here's what to expect during your initial consultation"
+  },
+  "howItWorks": {
+    "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/acupuncture-16.webp",
+    "steps": [
+      {
+        "icon": "ClipboardList",
+        "title": "Comprehensive Assessment",
+        "number": 1,
+        "description": "We begin with a detailed consultation to understand your health history, symptoms, and wellness goals."
+      },
+      {
+        "icon": "Stethoscope",
+        "title": "Personalized Treatment Plan",
+        "number": 2,
+        "description": "Using TCM diagnosis methods, we create a customized treatment plan tailored to your unique needs."
       },
       {
         "icon": "Heart",
-        "title": "Women's Health",
-        "description": "Fertility support, menstrual disorders, pregnancy care, and menopause"
-      },
-      {
-        "icon": "Brain",
-        "title": "Stress & Mental Health",
-        "description": "Anxiety, depression, insomnia, and stress-related conditions"
-      },
-      {
-        "icon": "Apple",
-        "title": "Digestive Disorders",
-        "description": "IBS, acid reflux, bloating, and chronic digestive issues"
+        "title": "Ongoing Care & Support",
+        "number": 3,
+        "description": "Regular treatments and adjustments ensure optimal results and long-term wellness."
       }
     ],
-    "title": "Areas of Specialization",
-    "variant": "grid-2",
-    "description": "Through years of clinical practice and continuing education, Dr. Huang has developed particular expertise in several key areas:"
+    "title": "How Chinese Medicine Works",
+    "variant": "vertical-image-right",
+    "imageAlt": "Patient care at Dr. Huang Clinic",
+    "subtitle": "A holistic approach to healing"
   },
-  "continuingEducation": {
-    "items": [
-      "Advanced Sports Medicine Acupuncture certification (2019)",
-      "Fertility and Reproductive Health specialization (2016)",
-      "Classical Chinese Herbal Medicine seminars with Dr. Heiner Fruehauf",
-      "Annual attendance at national TCM conferences",
-      "Regular study groups with local TCM practitioners",
-      "30+ hours of continuing education annually (required: 30 hours every 3 years)"
+  "whyChooseUs": {
+    "badge": "WHY CHOOSE US",
+    "title": "Experience the Difference",
+    "features": [
+      {
+        "icon": "Award",
+        "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/Acupuncture-15.webp",
+        "title": "Expert Practitioner",
+        "description": "Over 15 years of experience with advanced TCM training and certifications"
+      },
+      {
+        "icon": "Heart",
+        "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/home/welcome-section.jpg",
+        "title": "Personalized Care",
+        "description": "Every treatment is tailored to your unique needs and health goals"
+      },
+      {
+        "icon": "Users",
+        "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/about/dr-huang-14.jpg",
+        "title": "Proven Results",
+        "description": "Thousands of satisfied patients and a 95% satisfaction rate"
+      }
     ],
-    "title": "Continuing Education & Training",
-    "variant": "compact",
-    "description": "Dr. Huang maintains active involvement in the TCM community and regularly pursues advanced training:"
+    "subtitle": "What sets us apart"
+  },
+  "testimonials": {
+    "badge": "PATIENT SUCCESS STORIES",
+    "title": "Real Results from Real People",
+    "variant": "grid",
+    "moreLink": {
+      "url": "/en/case-studies",
+      "text": "Read More Success Stories"
+    },
+    "subtitle": "Hear from our patients about their healing journey",
+    "testimonials": [
+      {
+        "name": "Jennifer M.",
+        "image": "",
+        "quote": "After years of chronic back pain and trying everything, acupuncture with Dr. Huang finally gave me relief. I'm pain-free and back to my active lifestyle!",
+        "condition": "Chronic Back Pain"
+      },
+      {
+        "name": "Robert T.",
+        "image": "",
+        "quote": "Dr. Huang's holistic approach helped me manage my anxiety without medication. The combination of acupuncture and herbs has been life-changing.",
+        "condition": "Stress & Anxiety"
+      },
+      {
+        "name": "Lisa K.",
+        "image": "",
+        "quote": "We are forever grateful to Dr. Huang. After struggling with fertility, we're now proud parents of a beautiful baby girl!",
+        "condition": "Fertility Support"
+      }
+    ]
   }
 }

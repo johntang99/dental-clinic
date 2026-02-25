@@ -1,11 +1,11 @@
 {
   "colors": {
     "primary": {
-      "50": "#fcecec",
-      "100": "#f8dada",
-      "dark": "#6e1515",
-      "light": "#c24a4a",
-      "DEFAULT": "#8b1d1d"
+      "50": "#d4f7ca",
+      "100": "#ebf8e2",
+      "dark": "#83f05c",
+      "light": "#a8e830",
+      "DEFAULT": "#43ac15"
     },
     "backdrop": {
       "primary": "#fff7e8",

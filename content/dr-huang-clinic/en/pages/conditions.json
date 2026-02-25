@@ -23,7 +23,10 @@
       "id": "pain-management",
       "icon": "Activity",
       "name": "Pain Management",
-      "description": "Natural relief for acute and chronic pain conditions"
+      "subtitle": "Natural relief for acute and chronic pain conditions",
+      "description": "Whether acute or chronic, acupuncture and TCM therapies provide effective relief for lower back pain, upper back pain, and sciatica without drugs.\n\n- Neck and shoulder pain often results from Qi stagnation and blood stasis. \n- We release trigger points with acupuncture.\n- Relax tight muscles with Tui Na, and improve circulation with cupping.",
+      "order": 1,
+      "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/1771986412760-photo-1519824145371-296894a0daa9.jpg"
     },
     {
       "id": "mental-health",
@@ -47,13 +50,22 @@
       "id": "respiratory",
       "icon": "Wind",
       "name": "Respiratory Issues",
-      "description": "Support for breathing and respiratory system"
+      "description": "Support for breathing and respiratory system",
+      "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/1771987333497-photo-1716284130499-470a2d2b200e.jpg"
     },
     {
       "id": "immune-system",
       "icon": "Shield",
       "name": "Immune System",
-      "description": "Strengthen your body's natural defenses"
+      "description": "Strengthen your body's natural defenses",
+      "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/1771987676016-photo-1706647155880-839358d304db.jpg"
+    },
+    {
+      "id": "category-7",
+      "icon": "Activity",
+      "name": "",
+      "subtitle": "",
+      "description": ""
     }
   ],
   "conditions": [
@@ -104,7 +116,8 @@
         "Tui Na massage",
         "Cupping therapy",
         "Stretching guidance"
-      ]
+      ],
+      "featured": false
     },
     {
       "id": "arthritis",
@@ -224,7 +237,8 @@
         "Sleep hygiene guidance",
         "Dietary recommendations",
         "Meditation techniques"
-      ]
+      ],
+      "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/headache-2.jpeg"
     },
     {
       "id": "stress",
@@ -536,5 +550,6 @@
     "note": "Don't see your condition listed? Contact us - we may still be able to help!",
     "text": "At Dr. Huang Clinic, we treat the whole person, not just symptoms. Our comprehensive approach addresses the root causes of illness while providing relief from immediate discomfort. Below are some of the conditions we commonly treat with excellent results.",
     "variant": "centered"
-  }
+  },
+  "layoutVariant": "category-detail-alternating"
 }

@@ -3,9 +3,9 @@
     "primary": {
       "50": "#fcecec",
       "100": "#f8dada",
-      "dark": "#023c55",
-      "light": "#29a6db",
-      "DEFAULT": "#0b6a93"
+      "dark": "#055737",
+      "light": "#6ecfa9",
+      "DEFAULT": "#259369"
     },
     "backdrop": {
       "primary": "#fff7e8",

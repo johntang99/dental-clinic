@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import ReactMarkdown from 'react-markdown';
 import { getRequestSiteId, loadAllItems, loadContent, loadPageContent } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
 import { Locale } from '@/lib/types';
@@ -10,6 +11,7 @@ import CTASection from '@/components/sections/CTASection';
 import { Shield, Heart, Sparkles } from 'lucide-react';
 
 interface ConditionsPageData {
+  layoutVariant?: 'categories-tabs' | 'category-detail-alternating';
   hero: {
     variant?: 'centered' | 'split-photo-right' | 'split-photo-left' | 'photo-background';
     title: string;
@@ -24,7 +26,10 @@ interface ConditionsPageData {
     id: string;
     name: string;
     icon: string;
+    subtitle?: string;
     description: string;
+    image?: string;
+    order?: number;
   }>;
   conditions: Array<{
     id: string;
@@ -107,6 +112,12 @@ export default async function ConditionsPage({ params }: ConditionsPageProps) {
   }
 
   const { hero, introduction, categories, conditions, cta } = content;
+  const conditionsLayoutVariant = content.layoutVariant || 'categories-tabs';
+  const sortedCategories = [...categories].sort((a, b) => {
+    const aOrder = Number.isFinite(Number(a.order)) ? Number(a.order) : Number.MAX_SAFE_INTEGER;
+    const bOrder = Number.isFinite(Number(b.order)) ? Number(b.order) : Number.MAX_SAFE_INTEGER;
+    return aOrder - bOrder;
+  });
   const blogBySlug = new Map(blogPosts.map((post) => [post.slug, post]));
   const preferredSlugs = [
     'digestive-balance-tcm',
@@ -137,7 +148,7 @@ export default async function ConditionsPage({ params }: ConditionsPageProps) {
   ];
 
   // Group conditions by category
-  const conditionsByCategory = categories.map(category => ({
+  const conditionsByCategory = sortedCategories.map(category => ({
     ...category,
     conditions: conditions.filter(c => c.category === category.id)
   }));
@@ -154,6 +165,62 @@ export default async function ConditionsPage({ params }: ConditionsPageProps) {
   const backgroundHero = heroVariant === 'photo-background' && Boolean(hero.backgroundImage);
   const isTransparentMenu = headerConfig?.menu?.variant === 'transparent';
   const heroTopPaddingClass = isTransparentMenu ? 'pt-30 md:pt-36' : 'pt-20 md:pt-24';
+  const renderConditionDetailCard = (condition: ConditionsPageData['conditions'][number]) => (
+    <div
+      key={condition.id}
+      id={condition.id}
+      className="bg-white border border-gray-100 rounded-xl p-6 shadow-md hover:border-primary/30 hover:shadow-xl transition-all"
+    >
+      <div className="grid lg:grid-cols-3 gap-6">
+        {/* Title and Description */}
+        <div className="lg:col-span-1">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <Icon name={condition.icon as any} className="text-primary" size="sm" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900">
+              {condition.title}
+            </h3>
+          </div>
+          <p className="text-gray-600 text-sm">
+            {condition.description}
+          </p>
+        </div>
+
+        {/* Symptoms */}
+        <div>
+          <h4 className="text-sm font-semibold text-gray-900 mb-3">
+            {locale === 'en' ? 'Common Symptoms' : '常见症状'}
+          </h4>
+          <div className="space-y-2">
+            {condition.symptoms.map((symptom, idx) => (
+              <div key={idx} className="flex items-start gap-2">
+                <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size="sm" />
+                <span className="text-sm text-gray-600">{symptom}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Approach */}
+        <div>
+          <h4 className="text-sm font-semibold text-gray-900 mb-3">
+            {locale === 'en' ? 'Our Approach' : '我们的方案'}
+          </h4>
+          <p className="text-sm text-gray-600 mb-4">
+            {condition.tcmApproach}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {condition.treatmentMethods.map((method, idx) => (
+              <Badge key={idx} variant="primary" size="sm">
+                {method}
+              </Badge>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <main className="min-h-screen flex flex-col">
@@ -347,151 +414,116 @@ export default async function ConditionsPage({ params }: ConditionsPageProps) {
               </p>
             </div>
 
-            <Tabs
-              defaultValue="all"
-              variant="pills"
-              items={[
-                {
-                  value: 'all',
-                  label: locale === 'en' ? 'All Conditions' : '全部病症',
-                  content: (
-                    <div className="pt-8">
-                      <div className="grid gap-6">
-                        {conditions.map((condition) => (
-                          <div
-                            key={condition.id}
-                            id={condition.id}
-                            className="bg-white border border-gray-100 rounded-xl p-6 shadow-md hover:border-primary/30 hover:shadow-xl transition-all"
-                          >
-                            <div className="grid lg:grid-cols-3 gap-6">
-                              {/* Title and Description */}
-                              <div className="lg:col-span-1">
-                                <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                                    <Icon name={condition.icon as any} className="text-primary" size="sm" />
-                                  </div>
-                                  <h3 className="text-xl font-bold text-gray-900">
-                                    {condition.title}
-                                  </h3>
-                                </div>
-                                <p className="text-gray-600 text-sm">
-                                  {condition.description}
-                                </p>
-                              </div>
-
-                              {/* Symptoms */}
-                              <div>
-                                <h4 className="text-sm font-semibold text-gray-900 mb-3">
-                                  {locale === 'en' ? 'Common Symptoms' : '常见症状'}
-                                </h4>
-                                <div className="space-y-2">
-                                  {condition.symptoms.map((symptom, idx) => (
-                                    <div key={idx} className="flex items-start gap-2">
-                                      <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size="sm" />
-                                      <span className="text-sm text-gray-600">{symptom}</span>
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-
-                              {/* Approach */}
-                              <div>
-                                <h4 className="text-sm font-semibold text-gray-900 mb-3">
-                                  {locale === 'en' ? 'Our Approach' : '我们的方案'}
-                                </h4>
-                                <p className="text-sm text-gray-600 mb-4">
-                                  {condition.tcmApproach}
-                                </p>
-                                <div className="flex flex-wrap gap-2">
-                                  {condition.treatmentMethods.map((method, idx) => (
-                                    <Badge key={idx} variant="primary" size="sm">
-                                      {method}
-                                    </Badge>
-                                  ))}
-                                </div>
-                              </div>
+            {conditionsLayoutVariant === 'category-detail-alternating' ? (
+              <div className="pt-6 space-y-24">
+                {conditionsByCategory
+                  .filter((categoryGroup) => categoryGroup.conditions.length > 0)
+                  .map((categoryGroup, categoryIndex) => {
+                    const categoryImage =
+                      categoryGroup.image ||
+                      categoryGroup.conditions.find((condition) => Boolean(condition.image))?.image;
+                    const imageOnRight = categoryIndex % 2 === 0;
+                    return (
+                      <div key={categoryGroup.id} className="space-y-6">
+                        <div className="grid lg:grid-cols-2 gap-8 items-center">
+                          <div className={imageOnRight ? 'lg:order-1' : 'lg:order-2'}>
+                            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary mb-4">
+                              <Icon name={categoryGroup.icon as any} size="sm" />
+                              <span>{categoryGroup.name}</span>
+                            </div>
+                            <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                              {categoryGroup.name}
+                            </h3>
+                            {categoryGroup.subtitle && (
+                              <p className="text-base font-semibold text-gray-800 mb-3">
+                                {categoryGroup.subtitle}
+                              </p>
+                            )}
+                            <div className="prose prose-sm max-w-none text-gray-600 leading-relaxed">
+                              <ReactMarkdown
+                                components={{
+                                  ul: (props) => <ul className="list-disc pl-5" {...props} />,
+                                  ol: (props) => <ol className="list-decimal pl-5" {...props} />,
+                                }}
+                              >
+                                {String(categoryGroup.description || '')}
+                              </ReactMarkdown>
                             </div>
                           </div>
-                        ))}
-                      </div>
-                    </div>
-                  ),
-                },
-                ...categories.map(category => ({
-                  value: category.id,
-                  label: category.name,
-                  icon: category.icon as any,
-                  content: (
-                    <div className="pt-8">
-                      <div className="mb-8 p-6 bg-gradient-to-br from-primary/5 to-transparent rounded-xl">
-                        <p className="text-gray-700">{category.description}</p>
-                      </div>
-
-                      <div className="grid gap-6">
-                        {conditionsByCategory
-                          .find(cat => cat.id === category.id)
-                          ?.conditions.map((condition) => (
-                            <div
-                              key={condition.id}
-                              id={condition.id}
-                              className="bg-white border border-gray-100 rounded-xl p-6 shadow-md hover:border-primary/30 hover:shadow-xl transition-all"
-                            >
-                              <div className="grid lg:grid-cols-3 gap-6">
-                                {/* Title and Description */}
-                                <div className="lg:col-span-1">
-                                  <div className="flex items-center gap-3 mb-3">
-                                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                                      <Icon name={condition.icon as any} className="text-primary" size="sm" />
-                                    </div>
-                                    <h3 className="text-xl font-bold text-gray-900">
-                                      {condition.title}
-                                    </h3>
-                                  </div>
-                                  <p className="text-gray-600 text-sm">
-                                    {condition.description}
-                                  </p>
+                          <div className={imageOnRight ? 'lg:order-2' : 'lg:order-1'}>
+                            <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-md bg-gradient-to-br from-gray-50 to-white">
+                              {categoryImage ? (
+                                <Image
+                                  src={categoryImage}
+                                  alt={categoryGroup.name}
+                                  width={1200}
+                                  height={780}
+                                  className="w-full h-auto object-cover"
+                                />
+                              ) : (
+                                <div className="aspect-[16/9] w-full flex items-center justify-center">
+                                  <Icon name={categoryGroup.icon as any} className="text-primary" />
                                 </div>
-
-                                {/* Symptoms */}
-                                <div>
-                                  <h4 className="text-sm font-semibold text-gray-900 mb-3">
-                                    {locale === 'en' ? 'Common Symptoms' : '常见症状'}
-                                  </h4>
-                                  <div className="space-y-2">
-                                    {condition.symptoms.map((symptom, idx) => (
-                                      <div key={idx} className="flex items-start gap-2">
-                                        <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size="sm" />
-                                        <span className="text-sm text-gray-600">{symptom}</span>
-                                      </div>
-                                    ))}
-                                  </div>
-                                </div>
-
-                                {/* Approach */}
-                                <div>
-                                  <h4 className="text-sm font-semibold text-gray-900 mb-3">
-                                    {locale === 'en' ? 'Our Approach' : '我们的方案'}
-                                  </h4>
-                                  <p className="text-sm text-gray-600 mb-4">
-                                    {condition.tcmApproach}
-                                  </p>
-                                  <div className="flex flex-wrap gap-2">
-                                    {condition.treatmentMethods.map((method, idx) => (
-                                      <Badge key={idx} variant="primary" size="sm">
-                                        {method}
-                                      </Badge>
-                                    ))}
-                                  </div>
-                                </div>
-                              </div>
+                              )}
                             </div>
-                          ))}
+                          </div>
+                        </div>
+                        <div className="grid gap-4">
+                          {categoryGroup.conditions.map((condition) => renderConditionDetailCard(condition))}
+                        </div>
                       </div>
-                    </div>
-                  ),
-                })),
-              ]}
-            />
+                    );
+                  })}
+              </div>
+            ) : (
+              <Tabs
+                defaultValue="all"
+                variant="pills"
+                items={[
+                  {
+                    value: 'all',
+                    label: locale === 'en' ? 'All Conditions' : '全部病症',
+                    content: (
+                      <div className="pt-8">
+                        <div className="grid gap-6">
+                          {conditions.map((condition) => renderConditionDetailCard(condition))}
+                        </div>
+                      </div>
+                    ),
+                  },
+                  ...sortedCategories.map(category => ({
+                    value: category.id,
+                    label: category.name,
+                    icon: category.icon as any,
+                    content: (
+                      <div className="pt-8">
+                        <div className="mb-8 p-6 bg-gradient-to-br from-primary/5 to-transparent rounded-xl">
+                          {category.subtitle && (
+                            <p className="text-sm font-semibold text-gray-900 mb-1">{category.subtitle}</p>
+                          )}
+                          <div className="prose prose-sm max-w-none text-gray-700">
+                            <ReactMarkdown
+                              components={{
+                                ul: (props) => <ul className="list-disc pl-5" {...props} />,
+                                ol: (props) => <ol className="list-decimal pl-5" {...props} />,
+                              }}
+                            >
+                              {String(category.description || '')}
+                            </ReactMarkdown>
+                          </div>
+                        </div>
+
+                        <div className="grid gap-6">
+                          {conditionsByCategory
+                            .find(cat => cat.id === category.id)
+                            ?.conditions.map((condition) => renderConditionDetailCard(condition))}
+                        </div>
+                      </div>
+                    ),
+                  })),
+                ]}
+              />
+            )}
           </div>
         </div>
         </section>

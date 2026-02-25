@@ -204,7 +204,12 @@ export interface Condition {
 }
 
 export interface ConditionsSection {
-  variant?: 'grid-cards' | 'categories-tabs' | 'list-detailed' | 'icon-grid';
+  variant?:
+    | 'grid-cards'
+    | 'categories-tabs'
+    | 'list-detailed'
+    | 'icon-grid'
+    | 'category-detail-alternating';
   title: string;
   subtitle: string;
   conditions: Condition[];

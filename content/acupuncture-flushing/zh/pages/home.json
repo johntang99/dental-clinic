@@ -17,7 +17,7 @@
     "badge": "学习与探索",
     "posts": [
       {
-        "slug": "acupuncture-science",
+        "slug": "acupuncture-pain-relief-science",
         "type": "article",
         "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/acupuncture-10.jpeg",
         "title": "针灸背后的科学：它如何工作",
@@ -26,7 +26,7 @@
         "readTime": "8分钟阅读"
       },
       {
-        "slug": "herbal-medicine-101",
+        "slug": "chinese-herbal-formulas",
         "type": "article",
         "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/chinese-herb-10.webp",
         "title": "中药101",
@@ -35,7 +35,7 @@
         "readTime": "6分钟阅读"
       },
       {
-        "slug": "first-visit-video",
+        "slug": "first-visit-acupuncture-guide",
         "type": "video",
         "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/Acupuncture-14.webp",
         "title": "首次针灸就诊的期待",

@@ -89,6 +89,30 @@ create table if not exists public.admin_audit_logs (
   created_at timestamptz not null default now()
 );
 
+-- Content entries (DB-first CMS storage)
+create extension if not exists pgcrypto;
+
+create table if not exists public.content_entries (
+  id uuid primary key default gen_random_uuid(),
+  site_id text not null,
+  locale text not null,
+  path text not null,
+  data jsonb not null,
+  updated_at timestamptz not null default now(),
+  updated_by text,
+  unique (site_id, locale, path)
+);
+
+-- Content revisions (audit trail for content changes)
+create table if not exists public.content_revisions (
+  id uuid primary key default gen_random_uuid(),
+  entry_id uuid not null references public.content_entries(id) on delete cascade,
+  data jsonb not null,
+  created_at timestamptz not null default now(),
+  created_by text,
+  note text
+);
+
 -- Safe incremental migration for existing projects
 alter table public.bookings
   add column if not exists service_type text;

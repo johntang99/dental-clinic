@@ -34,7 +34,8 @@ export type ConditionsVariant =
   | 'grid-cards'            // Card grid
   | 'categories-tabs'       // Tabbed by category
   | 'list-detailed'         // Detailed list view
-  | 'icon-grid';            // Icon + title grid
+  | 'icon-grid'             // Icon + title grid
+  | 'category-detail-alternating'; // Category sections with alternating media
 
 export type CTAVariant =
   | 'centered'              // Centered text + buttons

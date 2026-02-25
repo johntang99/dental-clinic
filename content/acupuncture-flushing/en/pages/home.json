@@ -17,7 +17,7 @@
     "badge": "LEARN & EXPLORE",
     "posts": [
       {
-        "slug": "acupuncture-science",
+        "slug": "acupuncture-pain-relief-science",
         "type": "article",
         "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/acupuncture-10.jpeg",
         "title": "The Science Behind Acupuncture: How It Works",
@@ -26,7 +26,7 @@
         "readTime": "8 min read"
       },
       {
-        "slug": "herbal-medicine-101",
+        "slug": "chinese-herbal-formulas",
         "type": "article",
         "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/chinese-herb-10.webp",
         "title": "Chinese Herbal Medicine 101",
@@ -35,7 +35,7 @@
         "readTime": "6 min read"
       },
       {
-        "slug": "first-visit-video",
+        "slug": "first-visit-acupuncture-guide",
         "type": "video",
         "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/Acupuncture-14.webp",
         "title": "What to Expect at Your First Acupuncture Visit",
@@ -53,7 +53,7 @@
     "subtitle": "Educational resources about TCM and wellness"
   },
   "hero": {
-    "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/acupuncture-flushing/general/1771564441047-acupunc-flushing-2.png",
+    "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/acupuncture-flushing/general/1771604339255-dr-jiang-acu-flushing-2.png",
     "stats": [
       {
         "icon": "Award",
@@ -452,19 +452,19 @@
       {
         "name": "Jennifer M.",
         "image": "",
-        "quote": "After years of chronic back pain and trying everything, acupuncture with Dr. Huang finally gave me relief. I'm pain-free and back to my active lifestyle!",
+        "quote": "After years of chronic back pain and trying everything, acupuncture with Dr. Jiang finally gave me relief. I'm pain-free and back to my active lifestyle!",
         "condition": "Chronic Back Pain"
       },
       {
         "name": "Robert T.",
         "image": "",
-        "quote": "Dr. Huang's holistic approach helped me manage my anxiety without medication. The combination of acupuncture and herbs has been life-changing.",
+        "quote": "Dr. Jiang holistic approach helped me manage my anxiety without medication. The combination of acupuncture and herbs has been life-changing.",
         "condition": "Stress & Anxiety"
       },
       {
         "name": "Lisa K.",
         "image": "",
-        "quote": "We are forever grateful to Dr. Huang. After struggling with fertility, we're now proud parents of a beautiful baby girl!",
+        "quote": "We are forever grateful to Dr. Jiang. After struggling with fertility, we're now proud parents of a beautiful baby girl!",
         "condition": "Fertility Support"
       }
     ]

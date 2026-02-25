@@ -17,7 +17,7 @@
     "badge": "LEARN & EXPLORE",
     "posts": [
       {
-        "slug": "acupuncture-science",
+        "slug": "acupuncture-pain-relief-science",
         "type": "article",
         "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/acupuncture-10.jpeg",
         "title": "The Science Behind Acupuncture: How It Works",
@@ -26,7 +26,7 @@
         "readTime": "8 min read"
       },
       {
-        "slug": "herbal-medicine-101",
+        "slug": "chinese-herbal-formulas",
         "type": "article",
         "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/chinese-herb-10.webp",
         "title": "Chinese Herbal Medicine 101",
@@ -35,7 +35,7 @@
         "readTime": "6 min read"
       },
       {
-        "slug": "first-visit-video",
+        "slug": "first-visit-acupuncture-guide",
         "type": "video",
         "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/Acupuncture-14.webp",
         "title": "What to Expect at Your First Acupuncture Visit",
@@ -63,7 +63,7 @@
       {
         "icon": "Heart",
         "label": "Patients Helped",
-        "number": "20,000+"
+        "number": "10,000+"
       },
       {
         "icon": "Star",
@@ -450,15 +450,15 @@
     "subtitle": "Hear from our patients about their healing journey",
     "testimonials": [
       {
-        "name": "Jennifer M.",
+        "name": "Steven D.",
         "image": "",
-        "quote": "After years of chronic back pain and trying everything, acupuncture with Dr. Huang finally gave me relief. I'm pain-free and back to my active lifestyle!",
-        "condition": "Chronic Back Pain"
+        "quote": "Great doctor, pointed out alot of stuff other doctors failed to. I go weekly and worth every minute. Try it once , you will be going back.",
+        "condition": "Nausea"
       },
       {
-        "name": "Robert T.",
+        "name": "George lee",
         "image": "",
-        "quote": "Dr. Huang's holistic approach helped me manage my anxiety without medication. The combination of acupuncture and herbs has been life-changing.",
+        "quote": "Stress vanished and my sleep improved instantly! I went in feeling anxious and 'puffy,' and left feeling truly happy and looking noticeably slimmer. It’s rare to find a treatment that heals both the mind and the body so effectively.",
         "condition": "Stress & Anxiety"
       },
       {

@@ -38,7 +38,7 @@ const SECTION_VARIANT_OPTIONS: Record<string, string[]> = {
   ],
   testimonials: ['carousel', 'grid', 'masonry', 'slider-vertical', 'featured-single'],
   howItWorks: ['horizontal', 'vertical', 'cards', 'vertical-image-right'],
-  conditions: ['grid-cards', 'categories-tabs', 'list-detailed', 'icon-grid'],
+  conditions: ['grid-cards', 'categories-tabs', 'list-detailed', 'icon-grid', 'category-detail-alternating'],
   services: ['grid-cards-2x', 'grid-cards-3x', 'featured-large', 'list-horizontal', 'accordion', 'tabs', 'detail-alternating', 'detail-image-right'],
   servicesList: ['grid-cards-2x', 'grid-cards-3x', 'featured-large', 'list-horizontal', 'accordion', 'tabs', 'detail-alternating', 'detail-image-right'],
   overview: ['centered', 'left'],
@@ -622,6 +622,7 @@ export function ContentEditor({
   const isHeaderFile = activeFile?.path === 'header.json';
   const isThemeFile = activeFile?.path === 'theme.json';
   const isHomePageFile = activeFile?.path === 'pages/home.json';
+  const isConditionsPageFile = activeFile?.path === 'pages/conditions.json';
   const allowCreateOrDuplicate = fileFilter !== 'siteSettings';
   const variantSections = formData
     ? Object.entries(SECTION_VARIANT_OPTIONS).filter(
@@ -646,6 +647,27 @@ export function ContentEditor({
           name: typeof category?.name === 'string' ? category.name : '',
         }))
         .filter((category: any) => category.id && category.name)
+    : [];
+  const categoryOrderValue = (category: any) => {
+    const order = Number(category?.order);
+    return Number.isFinite(order) ? order : Number.MAX_SAFE_INTEGER;
+  };
+  const sortedConditionCategories = Array.isArray(formData?.categories)
+    ? formData.categories
+        .map((category: any, index: number) => ({ category, index }))
+        .sort(
+          (a, b) =>
+            categoryOrderValue(a.category) - categoryOrderValue(b.category) ||
+            a.index - b.index
+        )
+    : [];
+  const conditionCategoryOptions = Array.isArray(formData?.categories)
+    ? sortedConditionCategories
+        .map(({ category }: any) => ({
+          id: typeof category?.id === 'string' ? category.id : '',
+          name: typeof category?.name === 'string' ? category.name : '',
+        }))
+        .filter((category: any) => category.id && category.name && category.id !== 'all')
     : [];
   const homePhotoFields = useMemo(() => {
     if (!isHomePageFile || !formData) return [] as Array<{ path: string[]; label: string }>;
@@ -812,6 +834,79 @@ export function ContentEditor({
     const exists = current.includes(value);
     const next = exists ? current.filter((item) => item !== value) : [...current, value];
     updateFormValue(path, next);
+  };
+
+  const toSlug = (value: string) =>
+    value
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+
+  const addConditionCategory = () => {
+    if (!formData) return;
+    const categories = Array.isArray(formData.categories) ? [...formData.categories] : [];
+    categories.push({
+      id: `category-${categories.length + 1}`,
+      icon: 'Activity',
+      name: '',
+      subtitle: '',
+      description: '',
+      image: '',
+      order: categories.length + 1,
+    });
+    updateFormValue(['categories'], categories);
+  };
+
+  const removeConditionCategory = (index: number) => {
+    if (!formData || !Array.isArray(formData.categories)) return;
+    const categories = [...formData.categories];
+    const target = categories[index];
+    categories.splice(index, 1);
+    const next: Record<string, any> = { ...formData, categories };
+
+    if (target?.id && Array.isArray(formData.conditions)) {
+      const fallbackCategory =
+        categories.find((category: any) => category?.id && category.id !== 'all')?.id || '';
+      next.conditions = formData.conditions.map((condition: any) => {
+        if (condition?.category === target.id) {
+          return {
+            ...condition,
+            category: fallbackCategory,
+          };
+        }
+        return condition;
+      });
+    }
+
+    setFormData(next);
+    setContent(JSON.stringify(next, null, 2));
+  };
+
+  const addConditionItem = () => {
+    if (!formData) return;
+    const list = Array.isArray(formData.conditions) ? [...formData.conditions] : [];
+    const firstCategory = conditionCategoryOptions[0]?.id || '';
+    list.push({
+      id: `condition-${list.length + 1}`,
+      title: '',
+      category: firstCategory,
+      icon: 'Activity',
+      image: '',
+      description: '',
+      symptoms: [],
+      tcmApproach: '',
+      treatmentMethods: [],
+      featured: false,
+    });
+    updateFormValue(['conditions'], list);
+  };
+
+  const removeConditionItem = (index: number) => {
+    if (!formData || !Array.isArray(formData.conditions)) return;
+    const list = [...formData.conditions];
+    list.splice(index, 1);
+    updateFormValue(['conditions'], list);
   };
 
   const populateSeoFromHeroes = async () => {
@@ -1755,6 +1850,29 @@ export function ContentEditor({
                 </div>
               )}
 
+              {isConditionsPageFile && formData && (
+                <div className="border border-gray-200 rounded-lg p-4">
+                  <div className="text-xs font-semibold text-gray-500 uppercase mb-3">
+                    Conditions Layout Variant
+                  </div>
+                  <div>
+                    <label className="block text-xs text-gray-500">Layout Variant</label>
+                    <select
+                      className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm bg-white"
+                      value={String(formData.layoutVariant || 'categories-tabs')}
+                      onChange={(event) =>
+                        updateFormValue(['layoutVariant'], event.target.value)
+                      }
+                    >
+                      <option value="categories-tabs">categories-tabs</option>
+                      <option value="category-detail-alternating">
+                        category-detail-alternating
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              )}
+
               {isHomePageFile && homePhotoFields.length > 0 && (
                 <div className="border border-gray-200 rounded-lg p-4">
                   <div className="text-xs font-semibold text-gray-500 uppercase mb-3">
@@ -2462,17 +2580,207 @@ export function ContentEditor({
                 </div>
               )}
 
+              {isConditionsPageFile && Array.isArray(formData?.categories) && (
+                <div className="border border-gray-200 rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-xs font-semibold text-gray-500 uppercase">
+                      Categories
+                    </div>
+                    <button
+                      type="button"
+                      onClick={addConditionCategory}
+                      className="px-2 py-1 rounded border border-gray-200 text-xs"
+                    >
+                      Add Category
+                    </button>
+                  </div>
+                  <div className="space-y-4">
+                    {sortedConditionCategories.map(({ category, index }: any) => {
+                      const isAllCategory = category?.id === 'all';
+                      const markdownPreviewKey = `conditions-category-${index}-description`;
+                      return (
+                        <div key={category.id || index} className="border rounded-md p-3">
+                          <div className="flex items-center justify-between mb-2">
+                            <div className="text-xs text-gray-500">
+                              {category.name || `Category ${index + 1}`}
+                            </div>
+                            {!isAllCategory && (
+                              <button
+                                type="button"
+                                onClick={() => removeConditionCategory(index)}
+                                className="text-xs text-red-600 hover:text-red-700"
+                              >
+                                Remove
+                              </button>
+                            )}
+                          </div>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+                            <input
+                              className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                              placeholder="Category Name"
+                              value={category.name || ''}
+                              onChange={(event) =>
+                                updateFormValue(
+                                  ['categories', String(index), 'name'],
+                                  event.target.value
+                                )
+                              }
+                            />
+                            <input
+                              className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                              placeholder="Category ID (slug)"
+                              value={category.id || ''}
+                              onChange={(event) => {
+                                const raw = event.target.value;
+                                updateFormValue(
+                                  ['categories', String(index), 'id'],
+                                  toSlug(raw)
+                                );
+                              }}
+                              disabled={isAllCategory}
+                            />
+                          </div>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+                            <input
+                              className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                              placeholder="Icon (e.g., Activity)"
+                              value={category.icon || ''}
+                              onChange={(event) =>
+                                updateFormValue(
+                                  ['categories', String(index), 'icon'],
+                                  event.target.value
+                                )
+                              }
+                            />
+                            <input
+                              className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                              placeholder="Subtitle"
+                              value={category.subtitle || ''}
+                              onChange={(event) =>
+                                updateFormValue(
+                                  ['categories', String(index), 'subtitle'],
+                                  event.target.value
+                                )
+                              }
+                            />
+                          </div>
+                          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-2 mb-2">
+                            <input
+                              className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                              placeholder="Image"
+                              value={category.image || ''}
+                              onChange={(event) =>
+                                updateFormValue(
+                                  ['categories', String(index), 'image'],
+                                  event.target.value
+                                )
+                              }
+                            />
+                            <button
+                              type="button"
+                              onClick={() =>
+                                openImagePicker(['categories', String(index), 'image'])
+                              }
+                              className="px-3 rounded-md border border-gray-200 text-xs"
+                            >
+                              Choose
+                            </button>
+                          </div>
+                          <input
+                            className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm mb-2"
+                            type="number"
+                            placeholder="Order"
+                            value={category.order ?? ''}
+                            onChange={(event) =>
+                              updateFormValue(
+                                ['categories', String(index), 'order'],
+                                event.target.value === ''
+                                  ? ''
+                                  : Number(event.target.value)
+                              )
+                            }
+                          />
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="text-xs text-gray-500">Description (Markdown)</span>
+                            <button
+                              type="button"
+                              onClick={() => toggleMarkdownPreview(markdownPreviewKey)}
+                              className="text-xs text-gray-600 hover:text-gray-900"
+                            >
+                              {markdownPreview[markdownPreviewKey] ? 'Edit' : 'Preview'}
+                            </button>
+                          </div>
+                          {markdownPreview[markdownPreviewKey] ? (
+                            <div className="prose prose-sm max-w-none rounded-md border border-gray-200 px-3 py-2">
+                              <ReactMarkdown
+                                components={{
+                                  ul: (props) => <ul className="list-disc pl-5" {...props} />,
+                                  ol: (props) => <ol className="list-decimal pl-5" {...props} />,
+                                }}
+                              >
+                                {normalizeMarkdown(String(category.description || ''))}
+                              </ReactMarkdown>
+                            </div>
+                          ) : (
+                            <textarea
+                              className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                              placeholder="Description (Markdown supported)"
+                              value={category.description || ''}
+                              onChange={(event) =>
+                                updateFormValue(
+                                  ['categories', String(index), 'description'],
+                                  event.target.value
+                                )
+                              }
+                            />
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
               {Array.isArray(formData?.conditions) && (
                 <div className="border border-gray-200 rounded-lg p-4">
-                  <div className="text-xs font-semibold text-gray-500 uppercase mb-3">
-                    Conditions
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-xs font-semibold text-gray-500 uppercase">
+                      Conditions
+                    </div>
+                    <button
+                      type="button"
+                      onClick={addConditionItem}
+                      className="px-2 py-1 rounded border border-gray-200 text-xs"
+                    >
+                      Add Condition
+                    </button>
                   </div>
                   <div className="space-y-4">
                     {formData.conditions.map((condition: any, index: number) => (
                       <div key={condition.id || index} className="border rounded-md p-3">
-                        <div className="text-xs text-gray-500 mb-2">
-                          {condition.title || `Condition ${index + 1}`}
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="text-xs text-gray-500">
+                            {condition.title || `Condition ${index + 1}`}
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => removeConditionItem(index)}
+                            className="text-xs text-red-600 hover:text-red-700"
+                          >
+                            Remove
+                          </button>
                         </div>
+                        <input
+                          className="mb-2 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                          placeholder="ID (slug)"
+                          value={condition.id || ''}
+                          onChange={(event) =>
+                            updateFormValue(
+                              ['conditions', String(index), 'id'],
+                              toSlug(event.target.value)
+                            )
+                          }
+                        />
                         <input
                           className="mb-2 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
                           placeholder="Title"
@@ -2480,6 +2788,36 @@ export function ContentEditor({
                           onChange={(event) =>
                             updateFormValue(
                               ['conditions', String(index), 'title'],
+                              event.target.value
+                            )
+                          }
+                        />
+                        {isConditionsPageFile && (
+                          <select
+                            className="mb-2 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                            value={condition.category || ''}
+                            onChange={(event) =>
+                              updateFormValue(
+                                ['conditions', String(index), 'category'],
+                                event.target.value
+                              )
+                            }
+                          >
+                            <option value="">Select category</option>
+                            {conditionCategoryOptions.map((category: any) => (
+                              <option key={category.id} value={category.id}>
+                                {category.name}
+                              </option>
+                            ))}
+                          </select>
+                        )}
+                        <input
+                          className="mb-2 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                          placeholder="Icon (e.g., Activity)"
+                          value={condition.icon || ''}
+                          onChange={(event) =>
+                            updateFormValue(
+                              ['conditions', String(index), 'icon'],
                               event.target.value
                             )
                           }
@@ -2495,6 +2833,63 @@ export function ContentEditor({
                             )
                           }
                         />
+                        <textarea
+                          className="mb-2 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                          placeholder="Common Symptoms (comma separated)"
+                          value={Array.isArray(condition.symptoms) ? condition.symptoms.join(', ') : ''}
+                          onChange={(event) =>
+                            updateFormValue(
+                              ['conditions', String(index), 'symptoms'],
+                              event.target.value
+                                .split(',')
+                                .map((item) => item.trim())
+                                .filter(Boolean)
+                            )
+                          }
+                        />
+                        <textarea
+                          className="mb-2 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                          placeholder="TCM Approach"
+                          value={condition.tcmApproach || ''}
+                          onChange={(event) =>
+                            updateFormValue(
+                              ['conditions', String(index), 'tcmApproach'],
+                              event.target.value
+                            )
+                          }
+                        />
+                        <textarea
+                          className="mb-2 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                          placeholder="Treatment Methods (comma separated)"
+                          value={
+                            Array.isArray(condition.treatmentMethods)
+                              ? condition.treatmentMethods.join(', ')
+                              : ''
+                          }
+                          onChange={(event) =>
+                            updateFormValue(
+                              ['conditions', String(index), 'treatmentMethods'],
+                              event.target.value
+                                .split(',')
+                                .map((item) => item.trim())
+                                .filter(Boolean)
+                            )
+                          }
+                        />
+                        <label className="mb-2 flex items-center gap-2 text-sm">
+                          <input
+                            type="checkbox"
+                            className="rounded border-gray-300"
+                            checked={Boolean(condition.featured)}
+                            onChange={(event) =>
+                              updateFormValue(
+                                ['conditions', String(index), 'featured'],
+                                event.target.checked
+                              )
+                            }
+                          />
+                          <span className="text-gray-700">Featured</span>
+                        </label>
                         <div className="flex gap-2">
                           <input
                             className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"

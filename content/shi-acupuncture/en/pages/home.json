@@ -9,7 +9,7 @@
     },
     "contactInfo": "Call us at (845) 381-1106 or book online",
     "secondaryCta": {
-      "link": "tel:+18453811106",
+      "link": "tel:+15164664018",
       "text": "Call Us Now"
     }
   },
@@ -17,7 +17,7 @@
     "badge": "LEARN & EXPLORE",
     "posts": [
       {
-        "slug": "acupuncture-science",
+        "slug": "acupuncture-pain-relief-science",
         "type": "article",
         "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/acupuncture-10.jpeg",
         "title": "The Science Behind Acupuncture: How It Works",
@@ -26,7 +26,7 @@
         "readTime": "8 min read"
       },
       {
-        "slug": "herbal-medicine-101",
+        "slug": "chinese-herbal-formulas",
         "type": "article",
         "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/chinese-herb-10.webp",
         "title": "Chinese Herbal Medicine 101",
@@ -35,7 +35,7 @@
         "readTime": "6 min read"
       },
       {
-        "slug": "first-visit-video",
+        "slug": "first-visit-acupuncture-guide",
         "type": "video",
         "image": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/general/Acupuncture-14.webp",
         "title": "What to Expect at Your First Acupuncture Visit",
@@ -78,7 +78,7 @@
     ],
     "tagline": "Holistic Acupuncture & Traditional Chinese Medicine (TCM) Care",
     "variant": "split-photo-right",
-    "clinicName": "Acupuncture & Traditional Chinese Medicine in Middletown, NY",
+    "clinicName": "Acupuncture & Traditional Chinese Medicine in Great Neck, NY",
     "primaryCta": {
       "link": "/en/contact",
       "text": "Book Appointment"
@@ -101,7 +101,7 @@
         "text": "Evidence-Based Practice"
       }
     ],
-    "description": "Experience the healing power of Traditional Chinese Medicine in Middletown, NY. Our holistic approach combines acupuncture, herbal medicine, and time-tested therapies to restore balance, relieve pain, and support natural healing",
+    "description": "Experience the healing power of Traditional Chinese Medicine in Great Neck, NY. Our holistic approach combines acupuncture, herbal medicine, and time-tested therapies to restore balance, relieve pain, and support natural healing",
     "trustBadges": [
       "Licensed Acupuncturist",
       "Board Certified",

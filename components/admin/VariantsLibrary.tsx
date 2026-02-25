@@ -92,6 +92,7 @@ const SECTIONS: SectionDefinition[] = [
       { id: 'categories-tabs', label: 'Categories Tabs', description: 'Tabbed by category.' },
       { id: 'list-detailed', label: 'List Detailed', description: 'Detailed list view.' },
       { id: 'icon-grid', label: 'Icon Grid', description: 'Icon + title grid.' },
+      { id: 'category-detail-alternating', label: 'Category Detail Alternating', description: 'Category blocks with alternating detail layouts.' },
     ],
   },
   {
