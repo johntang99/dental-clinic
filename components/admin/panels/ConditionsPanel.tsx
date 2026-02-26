@@ -15,6 +15,7 @@ interface ConditionsPanelProps {
   removeConditionCategory: (index: number) => void;
   addConditionItem: () => void;
   removeConditionItem: (index: number) => void;
+  hideItemsEditor?: boolean;
 }
 
 export function ConditionsPanel({
@@ -31,6 +32,7 @@ export function ConditionsPanel({
   removeConditionCategory,
   addConditionItem,
   removeConditionItem,
+  hideItemsEditor = false,
 }: ConditionsPanelProps) {
   return (
     <>
@@ -38,15 +40,17 @@ export function ConditionsPanel({
         <div className="border border-gray-200 rounded-lg p-4">
           <div className="flex items-center justify-between mb-3">
             <div className="text-xs font-semibold text-gray-500 uppercase">Categories</div>
-            <button
-              type="button"
-              onClick={addConditionCategory}
-              className="px-2 py-1 rounded border border-gray-200 text-xs"
-            >
-              Add Category
-            </button>
+            {!hideItemsEditor && (
+              <button
+                type="button"
+                onClick={addConditionCategory}
+                className="px-2 py-1 rounded border border-gray-200 text-xs"
+              >
+                Add Category
+              </button>
+            )}
           </div>
-          <div className="space-y-4">
+          {!hideItemsEditor && <div className="space-y-4">
             {sortedConditionCategories.map(({ category, index }: any) => {
               const isAllCategory = category?.id === 'all';
               const markdownPreviewKey = `conditions-category-${index}-description`;
@@ -164,7 +168,7 @@ export function ConditionsPanel({
                 </div>
               );
             })}
-          </div>
+          </div>}
         </div>
       )}
 
@@ -172,15 +176,17 @@ export function ConditionsPanel({
         <div className="border border-gray-200 rounded-lg p-4">
           <div className="flex items-center justify-between mb-3">
             <div className="text-xs font-semibold text-gray-500 uppercase">Conditions</div>
-            <button
-              type="button"
-              onClick={addConditionItem}
-              className="px-2 py-1 rounded border border-gray-200 text-xs"
-            >
-              Add Condition
-            </button>
+            {!hideItemsEditor && (
+              <button
+                type="button"
+                onClick={addConditionItem}
+                className="px-2 py-1 rounded border border-gray-200 text-xs"
+              >
+                Add Condition
+              </button>
+            )}
           </div>
-          <div className="space-y-4">
+          {!hideItemsEditor && <div className="space-y-4">
             {conditions.map((condition: any, index: number) => (
               <div key={condition.id || index} className="border rounded-md p-3">
                 <div className="flex items-center justify-between mb-2">
@@ -311,7 +317,7 @@ export function ConditionsPanel({
                 </div>
               </div>
             ))}
-          </div>
+          </div>}
         </div>
       )}
     </>

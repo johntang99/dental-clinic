@@ -18,7 +18,20 @@ import { IntroductionPanel } from '@/components/admin/panels/IntroductionPanel';
 import { GalleryPhotosPanel } from '@/components/admin/panels/GalleryPhotosPanel';
 import { CtaPanel } from '@/components/admin/panels/CtaPanel';
 import { ServicesPanel } from '@/components/admin/panels/ServicesPanel';
+import { ServicesItemPanel } from '@/components/admin/panels/ServicesItemPanel';
+import { ServicesModuleList } from '@/components/admin/panels/ServicesModuleList';
 import { ConditionsPanel } from '@/components/admin/panels/ConditionsPanel';
+import { ConditionsModuleList } from '@/components/admin/panels/ConditionsModuleList';
+import { CaseStudiesModuleList } from '@/components/admin/panels/CaseStudiesModuleList';
+import { ItemJsonEditor } from '@/components/admin/panels/ItemJsonEditor';
+import {
+  ConditionCategoryItemPanel,
+  ConditionItemPanel,
+} from '@/components/admin/panels/ConditionsItemPanel';
+import {
+  CaseStudyCategoryItemPanel,
+  CaseStudyItemPanel,
+} from '@/components/admin/panels/CaseStudiesItemPanel';
 import { CaseStudiesPanel } from '@/components/admin/panels/CaseStudiesPanel';
 import { PostsPanel } from '@/components/admin/panels/PostsPanel';
 import { SECTION_VARIANT_OPTIONS, SITE_SETTINGS_PATHS } from '@/components/admin/utils/editorConstants';
@@ -37,7 +50,16 @@ interface ContentEditorProps {
   selectedSiteId: string;
   selectedLocale: string;
   initialFilePath?: string;
-  fileFilter?: 'all' | 'blog' | 'siteSettings';
+  fileFilter?:
+    | 'all'
+    | 'blog'
+    | 'siteSettings'
+    | 'services'
+    | 'servicesItems'
+    | 'conditions'
+    | 'conditionsItems'
+    | 'caseStudies'
+    | 'caseStudiesItems';
   titleOverride?: string;
   basePath?: string;
 }
@@ -74,12 +96,54 @@ export function ContentEditor({
   const [blogConditionOptions, setBlogConditionOptions] = useState<
     Array<{ id: string; title: string }>
   >([]);
+  const [activeServiceIndex, setActiveServiceIndex] = useState(-1);
+  const [serviceItemJsonDraft, setServiceItemJsonDraft] = useState('');
+  const [serviceItemJsonError, setServiceItemJsonError] = useState<string | null>(null);
+  const [activeConditionCategoryIndex, setActiveConditionCategoryIndex] = useState(-1);
+  const [activeConditionIndex, setActiveConditionIndex] = useState(-1);
+  const [conditionsItemJsonDraft, setConditionsItemJsonDraft] = useState('');
+  const [conditionsItemJsonError, setConditionsItemJsonError] = useState<string | null>(null);
+  const [activeCaseStudyCategoryIndex, setActiveCaseStudyCategoryIndex] = useState(-1);
+  const [activeCaseStudyIndex, setActiveCaseStudyIndex] = useState(-1);
+  const [caseStudiesItemJsonDraft, setCaseStudiesItemJsonDraft] = useState('');
+  const [caseStudiesItemJsonError, setCaseStudiesItemJsonError] = useState<string | null>(null);
   const filesTitle =
     fileFilter === 'blog'
       ? 'Blog Posts'
       : fileFilter === 'siteSettings'
         ? 'Site Settings'
+        : fileFilter === 'services'
+          ? 'Services'
+          : fileFilter === 'servicesItems'
+            ? 'Services'
+          : fileFilter === 'conditions'
+            ? 'Conditions'
+            : fileFilter === 'conditionsItems'
+              ? 'Conditions'
+            : fileFilter === 'caseStudies'
+              ? 'Case Studies'
+            : fileFilter === 'caseStudiesItems'
+              ? 'Case Studies'
         : 'Files';
+  const FILE_FILTER_PATHS: Record<
+    | 'services'
+    | 'servicesItems'
+    | 'conditions'
+    | 'conditionsItems'
+    | 'caseStudies'
+    | 'caseStudiesItems',
+    string[]
+  > = {
+    services: ['pages/services.json', 'pages/services.layout.json'],
+    servicesItems: ['pages/services.json', 'pages/services.layout.json'],
+    conditions: ['pages/conditions.json', 'pages/conditions.layout.json'],
+    conditionsItems: ['pages/conditions.json', 'pages/conditions.layout.json'],
+    caseStudies: ['pages/case-studies.json', 'pages/case-studies.layout.json'],
+    caseStudiesItems: ['pages/case-studies.json', 'pages/case-studies.layout.json'],
+  };
+  const isServicesItemsMode = fileFilter === 'servicesItems';
+  const isConditionsItemsMode = fileFilter === 'conditionsItems';
+  const isCaseStudiesItemsMode = fileFilter === 'caseStudiesItems';
 
   const site = useMemo(
     () => sites.find((item) => item.id === siteId),
@@ -121,9 +185,28 @@ export function ContentEditor({
       } else if (fileFilter === 'siteSettings') {
         nextFiles = nextFiles.filter((file) => SITE_SETTINGS_PATHS.has(file.path));
         nextFiles = [...nextFiles].sort((a, b) => a.label.localeCompare(b.label));
+      } else if (
+        fileFilter === 'services' ||
+        fileFilter === 'servicesItems' ||
+        fileFilter === 'conditions' ||
+        fileFilter === 'conditionsItems' ||
+        fileFilter === 'caseStudies' ||
+        fileFilter === 'caseStudiesItems'
+      ) {
+        const allowedPaths = new Set(FILE_FILTER_PATHS[fileFilter]);
+        nextFiles = nextFiles.filter((file) => allowedPaths.has(file.path));
+        nextFiles = [...nextFiles].sort((a, b) => a.label.localeCompare(b.label));
       } else {
+        const moduleManagedPaths = new Set([
+          ...FILE_FILTER_PATHS.servicesItems,
+          ...FILE_FILTER_PATHS.conditions,
+          ...FILE_FILTER_PATHS.caseStudies,
+        ]);
         nextFiles = nextFiles.filter(
-          (file) => !file.path.startsWith('blog/') && !SITE_SETTINGS_PATHS.has(file.path)
+          (file) =>
+            !file.path.startsWith('blog/') &&
+            !SITE_SETTINGS_PATHS.has(file.path) &&
+            !moduleManagedPaths.has(file.path)
         );
         nextFiles = [...nextFiles].sort((a, b) => a.label.localeCompare(b.label));
       }
@@ -184,15 +267,125 @@ export function ContentEditor({
   const handleSave = async () => {
     setStatus(null);
     if (!activeFile) return;
-    let parsedContent: Record<string, any>;
-    try {
-      parsedContent = JSON.parse(content);
-    } catch (error) {
-      setStatus('Invalid JSON. Please fix before saving.');
+    if (isServicesItemSelected && activeTab === 'json' && serviceItemJsonError) {
+      setStatus('Invalid service item JSON. Please fix before saving.');
+      return;
+    }
+    if (
+      (isConditionCategorySelected || isConditionItemSelected) &&
+      activeTab === 'json' &&
+      conditionsItemJsonError
+    ) {
+      setStatus('Invalid condition JSON. Please fix before saving.');
+      return;
+    }
+    if (
+      (isCaseStudyCategorySelected || isCaseStudyItemSelected) &&
+      activeTab === 'json' &&
+      caseStudiesItemJsonError
+    ) {
+      setStatus('Invalid case study JSON. Please fix before saving.');
       return;
     }
 
-    let contentToSave = content;
+    const setPathValue = (source: Record<string, any>, path: string[], value: any) => {
+      let cursor: any = source;
+      path.forEach((key, index) => {
+        if (index === path.length - 1) {
+          cursor[key] = value;
+          return;
+        }
+        cursor[key] = cursor[key] ?? {};
+        cursor = cursor[key];
+      });
+    };
+
+    let nextFormData = formData ? JSON.parse(JSON.stringify(formData)) : null;
+    if (activeTab === 'json' && isServicesItemSelected) {
+      try {
+        const parsed = JSON.parse(serviceItemJsonDraft);
+        if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+          setStatus('Service item JSON must be an object.');
+          return;
+        }
+        if (!nextFormData) {
+          setStatus('Form data is unavailable. Please reload and try again.');
+          return;
+        }
+        setPathValue(nextFormData, ['servicesList', 'items', String(activeServiceIndex)], parsed);
+      } catch (error) {
+        setStatus('Invalid service item JSON. Please fix before saving.');
+        return;
+      }
+    }
+    if (activeTab === 'json' && (isConditionCategorySelected || isConditionItemSelected)) {
+      try {
+        const parsed = JSON.parse(conditionsItemJsonDraft);
+        if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+          setStatus('Condition JSON must be an object.');
+          return;
+        }
+        if (!nextFormData) {
+          setStatus('Form data is unavailable. Please reload and try again.');
+          return;
+        }
+        if (isConditionCategorySelected) {
+          setPathValue(nextFormData, ['categories', String(activeConditionCategoryIndex)], parsed);
+        } else {
+          setPathValue(nextFormData, ['conditions', String(activeConditionIndex)], parsed);
+        }
+      } catch (error) {
+        setStatus('Invalid condition JSON. Please fix before saving.');
+        return;
+      }
+    }
+    if (activeTab === 'json' && (isCaseStudyCategorySelected || isCaseStudyItemSelected)) {
+      try {
+        const parsed = JSON.parse(caseStudiesItemJsonDraft);
+        if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+          setStatus('Case study JSON must be an object.');
+          return;
+        }
+        if (!nextFormData) {
+          setStatus('Form data is unavailable. Please reload and try again.');
+          return;
+        }
+        if (isCaseStudyCategorySelected) {
+          setPathValue(nextFormData, ['categories', String(activeCaseStudyCategoryIndex)], parsed);
+        } else {
+          setPathValue(nextFormData, ['caseStudies', String(activeCaseStudyIndex)], parsed);
+        }
+      } catch (error) {
+        setStatus('Invalid case study JSON. Please fix before saving.');
+        return;
+      }
+    }
+    let parsedContent: Record<string, any>;
+    const isItemJsonMode =
+      isServicesItemSelected ||
+      isConditionCategorySelected ||
+      isConditionItemSelected ||
+      isCaseStudyCategorySelected ||
+      isCaseStudyItemSelected;
+    const isRawJsonEditing = activeTab === 'json' && !isItemJsonMode;
+    if (isRawJsonEditing) {
+      try {
+        parsedContent = JSON.parse(content);
+        setFormData(parsedContent);
+      } catch (error) {
+        setStatus('Invalid JSON. Please fix before saving.');
+        return;
+      }
+    } else {
+      if (!nextFormData) {
+        setStatus('Form data is unavailable. Please reload and try again.');
+        return;
+      }
+      parsedContent = nextFormData;
+      setFormData(nextFormData);
+    }
+
+    let contentToSave = JSON.stringify(parsedContent, null, 2);
     if (
       activeFile.path === 'pages/services.json' &&
       parsedContent &&
@@ -438,6 +631,45 @@ export function ContentEditor({
   };
 
   const handleFormat = () => {
+    if (isServicesItemSelected && activeTab === 'json') {
+      try {
+        const parsed = JSON.parse(serviceItemJsonDraft);
+        const formatted = JSON.stringify(parsed, null, 2);
+        setServiceItemJsonDraft(formatted);
+        setServiceItemJsonError(null);
+        setStatus('Formatted');
+      } catch (error) {
+        setServiceItemJsonError('Invalid JSON');
+        setStatus('Invalid service item JSON. Unable to format.');
+      }
+      return;
+    }
+    if ((isConditionCategorySelected || isConditionItemSelected) && activeTab === 'json') {
+      try {
+        const parsed = JSON.parse(conditionsItemJsonDraft);
+        const formatted = JSON.stringify(parsed, null, 2);
+        setConditionsItemJsonDraft(formatted);
+        setConditionsItemJsonError(null);
+        setStatus('Formatted');
+      } catch (error) {
+        setConditionsItemJsonError('Invalid JSON');
+        setStatus('Invalid condition JSON. Unable to format.');
+      }
+      return;
+    }
+    if ((isCaseStudyCategorySelected || isCaseStudyItemSelected) && activeTab === 'json') {
+      try {
+        const parsed = JSON.parse(caseStudiesItemJsonDraft);
+        const formatted = JSON.stringify(parsed, null, 2);
+        setCaseStudiesItemJsonDraft(formatted);
+        setCaseStudiesItemJsonError(null);
+        setStatus('Formatted');
+      } catch (error) {
+        setCaseStudiesItemJsonError('Invalid JSON');
+        setStatus('Invalid case study JSON. Unable to format.');
+      }
+      return;
+    }
     try {
       const parsed = JSON.parse(content);
       const formatted = JSON.stringify(parsed, null, 2);
@@ -542,7 +774,6 @@ export function ContentEditor({
       }
     });
     setFormData(next);
-    setContent(JSON.stringify(next, null, 2));
   };
 
   const openImagePicker = (path: string[]) => {
@@ -595,7 +826,77 @@ export function ContentEditor({
   const isThemeFile = activeFile?.path === 'theme.json';
   const isHomePageFile = activeFile?.path === 'pages/home.json';
   const isConditionsPageFile = activeFile?.path === 'pages/conditions.json';
-  const allowCreateOrDuplicate = fileFilter !== 'siteSettings';
+  const isCaseStudiesPageFile = activeFile?.path === 'pages/case-studies.json';
+  const allowCreateOrDuplicate =
+    fileFilter !== 'siteSettings' &&
+    !isServicesItemsMode &&
+    !isConditionsItemsMode &&
+    !isCaseStudiesItemsMode;
+  const serviceItems = Array.isArray(formData?.servicesList?.items)
+    ? formData.servicesList.items
+    : [];
+  const servicesPageFile = files.find((file) => file.path === 'pages/services.json') || null;
+  const servicesLayoutFile =
+    files.find((file) => file.path === 'pages/services.layout.json') || null;
+  const isServicesPageFileActive = activeFile?.path === 'pages/services.json';
+  const isServicesLayoutFileActive = activeFile?.path === 'pages/services.layout.json';
+  const isServicesItemSelected =
+    isServicesItemsMode && isServicesPageFileActive && activeServiceIndex >= 0;
+  const isServicesPageSettingsSelected =
+    isServicesItemsMode && isServicesPageFileActive && activeServiceIndex === -1;
+  const showGlobalPanels = !isServicesItemsMode || isServicesPageSettingsSelected;
+  const selectedService =
+    isServicesItemsMode && isServicesPageFileActive && activeServiceIndex >= 0
+      ? serviceItems[activeServiceIndex]
+      : null;
+  const conditionItems = Array.isArray(formData?.conditions) ? formData.conditions : [];
+  const conditionsPageFile = files.find((file) => file.path === 'pages/conditions.json') || null;
+  const conditionsLayoutFile =
+    files.find((file) => file.path === 'pages/conditions.layout.json') || null;
+  const isConditionsPageFileActive = activeFile?.path === 'pages/conditions.json';
+  const isConditionsLayoutFileActive = activeFile?.path === 'pages/conditions.layout.json';
+  const isConditionCategorySelected =
+    isConditionsItemsMode && isConditionsPageFileActive && activeConditionCategoryIndex >= 0;
+  const isConditionItemSelected =
+    isConditionsItemsMode && isConditionsPageFileActive && activeConditionIndex >= 0;
+  const isConditionsPageSettingsSelected =
+    isConditionsItemsMode &&
+    isConditionsPageFileActive &&
+    activeConditionCategoryIndex === -1 &&
+    activeConditionIndex === -1;
+  const selectedConditionCategory = isConditionCategorySelected
+    ? (formData?.categories?.[activeConditionCategoryIndex] ?? null)
+    : null;
+  const selectedConditionItem = isConditionItemSelected
+    ? conditionItems[activeConditionIndex]
+    : null;
+  const showConditionsGlobalPanels = !isConditionsItemsMode || isConditionsPageSettingsSelected;
+  const caseStudyItems = Array.isArray(formData?.caseStudies) ? formData.caseStudies : [];
+  const caseStudiesPageFile =
+    files.find((file) => file.path === 'pages/case-studies.json') || null;
+  const caseStudiesLayoutFile =
+    files.find((file) => file.path === 'pages/case-studies.layout.json') || null;
+  const isCaseStudiesPageFileActive = activeFile?.path === 'pages/case-studies.json';
+  const isCaseStudiesLayoutFileActive = activeFile?.path === 'pages/case-studies.layout.json';
+  const isCaseStudyCategorySelected =
+    isCaseStudiesItemsMode && isCaseStudiesPageFileActive && activeCaseStudyCategoryIndex >= 0;
+  const isCaseStudyItemSelected =
+    isCaseStudiesItemsMode && isCaseStudiesPageFileActive && activeCaseStudyIndex >= 0;
+  const isCaseStudiesPageSettingsSelected =
+    isCaseStudiesItemsMode &&
+    isCaseStudiesPageFileActive &&
+    activeCaseStudyCategoryIndex === -1 &&
+    activeCaseStudyIndex === -1;
+  const selectedCaseStudyCategory = isCaseStudyCategorySelected
+    ? (formData?.categories?.[activeCaseStudyCategoryIndex] ?? null)
+    : null;
+  const selectedCaseStudyItem = isCaseStudyItemSelected
+    ? caseStudyItems[activeCaseStudyIndex]
+    : null;
+  const showCaseStudiesGlobalPanels =
+    !isCaseStudiesItemsMode || isCaseStudiesPageSettingsSelected;
+  const showSharedPanels =
+    showGlobalPanels && showConditionsGlobalPanels && showCaseStudiesGlobalPanels;
   const variantSections = formData
     ? Object.entries(SECTION_VARIANT_OPTIONS).filter(
         ([key]) =>
@@ -739,7 +1040,6 @@ export function ContentEditor({
       delete pages[slug];
       next.pages = pages;
       setFormData(next);
-      setContent(JSON.stringify(next, null, 2));
     }
   };
 
@@ -821,6 +1121,10 @@ export function ContentEditor({
       order: categories.length + 1,
     });
     updateFormValue(['categories'], categories);
+    if (isConditionsItemsMode) {
+      setActiveConditionCategoryIndex(categories.length - 1);
+      setActiveConditionIndex(-1);
+    }
   };
 
   const removeConditionCategory = (index: number) => {
@@ -845,7 +1149,14 @@ export function ContentEditor({
     }
 
     setFormData(next);
-    setContent(JSON.stringify(next, null, 2));
+    if (isConditionsItemsMode) {
+      setActiveConditionCategoryIndex((current) => {
+        if (categories.length === 0) return -1;
+        if (current > index) return current - 1;
+        if (current >= categories.length) return categories.length - 1;
+        return current;
+      });
+    }
   };
 
   const addConditionItem = () => {
@@ -865,6 +1176,10 @@ export function ContentEditor({
       featured: false,
     });
     updateFormValue(['conditions'], list);
+    if (isConditionsItemsMode) {
+      setActiveConditionIndex(list.length - 1);
+      setActiveConditionCategoryIndex(-1);
+    }
   };
 
   const removeConditionItem = (index: number) => {
@@ -872,6 +1187,96 @@ export function ContentEditor({
     const list = [...formData.conditions];
     list.splice(index, 1);
     updateFormValue(['conditions'], list);
+    if (isConditionsItemsMode) {
+      setActiveConditionIndex((current) => {
+        if (list.length === 0) return -1;
+        if (current > index) return current - 1;
+        if (current >= list.length) return list.length - 1;
+        return current;
+      });
+    }
+  };
+
+  const addCaseStudyCategory = () => {
+    if (!formData) return;
+    const categories = Array.isArray(formData.categories) ? [...formData.categories] : [];
+    categories.push({
+      id: `category-${categories.length + 1}`,
+      icon: 'Activity',
+      name: '',
+    });
+    updateFormValue(['categories'], categories);
+    if (isCaseStudiesItemsMode) {
+      setActiveCaseStudyCategoryIndex(categories.length - 1);
+      setActiveCaseStudyIndex(-1);
+    }
+  };
+
+  const removeCaseStudyCategory = (index: number) => {
+    if (!formData || !Array.isArray(formData.categories)) return;
+    const categories = [...formData.categories];
+    const target = categories[index];
+    categories.splice(index, 1);
+    const next: Record<string, any> = { ...formData, categories };
+
+    if (target?.id && Array.isArray(formData.caseStudies)) {
+      const fallbackCategory =
+        categories.find((category: any) => category?.id && category.id !== 'all')?.id || '';
+      next.caseStudies = formData.caseStudies.map((item: any) => {
+        if (item?.category === target.id) {
+          return {
+            ...item,
+            category: fallbackCategory,
+          };
+        }
+        return item;
+      });
+    }
+
+    setFormData(next);
+    if (isCaseStudiesItemsMode) {
+      setActiveCaseStudyCategoryIndex((current) => {
+        if (categories.length === 0) return -1;
+        if (current > index) return current - 1;
+        if (current >= categories.length) return categories.length - 1;
+        return current;
+      });
+    }
+  };
+
+  const addCaseStudyItem = () => {
+    if (!formData) return;
+    const list = Array.isArray(formData.caseStudies) ? [...formData.caseStudies] : [];
+    const firstCategory = caseStudyCategories.find((entry) => entry.id !== 'all')?.id || '';
+    list.push({
+      id: `case-${list.length + 1}`,
+      condition: '',
+      category: firstCategory,
+      summary: '',
+      image: '',
+      beforeImage: '',
+      afterImage: '',
+    });
+    updateFormValue(['caseStudies'], list);
+    if (isCaseStudiesItemsMode) {
+      setActiveCaseStudyIndex(list.length - 1);
+      setActiveCaseStudyCategoryIndex(-1);
+    }
+  };
+
+  const removeCaseStudyItem = (index: number) => {
+    if (!formData || !Array.isArray(formData.caseStudies)) return;
+    const list = [...formData.caseStudies];
+    list.splice(index, 1);
+    updateFormValue(['caseStudies'], list);
+    if (isCaseStudiesItemsMode) {
+      setActiveCaseStudyIndex((current) => {
+        if (list.length === 0) return -1;
+        if (current > index) return current - 1;
+        if (current >= list.length) return list.length - 1;
+        return current;
+      });
+    }
   };
 
   const addServicesListItem = () => {
@@ -890,6 +1295,9 @@ export function ContentEditor({
       featured: false,
     });
     updateFormValue(['servicesList', 'items'], items);
+    if (isServicesItemsMode) {
+      setActiveServiceIndex(items.length - 1);
+    }
   };
 
   const removeServicesListItem = (index: number) => {
@@ -897,6 +1305,138 @@ export function ContentEditor({
     const items = [...formData.servicesList.items];
     items.splice(index, 1);
     updateFormValue(['servicesList', 'items'], items);
+    if (isServicesItemsMode) {
+      setActiveServiceIndex((current) => {
+        if (items.length === 0) return -1;
+        if (current > index) return current - 1;
+        if (current >= items.length) return items.length - 1;
+        return current;
+      });
+    }
+  };
+
+  const deleteSelectedService = async () => {
+    if (!isServicesPageFileActive || activeServiceIndex < 0 || !formData) return;
+    const currentService = serviceItems[activeServiceIndex];
+    const serviceName =
+      currentService?.title || currentService?.id || `Service ${activeServiceIndex + 1}`;
+    const confirmed = window.confirm(
+      `Delete "${serviceName}"? This removes only this service item.`
+    );
+    if (!confirmed) return;
+
+    const items = Array.isArray(formData.servicesList?.items) ? [...formData.servicesList.items] : [];
+    items.splice(activeServiceIndex, 1);
+    const next = {
+      ...formData,
+      servicesList: {
+        ...(formData.servicesList || {}),
+        items,
+      },
+    };
+
+    setFormData(next);
+    setActiveServiceIndex((current) => {
+      if (items.length === 0) return -1;
+      if (current >= items.length) return items.length - 1;
+      return current;
+    });
+
+    let payloadToSave: Record<string, any> = JSON.parse(JSON.stringify(next));
+    if ('services' in payloadToSave) {
+      delete payloadToSave.services;
+    }
+    const contentToSave = JSON.stringify(payloadToSave, null, 2);
+
+    const response = await fetch('/api/admin/content/file', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        siteId,
+        locale,
+        path: 'pages/services.json',
+        content: contentToSave,
+      }),
+    });
+    if (!response.ok) {
+      const payload = await response.json();
+      setStatus(payload.message || 'Delete failed to save');
+      return;
+    }
+    const payload = await response.json();
+    setStatus(payload.message || 'Service deleted and saved.');
+  };
+
+  const deleteSelectedCaseStudyCategory = async () => {
+    if (!isCaseStudiesPageFileActive || activeCaseStudyCategoryIndex < 0 || !formData) return;
+    const categories = Array.isArray(formData.categories) ? [...formData.categories] : [];
+    const target = categories[activeCaseStudyCategoryIndex];
+    if (target?.id === 'all') {
+      setStatus('Cannot delete the "all" category.');
+      return;
+    }
+    categories.splice(activeCaseStudyCategoryIndex, 1);
+    const next: Record<string, any> = { ...formData, categories };
+    if (target?.id && Array.isArray(formData.caseStudies)) {
+      const fallbackCategory =
+        categories.find((category: any) => category?.id && category.id !== 'all')?.id || '';
+      next.caseStudies = formData.caseStudies.map((item: any) =>
+        item?.category === target.id ? { ...item, category: fallbackCategory } : item
+      );
+    }
+    setFormData(next);
+    setActiveCaseStudyCategoryIndex((current) => {
+      if (categories.length === 0) return -1;
+      if (current >= categories.length) return categories.length - 1;
+      return current;
+    });
+    const response = await fetch('/api/admin/content/file', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        siteId,
+        locale,
+        path: 'pages/case-studies.json',
+        content: JSON.stringify(next, null, 2),
+      }),
+    });
+    if (!response.ok) {
+      const payload = await response.json();
+      setStatus(payload.message || 'Delete failed to save');
+      return;
+    }
+    const payload = await response.json();
+    setStatus(payload.message || 'Category deleted and saved.');
+  };
+
+  const deleteSelectedCaseStudyItem = async () => {
+    if (!isCaseStudiesPageFileActive || activeCaseStudyIndex < 0 || !formData) return;
+    const list = Array.isArray(formData.caseStudies) ? [...formData.caseStudies] : [];
+    list.splice(activeCaseStudyIndex, 1);
+    const next = { ...formData, caseStudies: list };
+    setFormData(next);
+    setActiveCaseStudyIndex((current) => {
+      if (list.length === 0) return -1;
+      if (current >= list.length) return list.length - 1;
+      return current;
+    });
+    const response = await fetch('/api/admin/content/file', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        siteId,
+        locale,
+        path: 'pages/case-studies.json',
+        content: JSON.stringify(next, null, 2),
+      }),
+    });
+    if (!response.ok) {
+      const payload = await response.json();
+      setStatus(payload.message || 'Delete failed to save');
+      return;
+    }
+    const payload = await response.json();
+    setStatus(payload.message || 'Case study deleted and saved.');
   };
 
   const addTrustBarItem = () => {
@@ -994,7 +1534,6 @@ export function ContentEditor({
 
       next.pages = pages;
       setFormData(next);
-      setContent(JSON.stringify(next, null, 2));
       setStatus('SEO populated from hero sections.');
     } catch (error: any) {
       setStatus(error?.message || 'Failed to populate SEO.');
@@ -1002,6 +1541,128 @@ export function ContentEditor({
       setSeoPopulating(false);
     }
   };
+
+  useEffect(() => {
+    if (!isServicesItemsMode || !isServicesPageFileActive) return;
+    if (!serviceItems.length) {
+      setActiveServiceIndex(-1);
+      return;
+    }
+    if (activeServiceIndex >= serviceItems.length) {
+      setActiveServiceIndex(serviceItems.length - 1);
+    }
+  }, [isServicesItemsMode, isServicesPageFileActive, serviceItems.length, activeServiceIndex]);
+
+  useEffect(() => {
+    if (!isServicesItemSelected || !selectedService) {
+      setServiceItemJsonDraft('');
+      setServiceItemJsonError(null);
+      return;
+    }
+    setServiceItemJsonDraft(JSON.stringify(selectedService, null, 2));
+    setServiceItemJsonError(null);
+  }, [isServicesItemSelected, selectedService, activeServiceIndex]);
+
+  useEffect(() => {
+    if (!isConditionsItemsMode || !isConditionsPageFileActive) return;
+    const categories = Array.isArray(formData?.categories) ? formData.categories : [];
+    const conditions = Array.isArray(formData?.conditions) ? formData.conditions : [];
+    if (activeConditionCategoryIndex >= categories.length) {
+      setActiveConditionCategoryIndex(categories.length > 0 ? categories.length - 1 : -1);
+    }
+    if (activeConditionIndex >= conditions.length) {
+      setActiveConditionIndex(conditions.length > 0 ? conditions.length - 1 : -1);
+    }
+  }, [
+    isConditionsItemsMode,
+    isConditionsPageFileActive,
+    formData?.categories,
+    formData?.conditions,
+    activeConditionCategoryIndex,
+    activeConditionIndex,
+  ]);
+
+  useEffect(() => {
+    if (!isCaseStudiesItemsMode || !isCaseStudiesPageFileActive) return;
+    const categories = Array.isArray(formData?.categories) ? formData.categories : [];
+    const items = Array.isArray(formData?.caseStudies) ? formData.caseStudies : [];
+    if (activeCaseStudyCategoryIndex >= categories.length) {
+      setActiveCaseStudyCategoryIndex(categories.length > 0 ? categories.length - 1 : -1);
+    }
+    if (activeCaseStudyIndex >= items.length) {
+      setActiveCaseStudyIndex(items.length > 0 ? items.length - 1 : -1);
+    }
+  }, [
+    isCaseStudiesItemsMode,
+    isCaseStudiesPageFileActive,
+    formData?.categories,
+    formData?.caseStudies,
+    activeCaseStudyCategoryIndex,
+    activeCaseStudyIndex,
+  ]);
+
+  useEffect(() => {
+    if (isConditionCategorySelected && selectedConditionCategory) {
+      setConditionsItemJsonDraft(JSON.stringify(selectedConditionCategory, null, 2));
+      setConditionsItemJsonError(null);
+      return;
+    }
+    if (isConditionItemSelected && selectedConditionItem) {
+      setConditionsItemJsonDraft(JSON.stringify(selectedConditionItem, null, 2));
+      setConditionsItemJsonError(null);
+      return;
+    }
+    setConditionsItemJsonDraft('');
+    setConditionsItemJsonError(null);
+  }, [
+    isConditionCategorySelected,
+    selectedConditionCategory,
+    isConditionItemSelected,
+    selectedConditionItem,
+    activeConditionCategoryIndex,
+    activeConditionIndex,
+  ]);
+
+  useEffect(() => {
+    if (isCaseStudyCategorySelected && selectedCaseStudyCategory) {
+      setCaseStudiesItemJsonDraft(JSON.stringify(selectedCaseStudyCategory, null, 2));
+      setCaseStudiesItemJsonError(null);
+      return;
+    }
+    if (isCaseStudyItemSelected && selectedCaseStudyItem) {
+      setCaseStudiesItemJsonDraft(JSON.stringify(selectedCaseStudyItem, null, 2));
+      setCaseStudiesItemJsonError(null);
+      return;
+    }
+    setCaseStudiesItemJsonDraft('');
+    setCaseStudiesItemJsonError(null);
+  }, [
+    isCaseStudyCategorySelected,
+    selectedCaseStudyCategory,
+    isCaseStudyItemSelected,
+    selectedCaseStudyItem,
+    activeCaseStudyCategoryIndex,
+    activeCaseStudyIndex,
+  ]);
+
+  useEffect(() => {
+    const isItemJsonMode =
+      isServicesItemSelected ||
+      isConditionCategorySelected ||
+      isConditionItemSelected ||
+      isCaseStudyCategorySelected ||
+      isCaseStudyItemSelected;
+    if (activeTab !== 'json' || isItemJsonMode || !formData) return;
+    setContent(JSON.stringify(formData, null, 2));
+  }, [
+    activeTab,
+    formData,
+    isServicesItemSelected,
+    isConditionCategorySelected,
+    isConditionItemSelected,
+    isCaseStudyCategorySelected,
+    isCaseStudyItemSelected,
+  ]);
 
   return (
     <div className="space-y-6">
@@ -1091,29 +1752,85 @@ export function ContentEditor({
             <div className="text-sm text-gray-500">Loading…</div>
           ) : (
             <div className="space-y-2">
-              {files.map((file) => (
-                <button
-                  key={file.id}
-                  type="button"
-                  onClick={() => setActiveFile(file)}
-                  className={`w-full text-left px-3 py-2 rounded-lg text-sm ${
-                    activeFile?.id === file.id
-                      ? 'bg-[var(--primary)] text-white'
-                      : 'hover:bg-gray-100 text-gray-700'
-                  }`}
-                >
-                  <div className="font-medium">{file.label}</div>
-                  <div className="text-xs opacity-70">{file.path}</div>
-                  {fileFilter === 'blog' && file.publishDate && (
-                    <div className="text-[11px] text-gray-500 mt-1">
-                      {new Date(file.publishDate).toLocaleDateString(
-                        locale === 'zh' ? 'zh-CN' : 'en-US',
-                        { year: 'numeric', month: 'short', day: 'numeric' }
-                      )}
-                    </div>
-                  )}
-                </button>
-              ))}
+              {isServicesItemsMode && activeFile ? (
+                <ServicesModuleList
+                  servicesPageFile={servicesPageFile}
+                  servicesLayoutFile={servicesLayoutFile}
+                  isServicesPageSettingsSelected={isServicesPageSettingsSelected}
+                  isServicesLayoutFileActive={isServicesLayoutFileActive}
+                  isServicesPageFileActive={isServicesPageFileActive}
+                  activeServiceIndex={activeServiceIndex}
+                  serviceItems={serviceItems}
+                  setActiveFile={(file) => setActiveFile(file as ContentFileItem | null)}
+                  setActiveServiceIndex={setActiveServiceIndex}
+                  addServicesListItem={addServicesListItem}
+                  deleteSelectedService={deleteSelectedService}
+                />
+              ) : isConditionsItemsMode && activeFile ? (
+                <ConditionsModuleList
+                  conditionsPageFile={conditionsPageFile}
+                  conditionsLayoutFile={conditionsLayoutFile}
+                  isConditionsPageSettingsSelected={isConditionsPageSettingsSelected}
+                  isConditionsLayoutFileActive={isConditionsLayoutFileActive}
+                  isConditionsPageFileActive={isConditionsPageFileActive}
+                  activeConditionCategoryIndex={activeConditionCategoryIndex}
+                  activeConditionIndex={activeConditionIndex}
+                  categories={Array.isArray(formData?.categories) ? formData.categories : []}
+                  conditionItems={conditionItems}
+                  setActiveFile={(file) => setActiveFile(file as ContentFileItem | null)}
+                  setActiveConditionCategoryIndex={setActiveConditionCategoryIndex}
+                  setActiveConditionIndex={setActiveConditionIndex}
+                  addConditionCategory={addConditionCategory}
+                  removeConditionCategory={removeConditionCategory}
+                  addConditionItem={addConditionItem}
+                  removeConditionItem={removeConditionItem}
+                  setStatus={(message) => setStatus(message)}
+                />
+              ) : isCaseStudiesItemsMode && activeFile ? (
+                <CaseStudiesModuleList
+                  caseStudiesPageFile={caseStudiesPageFile}
+                  caseStudiesLayoutFile={caseStudiesLayoutFile}
+                  isCaseStudiesPageSettingsSelected={isCaseStudiesPageSettingsSelected}
+                  isCaseStudiesLayoutFileActive={isCaseStudiesLayoutFileActive}
+                  isCaseStudiesPageFileActive={isCaseStudiesPageFileActive}
+                  activeCaseStudyCategoryIndex={activeCaseStudyCategoryIndex}
+                  activeCaseStudyIndex={activeCaseStudyIndex}
+                  categories={Array.isArray(formData?.categories) ? formData.categories : []}
+                  caseStudies={caseStudyItems}
+                  setActiveFile={(file) => setActiveFile(file as ContentFileItem | null)}
+                  setActiveCaseStudyCategoryIndex={setActiveCaseStudyCategoryIndex}
+                  setActiveCaseStudyIndex={setActiveCaseStudyIndex}
+                  addCaseStudyCategory={addCaseStudyCategory}
+                  deleteSelectedCaseStudyCategory={deleteSelectedCaseStudyCategory}
+                  addCaseStudyItem={addCaseStudyItem}
+                  deleteSelectedCaseStudyItem={deleteSelectedCaseStudyItem}
+                  setStatus={(message) => setStatus(message)}
+                />
+              ) : (
+                files.map((file) => (
+                  <button
+                    key={file.id}
+                    type="button"
+                    onClick={() => setActiveFile(file)}
+                    className={`w-full text-left px-3 py-2 rounded-lg text-sm ${
+                      activeFile?.id === file.id
+                        ? 'bg-[var(--primary)] text-white'
+                        : 'hover:bg-gray-100 text-gray-700'
+                    }`}
+                  >
+                    <div className="font-medium">{file.label}</div>
+                    <div className="text-xs opacity-70">{file.path}</div>
+                    {fileFilter === 'blog' && file.publishDate && (
+                      <div className="text-[11px] text-gray-500 mt-1">
+                        {new Date(file.publishDate).toLocaleDateString(
+                          locale === 'zh' ? 'zh-CN' : 'en-US',
+                          { year: 'numeric', month: 'short', day: 'numeric' }
+                        )}
+                      </div>
+                    )}
+                  </button>
+                ))
+              )}
               {files.length === 0 && (
                 <div className="text-sm text-gray-500">
                   {fileFilter === 'blog'
@@ -1129,9 +1846,67 @@ export function ContentEditor({
           <div className="flex items-center justify-between mb-3">
             <div>
               <div className="text-sm font-semibold text-gray-900">
-                {activeFile?.label || 'Select a file'}
+                {isServicesItemsMode
+                  ? isServicesLayoutFileActive
+                    ? 'Services Layout'
+                    : isServicesPageSettingsSelected
+                    ? 'Services Page Settings'
+                    : selectedService?.title || selectedService?.id || 'Select a service'
+                  : isConditionsItemsMode
+                    ? isConditionsLayoutFileActive
+                      ? 'Conditions Layout'
+                      : isConditionsPageSettingsSelected
+                        ? 'Conditions Page Settings'
+                        : isConditionCategorySelected
+                          ? selectedConditionCategory?.name ||
+                            selectedConditionCategory?.id ||
+                            'Category'
+                          : isConditionItemSelected
+                            ? selectedConditionItem?.title || selectedConditionItem?.id || 'Condition'
+                            : 'Select an item'
+                  : isCaseStudiesItemsMode
+                    ? isCaseStudiesLayoutFileActive
+                      ? 'Case Studies Layout'
+                      : isCaseStudiesPageSettingsSelected
+                        ? 'Case Studies Page Settings'
+                        : isCaseStudyCategorySelected
+                          ? selectedCaseStudyCategory?.name ||
+                            selectedCaseStudyCategory?.id ||
+                            'Category'
+                          : isCaseStudyItemSelected
+                            ? selectedCaseStudyItem?.condition || selectedCaseStudyItem?.id || 'Case Study'
+                            : 'Select an item'
+                  : activeFile?.label || 'Select a file'}
               </div>
-              <div className="text-xs text-gray-500">{activeFile?.path}</div>
+              <div className="text-xs text-gray-500">
+                {isServicesItemsMode
+                  ? isServicesLayoutFileActive
+                    ? `${activeFile?.path || ''} · layout`
+                    : isServicesPageSettingsSelected
+                    ? `${activeFile?.path || ''} · page settings`
+                    : `${activeFile?.path || ''} · item ${activeServiceIndex + 1}`
+                  : isConditionsItemsMode
+                    ? isConditionsLayoutFileActive
+                      ? `${activeFile?.path || ''} · layout`
+                      : isConditionsPageSettingsSelected
+                        ? `${activeFile?.path || ''} · page settings`
+                        : isConditionCategorySelected
+                          ? `${activeFile?.path || ''} · category ${activeConditionCategoryIndex + 1}`
+                          : isConditionItemSelected
+                            ? `${activeFile?.path || ''} · condition ${activeConditionIndex + 1}`
+                            : activeFile?.path
+                  : isCaseStudiesItemsMode
+                    ? isCaseStudiesLayoutFileActive
+                      ? `${activeFile?.path || ''} · layout`
+                      : isCaseStudiesPageSettingsSelected
+                        ? `${activeFile?.path || ''} · page settings`
+                        : isCaseStudyCategorySelected
+                          ? `${activeFile?.path || ''} · category ${activeCaseStudyCategoryIndex + 1}`
+                          : isCaseStudyItemSelected
+                            ? `${activeFile?.path || ''} · case ${activeCaseStudyIndex + 1}`
+                            : activeFile?.path
+                  : activeFile?.path}
+              </div>
             </div>
         <div className="flex items-center gap-2">
           <button
@@ -1169,6 +1944,9 @@ export function ContentEditor({
             Format
           </button>
           {activeFile &&
+            !isServicesItemsMode &&
+            !isConditionsItemsMode &&
+            !isCaseStudiesItemsMode &&
             (activeFile.path.startsWith('pages/') ||
               activeFile.path.startsWith('blog/')) && (
               <button
@@ -1256,7 +2034,7 @@ export function ContentEditor({
                 />
               )}
 
-              {formData && variantSections.length > 0 && (
+              {showSharedPanels && formData && variantSections.length > 0 && (
                 <SectionVariantsPanel
                   variantSections={variantSections}
                   getPathValue={getPathValueLocal}
@@ -1264,7 +2042,7 @@ export function ContentEditor({
                 />
               )}
 
-              {isConditionsPageFile && formData && (
+              {isConditionsPageFile && showConditionsGlobalPanels && formData && (
                 <ConditionsLayoutPanel
                   layoutVariant={String(formData.layoutVariant || 'categories-tabs')}
                   updateFormValue={updateFormValue}
@@ -1280,7 +2058,7 @@ export function ContentEditor({
                 />
               )}
 
-              {formData?.hero && (
+              {showSharedPanels && formData?.hero && (
                 <HeroPanel
                   hero={formData.hero}
                   updateFormValue={updateFormValue}
@@ -1288,7 +2066,7 @@ export function ContentEditor({
                 />
               )}
 
-              {formData?.profile && (
+              {showSharedPanels && formData?.profile && (
                 <ProfilePanel
                   profile={formData.profile}
                   updateFormValue={updateFormValue}
@@ -1296,14 +2074,14 @@ export function ContentEditor({
                 />
               )}
 
-              {formData?.introduction && (
+              {showSharedPanels && formData?.introduction && (
                 <IntroductionPanel
                   introduction={formData.introduction}
                   updateFormValue={updateFormValue}
                 />
               )}
 
-              {Array.isArray(formData?.images) && (
+              {showSharedPanels && Array.isArray(formData?.images) && (
                 <GalleryPhotosPanel
                   images={formData.images}
                   galleryCategories={galleryCategories}
@@ -1314,11 +2092,46 @@ export function ContentEditor({
                 />
               )}
 
-              {formData?.cta && (
+              {showSharedPanels && formData?.cta && (
                 <CtaPanel cta={formData.cta} updateFormValue={updateFormValue} />
               )}
 
-              {(formData?.services || formData?.servicesList || formData?.trustBar || formData?.legacyLabels || formData?.relatedReading) && (
+              {isServicesItemsMode && formData?.servicesList && selectedService && (
+                <ServicesItemPanel
+                  servicesList={formData.servicesList}
+                  selectedService={selectedService}
+                  selectedIndex={activeServiceIndex}
+                  markdownPreview={markdownPreview}
+                  toggleMarkdownPreview={toggleMarkdownPreview}
+                  updateFormValue={updateFormValue}
+                  openImagePicker={openImagePicker}
+                  removeServicesListItem={removeServicesListItem}
+                />
+              )}
+
+              {isServicesItemsMode && isServicesPageSettingsSelected && formData && (
+                <ServicesPanel
+                  formData={formData}
+                  markdownPreview={markdownPreview}
+                  toggleMarkdownPreview={toggleMarkdownPreview}
+                  updateFormValue={updateFormValue}
+                  openImagePicker={openImagePicker}
+                  addServicesListItem={addServicesListItem}
+                  removeServicesListItem={removeServicesListItem}
+                  addTrustBarItem={addTrustBarItem}
+                  removeTrustBarItem={removeTrustBarItem}
+                  addRelatedReadingSlug={addRelatedReadingSlug}
+                  removeRelatedReadingSlug={removeRelatedReadingSlug}
+                  hideItemsEditor
+                />
+              )}
+
+              {!isServicesItemsMode &&
+                (formData?.services ||
+                  formData?.servicesList ||
+                  formData?.trustBar ||
+                  formData?.legacyLabels ||
+                  formData?.relatedReading) && (
                 <ServicesPanel
                   formData={formData}
                   markdownPreview={markdownPreview}
@@ -1334,7 +2147,53 @@ export function ContentEditor({
                 />
               )}
 
-              {isConditionsPageFile && (formData?.categories || formData?.conditions) && (
+              {isConditionsItemsMode && isConditionCategorySelected && selectedConditionCategory && (
+                <ConditionCategoryItemPanel
+                  category={selectedConditionCategory}
+                  index={activeConditionCategoryIndex}
+                  markdownPreview={markdownPreview}
+                  toggleMarkdownPreview={toggleMarkdownPreview}
+                  updateFormValue={updateFormValue}
+                  openImagePicker={openImagePicker}
+                />
+              )}
+
+              {isConditionsItemsMode && isConditionItemSelected && selectedConditionItem && (
+                <ConditionItemPanel
+                  condition={selectedConditionItem}
+                  index={activeConditionIndex}
+                  isConditionsPageFile={isConditionsPageFile}
+                  conditionCategoryOptions={conditionCategoryOptions}
+                  updateFormValue={updateFormValue}
+                  openImagePicker={openImagePicker}
+                />
+              )}
+
+              {isConditionsItemsMode &&
+                isConditionsPageSettingsSelected &&
+                isConditionsPageFile &&
+                (formData?.categories || formData?.conditions) && (
+                <ConditionsPanel
+                  isConditionsPageFile={isConditionsPageFile}
+                  categories={formData?.categories ?? []}
+                  conditions={formData?.conditions ?? []}
+                  sortedConditionCategories={sortedConditionCategories}
+                  conditionCategoryOptions={conditionCategoryOptions}
+                  markdownPreview={markdownPreview}
+                  toggleMarkdownPreview={toggleMarkdownPreview}
+                  updateFormValue={updateFormValue}
+                  openImagePicker={openImagePicker}
+                  addConditionCategory={addConditionCategory}
+                  removeConditionCategory={removeConditionCategory}
+                  addConditionItem={addConditionItem}
+                  removeConditionItem={removeConditionItem}
+                  hideItemsEditor
+                />
+              )}
+
+              {!isConditionsItemsMode &&
+                isConditionsPageFile &&
+                (formData?.categories || formData?.conditions) && (
                 <ConditionsPanel
                   isConditionsPageFile={isConditionsPageFile}
                   categories={formData?.categories ?? []}
@@ -1352,7 +2211,29 @@ export function ContentEditor({
                 />
               )}
 
-              {Array.isArray(formData?.caseStudies) && (
+              {isCaseStudiesItemsMode &&
+                isCaseStudyCategorySelected &&
+                selectedCaseStudyCategory && (
+                <CaseStudyCategoryItemPanel
+                  category={selectedCaseStudyCategory}
+                  index={activeCaseStudyCategoryIndex}
+                  updateFormValue={updateFormValue}
+                />
+              )}
+
+              {isCaseStudiesItemsMode && isCaseStudyItemSelected && selectedCaseStudyItem && (
+                <CaseStudyItemPanel
+                  item={selectedCaseStudyItem}
+                  index={activeCaseStudyIndex}
+                  caseStudyCategories={caseStudyCategories}
+                  markdownPreview={markdownPreview}
+                  toggleMarkdownPreview={toggleMarkdownPreview}
+                  updateFormValue={updateFormValue}
+                  openImagePicker={openImagePicker}
+                />
+              )}
+
+              {!isCaseStudiesItemsMode && Array.isArray(formData?.caseStudies) && (
                 <CaseStudiesPanel
                   caseStudies={formData.caseStudies}
                   caseStudyCategories={caseStudyCategories}
@@ -1384,6 +2265,125 @@ export function ContentEditor({
                 </div>
               )}
             </div>
+          ) : isServicesItemSelected && selectedService ? (
+            <ItemJsonEditor
+              error={serviceItemJsonError}
+              draft={serviceItemJsonDraft}
+              onDraftChange={(next) => {
+                setServiceItemJsonDraft(next);
+                try {
+                  const parsed = JSON.parse(next);
+                  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+                    setServiceItemJsonError('Service item JSON must be an object.');
+                    return;
+                  }
+                  setServiceItemJsonError(null);
+                } catch (error) {
+                  setServiceItemJsonError('Invalid JSON');
+                }
+              }}
+              onApply={() => {
+                try {
+                  const parsed = JSON.parse(serviceItemJsonDraft);
+                  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+                    setServiceItemJsonError('Service item JSON must be an object.');
+                    return;
+                  }
+                  setServiceItemJsonError(null);
+                  updateFormValue(['servicesList', 'items', String(activeServiceIndex)], parsed);
+                  setStatus('Service JSON applied.');
+                } catch (error) {
+                  setServiceItemJsonError('Invalid JSON');
+                }
+              }}
+              placeholder="Edit selected service JSON."
+            />
+          ) : (isConditionCategorySelected && selectedConditionCategory) ||
+            (isConditionItemSelected && selectedConditionItem) ? (
+            <ItemJsonEditor
+              error={conditionsItemJsonError}
+              draft={conditionsItemJsonDraft}
+              onDraftChange={(next) => {
+                setConditionsItemJsonDraft(next);
+                try {
+                  const parsed = JSON.parse(next);
+                  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+                    setConditionsItemJsonError('Condition JSON must be an object.');
+                    return;
+                  }
+                  setConditionsItemJsonError(null);
+                } catch (error) {
+                  setConditionsItemJsonError('Invalid JSON');
+                }
+              }}
+              onApply={() => {
+                try {
+                  const parsed = JSON.parse(conditionsItemJsonDraft);
+                  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+                    setConditionsItemJsonError('Condition JSON must be an object.');
+                    return;
+                  }
+                  setConditionsItemJsonError(null);
+                  if (isConditionCategorySelected) {
+                    updateFormValue(['categories', String(activeConditionCategoryIndex)], parsed);
+                    setStatus('Category JSON applied.');
+                  } else if (isConditionItemSelected) {
+                    updateFormValue(['conditions', String(activeConditionIndex)], parsed);
+                    setStatus('Condition JSON applied.');
+                  }
+                } catch (error) {
+                  setConditionsItemJsonError('Invalid JSON');
+                }
+              }}
+              placeholder={
+                isConditionCategorySelected
+                  ? 'Edit selected category JSON.'
+                  : 'Edit selected condition JSON.'
+              }
+            />
+          ) : (isCaseStudyCategorySelected && selectedCaseStudyCategory) ||
+            (isCaseStudyItemSelected && selectedCaseStudyItem) ? (
+            <ItemJsonEditor
+              error={caseStudiesItemJsonError}
+              draft={caseStudiesItemJsonDraft}
+              onDraftChange={(next) => {
+                setCaseStudiesItemJsonDraft(next);
+                try {
+                  const parsed = JSON.parse(next);
+                  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+                    setCaseStudiesItemJsonError('Case study JSON must be an object.');
+                    return;
+                  }
+                  setCaseStudiesItemJsonError(null);
+                } catch (error) {
+                  setCaseStudiesItemJsonError('Invalid JSON');
+                }
+              }}
+              onApply={() => {
+                try {
+                  const parsed = JSON.parse(caseStudiesItemJsonDraft);
+                  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+                    setCaseStudiesItemJsonError('Case study JSON must be an object.');
+                    return;
+                  }
+                  setCaseStudiesItemJsonError(null);
+                  if (isCaseStudyCategorySelected) {
+                    updateFormValue(['categories', String(activeCaseStudyCategoryIndex)], parsed);
+                    setStatus('Case study category JSON applied.');
+                  } else if (isCaseStudyItemSelected) {
+                    updateFormValue(['caseStudies', String(activeCaseStudyIndex)], parsed);
+                    setStatus('Case study JSON applied.');
+                  }
+                } catch (error) {
+                  setCaseStudiesItemJsonError('Invalid JSON');
+                }
+              }}
+              placeholder={
+                isCaseStudyCategorySelected
+                  ? 'Edit selected category JSON.'
+                  : 'Edit selected case study JSON.'
+              }
+            />
           ) : (
             <textarea
               className="w-full min-h-[520px] rounded-lg border border-gray-200 p-3 font-mono text-xs text-gray-800"

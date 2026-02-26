@@ -13,6 +13,7 @@ interface ServicesPanelProps {
   removeTrustBarItem: (index: number) => void;
   addRelatedReadingSlug: () => void;
   removeRelatedReadingSlug: (index: number) => void;
+  hideItemsEditor?: boolean;
 }
 
 export function ServicesPanel({
@@ -27,6 +28,7 @@ export function ServicesPanel({
   removeTrustBarItem,
   addRelatedReadingSlug,
   removeRelatedReadingSlug,
+  hideItemsEditor = false,
 }: ServicesPanelProps) {
   return (
     <>
@@ -85,13 +87,15 @@ export function ServicesPanel({
         <div className="border border-gray-200 rounded-lg p-4">
           <div className="flex items-center justify-between mb-3">
             <div className="text-xs font-semibold text-gray-500 uppercase">Services List</div>
-            <button
-              type="button"
-              onClick={addServicesListItem}
-              className="px-2 py-1 rounded border border-gray-200 text-xs"
-            >
-              Add Service
-            </button>
+            {!hideItemsEditor && (
+              <button
+                type="button"
+                onClick={addServicesListItem}
+                className="px-2 py-1 rounded border border-gray-200 text-xs"
+              >
+                Add Service
+              </button>
+            )}
           </div>
           <div className="grid gap-2 md:grid-cols-2 mb-4">
             <div>
@@ -135,7 +139,7 @@ export function ServicesPanel({
               />
             </div>
           </div>
-          {Array.isArray(formData.servicesList.items) && (
+          {!hideItemsEditor && Array.isArray(formData.servicesList.items) && (
             <div className="space-y-4 mt-4">
               {formData.servicesList.items.map((service: any, index: number) => (
                 <div key={service.id || index} className="border rounded-md p-3 bg-white">

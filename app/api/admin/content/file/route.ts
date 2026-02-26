@@ -43,7 +43,21 @@ function parseBooleanEnv(value: string | undefined): boolean | null {
   return null;
 }
 
-function shouldWriteThroughFile(): boolean {
+function isLocalhostRequest(request?: NextRequest): boolean {
+  if (!request) return false;
+  try {
+    const { hostname } = new URL(request.url);
+    return hostname === 'localhost' || hostname === '127.0.0.1';
+  } catch {
+    return false;
+  }
+}
+
+function shouldWriteThroughFile(request?: NextRequest): boolean {
+  // Always sync local JSON while operating on localhost to keep DB/file in lockstep.
+  if (isLocalhostRequest(request)) {
+    return true;
+  }
   const override = parseBooleanEnv(process.env.CONTENT_WRITE_THROUGH_FILE);
   if (override !== null) {
     return override;
@@ -184,7 +198,7 @@ export async function PUT(request: NextRequest) {
       });
     }
 
-    if (!shouldWriteThroughFile()) {
+    if (!shouldWriteThroughFile(request)) {
       return NextResponse.json({
         success: true,
         fileSync: 'skipped',
@@ -411,9 +425,24 @@ export async function DELETE(request: NextRequest) {
 
   if (canUseContentDb()) {
     await deleteContentEntry({ siteId, locale, path: filePath });
-    return NextResponse.json({ success: true });
+    if (!shouldWriteThroughFile(request)) {
+      return NextResponse.json({ success: true, fileSync: 'skipped' });
+    }
+    try {
+      await fs.unlink(resolved);
+      return NextResponse.json({ success: true, fileSync: 'synced' });
+    } catch (error: any) {
+      if (error?.code === 'ENOENT') {
+        return NextResponse.json({ success: true, fileSync: 'missing' });
+      }
+      return NextResponse.json({
+        success: true,
+        fileSync: 'failed',
+        message: `Deleted from DB (JSON delete failed: ${error?.message || 'unknown error'}).`,
+      });
+    }
   }
 
   await fs.unlink(resolved);
-  return NextResponse.json({ success: true });
+  return NextResponse.json({ success: true, fileSync: 'synced' });
 }
