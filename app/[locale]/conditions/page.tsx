@@ -341,12 +341,16 @@ export default async function ConditionsPage({ params }: ConditionsPageProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <Badge variant="primary" className="mb-4">Most Common</Badge>
+              <Badge variant="primary" className="mb-4">
+                {locale === 'en' ? 'Most Common' : '最常见'}
+              </Badge>
               <h2 className="text-heading font-bold text-gray-900 mb-4">
-                Frequently Treated Conditions
+                {locale === 'en' ? 'Frequently Treated Conditions' : '常见治疗病症'}
               </h2>
               <p className="text-gray-600">
-                These are some of the conditions we see most often with excellent results
+                {locale === 'en'
+                  ? 'These are some of the conditions we see most often with excellent results'
+                  : '以下是我们最常见且疗效良好的病症。'}
               </p>
             </div>
 
@@ -407,10 +411,12 @@ export default async function ConditionsPage({ params }: ConditionsPageProps) {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-heading font-bold text-gray-900 mb-4">
-                All Conditions by Category
+                {locale === 'en' ? 'All Conditions by Category' : '按分类查看全部病症'}
               </h2>
               <p className="text-gray-600">
-                Browse conditions organized by health category
+                {locale === 'en'
+                  ? 'Browse conditions organized by health category'
+                  : '按健康分类浏览病症'}
               </p>
             </div>
 

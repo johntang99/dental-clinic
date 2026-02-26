@@ -263,6 +263,8 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
               servicesTitleFallback
             }
             subtitle={content.servicesList.subtitle || ''}
+            locale={locale}
+            legacyLabels={legacyLabels}
             services={services}
           />
         </div>

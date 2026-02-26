@@ -36,6 +36,12 @@ export interface ServicesSectionProps {
   badge?: string;
   title: string;
   subtitle?: string;
+  locale?: 'en' | 'zh';
+  legacyLabels?: {
+    servicePrefix?: string;
+    keyBenefitsTitle?: string;
+    whatToExpectTitle?: string;
+  };
   featured?: Service;
   services: Service[];
   moreLink?: {
@@ -98,6 +104,8 @@ export default function ServicesSection({
   badge,
   title,
   subtitle,
+  locale = 'en',
+  legacyLabels,
   featured: featuredProp,
   services,
   moreLink,
@@ -110,6 +118,12 @@ export default function ServicesSection({
   const isShowcaseGridVariant =
     normalizedVariant === 'grid-cards-2x' || normalizedVariant === 'grid-cards-3x';
   const contentContainerClass = 'container-custom';
+  const servicePrefixLabel =
+    legacyLabels?.servicePrefix || (locale === 'zh' ? '服務項目' : 'Service');
+  const keyBenefitsLabel =
+    legacyLabels?.keyBenefitsTitle || (locale === 'zh' ? '核心亮點' : 'Key Benefits');
+  const whatToExpectLabel =
+    legacyLabels?.whatToExpectTitle || (locale === 'zh' ? '服務說明' : 'What to Expect');
   const featured = featuredProp || services.find((s) => s.featured) || services[0];
   const nonFeaturedServices = featuredProp
     ? services
@@ -155,7 +169,12 @@ export default function ServicesSection({
           )}
         >
           {services.map((service) => (
-            <ServiceDetailCard key={service.id} service={service} />
+            <ServiceDetailCard
+              key={service.id}
+              service={service}
+              keyBenefitsLabel={keyBenefitsLabel}
+              whatToExpectLabel={whatToExpectLabel}
+            />
           ))}
         </div>
       )}
@@ -239,7 +258,7 @@ export default function ServicesSection({
                 <MarkdownText text={service.fullDescription || service.shortDescription || ''} />
                 {getServiceBenefits(service).length > 0 && (
                   <div>
-                    <h4 className="font-semibold mb-2">Benefits:</h4>
+                    <h4 className="font-semibold mb-2">{keyBenefitsLabel}:</h4>
                     <ul className="space-y-1">
                       {getServiceBenefits(service).map((benefit, index) => (
                         <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
@@ -343,7 +362,7 @@ export default function ServicesSection({
                         <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                           <Icon name={service.icon as any} className="text-primary" />
                         </div>
-                        <Badge variant="primary">{`Service ${service.order || index + 1}`}</Badge>
+                        <Badge variant="primary">{`${servicePrefixLabel} ${service.order || index + 1}`}</Badge>
                       </div>
 
                       <h2 className="text-heading font-bold text-gray-900 mb-4">{service.title}</h2>
@@ -355,7 +374,7 @@ export default function ServicesSection({
                       {getServiceBenefits(service).length > 0 && (
                         <div className="mb-6">
                           <h3 className="text-subheading font-semibold text-gray-900 mb-4">
-                            Key Benefits
+                            {keyBenefitsLabel}
                           </h3>
                           <div className="grid sm:grid-cols-2 gap-3">
                             {getServiceBenefits(service).slice(0, 6).map((benefit, idx) => (
@@ -376,7 +395,7 @@ export default function ServicesSection({
                         <div className="bg-white rounded-xl p-6 border border-gray-100">
                           <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                             <Icon name="Info" size="sm" className="text-primary" />
-                            What to Expect
+                            {whatToExpectLabel}
                           </h4>
                           <p className="text-sm text-gray-600 leading-relaxed">
                             {getServiceWhatToExpect(service)}
@@ -419,7 +438,15 @@ interface ServiceCardProps {
   compact?: boolean;
 }
 
-function ServiceDetailCard({ service }: { service: Service }) {
+function ServiceDetailCard({
+  service,
+  keyBenefitsLabel,
+  whatToExpectLabel,
+}: {
+  service: Service;
+  keyBenefitsLabel: string;
+  whatToExpectLabel: string;
+}) {
   const CardWrapper = service.link ? Link : 'div';
 
   return (
@@ -459,7 +486,7 @@ function ServiceDetailCard({ service }: { service: Service }) {
 
           {getServiceBenefits(service).length > 0 && (
             <div className="mb-4">
-              <h4 className="text-xs font-semibold text-gray-900 mb-2">Key Benefits</h4>
+              <h4 className="text-xs font-semibold text-gray-900 mb-2">{keyBenefitsLabel}</h4>
               <ul className="space-y-1.5">
                 {getServiceBenefits(service).map((benefit, index) => (
                   <li key={index} className="flex items-start gap-2 text-xs text-gray-600">
@@ -473,7 +500,7 @@ function ServiceDetailCard({ service }: { service: Service }) {
 
           {getServiceWhatToExpect(service) && (
             <div className="rounded-xl border border-gray-100 bg-white p-3">
-              <h5 className="text-xs font-semibold text-gray-900 mb-1">What to Expect</h5>
+              <h5 className="text-xs font-semibold text-gray-900 mb-1">{whatToExpectLabel}</h5>
               <p className="text-xs text-gray-600 leading-relaxed">{getServiceWhatToExpect(service)}</p>
             </div>
           )}
