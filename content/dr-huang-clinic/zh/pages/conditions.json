@@ -18,55 +18,47 @@
     "subtitle": "传统中医为各种健康问题提供自然、有效的解决方案",
     "backgroundImage": "https://oakahkxpbmmodpcpocio.supabase.co/storage/v1/object/public/chinesemedicine-media/dr-huang-clinic/gallery/needles-sterile.jpg"
   },
-  "layoutVariant": "category-detail-alternating",
   "categories": [
     {
       "id": "all",
       "icon": "Grid",
       "name": "所有病症",
-      "subtitle": "按分类查看完整调理方案",
       "description": "查看所有病症"
     },
     {
       "id": "pain-management",
       "icon": "Activity",
       "name": "疼痛管理",
-      "subtitle": "急慢性疼痛的自然缓解与功能恢复",
       "description": "急性和慢性疼痛的自然缓解"
     },
     {
       "id": "mental-health",
       "icon": "Brain",
       "name": "心理与情绪健康",
-      "subtitle": "调神安神，帮助情绪回归平衡",
       "description": "压力、焦虑、抑郁和情绪健康的支持"
     },
     {
       "id": "digestive",
       "icon": "Apple",
       "name": "消化系统健康",
-      "subtitle": "改善脾胃功能，提升日常舒适度",
       "description": "消化系统疾病和肠道健康的解决方案"
     },
     {
       "id": "womens-health",
       "icon": "Heart",
       "name": "妇女健康",
-      "subtitle": "覆盖周期、备孕与更年期阶段护理",
       "description": "妇女健康问题的综合护理"
     },
     {
       "id": "respiratory",
       "icon": "Wind",
       "name": "呼吸系统问题",
-      "subtitle": "减轻季节性不适，帮助呼吸更顺畅",
       "description": "呼吸和呼吸系统的支持"
     },
     {
       "id": "immune-system",
       "icon": "Shield",
       "name": "免疫系统",
-      "subtitle": "提升体质，减少反复发作",
       "description": "增强身体的自然防御"
     }
   ],

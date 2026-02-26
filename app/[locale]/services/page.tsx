@@ -69,8 +69,8 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
     notFound();
   }
 
-  const { hero, overview, servicesList, services: servicesLegacy, faq, cta } = content;
-  const services = servicesList?.items || servicesLegacy || [];
+  const { hero, overview, servicesList, faq, cta } = content;
+  const services = servicesList?.items || [];
   const blogBySlug = new Map(blogPosts.map((post) => [post.slug, post]));
   const preferredSlugs = content.relatedReading?.preferredSlugs || [];
   const preferredPosts = preferredSlugs
@@ -253,7 +253,7 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
       )}
 
       {/* Services Section - Variant-aware */}
-      {isEnabled('services') && content.servicesList && (
+      {isEnabled('services') && content.servicesList && services.length > 0 && (
         <div style={sectionStyle('services')}>
           <ServicesSection
             variant={content.servicesList.variant || 'detail-alternating'}
@@ -266,101 +266,6 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
             services={services}
           />
         </div>
-      )}
-
-      {/* Fallback: Legacy services array rendering */}
-      {isEnabled('services') && !content.servicesList && services.length > 0 && (
-        <section
-          className="py-16 lg:py-24 bg-gradient-to-br from-backdrop-secondary to-white"
-          style={sectionStyle('services')}
-        >
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid gap-12 lg:gap-16">
-              {services
-                .sort((a, b) => (a.order || 0) - (b.order || 0))
-                .map((service, index) => (
-                  <div
-                    key={service.id}
-                    id={service.id}
-                    className={`grid lg:grid-cols-2 gap-8 items-center ${
-                      index % 2 === 1 ? 'lg:grid-flow-dense' : ''
-                    }`}
-                  >
-                    {/* Image */}
-                    <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                      <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-                        {service.image ? (
-                          <Image
-                            src={service.image}
-                            alt={service.title}
-                            fill
-                            className="object-cover"
-                          />
-                        ) : (
-                          <>
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent" />
-                            <div className="w-full h-full bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-                              <Icon name={service.icon as any} size="xl" className="text-primary/30" />
-                            </div>
-                          </>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                          <Icon name={service.icon as any} className="text-primary" />
-                        </div>
-                        <Badge variant="primary">
-                          {`${legacyLabels.servicePrefix || (locale === 'en' ? 'Service' : '服务')} ${service.order || index + 1}`}
-                        </Badge>
-                      </div>
-
-                      <h2 className="text-heading font-bold text-gray-900 mb-4">
-                        {service.title}
-                      </h2>
-
-                      <p className="text-gray-700 leading-relaxed mb-6">
-                        {service.fullDescription}
-                      </p>
-
-                      {/* Benefits */}
-                      <div className="mb-6">
-                        <h3 className="text-subheading font-semibold text-gray-900 mb-4">
-                          {legacyLabels.keyBenefitsTitle || (locale === 'en' ? 'Key Benefits' : '核心亮点')}
-                        </h3>
-                        <div className="grid sm:grid-cols-2 gap-3">
-                          {service.benefits?.slice(0, 6).map((benefit, idx) => (
-                            <div key={idx} className="flex items-start gap-2">
-                              <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size="sm" />
-                              <span className="text-sm text-gray-600">{benefit}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* What to Expect */}
-                      {service.whatToExpect && (
-                        <div className="bg-white rounded-xl p-6 border border-gray-100">
-                          <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                            <Icon name="Info" size="sm" className="text-primary" />
-                            {legacyLabels.whatToExpectTitle || (locale === 'en' ? 'What to Expect' : '服务说明')}
-                          </h4>
-                          <p className="text-sm text-gray-600 leading-relaxed">
-                            {service.whatToExpect}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-            </div>
-          </div>
-        </div>
-        </section>
       )}
 
       {/* FAQ Section */}

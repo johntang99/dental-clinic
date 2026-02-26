@@ -1,8 +1,35 @@
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
 import { Card, CardHeader, CardTitle, CardContent, Badge, Tabs, Accordion, Icon } from '@/components/ui';
 import { ServicesVariant, getSectionClasses } from '@/lib/section-variants';
 import { Service } from '@/lib/types';
 import { cn } from '@/lib/utils';
+
+function MarkdownText({ text, className }: { text: string; className?: string }) {
+  return (
+    <div className={cn('prose prose-sm max-w-none text-gray-700', className)}>
+      <ReactMarkdown
+        components={{
+          ul: (props) => <ul className="list-disc pl-5" {...props} />,
+          ol: (props) => <ol className="list-decimal pl-5" {...props} />,
+          p: (props) => <p className="mb-2 last:mb-0" {...props} />,
+        }}
+      >
+        {text}
+      </ReactMarkdown>
+    </div>
+  );
+}
+
+function getServiceBenefits(service: Service): string[] {
+  return Array.isArray(service.benefits)
+    ? service.benefits.map((benefit) => String(benefit || '').trim()).filter(Boolean)
+    : [];
+}
+
+function getServiceWhatToExpect(service: Service): string {
+  return typeof service.whatToExpect === 'string' ? service.whatToExpect.trim() : '';
+}
 
 export interface ServicesSectionProps {
   variant?: ServicesVariant;
@@ -165,9 +192,10 @@ export default function ServicesSection({
                     </div>
                   </div>
                   {(featured.fullDescription || featured.shortDescription) && (
-                    <p className="text-gray-700 leading-relaxed mb-6 line-clamp-3">
-                      {featured.fullDescription || featured.shortDescription}
-                    </p>
+                    <MarkdownText
+                      text={featured.fullDescription || featured.shortDescription || ''}
+                      className="mb-6"
+                    />
                   )}
                   {featured.link && (
                     <Link href={featured.link} className="text-primary hover:text-primary-dark font-semibold inline-flex items-center gap-2">
@@ -208,12 +236,12 @@ export default function ServicesSection({
             title: service.title,
             content: (
               <div className="space-y-4">
-                <p className="text-gray-700">{service.fullDescription || service.shortDescription}</p>
-                {service.benefits && (
+                <MarkdownText text={service.fullDescription || service.shortDescription || ''} />
+                {getServiceBenefits(service).length > 0 && (
                   <div>
                     <h4 className="font-semibold mb-2">Benefits:</h4>
                     <ul className="space-y-1">
-                      {service.benefits.map((benefit, index) => (
+                      {getServiceBenefits(service).map((benefit, index) => (
                         <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
                           <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -237,10 +265,13 @@ export default function ServicesSection({
             label: service.title,
             content: (
               <div className="p-6 bg-gray-50 rounded-lg">
-                <p className="text-gray-700 mb-6">{service.fullDescription || service.shortDescription}</p>
-                {service.benefits && (
+                <MarkdownText
+                  text={service.fullDescription || service.shortDescription || ''}
+                  className="mb-6"
+                />
+                {getServiceBenefits(service).length > 0 && (
                   <div className="grid md:grid-cols-2 gap-4">
-                    {service.benefits.map((benefit, index) => (
+                    {getServiceBenefits(service).map((benefit, index) => (
                       <div key={index} className="flex items-start gap-2">
                         <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -316,17 +347,18 @@ export default function ServicesSection({
                       </div>
 
                       <h2 className="text-heading font-bold text-gray-900 mb-4">{service.title}</h2>
-                      <p className="text-gray-700 leading-relaxed mb-6">
-                        {service.fullDescription || service.shortDescription}
-                      </p>
+                      <MarkdownText
+                        text={service.fullDescription || service.shortDescription || ''}
+                        className="mb-6"
+                      />
 
-                      {service.benefits && service.benefits.length > 0 && (
+                      {getServiceBenefits(service).length > 0 && (
                         <div className="mb-6">
                           <h3 className="text-subheading font-semibold text-gray-900 mb-4">
                             Key Benefits
                           </h3>
                           <div className="grid sm:grid-cols-2 gap-3">
-                            {service.benefits.slice(0, 6).map((benefit, idx) => (
+                            {getServiceBenefits(service).slice(0, 6).map((benefit, idx) => (
                               <div key={idx} className="flex items-start gap-2">
                                 <Icon
                                   name="Check"
@@ -340,14 +372,14 @@ export default function ServicesSection({
                         </div>
                       )}
 
-                      {service.whatToExpect && (
+                      {getServiceWhatToExpect(service) && (
                         <div className="bg-white rounded-xl p-6 border border-gray-100">
                           <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                             <Icon name="Info" size="sm" className="text-primary" />
                             What to Expect
                           </h4>
                           <p className="text-sm text-gray-600 leading-relaxed">
-                            {service.whatToExpect}
+                            {getServiceWhatToExpect(service)}
                           </p>
                         </div>
                       )}
@@ -402,9 +434,10 @@ function ServiceDetailCard({ service }: { service: Service }) {
           <h3 className="text-subheading font-bold text-gray-900 mb-3">{service.title}</h3>
 
           {(service.fullDescription || service.shortDescription) && (
-            <p className="text-sm text-gray-700 leading-relaxed mb-4">
-              {service.fullDescription || service.shortDescription}
-            </p>
+            <MarkdownText
+              text={service.fullDescription || service.shortDescription || ''}
+              className="text-sm mb-4"
+            />
           )}
 
           {(service.price || service.durationMinutes) && (
@@ -424,11 +457,11 @@ function ServiceDetailCard({ service }: { service: Service }) {
             </div>
           )}
 
-          {service.benefits && service.benefits.length > 0 && (
+          {getServiceBenefits(service).length > 0 && (
             <div className="mb-4">
               <h4 className="text-xs font-semibold text-gray-900 mb-2">Key Benefits</h4>
               <ul className="space-y-1.5">
-                {service.benefits.map((benefit, index) => (
+                {getServiceBenefits(service).map((benefit, index) => (
                   <li key={index} className="flex items-start gap-2 text-xs text-gray-600">
                     <Icon name="Check" size="sm" className="text-primary mt-0.5 flex-shrink-0" />
                     <span>{benefit}</span>
@@ -438,10 +471,10 @@ function ServiceDetailCard({ service }: { service: Service }) {
             </div>
           )}
 
-          {service.whatToExpect && (
+          {getServiceWhatToExpect(service) && (
             <div className="rounded-xl border border-gray-100 bg-white p-3">
               <h5 className="text-xs font-semibold text-gray-900 mb-1">What to Expect</h5>
-              <p className="text-xs text-gray-600 leading-relaxed">{service.whatToExpect}</p>
+              <p className="text-xs text-gray-600 leading-relaxed">{getServiceWhatToExpect(service)}</p>
             </div>
           )}
         </div>
@@ -480,9 +513,10 @@ function ServiceCard({ service, compact }: ServiceCardProps) {
           )}
         </CardHeader>
         <CardContent>
-          <p className="text-gray-600 text-sm line-clamp-3">
-            {service.fullDescription || service.shortDescription}
-          </p>
+          <MarkdownText
+            text={service.fullDescription || service.shortDescription || ''}
+            className="text-sm line-clamp-3"
+          />
           {service.link && (
             <div className="mt-4 text-primary hover:text-primary-dark font-semibold inline-flex items-center gap-1 text-sm">
               Learn More
