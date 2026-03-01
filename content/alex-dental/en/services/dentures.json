@@ -1,0 +1,37 @@
+{
+  "slug": "dentures",
+  "title": "Dentures",
+  "subtitle": "Restore Your Complete Smile with Custom-Crafted Dentures",
+  "icon": "SmilePlus",
+  "image": "/images/services/dentures.jpg",
+  "shortDescription": "Custom full and partial dentures designed for a natural look and comfortable, secure fit.",
+  "fullDescription": "Missing teeth can affect more than just your appearance — they impact your ability to eat, speak, and feel confident in everyday life. At our Middletown, NY dental practice, we offer expertly crafted full and partial dentures that restore both function and aesthetics, giving you a smile you can feel proud of.\n\nWhether you are missing a few teeth or need a complete set, our team works closely with you to design dentures that fit comfortably and look completely natural. We use high-quality materials and advanced impression techniques to ensure a precise, secure fit that minimizes slipping and irritation. For patients seeking the ultimate in stability, we also offer implant-supported dentures that anchor directly to dental implants, eliminating the need for adhesives and providing a feel much closer to natural teeth.\n\nFrom your initial consultation through final fitting and follow-up adjustments, we guide you through every step of the process. Our goal is to help you regain full chewing function, clear speech, and the confidence that comes with a beautiful, complete smile.",
+  "benefits": [
+    "Custom-fitted for maximum comfort and a natural appearance",
+    "Full, partial, and implant-supported options available",
+    "Restores chewing ability and clear speech",
+    "Durable, high-quality materials built to last"
+  ],
+  "whatToExpect": "Your denture journey begins with a thorough oral examination and a discussion of your goals and lifestyle needs. We take precise impressions and measurements of your mouth, which are sent to our trusted dental laboratory. Over the course of several visits, you will try interim models so we can fine-tune the fit, bite alignment, and appearance before the final dentures are fabricated. Once your dentures are ready, we perform a detailed fitting and make any necessary adjustments. We also schedule follow-up appointments to ensure long-term comfort and provide guidance on proper care and maintenance. If you have questions at any point, our team is just a phone call away at (845) 555-0180.",
+  "price": "Starting from $1,200 per arch",
+  "durationMinutes": null,
+  "featured": false,
+  "faq": [
+    {
+      "question": "How long does it take to get dentures?",
+      "answer": "The complete denture process typically requires multiple visits over the course of four to six weeks. This includes initial impressions, try-in appointments to verify fit and appearance, and the final delivery. Immediate dentures can be placed the same day teeth are extracted, though they may require more adjustments as your gums heal."
+    },
+    {
+      "question": "What is the difference between full and partial dentures?",
+      "answer": "Full dentures replace an entire arch of missing teeth and rest on your gums, while partial dentures fill in gaps where only some teeth are missing and clasp onto your remaining natural teeth for support. During your consultation, we will recommend the option that best suits your situation."
+    },
+    {
+      "question": "What are implant-supported dentures?",
+      "answer": "Implant-supported dentures snap onto dental implants that are surgically placed in your jawbone. This provides significantly greater stability than traditional dentures, prevents bone loss, and eliminates the need for denture adhesives. They are an excellent option for patients who want a more permanent, natural-feeling solution."
+    },
+    {
+      "question": "How do I care for my dentures?",
+      "answer": "Remove your dentures nightly and brush them with a soft denture brush and non-abrasive cleanser. Soak them overnight in a denture cleaning solution or plain water to keep them moist and maintain their shape. Also brush your gums, tongue, and any remaining teeth before reinserting them each morning. Regular dental checkups are important to monitor fit and oral health."
+    }
+  ]
+}

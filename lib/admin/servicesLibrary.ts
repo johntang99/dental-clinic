@@ -33,6 +33,13 @@ export interface SiteVoiceProfilesData {
   >;
 }
 
+export class SharedLibraryForbiddenOverrideError extends Error {
+  constructor(message = 'Only super_admin can override master/profiles content') {
+    super(message);
+    this.name = 'SharedLibraryForbiddenOverrideError';
+  }
+}
+
 const masterPath = path.join(
   process.cwd(),
   'content',
@@ -64,6 +71,37 @@ export async function readSiteVoiceProfiles(): Promise<SiteVoiceProfilesData> {
 
 export async function writeSiteVoiceProfiles(data: SiteVoiceProfilesData) {
   await fs.writeFile(profilesPath, JSON.stringify(data, null, 2));
+}
+
+interface SharedLibraryGenerationInputOptions {
+  isSuperAdmin: boolean;
+  siteId: string;
+}
+
+export async function resolveSharedLibraryGenerationInput(
+  payload: Record<string, unknown>,
+  options: SharedLibraryGenerationInputOptions
+) {
+  const hasMasterOverride = typeof payload.masterContent === 'string';
+  const hasProfilesOverride = typeof payload.profilesContent === 'string';
+
+  if (!options.isSuperAdmin && (hasMasterOverride || hasProfilesOverride)) {
+    throw new SharedLibraryForbiddenOverrideError();
+  }
+
+  const master = hasMasterOverride
+    ? (JSON.parse(payload.masterContent as string) as ServicesMasterData)
+    : await readServicesMaster();
+  const profiles = hasProfilesOverride
+    ? (JSON.parse(payload.profilesContent as string) as SiteVoiceProfilesData)
+    : await readSiteVoiceProfiles();
+
+  if (!options.isSuperAdmin && typeof payload.profileContent === 'string') {
+    profiles.sites = profiles.sites || {};
+    profiles.sites[options.siteId] = JSON.parse(payload.profileContent);
+  }
+
+  return { master, profiles };
 }
 
 function applyTemplate(template: string, values: Record<string, string>) {

@@ -1,0 +1,32 @@
+{
+  "slug": "invisalign-journey-maria",
+  "id": "invisalign-journey-maria",
+  "category": "Orthodontic",
+  "condition": "Moderate Crowding and Posterior Crossbite",
+  "title": "Straighter Teeth Without Anyone Noticing",
+  "summary": "Maria wanted to straighten her crowded teeth and correct a crossbite, but as a client-facing professional she didn't want visible braces. A 14-month Invisalign treatment gave her beautifully aligned teeth — and not a single coworker noticed she was wearing aligners.",
+  "image": "/images/cases/invisalign-journey-maria.jpg",
+  "beforeImage": "/images/cases/invisalign-journey-maria-before.jpg",
+  "afterImage": "/images/cases/invisalign-journey-maria-after.jpg",
+  "patientProfile": {
+    "name": "Maria",
+    "age": "25-30",
+    "concern": "Crowded lower teeth and a crossbite on one side, with a strong preference for a discreet treatment option"
+  },
+  "challenge": "Maria's lower front teeth had become increasingly crowded over the years, and she had a crossbite on her left side where an upper tooth sat behind the lower tooth instead of in front of it. The crossbite was causing uneven wear and occasional jaw clicking. She had considered braces as a teenager but her family couldn't afford them at the time. Now working as an account manager at a consulting firm, she frequently presented to clients and felt strongly that traditional metal braces weren't an option for her professionally. She was also concerned about whether clear aligners could actually fix a crossbite, not just straighten teeth.",
+  "solution": "After taking digital scans and mapping out a treatment plan using Invisalign's ClinCheck software, we showed Maria a 3D simulation of how her teeth would move over the course of treatment. The plan involved 28 sets of custom aligners, changed every two weeks, along with a few small tooth-colored attachments to help guide the more complex tooth movements needed to correct the crossbite. Maria wore her aligners 22 hours a day, removing them only for meals and brushing. We scheduled check-in appointments every eight weeks to monitor progress and make any necessary adjustments.",
+  "results": "After 14 months, Maria's crowding was fully resolved and her crossbite was corrected. Her bite now fits together evenly, eliminating the jaw clicking she had experienced. The best part for Maria was that the treatment was truly invisible in her daily life. She told us that she went through the entire treatment without a single colleague or client ever asking about braces or aligners. She now wears a thin retainer at night to maintain her results.",
+  "treatmentDetails": {
+    "procedures": [
+      "Digital iTero 3D Scan",
+      "ClinCheck Treatment Simulation",
+      "28 Sets of Custom Invisalign Aligners",
+      "Tooth-Colored Attachments for Crossbite Correction",
+      "Bonded Retainer and Night Retainer"
+    ],
+    "duration": "14 months of active treatment",
+    "visits": "9 visits including initial consultation and final retainer fitting"
+  },
+  "testimonialQuote": "I was halfway through treatment when my best friend noticed I was wearing something on my teeth — and she only saw it because I pointed it out. Nobody at work had any idea. I finally have the straight teeth I always wanted, and I got them completely on my own terms.",
+  "featured": true
+}

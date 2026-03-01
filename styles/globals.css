@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 /* ============================================
-   TCM THEME VARIABLES
-   These can be customized per clinic
+   DENTAL THEME VARIABLES
+   Customizable per clinic via theme.json
    ============================================ */
 
 :root {
@@ -14,31 +14,48 @@
   --text-subheading: 1.25rem;  /* 20px - Card titles */
   --text-body: 1rem;           /* 16px - Body text */
   --text-small: 0.875rem;      /* 14px - Meta/tags */
-  --font-body-default: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  --font-display: var(--font-body-default);
-  --font-heading: var(--font-body-default);
+  --font-body-default: var(--font-inter, 'Inter'), -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Helvetica Neue', sans-serif;
+  --font-display: var(--font-playfair, 'Playfair Display'), Georgia, serif;
+  --font-heading: var(--font-playfair, 'Playfair Display'), Georgia, serif;
   --font-subheading: var(--font-body-default);
   --font-body: var(--font-body-default);
   --font-small: var(--font-body-default);
 
-  /* PRIMARY COLORS - Green Theme (Default) */
-  --primary: #166534;          /* Green-700 - Main brand */
-  --primary-dark: #14532d;     /* Green-800 - Hover states */
-  --primary-light: #22c55e;    /* Green-500 - Light accents */
-  --primary-50: #f0fdf4;       /* Green-50 - Very light tint */
-  --primary-100: #dcfce7;      /* Green-100 - Light tint */
+  /* PRIMARY COLORS - Deep Teal */
+  --primary: #0D6E6E;          /* Deep Teal - Main brand */
+  --primary-dark: #095555;     /* Darker Teal - Hover states */
+  --primary-light: #14A3A3;    /* Light Teal - Accents */
+  --primary-50: #E0F5F5;       /* Soft Teal - Very light tint */
+  --primary-100: #B3E8E8;      /* Light Teal tint */
 
-  /* SECONDARY COLORS - Amber Theme */
-  --secondary: #78350f;        /* Amber-900 - Accent color */
-  --secondary-dark: #451a03;   /* Amber-950 - Darker accent */
-  --secondary-light: #f59e0b;  /* Amber-500 - Light accent */
-  --secondary-50: #fffbeb;     /* Amber-50 - Light tint */
+  /* SECONDARY COLORS - Warm Gold */
+  --secondary: #C9A84C;        /* Warm Gold - Premium accents */
+  --secondary-dark: #9E8338;   /* Darker Gold */
+  --secondary-light: #E0C56A;  /* Light Gold */
+  --secondary-50: #FFF8E7;     /* Light Gold tint */
+
+  /* EMERGENCY COLOR */
+  --emergency: #D94F3D;        /* Coral Red - Emergency only */
 
   /* BACKDROP COLORS */
-  --backdrop-primary: #f0fdf4;    /* Light green background */
-  --backdrop-secondary: #fffbeb;  /* Light amber background */
+  --backdrop-primary: #F8FAFA;    /* Near white */
+  --backdrop-secondary: #FFF8E7;  /* Light gold */
+
+  /* SURFACE & TEXT */
+  --color-surface: #F8FAFA;
+  --color-surface-dark: #111827;
+  --color-text: #1A1A2E;
+  --color-text-light: #6B7280;
+  --color-border: #E5E7EB;
+
+  /* LAYOUT */
+  --section-padding-y: 80px;
+  --card-radius: 12px;
+  --card-radius-lg: 16px;
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.08);
+  --shadow-feature: 0 8px 40px rgba(0,0,0,0.12);
+  --max-width: 1280px;
 }
 
 /* Responsive Typography */

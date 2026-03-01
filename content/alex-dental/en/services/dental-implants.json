@@ -1,0 +1,33 @@
+{
+  "slug": "dental-implants",
+  "title": "Dental Implants",
+  "subtitle": "The gold standard for permanent tooth replacement",
+  "icon": "Anchor",
+  "image": "/images/services/dental-implants.jpg",
+  "shortDescription": "Restore missing teeth with titanium implants and custom porcelain crowns that look, feel, and function like natural teeth.",
+  "fullDescription": "Dental implants are widely regarded as the most effective and long-lasting solution for replacing missing teeth. Unlike dentures or bridges, an implant replaces the entire tooth from root to crown, providing a stable foundation that preserves jawbone health and prevents the bone loss that typically follows tooth extraction.\n\nAt our Middletown, NY practice, we use biocompatible titanium implant posts that are surgically placed into the jawbone, where they fuse with the surrounding bone through a natural process called osseointegration. Once fully integrated, a custom-designed porcelain crown is attached to the implant via a small connector called an abutment. The final result is a restoration that is virtually indistinguishable from a natural tooth in both appearance and function.\n\nWhether you are missing a single tooth due to injury, decay, or extraction, dental implants offer a permanent solution that can last a lifetime with proper care. Implants also help maintain your facial structure by preventing the bone deterioration that can cause a sunken or aged appearance over time. Our team uses advanced 3D imaging and surgical planning technology to ensure precise placement and optimal outcomes for every patient.",
+  "benefits": [
+    "Permanent solution that can last a lifetime with proper care",
+    "Preserves jawbone density and prevents bone loss after tooth extraction",
+    "Looks, feels, and functions exactly like a natural tooth",
+    "Does not require altering or relying on adjacent healthy teeth"
+  ],
+  "whatToExpect": "The dental implant process is completed in stages over several months to allow for proper healing. During your initial consultation, we perform a comprehensive examination including 3D cone beam imaging to assess your bone density and determine the ideal implant placement. At the surgical appointment, the titanium implant post is placed into the jawbone under local anesthesia. Most patients report less discomfort than they expected, often comparing it to a simple extraction. Over the next three to six months, the implant integrates with your bone. During this healing period, a temporary restoration keeps your smile intact. Once integration is confirmed, we attach the custom porcelain crown, and you leave with a fully restored tooth. Call us at (845) 555-0180 to schedule your implant consultation.",
+  "price": "Starting from $3,500",
+  "durationMinutes": 75,
+  "featured": true,
+  "faq": [
+    {
+      "question": "How long do dental implants last?",
+      "answer": "With proper oral hygiene and regular dental visits, dental implants can last a lifetime. The titanium post is designed to be a permanent fixture in your jaw. The porcelain crown on top may need to be replaced after 15 to 20 years due to normal wear, but the implant itself typically remains intact indefinitely."
+    },
+    {
+      "question": "Is dental implant surgery painful?",
+      "answer": "Most patients are pleasantly surprised by how comfortable the procedure is. The surgery is performed under local anesthesia, and many patients report that the discomfort afterward is less than that of a tooth extraction. We provide detailed aftercare instructions and pain management options to keep you comfortable during recovery."
+    },
+    {
+      "question": "Am I a candidate for dental implants?",
+      "answer": "Most adults with good general health are candidates for dental implants. Adequate jawbone density is needed to support the implant, but even patients with some bone loss may be eligible with the help of a bone grafting procedure. The best way to find out is to schedule a consultation so we can evaluate your individual situation."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "hero": {
+    "title": "Welcome — We're Glad You Found Us",
+    "subtitle": "Everything you need to know before your first visit"
+  },
+  "firstVisitSteps": [
+    { "number": 1, "title": "Arrive 15 Minutes Early", "description": "This gives us time to review your paperwork and make you comfortable." },
+    { "number": 2, "title": "Comprehensive Exam", "description": "Digital X-rays, oral health assessment, and a conversation about your goals." },
+    { "number": 3, "title": "Personalized Treatment Plan", "description": "We'll explain our findings, discuss options, and create a plan that fits your needs and budget." },
+    { "number": 4, "title": "Start Treatment or Schedule Next Steps", "description": "For simple treatments, we can often start the same day." }
+  ],
+  "whatToBring": [
+    "Valid photo ID",
+    "Dental insurance card (if applicable)",
+    "List of current medications",
+    "Medical history or relevant health records",
+    "Referral letter from previous dentist (if applicable)"
+  ],
+  "patientForms": {
+    "title": "New Patient Forms",
+    "description": "Save time by filling out your forms before your visit.",
+    "downloads": [
+      { "name": "New Patient Registration Form", "url": "/downloads/new-patient-form.pdf" },
+      { "name": "Medical History Form", "url": "/downloads/medical-history-form.pdf" },
+      { "name": "HIPAA Privacy Notice", "url": "/downloads/hipaa-notice.pdf" }
+    ]
+  },
+  "preparingChild": {
+    "title": "Bringing Your Child?",
+    "tips": [
+      "Use positive language about the dentist — avoid words like 'hurt' or 'shot'",
+      "Read children's books about dental visits beforehand",
+      "Let them bring a favorite toy or stuffed animal for comfort",
+      "Schedule morning appointments when kids are usually at their best"
+    ]
+  },
+  "faqs": [
+    { "question": "How long will my first appointment take?", "answer": "Plan for about 60-90 minutes. This allows time for paperwork, a comprehensive exam, X-rays, and a discussion of your treatment plan." },
+    { "question": "Will I need to have any work done at the first visit?", "answer": "Usually the first visit is diagnostic only. If you have an urgent issue, we may be able to address it the same day." },
+    { "question": "Can I bring my family?", "answer": "Absolutely! We see patients of all ages and can often schedule family members back-to-back for convenience." }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "hero": {
+    "variant": "centered",
+    "title": "Welcome — We're Glad You Found Us",
+    "subtitle": "Everything you need to know before your first visit to Alex Dental Clinic"
+  },
+  "introduction": {
+    "text": "We know visiting a new dentist can feel uncertain, so we've made the process as simple and comfortable as possible. From the moment you walk in, our multilingual team will make you feel right at home.",
+    "highlight": "New patients typically spend about 60-90 minutes at their first visit. We'll never rush you or start treatment without your full understanding and consent."
+  },
+  "whatToExpect": {
+    "title": "What to Expect at Your First Visit",
+    "subtitle": "A step-by-step look at your first appointment",
+    "steps": [
+      {
+        "number": 1,
+        "icon": "clipboard",
+        "title": "Check-In & Paperwork",
+        "duration": "10-15 min",
+        "description": "Arrive 15 minutes early to complete your new patient forms. You can also download and fill them out ahead of time.",
+        "details": [
+          "Photo ID and insurance card",
+          "Medical history and current medications",
+          "Any referral records from your previous dentist"
+        ]
+      },
+      {
+        "number": 2,
+        "icon": "scan",
+        "title": "Digital Imaging",
+        "duration": "10 min",
+        "description": "We'll take a full set of digital X-rays using low-radiation technology. These give us a complete picture of your oral health.",
+        "details": [
+          "90% less radiation than traditional X-rays",
+          "Instant, high-resolution images",
+          "Panoramic and intraoral views as needed"
+        ]
+      },
+      {
+        "number": 3,
+        "icon": "stethoscope",
+        "title": "Comprehensive Exam",
+        "duration": "20-30 min",
+        "description": "Your dentist will perform a thorough examination of your teeth, gums, bite, and jaw. This includes an oral cancer screening.",
+        "details": [
+          "Tooth-by-tooth assessment",
+          "Gum health evaluation",
+          "TMJ and bite analysis",
+          "Oral cancer screening included"
+        ]
+      },
+      {
+        "number": 4,
+        "icon": "message-circle",
+        "title": "Discussion & Treatment Plan",
+        "duration": "15-20 min",
+        "description": "We'll sit with you, review our findings on screen, and create a personalized treatment plan that fits your goals and budget.",
+        "details": [
+          "Plain-language explanation of findings",
+          "Priority-based treatment recommendations",
+          "Insurance coverage review",
+          "Flexible payment options discussed"
+        ]
+      }
+    ],
+    "totalDuration": "Total: approximately 60-90 minutes",
+    "note": "For simple treatments like cleanings, we can often begin the same day if you're comfortable."
+  },
+  "preparation": {
+    "title": "How to Prepare",
+    "subtitle": "A few simple steps to make your visit smooth",
+    "tips": [
+      {
+        "icon": "file-text",
+        "title": "Fill Out Forms Early",
+        "description": "Download our new patient forms and complete them at home to save time at check-in.",
+        "importance": "important"
+      },
+      {
+        "icon": "credit-card",
+        "title": "Bring Insurance Info",
+        "description": "Bring your insurance card so we can verify benefits and minimize your out-of-pocket cost.",
+        "importance": "important"
+      },
+      {
+        "icon": "pill",
+        "title": "List Your Medications",
+        "description": "Write down all current medications, supplements, and any drug allergies.",
+        "importance": "normal"
+      },
+      {
+        "icon": "clock",
+        "title": "Arrive 15 Minutes Early",
+        "description": "This gives us time to get you settled and review your paperwork before your appointment.",
+        "importance": "normal"
+      },
+      {
+        "icon": "heart",
+        "title": "Tell Us Your Concerns",
+        "description": "Whether it's dental anxiety, a specific problem, or cosmetic goals — we want to hear it.",
+        "importance": "normal"
+      },
+      {
+        "icon": "phone",
+        "title": "Call with Questions",
+        "description": "Not sure about something? Call (845) 555-0180 and our team will be happy to help.",
+        "importance": "normal"
+      }
+    ]
+  },
+  "whatToBring": {
+    "title": "What to Bring",
+    "items": [
+      { "icon": "badge-check", "item": "Valid Photo ID", "description": "Driver's license, passport, or state-issued ID" },
+      { "icon": "shield-check", "item": "Dental Insurance Card", "description": "If you have dental coverage, bring your card so we can verify benefits" },
+      { "icon": "pill", "item": "Medication List", "description": "Include prescription drugs, over-the-counter medications, and supplements" },
+      { "icon": "file-text", "item": "Medical Records", "description": "Any relevant health history or referral records from a previous dentist" },
+      { "icon": "credit-card", "item": "Payment Method", "description": "We accept all major credit cards, HSA/FSA, and offer financing options" }
+    ]
+  },
+  "downloadForms": {
+    "title": "New Patient Forms",
+    "subtitle": "Save time by completing these forms before your visit",
+    "forms": [
+      {
+        "name": "New Patient Registration Form",
+        "description": "Contact information, emergency contacts, and dental history",
+        "pages": "3 pages",
+        "fileUrl": "/downloads/new-patient-registration.pdf",
+        "required": true
+      },
+      {
+        "name": "Medical History Form",
+        "description": "Health conditions, medications, and allergies",
+        "pages": "2 pages",
+        "fileUrl": "/downloads/medical-history.pdf",
+        "required": true
+      },
+      {
+        "name": "HIPAA Privacy Notice",
+        "description": "Our privacy practices and your rights",
+        "pages": "2 pages",
+        "fileUrl": "/downloads/hipaa-notice.pdf",
+        "required": true
+      },
+      {
+        "name": "Financial Policy Agreement",
+        "description": "Payment terms, insurance billing, and cancellation policy",
+        "pages": "1 page",
+        "fileUrl": "/downloads/financial-policy.pdf",
+        "required": false
+      }
+    ],
+    "note": "Forms are also available at our office. If you can't print them, just arrive 15 minutes early."
+  },
+  "insurance": {
+    "title": "Insurance & Payment",
+    "text": "We're in-network with most major PPO dental plans. If you don't have insurance, we offer our Alex Wellness Plan and flexible financing through CareCredit, LendingClub, and Sunbit.",
+    "pricing": {
+      "initial": "$0–$75",
+      "followUp": "$0–$50",
+      "description": "Most preventive visits are fully covered by insurance. Out-of-pocket costs shown are typical copays for in-network PPO patients."
+    },
+    "link": {
+      "text": "View All Accepted Insurance Plans →",
+      "url": "/insurance"
+    }
+  },
+  "faq": {
+    "title": "New Patient FAQs",
+    "items": [
+      { "question": "How long will my first appointment take?", "answer": "Plan for about 60-90 minutes. This allows time for paperwork, a comprehensive exam, X-rays, and a discussion of your treatment plan." },
+      { "question": "Will I need to have any work done at the first visit?", "answer": "Usually the first visit is diagnostic only. If you have an urgent issue or need a simple cleaning, we may be able to address it the same day." },
+      { "question": "Can I bring my family?", "answer": "Absolutely! We see patients of all ages and can often schedule family members back-to-back for convenience." },
+      { "question": "What if I'm nervous about dental visits?", "answer": "You're not alone — many of our patients feel the same way. We offer sedation options and our team is trained in gentle, anxiety-free care. Just let us know." },
+      { "question": "Do I need a referral?", "answer": "No referral is needed. You can schedule your first visit directly by calling (845) 555-0180 or using our online contact form." },
+      { "question": "What languages does your staff speak?", "answer": "Our team speaks English, Mandarin Chinese, Korean, and Spanish. We want every patient to feel comfortable communicating in their preferred language." }
+    ]
+  },
+  "cta": {
+    "variant": "centered",
+    "title": "Ready to Schedule Your First Visit?",
+    "description": "We're accepting new patients and would love to meet you. Call us or use the form below.",
+    "primaryCta": { "text": "Book Appointment", "link": "/contact" },
+    "secondaryCta": { "text": "Call (845) 555-0180", "link": "tel:+18455550180" },
+    "note": "Same-day appointments available for emergencies"
+  }
+}

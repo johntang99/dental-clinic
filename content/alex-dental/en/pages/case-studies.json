@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "variant": "centered",
+    "title": "Patient Success Stories",
+    "subtitle": "Real results from real patients — see what's possible with modern dental care"
+  },
+  "introduction": {
+    "text": "Every smile tells a story. Browse our case studies to see how we've helped patients overcome dental challenges — from missing teeth and cosmetic concerns to emergency repairs. Each case reflects our commitment to personalized, high-quality care.",
+    "note": "All patient names are changed for privacy. Photos shared with patient consent."
+  },
+  "categories": [
+    { "id": "all", "name": "All Cases", "icon": "grid" },
+    { "id": "Restorative", "name": "Restorative", "icon": "wrench" },
+    { "id": "Cosmetic", "name": "Cosmetic", "icon": "sparkles" },
+    { "id": "Orthodontic", "name": "Orthodontic", "icon": "align-center" },
+    { "id": "Emergency", "name": "Emergency", "icon": "alert-triangle" }
+  ],
+  "caseStudies": [
+    {
+      "id": "implant-transformation-john",
+      "category": "Restorative",
+      "condition": "3 Missing Back Teeth",
+      "image": "/images/cases/implant-transformation-john.jpg",
+      "beforeImage": "/images/cases/implant-transformation-john-before.jpg",
+      "afterImage": "/images/cases/implant-transformation-john-after.jpg",
+      "summary": "John, 58, had been missing 3 back teeth for over 5 years, making it difficult to chew comfortably. With 3 individual dental implants placed over 6 months, he now eats everything he loves without hesitation."
+    },
+    {
+      "id": "smile-makeover-lisa",
+      "category": "Cosmetic",
+      "condition": "Stained & Slightly Crooked Front Teeth",
+      "image": "/images/cases/smile-makeover-lisa.jpg",
+      "beforeImage": "/images/cases/smile-makeover-lisa-before.jpg",
+      "afterImage": "/images/cases/smile-makeover-lisa-after.jpg",
+      "summary": "Lisa, 34, had been self-conscious about her stained and slightly uneven front teeth since college. 6 porcelain veneers gave her the bright, even smile she'd always wanted — and a major confidence boost."
+    },
+    {
+      "id": "invisalign-journey-maria",
+      "category": "Orthodontic",
+      "condition": "Moderate Crowding & Crossbite",
+      "image": "/images/cases/invisalign-journey-maria.jpg",
+      "beforeImage": "/images/cases/invisalign-journey-maria-before.jpg",
+      "afterImage": "/images/cases/invisalign-journey-maria-after.jpg",
+      "summary": "Maria, 28, had moderate crowding and a crossbite but didn't want metal braces. After 14 months of Invisalign treatment, her teeth are perfectly aligned — and nobody at work even noticed she was wearing aligners."
+    },
+    {
+      "id": "emergency-cracked-tooth-david",
+      "category": "Emergency",
+      "condition": "Cracked Molar",
+      "image": "/images/cases/emergency-cracked-tooth-david.jpg",
+      "beforeImage": "/images/cases/emergency-cracked-tooth-david-before.jpg",
+      "afterImage": "/images/cases/emergency-cracked-tooth-david-after.jpg",
+      "summary": "David, 42, cracked a molar on a Saturday eating hard candy. We saw him the same day for emergency stabilization, then restored his tooth with a CEREC same-day crown the following week — back to normal in just 7 days."
+    }
+  ],
+  "statistics": {
+    "variant": "horizontal-row",
+    "title": "Our Track Record",
+    "stats": [
+      { "number": "5,000+", "label": "Patients Treated", "icon": "users" },
+      { "number": "98%", "label": "Patient Satisfaction", "icon": "heart" },
+      { "number": "1,200+", "label": "Implants Placed", "icon": "anchor" },
+      { "number": "15+", "label": "Years of Experience", "icon": "award" }
+    ]
+  },
+  "cta": {
+    "variant": "centered",
+    "title": "Ready to Start Your Smile Story?",
+    "description": "Schedule a consultation to discuss your goals. We'll create a personalized treatment plan just for you.",
+    "primaryCta": { "text": "Book a Consultation", "link": "/contact" },
+    "secondaryCta": { "text": "Call (845) 555-0180", "link": "tel:+18455550180" }
+  }
+}

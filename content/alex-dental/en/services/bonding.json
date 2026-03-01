@@ -1,0 +1,33 @@
+{
+  "slug": "bonding",
+  "title": "Cosmetic Dental Bonding",
+  "subtitle": "Quick, affordable fixes for a flawless smile",
+  "icon": "Brush",
+  "image": "/images/services/bonding.jpg",
+  "shortDescription": "Repair chips, close gaps, and correct discoloration with natural-looking composite bonding in a single visit.",
+  "fullDescription": "Cosmetic dental bonding is one of the simplest and most cost-effective ways to improve the appearance of your smile. Using a tooth-colored composite resin, your dentist can repair chipped or cracked teeth, close small gaps, reshape uneven teeth, and cover stubborn stains or discoloration, often in a single appointment with no anesthesia required.\n\nAt our Middletown, NY practice, we use advanced composite materials that are carefully shade-matched to blend seamlessly with your natural teeth. The resin is applied in layers, sculpted by hand to achieve the desired shape, and hardened with a curing light. The result is a smooth, polished surface that looks and feels like your natural tooth.\n\nBonding is an excellent option for patients who want to make noticeable cosmetic improvements without the higher cost or longer timeline of veneers or crowns. It is also a popular choice for teenagers and young adults whose teeth are still developing, as the procedure is fully reversible and does not require any removal of enamel.",
+  "benefits": [
+    "Completed in a single visit with immediate results",
+    "No removal of natural tooth enamel required in most cases",
+    "Affordable cosmetic solution compared to veneers or crowns",
+    "Natural-looking composite resin matched to your exact tooth shade"
+  ],
+  "whatToExpect": "Dental bonding is one of our quickest cosmetic procedures. After selecting a composite resin shade that matches your natural teeth, we lightly roughen the surface of the tooth and apply a conditioning liquid to help the bonding material adhere. The resin is then applied in layers, carefully shaped and sculpted to achieve the ideal contour. Once we are satisfied with the shape, we harden the material with a special curing light and polish it to a natural-looking sheen. The entire process takes 30 to 60 minutes per tooth, and most patients require no anesthesia. You can eat and drink normally right after your appointment.",
+  "price": "Starting from $250 per tooth",
+  "durationMinutes": 45,
+  "featured": false,
+  "faq": [
+    {
+      "question": "How long does dental bonding last?",
+      "answer": "With proper care, dental bonding typically lasts 5 to 10 years before it may need to be touched up or replaced. Avoiding hard foods, not biting your nails, and maintaining good oral hygiene will help extend the life of your bonding."
+    },
+    {
+      "question": "Does dental bonding stain?",
+      "answer": "Composite resin is somewhat more susceptible to staining than porcelain veneers. We recommend limiting coffee, tea, red wine, and tobacco use, especially in the first 48 hours after treatment. Regular dental cleanings also help keep your bonding looking its best."
+    },
+    {
+      "question": "Is dental bonding painful?",
+      "answer": "In most cases, dental bonding is completely painless and does not require anesthesia. Since the procedure typically does not involve drilling or removing tooth structure, patients experience little to no discomfort during or after treatment."
+    }
+  ]
+}

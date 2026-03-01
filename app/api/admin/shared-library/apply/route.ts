@@ -11,10 +11,8 @@ import {
 } from '@/lib/contentDb';
 import {
   generateServicesForSite,
-  readServicesMaster,
-  readSiteVoiceProfiles,
-  type ServicesMasterData,
-  type SiteVoiceProfilesData,
+  resolveSharedLibraryGenerationInput,
+  SharedLibraryForbiddenOverrideError,
 } from '@/lib/admin/servicesLibrary';
 
 function parseBooleanEnv(value: string | undefined): boolean | null {
@@ -70,18 +68,10 @@ export async function POST(request: NextRequest) {
 
   try {
     const superAdmin = isSuperAdmin(session.user);
-    const master =
-      superAdmin && payload.masterContent
-        ? (JSON.parse(payload.masterContent) as ServicesMasterData)
-        : await readServicesMaster();
-    const profiles =
-      superAdmin && payload.profilesContent
-        ? (JSON.parse(payload.profilesContent) as SiteVoiceProfilesData)
-        : await readSiteVoiceProfiles();
-    if (payload.profileContent && !superAdmin) {
-      profiles.sites = profiles.sites || {};
-      profiles.sites[siteId] = JSON.parse(payload.profileContent);
-    }
+    const { master, profiles } = await resolveSharedLibraryGenerationInput(payload, {
+      isSuperAdmin: superAdmin,
+      siteId,
+    });
     const generatedItems = generateServicesForSite(master, profiles, siteId);
 
     const filePath = 'pages/services.json';
@@ -147,6 +137,9 @@ export async function POST(request: NextRequest) {
       message: `Applied ${generatedItems.length} services to ${siteId}/${locale}.`,
     });
   } catch (error: any) {
+    if (error instanceof SharedLibraryForbiddenOverrideError) {
+      return NextResponse.json({ message: error.message }, { status: 403 });
+    }
     return NextResponse.json(
       { message: error?.message || 'Failed to apply generated services' },
       { status: 400 }

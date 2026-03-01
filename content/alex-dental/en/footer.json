@@ -1,0 +1,43 @@
+{
+  "brand": {
+    "logoText": "Alex Dental",
+    "name": "Alex Dental Clinic",
+    "description": "Expert dental care for the whole family in English, Chinese, Spanish, and Korean. Serving Middletown, NY and surrounding communities."
+  },
+  "quickLinks": [
+    { "text": "About Us", "url": "/about" },
+    { "text": "New Patients", "url": "/new-patients" },
+    { "text": "Case Studies", "url": "/case-studies" },
+    { "text": "Insurance & Financing", "url": "/insurance" },
+    { "text": "Blog", "url": "/blog" },
+    { "text": "Contact", "url": "/contact" }
+  ],
+  "services": [
+    { "text": "Dental Implants", "url": "/services/dental-implants" },
+    { "text": "Invisalign", "url": "/services/invisalign" },
+    { "text": "Teeth Whitening", "url": "/services/teeth-whitening" },
+    { "text": "Crowns & Bridges", "url": "/services/crowns-and-bridges" },
+    { "text": "Emergency Dental", "url": "/emergency" },
+    { "text": "All Services", "url": "/services" }
+  ],
+  "contact": {
+    "addressLines": ["85 Crystal Run Road", "Middletown, NY 10940"],
+    "phone": "(845) 555-0180",
+    "phoneLink": "tel:+18455550180",
+    "email": "info@alexdentalclinic.com",
+    "emailLink": "mailto:info@alexdentalclinic.com"
+  },
+  "hours": [
+    "Mon, Tue, Thu: 8AM - 6PM",
+    "Wed: 9AM - 7PM",
+    "Fri: 8AM - 5PM",
+    "Sat: 9AM - 2PM",
+    "Sun: Closed"
+  ],
+  "legalLinks": [
+    { "text": "Privacy Policy", "url": "/privacy" },
+    { "text": "Accessibility", "url": "/accessibility" },
+    { "text": "Terms of Service", "url": "/terms" }
+  ],
+  "copyright": "© 2026 Alex Dental Clinic. All rights reserved."
+}

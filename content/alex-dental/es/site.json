@@ -1,0 +1,20 @@
+{
+  "id": "alex-dental",
+  "businessName": "Alex Dental Clinic",
+  "tagline": "Atención Dental Experta en Su Idioma",
+  "description": "Servicios dentales completos para toda la familia en inglés, chino, español y coreano",
+  "phone": "(845) 555-0180",
+  "phoneEmergency": "(845) 555-0180",
+  "email": "info@alexdentalclinic.com",
+  "address": "85 Crystal Run Road",
+  "city": "Middletown",
+  "state": "NY",
+  "zip": "10940",
+  "addressFull": "85 Crystal Run Road, Middletown, NY 10940",
+  "display": {
+    "showEmergencyBanner": true,
+    "emergencyBannerText": "¿Emergencia dental? Llámenos ahora — citas disponibles el mismo día para casos urgentes",
+    "showLanguageSwitcher": true,
+    "defaultLocale": "en"
+  }
+}

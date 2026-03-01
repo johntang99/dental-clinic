@@ -1,30 +1,14 @@
 {
   "sites": [
     {
-      "id": "dr-huang-clinic",
-      "name": "Dr Huang Clinic",
-      "domain": "drhuangclinic.com",
+      "id": "alex-dental",
+      "name": "Alex Dental Clinic",
+      "domain": "alexdentalclinic.com",
       "enabled": true,
       "defaultLocale": "en",
-      "supportedLocales": [
-        "en",
-        "zh"
-      ],
-      "createdAt": "2025-01-15T00:00:00Z",
-      "updatedAt": "2026-02-04T06:45:02.741Z"
-    },
-    {
-      "id": "acupuncture-flushing",
-      "name": "Acupuncture Flushing",
-      "domain": "acupunctureflushing.com",
-      "enabled": true,
-      "defaultLocale": "en",
-      "supportedLocales": [
-        "en",
-        "zh"
-      ],
-      "createdAt": "2026-02-04T07:47:54.318Z",
-      "updatedAt": "2026-02-04T07:47:54.318Z"
+      "supportedLocales": ["en", "zh", "es", "ko"],
+      "createdAt": "2026-03-01T00:00:00Z",
+      "updatedAt": "2026-03-01T00:00:00Z"
     }
   ]
 }

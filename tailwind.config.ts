@@ -23,10 +23,26 @@ const config: Config = {
           light: 'var(--secondary-light)',
           50: 'var(--secondary-50)',
         },
+        emergency: 'var(--emergency)',
         backdrop: {
           primary: 'var(--backdrop-primary)',
           secondary: 'var(--backdrop-secondary)',
         },
+        surface: {
+          DEFAULT: 'var(--color-surface)',
+          dark: 'var(--color-surface-dark)',
+        },
+      },
+      borderRadius: {
+        'card': 'var(--card-radius)',
+        'card-lg': 'var(--card-radius-lg)',
+      },
+      boxShadow: {
+        'card': 'var(--shadow-card)',
+        'feature': 'var(--shadow-feature)',
+      },
+      maxWidth: {
+        'content': 'var(--max-width)',
       },
       fontSize: {
         'display': 'var(--text-display)',

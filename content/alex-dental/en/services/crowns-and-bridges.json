@@ -1,0 +1,33 @@
+{
+  "slug": "crowns-and-bridges",
+  "title": "Crowns and Bridges",
+  "subtitle": "Restore strength, function, and beauty to damaged or missing teeth",
+  "icon": "Shield",
+  "image": "/images/services/crowns-and-bridges.jpg",
+  "shortDescription": "High-quality porcelain crowns and dental bridges to restore damaged teeth or replace missing ones, including CEREC same-day options.",
+  "fullDescription": "Dental crowns and bridges are among the most reliable and time-tested restorations in dentistry. A crown is a custom-fitted cap that covers and protects a damaged, weakened, or heavily restored tooth, restoring its original shape, strength, and appearance. A bridge uses one or more crowns anchored to adjacent teeth to fill the gap left by one or more missing teeth, preventing shifting and maintaining your bite alignment.\n\nAt our Middletown, NY office, we offer traditional porcelain crowns crafted by our partner dental laboratory as well as CEREC same-day crowns milled right in our office using advanced CAD/CAM technology. CEREC crowns allow us to digitally scan your tooth, design the crown on screen, and mill it from a solid block of high-quality ceramic, all in a single appointment. No messy impressions, no temporary crowns, and no second visit required.\n\nWhether you need a crown to protect a tooth after a root canal, restore a cracked tooth, or complete a dental implant, or a bridge to replace one or more missing teeth, our restorations are designed to blend naturally with your existing teeth and provide years of dependable service. We use only premium materials and take the time to ensure a precise fit and a beautiful result every time.",
+  "benefits": [
+    "CEREC same-day crowns available for single-visit convenience",
+    "Premium porcelain materials that match the color and translucency of natural teeth",
+    "Restores full chewing function and protects weakened teeth from further damage",
+    "Bridges prevent remaining teeth from shifting and maintain proper bite alignment"
+  ],
+  "whatToExpect": "For a traditional crown or bridge, your first visit involves preparing the tooth by reshaping it to accommodate the restoration, taking detailed impressions or digital scans, and placing a temporary crown or bridge while the permanent one is crafted at our partner lab over one to two weeks. At your second visit, we remove the temporary, verify the fit and appearance of the permanent restoration, and cement it securely in place. If you opt for a CEREC same-day crown, the entire process is completed in a single appointment lasting 60 to 90 minutes. We digitally scan your prepared tooth, design the crown chairside, mill it on-site, and bond it into place before you leave. Either way, we ensure your restoration feels comfortable and looks completely natural.",
+  "price": "Starting from $850 per crown",
+  "durationMinutes": 75,
+  "featured": false,
+  "faq": [
+    {
+      "question": "What is the difference between a crown and a bridge?",
+      "answer": "A crown covers and protects a single damaged tooth, while a bridge replaces one or more missing teeth by anchoring artificial teeth to crowns placed on the adjacent natural teeth. Both are fixed restorations that are cemented permanently in place and cared for just like natural teeth."
+    },
+    {
+      "question": "How long do crowns and bridges last?",
+      "answer": "With proper oral hygiene and regular dental checkups, high-quality porcelain crowns and bridges typically last 10 to 15 years, and many last significantly longer. Avoiding habits like grinding your teeth, chewing ice, or biting hard objects will help maximize the lifespan of your restoration."
+    },
+    {
+      "question": "What is a CEREC same-day crown?",
+      "answer": "CEREC is an advanced technology that allows us to design and manufacture a porcelain crown right in our office during a single appointment. Using a digital scanner and an in-office milling machine, we create a precision-fit crown from a solid block of ceramic in about 60 to 90 minutes, eliminating the need for a temporary crown and a second visit."
+    }
+  ]
+}

@@ -20,7 +20,7 @@ const navigation = [
   { name: 'Site Settings', href: '/admin/site-settings', icon: SlidersHorizontal },
   { name: 'Content', href: '/admin/content', icon: FileText },
   { name: 'Services', href: '/admin/services', icon: FileText },
-  { name: 'Conditions', href: '/admin/conditions', icon: FileText },
+  // { name: 'Conditions', href: '/admin/conditions', icon: FileText }, // TCM-specific — removed for dental
   { name: 'Case Studies', href: '/admin/case-studies', icon: FileText },
   { name: 'Blog Posts', href: '/admin/blog-posts', icon: BookOpen },
   {

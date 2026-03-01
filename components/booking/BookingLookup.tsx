@@ -6,7 +6,7 @@ import type { BookingRecord, BookingService } from '@/lib/types';
 import { Button } from '@/components/ui';
 
 interface BookingLookupProps {
-  locale: 'en' | 'zh';
+  locale: string;
 }
 
 export function BookingLookup({ locale }: BookingLookupProps) {

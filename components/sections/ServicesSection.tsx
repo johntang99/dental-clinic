@@ -36,7 +36,7 @@ export interface ServicesSectionProps {
   badge?: string;
   title: string;
   subtitle?: string;
-  locale?: 'en' | 'zh';
+  locale?: string;
   legacyLabels?: {
     servicePrefix?: string;
     keyBenefitsTitle?: string;

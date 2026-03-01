@@ -3,7 +3,7 @@ import { icons, LucideProps } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export interface IconProps extends Omit<LucideProps, 'ref'> {
-  name: keyof typeof icons;
+  name: keyof typeof icons | (string & {});
   size?: number | 'sm' | 'md' | 'lg' | 'xl';
 }
 
@@ -14,7 +14,11 @@ const Icon = forwardRef<SVGSVGElement, IconProps>(
       ShirtIcon: 'Shirt',
       Grid: 'LayoutGrid',
     };
-    const resolvedName = (aliasMap[name as string] || name) as keyof typeof icons;
+    // Convert kebab-case or lowercase to PascalCase (e.g., "shield-check" → "ShieldCheck", "sparkles" → "Sparkles")
+    const toPascal = (s: string) =>
+      s.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join('');
+    const pascalName = toPascal(name as string);
+    const resolvedName = (aliasMap[pascalName] || pascalName) as keyof typeof icons;
     const LucideIcon = icons[resolvedName];
     
     if (!LucideIcon) {

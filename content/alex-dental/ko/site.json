@@ -1,0 +1,20 @@
+{
+  "id": "alex-dental",
+  "businessName": "Alex 치과 클리닉",
+  "tagline": "귀하의 언어로 전문 치과 서비스",
+  "description": "영어, 중국어, 스페인어, 한국어로 온 가족을 위한 종합 치과 서비스",
+  "phone": "(845) 555-0180",
+  "phoneEmergency": "(845) 555-0180",
+  "email": "info@alexdentalclinic.com",
+  "address": "85 Crystal Run Road",
+  "city": "Middletown",
+  "state": "NY",
+  "zip": "10940",
+  "addressFull": "85 Crystal Run Road, Middletown, NY 10940",
+  "display": {
+    "showEmergencyBanner": true,
+    "emergencyBannerText": "치과 응급 상황? 지금 전화하세요 — 긴급 케이스 당일 예약 가능",
+    "showLanguageSwitcher": true,
+    "defaultLocale": "en"
+  }
+}

@@ -5,7 +5,7 @@ import type { BookingService } from '@/lib/types';
 import { Button } from '@/components/ui';
 
 interface BookingWidgetProps {
-  locale: 'en' | 'zh';
+  locale: string;
 }
 
 interface BookingForm {

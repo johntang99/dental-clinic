@@ -1,0 +1,69 @@
+{
+  "id": "alex-dental",
+  "businessName": "Alex Dental Clinic",
+  "tagline": "Expert Dental Care in Your Language",
+  "description": "Comprehensive dental services for the whole family in English, Chinese, Spanish, and Korean",
+  "phone": "(845) 555-0180",
+  "phoneEmergency": "(845) 555-0180",
+  "email": "info@alexdentalclinic.com",
+  "emailAppointments": "appointments@alexdentalclinic.com",
+  "address": "85 Crystal Run Road",
+  "city": "Middletown",
+  "state": "NY",
+  "zip": "10940",
+  "addressFull": "85 Crystal Run Road, Middletown, NY 10940",
+  "addressMapUrl": "https://maps.google.com/?q=85+Crystal+Run+Road+Middletown+NY+10940",
+  "mapsEmbedUrl": "https://www.google.com/maps/embed?pb=YOUR_EMBED_ID",
+  "lat": 41.4459,
+  "lng": -74.4229,
+  "hours": {
+    "monday": "8:00 AM - 6:00 PM",
+    "tuesday": "8:00 AM - 6:00 PM",
+    "wednesday": "9:00 AM - 7:00 PM",
+    "thursday": "8:00 AM - 6:00 PM",
+    "friday": "8:00 AM - 5:00 PM",
+    "saturday": "9:00 AM - 2:00 PM",
+    "sunday": "Closed",
+    "emergencyNote": "Dental emergencies: call us — we will accommodate same-day urgent cases"
+  },
+  "credentials": {
+    "licenseNumber": "NY-D-012345",
+    "licenseState": "NY",
+    "npiNumber": "1234567890",
+    "adaMembership": true,
+    "stateDentalAssociation": "New York State Dental Association",
+    "specializations": ["General Dentistry", "Cosmetic Dentistry", "Dental Implants", "Invisalign Provider", "Sedation Dentistry"]
+  },
+  "languages": [
+    { "code": "en", "label": "English", "flag": "US", "enabled": true },
+    { "code": "zh", "label": "中文", "flag": "CN", "enabled": true },
+    { "code": "es", "label": "Español", "flag": "MX", "enabled": true },
+    { "code": "ko", "label": "한국어", "flag": "KR", "enabled": true }
+  ],
+  "social": {
+    "facebook": "https://facebook.com/alexdentalclinic",
+    "instagram": "https://instagram.com/alexdentalclinic",
+    "youtube": "",
+    "yelp": "https://yelp.com/biz/alex-dental-clinic-middletown",
+    "google": "https://g.page/alexdentalclinic"
+  },
+  "insurance": {
+    "acceptsInsurance": true,
+    "inNetworkNote": "In-network with most major PPO plans. Call us to verify your specific plan.",
+    "financingNote": "CareCredit, LendingClub, and Sunbit financing available.",
+    "membershipPlanEnabled": true,
+    "membershipPlanName": "Alex Wellness Plan"
+  },
+  "booking": {
+    "onlineBookingEnabled": true,
+    "bookingUrl": "/book",
+    "callToBook": true,
+    "preferredContactMethod": "both"
+  },
+  "display": {
+    "showEmergencyBanner": true,
+    "emergencyBannerText": "Dental emergency? Call us now — same-day appointments available for urgent cases",
+    "showLanguageSwitcher": true,
+    "defaultLocale": "en"
+  }
+}

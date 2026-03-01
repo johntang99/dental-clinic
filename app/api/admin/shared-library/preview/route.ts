@@ -3,10 +3,8 @@ import { getSessionFromRequest } from '@/lib/admin/auth';
 import { requireSiteAccess } from '@/lib/admin/permissions';
 import {
   generateServicesForSite,
-  readServicesMaster,
-  readSiteVoiceProfiles,
-  type ServicesMasterData,
-  type SiteVoiceProfilesData,
+  resolveSharedLibraryGenerationInput,
+  SharedLibraryForbiddenOverrideError,
 } from '@/lib/admin/servicesLibrary';
 import { canWriteContent, isSuperAdmin } from '@/lib/admin/permissions';
 
@@ -33,22 +31,17 @@ export async function POST(request: NextRequest) {
 
   try {
     const superAdmin = isSuperAdmin(session.user);
-    const master =
-      superAdmin && payload.masterContent
-        ? (JSON.parse(payload.masterContent) as ServicesMasterData)
-        : await readServicesMaster();
-    const profiles =
-      superAdmin && payload.profilesContent
-        ? (JSON.parse(payload.profilesContent) as SiteVoiceProfilesData)
-        : await readSiteVoiceProfiles();
-    if (payload.profileContent && !superAdmin) {
-      profiles.sites = profiles.sites || {};
-      profiles.sites[siteId] = JSON.parse(payload.profileContent);
-    }
+    const { master, profiles } = await resolveSharedLibraryGenerationInput(payload, {
+      isSuperAdmin: superAdmin,
+      siteId,
+    });
 
     const items = generateServicesForSite(master, profiles, siteId);
     return NextResponse.json({ items, count: items.length });
   } catch (error: any) {
+    if (error instanceof SharedLibraryForbiddenOverrideError) {
+      return NextResponse.json({ message: error.message }, { status: 403 });
+    }
     return NextResponse.json(
       { message: error?.message || 'Failed to generate preview' },
       { status: 400 }

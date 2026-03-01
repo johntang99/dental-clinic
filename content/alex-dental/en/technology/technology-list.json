@@ -1,0 +1,68 @@
+{
+  "technologies": [
+    {
+      "id": "digital-xrays",
+      "icon": "zap",
+      "name": "Digital X-Rays",
+      "benefit": "90% less radiation than traditional film",
+      "description": "Advanced digital imaging provides clearer, more detailed images with minimal radiation exposure. Images are available instantly on screen.",
+      "featured": true
+    },
+    {
+      "id": "3d-cone-beam-ct",
+      "icon": "box",
+      "name": "3D Cone Beam CT Scanner",
+      "benefit": "Complete 3D view of teeth, jaw, and nerves",
+      "description": "Captures a full three-dimensional image of your dental structures in a single scan, enabling precise diagnosis and treatment planning for implants, extractions, and orthodontics.",
+      "featured": true
+    },
+    {
+      "id": "cerec-same-day-crowns",
+      "icon": "clock",
+      "name": "CEREC Same-Day Crowns",
+      "benefit": "Custom porcelain crowns in a single visit",
+      "description": "CAD/CAM technology designs and mills a perfectly fitted ceramic crown right in the office, eliminating the need for temporary crowns and multiple appointments.",
+      "featured": true
+    },
+    {
+      "id": "intraoral-camera",
+      "icon": "camera",
+      "name": "Intraoral Camera",
+      "benefit": "See what the dentist sees in real time",
+      "description": "A small, pen-sized camera captures high-resolution images inside your mouth, allowing you to view and understand your dental health alongside your provider.",
+      "featured": true
+    },
+    {
+      "id": "dental-laser-diode",
+      "icon": "sparkles",
+      "name": "Dental Laser (Diode)",
+      "benefit": "Minimally invasive soft tissue treatment",
+      "description": "Soft tissue laser enables precise, comfortable gum treatments with less bleeding, reduced swelling, and faster healing compared to traditional methods.",
+      "featured": false
+    },
+    {
+      "id": "digital-impressions-itero",
+      "icon": "scan",
+      "name": "Digital Impressions (iTero)",
+      "benefit": "No more messy putty molds",
+      "description": "The iTero scanner captures a highly accurate 3D digital impression of your teeth in minutes, improving comfort and precision for crowns, aligners, and other restorations.",
+      "featured": false
+    },
+    {
+      "id": "led-curing-lights",
+      "icon": "lightbulb",
+      "name": "LED Curing Lights",
+      "benefit": "Faster, more durable composite fillings",
+      "description": "High-intensity LED lights cure tooth-colored fillings in seconds, creating a stronger bond and more durable restoration with reduced chair time.",
+      "featured": false
+    },
+    {
+      "id": "panoramic-xray",
+      "icon": "monitor",
+      "name": "Panoramic X-Ray",
+      "benefit": "Full mouth view in a single image",
+      "description": "Captures a complete view of your entire mouth, jaw joints, and sinuses in one sweeping image, essential for comprehensive treatment planning and detecting hidden issues.",
+      "featured": false
+    }
+  ]
+}

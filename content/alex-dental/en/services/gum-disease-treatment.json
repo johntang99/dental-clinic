@@ -1,0 +1,37 @@
+{
+  "slug": "gum-disease-treatment",
+  "title": "Gum Disease Treatment",
+  "subtitle": "Restore your gum health and protect your smile",
+  "icon": "ShieldCheck",
+  "image": "/images/services/gum-disease-treatment.jpg",
+  "shortDescription": "Deep cleanings, scaling and root planing, and periodontal therapy to treat gum disease and restore gum health.",
+  "fullDescription": "Gum disease — also known as periodontal disease — is one of the most common oral health conditions, affecting nearly half of adults over the age of 30. Left untreated, it can lead to gum recession, bone loss, and eventually tooth loss. At our Middletown, NY practice, we provide comprehensive gum disease treatment to stop the progression of the disease and help restore your oral health.\n\nThe earliest stage, gingivitis, is characterized by red, swollen, or bleeding gums and is often reversible with professional treatment and improved home care. When gingivitis progresses to periodontitis, deeper pockets form between the teeth and gums, harboring bacteria that attack the bone and connective tissue supporting your teeth. Our primary treatment for moderate to advanced gum disease is scaling and root planing — a thorough deep cleaning performed below the gumline.\n\nDuring scaling and root planing, our dental hygienists use specialized instruments to carefully remove plaque, tartar, and bacterial toxins from the root surfaces of your teeth. The roots are then smoothed to discourage further bacterial accumulation and encourage the gum tissue to reattach to the tooth. Depending on the severity of your condition, treatment may be completed in one visit or spread across multiple appointments. Dr. Alex will develop a personalized periodontal maintenance plan to monitor your progress and keep gum disease under control long term.",
+  "benefits": [
+    "Stops the progression of gum disease and prevents tooth loss",
+    "Removes deep bacterial deposits that regular cleanings cannot reach",
+    "Reduces gum inflammation, bleeding, and pocket depths",
+    "Personalized maintenance plan to protect long-term gum health"
+  ],
+  "whatToExpect": "Your treatment begins with a comprehensive periodontal evaluation, including measurements of the gum pockets around each tooth and digital X-rays to assess bone levels. If scaling and root planing is recommended, a local anesthetic will be applied to ensure your comfort throughout the procedure. The hygienist will methodically clean each quadrant of your mouth, removing tartar and bacteria from below the gumline and smoothing the root surfaces. Each session typically focuses on one or two quadrants. You may experience some tenderness and sensitivity for a few days following treatment, which is normal and manageable with over-the-counter pain relievers. A follow-up visit is scheduled four to six weeks later to reassess your gum health, measure pocket depths, and determine if additional treatment is needed. Most patients with gum disease benefit from periodontal maintenance cleanings every three to four months rather than the standard six-month interval.",
+  "price": null,
+  "durationMinutes": 60,
+  "featured": false,
+  "faq": [
+    {
+      "question": "What are the signs of gum disease?",
+      "answer": "Common warning signs include gums that bleed when you brush or floss, red or swollen gums, persistent bad breath, receding gums, loose teeth, and changes in your bite. If you notice any of these symptoms, schedule an evaluation by calling our office at (845) 555-0180."
+    },
+    {
+      "question": "Is scaling and root planing painful?",
+      "answer": "The procedure is performed under local anesthesia, so you should feel minimal discomfort during treatment. You may experience some soreness and sensitivity in the treated areas for a few days afterward. We will provide specific aftercare instructions and recommendations for managing any post-treatment tenderness."
+    },
+    {
+      "question": "Can gum disease be cured?",
+      "answer": "Gingivitis, the early stage of gum disease, is reversible with professional treatment and consistent home care. More advanced periodontitis cannot be fully cured, but it can be effectively managed and controlled with scaling and root planing, regular periodontal maintenance visits, and diligent daily oral hygiene."
+    },
+    {
+      "question": "How does gum disease affect my overall health?",
+      "answer": "Research has linked periodontal disease to several systemic health conditions, including heart disease, diabetes, respiratory infections, and adverse pregnancy outcomes. Treating gum disease not only protects your teeth and gums but may also contribute to better overall health and well-being."
+    }
+  ]
+}

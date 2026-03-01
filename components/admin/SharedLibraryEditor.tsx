@@ -16,6 +16,86 @@ interface SharedLibraryEditorProps {
   mode: 'master' | 'profiles';
 }
 
+interface SiteVoiceProfileFormValue {
+  clinicName: string;
+  toneDescriptor: string;
+  localContext: string;
+  lexiconReplacements: Record<string, string>;
+  templates: {
+    shortDescription: string;
+    fullDescriptionLead: string;
+    whatToExpectLead: string;
+  };
+}
+
+const EMPTY_SITE_VOICE_PROFILE: SiteVoiceProfileFormValue = {
+  clinicName: '',
+  toneDescriptor: '',
+  localContext: '',
+  lexiconReplacements: {},
+  templates: {
+    shortDescription: '',
+    fullDescriptionLead: '',
+    whatToExpectLead: '',
+  },
+};
+
+function asString(value: unknown, fallback = '') {
+  return typeof value === 'string' ? value : fallback;
+}
+
+function normalizeSiteVoiceProfile(input: unknown): SiteVoiceProfileFormValue {
+  const source = input && typeof input === 'object' ? (input as Record<string, unknown>) : {};
+  const templates =
+    source.templates && typeof source.templates === 'object'
+      ? (source.templates as Record<string, unknown>)
+      : {};
+  const lexiconSource =
+    source.lexiconReplacements && typeof source.lexiconReplacements === 'object'
+      ? (source.lexiconReplacements as Record<string, unknown>)
+      : {};
+  const lexiconReplacements = Object.fromEntries(
+    Object.entries(lexiconSource)
+      .filter(([key]) => key.trim().length > 0)
+      .map(([key, value]) => [key, String(value)])
+  );
+
+  return {
+    clinicName: asString(source.clinicName),
+    toneDescriptor: asString(source.toneDescriptor),
+    localContext: asString(source.localContext),
+    lexiconReplacements,
+    templates: {
+      shortDescription: asString(templates.shortDescription),
+      fullDescriptionLead: asString(templates.fullDescriptionLead),
+      whatToExpectLead: asString(templates.whatToExpectLead),
+    },
+  };
+}
+
+function stringifyLexiconInput(value: Record<string, string>) {
+  return Object.entries(value)
+    .map(([key, replacement]) => `${key}=${replacement}`)
+    .join('\n');
+}
+
+function parseLexiconInput(value: string) {
+  const entries = value.split('\n');
+  const next: Record<string, string> = {};
+  for (const line of entries) {
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+    const separator = trimmed.includes('=') ? '=' : ':';
+    const index = trimmed.indexOf(separator);
+    if (index <= 0) continue;
+    const key = trimmed.slice(0, index).trim();
+    const replacement = trimmed.slice(index + 1).trim();
+    if (!key) continue;
+    next[key] = replacement;
+  }
+  return next;
+}
+
 export function SharedLibraryEditor({
   sites,
   initialSiteId,
@@ -38,6 +118,40 @@ export function SharedLibraryEditor({
   const selectedSiteLabel = useMemo(
     () => sites.find((site) => site.id === selectedSiteId)?.name || selectedSiteId,
     [sites, selectedSiteId]
+  );
+  const profileFormState = useMemo(() => {
+    if (isMasterMode) {
+      return {
+        profile: EMPTY_SITE_VOICE_PROFILE,
+        parseError: null as string | null,
+      };
+    }
+    try {
+      const parsed = JSON.parse(draft || '{}') as Record<string, unknown>;
+      if (profilesMode === 'scoped') {
+        return {
+          profile: normalizeSiteVoiceProfile(parsed),
+          parseError: null as string | null,
+        };
+      }
+      const sitesPayload =
+        parsed.sites && typeof parsed.sites === 'object'
+          ? (parsed.sites as Record<string, unknown>)
+          : {};
+      return {
+        profile: normalizeSiteVoiceProfile(sitesPayload[selectedSiteId]),
+        parseError: null as string | null,
+      };
+    } catch {
+      return {
+        profile: EMPTY_SITE_VOICE_PROFILE,
+        parseError: 'Raw JSON is invalid. Fix JSON to keep form and JSON in sync.',
+      };
+    }
+  }, [draft, isMasterMode, profilesMode, selectedSiteId]);
+  const lexiconInputValue = useMemo(
+    () => stringifyLexiconInput(profileFormState.profile.lexiconReplacements),
+    [profileFormState.profile.lexiconReplacements]
   );
 
   useEffect(() => {
@@ -187,6 +301,38 @@ export function SharedLibraryEditor({
     }
   };
 
+  const updateProfileDraft = (nextProfile: SiteVoiceProfileFormValue) => {
+    if (isMasterMode) return;
+    if (profilesMode === 'scoped') {
+      setDraft(JSON.stringify(nextProfile, null, 2));
+      return;
+    }
+
+    let parsed: Record<string, unknown> = {};
+    try {
+      parsed = JSON.parse(draft || '{}') as Record<string, unknown>;
+    } catch {
+      parsed = {};
+    }
+
+    const sitesPayload =
+      parsed.sites && typeof parsed.sites === 'object'
+        ? (parsed.sites as Record<string, unknown>)
+        : {};
+
+    const nextPayload: Record<string, unknown> = {
+      ...parsed,
+      version: typeof parsed.version === 'number' ? parsed.version : 1,
+      locale: typeof parsed.locale === 'string' ? parsed.locale : 'en',
+      sites: {
+        ...sitesPayload,
+        [selectedSiteId]: nextProfile,
+      },
+    };
+
+    setDraft(JSON.stringify(nextPayload, null, 2));
+  };
+
   const canEdit = isMasterMode ? canEditMaster : canEditProfiles;
   const canRunActions =
     canWrite && !!selectedSiteId && (!isMasterMode || isSuperAdmin);
@@ -281,6 +427,132 @@ export function SharedLibraryEditor({
             Save
           </button>
         </div>
+        {!isMasterMode && (
+          <div className="rounded-lg border border-gray-200 bg-gray-50 p-3 space-y-3">
+            <p className="text-xs text-gray-600">
+              Use this form to edit the selected site profile. Raw JSON is still available below.
+            </p>
+            {profileFormState.parseError && (
+              <div className="rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800">
+                {profileFormState.parseError}
+              </div>
+            )}
+            <div className="grid gap-3 md:grid-cols-2">
+              <label className="text-xs text-gray-700 space-y-1">
+                <span className="font-medium">Clinic name</span>
+                <input
+                  type="text"
+                  className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                  value={profileFormState.profile.clinicName}
+                  onChange={(event) =>
+                    updateProfileDraft({
+                      ...profileFormState.profile,
+                      clinicName: event.target.value,
+                    })
+                  }
+                  disabled={!canEdit || isLoading || !selectedSiteId}
+                />
+              </label>
+              <label className="text-xs text-gray-700 space-y-1">
+                <span className="font-medium">Tone descriptor</span>
+                <input
+                  type="text"
+                  className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                  value={profileFormState.profile.toneDescriptor}
+                  onChange={(event) =>
+                    updateProfileDraft({
+                      ...profileFormState.profile,
+                      toneDescriptor: event.target.value,
+                    })
+                  }
+                  disabled={!canEdit || isLoading || !selectedSiteId}
+                />
+              </label>
+            </div>
+            <label className="block text-xs text-gray-700 space-y-1">
+              <span className="font-medium">Local context</span>
+              <textarea
+                className="w-full h-20 rounded-md border border-gray-200 px-3 py-2 text-sm"
+                value={profileFormState.profile.localContext}
+                onChange={(event) =>
+                  updateProfileDraft({
+                    ...profileFormState.profile,
+                    localContext: event.target.value,
+                  })
+                }
+                disabled={!canEdit || isLoading || !selectedSiteId}
+              />
+            </label>
+            <div className="grid gap-3 md:grid-cols-2">
+              <label className="text-xs text-gray-700 space-y-1">
+                <span className="font-medium">Template: short description</span>
+                <textarea
+                  className="w-full h-20 rounded-md border border-gray-200 px-3 py-2 text-sm font-mono"
+                  value={profileFormState.profile.templates.shortDescription}
+                  onChange={(event) =>
+                    updateProfileDraft({
+                      ...profileFormState.profile,
+                      templates: {
+                        ...profileFormState.profile.templates,
+                        shortDescription: event.target.value,
+                      },
+                    })
+                  }
+                  disabled={!canEdit || isLoading || !selectedSiteId}
+                />
+              </label>
+              <label className="text-xs text-gray-700 space-y-1">
+                <span className="font-medium">Template: full description lead</span>
+                <textarea
+                  className="w-full h-20 rounded-md border border-gray-200 px-3 py-2 text-sm font-mono"
+                  value={profileFormState.profile.templates.fullDescriptionLead}
+                  onChange={(event) =>
+                    updateProfileDraft({
+                      ...profileFormState.profile,
+                      templates: {
+                        ...profileFormState.profile.templates,
+                        fullDescriptionLead: event.target.value,
+                      },
+                    })
+                  }
+                  disabled={!canEdit || isLoading || !selectedSiteId}
+                />
+              </label>
+            </div>
+            <label className="block text-xs text-gray-700 space-y-1">
+              <span className="font-medium">Template: what to expect lead</span>
+              <textarea
+                className="w-full h-20 rounded-md border border-gray-200 px-3 py-2 text-sm font-mono"
+                value={profileFormState.profile.templates.whatToExpectLead}
+                onChange={(event) =>
+                  updateProfileDraft({
+                    ...profileFormState.profile,
+                    templates: {
+                      ...profileFormState.profile.templates,
+                      whatToExpectLead: event.target.value,
+                    },
+                  })
+                }
+                disabled={!canEdit || isLoading || !selectedSiteId}
+              />
+            </label>
+            <label className="block text-xs text-gray-700 space-y-1">
+              <span className="font-medium">Lexicon replacements</span>
+              <textarea
+                className="w-full h-24 rounded-md border border-gray-200 px-3 py-2 text-sm font-mono"
+                value={lexiconInputValue}
+                onChange={(event) =>
+                  updateProfileDraft({
+                    ...profileFormState.profile,
+                    lexiconReplacements: parseLexiconInput(event.target.value),
+                  })
+                }
+                disabled={!canEdit || isLoading || !selectedSiteId}
+                placeholder={'personalized=individualized\nsupports=helps support'}
+              />
+            </label>
+          </div>
+        )}
         <textarea
           className="w-full h-72 rounded-md border border-gray-200 px-3 py-2 text-xs font-mono"
           value={draft}

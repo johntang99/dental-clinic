@@ -12,8 +12,8 @@ const siteSchemaBase = z.object({
   name: z.string().min(2, 'Name is required'),
   domain: z.string().optional(),
   enabled: z.boolean(),
-  defaultLocale: z.enum(['en', 'zh']),
-  supportedLocales: z.array(z.enum(['en', 'zh'])).min(1, 'Select at least one locale'),
+  defaultLocale: z.enum(['en', 'zh', 'es', 'ko']),
+  supportedLocales: z.array(z.enum(['en', 'zh', 'es', 'ko'])).min(1, 'Select at least one locale'),
 });
 
 const createSchema = siteSchemaBase.extend({

@@ -1,14 +1,14 @@
 {
   "domains": [
     {
-      "siteId": "dr-huang-clinic",
-      "domain": "drhuangclinic.com",
-      "environment": "prod",
+      "siteId": "alex-dental",
+      "domain": "localhost:3004",
+      "environment": "dev",
       "enabled": true
     },
     {
-      "siteId": "acupuncture-flushing",
-      "domain": "acupunctureflushing.com",
+      "siteId": "alex-dental",
+      "domain": "alexdentalclinic.com",
       "environment": "prod",
       "enabled": true
     }

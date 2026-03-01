@@ -1,0 +1,22 @@
+{
+  "title": "Alex Dental Clinic — Middletown, NY",
+  "description": "Expert dental care in Middletown, NY in English, Chinese, Spanish, and Korean. General, cosmetic, and restorative dentistry. New patients welcome.",
+  "ogImage": "/images/og-default.jpg",
+  "home": {
+    "title": "Alex Dental Clinic — Expert Dental Care in Your Language",
+    "description": "Comprehensive dental care in Middletown, NY. General, cosmetic, restorative dentistry and Invisalign. We speak English, Chinese, Spanish, and Korean."
+  },
+  "pages": {
+    "about": { "title": "About Us — Alex Dental Clinic", "description": "Learn about Alex Dental Clinic, our mission, and our commitment to multilingual dental care in Middletown, NY." },
+    "services": { "title": "Dental Services — Alex Dental Clinic", "description": "Comprehensive dental services: cleanings, implants, Invisalign, cosmetic dentistry, and more in Middletown, NY." },
+    "contact": { "title": "Contact Us — Alex Dental Clinic", "description": "Contact Alex Dental Clinic in Middletown, NY. Call (845) 555-0180 or book online." },
+    "emergency": { "title": "Dental Emergency — Alex Dental Clinic", "description": "Same-day dental emergency appointments in Middletown, NY. Call now for immediate care." },
+    "team": { "title": "Our Doctors & Team — Alex Dental Clinic", "description": "Meet our experienced dentists at Alex Dental Clinic. Multilingual team serving Middletown, NY." },
+    "blog": { "title": "Dental Health Blog — Alex Dental Clinic", "description": "Dental health tips, treatment guides, and oral care education from our Middletown, NY dental team." },
+    "insurance": { "title": "Insurance & Financing — Alex Dental Clinic", "description": "We accept most major dental insurance plans. CareCredit financing available. Middletown, NY." },
+    "cases": { "title": "Patient Case Studies — Alex Dental Clinic", "description": "Real before and after dental transformations. See our patient results at Alex Dental Clinic." },
+    "reviews": { "title": "Patient Reviews — Alex Dental Clinic", "description": "Read what our patients say about Alex Dental Clinic in Middletown, NY." },
+    "technology": { "title": "Our Technology — Alex Dental Clinic", "description": "Advanced dental technology for better care: 3D CT Scanner, CEREC same-day crowns, digital X-rays." },
+    "new-patient": { "title": "New Patient Info — Alex Dental Clinic", "description": "What to expect at your first visit to Alex Dental Clinic. New patient forms and insurance info." }
+  }
+}

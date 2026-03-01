@@ -1,0 +1,103 @@
+{
+  "hero": {
+    "variant": "centered",
+    "title": "About Alex Dental Clinic",
+    "subtitle": "Compassionate, expert dental care for the whole community — in your language"
+  },
+  "profile": {
+    "variant": "split",
+    "name": "Dr. Alex Chen, DDS",
+    "title": "Founder & Lead Dentist",
+    "image": "/images/doctors/dr-alex-chen.jpg",
+    "bio": "Dr. Alex Chen founded Alex Dental Clinic with a simple vision: every person in our community deserves access to excellent dental care, regardless of the language they speak.\n\nGrowing up in a multilingual household after moving from Taiwan to New York as a teenager, Dr. Chen understood firsthand the challenges of navigating healthcare in a language that isn't your own. That experience shaped everything about how he built this practice — from the multilingual team to the way every procedure is explained in clear, patient-friendly language.\n\nWith over 15 years of experience and advanced training in implant dentistry and cosmetic procedures, Dr. Chen has placed over 1,200 dental implants and transformed thousands of smiles across Middletown and the Orange County community.",
+    "quote": "I believe that understanding your dentist — and feeling understood by them — is the foundation of great care."
+  },
+  "credentials": {
+    "variant": "grid",
+    "title": "Education & Training",
+    "items": [
+      { "icon": "graduation-cap", "credential": "Doctor of Dental Surgery (DDS)", "institution": "Columbia University College of Dental Medicine", "year": "2012", "location": "New York, NY" },
+      { "icon": "graduation-cap", "credential": "Bachelor of Science, Biology", "institution": "New York University", "year": "2008", "location": "New York, NY" },
+      { "icon": "award", "credential": "Advanced Implant Dentistry Training", "institution": "Columbia University", "year": "2013", "location": "New York, NY" }
+    ]
+  },
+  "specializations": {
+    "variant": "grid-3",
+    "title": "Areas of Expertise",
+    "description": "Dr. Chen and our team provide comprehensive dental care with deep expertise in these areas",
+    "areas": [
+      { "icon": "anchor", "title": "Dental Implants", "description": "Over 1,200 implants placed, including complex full-arch rehabilitation cases" },
+      { "icon": "sparkles", "title": "Cosmetic Dentistry", "description": "Veneers, whitening, bonding, and complete smile makeover planning" },
+      { "icon": "align-center", "title": "Invisalign", "description": "Platinum-level Invisalign provider with hundreds of cases completed" },
+      { "icon": "shield-check", "title": "Preventive Care", "description": "Comprehensive exams, digital imaging, and personalized prevention plans" },
+      { "icon": "heart-pulse", "title": "Restorative Dentistry", "description": "Crowns, bridges, root canals, and same-day CEREC restorations" },
+      { "icon": "baby", "title": "Family & Pediatric", "description": "Gentle care for patients of all ages, from first tooth through adulthood" }
+    ]
+  },
+  "philosophy": {
+    "variant": "cards",
+    "title": "Our Philosophy",
+    "introduction": "We believe that great dental care goes beyond clinical skill. It's about building trust, communicating clearly, and treating every patient as an individual.",
+    "principles": [
+      { "title": "Honesty First", "description": "We only recommend treatments you truly need. No upselling, no unnecessary procedures — just honest, evidence-based care." },
+      { "title": "Your Language, Your Comfort", "description": "Our team speaks English, Chinese, Spanish, and Korean so every patient can communicate comfortably and understand their treatment fully." },
+      { "title": "Technology With Purpose", "description": "We invest in technology that directly improves your experience — less radiation, more precision, fewer visits." },
+      { "title": "Long-Term Relationships", "description": "We don't just fix teeth — we partner with you for a lifetime of healthy smiles. Many of our patients have been with us for over a decade." }
+    ]
+  },
+  "journey": {
+    "variant": "prose",
+    "title": "Our Story",
+    "story": "Alex Dental Clinic opened its doors in Middletown, NY over 15 years ago. What started as a small two-operatory practice has grown into a full-service dental clinic with advanced technology and a team of dedicated professionals.\n\nOur growth has always been driven by one thing: word of mouth from patients who trust us. Today, we serve thousands of families across Orange County, and many patients drive from surrounding areas specifically for our multilingual care and expertise in implant and cosmetic dentistry.\n\nWe've always believed that a dental practice should feel like a place you want to visit, not a place you dread. That's why we've designed every aspect of the patient experience — from our welcoming reception area to our modern treatment rooms — with your comfort in mind."
+  },
+  "affiliations": {
+    "variant": "detailed",
+    "title": "Professional Affiliations",
+    "organizations": [
+      { "name": "American Dental Association", "role": "Member" },
+      { "name": "New York State Dental Association", "role": "Member" },
+      { "name": "Academy of General Dentistry", "role": "Fellow" },
+      { "name": "International Congress of Oral Implantologists", "role": "Fellow" },
+      { "name": "Invisalign", "role": "Platinum Provider" }
+    ]
+  },
+  "continuingEducation": {
+    "variant": "compact",
+    "title": "Continuing Education",
+    "description": "Our team stays current with the latest advances in dental science and technology through ongoing professional development.",
+    "items": [
+      "Advanced implant placement and full-arch rehabilitation",
+      "Digital dentistry and CAD/CAM workflows",
+      "Cosmetic smile design and veneer techniques",
+      "Periodontal laser therapy",
+      "Pediatric behavior management and sedation dentistry"
+    ]
+  },
+  "clinic": {
+    "variant": "cards",
+    "title": "Our Clinic",
+    "description": "Conveniently located near Crystal Run Crossing in Middletown, NY, our modern office is designed for comfort and efficiency.",
+    "features": [
+      "6 fully equipped treatment rooms with chairside monitors",
+      "CEREC same-day crown technology",
+      "3D cone beam CT scanner for precise imaging",
+      "Dedicated sterilization center exceeding OSHA standards",
+      "Comfortable waiting area with complimentary beverages",
+      "Free parking for all patients"
+    ],
+    "values": [
+      { "icon": "heart", "title": "Compassion", "description": "Every patient is treated with empathy and understanding" },
+      { "icon": "award", "title": "Excellence", "description": "Board-certified dentists with ongoing continuing education" },
+      { "icon": "globe", "title": "Accessibility", "description": "Care in 4 languages, breaking down barriers to dental health" },
+      { "icon": "shield", "title": "Integrity", "description": "Transparent pricing and honest treatment recommendations" }
+    ],
+    "environment": "Our office is designed to feel warm and welcoming from the moment you walk in. Natural light, calming décor, and a friendly team create an atmosphere where patients of all ages feel at ease."
+  },
+  "cta": {
+    "variant": "centered",
+    "title": "Come Meet Us",
+    "description": "We'd love to welcome you to our practice. Schedule a visit and experience the Alex Dental difference.",
+    "primaryCta": { "text": "Book Appointment", "link": "/contact" },
+    "secondaryCta": { "text": "Call (845) 555-0180", "link": "tel:+18455550180" }
+  }
+}

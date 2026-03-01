@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "variant": "centered",
+    "title": "Our Office & Results",
+    "subtitle": "Take a virtual tour of our modern Middletown dental office and see real patient transformations"
+  },
+  "introduction": {
+    "text": "We've designed every detail of our office with your comfort in mind — from the warm reception area to our state-of-the-art treatment rooms. Browse photos of our space, our team, and real patient results."
+  },
+  "categories": [
+    { "id": "all", "name": "All Photos", "icon": "camera" },
+    { "id": "office", "name": "Our Office", "icon": "building-2" },
+    { "id": "team", "name": "Our Team", "icon": "users" },
+    { "id": "technology", "name": "Technology", "icon": "cpu" },
+    { "id": "results", "name": "Patient Results", "icon": "sparkles" }
+  ],
+  "images": [
+    { "id": "office-1", "src": "/images/gallery/reception-area.jpg", "alt": "Bright, welcoming reception area", "title": "Reception Area", "category": "office" },
+    { "id": "office-2", "src": "/images/gallery/waiting-room.jpg", "alt": "Comfortable waiting room with natural light", "title": "Waiting Room", "category": "office" },
+    { "id": "office-3", "src": "/images/gallery/treatment-room.jpg", "alt": "Modern treatment room with chairside monitor", "title": "Treatment Room", "category": "office" },
+    { "id": "office-4", "src": "/images/gallery/sterilization-center.jpg", "alt": "State-of-the-art sterilization center", "title": "Sterilization Center", "category": "office" },
+    { "id": "team-1", "src": "/images/gallery/dr-chen-team.jpg", "alt": "Dr. Alex Chen with the dental team", "title": "Dr. Chen & Team", "category": "team" },
+    { "id": "team-2", "src": "/images/gallery/dr-kim-patients.jpg", "alt": "Dr. Sarah Kim with a young patient", "title": "Dr. Kim with Patient", "category": "team" },
+    { "id": "team-3", "src": "/images/gallery/front-desk-team.jpg", "alt": "Our friendly front desk staff", "title": "Front Desk Team", "category": "team" },
+    { "id": "tech-1", "src": "/images/gallery/cerec-machine.jpg", "alt": "CEREC same-day crown machine", "title": "CEREC Technology", "category": "technology" },
+    { "id": "tech-2", "src": "/images/gallery/3d-scanner.jpg", "alt": "3D cone beam CT scanner", "title": "3D CT Scanner", "category": "technology" },
+    { "id": "tech-3", "src": "/images/gallery/digital-xray.jpg", "alt": "Digital X-ray station", "title": "Digital X-Ray", "category": "technology" },
+    { "id": "results-1", "src": "/images/gallery/veneer-result.jpg", "alt": "Porcelain veneer smile transformation", "title": "Veneer Transformation", "category": "results" },
+    { "id": "results-2", "src": "/images/gallery/implant-result.jpg", "alt": "Dental implant before and after", "title": "Implant Restoration", "category": "results" },
+    { "id": "results-3", "src": "/images/gallery/whitening-result.jpg", "alt": "Professional whitening results", "title": "Whitening Results", "category": "results" }
+  ],
+  "cta": {
+    "variant": "centered",
+    "title": "See It In Person",
+    "description": "Schedule a visit and experience our office firsthand. New patients always welcome.",
+    "primaryCta": { "text": "Book a Visit", "link": "/contact" },
+    "secondaryCta": { "text": "Call (845) 555-0180", "link": "tel:+18455550180" }
+  }
+}

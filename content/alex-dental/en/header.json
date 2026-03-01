@@ -1,0 +1,18 @@
+{
+  "logoType": "both",
+  "logoText": "Alex Dental",
+  "logoImageUrl": "/images/alex-dental-logo.svg",
+  "ctaPrimary": { "text": "Book Appointment", "url": "/book", "style": "filled" },
+  "ctaSecondary": { "text": "Call Now", "url": "tel:+18455550180", "style": "outline" },
+  "showPhone": true,
+  "announcementBar": {
+    "enabled": true,
+    "text": "Now accepting new patients! Mention this banner for a complimentary first visit.",
+    "linkText": "Book Today",
+    "linkUrl": "/book",
+    "backgroundColor": "primary",
+    "dismissible": true
+  },
+  "stickyHeader": true,
+  "transparentOnHero": true
+}

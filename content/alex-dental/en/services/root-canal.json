@@ -1,0 +1,37 @@
+{
+  "slug": "root-canal",
+  "title": "Root Canal Therapy",
+  "subtitle": "Relieve pain and save your natural tooth",
+  "icon": "HeartPulse",
+  "image": "/images/services/root-canal.jpg",
+  "shortDescription": "Gentle root canal treatment to eliminate infection, relieve tooth pain, and preserve your natural tooth.",
+  "fullDescription": "Root canal therapy is a highly effective procedure designed to save a tooth that has become severely decayed or infected. Despite its reputation, modern root canal treatment is a comfortable, routine procedure that eliminates pain rather than causing it. At our Middletown, NY practice, we use advanced techniques and technology to make the experience as smooth and stress-free as possible.\n\nWhen the soft tissue inside your tooth — known as the pulp — becomes inflamed or infected due to deep decay, cracks, or trauma, a root canal is often the best option to save the tooth and prevent the infection from spreading. During the procedure, Dr. Alex carefully removes the infected pulp, thoroughly cleans and disinfects the interior of the tooth, and seals it with a biocompatible material to prevent reinfection.\n\nSaving your natural tooth with root canal therapy offers significant advantages over extraction. It preserves your natural bite and chewing function, protects neighboring teeth from shifting, and maintains the appearance of your smile. In most cases, a dental crown is placed over the treated tooth to restore its full strength and functionality for years to come.",
+  "benefits": [
+    "Eliminates tooth pain and infection at the source",
+    "Saves your natural tooth and avoids the need for extraction",
+    "Prevents infection from spreading to surrounding teeth and bone",
+    "Restores full chewing function when paired with a dental crown"
+  ],
+  "whatToExpect": "Your visit will begin with a digital X-ray to assess the extent of the infection and map the tooth's root structure. Dr. Alex will administer a local anesthetic to ensure you are completely comfortable throughout the procedure. A small protective sheet is placed around the tooth to keep it clean and dry. Using precision instruments, the infected pulp is gently removed, the canals are shaped and disinfected, and a biocompatible filling material is placed to seal the tooth. A temporary or permanent restoration is placed on top. Most patients are surprised at how comfortable the procedure is — many compare it to having a standard filling. You may experience mild tenderness for a few days, which can usually be managed with over-the-counter pain relievers. A follow-up appointment for a permanent crown is typically recommended to protect the tooth long term.",
+  "price": "Starting from $700",
+  "durationMinutes": 90,
+  "featured": false,
+  "faq": [
+    {
+      "question": "Is a root canal painful?",
+      "answer": "Modern root canal therapy is performed under effective local anesthesia, and most patients report that the procedure feels similar to getting a filling. The treatment actually relieves the severe pain caused by the infection. Any mild soreness after the procedure typically resolves within a few days with over-the-counter medication."
+    },
+    {
+      "question": "How do I know if I need a root canal?",
+      "answer": "Common signs include persistent or severe toothache, prolonged sensitivity to hot or cold, darkening of the tooth, swelling or tenderness in nearby gums, and a recurring pimple on the gums. If you are experiencing any of these symptoms, contact our office at (845) 555-0180 for an evaluation."
+    },
+    {
+      "question": "What happens after the root canal?",
+      "answer": "In most cases, Dr. Alex will recommend a dental crown to protect and restore the treated tooth. A temporary restoration may be placed on the day of the procedure, with a permanent crown fitted at a follow-up appointment. Once fully restored, the tooth can function normally for many years."
+    },
+    {
+      "question": "How much does a root canal cost?",
+      "answer": "The cost depends on the tooth's location and complexity. Front teeth are generally less expensive to treat than molars. Most dental insurance plans provide partial coverage for root canal therapy. Our team will provide a detailed cost estimate and help you understand your insurance benefits before treatment begins."
+    }
+  ]
+}
