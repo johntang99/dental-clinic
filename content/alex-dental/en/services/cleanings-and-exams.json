@@ -1,37 +1,51 @@
 {
-  "slug": "cleanings-and-exams",
-  "title": "Cleanings & Comprehensive Exams",
-  "subtitle": "The foundation of a healthy smile",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Appointment"
+    },
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "Call (845) 555-0180"
+    }
+  },
+  "faq": [
+    {
+      "answer": "For most patients, we recommend a professional cleaning and exam every six months. However, if you have gum disease or other risk factors, Dr. Alex may suggest more frequent visits, such as every three to four months, to keep your oral health on track.",
+      "question": "How often should I get a dental cleaning?"
+    },
+    {
+      "answer": "Yes. Digital X-rays use up to 80% less radiation than traditional film X-rays, making them very safe for routine use. We also use protective lead aprons and take X-rays only when clinically necessary.",
+      "question": "Are digital X-rays safe?"
+    },
+    {
+      "answer": "Most dental insurance plans cover two preventive cleanings and exams per year at little to no out-of-pocket cost. Our team will verify your benefits and explain your coverage before your appointment. Call us at (845) 555-0180 if you have any questions about your plan.",
+      "question": "Will my insurance cover cleanings and exams?"
+    },
+    {
+      "answer": "There is no need to feel embarrassed — we welcome patients at every stage. If significant time has passed, we may recommend a more thorough initial cleaning or additional X-rays to get a complete picture of your oral health. Our goal is to help you feel comfortable and get back on track.",
+      "question": "What if it has been a long time since my last dental visit?"
+    }
+  ],
   "icon": "Sparkles",
-  "image": "/images/services/cleanings-and-exams.jpg",
-  "shortDescription": "Professional dental cleanings, comprehensive oral exams, and digital X-rays to keep your smile healthy and bright.",
-  "fullDescription": "Regular dental cleanings and comprehensive exams are the cornerstone of preventive dentistry. At our Middletown, NY practice, we recommend visiting us every six months to maintain optimal oral health, catch potential issues early, and keep your teeth looking their best.\n\nDuring your visit, our skilled dental hygienists will thoroughly remove plaque and tartar buildup that regular brushing and flossing cannot reach. We use advanced ultrasonic scalers and hand instruments to clean above and below the gumline, followed by a professional polish that leaves your teeth smooth and refreshed.\n\nYour comprehensive exam includes a thorough evaluation of your teeth, gums, bite, jaw joints, and oral soft tissues. We utilize state-of-the-art digital X-rays, which emit up to 80% less radiation than traditional film X-rays, to detect cavities, bone loss, and other concerns that are not visible to the naked eye. Dr. Alex will review all findings with you and develop a personalized treatment plan tailored to your unique needs.",
+  "slug": "cleanings-and-exams",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/general/1772360057966-photo-1626736985932-c0df2ae07a2e.jpg",
+  "price": null,
+  "title": "Cleanings & Comprehensive Exams",
   "benefits": [
     "Early detection of cavities, gum disease, and oral health issues",
     "Removal of plaque and tartar buildup to prevent decay",
     "Low-radiation digital X-rays for safe, detailed imaging",
     "Fresher breath and a brighter, polished smile"
   ],
-  "whatToExpect": "Your appointment will begin with a friendly greeting from our front desk team. A dental hygienist will take any necessary digital X-rays before performing a thorough cleaning that includes scaling, polishing, and flossing. Dr. Alex will then conduct a comprehensive exam, reviewing your X-rays on a chairside monitor and checking every tooth, your gum health, bite alignment, and soft tissues. We will discuss any findings with you in straightforward language, answer your questions, and outline any recommended next steps. Most patients find the entire visit comfortable and stress-free.",
-  "price": null,
-  "durationMinutes": 60,
+  "category": "general",
   "featured": true,
-  "faq": [
-    {
-      "question": "How often should I get a dental cleaning?",
-      "answer": "For most patients, we recommend a professional cleaning and exam every six months. However, if you have gum disease or other risk factors, Dr. Alex may suggest more frequent visits, such as every three to four months, to keep your oral health on track."
-    },
-    {
-      "question": "Are digital X-rays safe?",
-      "answer": "Yes. Digital X-rays use up to 80% less radiation than traditional film X-rays, making them very safe for routine use. We also use protective lead aprons and take X-rays only when clinically necessary."
-    },
-    {
-      "question": "Will my insurance cover cleanings and exams?",
-      "answer": "Most dental insurance plans cover two preventive cleanings and exams per year at little to no out-of-pocket cost. Our team will verify your benefits and explain your coverage before your appointment. Call us at (845) 555-0180 if you have any questions about your plan."
-    },
-    {
-      "question": "What if it has been a long time since my last dental visit?",
-      "answer": "There is no need to feel embarrassed — we welcome patients at every stage. If significant time has passed, we may recommend a more thorough initial cleaning or additional X-rays to get a complete picture of your oral health. Our goal is to help you feel comfortable and get back on track."
-    }
-  ]
+  "subtitle": "The foundation of a healthy smile",
+  "heroVariant": "split-photo-right",
+  "whatToExpect": "Your appointment will begin with a friendly greeting from our front desk team. A dental hygienist will take any necessary digital X-rays before performing a thorough cleaning that includes scaling, polishing, and flossing. Dr. Alex will then conduct a comprehensive exam, reviewing your X-rays on a chairside monitor and checking every tooth, your gum health, bite alignment, and soft tissues. We will discuss any findings with you in straightforward language, answer your questions, and outline any recommended next steps. Most patients find the entire visit comfortable and stress-free.",
+  "durationMinutes": 60,
+  "fullDescription": "Regular dental cleanings and comprehensive exams are the cornerstone of preventive dentistry. At our Middletown, NY practice, we recommend visiting us every six months to maintain optimal oral health, catch potential issues early, and keep your teeth looking their best.\n\nDuring your visit, our skilled dental hygienists will thoroughly remove plaque and tartar buildup that regular brushing and flossing cannot reach. We use advanced ultrasonic scalers and hand instruments to clean above and below the gumline, followed by a professional polish that leaves your teeth smooth and refreshed.\n\nYour comprehensive exam includes a thorough evaluation of your teeth, gums, bite, jaw joints, and oral soft tissues. We utilize state-of-the-art digital X-rays, which emit up to 80% less radiation than traditional film X-rays, to detect cavities, bone loss, and other concerns that are not visible to the naked eye. Dr. Alex will review all findings with you and develop a personalized treatment plan tailored to your unique needs.",
+  "shortDescription": "Professional dental cleanings, comprehensive oral exams, and digital X-rays to keep your smile healthy and bright."
 }

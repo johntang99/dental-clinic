@@ -20,6 +20,8 @@ import { CtaPanel } from '@/components/admin/panels/CtaPanel';
 import { ServicesPanel } from '@/components/admin/panels/ServicesPanel';
 import { ServicesItemPanel } from '@/components/admin/panels/ServicesItemPanel';
 import { ServicesModuleList } from '@/components/admin/panels/ServicesModuleList';
+import { ServiceCategoryItemPanel } from '@/components/admin/panels/ServiceCategoryItemPanel';
+import { ServiceDetailPanel } from '@/components/admin/panels/ServiceDetailPanel';
 import { ConditionsPanel } from '@/components/admin/panels/ConditionsPanel';
 import { ConditionsModuleList } from '@/components/admin/panels/ConditionsModuleList';
 import { CaseStudiesModuleList } from '@/components/admin/panels/CaseStudiesModuleList';
@@ -97,7 +99,13 @@ export function ContentEditor({
     Array<{ id: string; title: string }>
   >([]);
   const [activeServiceIndex, setActiveServiceIndex] = useState(-1);
+  const [activeServiceCategoryIndex, setActiveServiceCategoryIndex] = useState(-1);
   const [serviceItemJsonDraft, setServiceItemJsonDraft] = useState('');
+  const [cachedServiceCategoryOptions, setCachedServiceCategoryOptions] = useState<
+    Array<{ id: string; name: string }>
+  >([]);
+  const [cachedServiceItems, setCachedServiceItems] = useState<any[]>([]);
+  const [cachedServiceCategories, setCachedServiceCategories] = useState<any[]>([]);
   const [serviceItemJsonError, setServiceItemJsonError] = useState<string | null>(null);
   const [activeConditionCategoryIndex, setActiveConditionCategoryIndex] = useState(-1);
   const [activeConditionIndex, setActiveConditionIndex] = useState(-1);
@@ -267,8 +275,8 @@ export function ContentEditor({
   const handleSave = async () => {
     setStatus(null);
     if (!activeFile) return;
-    if (isServicesItemSelected && activeTab === 'json' && serviceItemJsonError) {
-      setStatus('Invalid service item JSON. Please fix before saving.');
+    if ((isServicesItemSelected || isServiceCategorySelected) && activeTab === 'json' && serviceItemJsonError) {
+      setStatus('Invalid JSON. Please fix before saving.');
       return;
     }
     if (
@@ -301,6 +309,23 @@ export function ContentEditor({
     };
 
     let nextFormData = formData ? JSON.parse(JSON.stringify(formData)) : null;
+    if (activeTab === 'json' && isServiceCategorySelected) {
+      try {
+        const parsed = JSON.parse(serviceItemJsonDraft);
+        if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+          setStatus('Category JSON must be an object.');
+          return;
+        }
+        if (!nextFormData) {
+          setStatus('Form data is unavailable. Please reload and try again.');
+          return;
+        }
+        setPathValue(nextFormData, ['categories', String(activeServiceCategoryIndex)], parsed);
+      } catch (error) {
+        setStatus('Invalid JSON — fix syntax before saving.');
+        return;
+      }
+    }
     if (activeTab === 'json' && isServicesItemSelected) {
       try {
         const parsed = JSON.parse(serviceItemJsonDraft);
@@ -363,6 +388,7 @@ export function ContentEditor({
     let parsedContent: Record<string, any>;
     const isItemJsonMode =
       isServicesItemSelected ||
+      isServiceCategorySelected ||
       isConditionCategorySelected ||
       isConditionItemSelected ||
       isCaseStudyCategorySelected ||
@@ -419,6 +445,49 @@ export function ContentEditor({
     }
 
     const payload = await response.json();
+
+    // When saving an individual service file, sync summary fields back to services.json
+    if (isServiceDetailFileActive && parsedContent?.slug) {
+      try {
+        const servicesRes = await fetch(
+          `/api/admin/content/file?siteId=${siteId}&locale=${locale}&path=pages%2Fservices.json`
+        );
+        if (servicesRes.ok) {
+          const servicesPayload = await servicesRes.json();
+          const servicesData = JSON.parse(servicesPayload.content || '{}');
+          const items = Array.isArray(servicesData?.servicesList?.items)
+            ? servicesData.servicesList.items
+            : [];
+          const serviceIdx = items.findIndex(
+            (s: any) => s.id === parsedContent.slug
+          );
+          if (serviceIdx >= 0) {
+            const synced = { ...items[serviceIdx] };
+            if (parsedContent.title) synced.title = parsedContent.title;
+            if (parsedContent.shortDescription !== undefined) synced.shortDescription = parsedContent.shortDescription;
+            if (parsedContent.icon) synced.icon = parsedContent.icon;
+            if (parsedContent.image !== undefined) synced.image = parsedContent.image;
+            if (parsedContent.category !== undefined) synced.category = parsedContent.category;
+            if (parsedContent.featured !== undefined) synced.featured = parsedContent.featured;
+            items[serviceIdx] = synced;
+            servicesData.servicesList.items = items;
+            await fetch('/api/admin/content/file', {
+              method: 'PUT',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                siteId,
+                locale,
+                path: 'pages/services.json',
+                content: JSON.stringify(servicesData, null, 2),
+              }),
+            });
+          }
+        }
+      } catch (syncError) {
+        // Non-critical: listing page sync failed but detail file was saved
+      }
+    }
+
     setStatus(payload.message || 'Saved');
   };
 
@@ -636,7 +705,7 @@ export function ContentEditor({
   };
 
   const handleFormat = () => {
-    if (isServicesItemSelected && activeTab === 'json') {
+    if ((isServicesItemSelected || isServiceCategorySelected) && activeTab === 'json') {
       try {
         const parsed = JSON.parse(serviceItemJsonDraft);
         const formatted = JSON.stringify(parsed, null, 2);
@@ -837,23 +906,45 @@ export function ContentEditor({
     !isServicesItemsMode &&
     !isConditionsItemsMode &&
     !isCaseStudiesItemsMode;
-  const serviceItems = Array.isArray(formData?.servicesList?.items)
-    ? formData.servicesList.items
-    : [];
   const servicesPageFile = files.find((file) => file.path === 'pages/services.json') || null;
   const servicesLayoutFile =
     files.find((file) => file.path === 'pages/services.layout.json') || null;
   const isServicesPageFileActive = activeFile?.path === 'pages/services.json';
   const isServicesLayoutFileActive = activeFile?.path === 'pages/services.layout.json';
+  const isServiceDetailFileActive = Boolean(activeFile?.path?.startsWith('services/'));
+  const serviceItems = Array.isArray(formData?.servicesList?.items)
+    ? formData.servicesList.items
+    : isServiceDetailFileActive
+      ? cachedServiceItems
+      : [];
+  const serviceCategories = Array.isArray(formData?.categories) && isServicesPageFileActive
+    ? formData.categories
+    : isServiceDetailFileActive
+      ? cachedServiceCategories
+      : [];
+  const serviceCategoryOptions = serviceCategories.length > 0
+    ? serviceCategories.map((cat: any) => ({
+        id: cat?.id || '',
+        name: cat?.name || cat?.id || '',
+      }))
+    : cachedServiceCategoryOptions;
   const isServicesItemSelected =
-    isServicesItemsMode && isServicesPageFileActive && activeServiceIndex >= 0;
+    isServicesItemsMode && isServicesPageFileActive && !isServiceDetailFileActive && activeServiceIndex >= 0;
+  const isServiceCategorySelected =
+    isServicesItemsMode && isServicesPageFileActive && activeServiceCategoryIndex >= 0;
   const isServicesPageSettingsSelected =
-    isServicesItemsMode && isServicesPageFileActive && activeServiceIndex === -1;
-  const showGlobalPanels = !isServicesItemsMode || isServicesPageSettingsSelected;
+    isServicesItemsMode &&
+    isServicesPageFileActive &&
+    activeServiceIndex === -1 &&
+    activeServiceCategoryIndex === -1;
+  const showGlobalPanels = !isServicesItemsMode || (isServicesPageSettingsSelected && !isServiceDetailFileActive);
   const selectedService =
     isServicesItemsMode && isServicesPageFileActive && activeServiceIndex >= 0
       ? serviceItems[activeServiceIndex]
       : null;
+  const selectedServiceCategory = isServiceCategorySelected
+    ? (formData?.categories?.[activeServiceCategoryIndex] ?? null)
+    : null;
   const conditionItems = Array.isArray(formData?.conditions) ? formData.conditions : [];
   const conditionsPageFile = files.find((file) => file.path === 'pages/conditions.json') || null;
   const conditionsLayoutFile =
@@ -1311,14 +1402,65 @@ export function ContentEditor({
     }
   };
 
+  const addServiceCategory = () => {
+    if (!formData) return;
+    const categories = Array.isArray(formData.categories) ? [...formData.categories] : [];
+    categories.push({
+      id: `category-${categories.length + 1}`,
+      icon: 'shield-check',
+      name: '',
+      subtitle: '',
+      description: '',
+      image: '',
+      order: categories.length + 1,
+    });
+    updateFormValue(['categories'], categories);
+    if (isServicesItemsMode) {
+      setActiveServiceCategoryIndex(categories.length - 1);
+      setActiveServiceIndex(-1);
+    }
+  };
+
+  const removeServiceCategory = (index: number) => {
+    if (!formData || !Array.isArray(formData.categories)) return;
+    const categories = [...formData.categories];
+    const target = categories[index];
+    categories.splice(index, 1);
+    const next: Record<string, any> = { ...formData, categories };
+
+    if (target?.id && Array.isArray(formData.servicesList?.items)) {
+      next.servicesList = {
+        ...(formData.servicesList || {}),
+        items: formData.servicesList.items.map((service: any) => {
+          if (service?.category === target.id) {
+            return { ...service, category: '' };
+          }
+          return service;
+        }),
+      };
+    }
+
+    setFormData(next);
+    if (isServicesItemsMode) {
+      setActiveServiceCategoryIndex((current) => {
+        if (categories.length === 0) return -1;
+        if (current > index) return current - 1;
+        if (current >= categories.length) return categories.length - 1;
+        return current;
+      });
+    }
+  };
+
   const addServicesListItem = () => {
     if (!formData) return;
     const items = Array.isArray(formData.servicesList?.items) ? [...formData.servicesList.items] : [];
+    const firstCategory = serviceCategoryOptions[0]?.id || '';
     items.push({
       id: `service-${items.length + 1}`,
       icon: 'Syringe',
       order: items.length + 1,
       title: '',
+      category: firstCategory,
       shortDescription: '',
       fullDescription: '',
       benefits: [],
@@ -1397,6 +1539,20 @@ export function ContentEditor({
     }
     const payload = await response.json();
     setStatus(payload.message || 'Service deleted and saved.');
+  };
+
+  const loadServiceDetailFile = (serviceId: string, index: number) => {
+    if (!serviceId) return;
+    const filePath = `services/${serviceId}.json`;
+    const fileRef: ContentFileItem = {
+      id: `service-${serviceId}`,
+      label: `Service: ${serviceItems[index]?.title || serviceId}`,
+      path: filePath,
+      scope: 'locale',
+    };
+    setActiveServiceIndex(index);
+    setActiveServiceCategoryIndex(-1);
+    setActiveFile(fileRef);
   };
 
   const deleteSelectedCaseStudyCategory = async () => {
@@ -1575,6 +1731,24 @@ export function ContentEditor({
   };
 
   useEffect(() => {
+    if (!isServicesPageFileActive || !formData) return;
+    const cats = Array.isArray(formData.categories) ? formData.categories : [];
+    if (cats.length > 0) {
+      setCachedServiceCategories(cats);
+      setCachedServiceCategoryOptions(
+        cats.map((cat: any) => ({
+          id: cat?.id || '',
+          name: cat?.name || cat?.id || '',
+        }))
+      );
+    }
+    const items = Array.isArray(formData.servicesList?.items) ? formData.servicesList.items : [];
+    if (items.length > 0) {
+      setCachedServiceItems(items);
+    }
+  }, [isServicesPageFileActive, formData]);
+
+  useEffect(() => {
     if (!isServicesItemsMode || !isServicesPageFileActive) return;
     if (!serviceItems.length) {
       setActiveServiceIndex(-1);
@@ -1586,14 +1760,27 @@ export function ContentEditor({
   }, [isServicesItemsMode, isServicesPageFileActive, serviceItems.length, activeServiceIndex]);
 
   useEffect(() => {
-    if (!isServicesItemSelected || !selectedService) {
-      setServiceItemJsonDraft('');
+    if (!isServicesItemsMode || !isServicesPageFileActive) return;
+    const cats = Array.isArray(formData?.categories) ? formData.categories : [];
+    if (activeServiceCategoryIndex >= cats.length) {
+      setActiveServiceCategoryIndex(cats.length > 0 ? cats.length - 1 : -1);
+    }
+  }, [isServicesItemsMode, isServicesPageFileActive, formData?.categories, activeServiceCategoryIndex]);
+
+  useEffect(() => {
+    if (isServiceCategorySelected && selectedServiceCategory) {
+      setServiceItemJsonDraft(JSON.stringify(selectedServiceCategory, null, 2));
       setServiceItemJsonError(null);
       return;
     }
-    setServiceItemJsonDraft(JSON.stringify(selectedService, null, 2));
+    if (isServicesItemSelected && selectedService) {
+      setServiceItemJsonDraft(JSON.stringify(selectedService, null, 2));
+      setServiceItemJsonError(null);
+      return;
+    }
+    setServiceItemJsonDraft('');
     setServiceItemJsonError(null);
-  }, [isServicesItemSelected, selectedService, activeServiceIndex]);
+  }, [isServicesItemSelected, selectedService, activeServiceIndex, isServiceCategorySelected, selectedServiceCategory, activeServiceCategoryIndex]);
 
   useEffect(() => {
     if (!isConditionsItemsMode || !isConditionsPageFileActive) return;
@@ -1680,6 +1867,7 @@ export function ContentEditor({
   useEffect(() => {
     const isItemJsonMode =
       isServicesItemSelected ||
+      isServiceCategorySelected ||
       isConditionCategorySelected ||
       isConditionItemSelected ||
       isCaseStudyCategorySelected ||
@@ -1690,6 +1878,7 @@ export function ContentEditor({
     activeTab,
     formData,
     isServicesItemSelected,
+    isServiceCategorySelected,
     isConditionCategorySelected,
     isConditionItemSelected,
     isCaseStudyCategorySelected,
@@ -1850,12 +2039,20 @@ export function ContentEditor({
                   isServicesPageSettingsSelected={isServicesPageSettingsSelected}
                   isServicesLayoutFileActive={isServicesLayoutFileActive}
                   isServicesPageFileActive={isServicesPageFileActive}
+                  isServiceDetailFileActive={isServiceDetailFileActive}
                   activeServiceIndex={activeServiceIndex}
+                  activeServiceCategoryIndex={activeServiceCategoryIndex}
                   serviceItems={serviceItems}
+                  serviceCategories={serviceCategories}
                   setActiveFile={(file) => setActiveFile(file as ContentFileItem | null)}
                   setActiveServiceIndex={setActiveServiceIndex}
+                  setActiveServiceCategoryIndex={setActiveServiceCategoryIndex}
                   addServicesListItem={addServicesListItem}
                   deleteSelectedService={deleteSelectedService}
+                  addServiceCategory={addServiceCategory}
+                  removeServiceCategory={removeServiceCategory}
+                  onServiceClick={loadServiceDetailFile}
+                  setStatus={(message) => setStatus(message)}
                 />
               ) : isConditionsItemsMode && activeFile ? (
                 <ConditionsModuleList
@@ -1973,8 +2170,12 @@ export function ContentEditor({
                 {isServicesItemsMode
                   ? isServicesLayoutFileActive
                     ? `${activeFile?.path || ''} · layout`
+                    : isServiceDetailFileActive
+                    ? `${activeFile?.path || ''}`
                     : isServicesPageSettingsSelected
                     ? `${activeFile?.path || ''} · page settings`
+                    : isServiceCategorySelected
+                    ? `${activeFile?.path || ''} · category ${activeServiceCategoryIndex + 1}`
                     : `${activeFile?.path || ''} · item ${activeServiceIndex + 1}`
                   : isConditionsItemsMode
                     ? isConditionsLayoutFileActive
@@ -2187,11 +2388,34 @@ export function ContentEditor({
                 <CtaPanel cta={formData.cta} updateFormValue={updateFormValue} />
               )}
 
-              {isServicesItemsMode && formData?.servicesList && selectedService && (
+              {isServicesItemsMode && isServiceCategorySelected && selectedServiceCategory && (
+                <ServiceCategoryItemPanel
+                  category={selectedServiceCategory}
+                  index={activeServiceCategoryIndex}
+                  markdownPreview={markdownPreview}
+                  toggleMarkdownPreview={toggleMarkdownPreview}
+                  updateFormValue={updateFormValue}
+                  openImagePicker={openImagePicker}
+                />
+              )}
+
+              {isServicesItemsMode && isServiceDetailFileActive && formData && (
+                <ServiceDetailPanel
+                  formData={formData}
+                  serviceCategoryOptions={serviceCategoryOptions}
+                  markdownPreview={markdownPreview}
+                  toggleMarkdownPreview={toggleMarkdownPreview}
+                  updateValue={updateFormValue}
+                  openImagePicker={openImagePicker}
+                />
+              )}
+
+              {isServicesItemsMode && !isServiceDetailFileActive && formData?.servicesList && selectedService && (
                 <ServicesItemPanel
                   servicesList={formData.servicesList}
                   selectedService={selectedService}
                   selectedIndex={activeServiceIndex}
+                  serviceCategoryOptions={serviceCategoryOptions}
                   markdownPreview={markdownPreview}
                   toggleMarkdownPreview={toggleMarkdownPreview}
                   updateFormValue={updateFormValue}
@@ -2356,7 +2580,8 @@ export function ContentEditor({
                 </div>
               )}
             </div>
-          ) : isServicesItemSelected && selectedService ? (
+          ) : (isServiceCategorySelected && selectedServiceCategory) ||
+            (isServicesItemSelected && selectedService) ? (
             <ItemJsonEditor
               error={serviceItemJsonError}
               draft={serviceItemJsonDraft}
@@ -2365,7 +2590,7 @@ export function ContentEditor({
                 try {
                   const parsed = JSON.parse(next);
                   if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
-                    setServiceItemJsonError('Service item JSON must be an object.');
+                    setServiceItemJsonError('JSON must be an object.');
                     return;
                   }
                   setServiceItemJsonError(null);
@@ -2377,17 +2602,26 @@ export function ContentEditor({
                 try {
                   const parsed = JSON.parse(serviceItemJsonDraft);
                   if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
-                    setServiceItemJsonError('Service item JSON must be an object.');
+                    setServiceItemJsonError('JSON must be an object.');
                     return;
                   }
                   setServiceItemJsonError(null);
-                  updateFormValue(['servicesList', 'items', String(activeServiceIndex)], parsed);
-                  setStatus('Service JSON applied.');
+                  if (isServiceCategorySelected) {
+                    updateFormValue(['categories', String(activeServiceCategoryIndex)], parsed);
+                    setStatus('Category JSON applied.');
+                  } else if (isServicesItemSelected) {
+                    updateFormValue(['servicesList', 'items', String(activeServiceIndex)], parsed);
+                    setStatus('Service JSON applied.');
+                  }
                 } catch (error) {
                   setServiceItemJsonError('Invalid JSON');
                 }
               }}
-              placeholder="Edit selected service JSON."
+              placeholder={
+                isServiceCategorySelected
+                  ? 'Edit selected category JSON.'
+                  : 'Edit selected service JSON.'
+              }
             />
           ) : (isConditionCategorySelected && selectedConditionCategory) ||
             (isConditionItemSelected && selectedConditionItem) ? (

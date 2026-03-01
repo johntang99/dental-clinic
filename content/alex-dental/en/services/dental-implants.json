@@ -29,5 +29,19 @@
       "question": "Am I a candidate for dental implants?",
       "answer": "Most adults with good general health are candidates for dental implants. Adequate jawbone density is needed to support the implant, but even patients with some bone loss may be eligible with the help of a bone grafting procedure. The best way to find out is to schedule a consultation so we can evaluate your individual situation."
     }
-  ]
+  ],
+  "category": "restorative",
+  "heroVariant": "centered",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "text": "Book Appointment",
+      "link": "/contact"
+    },
+    "secondaryCta": {
+      "text": "Call (845) 555-0180",
+      "link": "tel:+18455550180"
+    }
+  }
 }

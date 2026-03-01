@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Locale } from '@/lib/types';
@@ -24,6 +25,13 @@ interface ServiceData {
     question: string;
     answer: string;
   }>;
+  heroVariant?: 'centered' | 'split-photo-right' | 'split-photo-left' | 'photo-background';
+  cta?: {
+    title?: string;
+    subtitle?: string;
+    primaryCta?: { text: string; link: string };
+    secondaryCta?: { text: string; link: string };
+  };
 }
 
 interface ServiceDetailPageProps {
@@ -80,66 +88,147 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
 
   const isTransparentMenu = headerConfig?.menu?.variant === 'transparent';
   const heroTopPaddingClass = isTransparentMenu ? 'pt-30 md:pt-36' : 'pt-16 md:pt-20';
+  const heroVariant = service.heroVariant || 'centered';
+  const hasHeroImage = Boolean(service.image && !service.image.startsWith('/images/'));
+  const isSplitHero = heroVariant === 'split-photo-right' || heroVariant === 'split-photo-left';
+  const isPhotoBackground = heroVariant === 'photo-background' && hasHeroImage;
+
+  const breadcrumb = (textColorClass = 'text-gray-500') => (
+    <nav className={`flex items-center gap-2 text-sm ${textColorClass} mb-8`}>
+      <Link href={`/${locale}`} className="hover:text-primary transition-colors">
+        Home
+      </Link>
+      <Icon name="ChevronRight" size="sm" />
+      <Link href={`/${locale}/services`} className="hover:text-primary transition-colors">
+        Services
+      </Link>
+      <Icon name="ChevronRight" size="sm" />
+      <span className={isPhotoBackground ? 'text-white font-medium' : 'text-gray-900 font-medium'}>
+        {service.title}
+      </span>
+    </nav>
+  );
+
+  const quickBadges = (badgeVariant: 'secondary' | 'primary' = 'secondary') => (
+    <div className="flex flex-wrap gap-3">
+      {service.durationMinutes && (
+        <Badge variant={badgeVariant} className="flex items-center gap-1.5">
+          <Icon name="Clock" size="sm" />
+          {service.durationMinutes} min
+        </Badge>
+      )}
+      {service.price && (
+        <Badge variant={badgeVariant} className="flex items-center gap-1.5">
+          <Icon name="DollarSign" size="sm" />
+          {service.price}
+        </Badge>
+      )}
+      {service.featured && (
+        <Badge variant="primary">Popular Service</Badge>
+      )}
+    </div>
+  );
+
+  const heroTextContent = (titleClass = 'text-gray-900', subtitleClass = 'text-[var(--brand)]') => (
+    <>
+      <div className="flex items-start gap-4 mb-6">
+        {service.icon && (
+          <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+            <Icon name={service.icon as any} className="text-primary" />
+          </div>
+        )}
+        <div>
+          <h1 className={`text-display font-bold ${titleClass} mb-2`}>{service.title}</h1>
+          {service.subtitle && (
+            <p className={`text-subheading ${subtitleClass} font-medium`}>{service.subtitle}</p>
+          )}
+        </div>
+      </div>
+      {quickBadges(isPhotoBackground ? 'primary' : 'secondary')}
+    </>
+  );
+
+  const faqSchema = service.faq && service.faq.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: service.faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  } : null;
 
   return (
     <main className="min-h-screen">
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       {/* Hero */}
-      <section
-        className={`relative bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)] ${heroTopPaddingClass} pb-16 md:pb-20 px-4`}
-      >
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-primary-100 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-64 h-64 bg-secondary-50 rounded-full blur-3xl" />
-        </div>
-
-        <div className="container mx-auto max-w-4xl relative z-10">
-          {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8">
-            <Link href={`/${locale}`} className="hover:text-primary transition-colors">
-              Home
-            </Link>
-            <Icon name="ChevronRight" size="sm" />
-            <Link href={`/${locale}/services`} className="hover:text-primary transition-colors">
-              Services
-            </Link>
-            <Icon name="ChevronRight" size="sm" />
-            <span className="text-gray-900 font-medium">{service.title}</span>
-          </nav>
-
-          <div className="flex items-start gap-4 mb-6">
-            {service.icon && (
-              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Icon name={service.icon as any} className="text-primary" />
+      {isPhotoBackground ? (
+        <section className={`relative min-h-[400px] ${heroTopPaddingClass} pb-16 md:pb-20 px-4`}>
+          <Image
+            src={service.image!}
+            alt={service.title}
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="container mx-auto max-w-4xl relative z-10">
+            {breadcrumb('text-gray-300')}
+            {heroTextContent('text-white', 'text-white/80')}
+          </div>
+        </section>
+      ) : isSplitHero && hasHeroImage ? (
+        <section
+          className={`relative bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)] ${heroTopPaddingClass} pb-16 md:pb-20 px-4`}
+        >
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 right-10 w-64 h-64 bg-primary-100 rounded-full blur-3xl" />
+            <div className="absolute bottom-10 left-10 w-64 h-64 bg-secondary-50 rounded-full blur-3xl" />
+          </div>
+          <div className="container mx-auto max-w-6xl relative z-10">
+            {breadcrumb()}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className={heroVariant === 'split-photo-left' ? 'lg:order-2' : ''}>
+                {heroTextContent()}
               </div>
-            )}
-            <div>
-              <h1 className="text-display font-bold text-gray-900 mb-2">{service.title}</h1>
-              {service.subtitle && (
-                <p className="text-subheading text-[var(--brand)] font-medium">{service.subtitle}</p>
-              )}
+              <div className={heroVariant === 'split-photo-left' ? 'lg:order-1' : ''}>
+                <div className="rounded-2xl overflow-hidden shadow-xl">
+                  <Image
+                    src={service.image!}
+                    alt={service.title}
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
           </div>
-
-          {/* Quick info badges */}
-          <div className="flex flex-wrap gap-3">
-            {service.durationMinutes && (
-              <Badge variant="secondary" className="flex items-center gap-1.5">
-                <Icon name="Clock" size="sm" />
-                {service.durationMinutes} min
-              </Badge>
-            )}
-            {service.price && (
-              <Badge variant="secondary" className="flex items-center gap-1.5">
-                <Icon name="DollarSign" size="sm" />
-                {service.price}
-              </Badge>
-            )}
-            {service.featured && (
-              <Badge variant="primary">Popular Service</Badge>
-            )}
+        </section>
+      ) : (
+        /* Default centered hero */
+        <section
+          className={`relative bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)] ${heroTopPaddingClass} pb-16 md:pb-20 px-4`}
+        >
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 right-10 w-64 h-64 bg-primary-100 rounded-full blur-3xl" />
+            <div className="absolute bottom-10 left-10 w-64 h-64 bg-secondary-50 rounded-full blur-3xl" />
           </div>
-        </div>
-      </section>
+          <div className="container mx-auto max-w-4xl relative z-10">
+            {breadcrumb()}
+            {heroTextContent()}
+          </div>
+        </section>
+      )}
 
       {/* Main Content */}
       <section className="py-16 lg:py-24 bg-white">
@@ -251,10 +340,10 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
 
       {/* CTA */}
       <CTASection
-        title="Ready to Get Started?"
-        subtitle="Schedule an appointment to learn more about this service and how it can help you."
-        primaryCta={{ text: "Book Appointment", link: `/${locale}/contact` }}
-        secondaryCta={{ text: "Call (845) 555-0180", link: "tel:+18455550180" }}
+        title={service.cta?.title || "Ready to Get Started?"}
+        subtitle={service.cta?.subtitle || "Schedule an appointment to learn more about this service and how it can help you."}
+        primaryCta={service.cta?.primaryCta || { text: "Book Appointment", link: `/${locale}/contact` }}
+        secondaryCta={service.cta?.secondaryCta || { text: "Call (845) 555-0180", link: "tel:+18455550180" }}
         variant="centered"
         className="py-16"
       />

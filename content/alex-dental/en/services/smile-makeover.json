@@ -29,5 +29,19 @@
       "question": "Is a smile makeover worth it?",
       "answer": "Our patients overwhelmingly say yes. A smile makeover is an investment in your confidence, your appearance, and your quality of life. Many patients tell us it is one of the best decisions they have ever made. We encourage you to schedule a consultation so we can show you what is possible for your smile."
     }
-  ]
+  ],
+  "category": "cosmetic",
+  "heroVariant": "centered",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "text": "Book Appointment",
+      "link": "/contact"
+    },
+    "secondaryCta": {
+      "text": "Call (845) 555-0180",
+      "link": "tel:+18455550180"
+    }
+  }
 }

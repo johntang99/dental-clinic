@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import ReactMarkdown from 'react-markdown';
 import { getRequestSiteId, loadAllItems, loadContent, loadPageContent } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
 import { ServicesPage, Locale } from '@/lib/types';
@@ -70,7 +71,35 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
   }
 
   const { hero, overview, servicesList, faq, cta } = content;
-  const services = servicesList?.items || [];
+  const serviceDetailFiles = await loadAllItems<{
+    slug: string;
+    benefits?: string[];
+    whatToExpect?: string;
+  }>(siteId, locale, 'services');
+  const serviceDetailMap = new Map(
+    serviceDetailFiles.map((d) => [d.slug, d])
+  );
+  const rawServices = servicesList?.items || [];
+  const services = rawServices.map((s: any) => {
+    const detail = s.id ? serviceDetailMap.get(s.id) : null;
+    if (!detail) return s;
+    return {
+      ...s,
+      benefits: s.benefits || detail.benefits,
+      whatToExpect: s.whatToExpect || detail.whatToExpect,
+    };
+  });
+  const categories = (content as any).categories || [];
+  const layoutVariant = (content as any).layoutVariant || 'category-detail-alternating';
+  const sortedCategories = [...categories].sort((a: any, b: any) => {
+    const aOrder = Number.isFinite(Number(a.order)) ? Number(a.order) : Number.MAX_SAFE_INTEGER;
+    const bOrder = Number.isFinite(Number(b.order)) ? Number(b.order) : Number.MAX_SAFE_INTEGER;
+    return aOrder - bOrder;
+  });
+  const servicesByCategory = sortedCategories.map((category: any) => ({
+    ...category,
+    services: services.filter((s: any) => s.category === category.id),
+  }));
   const blogBySlug = new Map(blogPosts.map((post) => [post.slug, post]));
   const preferredSlugs = content.relatedReading?.preferredSlugs || [];
   const preferredPosts = preferredSlugs
@@ -252,22 +281,184 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
         </section>
       )}
 
-      {/* Services Section - Variant-aware */}
-      {isEnabled('services') && content.servicesList && services.length > 0 && (
-        <div style={sectionStyle('services')}>
-          <ServicesSection
-            variant={content.servicesList.variant || 'detail-alternating'}
-            badge={servicesBadge}
-            title={
-              content.servicesList.title ||
-              servicesTitleFallback
-            }
-            subtitle={content.servicesList.subtitle || ''}
-            locale={locale}
-            legacyLabels={legacyLabels}
-            services={services}
-          />
-        </div>
+      {/* Services by Category */}
+      {isEnabled('services') && categories.length > 0 && services.length > 0 && (
+        <section className="py-16 lg:py-24 bg-white" style={sectionStyle('services')}>
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <Badge variant="primary" className="mb-4">
+                  {servicesBadge}
+                </Badge>
+                <h2 className="text-heading font-bold text-gray-900 mb-4">
+                  {content.servicesList?.title || servicesTitleFallback}
+                </h2>
+                {content.servicesList?.subtitle && (
+                  <p className="text-gray-600">{content.servicesList.subtitle}</p>
+                )}
+              </div>
+
+              <div className="space-y-24">
+                {servicesByCategory
+                  .filter((categoryGroup: any) => categoryGroup.services.length > 0)
+                  .map((categoryGroup: any, categoryIndex: number) => {
+                    const categoryImage =
+                      categoryGroup.image ||
+                      categoryGroup.services.find((s: any) => Boolean(s.image))?.image;
+                    const imageOnRight = categoryIndex % 2 === 0;
+                    return (
+                      <div key={categoryGroup.id} id={categoryGroup.id} className="space-y-6 scroll-mt-32">
+                        <div className="grid lg:grid-cols-2 gap-8 items-center">
+                          <div className={imageOnRight ? 'lg:order-1' : 'lg:order-2'}>
+                            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary mb-4">
+                              <Icon name={categoryGroup.icon as any} size="sm" />
+                              <span>{categoryGroup.name}</span>
+                            </div>
+                            <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                              {categoryGroup.name}
+                            </h3>
+                            {categoryGroup.subtitle && (
+                              <p className="text-base font-semibold text-gray-800 mb-3">
+                                {categoryGroup.subtitle}
+                              </p>
+                            )}
+                            <div className="prose prose-sm max-w-none text-gray-600 leading-relaxed">
+                              <ReactMarkdown
+                                components={{
+                                  ul: (props) => <ul className="list-disc pl-5" {...props} />,
+                                  ol: (props) => <ol className="list-decimal pl-5" {...props} />,
+                                }}
+                              >
+                                {String(categoryGroup.description || '')}
+                              </ReactMarkdown>
+                            </div>
+                          </div>
+                          <div className={imageOnRight ? 'lg:order-2' : 'lg:order-1'}>
+                            <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-md bg-gradient-to-br from-gray-50 to-white">
+                              {categoryImage ? (
+                                <Image
+                                  src={categoryImage}
+                                  alt={categoryGroup.name}
+                                  width={1200}
+                                  height={780}
+                                  className="w-full h-auto object-cover"
+                                />
+                              ) : (
+                                <div className="aspect-[16/9] w-full flex items-center justify-center">
+                                  <Icon name={categoryGroup.icon as any} className="text-primary" />
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="grid gap-4">
+                          {categoryGroup.services.map((service: any) => {
+                            const benefits = Array.isArray(service.benefits) ? service.benefits : [];
+                            const whatToExpect = typeof service.whatToExpect === 'string' ? service.whatToExpect : '';
+                            const hasBenefits = benefits.length > 0;
+                            const hasWhatToExpect = whatToExpect.length > 0;
+                            const hasDetails = hasBenefits || hasWhatToExpect;
+
+                            return (
+                              <div
+                                key={service.id}
+                                className="bg-white border border-gray-100 rounded-xl p-6 shadow-md hover:border-primary/30 hover:shadow-xl transition-all"
+                              >
+                                <div className={`grid ${hasDetails ? 'lg:grid-cols-3' : ''} gap-6`}>
+                                  {/* Column 1: Title & Description */}
+                                  <div className="lg:col-span-1">
+                                    <div className="flex items-center gap-3 mb-3">
+                                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                        <Icon name={service.icon as any} className="text-primary" size="sm" />
+                                      </div>
+                                      <Link href={`/${locale}${service.link}`} className="group">
+                                        <h4 className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors">
+                                          {service.title}
+                                        </h4>
+                                      </Link>
+                                    </div>
+                                    {service.image ? (
+                                      <div className="flex gap-3">
+                                        <div className="w-28 h-28 rounded-lg overflow-hidden flex-shrink-0">
+                                          <Image
+                                            src={service.image}
+                                            alt={service.title}
+                                            width={112}
+                                            height={112}
+                                            className="w-full h-full object-cover"
+                                          />
+                                        </div>
+                                        <p className="text-gray-600 text-sm">
+                                          {service.shortDescription}
+                                        </p>
+                                      </div>
+                                    ) : (
+                                      <p className="text-gray-600 text-sm">
+                                        {service.shortDescription}
+                                      </p>
+                                    )}
+                                  </div>
+
+                                  {/* Column 2: Key Benefits */}
+                                  {hasBenefits && (
+                                    <div>
+                                      <h5 className="text-sm font-semibold text-gray-900 mb-3">
+                                        {locale === 'en' ? 'Key Benefits' : '主要优势'}
+                                      </h5>
+                                      <div className="space-y-2">
+                                        {benefits.slice(0, 4).map((benefit: string, idx: number) => (
+                                          <div key={idx} className="flex items-start gap-2">
+                                            <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size="sm" />
+                                            <span className="text-sm text-gray-600">{benefit}</span>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  )}
+
+                                  {/* Column 3: What to Expect */}
+                                  {hasWhatToExpect && (
+                                    <div>
+                                      <h5 className="text-sm font-semibold text-gray-900 mb-3">
+                                        {locale === 'en' ? 'What to Expect' : '就诊流程'}
+                                      </h5>
+                                      <p className="text-sm text-gray-600 mb-4 line-clamp-4">
+                                        {whatToExpect}
+                                      </p>
+                                      <Link
+                                        href={`/${locale}${service.link}`}
+                                        className="inline-flex items-center gap-1 text-primary font-medium text-sm hover:text-primary-dark"
+                                      >
+                                        <span>{locale === 'en' ? 'Learn More' : '了解更多'}</span>
+                                        <Icon name="ChevronRight" size="sm" />
+                                      </Link>
+                                    </div>
+                                  )}
+
+                                  {/* Fallback link when no details */}
+                                  {!hasDetails && (
+                                    <div className="flex items-center">
+                                      <Link
+                                        href={`/${locale}${service.link}`}
+                                        className="inline-flex items-center gap-1 text-primary font-medium text-sm hover:text-primary-dark"
+                                      >
+                                        <span>{locale === 'en' ? 'Learn More' : '了解更多'}</span>
+                                        <Icon name="ChevronRight" size="sm" />
+                                      </Link>
+                                    </div>
+                                  )}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+          </div>
+        </section>
       )}
 
       {/* FAQ Section */}

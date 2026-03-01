@@ -24,7 +24,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     ref
   ) => {
     const inputId = id || label?.toLowerCase().replace(/\s+/g, '-');
-    
+    const errorId = error && inputId ? `${inputId}-error` : undefined;
+
     return (
       <div className={cn('flex flex-col gap-1.5', fullWidth && 'w-full')}>
         {label && (
@@ -35,17 +36,19 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             {label}
           </label>
         )}
-        
+
         <div className="relative">
           {icon && (
             <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
               {icon}
             </div>
           )}
-          
+
           <input
             ref={ref}
             id={inputId}
+            aria-invalid={error ? true : undefined}
+            aria-describedby={errorId}
             className={cn(
               'block w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 transition-colors',
               'placeholder:text-gray-400',
@@ -58,11 +61,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             {...props}
           />
         </div>
-        
+
         {error && (
-          <p className="text-sm text-red-600">{error}</p>
+          <p id={errorId} className="text-sm text-red-600" role="alert">{error}</p>
         )}
-        
+
         {helperText && !error && (
           <p className="text-sm text-gray-500">{helperText}</p>
         )}

@@ -29,5 +29,19 @@
       "question": "Can veneers fix crooked teeth?",
       "answer": "Veneers can correct the appearance of mildly crooked or uneven teeth without the need for braces or aligners. For more significant alignment issues, we may recommend orthodontic treatment first to achieve the best possible result."
     }
-  ]
+  ],
+  "category": "cosmetic",
+  "heroVariant": "centered",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "text": "Book Appointment",
+      "link": "/contact"
+    },
+    "secondaryCta": {
+      "text": "Call (845) 555-0180",
+      "link": "tel:+18455550180"
+    }
+  }
 }

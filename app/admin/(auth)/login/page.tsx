@@ -17,7 +17,7 @@ export default function LoginPage() {
         <p className="text-center mt-6 text-sm text-gray-600">
           {isDbMode
             ? 'Use your configured admin account.'
-            : 'Default: admin@example.com / admin123'}
+            : 'Default: admin@alex-dental.com / admin123'}
         </p>
       </div>
     </div>

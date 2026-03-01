@@ -52,8 +52,11 @@ export default function Accordion({
           >
             {/* Header */}
             <button
+              id={`${item.id}-trigger`}
               onClick={() => toggleItem(item.id)}
               className="w-full flex items-center justify-between p-4 text-left bg-white hover:bg-gray-50 transition-colors"
+              aria-expanded={isOpen}
+              aria-controls={`${item.id}-content`}
             >
               <span className="font-semibold text-gray-900">
                 {item.title}
@@ -69,6 +72,9 @@ export default function Accordion({
             
             {/* Content */}
             <div
+              id={`${item.id}-content`}
+              role="region"
+              aria-labelledby={`${item.id}-trigger`}
               className={cn(
                 'overflow-hidden transition-all duration-200',
                 isOpen ? 'max-h-[1000px]' : 'max-h-0'

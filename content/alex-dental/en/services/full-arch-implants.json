@@ -33,5 +33,19 @@
       "question": "Will I be without teeth at any point during the process?",
       "answer": "In most cases, no. Many patients receive a temporary fixed prosthesis on the same day as their implant surgery, so you never have to go without teeth. This temporary set is fully functional and aesthetic, allowing you to eat and smile with confidence while your permanent restoration is being crafted over the following months."
     }
-  ]
+  ],
+  "category": "restorative",
+  "heroVariant": "centered",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "text": "Book Appointment",
+      "link": "/contact"
+    },
+    "secondaryCta": {
+      "text": "Call (845) 555-0180",
+      "link": "tel:+18455550180"
+    }
+  }
 }

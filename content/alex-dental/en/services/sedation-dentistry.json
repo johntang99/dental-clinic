@@ -33,5 +33,19 @@
       "question": "Who is a good candidate for sedation dentistry?",
       "answer": "Sedation dentistry is ideal for patients who experience dental anxiety or fear, have a strong gag reflex, need extensive dental work completed in a single visit, or have difficulty sitting comfortably for long periods. It is also helpful for patients with certain physical or cognitive conditions that make traditional dental visits challenging. We evaluate each patient individually to determine the safest, most appropriate option."
     }
-  ]
+  ],
+  "category": "comfort",
+  "heroVariant": "centered",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "text": "Book Appointment",
+      "link": "/contact"
+    },
+    "secondaryCta": {
+      "text": "Call (845) 555-0180",
+      "link": "tel:+18455550180"
+    }
+  }
 }

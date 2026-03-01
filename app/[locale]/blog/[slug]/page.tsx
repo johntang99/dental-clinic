@@ -3,9 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
-import { Locale } from '@/lib/types';
-import { getRequestSiteId, loadAllItems, loadItemBySlug, loadPageContent } from '@/lib/content';
-import { buildPageMetadata } from '@/lib/seo';
+import { Locale, SiteInfo } from '@/lib/types';
+import { getRequestSiteId, loadAllItems, loadItemBySlug, loadPageContent, loadSiteInfo } from '@/lib/content';
+import { buildPageMetadata, getBaseUrlFromRequest } from '@/lib/seo';
+import { getSiteDisplayName } from '@/lib/siteInfo';
 import { Button, Badge, Icon, Card, CardHeader, CardTitle, CardDescription } from '@/components/ui';
 
 interface BlogContentBlock {
@@ -105,6 +106,11 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     notFound();
   }
 
+  // Load site info for structured data
+  const siteInfo = await loadSiteInfo(siteId, locale) as SiteInfo | null;
+  const baseUrl = getBaseUrlFromRequest();
+  const siteName = getSiteDisplayName(siteInfo, 'Business');
+
   // Load all posts for related posts
   const allPosts = await loadAllItems<BlogPostData>(siteId, locale, 'blog');
   const [servicesPage, conditionsPage] = await Promise.all([
@@ -143,8 +149,34 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
       .replace(/([^\n])\n-\s+/g, '$1\n\n- ')
       .replace(/([^\n])\n\*\s+/g, '$1\n\n- ');
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt || '',
+    image: post.image || undefined,
+    datePublished: post.publishDate,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: siteName,
+      url: baseUrl.toString(),
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': new URL(`/${locale}/blog/${slug}`, baseUrl).toString(),
+    },
+  };
+
   return (
     <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       {/* Hero Section with Featured Image */}
       <section className="relative bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="absolute inset-0">

@@ -31,6 +31,11 @@ async function listBlogSlugs(siteId: string, locale: Locale) {
   return listJsonSlugs(blogDir);
 }
 
+async function listServiceSlugs(siteId: string, locale: Locale) {
+  const servicesDir = path.join(CONTENT_DIR, siteId, locale, 'services');
+  return listJsonSlugs(servicesDir);
+}
+
 async function getLastModified(filePath: string): Promise<Date | undefined> {
   try {
     const stats = await fs.stat(filePath);
@@ -73,6 +78,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     for (const slug of blogSlugs) {
       entries.push({
         url: new URL(`/${locale}/blog/${slug}`, baseUrl).toString(),
+        lastModified: new Date(),
+      });
+    }
+
+    // Service detail pages
+    const serviceSlugs = await listServiceSlugs(site.id, locale);
+    for (const slug of serviceSlugs) {
+      entries.push({
+        url: new URL(`/${locale}/services/${slug}`, baseUrl).toString(),
         lastModified: new Date(),
       });
     }

@@ -154,25 +154,26 @@ export default function ContactForm({ formConfig, locale }: ContactFormProps) {
         )}
       </Button>
 
-      {/* Success Message */}
-      {submitStatus === 'success' && (
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
-          <Icon name="CheckCircle" className="text-green-600 flex-shrink-0" />
-          <p className="text-green-800 text-sm">
-            {successMessage}
-          </p>
-        </div>
-      )}
+      {/* Status Messages */}
+      <div role="status" aria-live="polite">
+        {submitStatus === 'success' && (
+          <div className="p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
+            <Icon name="CheckCircle" className="text-green-600 flex-shrink-0" />
+            <p className="text-green-800 text-sm">
+              {successMessage}
+            </p>
+          </div>
+        )}
 
-      {/* Error Message */}
-      {submitStatus === 'error' && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
-          <Icon name="AlertCircle" className="text-red-600 flex-shrink-0" />
-          <p className="text-red-800 text-sm">
-            {errorMessage}
-          </p>
-        </div>
-      )}
+        {submitStatus === 'error' && (
+          <div className="p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
+            <Icon name="AlertCircle" className="text-red-600 flex-shrink-0" />
+            <p className="text-red-800 text-sm">
+              {errorMessage}
+            </p>
+          </div>
+        )}
+      </div>
     </form>
   );
 }

@@ -96,6 +96,17 @@ async function collectImportCandidates(siteId: string, locale: string): Promise<
     // ignore missing blog dir
   }
 
+  // Services (individual files)
+  const servicesDir = path.join(localeRoot, 'services');
+  try {
+    const serviceFiles = await fs.readdir(servicesDir);
+    for (const file of serviceFiles.filter((item) => item.endsWith('.json'))) {
+      await addCandidate(locale, `services/${file}`, path.join(servicesDir, file));
+    }
+  } catch {
+    // ignore missing services dir
+  }
+
   // Theme (site scope) - mirrored to all locales
   const themePath = path.join(CONTENT_DIR, siteId, 'theme.json');
   try {

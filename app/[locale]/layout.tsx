@@ -83,6 +83,12 @@ export async function generateMetadata({
       type: 'website',
       images: seo?.ogImage ? [{ url: seo.ogImage }] : undefined,
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: titleDefault,
+      description,
+      images: seo?.ogImage ? [seo.ogImage] : undefined,
+    },
     icons: {
       icon: '/icon',
       shortcut: '/icon',
@@ -199,7 +205,7 @@ export default async function LocaleLayout({
           variant={headerConfig?.menu?.variant || siteInfo?.headerVariant || 'default'}
           headerConfig={headerConfig ?? undefined}
         />
-        <main className="flex-grow">{children}</main>
+        <main id="main-content" className="flex-grow">{children}</main>
         <Footer
           locale={locale as Locale}
           siteId={site.id}

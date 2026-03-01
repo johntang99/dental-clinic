@@ -1,173 +1,273 @@
 {
-  "hero": {
+  "cta": {
+    "title": "Ready to Schedule?",
     "variant": "centered",
+    "subtitle": "New patients welcome — call today or book online",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Appointment"
+    },
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "Call (845) 555-0180"
+    }
+  },
+  "faq": {
+    "faqs": [
+      {
+        "answer": "No referral is needed. You can schedule directly by calling (845) 555-0180 or using our online booking form.",
+        "question": "Do I need a referral to see you?"
+      },
+      {
+        "answer": "Most patients benefit from cleanings every 6 months. Patients with gum disease may need cleanings every 3-4 months.",
+        "question": "How often should I get a dental cleaning?"
+      },
+      {
+        "answer": "We're in-network with most major PPO dental plans. Call us and we'll verify your benefits before your visit.",
+        "question": "Do you accept my insurance?"
+      },
+      {
+        "answer": "We offer nitrous oxide (laughing gas) and oral sedation to help you relax. Our team is trained in gentle, anxiety-free dentistry.",
+        "question": "What if I'm nervous about dental work?"
+      }
+    ],
+    "title": "Frequently Asked Questions",
+    "variant": "accordion"
+  },
+  "hero": {
     "title": "Our Dental Services",
+    "variant": "centered",
     "subtitle": "Comprehensive care for your entire family — from routine cleanings to advanced restorative treatments"
   },
   "overview": {
-    "variant": "centered",
     "title": "Complete Dental Care Under One Roof",
-    "introduction": "At Alex Dental Clinic, we offer a full range of dental services so you never have to be referred elsewhere. From preventive care to cosmetic transformations to complex restorative work, our team has the training and technology to handle it all — comfortably and affordably.",
+    "variant": "centered",
     "benefits": [
       "Same-day emergency appointments available",
       "In-network with most major PPO plans",
       "Sedation options for anxious patients",
       "Multilingual team (English, Chinese, Spanish, Korean)",
       "Advanced technology for faster, more precise treatment"
-    ]
+    ],
+    "introduction": "At Alex Dental Clinic, we offer a full range of dental services so you never have to be referred elsewhere. From preventive care to cosmetic transformations to complex restorative work, our team has the training and technology to handle it all — comfortably and affordably."
   },
   "trustBar": {
     "items": [
-      { "icon": "shield-check", "title": "Licensed & Accredited", "description": "Board-certified dentists with ongoing continuing education" },
-      { "icon": "clock", "title": "Same-Day Care", "description": "Emergency appointments available during office hours" },
-      { "icon": "credit-card", "title": "Flexible Payment", "description": "Insurance accepted, financing available, membership plan offered" }
+      {
+        "icon": "shield-check",
+        "title": "Licensed & Accredited",
+        "description": "Board-certified dentists with ongoing continuing education"
+      },
+      {
+        "icon": "clock",
+        "title": "Same-Day Care",
+        "description": "Emergency appointments available during office hours"
+      },
+      {
+        "icon": "credit-card",
+        "title": "Flexible Payment",
+        "description": "Insurance accepted, financing available, membership plan offered"
+      }
     ]
   },
+  "categories": [
+    {
+      "id": "general",
+      "icon": "shield-check",
+      "name": "General Dentistry",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/general/1772358527549-photo-1663755489920-5e09f66d011a.jpg",
+      "order": 1,
+      "subtitle": "Prevention & essential care",
+      "description": "The foundation of a healthy smile. Regular cleanings, exams, and early intervention keep small problems from becoming big ones."
+    },
+    {
+      "id": "cosmetic",
+      "icon": "sparkles",
+      "name": "Cosmetic Dentistry",
+      "order": 2,
+      "subtitle": "Whitening, veneers & smile makeovers",
+      "description": "Transform your smile with professional whitening, porcelain veneers, bonding, and complete smile makeovers designed to give you confidence."
+    },
+    {
+      "id": "restorative",
+      "icon": "refresh-cw",
+      "name": "Restorative Dentistry",
+      "order": 3,
+      "subtitle": "Implants, crowns, bridges & dentures",
+      "description": "Replace missing teeth and restore damaged ones with implants, crowns, bridges, and dentures — using the latest technology for natural-looking, long-lasting results."
+    },
+    {
+      "id": "orthodontics",
+      "icon": "align-center",
+      "name": "Orthodontics",
+      "order": 4,
+      "subtitle": "Clear aligners for a straighter smile",
+      "description": "Straighten your teeth discreetly with Invisalign clear aligners — no metal braces needed. Custom treatment plans for teens and adults."
+    },
+    {
+      "id": "pediatric",
+      "icon": "baby",
+      "name": "Children's Dentistry",
+      "order": 5,
+      "subtitle": "Gentle, fun care for kids",
+      "description": "Kid-friendly dental care from first tooth through teen years. We make visits fun, comfortable, and educational for your child."
+    },
+    {
+      "id": "comfort",
+      "icon": "moon",
+      "name": "Sedation & Comfort",
+      "order": 6,
+      "subtitle": "Anxiety-free treatment options",
+      "description": "Nervous about the dentist? We offer nitrous oxide, oral sedation, and a gentle approach so you can relax through any procedure."
+    }
+  ],
   "servicesList": {
-    "variant": "grid-cards-3x",
-    "title": "All Services",
-    "subtitle": "Click any service to learn more",
     "items": [
       {
         "id": "cleanings-and-exams",
-        "icon": "sparkles",
-        "title": "Cleanings & Exams",
-        "shortDescription": "Professional cleanings, comprehensive exams, and digital X-rays to keep your smile healthy",
+        "icon": "Sparkles",
         "link": "/services/cleanings-and-exams",
-        "featured": true
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/general/1772360057966-photo-1626736985932-c0df2ae07a2e.jpg",
+        "title": "Cleanings & Comprehensive Exams",
+        "category": "general",
+        "featured": true,
+        "shortDescription": "Professional dental cleanings, comprehensive oral exams, and digital X-rays to keep your smile healthy and bright."
       },
       {
         "id": "fillings",
         "icon": "circle-dot",
+        "link": "/services/fillings",
         "title": "Fillings",
-        "shortDescription": "Tooth-colored composite fillings that restore strength and blend naturally with your smile",
-        "link": "/services/fillings"
+        "category": "general",
+        "shortDescription": "Tooth-colored composite fillings that restore strength and blend naturally with your smile"
       },
       {
         "id": "root-canal",
         "icon": "heart-pulse",
+        "link": "/services/root-canal",
         "title": "Root Canal Therapy",
-        "shortDescription": "Pain-free root canal treatment to save infected teeth and relieve discomfort",
-        "link": "/services/root-canal"
+        "category": "general",
+        "shortDescription": "Pain-free root canal treatment to save infected teeth and relieve discomfort"
       },
       {
         "id": "extractions",
         "icon": "minus-circle",
+        "link": "/services/extractions",
         "title": "Tooth Extractions",
-        "shortDescription": "Gentle extractions including wisdom teeth removal with sedation options",
-        "link": "/services/extractions"
+        "category": "general",
+        "shortDescription": "Gentle extractions including wisdom teeth removal with sedation options"
       },
       {
         "id": "gum-disease-treatment",
         "icon": "shield",
+        "link": "/services/gum-disease-treatment",
         "title": "Gum Disease Treatment",
-        "shortDescription": "Deep cleanings and periodontal therapy to restore gum health",
-        "link": "/services/gum-disease-treatment"
+        "category": "general",
+        "shortDescription": "Deep cleanings and periodontal therapy to restore gum health"
       },
       {
         "id": "oral-cancer-screening",
         "icon": "search",
+        "link": "/services/oral-cancer-screening",
         "title": "Oral Cancer Screening",
-        "shortDescription": "Early detection screenings included with every comprehensive exam",
-        "link": "/services/oral-cancer-screening"
+        "category": "general",
+        "shortDescription": "Early detection screenings included with every comprehensive exam"
       },
       {
         "id": "teeth-whitening",
         "icon": "sun",
-        "title": "Teeth Whitening",
-        "shortDescription": "Professional in-office and take-home whitening for dramatic, lasting results",
         "link": "/services/teeth-whitening",
-        "featured": true
+        "title": "Teeth Whitening",
+        "category": "cosmetic",
+        "featured": true,
+        "shortDescription": "Professional in-office and take-home whitening for dramatic, lasting results"
       },
       {
         "id": "veneers",
         "icon": "layers",
+        "link": "/services/veneers",
         "title": "Porcelain Veneers",
-        "shortDescription": "Custom porcelain veneers to transform the shape, color, and alignment of your smile",
-        "link": "/services/veneers"
+        "category": "cosmetic",
+        "shortDescription": "Custom porcelain veneers to transform the shape, color, and alignment of your smile"
       },
       {
         "id": "bonding",
         "icon": "paintbrush",
+        "link": "/services/bonding",
         "title": "Dental Bonding",
-        "shortDescription": "Quick, affordable cosmetic bonding to fix chips, gaps, and discoloration",
-        "link": "/services/bonding"
+        "category": "cosmetic",
+        "shortDescription": "Quick, affordable cosmetic bonding to fix chips, gaps, and discoloration"
       },
       {
         "id": "smile-makeover",
         "icon": "star",
+        "link": "/services/smile-makeover",
         "title": "Smile Makeover",
-        "shortDescription": "Comprehensive cosmetic treatment plans combining multiple procedures for a complete transformation",
-        "link": "/services/smile-makeover"
+        "category": "cosmetic",
+        "shortDescription": "Comprehensive cosmetic treatment plans combining multiple procedures for a complete transformation"
       },
       {
         "id": "dental-implants",
         "icon": "anchor",
-        "title": "Dental Implants",
-        "shortDescription": "Permanent tooth replacement with titanium implants that look, feel, and function like natural teeth",
         "link": "/services/dental-implants",
-        "featured": true
+        "title": "Dental Implants",
+        "category": "restorative",
+        "featured": true,
+        "shortDescription": "Permanent tooth replacement with titanium implants that look, feel, and function like natural teeth"
       },
       {
         "id": "crowns-and-bridges",
         "icon": "crown",
+        "link": "/services/crowns-and-bridges",
         "title": "Crowns & Bridges",
-        "shortDescription": "Custom crowns and bridges to restore damaged or missing teeth — same-day options available",
-        "link": "/services/crowns-and-bridges"
+        "category": "restorative",
+        "shortDescription": "Custom crowns and bridges to restore damaged or missing teeth — same-day options available"
       },
       {
         "id": "dentures",
         "icon": "smile",
+        "link": "/services/dentures",
         "title": "Dentures",
-        "shortDescription": "Full and partial dentures crafted for comfort, function, and a natural appearance",
-        "link": "/services/dentures"
-      },
-      {
-        "id": "invisalign",
-        "icon": "align-center",
-        "title": "Invisalign",
-        "shortDescription": "Clear aligner therapy to straighten teeth discreetly — no metal braces needed",
-        "link": "/services/invisalign",
-        "featured": true
-      },
-      {
-        "id": "pediatric-dentistry",
-        "icon": "baby",
-        "title": "Pediatric Dentistry",
-        "shortDescription": "Gentle, kid-friendly dental care from first tooth through teen years",
-        "link": "/services/pediatric-dentistry"
-      },
-      {
-        "id": "sedation-dentistry",
-        "icon": "moon",
-        "title": "Sedation Dentistry",
-        "shortDescription": "Nitrous oxide and oral sedation options so you can relax through any procedure",
-        "link": "/services/sedation-dentistry"
+        "category": "restorative",
+        "shortDescription": "Full and partial dentures crafted for comfort, function, and a natural appearance"
       },
       {
         "id": "full-arch-implants",
         "icon": "maximize",
+        "link": "/services/full-arch-implants",
         "title": "Full-Arch Implants",
-        "shortDescription": "All-on-4 and All-on-6 full-arch implant solutions for complete smile restoration",
-        "link": "/services/full-arch-implants"
+        "category": "restorative",
+        "shortDescription": "All-on-4 and All-on-6 full-arch implant solutions for complete smile restoration"
+      },
+      {
+        "id": "invisalign",
+        "icon": "align-center",
+        "link": "/services/invisalign",
+        "title": "Invisalign",
+        "category": "orthodontics",
+        "featured": true,
+        "shortDescription": "Clear aligner therapy to straighten teeth discreetly — no metal braces needed"
+      },
+      {
+        "id": "pediatric-dentistry",
+        "icon": "baby",
+        "link": "/services/pediatric-dentistry",
+        "title": "Pediatric Dentistry",
+        "category": "pediatric",
+        "shortDescription": "Gentle, kid-friendly dental care from first tooth through teen years"
+      },
+      {
+        "id": "sedation-dentistry",
+        "icon": "moon",
+        "link": "/services/sedation-dentistry",
+        "title": "Sedation Dentistry",
+        "category": "comfort",
+        "shortDescription": "Nitrous oxide and oral sedation options so you can relax through any procedure"
       }
-    ]
+    ],
+    "title": "All Services",
+    "variant": "grid-cards-3x",
+    "subtitle": "Click any service to learn more"
   },
-  "faq": {
-    "variant": "accordion",
-    "title": "Frequently Asked Questions",
-    "faqs": [
-      { "question": "Do I need a referral to see you?", "answer": "No referral is needed. You can schedule directly by calling (845) 555-0180 or using our online booking form." },
-      { "question": "How often should I get a dental cleaning?", "answer": "Most patients benefit from cleanings every 6 months. Patients with gum disease may need cleanings every 3-4 months." },
-      { "question": "Do you accept my insurance?", "answer": "We're in-network with most major PPO dental plans. Call us and we'll verify your benefits before your visit." },
-      { "question": "What if I'm nervous about dental work?", "answer": "We offer nitrous oxide (laughing gas) and oral sedation to help you relax. Our team is trained in gentle, anxiety-free dentistry." }
-    ]
-  },
-  "cta": {
-    "variant": "centered",
-    "title": "Ready to Schedule?",
-    "subtitle": "New patients welcome — call today or book online",
-    "primaryCta": { "text": "Book Appointment", "link": "/contact" },
-    "secondaryCta": { "text": "Call (845) 555-0180", "link": "tel:+18455550180" }
-  }
+  "layoutVariant": "category-detail-alternating"
 }

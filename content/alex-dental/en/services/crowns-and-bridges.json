@@ -29,5 +29,19 @@
       "question": "What is a CEREC same-day crown?",
       "answer": "CEREC is an advanced technology that allows us to design and manufacture a porcelain crown right in our office during a single appointment. Using a digital scanner and an in-office milling machine, we create a precision-fit crown from a solid block of ceramic in about 60 to 90 minutes, eliminating the need for a temporary crown and a second visit."
     }
-  ]
+  ],
+  "category": "restorative",
+  "heroVariant": "centered",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "text": "Book Appointment",
+      "link": "/contact"
+    },
+    "secondaryCta": {
+      "text": "Call (845) 555-0180",
+      "link": "tel:+18455550180"
+    }
+  }
 }

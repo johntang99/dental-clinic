@@ -33,5 +33,19 @@
       "question": "How often should my child visit the dentist?",
       "answer": "We recommend dental checkups and cleanings every six months for most children. Regular visits allow us to monitor your child's dental development, catch any concerns early, and reinforce good oral hygiene habits. If your child is at higher risk for cavities or has specific dental needs, we may recommend more frequent visits."
     }
-  ]
+  ],
+  "category": "pediatric",
+  "heroVariant": "centered",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "text": "Book Appointment",
+      "link": "/contact"
+    },
+    "secondaryCta": {
+      "text": "Call (845) 555-0180",
+      "link": "tel:+18455550180"
+    }
+  }
 }

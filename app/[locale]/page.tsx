@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { notFound } from 'next/navigation';
 import { type Locale } from '@/lib/i18n';
-import { getRequestSiteId, loadPageContent, loadSiteInfo } from '@/lib/content';
+import { getRequestSiteId, loadPageContent, loadSiteInfo, loadContent } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
 import type { SiteInfo } from '@/lib/types';
 import HeroSection, { CredentialsSection } from '@/components/sections/HeroSection';
@@ -104,11 +104,27 @@ export default async function HomePage({ params }: PageProps) {
   const siteId = await getRequestSiteId();
   const content = await loadPageContent<HomePageContent>('home', locale, siteId);
   const layout = await loadPageContent<PageLayoutConfig>('home.layout', locale, siteId);
-  
+  const servicesPageData = await loadPageContent<{ categories?: Array<{ id: string; image?: string }> }>('services', locale, siteId);
+
   if (!content) {
     notFound();
   }
-  
+
+  // Merge category images from services.json into home services
+  if (content.services?.services && servicesPageData?.categories) {
+    const categoryImageMap = new Map(
+      servicesPageData.categories
+        .filter((c) => c.image)
+        .map((c) => [c.id, c.image])
+    );
+    content.services.services = content.services.services.map((service: any) => {
+      if (!service.image && service.id && categoryImageMap.has(service.id)) {
+        return { ...service, image: categoryImageMap.get(service.id) };
+      }
+      return service;
+    });
+  }
+
   const { hero } = content;
   const heroBusinessName = hero.businessName || hero.clinicName || 'Business';
   const defaultSections = [
@@ -143,6 +159,7 @@ export default async function HomePage({ params }: PageProps) {
             video={hero.video}
             floatingTags={hero.floatingTags}
             stats={hero.stats}
+            priority
           />
         );
       case 'credentials':

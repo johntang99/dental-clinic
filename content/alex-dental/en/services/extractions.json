@@ -33,5 +33,19 @@
       "question": "What should I eat after a tooth extraction?",
       "answer": "For the first 24 to 48 hours, stick to soft, cool foods such as yogurt, applesauce, smoothies, and mashed potatoes. Avoid hot foods, straws, and hard or crunchy items that could disturb the healing site. You can gradually return to your normal diet as comfort allows over the following days."
     }
-  ]
+  ],
+  "category": "general",
+  "heroVariant": "centered",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "text": "Book Appointment",
+      "link": "/contact"
+    },
+    "secondaryCta": {
+      "text": "Call (845) 555-0180",
+      "link": "tel:+18455550180"
+    }
+  }
 }

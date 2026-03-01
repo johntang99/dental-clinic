@@ -34,6 +34,7 @@ export interface HeroSectionProps {
   }>;
   trustBadges?: string[];
   className?: string;
+  priority?: boolean;
 }
 
 export default function HeroSection({
@@ -53,6 +54,7 @@ export default function HeroSection({
   credentials,
   trustBadges,
   className,
+  priority,
 }: HeroSectionProps) {
   const config = heroVariantConfig[variant];
   const sectionClasses = getSectionClasses(config);
@@ -98,6 +100,7 @@ export default function HeroSection({
                         width={1200}
                         height={1200}
                         className="w-full h-auto object-contain"
+                        priority={priority}
                       />
                     </div>
                   </div>
@@ -125,6 +128,7 @@ export default function HeroSection({
                   alt={displayName}
                   fill
                   className="object-cover"
+                  priority={priority}
                 />
               </div>
             )}
@@ -159,6 +163,7 @@ export default function HeroSection({
                 alt={displayName}
                 fill
                 className="object-cover"
+                priority={priority}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30" />
             </div>
@@ -203,6 +208,7 @@ export default function HeroSection({
                     alt={displayName}
                     fill
                     className="object-cover"
+                    priority={priority}
                   />
                 </div>
                 <div className="absolute inset-0 z-0 bg-black/50" />

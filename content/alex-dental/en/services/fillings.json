@@ -33,5 +33,19 @@
       "question": "Does insurance cover tooth-colored fillings?",
       "answer": "Most dental insurance plans cover composite fillings for front teeth and often for back teeth as well, though coverage levels can vary. Our office team will help you understand your benefits and any out-of-pocket costs before treatment. Contact us at (845) 555-0180 for details."
     }
-  ]
+  ],
+  "category": "general",
+  "heroVariant": "centered",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "text": "Book Appointment",
+      "link": "/contact"
+    },
+    "secondaryCta": {
+      "text": "Call (845) 555-0180",
+      "link": "tel:+18455550180"
+    }
+  }
 }

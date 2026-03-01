@@ -1,33 +1,71 @@
 {
-  "logoType": "both",
-  "logoText": "Alex Dental",
-  "logoImageUrl": "/images/alex-dental-logo.svg",
-  "ctaPrimary": { "text": "Book Appointment", "url": "/book", "style": "filled" },
-  "ctaSecondary": { "text": "Call Now", "url": "tel:+18455550180", "style": "outline" },
-  "showPhone": true,
-  "announcementBar": {
-    "enabled": true,
-    "text": "Now accepting new patients! Mention this banner for a complimentary first visit.",
-    "linkText": "Book Today",
-    "linkUrl": "/book",
-    "backgroundColor": "primary",
-    "dismissible": true
-  },
-  "stickyHeader": true,
-  "transparentOnHero": true,
   "menu": {
-    "variant": "default",
     "items": [
-      { "text": "Home", "url": "/" },
-      { "text": "Services", "url": "/services" },
-      { "text": "About", "url": "/about" },
-      { "text": "Technology", "url": "/technology" },
-      { "text": "New Patients", "url": "/new-patients" },
-      { "text": "Case Studies", "url": "/case-studies" },
-      { "text": "Insurance", "url": "/insurance" },
-      { "text": "Gallery", "url": "/gallery" },
-      { "text": "Blog", "url": "/blog" },
-      { "text": "Contact", "url": "/contact" }
-    ]
-  }
+      {
+        "url": "/",
+        "text": "Home"
+      },
+      {
+        "url": "/services",
+        "text": "Services"
+      },
+      {
+        "url": "/about",
+        "text": "About"
+      },
+      {
+        "url": "/technology",
+        "text": "Technology"
+      },
+      {
+        "url": "/new-patients",
+        "text": "New Patients"
+      },
+      {
+        "url": "/case-studies",
+        "text": "Case Studies"
+      },
+      {
+        "url": "/insurance",
+        "text": "Insurance"
+      },
+      {
+        "url": "/gallery",
+        "text": "Gallery"
+      },
+      {
+        "url": "/blog",
+        "text": "Blog"
+      },
+      {
+        "url": "/contact",
+        "text": "Contact"
+      }
+    ],
+    "variant": "transparent"
+  },
+  "logoText": "Alex Dental",
+  "logoType": "both",
+  "showPhone": true,
+  "ctaPrimary": {
+    "url": "/book",
+    "text": "Book Appointment",
+    "style": "filled"
+  },
+  "ctaSecondary": {
+    "url": "tel:+18455550180",
+    "text": "Call Now",
+    "style": "outline"
+  },
+  "logoImageUrl": "/images/alex-dental-logo.svg",
+  "stickyHeader": true,
+  "announcementBar": {
+    "text": "Now accepting new patients! Mention this banner for a complimentary first visit.",
+    "enabled": true,
+    "linkUrl": "/book",
+    "linkText": "Book Today",
+    "dismissible": true,
+    "backgroundColor": "primary"
+  },
+  "transparentOnHero": true
 }

@@ -150,6 +150,19 @@ export async function listContentFiles(
         return;
       }
 
+      if (entry.path.startsWith('services/') && entry.path.endsWith('.json')) {
+        const slug = entry.path.replace('services/', '').replace('.json', '');
+        const data = entry.data as Record<string, any>;
+        const title = typeof data?.title === 'string' ? data.title : '';
+        addItem({
+          id: `service-${slug}`,
+          label: `Service: ${title || titleCase(slug)}`,
+          path: entry.path,
+          scope: 'locale',
+        });
+        return;
+      }
+
       if (entry.path === 'navigation.json') {
         addItem({ id: 'navigation', label: 'Navigation', path: entry.path, scope: 'locale' });
       }
@@ -219,6 +232,34 @@ export async function listContentFiles(
     );
   } catch (error) {
     // ignore missing blog directory
+  }
+
+  const servicesDir = path.join(CONTENT_DIR, siteId, locale, 'services');
+  try {
+    const files = await fs.readdir(servicesDir);
+    await Promise.all(
+      files
+        .filter((file) => file.endsWith('.json'))
+        .map(async (file) => {
+          const slug = file.replace('.json', '');
+          let title = '';
+          try {
+            const raw = await fs.readFile(path.join(servicesDir, file), 'utf-8');
+            const parsed = JSON.parse(raw);
+            title = typeof parsed.title === 'string' ? parsed.title : '';
+          } catch (error) {
+            // ignore parse errors
+          }
+          addItem({
+            id: `service-${slug}`,
+            label: `Service: ${title || titleCase(slug)}`,
+            path: `services/${file}`,
+            scope: 'locale',
+          });
+        })
+    );
+  } catch (error) {
+    // ignore missing services directory
   }
 
   addItem({
@@ -291,6 +332,10 @@ export function resolveContentPath(siteId: string, locale: string, filePath: str
   }
 
   if (filePath.startsWith('blog/')) {
+    return path.join(CONTENT_DIR, siteId, locale, filePath);
+  }
+
+  if (filePath.startsWith('services/')) {
     return path.join(CONTENT_DIR, siteId, locale, filePath);
   }
 

@@ -33,5 +33,19 @@
       "question": "How do I care for my dentures?",
       "answer": "Remove your dentures nightly and brush them with a soft denture brush and non-abrasive cleanser. Soak them overnight in a denture cleaning solution or plain water to keep them moist and maintain their shape. Also brush your gums, tongue, and any remaining teeth before reinserting them each morning. Regular dental checkups are important to monitor fit and oral health."
     }
-  ]
+  ],
+  "category": "restorative",
+  "heroVariant": "centered",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "text": "Book Appointment",
+      "link": "/contact"
+    },
+    "secondaryCta": {
+      "text": "Call (845) 555-0180",
+      "link": "tel:+18455550180"
+    }
+  }
 }

@@ -33,5 +33,19 @@
       "question": "Does insurance cover Invisalign?",
       "answer": "Many dental insurance plans that include orthodontic benefits will cover a portion of Invisalign treatment, just as they would for traditional braces. Our office staff will verify your benefits and help you understand your coverage before treatment begins. We also offer flexible payment plans to make treatment affordable."
     }
-  ]
+  ],
+  "category": "orthodontics",
+  "heroVariant": "centered",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "text": "Book Appointment",
+      "link": "/contact"
+    },
+    "secondaryCta": {
+      "text": "Call (845) 555-0180",
+      "link": "tel:+18455550180"
+    }
+  }
 }

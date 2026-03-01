@@ -5,6 +5,7 @@ interface ServicesItemPanelProps {
   servicesList: Record<string, any>;
   selectedService: Record<string, any>;
   selectedIndex: number;
+  serviceCategoryOptions: Array<{ id: string; name: string }>;
   markdownPreview: Record<string, boolean>;
   toggleMarkdownPreview: (key: string) => void;
   updateFormValue: (path: string[], value: any) => void;
@@ -16,6 +17,7 @@ export function ServicesItemPanel({
   servicesList,
   selectedService,
   selectedIndex,
+  serviceCategoryOptions,
   markdownPreview,
   toggleMarkdownPreview,
   updateFormValue,
@@ -134,6 +136,29 @@ export function ServicesItemPanel({
             }
           />
         </div>
+
+        {serviceCategoryOptions.length > 0 && (
+          <div className="mb-2">
+            <label className="block text-xs text-gray-500 mb-1">Category</label>
+            <select
+              className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm bg-white"
+              value={selectedService.category || ''}
+              onChange={(event) =>
+                updateFormValue(
+                  ['servicesList', 'items', String(selectedIndex), 'category'],
+                  event.target.value
+                )
+              }
+            >
+              <option value="">Select category</option>
+              {serviceCategoryOptions.map((cat) => (
+                <option key={cat.id} value={cat.id}>
+                  {cat.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
 
         <div className="mb-2">
           <label className="block text-xs text-gray-500 mb-1">Short Description</label>

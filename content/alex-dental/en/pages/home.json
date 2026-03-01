@@ -1,173 +1,293 @@
 {
+  "cta": {
+    "title": "Ready to Experience Dentistry Done Differently?",
+    "variant": "centered",
+    "subtitle": "Book your first appointment today. New patients always welcome.",
+    "primaryCta": {
+      "link": "/book",
+      "text": "Book Your First Appointment"
+    },
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "Call (845) 555-0180"
+    }
+  },
+  "blog": {
+    "badge": "Knowledge Center",
+    "posts": [],
+    "title": "Dental Health Tips & Education",
+    "variant": "cards-grid",
+    "moreLink": {
+      "url": "/blog",
+      "text": "Visit Knowledge Center"
+    },
+    "subtitle": "Expert articles from our dental team"
+  },
+  "hero": {
+    "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/general/1772354726463-photo-1629909613654-28e377c37b09.jpg",
+    "stats": [
+      {
+        "icon": "calendar",
+        "label": "Years Experience",
+        "number": "20+"
+      },
+      {
+        "icon": "users",
+        "label": "Patients Served",
+        "number": "10,000+"
+      },
+      {
+        "icon": "star",
+        "label": "Google Rating",
+        "number": "4.9"
+      }
+    ],
+    "tagline": "Expert Dental Care. In Your Language.",
+    "variant": "split-photo-right",
+    "primaryCta": {
+      "link": "/book",
+      "text": "Book Appointment"
+    },
+    "description": "Serving Middletown, NY in English, 中文, Español, and 한국어. Comprehensive dental care for the whole family.",
+    "trustBadges": [
+      "ADA Member",
+      "Invisalign Provider",
+      "NYSDA Member"
+    ],
+    "businessName": "Alex Dental Clinic",
+    "floatingTags": [
+      "Gentle Care",
+      "Same-Day Emergency",
+      "Multilingual",
+      "Advanced Technology"
+    ],
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "Call (845) 555-0180"
+    }
+  },
   "topBar": {
-    "address": "85 Crystal Run Road, Middletown, NY 10940",
-    "addressMapUrl": "https://maps.google.com/?q=85+Crystal+Run+Road+Middletown+NY+10940",
-    "phone": "(845) 555-0180",
-    "email": "info@alex-dental.com",
     "badge": {
       "text": "Now Accepting New Patients",
       "visible": true
-    }
-  },
-  "hero": {
-    "variant": "split-photo-right",
-    "businessName": "Alex Dental Clinic",
-    "tagline": "Expert Dental Care. In Your Language.",
-    "description": "Serving Middletown, NY in English, 中文, Español, and 한국어. Comprehensive dental care for the whole family.",
-    "primaryCta": {
-      "text": "Book Appointment",
-      "link": "/book"
     },
-    "secondaryCta": {
-      "text": "Call (845) 555-0180",
-      "link": "tel:+18455550180"
-    },
-    "image": "/images/hero-dental-office.jpg",
-    "floatingTags": ["Gentle Care", "Same-Day Emergency", "Multilingual", "Advanced Technology"],
-    "stats": [
-      { "icon": "calendar", "number": "20+", "label": "Years Experience" },
-      { "icon": "users", "number": "10,000+", "label": "Patients Served" },
-      { "icon": "star", "number": "4.9", "label": "Google Rating" }
-    ],
-    "trustBadges": ["ADA Member", "Invisalign Provider", "NYSDA Member"]
+    "email": "info@alex-dental.com",
+    "phone": "(845) 555-0180",
+    "address": "85 Crystal Run Road, Middletown, NY 10940",
+    "addressMapUrl": "https://maps.google.com/?q=85+Crystal+Run+Road+Middletown+NY+10940"
   },
-  "testimonials": {
-    "variant": "carousel",
-    "badge": "Patient Stories",
-    "title": "What Our Patients Say",
-    "subtitle": "Real reviews from real patients who trust us with their smiles",
-    "testimonials": [],
+  "gallery": {
+    "badge": "Our Clinic",
+    "title": "Tour Our Modern Facility",
+    "images": [],
+    "variant": "grid-uniform",
     "moreLink": {
-      "text": "Read All Reviews",
-      "url": "/reviews"
-    }
+      "url": "/about",
+      "text": "See More"
+    },
+    "subtitle": "State-of-the-art equipment in a comfortable, welcoming environment"
   },
-  "howItWorks": {
-    "variant": "horizontal",
-    "title": "Your First Visit — Simple and Easy",
-    "subtitle": "We make your dental experience stress-free from start to finish",
-    "steps": [
-      { "number": 1, "icon": "phone", "title": "Book Your Visit", "description": "Schedule online or call us. We'll confirm within hours." },
-      { "number": 2, "icon": "clipboard", "title": "Meet Your Doctor", "description": "Comprehensive exam, digital X-rays, and a personalized treatment plan." },
-      { "number": 3, "icon": "smile", "title": "Get Your Best Smile", "description": "We complete your treatment with gentle, expert care." }
-    ]
+  "location": {
+    "title": "Visit Our Clinic",
+    "ctaUrl": "https://maps.google.com/?q=85+Crystal+Run+Road+Middletown+NY+10940",
+    "address": "85 Crystal Run Road, Middletown, NY 10940",
+    "ctaText": "Get Directions",
+    "directions": "Conveniently located near Crystal Run Crossing. Free parking available.",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=YOUR_EMBED_ID"
   },
   "services": {
-    "variant": "grid-cards",
     "badge": "Our Services",
     "title": "Comprehensive Dental Care Under One Roof",
-    "subtitle": "From routine cleanings to advanced implants and Invisalign",
-    "services": [
-      { "id": "general", "icon": "shield-check", "title": "General Dentistry", "shortDescription": "Cleanings, exams, fillings, root canals, and extractions", "link": "/services#general" },
-      { "id": "cosmetic", "icon": "sparkles", "title": "Cosmetic Dentistry", "shortDescription": "Whitening, veneers, bonding, and smile makeovers", "link": "/services#cosmetic" },
-      { "id": "restorative", "icon": "refresh-cw", "title": "Restorative Dentistry", "shortDescription": "Dental implants, crowns, bridges, and dentures", "link": "/services#restorative" },
-      { "id": "orthodontics", "icon": "align-center", "title": "Invisalign", "shortDescription": "Clear aligners for a straighter smile without braces", "link": "/services/invisalign" },
-      { "id": "pediatric", "icon": "baby", "title": "Children's Dentistry", "shortDescription": "Gentle, fun dental care for kids of all ages", "link": "/services/pediatric-dentistry" },
-      { "id": "sedation", "icon": "moon", "title": "Sedation Dentistry", "shortDescription": "Relaxed, anxiety-free treatment options", "link": "/services/sedation-dentistry" }
-    ],
+    "variant": "grid-cards",
     "moreLink": {
-      "text": "View All Services",
-      "url": "/services"
-    }
-  },
-  "fearDisruptor": {
-    "badge": "We Understand",
-    "title": "Nervous About the Dentist? You're Not Alone.",
-    "subtitle": "We've helped thousands of anxious patients get the care they need — comfortably.",
-    "cards": [
-      { "icon": "heart", "title": "Gentle Technique", "description": "Our dentists are trained in gentle, minimally-invasive methods." },
-      { "icon": "shield", "title": "Sedation Available", "description": "Nitrous oxide, oral sedation, and IV sedation options for every comfort level." },
-      { "icon": "message-circle", "title": "We Explain Everything", "description": "No surprises. Every step is explained before we begin." }
+      "url": "/services",
+      "text": "View All Services"
+    },
+    "services": [
+      {
+        "id": "general",
+        "icon": "shield-check",
+        "link": "/services#general",
+        "title": "General Dentistry",
+        "shortDescription": "Cleanings, exams, fillings, root canals, and extractions"
+      },
+      {
+        "id": "cosmetic",
+        "icon": "sparkles",
+        "link": "/services#cosmetic",
+        "title": "Cosmetic Dentistry",
+        "shortDescription": "Whitening, veneers, bonding, and smile makeovers"
+      },
+      {
+        "id": "restorative",
+        "icon": "refresh-cw",
+        "link": "/services#restorative",
+        "title": "Restorative Dentistry",
+        "shortDescription": "Dental implants, crowns, bridges, and dentures"
+      },
+      {
+        "id": "orthodontics",
+        "icon": "align-center",
+        "link": "/services#orthodontics",
+        "title": "Orthodontics",
+        "shortDescription": "Clear aligners for a straighter smile without braces"
+      },
+      {
+        "id": "pediatric",
+        "icon": "baby",
+        "link": "/services#pediatric",
+        "title": "Children's Dentistry",
+        "shortDescription": "Gentle, fun dental care for kids of all ages"
+      },
+      {
+        "id": "comfort",
+        "icon": "moon",
+        "link": "/services#comfort",
+        "title": "Sedation & Comfort",
+        "shortDescription": "Relaxed, anxiety-free treatment options"
+      }
     ],
-    "ctaText": "Learn About Comfort Options",
-    "ctaUrl": "/services/sedation-dentistry"
+    "subtitle": "From routine cleanings to advanced implants and Invisalign"
+  },
+  "howItWorks": {
+    "steps": [
+      {
+        "icon": "phone",
+        "title": "Book Your Visit",
+        "number": 1,
+        "description": "Schedule online or call us. We'll confirm within hours."
+      },
+      {
+        "icon": "clipboard",
+        "title": "Meet Your Doctor",
+        "number": 2,
+        "description": "Comprehensive exam, digital X-rays, and a personalized treatment plan."
+      },
+      {
+        "icon": "smile",
+        "title": "Get Your Best Smile",
+        "number": 3,
+        "description": "We complete your treatment with gentle, expert care."
+      }
+    ],
+    "title": "Your First Visit — Simple and Easy",
+    "variant": "horizontal",
+    "subtitle": "We make your dental experience stress-free from start to finish"
   },
   "caseStudies": {
     "badge": "Real Results",
     "title": "Before & After Transformations",
-    "subtitle": "See what's possible with the right dental care",
     "moreLink": {
-      "text": "View All Cases",
-      "url": "/cases"
-    }
-  },
-  "technologyStrip": {
-    "title": "Advanced Technology for Better Care",
-    "items": [
-      { "icon": "scan", "name": "3D CT Scanner", "benefit": "Precise imaging" },
-      { "icon": "zap", "name": "Digital X-Rays", "benefit": "90% less radiation" },
-      { "icon": "cpu", "name": "Same-Day Crowns", "benefit": "CEREC technology" },
-      { "icon": "target", "name": "Dental Laser", "benefit": "Faster healing" }
-    ],
-    "ctaText": "Our Technology",
-    "ctaUrl": "/technology"
-  },
-  "insuranceStrip": {
-    "title": "Insurance & Financing Made Easy",
-    "subtitle": "We accept most major dental insurance plans",
-    "membershipNote": "Don't have insurance? Ask about our Alex Wellness Plan — comprehensive care starting at $35/month.",
-    "ctaText": "Check Your Insurance",
-    "ctaUrl": "/insurance"
-  },
-  "emergencyBand": {
-    "title": "Dental Emergency?",
-    "description": "Call us now — same-day appointments available for urgent cases",
-    "ctaText": "Call Now",
-    "ctaUrl": "tel:+18455550180"
-  },
-  "blog": {
-    "variant": "cards-grid",
-    "badge": "Knowledge Center",
-    "title": "Dental Health Tips & Education",
-    "subtitle": "Expert articles from our dental team",
-    "posts": [],
-    "moreLink": {
-      "text": "Visit Knowledge Center",
-      "url": "/blog"
-    }
-  },
-  "gallery": {
-    "variant": "grid-uniform",
-    "badge": "Our Clinic",
-    "title": "Tour Our Modern Facility",
-    "subtitle": "State-of-the-art equipment in a comfortable, welcoming environment",
-    "images": [],
-    "moreLink": {
-      "text": "See More",
-      "url": "/about"
-    }
+      "url": "/cases",
+      "text": "View All Cases"
+    },
+    "subtitle": "See what's possible with the right dental care"
   },
   "whyChooseUs": {
     "badge": "Why Alex Dental",
     "title": "Why Patients Choose Us",
-    "subtitle": "The difference is in our approach",
     "features": [
-      { "icon": "award", "title": "Clinical Excellence", "description": "Board-certified dentists with 20+ years of combined experience." },
-      { "icon": "heart", "title": "Patient Comfort", "description": "Gentle technique, sedation options, and a team that truly listens." },
-      { "icon": "globe", "title": "Multilingual Care", "description": "We see patients in English, Chinese, Spanish, and Korean." },
-      { "icon": "cpu", "title": "Advanced Technology", "description": "3D scanning, same-day crowns, digital X-rays — technology that reduces discomfort." },
-      { "icon": "dollar-sign", "title": "Transparent Pricing", "description": "Clear costs, financing options, insurance accepted — no surprises." }
-    ]
+      {
+        "icon": "award",
+        "title": "Clinical Excellence",
+        "description": "Board-certified dentists with 20+ years of combined experience."
+      },
+      {
+        "icon": "heart",
+        "title": "Patient Comfort",
+        "description": "Gentle technique, sedation options, and a team that truly listens."
+      },
+      {
+        "icon": "globe",
+        "title": "Multilingual Care",
+        "description": "We see patients in English, Chinese, Spanish, and Korean."
+      },
+      {
+        "icon": "cpu",
+        "title": "Advanced Technology",
+        "description": "3D scanning, same-day crowns, digital X-rays — technology that reduces discomfort."
+      },
+      {
+        "icon": "dollar-sign",
+        "title": "Transparent Pricing",
+        "description": "Clear costs, financing options, insurance accepted — no surprises."
+      }
+    ],
+    "subtitle": "The difference is in our approach"
   },
-  "cta": {
-    "variant": "centered",
-    "title": "Ready to Experience Dentistry Done Differently?",
-    "subtitle": "Book your first appointment today. New patients always welcome.",
-    "primaryCta": {
-      "text": "Book Your First Appointment",
-      "link": "/book"
+  "testimonials": {
+    "badge": "Patient Stories",
+    "title": "What Our Patients Say",
+    "variant": "carousel",
+    "moreLink": {
+      "url": "/reviews",
+      "text": "Read All Reviews"
     },
-    "secondaryCta": {
-      "text": "Call (845) 555-0180",
-      "link": "tel:+18455550180"
-    }
+    "subtitle": "Real reviews from real patients who trust us with their smiles",
+    "testimonials": []
   },
-  "location": {
-    "title": "Visit Our Clinic",
-    "address": "85 Crystal Run Road, Middletown, NY 10940",
-    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=YOUR_EMBED_ID",
-    "directions": "Conveniently located near Crystal Run Crossing. Free parking available.",
-    "ctaText": "Get Directions",
-    "ctaUrl": "https://maps.google.com/?q=85+Crystal+Run+Road+Middletown+NY+10940"
+  "emergencyBand": {
+    "title": "Dental Emergency?",
+    "ctaUrl": "tel:+18455550180",
+    "ctaText": "Call Now",
+    "description": "Call us now — same-day appointments available for urgent cases"
+  },
+  "fearDisruptor": {
+    "badge": "We Understand",
+    "cards": [
+      {
+        "icon": "heart",
+        "title": "Gentle Technique",
+        "description": "Our dentists are trained in gentle, minimally-invasive methods."
+      },
+      {
+        "icon": "shield",
+        "title": "Sedation Available",
+        "description": "Nitrous oxide, oral sedation, and IV sedation options for every comfort level."
+      },
+      {
+        "icon": "message-circle",
+        "title": "We Explain Everything",
+        "description": "No surprises. Every step is explained before we begin."
+      }
+    ],
+    "title": "Nervous About the Dentist? You're Not Alone.",
+    "ctaUrl": "/services/sedation-dentistry",
+    "ctaText": "Learn About Comfort Options",
+    "subtitle": "We've helped thousands of anxious patients get the care they need — comfortably."
+  },
+  "insuranceStrip": {
+    "title": "Insurance & Financing Made Easy",
+    "ctaUrl": "/insurance",
+    "ctaText": "Check Your Insurance",
+    "subtitle": "We accept most major dental insurance plans",
+    "membershipNote": "Don't have insurance? Ask about our Alex Wellness Plan — comprehensive care starting at $35/month."
+  },
+  "technologyStrip": {
+    "items": [
+      {
+        "icon": "scan",
+        "name": "3D CT Scanner",
+        "benefit": "Precise imaging"
+      },
+      {
+        "icon": "zap",
+        "name": "Digital X-Rays",
+        "benefit": "90% less radiation"
+      },
+      {
+        "icon": "cpu",
+        "name": "Same-Day Crowns",
+        "benefit": "CEREC technology"
+      },
+      {
+        "icon": "target",
+        "name": "Dental Laser",
+        "benefit": "Faster healing"
+      }
+    ],
+    "title": "Advanced Technology for Better Care",
+    "ctaUrl": "/technology",
+    "ctaText": "Our Technology"
   }
 }

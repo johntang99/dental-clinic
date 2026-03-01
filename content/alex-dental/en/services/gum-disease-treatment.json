@@ -33,5 +33,19 @@
       "question": "How does gum disease affect my overall health?",
       "answer": "Research has linked periodontal disease to several systemic health conditions, including heart disease, diabetes, respiratory infections, and adverse pregnancy outcomes. Treating gum disease not only protects your teeth and gums but may also contribute to better overall health and well-being."
     }
-  ]
+  ],
+  "category": "general",
+  "heroVariant": "centered",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "text": "Book Appointment",
+      "link": "/contact"
+    },
+    "secondaryCta": {
+      "text": "Call (845) 555-0180",
+      "link": "tel:+18455550180"
+    }
+  }
 }

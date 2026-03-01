@@ -1,0 +1,80 @@
+{
+  "brand": {
+    "logoText": "BIZ",
+    "name": "Business Name",
+    "description": "以高品质、专业的服务支持客户需求。"
+  },
+  "quickLinks": [
+    {
+      "text": "关于我们",
+      "url": "/ko/about"
+    },
+    {
+      "text": "服务项目",
+      "url": "/ko/services"
+    },
+    {
+      "text": "治疗病症",
+      "url": "/ko/conditions"
+    },
+    {
+      "text": "案例研究",
+      "url": "/ko/case-studies"
+    },
+    {
+      "text": "新用户指南",
+      "url": "/ko/new-patients"
+    },
+    {
+      "text": "博客",
+      "url": "/ko/blog"
+    },
+    {
+      "text": "联系我们",
+      "url": "/ko/contact"
+    }
+  ],
+  "services": [
+    {
+      "text": "特色服务",
+      "url": "/ko/services"
+    },
+    {
+      "text": "方案与套餐",
+      "url": "/ko/services"
+    },
+    {
+      "text": "服务流程",
+      "url": "/ko/services"
+    },
+    {
+      "text": "支持与帮助",
+      "url": "/ko/contact"
+    }
+  ],
+  "contact": {
+    "addressLines": [
+      "地址第一行",
+      "城市, 省/州 邮编"
+    ],
+    "phone": "(000) 000-0000",
+    "phoneLink": "tel:+10000000000",
+    "email": "info@alex-dental.com",
+    "emailLink": "mailto:info@alex-dental.com"
+  },
+  "hours": [
+    "Mon-Fri: 9:00 AM - 6:00 PM",
+    "Sat: 10:00 AM - 2:00 PM"
+  ],
+  "legalLinks": [
+    {
+      "text": "隐私政策",
+      "url": "/ko/privacy"
+    },
+    {
+      "text": "服务条款",
+      "url": "/ko/terms"
+    }
+  ],
+  "copyright": "© {year} Business Name. 版权所有。"
+}

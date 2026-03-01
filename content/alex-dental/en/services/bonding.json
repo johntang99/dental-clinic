@@ -29,5 +29,19 @@
       "question": "Is dental bonding painful?",
       "answer": "In most cases, dental bonding is completely painless and does not require anesthesia. Since the procedure typically does not involve drilling or removing tooth structure, patients experience little to no discomfort during or after treatment."
     }
-  ]
+  ],
+  "category": "cosmetic",
+  "heroVariant": "centered",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "text": "Book Appointment",
+      "link": "/contact"
+    },
+    "secondaryCta": {
+      "text": "Call (845) 555-0180",
+      "link": "tel:+18455550180"
+    }
+  }
 }

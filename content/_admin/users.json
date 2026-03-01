@@ -1,13 +1,13 @@
 [
   {
     "id": "admin-1",
-    "email": "admin@example.com",
+    "email": "admin@alex-dental.com",
     "name": "Super Admin",
     "role": "super_admin",
     "sites": [
       "alex-dental"
     ],
-    "passwordHash": "$2b$10$6X5Bk08gd9Fl84n.dXn8T.GBdsrua4Mswq1YIA3KMk.6ED9mfquJ.",
+    "passwordHash": "$2b$10$rkGy93Xs7PoDNmEH8ZKjkOHwU6AHx.QQERrD0ieDdu2mA5bYQ1WKe",
     "createdAt": "2024-01-01T00:00:00Z",
     "lastLoginAt": "2026-03-01T00:00:00.000Z"
   }

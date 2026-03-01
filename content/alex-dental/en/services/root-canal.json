@@ -33,5 +33,19 @@
       "question": "How much does a root canal cost?",
       "answer": "The cost depends on the tooth's location and complexity. Front teeth are generally less expensive to treat than molars. Most dental insurance plans provide partial coverage for root canal therapy. Our team will provide a detailed cost estimate and help you understand your insurance benefits before treatment begins."
     }
-  ]
+  ],
+  "category": "general",
+  "heroVariant": "centered",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "text": "Book Appointment",
+      "link": "/contact"
+    },
+    "secondaryCta": {
+      "text": "Call (845) 555-0180",
+      "link": "tel:+18455550180"
+    }
+  }
 }

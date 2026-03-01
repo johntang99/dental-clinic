@@ -29,5 +29,19 @@
       "question": "Is professional whitening better than over-the-counter products?",
       "answer": "Professional whitening uses higher-concentration formulas that deliver faster, more even, and more dramatic results than store-bought strips or trays. Because the treatment is supervised by a dentist, it is also safer for your enamel and gum tissue."
     }
-  ]
+  ],
+  "category": "cosmetic",
+  "heroVariant": "centered",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "text": "Book Appointment",
+      "link": "/contact"
+    },
+    "secondaryCta": {
+      "text": "Call (845) 555-0180",
+      "link": "tel:+18455550180"
+    }
+  }
 }
