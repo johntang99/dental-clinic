@@ -80,12 +80,11 @@ export default function Header({
       : [
           { text: locale === 'en' ? 'Home' : '首页', url: `/${locale}` },
           { text: locale === 'en' ? 'Services' : '服务项目', url: `/${locale}/services` },
-          { text: locale === 'en' ? 'Conditions' : '治疗病症', url: `/${locale}/conditions` },
           { text: locale === 'en' ? 'About' : '关于我们', url: `/${locale}/about` },
+          { text: locale === 'en' ? 'Technology' : '技术设备', url: `/${locale}/technology` },
+          { text: locale === 'en' ? 'New Patients' : '新患者', url: `/${locale}/new-patients` },
           { text: locale === 'en' ? 'Case Studies' : '案例研究', url: `/${locale}/case-studies` },
-          { text: locale === 'en' ? 'Gallery' : '图库', url: `/${locale}/gallery` },
-          { text: locale === 'en' ? 'Getting Started' : '新用户指南', url: `/${locale}/new-patients` },
-          { text: locale === 'en' ? 'Pricing' : '收费', url: `/${locale}/pricing` },
+          { text: locale === 'en' ? 'Insurance' : '保险', url: `/${locale}/insurance` },
           { text: locale === 'en' ? 'Blog' : '博客', url: `/${locale}/blog` },
           { text: locale === 'en' ? 'Contact' : '联系我们', url: `/${locale}/contact` },
         ];

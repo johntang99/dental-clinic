@@ -234,7 +234,7 @@ export async function POST(request: NextRequest) {
     const siteInfo = await resolveRequestSiteInfo(request, locale);
     const businessName = getSiteDisplayName(siteInfo, 'Business');
     const businessPhone = siteInfo?.phone || process.env.CONTACT_PHONE_FALLBACK || '(845) 381-1106';
-    const businessEmail = siteInfo?.email || process.env.CONTACT_FALLBACK_TO || 'support@baamplatform.com';
+    const businessEmail = siteInfo?.email || process.env.CONTACT_FALLBACK_TO || 'info@alex-dental.com';
     const context: ContactEmailContext = {
       locale,
       businessName,
@@ -274,7 +274,7 @@ export async function POST(request: NextRequest) {
 
     // Send notification email to business inbox
     const notificationEmail = await resend.emails.send({
-      from: process.env.RESEND_FROM || 'No-Reply<no-reply@baamplatform.com>',
+      from: process.env.RESEND_FROM || 'No-Reply<no-reply@alex-dental.com>',
       to: process.env.CONTACT_FALLBACK_TO || businessEmail,
       cc: process.env.ALERT_TO ? [process.env.ALERT_TO] : undefined,
       reply_to: email,
@@ -284,7 +284,7 @@ export async function POST(request: NextRequest) {
 
     // Send auto-reply to customer
     const autoReplyEmail = await resend.emails.send({
-      from: process.env.RESEND_FROM || 'No-Reply<no-reply@baamplatform.com>',
+      from: process.env.RESEND_FROM || 'No-Reply<no-reply@alex-dental.com>',
       to: email,
       subject: locale === 'zh' ? `感谢联系${businessName}` : `Thank you for contacting ${businessName}`,
       html: autoReplyHTML,

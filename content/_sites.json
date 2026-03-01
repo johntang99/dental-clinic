@@ -3,7 +3,7 @@
     {
       "id": "alex-dental",
       "name": "Alex Dental Clinic",
-      "domain": "alexdentalclinic.com",
+      "domain": "alex-dental.com",
       "enabled": true,
       "defaultLocale": "en",
       "supportedLocales": ["en", "zh", "es", "ko"],

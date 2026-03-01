@@ -33,8 +33,8 @@ export function getDefaultFooter(locale: Locale): FooterSection {
       ],
       phone: '(000) 000-0000',
       phoneLink: 'tel:+10000000000',
-      email: 'info@example.com',
-      emailLink: 'mailto:info@example.com',
+      email: 'info@alex-dental.com',
+      emailLink: 'mailto:info@alex-dental.com',
     },
     hours: ['Mon-Fri: 9:00 AM - 6:00 PM', 'Sat: 10:00 AM - 2:00 PM'],
     legalLinks: [

@@ -14,5 +14,20 @@
     "dismissible": true
   },
   "stickyHeader": true,
-  "transparentOnHero": true
+  "transparentOnHero": true,
+  "menu": {
+    "variant": "default",
+    "items": [
+      { "text": "Home", "url": "/" },
+      { "text": "Services", "url": "/services" },
+      { "text": "About", "url": "/about" },
+      { "text": "Technology", "url": "/technology" },
+      { "text": "New Patients", "url": "/new-patients" },
+      { "text": "Case Studies", "url": "/case-studies" },
+      { "text": "Insurance", "url": "/insurance" },
+      { "text": "Gallery", "url": "/gallery" },
+      { "text": "Blog", "url": "/blog" },
+      { "text": "Contact", "url": "/contact" }
+    ]
+  }
 }

@@ -20,10 +20,10 @@
     {
       "icon": "mail",
       "title": "Email",
-      "primary": "info@alexdentalclinic.com",
+      "primary": "info@alex-dental.com",
       "secondary": null,
       "description": "We respond to all emails within 1 business day",
-      "action": { "text": "Send Email", "link": "mailto:info@alexdentalclinic.com" }
+      "action": { "text": "Send Email", "link": "mailto:info@alex-dental.com" }
     },
     {
       "icon": "map-pin",
