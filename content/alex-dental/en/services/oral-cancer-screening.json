@@ -1,51 +1,51 @@
 {
-  "slug": "oral-cancer-screening",
-  "title": "Oral Cancer Screening",
-  "subtitle": "Early detection saves lives",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Appointment"
+    },
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "Call (845) 555-0180"
+    }
+  },
+  "faq": [
+    {
+      "answer": "Yes. We include a comprehensive oral cancer screening as part of every exam at no additional charge. We believe early detection is too important to treat as an optional add-on, so every patient receives this screening during their comprehensive visit.",
+      "question": "Is the oral cancer screening included in my regular exam?"
+    },
+    {
+      "answer": "VELscope is an FDA-cleared device that uses a safe blue-spectrum light to help visualize abnormalities in the oral tissues that may not be apparent during a standard visual examination. The light is completely harmless — there is no radiation, no dye, and no discomfort involved.",
+      "question": "What is VELscope and is it safe?"
+    },
+    {
+      "answer": "Not every abnormality indicates cancer. Many findings turn out to be benign conditions. If Dr. Alex identifies an area of concern, the next step may be monitoring the area over a short period, performing a painless brush biopsy in our office, or referring you to a specialist for further evaluation. We will guide you through every step of the process.",
+      "question": "What happens if something abnormal is found?"
+    },
+    {
+      "answer": "Everyone. While tobacco users, heavy alcohol consumers, and individuals with HPV are at higher risk, oral cancer can affect anyone. Approximately one in four oral cancer cases occurs in people with no known risk factors. That is why we screen every patient during their comprehensive exam, regardless of age or lifestyle.",
+      "question": "Who should get screened for oral cancer?"
+    }
+  ],
   "icon": "ScanSearch",
-  "image": "/images/services/oral-cancer-screening.jpg",
-  "shortDescription": "Comprehensive oral cancer screenings using advanced VELscope technology, included with every comprehensive exam.",
-  "fullDescription": "Oral cancer affects tens of thousands of Americans each year, and early detection dramatically improves treatment outcomes and survival rates. At our Middletown, NY practice, oral cancer screening is included as part of every comprehensive dental exam because we believe proactive detection is one of the most important things we can do for your health.\n\nOur screening process combines a thorough visual and tactile examination with VELscope technology — an advanced fluorescence visualization device that helps identify abnormal tissue changes that may not be visible to the naked eye. The VELscope emits a safe blue light that causes healthy oral tissue to fluoresce in distinct patterns. Areas of concern, such as precancerous or cancerous lesions, appear differently under this light, allowing Dr. Alex to identify potential issues at their earliest and most treatable stages.\n\nWhile anyone can develop oral cancer, certain factors increase risk, including tobacco and alcohol use, HPV infection, prolonged sun exposure to the lips, and a family history of cancer. However, approximately 25% of oral cancer cases occur in patients with no known risk factors, which is why we screen every patient regardless of their history. If any abnormalities are detected, Dr. Alex will discuss the findings with you and recommend appropriate next steps, which may include a biopsy or referral to a specialist.",
+  "slug": "oral-cancer-screening",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423016350-oral-cancer-screening.jpg",
+  "price": null,
+  "title": "Oral Cancer Screening",
   "benefits": [
     "Included at no additional cost with every comprehensive exam",
     "VELscope technology detects abnormalities invisible to the naked eye",
     "Quick, painless, and completely non-invasive screening",
     "Early detection significantly improves treatment success rates"
   ],
-  "whatToExpect": "The oral cancer screening is a quick, painless addition to your regular comprehensive exam and takes approximately 15 minutes. Dr. Alex will begin with a visual inspection of your lips, tongue, cheeks, floor and roof of your mouth, throat, and gums, looking for any unusual sores, discolorations, or tissue changes. A gentle tactile examination checks for lumps or irregularities. The VELscope device is then used to illuminate your oral tissues with a harmless blue light while Dr. Alex observes the fluorescence patterns through the scope. There is no rinse, dye, or discomfort involved. If any area of concern is identified, Dr. Alex will explain what was found, discuss potential causes, and outline the recommended follow-up, which may include monitoring the area, performing a simple brush biopsy, or referring you to an oral surgeon for further evaluation.",
-  "price": null,
-  "durationMinutes": 15,
-  "featured": false,
-  "faq": [
-    {
-      "question": "Is the oral cancer screening included in my regular exam?",
-      "answer": "Yes. We include a comprehensive oral cancer screening as part of every exam at no additional charge. We believe early detection is too important to treat as an optional add-on, so every patient receives this screening during their comprehensive visit."
-    },
-    {
-      "question": "What is VELscope and is it safe?",
-      "answer": "VELscope is an FDA-cleared device that uses a safe blue-spectrum light to help visualize abnormalities in the oral tissues that may not be apparent during a standard visual examination. The light is completely harmless — there is no radiation, no dye, and no discomfort involved."
-    },
-    {
-      "question": "What happens if something abnormal is found?",
-      "answer": "Not every abnormality indicates cancer. Many findings turn out to be benign conditions. If Dr. Alex identifies an area of concern, the next step may be monitoring the area over a short period, performing a painless brush biopsy in our office, or referring you to a specialist for further evaluation. We will guide you through every step of the process."
-    },
-    {
-      "question": "Who should get screened for oral cancer?",
-      "answer": "Everyone. While tobacco users, heavy alcohol consumers, and individuals with HPV are at higher risk, oral cancer can affect anyone. Approximately one in four oral cancer cases occurs in people with no known risk factors. That is why we screen every patient during their comprehensive exam, regardless of age or lifestyle."
-    }
-  ],
   "category": "general",
-  "heroVariant": "centered",
-  "cta": {
-    "title": "Ready to Get Started?",
-    "subtitle": "Schedule an appointment to learn more about this service.",
-    "primaryCta": {
-      "text": "Book Appointment",
-      "link": "/contact"
-    },
-    "secondaryCta": {
-      "text": "Call (845) 555-0180",
-      "link": "tel:+18455550180"
-    }
-  }
+  "featured": false,
+  "subtitle": "Early detection saves lives",
+  "heroVariant": "photo-background",
+  "whatToExpect": "The oral cancer screening is a quick, painless addition to your regular comprehensive exam and takes approximately 15 minutes. Dr. Alex will begin with a visual inspection of your lips, tongue, cheeks, floor and roof of your mouth, throat, and gums, looking for any unusual sores, discolorations, or tissue changes. A gentle tactile examination checks for lumps or irregularities. The VELscope device is then used to illuminate your oral tissues with a harmless blue light while Dr. Alex observes the fluorescence patterns through the scope. There is no rinse, dye, or discomfort involved. If any area of concern is identified, Dr. Alex will explain what was found, discuss potential causes, and outline the recommended follow-up, which may include monitoring the area, performing a simple brush biopsy, or referring you to an oral surgeon for further evaluation.",
+  "durationMinutes": 15,
+  "fullDescription": "Oral cancer affects tens of thousands of Americans each year, and early detection dramatically improves treatment outcomes and survival rates. At our Middletown, NY practice, oral cancer screening is included as part of every comprehensive dental exam because we believe proactive detection is one of the most important things we can do for your health.\n\nOur screening process combines a thorough visual and tactile examination with VELscope technology — an advanced fluorescence visualization device that helps identify abnormal tissue changes that may not be visible to the naked eye. The VELscope emits a safe blue light that causes healthy oral tissue to fluoresce in distinct patterns. Areas of concern, such as precancerous or cancerous lesions, appear differently under this light, allowing Dr. Alex to identify potential issues at their earliest and most treatable stages.\n\nWhile anyone can develop oral cancer, certain factors increase risk, including tobacco and alcohol use, HPV infection, prolonged sun exposure to the lips, and a family history of cancer. However, approximately 25% of oral cancer cases occur in patients with no known risk factors, which is why we screen every patient regardless of their history. If any abnormalities are detected, Dr. Alex will discuss the findings with you and recommend appropriate next steps, which may include a biopsy or referral to a specialist.",
+  "shortDescription": "Comprehensive oral cancer screenings using advanced VELscope technology, included with every comprehensive exam."
 }

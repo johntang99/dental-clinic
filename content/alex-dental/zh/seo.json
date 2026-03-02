@@ -1,10 +1,55 @@
 {
-  "title": "",
-  "description": "",
-  "ogImage": "",
   "home": {
-    "title": "",
-    "description": ""
+    "title": "Alex牙科诊所 — 用您的语言提供专业牙科服务",
+    "description": "纽约州Middletown综合牙科服务。普通牙科、美容牙科、修复牙科及Invisalign隐适美。提供中文、英语、西班牙语和韩语服务。"
   },
-  "pages": {}
+  "pages": {
+    "blog": {
+      "title": "口腔健康博客 — Alex牙科诊所",
+      "description": "来自Middletown牙科团队的口腔健康知识、治疗指南和护牙教育。"
+    },
+    "team": {
+      "title": "我们的医生与团队 — Alex牙科诊所",
+      "description": "认识Alex牙科诊所经验丰富的牙科医生。多语言团队服务纽约州Middletown。"
+    },
+    "about": {
+      "title": "关于我们 — Alex牙科诊所",
+      "description": "了解Alex牙科诊所、我们的使命以及对纽约州Middletown多语言牙科服务的承诺。"
+    },
+    "cases": {
+      "title": "患者案例展示 — Alex牙科诊所",
+      "description": "真实的牙科治疗前后对比。查看Alex牙科诊所的患者治疗效果。"
+    },
+    "contact": {
+      "title": "联系我们 — Alex牙科诊所",
+      "description": "联系纽约州Middletown的Alex牙科诊所。致电(845) 555-0180或在线预约。"
+    },
+    "reviews": {
+      "title": "患者评价 — Alex牙科诊所",
+      "description": "了解患者对纽约州Middletown Alex牙科诊所的评价。"
+    },
+    "services": {
+      "title": "牙科服务 — Alex牙科诊所",
+      "description": "全面牙科服务：洁牙、种植牙、Invisalign隐适美、美容牙科等，位于纽约州Middletown。"
+    },
+    "emergency": {
+      "title": "牙科急诊 — Alex牙科诊所",
+      "description": "纽约州Middletown当天牙科急诊预约。立即致电获取紧急治疗。"
+    },
+    "insurance": {
+      "title": "保险与付款方式 — Alex牙科诊所",
+      "description": "我们接受大多数主要牙科保险计划。提供CareCredit分期付款。纽约州Middletown。"
+    },
+    "technology": {
+      "title": "先进技术设备 — Alex牙科诊所",
+      "description": "先进牙科技术带来更好的治疗体验：3D CT扫描、CEREC当天牙冠、数字X光。"
+    },
+    "new-patient": {
+      "title": "新患者须知 — Alex牙科诊所",
+      "description": "首次就诊Alex牙科诊所须知。新患者表格与保险信息。"
+    }
+  },
+  "title": "Alex牙科诊所 — 纽约州Middletown",
+  "ogImage": "/images/og-default.jpg",
+  "description": "纽约州Middletown专业牙科服务，提供中文、英语、西班牙语和韩语服务。普通牙科、美容牙科及修复牙科。欢迎新患者。"
 }

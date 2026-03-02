@@ -1,0 +1,77 @@
+{
+  "cta": {
+    "title": "准备好预约了吗？",
+    "variant": "centered",
+    "subtitle": "欢迎新患者就诊——立即致电或在线预约",
+    "primaryCta": { "link": "/contact", "text": "预约挂号" },
+    "secondaryCta": { "link": "tel:+18455550180", "text": "致电 (845) 555-0180" }
+  },
+  "faq": {
+    "faqs": [
+      { "answer": "无需转诊。您可以直接拨打 (845) 555-0180 或使用我们的在线预约表格进行预约。", "question": "就诊是否需要转诊？" },
+      { "answer": "大多数患者建议每6个月洁牙一次。患有牙周病的患者可能需要每3至4个月洁牙一次。", "question": "多久应该进行一次牙齿清洁？" },
+      { "answer": "我们与大多数主要PPO牙科保险计划签订了合作协议。请致电我们，我们将在您就诊前为您核实保险权益。", "question": "你们接受我的保险吗？" },
+      { "answer": "我们提供笑气（一氧化二氮）和口服镇静两种方式，帮助您放松心情。我们的团队专业训练有素，致力于提供温和、无焦虑的牙科诊疗体验。", "question": "如果我对牙科治疗感到紧张怎么办？" }
+    ],
+    "title": "常见问题",
+    "variant": "accordion"
+  },
+  "hero": {
+    "title": "我们的牙科服务",
+    "variant": "split-photo-left",
+    "subtitle": "为全家提供全面医疗——从日常洁牙到高级修复治疗",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425022174-hero-services.jpg"
+  },
+  "overview": {
+    "title": "一站式全面牙科医疗",
+    "variant": "centered",
+    "benefits": [
+      "提供当日紧急预约",
+      "与大多数主要PPO保险计划签约合作",
+      "为焦虑患者提供镇静方案",
+      "多语言团队（英语、中文、西班牙语、韩语）",
+      "先进技术实现更快速、更精准的治疗"
+    ],
+    "introduction": "在Alex牙科诊所，我们提供全系列牙科服务，让您无需转诊至其他地方。从预防保健到美容改造，再到复杂的修复治疗，我们的团队具备专业培训和先进技术，能够以舒适且实惠的方式为您处理一切。"
+  },
+  "trustBar": {
+    "items": [
+      { "icon": "shield-check", "title": "持牌认证", "description": "持有委员会认证的牙医，并持续接受继续教育" },
+      { "icon": "clock", "title": "当日诊治", "description": "在诊所开放时间内提供紧急预约" },
+      { "icon": "credit-card", "title": "灵活付款", "description": "接受保险，提供分期付款，设有会员计划" }
+    ]
+  },
+  "categories": [
+    { "id": "general", "icon": "shield-check", "name": "普通牙科", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/general/1772358527549-photo-1663755489920-5e09f66d011a.jpg", "order": 1, "subtitle": "预防与基础护理", "description": "健康笑容的基础。定期洁牙、检查和早期干预，将小问题消弭于萌芽状态。" },
+    { "id": "cosmetic", "icon": "sparkles", "name": "美容牙科", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423026439-teeth-whitening.jpg", "order": 2, "subtitle": "美白、贴面及笑容改造", "description": "通过专业美白、瓷贴面、粘接修复及全面笑容改造方案，焕新您的笑容，重建您的自信。" },
+    { "id": "restorative", "icon": "refresh-cw", "name": "修复牙科", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423005890-dental-implants.jpg", "order": 3, "subtitle": "种植牙、牙冠、牙桥及假牙", "description": "通过种植牙、牙冠、牙桥及假牙替换缺失牙齿、修复受损牙齿——采用最新技术，实现自然逼真、持久耐用的修复效果。" },
+    { "id": "orthodontics", "icon": "align-center", "name": "正畸治疗", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423014760-invisalign.jpg", "order": 4, "subtitle": "隐形矫正打造更整齐的笑容", "description": "使用Invisalign隐适美隐形矫正器悄然整齐您的牙齿——无需金属托槽。为青少年和成人量身定制治疗方案。" },
+    { "id": "pediatric", "icon": "baby", "name": "儿童牙科", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423017529-pediatric-dentistry.jpg", "order": 5, "subtitle": "温和有趣的儿童牙科护理", "description": "从第一颗乳牙到青少年时期的全程儿童友好型牙科护理。我们让每次就诊都充满乐趣、轻松愉快，并对您的孩子具有启发意义。" },
+    { "id": "comfort", "icon": "moon", "name": "镇静与舒适治疗", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423022338-sedation-dentistry.jpg", "order": 6, "subtitle": "无焦虑治疗方案", "description": "对看牙医感到紧张？我们提供笑气、口服镇静及温和诊疗方式，让您在任何诊疗过程中都能放松自在。" }
+  ],
+  "servicesList": {
+    "items": [
+      { "id": "cleanings-and-exams", "icon": "Sparkles", "link": "/services/cleanings-and-exams", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/general/1772360057966-photo-1626736985932-c0df2ae07a2e.jpg", "title": "洁牙与全面检查", "category": "general", "featured": true, "shortDescription": "专业牙齿清洁、全面口腔检查及数字X光检查，保持您的笑容健康亮丽。" },
+      { "id": "fillings", "icon": "Shield", "link": "/services/fillings", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/general/1772411469718-photo-1758205308181-d52b41e00cef.jpg", "title": "仿色树脂补牙", "category": "general", "featured": false, "shortDescription": "外观自然的复合树脂填充物，在修复龋坏或受损牙齿的同时，保持您笑容的美观。" },
+      { "id": "root-canal", "icon": "HeartPulse", "link": "/services/root-canal", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423019711-root-canal.jpg", "title": "根管治疗", "category": "general", "featured": false, "shortDescription": "温和的根管治疗，消除感染、缓解牙痛，并保留您的天然牙齿。" },
+      { "id": "extractions", "icon": "Unplug", "link": "/services/extractions", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423009618-extractions.jpg", "title": "拔牙", "category": "general", "featured": false, "shortDescription": "舒适的拔牙服务，包括智齿拔除，以专业谨慎的方式进行。" },
+      { "id": "gum-disease-treatment", "icon": "ShieldCheck", "link": "/services/gum-disease-treatment", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423012957-gum-disease-treatment.jpg", "title": "牙周病治疗", "category": "general", "featured": false, "shortDescription": "深层洁治、龈下刮治及根面平整以及牙周治疗，治疗牙周病并恢复牙龈健康。" },
+      { "id": "oral-cancer-screening", "icon": "ScanSearch", "link": "/services/oral-cancer-screening", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423016350-oral-cancer-screening.jpg", "title": "口腔癌筛查", "category": "general", "featured": false, "shortDescription": "采用先进VELscope技术进行全面口腔癌筛查，每次全面检查均涵盖此项目。" },
+      { "id": "teeth-whitening", "icon": "Sparkles", "link": "/services/teeth-whitening", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423026439-teeth-whitening.jpg", "title": "专业牙齿美白", "category": "cosmetic", "featured": true, "shortDescription": "通过我们专业的诊室内Zoom美白或定制居家美白套装，让您的笑容焕然一新、明显更白。" },
+      { "id": "veneers", "icon": "Layers", "link": "/services/veneers", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423028162-veneers.jpg", "title": "瓷贴面", "category": "cosmetic", "featured": false, "shortDescription": "定制瓷贴面，修正缺口、间隙、变色及不均匀牙齿，实现全面笑容蜕变。" },
+      { "id": "bonding", "icon": "Brush", "link": "/services/bonding", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772422997152-bonding.jpg", "title": "美容牙科粘接修复", "category": "cosmetic", "featured": false, "shortDescription": "一次就诊即可修复缺口、弥合间隙、改善变色，采用外观自然的复合树脂粘接修复。" },
+      { "id": "smile-makeover", "icon": "Star", "link": "/services/smile-makeover", "title": "笑容改造", "category": "cosmetic", "shortDescription": "结合多项诊疗程序的全面个性化美容治疗方案，助您实现理想笑容。", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423024829-smile-makeover.jpg", "featured": true },
+      { "id": "dental-implants", "icon": "anchor", "link": "/services/dental-implants", "title": "种植牙", "category": "restorative", "featured": true, "shortDescription": "采用钛合金种植体进行永久性牙齿替换，外观、触感和功能均与天然牙齿无异", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423005890-dental-implants.jpg" },
+      { "id": "crowns-and-bridges", "icon": "crown", "link": "/services/crowns-and-bridges", "title": "牙冠与牙桥", "category": "restorative", "shortDescription": "定制牙冠和牙桥，修复受损或缺失牙齿——提供当日完成选项", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772422998934-crowns-and-bridges.jpg" },
+      { "id": "dentures", "icon": "smile", "link": "/services/dentures", "title": "假牙", "category": "restorative", "shortDescription": "全口及局部假牙，精心制作，兼顾舒适性、功能性及自然外观", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423007749-dentures.jpg" },
+      { "id": "full-arch-implants", "icon": "maximize", "link": "/services/full-arch-implants", "title": "全弓种植修复", "category": "restorative", "shortDescription": "All-on-4及All-on-6全弓种植修复方案，实现笑容全面重建", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423011491-full-arch-implants.jpg" },
+      { "id": "invisalign", "icon": "align-center", "link": "/services/invisalign", "title": "Invisalign隐适美", "category": "orthodontics", "featured": true, "shortDescription": "隐形矫正治疗，悄然整齐牙齿——无需金属托槽", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423014760-invisalign.jpg" },
+      { "id": "pediatric-dentistry", "icon": "baby", "link": "/services/pediatric-dentistry", "title": "儿童牙科", "category": "pediatric", "shortDescription": "从第一颗乳牙到青少年时期的温和儿童友好型牙科护理", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423017529-pediatric-dentistry.jpg" },
+      { "id": "sedation-dentistry", "icon": "moon", "link": "/services/sedation-dentistry", "title": "镇静牙科", "category": "comfort", "shortDescription": "提供笑气及口服镇静方案，让您在任何诊疗过程中均能放松自在", "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423022338-sedation-dentistry.jpg" }
+    ],
+    "title": "全部服务",
+    "variant": "grid-cards-3x",
+    "subtitle": "点击任意服务了解详情"
+  },
+  "layoutVariant": "category-detail-alternating"
+}

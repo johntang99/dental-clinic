@@ -1,31 +1,8 @@
 {
   "brand": {
-    "logoText": "Alex Dental",
     "name": "Alex Dental Clinic",
+    "logoText": "Alex Dental",
     "description": "Expert dental care for the whole family in English, Chinese, Spanish, and Korean. Serving Middletown, NY and surrounding communities."
-  },
-  "quickLinks": [
-    { "text": "About Us", "url": "/about" },
-    { "text": "New Patients", "url": "/new-patients" },
-    { "text": "Case Studies", "url": "/case-studies" },
-    { "text": "Insurance & Financing", "url": "/insurance" },
-    { "text": "Blog", "url": "/blog" },
-    { "text": "Contact", "url": "/contact" }
-  ],
-  "services": [
-    { "text": "Dental Implants", "url": "/services/dental-implants" },
-    { "text": "Invisalign", "url": "/services/invisalign" },
-    { "text": "Teeth Whitening", "url": "/services/teeth-whitening" },
-    { "text": "Crowns & Bridges", "url": "/services/crowns-and-bridges" },
-    { "text": "Emergency Dental", "url": "/emergency" },
-    { "text": "All Services", "url": "/services" }
-  ],
-  "contact": {
-    "addressLines": ["85 Crystal Run Road", "Middletown, NY 10940"],
-    "phone": "(845) 555-0180",
-    "phoneLink": "tel:+18455550180",
-    "email": "info@alex-dental.com",
-    "emailLink": "mailto:info@alex-dental.com"
   },
   "hours": [
     "Mon, Tue, Thu: 8AM - 6PM",
@@ -34,10 +11,81 @@
     "Sat: 9AM - 2PM",
     "Sun: Closed"
   ],
-  "legalLinks": [
-    { "text": "Privacy Policy", "url": "/privacy" },
-    { "text": "Accessibility", "url": "/accessibility" },
-    { "text": "Terms of Service", "url": "/terms" }
+  "contact": {
+    "email": "info@alex-dental.com",
+    "phone": "(845) 555-0180",
+    "emailLink": "mailto:info@alex-dental.com",
+    "phoneLink": "tel:+18455550180",
+    "addressLines": [
+      "85 Crystal Run Road",
+      "Middletown, NY 10940"
+    ]
+  },
+  "services": [
+    {
+      "url": "/services/dental-implants",
+      "text": "Dental Implants"
+    },
+    {
+      "url": "/services/invisalign",
+      "text": "Invisalign"
+    },
+    {
+      "url": "/services/teeth-whitening",
+      "text": "Teeth Whitening"
+    },
+    {
+      "url": "/services/crowns-and-bridges",
+      "text": "Crowns & Bridges"
+    },
+    {
+      "url": "/emergency",
+      "text": "Emergency Dental"
+    },
+    {
+      "url": "/services",
+      "text": "All Services"
+    }
   ],
-  "copyright": "© 2026 Alex Dental Clinic. All rights reserved."
+  "copyright": "© 2026 Alex Dental Clinic. All rights reserved.",
+  "legalLinks": [
+    {
+      "url": "/privacy",
+      "text": "Privacy Policy"
+    },
+    {
+      "url": "/accessibility",
+      "text": "Accessibility"
+    },
+    {
+      "url": "/terms",
+      "text": "Terms of Service"
+    }
+  ],
+  "quickLinks": [
+    {
+      "url": "/about",
+      "text": "About Us"
+    },
+    {
+      "url": "/new-patients",
+      "text": "New Patients"
+    },
+    {
+      "url": "/case-studies",
+      "text": "Case Studies"
+    },
+    {
+      "url": "/insurance",
+      "text": "Insurance & Financing"
+    },
+    {
+      "url": "/blog",
+      "text": "Blog"
+    },
+    {
+      "url": "/contact",
+      "text": "Contact"
+    }
+  ]
 }

@@ -1,20 +1,95 @@
 {
   "id": "alex-dental",
-  "businessName": "Alex 牙科诊所",
-  "tagline": "用您的语言提供专业牙科服务",
-  "description": "为全家提供中文、英语、西班牙语和韩语的综合牙科服务",
-  "phone": "(845) 555-0180",
-  "phoneEmergency": "(845) 555-0180",
-  "email": "info@alex-dental.com",
-  "address": "85 Crystal Run Road",
-  "city": "Middletown",
-  "state": "NY",
+  "lat": 41.4459,
+  "lng": -74.4229,
   "zip": "10940",
-  "addressFull": "85 Crystal Run Road, Middletown, NY 10940",
+  "city": "Middletown",
+  "email": "info@alex-dental.com",
+  "hours": {
+    "friday": "上午8:00 - 下午5:00",
+    "monday": "上午8:00 - 下午6:00",
+    "sunday": "休息",
+    "tuesday": "上午8:00 - 下午6:00",
+    "saturday": "上午9:00 - 下午2:00",
+    "thursday": "上午8:00 - 下午6:00",
+    "wednesday": "上午9:00 - 晚上7:00",
+    "emergencyNote": "牙科急诊：请致电我们 — 当天可安排紧急病例"
+  },
+  "phone": "(845) 555-0180",
+  "state": "NY",
+  "social": {
+    "yelp": "https://yelp.com/biz/alex-dental-middletown",
+    "google": "https://g.page/alexdental",
+    "youtube": "",
+    "facebook": "https://facebook.com/alexdental",
+    "instagram": "https://instagram.com/alexdental"
+  },
+  "address": "85 Crystal Run Road",
+  "booking": {
+    "bookingUrl": "/book",
+    "callToBook": true,
+    "onlineBookingEnabled": true,
+    "preferredContactMethod": "both"
+  },
   "display": {
-    "showEmergencyBanner": true,
+    "defaultLocale": "en",
     "emergencyBannerText": "牙科急诊？立即致电 — 当天可预约紧急病例",
-    "showLanguageSwitcher": true,
-    "defaultLocale": "en"
-  }
+    "showEmergencyBanner": true,
+    "showLanguageSwitcher": true
+  },
+  "tagline": "用您的语言提供专业牙科服务",
+  "insurance": {
+    "financingNote": "提供CareCredit、LendingClub和Sunbit分期付款。",
+    "inNetworkNote": "与大多数主要PPO保险计划合作。请致电确认您的具体保险计划。",
+    "acceptsInsurance": true,
+    "membershipPlanName": "Alex健康计划",
+    "membershipPlanEnabled": true
+  },
+  "languages": [
+    {
+      "code": "en",
+      "flag": "US",
+      "label": "English",
+      "enabled": true
+    },
+    {
+      "code": "zh",
+      "flag": "CN",
+      "label": "中文",
+      "enabled": true
+    },
+    {
+      "code": "es",
+      "flag": "MX",
+      "label": "Español",
+      "enabled": true
+    },
+    {
+      "code": "ko",
+      "flag": "KR",
+      "label": "한국어",
+      "enabled": true
+    }
+  ],
+  "addressFull": "85 Crystal Run Road, Middletown, NY 10940",
+  "credentials": {
+    "npiNumber": "1234567890",
+    "licenseState": "NY",
+    "adaMembership": true,
+    "licenseNumber": "NY-D-012345",
+    "specializations": [
+      "普通牙科",
+      "美容牙科",
+      "种植牙",
+      "Invisalign隐适美认证",
+      "镇静牙科"
+    ],
+    "stateDentalAssociation": "纽约州牙科协会"
+  },
+  "description": "为全家提供中文、英语、西班牙语和韩语的综合牙科服务",
+  "businessName": "Alex牙科诊所",
+  "mapsEmbedUrl": "https://www.google.com/maps/embed?pb=YOUR_EMBED_ID",
+  "addressMapUrl": "https://maps.google.com/?q=85+Crystal+Run+Road+Middletown+NY+10940",
+  "phoneEmergency": "(845) 555-0180",
+  "emailAppointments": "appointments@alex-dental.com"
 }

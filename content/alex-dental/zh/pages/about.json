@@ -1,0 +1,104 @@
+{
+  "cta": {
+    "title": "欢迎来访",
+    "variant": "centered",
+    "primaryCta": { "link": "/contact", "text": "预约挂号" },
+    "description": "我们期待欢迎您加入我们的诊所。预约到访，亲身体验Alex牙科的与众不同。",
+    "secondaryCta": { "link": "tel:+18455550180", "text": "致电 (845) 555-0180" }
+  },
+  "hero": {
+    "title": "关于Alex牙科诊所",
+    "variant": "split-photo-right",
+    "subtitle": "以您的语言，为整个社区提供充满关怀的专业牙科服务",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425023441-hero-about.jpg"
+  },
+  "clinic": {
+    "title": "我们的诊所",
+    "values": [
+      { "icon": "heart", "title": "关怀", "description": "以同理心和理解对待每一位患者" },
+      { "icon": "award", "title": "卓越", "description": "持有委员会认证的牙医，并持续接受继续教育" },
+      { "icon": "globe", "title": "无障碍服务", "description": "提供4种语言的医疗服务，打破牙科健康的语言壁垒" },
+      { "icon": "shield", "title": "诚信", "description": "透明定价，诚实的治疗建议" }
+    ],
+    "variant": "cards",
+    "features": [
+      "6间配备椅旁显示器的全功能诊疗室",
+      "CEREC当日牙冠技术",
+      "3D锥形束CT扫描仪，实现精准成像",
+      "专用消毒中心，标准超越OSHA规范",
+      "舒适的候诊区，提供免费饮品",
+      "为所有患者提供免费停车"
+    ],
+    "description": "我们的现代化诊所位于纽约州米德尔顿Crystal Run Crossing附近，交通便利，专为舒适与高效而设计。",
+    "environment": "我们的诊所从您踏入的第一刻起，便让您感受到温馨与舒适。自然采光、宁静的装饰风格以及友善的团队，营造出一个让各年龄层患者都能放松自在的氛围。"
+  },
+  "journey": {
+    "story": "Alex牙科诊所在纽约州米德尔顿开业至今已逾15年。从最初只有两间诊室的小型诊所，发展成为如今拥有先进技术和专业团队的全方位牙科医疗机构。\n\n我们的成长始终源于一件事：患者的口耳相传与信任。如今，我们服务着奥兰治县数千个家庭，许多患者专程从周边地区驱车前来，正是为了我们的多语言服务以及在种植牙和美容牙科方面的专业水准。\n\n我们始终相信，牙科诊所应该是一个您乐于前往的地方，而非令人望而生畏之处。因此，我们将患者的舒适体验融入每一个细节的设计——从温馨的接待区到现代化的诊疗室，一切皆以您为中心。",
+    "title": "我们的故事",
+    "variant": "prose"
+  },
+  "profile": {
+    "bio": "Alex Chen医生创立Alex牙科诊所，源于一个简单的愿景：无论说什么语言，社区中的每一个人都应该享有优质牙科医疗服务。\n\nAlex Chen医生在青少年时期从台湾移居纽约，成长于一个多语言家庭环境中。他深切体会过用非母语就医的种种困难与挑战。正是这段亲身经历，塑造了他创立这家诊所的方方面面——从多语言团队的组建，到每一项诊疗程序都以患者易懂的语言清晰说明。\n\n凭借逾15年的从业经验及在种植牙和美容牙科方面的专业进修，Alex Chen医生已完成逾1,200例种植牙手术，为米德尔顿及奥兰治县社区数千名患者带来了灿烂笑容。",
+    "name": "Alex Chen医生，牙科博士",
+    "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/general/1772395369339-photo-1700041785712-649e859d9909.jpg",
+    "quote": "我相信，能够听懂您的牙医，并且感受到被理解，是优质医疗的根本所在。",
+    "title": "创始人及首席牙医",
+    "variant": "split"
+  },
+  "philosophy": {
+    "title": "我们的理念",
+    "variant": "cards",
+    "principles": [
+      { "title": "诚信至上", "description": "我们只推荐您真正需要的治疗方案。没有过度推销，没有不必要的诊疗——只有诚实、循证的医疗服务。" },
+      { "title": "您的语言，您的舒适", "description": "我们的团队能说英语、中文、西班牙语和韩语，让每位患者都能自如沟通，充分了解自己的治疗方案。" },
+      { "title": "技术服务于目的", "description": "我们投资于真正能改善您就诊体验的技术——更少辐射、更高精准度、更少就诊次数。" },
+      { "title": "长期伙伴关系", "description": "我们不只是修复牙齿——我们是您终身健康笑容的伙伴。许多患者已与我们相伴逾十年。" }
+    ],
+    "introduction": "我们相信，卓越的牙科医疗不仅仅在于精湛的临床技术，更在于建立信任、清晰沟通，以及将每位患者视为独立个体来对待。"
+  },
+  "credentials": {
+    "items": [
+      { "icon": "graduation-cap", "year": "2012", "location": "纽约州纽约市", "credential": "牙科博士（DDS）", "institution": "哥伦比亚大学牙科医学院" },
+      { "icon": "graduation-cap", "year": "2008", "location": "纽约州纽约市", "credential": "理学学士，生物学专业", "institution": "纽约大学" },
+      { "icon": "award", "year": "2013", "location": "纽约州纽约市", "credential": "高级种植牙技术培训", "institution": "哥伦比亚大学" }
+    ],
+    "title": "教育与培训",
+    "variant": "grid"
+  },
+  "affiliations": {
+    "title": "专业会员资格",
+    "variant": "detailed",
+    "organizations": [
+      { "name": "美国牙科协会", "role": "会员" },
+      { "name": "纽约州牙科协会", "role": "会员" },
+      { "name": "普通牙科学会", "role": "院士" },
+      { "name": "国际口腔种植学会", "role": "院士" },
+      { "name": "Invisalign隐适美", "role": "白金级服务商" }
+    ]
+  },
+  "specializations": {
+    "areas": [
+      { "icon": "anchor", "title": "种植牙", "description": "已完成逾1,200例种植牙手术，包括复杂的全弓修复病例" },
+      { "icon": "sparkles", "title": "美容牙科", "description": "贴面、美白、粘接修复及全面笑容改造方案规划" },
+      { "icon": "align-center", "title": "Invisalign隐适美", "description": "白金级Invisalign隐适美服务商，已完成数百例病例" },
+      { "icon": "shield-check", "title": "预防保健", "description": "全面检查、数字成像及个性化预防计划" },
+      { "icon": "heart-pulse", "title": "修复牙科", "description": "牙冠、牙桥、根管治疗及CEREC当日修复" },
+      { "icon": "baby", "title": "家庭及儿童牙科", "description": "为各年龄层患者提供温和医疗，从第一颗乳牙到成年期全程呵护" }
+    ],
+    "title": "专业领域",
+    "variant": "grid-3",
+    "description": "Alex Chen医生及我们的团队在以下领域具备深厚专业知识，提供全面的牙科医疗服务"
+  },
+  "continuingEducation": {
+    "items": [
+      "高级种植体植入及全弓修复",
+      "数字牙科及CAD/CAM工作流程",
+      "美容笑容设计及贴面技术",
+      "牙周激光治疗",
+      "儿科行为管理及镇静牙科"
+    ],
+    "title": "继续教育",
+    "variant": "compact",
+    "description": "我们的团队通过持续的专业发展，始终跟进牙科科学与技术的最新进展。"
+  }
+}

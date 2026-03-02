@@ -1,0 +1,135 @@
+{
+  "primary": [
+    {
+      "label": "服务项目",
+      "children": [
+        {
+          "url": "/services#general",
+          "label": "普通牙科",
+          "description": "洁牙、补牙、根管治疗、拔牙"
+        },
+        {
+          "url": "/services/cleanings-and-exams",
+          "label": "洁牙与检查"
+        },
+        {
+          "url": "/services/root-canal",
+          "label": "根管治疗"
+        },
+        {
+          "url": "/services/extractions",
+          "label": "拔牙"
+        },
+        {
+          "url": "/services/gum-disease-treatment",
+          "label": "牙周病治疗"
+        },
+        {
+          "url": "/services#cosmetic",
+          "label": "美容牙科",
+          "description": "牙齿美白、贴面、微笑改造"
+        },
+        {
+          "url": "/services/teeth-whitening",
+          "label": "牙齿美白"
+        },
+        {
+          "url": "/services/veneers",
+          "label": "瓷贴面"
+        },
+        {
+          "url": "/services/smile-makeover",
+          "label": "微笑改造"
+        },
+        {
+          "url": "/services#restorative",
+          "label": "修复牙科",
+          "description": "种植牙、牙冠、牙桥、假牙"
+        },
+        {
+          "url": "/services/dental-implants",
+          "label": "种植牙"
+        },
+        {
+          "url": "/services/crowns-and-bridges",
+          "label": "牙冠与牙桥"
+        },
+        {
+          "url": "/services/dentures",
+          "label": "全口/局部假牙"
+        },
+        {
+          "url": "/services#ortho",
+          "label": "正畸与其他",
+          "description": "Invisalign隐适美、儿童牙科、镇静牙科"
+        },
+        {
+          "url": "/services/invisalign",
+          "label": "Invisalign隐适美"
+        },
+        {
+          "url": "/services/pediatric-dentistry",
+          "label": "儿童牙科"
+        },
+        {
+          "url": "/services/sedation-dentistry",
+          "label": "镇静牙科"
+        }
+      ]
+    },
+    {
+      "url": "/about",
+      "label": "关于我们"
+    },
+    {
+      "url": "/technology",
+      "label": "技术设备"
+    },
+    {
+      "label": "患者服务",
+      "children": [
+        {
+          "url": "/new-patients",
+          "label": "新患者须知",
+          "description": "首次就诊须知"
+        },
+        {
+          "url": "/case-studies",
+          "label": "案例展示",
+          "description": "真实治疗前后对比"
+        },
+        {
+          "url": "/insurance",
+          "label": "保险与付款",
+          "description": "保险、分期付款、会员计划"
+        }
+      ]
+    },
+    {
+      "label": "资源中心",
+      "children": [
+        {
+          "url": "/blog",
+          "label": "博客",
+          "description": "口腔健康知识与技巧"
+        },
+        {
+          "url": "/gallery",
+          "label": "诊所相册",
+          "description": "诊所环境与团队照片"
+        }
+      ]
+    },
+    {
+      "url": "/contact",
+      "label": "联系我们"
+    },
+    {
+      "url": "/emergency",
+      "label": "牙科急诊",
+      "highlight": true
+    }
+  ],
+  "mobileCtaUrl": "/book",
+  "mobileCtaText": "预约挂号"
+}

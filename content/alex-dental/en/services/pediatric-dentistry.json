@@ -1,51 +1,51 @@
 {
-  "slug": "pediatric-dentistry",
-  "title": "Pediatric Dentistry",
-  "subtitle": "Gentle, Compassionate Dental Care for Your Child",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Appointment"
+    },
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "Call (845) 555-0180"
+    }
+  },
+  "faq": [
+    {
+      "answer": "The American Academy of Pediatric Dentistry recommends scheduling your child's first dental visit by their first birthday or within six months of the eruption of their first tooth, whichever comes first. Early visits help us monitor development, catch potential issues early, and get your child comfortable with the dental office environment.",
+      "question": "When should my child first visit the dentist?"
+    },
+    {
+      "answer": "Dental sealants are thin, protective coatings applied to the chewing surfaces of back teeth (molars), where cavities are most likely to form. They create a smooth barrier that keeps food particles and bacteria from settling into the grooves of the teeth. Sealants are safe, painless, and highly effective — we generally recommend them as soon as your child's permanent molars come in, usually around ages six and twelve.",
+      "question": "What are dental sealants and does my child need them?"
+    },
+    {
+      "answer": "Start by talking about the visit in a positive, matter-of-fact way and avoid using words like pain or hurt. Reading children's books about visiting the dentist can also help. Our team is specially trained to work with anxious children, using a gentle approach, kid-friendly explanations, and plenty of praise and encouragement throughout the visit.",
+      "question": "How can I help my child feel less anxious about the dentist?"
+    },
+    {
+      "answer": "We recommend dental checkups and cleanings every six months for most children. Regular visits allow us to monitor your child's dental development, catch any concerns early, and reinforce good oral hygiene habits. If your child is at higher risk for cavities or has specific dental needs, we may recommend more frequent visits.",
+      "question": "How often should my child visit the dentist?"
+    }
+  ],
   "icon": "Baby",
-  "image": "/images/services/pediatric-dentistry.jpg",
-  "shortDescription": "Friendly, gentle dental care for children from their first tooth through their teen years.",
-  "fullDescription": "Building a foundation of healthy dental habits starts early, and our Middletown, NY practice is dedicated to making every child's dental experience positive, comfortable, and even fun. From the moment your little one's first tooth appears, our team provides gentle, age-appropriate care designed to protect growing smiles and instill a lifetime of good oral health habits.\n\nOur pediatric dental services include comprehensive exams, professional cleanings, fluoride treatments, dental sealants, and cavity prevention education. We take a patient, gentle approach with every child, using kid-friendly language and a warm, welcoming environment to put even the most anxious young patients at ease. We also monitor dental development closely, identifying potential orthodontic concerns early so they can be addressed at the right time.\n\nWe believe that parents are essential partners in their child's oral health journey. At every visit, we take the time to discuss proper brushing and flossing techniques, nutrition guidance, and age-specific concerns such as thumb-sucking habits or sports-related dental protection. Our goal is for every child to leave our office smiling and looking forward to their next visit.",
+  "slug": "pediatric-dentistry",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423017529-pediatric-dentistry.jpg",
+  "price": null,
+  "title": "Pediatric Dentistry",
   "benefits": [
     "Warm, kid-friendly environment that reduces dental anxiety",
     "Preventive sealants and fluoride treatments to guard against cavities",
     "Early detection and monitoring of developmental or orthodontic concerns",
     "Patient education for children and parents on lifelong oral health habits"
   ],
-  "whatToExpect": "When you bring your child in for an appointment, our team greets them warmly and takes time to explain each step using simple, reassuring language. The visit begins with a gentle examination of your child's teeth, gums, and overall oral development. A professional cleaning is performed using a gentle touch, followed by a fluoride treatment to strengthen enamel. If recommended, we apply dental sealants to protect the chewing surfaces of back teeth where cavities most commonly develop. We walk you through our findings and provide personalized guidance on home care, diet, and any next steps. Appointments typically last about forty-five minutes, and we always welcome your questions — feel free to call us at (845) 555-0180 anytime between visits.",
-  "price": null,
-  "durationMinutes": 45,
-  "featured": false,
-  "faq": [
-    {
-      "question": "When should my child first visit the dentist?",
-      "answer": "The American Academy of Pediatric Dentistry recommends scheduling your child's first dental visit by their first birthday or within six months of the eruption of their first tooth, whichever comes first. Early visits help us monitor development, catch potential issues early, and get your child comfortable with the dental office environment."
-    },
-    {
-      "question": "What are dental sealants and does my child need them?",
-      "answer": "Dental sealants are thin, protective coatings applied to the chewing surfaces of back teeth (molars), where cavities are most likely to form. They create a smooth barrier that keeps food particles and bacteria from settling into the grooves of the teeth. Sealants are safe, painless, and highly effective — we generally recommend them as soon as your child's permanent molars come in, usually around ages six and twelve."
-    },
-    {
-      "question": "How can I help my child feel less anxious about the dentist?",
-      "answer": "Start by talking about the visit in a positive, matter-of-fact way and avoid using words like pain or hurt. Reading children's books about visiting the dentist can also help. Our team is specially trained to work with anxious children, using a gentle approach, kid-friendly explanations, and plenty of praise and encouragement throughout the visit."
-    },
-    {
-      "question": "How often should my child visit the dentist?",
-      "answer": "We recommend dental checkups and cleanings every six months for most children. Regular visits allow us to monitor your child's dental development, catch any concerns early, and reinforce good oral hygiene habits. If your child is at higher risk for cavities or has specific dental needs, we may recommend more frequent visits."
-    }
-  ],
   "category": "pediatric",
+  "featured": false,
+  "subtitle": "Gentle, Compassionate Dental Care for Your Child",
   "heroVariant": "centered",
-  "cta": {
-    "title": "Ready to Get Started?",
-    "subtitle": "Schedule an appointment to learn more about this service.",
-    "primaryCta": {
-      "text": "Book Appointment",
-      "link": "/contact"
-    },
-    "secondaryCta": {
-      "text": "Call (845) 555-0180",
-      "link": "tel:+18455550180"
-    }
-  }
+  "whatToExpect": "When you bring your child in for an appointment, our team greets them warmly and takes time to explain each step using simple, reassuring language. The visit begins with a gentle examination of your child's teeth, gums, and overall oral development. A professional cleaning is performed using a gentle touch, followed by a fluoride treatment to strengthen enamel. If recommended, we apply dental sealants to protect the chewing surfaces of back teeth where cavities most commonly develop. We walk you through our findings and provide personalized guidance on home care, diet, and any next steps. Appointments typically last about forty-five minutes, and we always welcome your questions — feel free to call us at (845) 555-0180 anytime between visits.",
+  "durationMinutes": 45,
+  "fullDescription": "Building a foundation of healthy dental habits starts early, and our Middletown, NY practice is dedicated to making every child's dental experience positive, comfortable, and even fun. From the moment your little one's first tooth appears, our team provides gentle, age-appropriate care designed to protect growing smiles and instill a lifetime of good oral health habits.\n\nOur pediatric dental services include comprehensive exams, professional cleanings, fluoride treatments, dental sealants, and cavity prevention education. We take a patient, gentle approach with every child, using kid-friendly language and a warm, welcoming environment to put even the most anxious young patients at ease. We also monitor dental development closely, identifying potential orthodontic concerns early so they can be addressed at the right time.\n\nWe believe that parents are essential partners in their child's oral health journey. At every visit, we take the time to discuss proper brushing and flossing techniques, nutrition guidance, and age-specific concerns such as thumb-sucking habits or sports-related dental protection. Our goal is for every child to leave our office smiling and looking forward to their next visit.",
+  "shortDescription": "Friendly, gentle dental care for children from their first tooth through their teen years."
 }

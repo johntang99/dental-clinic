@@ -1,0 +1,82 @@
+{
+  "cta": {
+    "note": "紧急情况可当天预约",
+    "title": "准备好预约您的首次就诊了吗？",
+    "variant": "centered",
+    "primaryCta": { "link": "/contact", "text": "预约挂号" },
+    "description": "我们正在接受新患者，很期待与您见面。请致电或使用下方表单与我们联系。",
+    "secondaryCta": { "link": "tel:+18455550180", "text": "拨打 (845) 555-0180" }
+  },
+  "faq": {
+    "items": [
+      { "answer": "请预留约60至90分钟。这段时间包括填写表格、全面检查、拍X光片以及讨论您的治疗方案。", "question": "首次就诊需要多长时间？" },
+      { "answer": "通常首次就诊以诊断为主。如果您有紧急问题或需要简单洁牙，我们可能当天即可处理。", "question": "首次就诊时需要进行治疗吗？" },
+      { "answer": "当然可以！我们接诊各年龄段的患者，通常可以为家庭成员安排连续就诊，方便您的行程。", "question": "我可以带家人一起来吗？" },
+      { "answer": "您并不孤单——我们的许多患者都有同样的感受。我们提供镇静选项，我们的团队接受过温和、无焦虑护理的专业培训。请告知我们您的需求。", "question": "如果我对牙科就诊感到紧张怎么办？" },
+      { "answer": "无需转诊。您可以直接拨打 (845) 555-0180 或使用我们的在线联系表单预约首次就诊。", "question": "我需要转诊单吗？" },
+      { "answer": "我们的团队会说英语、普通话、韩语和西班牙语。我们希望每位患者都能用自己偏好的语言舒适地交流。", "question": "您的工作人员会说哪些语言？" }
+    ],
+    "title": "新患者常见问题"
+  },
+  "hero": {
+    "title": "欢迎您——很高兴您找到了我们",
+    "variant": "split-photo-right",
+    "subtitle": "首次来访Alex牙科之前您需要了解的一切",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425027517-hero-new-patients.jpg"
+  },
+  "insurance": {
+    "link": { "url": "/insurance", "text": "查看所有接受的保险计划 →" },
+    "text": "我们与大多数主要PPO牙科保险计划签有网络协议。如果您没有保险，我们提供Alex健康计划，以及通过CareCredit、LendingClub和Sunbit提供的灵活分期付款方案。",
+    "title": "保险与付款",
+    "pricing": { "initial": "$0–$75", "followUp": "$0–$50", "description": "大多数预防性就诊费用由保险全额报销。所示自付费用为网络内PPO患者的典型共同支付金额。" }
+  },
+  "preparation": {
+    "tips": [
+      { "icon": "file-text", "title": "提前填写表格", "importance": "important", "description": "下载我们的新患者表格并在家填写，以节省报到时的时间。" },
+      { "icon": "credit-card", "title": "携带保险信息", "importance": "important", "description": "请携带您的保险卡，以便我们核实保险权益并尽量减少您的自付费用。" },
+      { "icon": "pill", "title": "列出您的用药清单", "importance": "normal", "description": "请写下所有当前正在服用的药物、营养补充剂以及任何药物过敏情况。" },
+      { "icon": "clock", "title": "提前15分钟到达", "importance": "normal", "description": "这样我们有时间在您就诊前帮助您安顿好并核查您的相关文件。" },
+      { "icon": "heart", "title": "告诉我们您的顾虑", "importance": "normal", "description": "无论是牙科焦虑、特定问题还是美容目标——我们都希望听到您的想法。" },
+      { "icon": "phone", "title": "来电咨询", "importance": "normal", "description": "有任何疑问？请拨打 (845) 555-0180，我们的团队将很乐意为您解答。" }
+    ],
+    "title": "如何准备",
+    "subtitle": "几个简单步骤，让您的就诊更加顺畅"
+  },
+  "whatToBring": {
+    "items": [
+      { "icon": "badge-check", "item": "有效的带照片身份证件", "description": "驾照、护照或州政府颁发的身份证" },
+      { "icon": "shield-check", "item": "牙科保险卡", "description": "如果您有牙科保险，请携带保险卡以便我们核实保险权益" },
+      { "icon": "pill", "item": "用药清单", "description": "包括处方药、非处方药和营养补充剂" },
+      { "icon": "file-text", "item": "病历资料", "description": "任何相关的健康病史或来自以前牙医的转诊记录" },
+      { "icon": "credit-card", "item": "付款方式", "description": "我们接受所有主要信用卡、HSA/FSA，并提供分期付款选项" }
+    ],
+    "title": "需要携带的物品"
+  },
+  "introduction": {
+    "text": "我们深知拜访新牙医可能会让人感到不确定，因此我们尽可能简化并让整个过程更加舒适。从您踏入诊所的那一刻起，我们的多语言团队将让您感到宾至如归。",
+    "highlight": "新患者首次就诊通常需要约60至90分钟。我们绝不会催促您，也不会在您充分了解并同意之前开始任何治疗。"
+  },
+  "whatToExpect": {
+    "note": "对于洁牙等简单治疗，如果您愿意，我们通常可以当天开始进行。",
+    "steps": [
+      { "icon": "clipboard", "title": "报到与填写表格", "number": 1, "details": ["带照片身份证件和保险卡", "病史及当前用药情况", "来自以前牙医的任何转诊记录"], "duration": "10-15分钟", "description": "请提前15分钟到达，以便填写新患者表格。您也可以提前下载并填写好表格。" },
+      { "icon": "scan", "title": "数字影像检查", "number": 2, "details": ["辐射量比传统X光少90%", "即时高分辨率图像", "根据需要进行全景和口内视图"], "duration": "10分钟", "description": "我们将使用低辐射技术拍摄一套完整的数字X光片，为我们提供您口腔健康的完整图像。" },
+      { "icon": "stethoscope", "title": "全面检查", "number": 3, "details": ["逐颗牙齿评估", "牙龈健康评估", "颞下颌关节与咬合分析", "包含口腔癌筛查"], "duration": "20-30分钟", "description": "您的牙医将对您的牙齿、牙龈、咬合和下颌进行全面检查，包括口腔癌筛查。" },
+      { "icon": "message-circle", "title": "讨论与治疗方案", "number": 4, "details": ["用通俗语言解释检查结果", "基于优先级的治疗建议", "保险覆盖范围审查", "讨论灵活的付款选项"], "duration": "15-20分钟", "description": "我们将与您坐在一起，在屏幕上回顾检查结果，并制定符合您目标和预算的个性化治疗方案。" }
+    ],
+    "title": "首次就诊时的预期体验",
+    "subtitle": "逐步了解您的首次预约流程",
+    "totalDuration": "总计：约60至90分钟"
+  },
+  "downloadForms": {
+    "note": "表格也可在我们诊所获取。如果您无法打印，请提前15分钟到达。",
+    "forms": [
+      { "name": "新患者注册表", "pages": "3页", "fileUrl": "/downloads/new-patient-registration.pdf", "required": true, "description": "联系信息、紧急联系人及牙科病史" },
+      { "name": "病史表", "pages": "2页", "fileUrl": "/downloads/medical-history.pdf", "required": true, "description": "健康状况、用药情况及过敏史" },
+      { "name": "HIPAA隐私声明", "pages": "2页", "fileUrl": "/downloads/hipaa-notice.pdf", "required": true, "description": "我们的隐私惯例及您的权利" },
+      { "name": "财务政策协议", "pages": "1页", "fileUrl": "/downloads/financial-policy.pdf", "required": false, "description": "付款条款、保险计费及取消政策" }
+    ],
+    "title": "新患者表格",
+    "subtitle": "提前填写这些表格，节省您的就诊时间"
+  }
+}

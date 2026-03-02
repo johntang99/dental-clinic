@@ -1,51 +1,51 @@
 {
-  "slug": "sedation-dentistry",
-  "title": "Sedation Dentistry",
-  "subtitle": "Relaxed, Anxiety-Free Dental Care When You Need It Most",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Appointment"
+    },
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "Call (845) 555-0180"
+    }
+  },
+  "faq": [
+    {
+      "answer": "Yes, sedation dentistry is very safe when administered by trained dental professionals. We carefully review your complete medical history and any medications before recommending a sedation option. During your procedure, our team continuously monitors your vital signs including heart rate, blood pressure, and oxygen levels to ensure your safety and comfort at all times.",
+      "question": "Is sedation dentistry safe?"
+    },
+    {
+      "answer": "With the sedation options we offer, you will not be unconscious. Nitrous oxide produces a light, pleasant relaxation while you remain fully awake and aware. Oral sedation creates a deeper state of calm and you may feel drowsy or have limited memory of the procedure, but you will still be able to respond to verbal instructions from our team.",
+      "question": "Will I be unconscious during sedation?"
+    },
+    {
+      "answer": "If you receive only nitrous oxide, yes — the effects wear off within a few minutes after the mask is removed, and you are safe to drive. However, if you receive oral sedation, you will need a responsible adult to drive you to and from your appointment, as the medication can cause drowsiness that lasts several hours.",
+      "question": "Can I drive myself home after sedation?"
+    },
+    {
+      "answer": "Sedation dentistry is ideal for patients who experience dental anxiety or fear, have a strong gag reflex, need extensive dental work completed in a single visit, or have difficulty sitting comfortably for long periods. It is also helpful for patients with certain physical or cognitive conditions that make traditional dental visits challenging. We evaluate each patient individually to determine the safest, most appropriate option.",
+      "question": "Who is a good candidate for sedation dentistry?"
+    }
+  ],
   "icon": "HeartPulse",
-  "image": "/images/services/sedation-dentistry.jpg",
-  "shortDescription": "Nitrous oxide and oral sedation options to help anxious patients receive comfortable, stress-free dental care.",
-  "fullDescription": "Dental anxiety affects millions of people and can prevent them from getting the care they need to maintain a healthy smile. At our Middletown, NY practice, we offer sedation dentistry options specifically designed to help nervous or anxious patients feel calm, relaxed, and comfortable throughout their dental procedures. You deserve quality dental care without the stress, and sedation dentistry makes that possible.\n\nWe provide two primary sedation options to suit different levels of anxiety and different types of procedures. Nitrous oxide, commonly known as laughing gas, is a mild sedative inhaled through a small mask placed over your nose. It takes effect within minutes, producing a pleasant sense of relaxation while keeping you fully conscious and responsive. The effects wear off quickly after the mask is removed, so you can drive yourself home after your appointment. For patients with moderate to severe anxiety, or for longer or more involved procedures, we offer oral sedation in the form of a prescription medication taken before your visit. Oral sedation produces a deeper level of relaxation while still allowing you to respond to instructions.\n\nWhether you need a routine cleaning or a more extensive procedure, our sedation options can be tailored to your comfort level. We carefully review your medical history and discuss all options during a pre-treatment consultation so you can make an informed, confident decision about your care.",
+  "slug": "sedation-dentistry",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423022338-sedation-dentistry.jpg",
+  "price": "Starting from $150 for nitrous oxide",
+  "title": "Sedation Dentistry",
   "benefits": [
     "Overcomes dental fear and anxiety so you can receive the care you need",
     "Nitrous oxide wears off quickly with no lingering drowsiness",
     "Oral sedation available for deeper relaxation during longer procedures",
     "Safe, closely monitored sedation administered by experienced professionals"
   ],
-  "whatToExpect": "Before any sedation is administered, we conduct a thorough review of your medical history, current medications, and anxiety level to determine the best sedation option for you. If nitrous oxide is selected, a small comfortable mask is placed over your nose at the start of your procedure, and you will begin to feel relaxed within a few minutes. You remain awake and able to communicate throughout. Once the procedure is complete, the gas is turned off and the effects dissipate within minutes. If oral sedation is recommended, we prescribe a medication to take approximately one hour before your appointment. You will feel deeply relaxed and may feel drowsy, so a responsible adult must drive you to and from the office. Throughout your visit, our team continuously monitors your vitals and comfort level. If you have any questions about sedation options, please call us at (845) 555-0180 to schedule a consultation.",
-  "price": "Starting from $150 for nitrous oxide",
-  "durationMinutes": null,
-  "featured": false,
-  "faq": [
-    {
-      "question": "Is sedation dentistry safe?",
-      "answer": "Yes, sedation dentistry is very safe when administered by trained dental professionals. We carefully review your complete medical history and any medications before recommending a sedation option. During your procedure, our team continuously monitors your vital signs including heart rate, blood pressure, and oxygen levels to ensure your safety and comfort at all times."
-    },
-    {
-      "question": "Will I be unconscious during sedation?",
-      "answer": "With the sedation options we offer, you will not be unconscious. Nitrous oxide produces a light, pleasant relaxation while you remain fully awake and aware. Oral sedation creates a deeper state of calm and you may feel drowsy or have limited memory of the procedure, but you will still be able to respond to verbal instructions from our team."
-    },
-    {
-      "question": "Can I drive myself home after sedation?",
-      "answer": "If you receive only nitrous oxide, yes — the effects wear off within a few minutes after the mask is removed, and you are safe to drive. However, if you receive oral sedation, you will need a responsible adult to drive you to and from your appointment, as the medication can cause drowsiness that lasts several hours."
-    },
-    {
-      "question": "Who is a good candidate for sedation dentistry?",
-      "answer": "Sedation dentistry is ideal for patients who experience dental anxiety or fear, have a strong gag reflex, need extensive dental work completed in a single visit, or have difficulty sitting comfortably for long periods. It is also helpful for patients with certain physical or cognitive conditions that make traditional dental visits challenging. We evaluate each patient individually to determine the safest, most appropriate option."
-    }
-  ],
   "category": "comfort",
+  "featured": false,
+  "subtitle": "Relaxed, Anxiety-Free Dental Care When You Need It Most",
   "heroVariant": "centered",
-  "cta": {
-    "title": "Ready to Get Started?",
-    "subtitle": "Schedule an appointment to learn more about this service.",
-    "primaryCta": {
-      "text": "Book Appointment",
-      "link": "/contact"
-    },
-    "secondaryCta": {
-      "text": "Call (845) 555-0180",
-      "link": "tel:+18455550180"
-    }
-  }
+  "whatToExpect": "Before any sedation is administered, we conduct a thorough review of your medical history, current medications, and anxiety level to determine the best sedation option for you. If nitrous oxide is selected, a small comfortable mask is placed over your nose at the start of your procedure, and you will begin to feel relaxed within a few minutes. You remain awake and able to communicate throughout. Once the procedure is complete, the gas is turned off and the effects dissipate within minutes. If oral sedation is recommended, we prescribe a medication to take approximately one hour before your appointment. You will feel deeply relaxed and may feel drowsy, so a responsible adult must drive you to and from the office. Throughout your visit, our team continuously monitors your vitals and comfort level. If you have any questions about sedation options, please call us at (845) 555-0180 to schedule a consultation.",
+  "durationMinutes": null,
+  "fullDescription": "Dental anxiety affects millions of people and can prevent them from getting the care they need to maintain a healthy smile. At our Middletown, NY practice, we offer sedation dentistry options specifically designed to help nervous or anxious patients feel calm, relaxed, and comfortable throughout their dental procedures. You deserve quality dental care without the stress, and sedation dentistry makes that possible.\n\nWe provide two primary sedation options to suit different levels of anxiety and different types of procedures. Nitrous oxide, commonly known as laughing gas, is a mild sedative inhaled through a small mask placed over your nose. It takes effect within minutes, producing a pleasant sense of relaxation while keeping you fully conscious and responsive. The effects wear off quickly after the mask is removed, so you can drive yourself home after your appointment. For patients with moderate to severe anxiety, or for longer or more involved procedures, we offer oral sedation in the form of a prescription medication taken before your visit. Oral sedation produces a deeper level of relaxation while still allowing you to respond to instructions.\n\nWhether you need a routine cleaning or a more extensive procedure, our sedation options can be tailored to your comfort level. We carefully review your medical history and discuss all options during a pre-treatment consultation so you can make an informed, confident decision about your care.",
+  "shortDescription": "Nitrous oxide and oral sedation options to help anxious patients receive comfortable, stress-free dental care."
 }

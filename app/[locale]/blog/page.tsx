@@ -2,15 +2,18 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getRequestSiteId, loadAllItems, loadContent, loadPageContent } from '@/lib/content';
+import { getRequestSiteId, loadAllItems, loadPageContent } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
 import { Locale } from '@/lib/types';
 import { Button, Badge, Card, CardHeader, CardTitle, CardDescription, CardContent, Icon } from '@/components/ui';
+import HeroSection from '@/components/sections/HeroSection';
+import { HeroVariant } from '@/lib/section-variants';
 
 interface BlogPageData {
   hero: {
     title: string;
     subtitle: string;
+    variant?: string;
     backgroundImage?: string;
   };
   introduction: {
@@ -58,11 +61,6 @@ interface BlogPageProps {
   };
 }
 
-interface HeaderMenuConfig {
-  menu?: {
-    variant?: 'default' | 'centered' | 'transparent' | 'stacked';
-  };
-}
 
 export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
   const { locale } = params;
@@ -88,8 +86,7 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
   const content = await loadPageContent<BlogPageData>('blog', locale);
   const siteId = await getRequestSiteId();
   const posts = await loadAllItems<BlogListItem>(siteId, locale, 'blog');
-  const headerConfig = await loadContent<HeaderMenuConfig>(siteId, locale, 'header.json');
-  
+
   if (!content) {
     notFound();
   }
@@ -112,8 +109,8 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
   const listPosts = featuredPost
     ? sortedPosts.filter((post) => post.slug !== featuredPost.slug)
     : sortedPosts;
-  const filteredPosts = selectedCategory === 'all' 
-    ? listPosts 
+  const filteredPosts = selectedCategory === 'all'
+    ? listPosts
     : listPosts.filter(post => post.category === selectedCategory);
 
   // Pagination
@@ -122,59 +119,17 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
   const startIndex = (currentPage - 1) * postsPerPage;
   const endIndex = startIndex + postsPerPage;
   const paginatedPosts = filteredPosts.slice(startIndex, endIndex);
-  const isTransparentMenu = headerConfig?.menu?.variant === 'transparent';
-  const heroTopPaddingClass = isTransparentMenu ? 'pt-30 md:pt-36' : 'pt-16 md:pt-20';
 
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section
-        className={`relative bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)] ${heroTopPaddingClass} pb-16 md:pb-20 px-4 overflow-hidden`}
-      >
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-primary-100 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-64 h-64 bg-secondary-50 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <Badge variant="primary" className="mb-6">Learn & Explore</Badge>
-              <h1 className="text-display font-bold text-gray-900 mb-6 leading-tight">
-                {hero.title}
-              </h1>
-              <p className="text-subheading text-[var(--brand)] font-medium">
-                {hero.subtitle}
-              </p>
-            </div>
-
-            <div className="relative lg:h-[420px] h-[320px] hidden md:block">
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--backdrop-primary)] to-[var(--backdrop-secondary)] rounded-3xl overflow-hidden shadow-2xl">
-                {hero.backgroundImage ? (
-                  <Image
-                    src={hero.backgroundImage}
-                    alt={hero.title}
-                    fill
-                    className="object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[color-mix(in_srgb,var(--primary)_10%,transparent)] to-[color-mix(in_srgb,var(--secondary)_16%,transparent)]">
-                    <div className="text-8xl mb-6">📝</div>
-                    <p className="text-gray-700 font-semibold text-subheading mb-2">
-                      {locale === 'en' ? 'Insights Blog' : '精选博客'}
-                    </p>
-                    <p className="text-gray-600 text-small">
-                      {locale === 'en' ? 'Educational articles and resources' : '教育文章与资源'}
-                    </p>
-                  </div>
-                )}
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-[var(--primary)] rounded-3xl opacity-10 -z-10"></div>
-              <div className="absolute -top-6 -left-6 w-48 h-48 bg-[var(--secondary)] rounded-3xl opacity-10 -z-10"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        variant={(hero.variant as HeroVariant) || 'split-photo-right'}
+        tagline={hero.title}
+        description={hero.subtitle}
+        badgeText="Learn & Explore"
+        image={hero.backgroundImage || undefined}
+      />
 
       {/* Introduction */}
       <section className="py-12 bg-white">

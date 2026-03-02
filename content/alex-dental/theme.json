@@ -1,34 +1,34 @@
 {
   "colors": {
     "primary": {
-      "DEFAULT": "#0D6E6E",
+      "50": "#E0F5F5",
+      "100": "#B3E8E8",
       "dark": "#095555",
       "light": "#14A3A3",
-      "50": "#E0F5F5",
-      "100": "#B3E8E8"
-    },
-    "secondary": {
-      "DEFAULT": "#C9A84C",
-      "dark": "#9E8338",
-      "light": "#E0C56A",
-      "50": "#FFF8E7"
+      "DEFAULT": "#0D6E6E"
     },
     "backdrop": {
       "primary": "#F8FAFA",
       "secondary": "#FFF8E7"
+    },
+    "secondary": {
+      "50": "#FFF8E7",
+      "dark": "#9E8338",
+      "light": "#E0C56A",
+      "DEFAULT": "#C9A84C"
     }
   },
   "typography": {
+    "body": "1rem",
+    "fonts": {
+      "body": "'Inter', -apple-system, sans-serif",
+      "small": "'Inter', -apple-system, sans-serif",
+      "display": "'Playfair Display', Georgia, serif",
+      "heading": "'Playfair Display', Georgia, serif"
+    },
+    "small": "0.875rem",
     "display": "3rem",
     "heading": "2.25rem",
-    "subheading": "1.25rem",
-    "body": "1rem",
-    "small": "0.875rem",
-    "fonts": {
-      "display": "'Playfair Display', Georgia, serif",
-      "heading": "'Playfair Display', Georgia, serif",
-      "body": "'Inter', -apple-system, sans-serif",
-      "small": "'Inter', -apple-system, sans-serif"
-    }
+    "subheading": "1.25rem"
   }
 }

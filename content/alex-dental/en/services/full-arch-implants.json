@@ -1,51 +1,51 @@
 {
-  "slug": "full-arch-implants",
-  "title": "Full-Arch Dental Implants",
-  "subtitle": "A Permanent, Life-Changing Solution for Complete Tooth Replacement",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Appointment"
+    },
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "Call (845) 555-0180"
+    }
+  },
+  "faq": [
+    {
+      "answer": "All-on-4 uses four implants per arch to support a full set of fixed teeth, while All-on-6 uses six implants for additional support and force distribution. The All-on-4 technique is designed to work with less bone density by angling the rear implants, making it suitable for more patients. All-on-6 may be recommended when greater stability is desired or when bone volume allows. During your consultation, we will determine which option is best for your specific anatomy and needs.",
+      "question": "What is the difference between All-on-4 and All-on-6 implants?"
+    },
+    {
+      "answer": "Many patients who have been told they are not candidates for traditional individual implants are still excellent candidates for full-arch implant solutions. The All-on-4 technique specifically uses angled implants to maximize contact with available bone, often eliminating the need for bone grafting. We use advanced 3D imaging to evaluate your bone structure and will discuss all available options during your consultation.",
+      "question": "Am I a candidate for full-arch implants if I have been told I lack sufficient bone?"
+    },
+    {
+      "answer": "With proper care and regular dental checkups, the implant posts themselves can last a lifetime. The prosthetic teeth attached to the implants are made from durable, high-quality materials and typically last fifteen to twenty years or more before they may need to be replaced or refurbished. Good oral hygiene and routine professional maintenance are key to maximizing longevity.",
+      "question": "How long do full-arch implants last?"
+    },
+    {
+      "answer": "In most cases, no. Many patients receive a temporary fixed prosthesis on the same day as their implant surgery, so you never have to go without teeth. This temporary set is fully functional and aesthetic, allowing you to eat and smile with confidence while your permanent restoration is being crafted over the following months.",
+      "question": "Will I be without teeth at any point during the process?"
+    }
+  ],
   "icon": "Layers",
-  "image": "/images/services/full-arch-implants.jpg",
-  "shortDescription": "All-on-4 and All-on-6 full-arch implant solutions for a permanent, natural-looking smile in a single day.",
-  "fullDescription": "For patients missing most or all of their teeth, full-arch dental implants represent the most advanced and permanent solution available in modern dentistry. At our Middletown, NY practice, we offer All-on-4 and All-on-6 full-arch implant systems that replace an entire arch of teeth with a fixed, non-removable prosthesis anchored securely to four or six strategically placed dental implants. The result is a complete, beautiful smile that looks, feels, and functions like natural teeth.\n\nUnlike traditional dentures that rest on the gums and can slip or cause discomfort, full-arch implants are firmly integrated into the jawbone, providing unmatched stability and chewing power. The All-on-4 technique is specially engineered to maximize the use of available bone, meaning many patients who have been told they do not have enough bone for individual implants are still excellent candidates for this procedure. The All-on-6 option provides additional support for patients who need it, distributing biting forces across six implant posts for enhanced strength and longevity.\n\nFull-arch implants also preserve jawbone density by stimulating the bone just as natural tooth roots do, preventing the facial collapse and premature aging that often accompany long-term denture wear. Many patients receive a temporary set of fixed teeth on the same day as their implant surgery, allowing them to leave our office with a functional, beautiful smile while their permanent restoration is being crafted.",
+  "slug": "full-arch-implants",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423011491-full-arch-implants.jpg",
+  "price": "Starting from $20,000 per arch",
+  "title": "Full-Arch Dental Implants",
   "benefits": [
     "Permanent, non-removable teeth that eliminate the hassles of dentures",
     "Restores full chewing strength and natural speech",
     "Preserves jawbone density and prevents facial structure deterioration",
     "Same-day temporary teeth available for many patients"
   ],
-  "whatToExpect": "The process begins with a comprehensive consultation that includes 3D imaging and a detailed evaluation of your jawbone, gum health, and overall oral condition. We discuss your goals, walk you through the All-on-4 and All-on-6 options, and develop a personalized treatment plan. On the day of surgery, which typically takes two to four hours per arch, your dental implants are precisely placed into the jawbone under local anesthesia or sedation for your comfort. In many cases, a temporary set of fixed teeth is attached to the implants that same day, so you leave with a full, functional smile. Over the following three to six months, your implants fuse naturally with the bone in a process called osseointegration. Once healing is complete, your permanent custom-crafted prosthesis is fabricated and securely attached, delivering a final result that is virtually indistinguishable from natural teeth. Our team provides thorough aftercare instructions and schedules regular follow-ups to ensure long-term success. Call us at (845) 555-0180 to schedule your consultation.",
-  "price": "Starting from $20,000 per arch",
-  "durationMinutes": null,
-  "featured": true,
-  "faq": [
-    {
-      "question": "What is the difference between All-on-4 and All-on-6 implants?",
-      "answer": "All-on-4 uses four implants per arch to support a full set of fixed teeth, while All-on-6 uses six implants for additional support and force distribution. The All-on-4 technique is designed to work with less bone density by angling the rear implants, making it suitable for more patients. All-on-6 may be recommended when greater stability is desired or when bone volume allows. During your consultation, we will determine which option is best for your specific anatomy and needs."
-    },
-    {
-      "question": "Am I a candidate for full-arch implants if I have been told I lack sufficient bone?",
-      "answer": "Many patients who have been told they are not candidates for traditional individual implants are still excellent candidates for full-arch implant solutions. The All-on-4 technique specifically uses angled implants to maximize contact with available bone, often eliminating the need for bone grafting. We use advanced 3D imaging to evaluate your bone structure and will discuss all available options during your consultation."
-    },
-    {
-      "question": "How long do full-arch implants last?",
-      "answer": "With proper care and regular dental checkups, the implant posts themselves can last a lifetime. The prosthetic teeth attached to the implants are made from durable, high-quality materials and typically last fifteen to twenty years or more before they may need to be replaced or refurbished. Good oral hygiene and routine professional maintenance are key to maximizing longevity."
-    },
-    {
-      "question": "Will I be without teeth at any point during the process?",
-      "answer": "In most cases, no. Many patients receive a temporary fixed prosthesis on the same day as their implant surgery, so you never have to go without teeth. This temporary set is fully functional and aesthetic, allowing you to eat and smile with confidence while your permanent restoration is being crafted over the following months."
-    }
-  ],
   "category": "restorative",
+  "featured": true,
+  "subtitle": "A Permanent, Life-Changing Solution for Complete Tooth Replacement",
   "heroVariant": "centered",
-  "cta": {
-    "title": "Ready to Get Started?",
-    "subtitle": "Schedule an appointment to learn more about this service.",
-    "primaryCta": {
-      "text": "Book Appointment",
-      "link": "/contact"
-    },
-    "secondaryCta": {
-      "text": "Call (845) 555-0180",
-      "link": "tel:+18455550180"
-    }
-  }
+  "whatToExpect": "The process begins with a comprehensive consultation that includes 3D imaging and a detailed evaluation of your jawbone, gum health, and overall oral condition. We discuss your goals, walk you through the All-on-4 and All-on-6 options, and develop a personalized treatment plan. On the day of surgery, which typically takes two to four hours per arch, your dental implants are precisely placed into the jawbone under local anesthesia or sedation for your comfort. In many cases, a temporary set of fixed teeth is attached to the implants that same day, so you leave with a full, functional smile. Over the following three to six months, your implants fuse naturally with the bone in a process called osseointegration. Once healing is complete, your permanent custom-crafted prosthesis is fabricated and securely attached, delivering a final result that is virtually indistinguishable from natural teeth. Our team provides thorough aftercare instructions and schedules regular follow-ups to ensure long-term success. Call us at (845) 555-0180 to schedule your consultation.",
+  "durationMinutes": null,
+  "fullDescription": "For patients missing most or all of their teeth, full-arch dental implants represent the most advanced and permanent solution available in modern dentistry. At our Middletown, NY practice, we offer All-on-4 and All-on-6 full-arch implant systems that replace an entire arch of teeth with a fixed, non-removable prosthesis anchored securely to four or six strategically placed dental implants. The result is a complete, beautiful smile that looks, feels, and functions like natural teeth.\n\nUnlike traditional dentures that rest on the gums and can slip or cause discomfort, full-arch implants are firmly integrated into the jawbone, providing unmatched stability and chewing power. The All-on-4 technique is specially engineered to maximize the use of available bone, meaning many patients who have been told they do not have enough bone for individual implants are still excellent candidates for this procedure. The All-on-6 option provides additional support for patients who need it, distributing biting forces across six implant posts for enhanced strength and longevity.\n\nFull-arch implants also preserve jawbone density by stimulating the bone just as natural tooth roots do, preventing the facial collapse and premature aging that often accompany long-term denture wear. Many patients receive a temporary set of fixed teeth on the same day as their implant surgery, allowing them to leave our office with a functional, beautiful smile while their permanent restoration is being crafted.",
+  "shortDescription": "All-on-4 and All-on-6 full-arch implant solutions for a permanent, natural-looking smile in a single day."
 }

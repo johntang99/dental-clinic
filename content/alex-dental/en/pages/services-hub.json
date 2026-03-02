@@ -1,24 +1,61 @@
 {
+  "cta": {
+    "title": "Not Sure What You Need?",
+    "subtitle": "Book a consultation and we'll create a personalized treatment plan for you.",
+    "primaryCta": {
+      "link": "/book",
+      "text": "Book a Consultation"
+    },
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "Call Us"
+    }
+  },
   "hero": {
     "title": "Comprehensive Dental Care Under One Roof",
-    "subtitle": "From routine cleanings to advanced restorations — all in one convenient location"
+    "subtitle": "From routine cleanings to advanced restorations — all in one convenient location",
+    "backgroundImage": ""
   },
   "categories": [
-    { "id": "general", "icon": "shield-check", "name": "General Dentistry", "description": "Preventive care, cleanings, fillings, root canals, and extractions" },
-    { "id": "cosmetic", "icon": "sparkles", "name": "Cosmetic Dentistry", "description": "Whitening, veneers, bonding, and complete smile makeovers" },
-    { "id": "restorative", "icon": "refresh-cw", "name": "Restorative Dentistry", "description": "Dental implants, crowns, bridges, and dentures" },
-    { "id": "orthodontics", "icon": "align-center", "name": "Orthodontics", "description": "Invisalign clear aligners for a straighter smile" },
-    { "id": "pediatric", "icon": "baby", "name": "Pediatric Dentistry", "description": "Gentle, fun dental care designed for children" },
-    { "id": "sedation", "icon": "moon", "name": "Sedation Dentistry", "description": "Relaxed, anxiety-free treatment for nervous patients" }
+    {
+      "id": "general",
+      "icon": "shield-check",
+      "name": "General Dentistry",
+      "description": "Preventive care, cleanings, fillings, root canals, and extractions"
+    },
+    {
+      "id": "cosmetic",
+      "icon": "sparkles",
+      "name": "Cosmetic Dentistry",
+      "description": "Whitening, veneers, bonding, and complete smile makeovers"
+    },
+    {
+      "id": "restorative",
+      "icon": "refresh-cw",
+      "name": "Restorative Dentistry",
+      "description": "Dental implants, crowns, bridges, and dentures"
+    },
+    {
+      "id": "orthodontics",
+      "icon": "align-center",
+      "name": "Orthodontics",
+      "description": "Invisalign clear aligners for a straighter smile"
+    },
+    {
+      "id": "pediatric",
+      "icon": "baby",
+      "name": "Pediatric Dentistry",
+      "description": "Gentle, fun dental care designed for children"
+    },
+    {
+      "id": "sedation",
+      "icon": "moon",
+      "name": "Sedation Dentistry",
+      "description": "Relaxed, anxiety-free treatment for nervous patients"
+    }
   ],
   "technologyPromise": {
     "title": "Every Service Backed by the Latest Dental Technology",
     "description": "3D imaging, digital X-rays, same-day crowns, and dental laser — precision care with less discomfort."
-  },
-  "cta": {
-    "title": "Not Sure What You Need?",
-    "subtitle": "Book a consultation and we'll create a personalized treatment plan for you.",
-    "primaryCta": { "text": "Book a Consultation", "link": "/book" },
-    "secondaryCta": { "text": "Call Us", "link": "tel:+18455550180" }
   }
 }

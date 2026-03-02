@@ -1,0 +1,43 @@
+{
+  "bio": "Sarah Kim医生作为副牙科医生加入Alex牙科诊所，怀揣着一个真挚的使命：让每一次看牙体验都成为积极的经历，尤其是对Middletown社区最年轻的成员而言。凭借她温柔的诊疗风格和富有感染力的热情，她很快成为Orange County及整个哈德逊河谷地区家庭最喜爱的牙科医生。\n\nKim医生于2018年在石溪大学牙科医学院获得牙科医学博士学位（DMD），在校期间她专注于儿童牙科和预防保健。她是美国儿童牙科学会的自豪成员，持续学习治疗儿童和青少年的最新技术。作为Invisalign隐适美认证服务商，她还帮助各年龄段的患者获得更整齐、更健康的微笑，免去传统牙套的麻烦。\n\nKim医生在韩美双语家庭长大，深知清晰沟通和文化敏感性在医疗服务中的重要性。她精通英语和韩语，确保Middletown地区更多家庭能用最舒适的语言接受治疗。工作之余，您可以看到她支持当地学校活动、参加社区外展志愿服务，或在Heritage Trail上享受周末远足。Kim医生相信，当患者感到安全和被关怀时，良好的口腔健康自然随之而来。",
+  "name": "Sarah Kim医生",
+  "role": "副牙科医生",
+  "slug": "dr-sarah-kim",
+  "image": "/images/doctors/dr-sarah-kim.jpg",
+  "order": 2,
+  "quote": "我希望每个孩子离开我们诊所时都面带微笑，并且真正期待下一次来访。",
+  "title": "DMD",
+  "featured": true,
+  "languages": [
+    "英语",
+    "韩语"
+  ],
+  "credentials": [
+    {
+      "year": "2018",
+      "location": "纽约州石溪",
+      "credential": "牙科医学博士（DMD）",
+      "institution": "石溪大学牙科医学院"
+    },
+    {
+      "year": "2014",
+      "location": "纽约州石溪",
+      "credential": "健康科学理学学士",
+      "institution": "石溪大学"
+    }
+  ],
+  "certifications": [
+    "美国儿童牙科学会（AAPD）",
+    "美国牙科协会（ADA）",
+    "Invisalign隐适美认证服务商",
+    "纽约州牙科协会",
+    "CPR及儿科高级生命支持（PALS）认证"
+  ],
+  "specializations": [
+    "儿童牙科",
+    "预防保健",
+    "Invisalign隐适美",
+    "普通牙科",
+    "患者教育"
+  ]
+}

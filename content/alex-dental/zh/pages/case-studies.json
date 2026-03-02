@@ -1,0 +1,74 @@
+{
+  "cta": {
+    "title": "准备好开始您的笑容故事了吗？",
+    "variant": "centered",
+    "primaryCta": { "link": "/contact", "text": "预约咨询" },
+    "description": "预约咨询，与我们探讨您的目标。我们将为您制定个性化的治疗方案。",
+    "secondaryCta": { "link": "tel:+18455550180", "text": "致电 (845) 555-0180" }
+  },
+  "hero": {
+    "title": "患者成功案例",
+    "variant": "split-photo-right",
+    "subtitle": "真实患者，真实成果——见证现代牙科所能实现的改变",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425029369-hero-case-studies.jpg"
+  },
+  "categories": [
+    { "id": "all", "icon": "grid", "name": "所有案例" },
+    { "id": "Restorative", "icon": "wrench", "name": "修复治疗" },
+    { "id": "Cosmetic", "icon": "sparkles", "name": "美容牙科" },
+    { "id": "Orthodontic", "icon": "align-center", "name": "正畸治疗" },
+    { "id": "Emergency", "icon": "alert-triangle", "name": "急诊处理" }
+  ],
+  "statistics": {
+    "stats": [
+      { "icon": "users", "label": "已治疗患者", "number": "5,000+" },
+      { "icon": "heart", "label": "患者满意度", "number": "98%" },
+      { "icon": "anchor", "label": "已植入种植体", "number": "1,200+" },
+      { "icon": "award", "label": "从业年限", "number": "15+" }
+    ],
+    "title": "我们的业绩记录",
+    "variant": "horizontal-row"
+  },
+  "caseStudies": [
+    {
+      "id": "implant-transformation-john",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-implant-transformation-john-main.jpg",
+      "summary": "John，58岁，缺失3颗后牙已超过5年，咀嚼十分困难。经过6个月的3颗独立牙种植体治疗，他现在可以毫无顾虑地享用任何喜爱的食物。",
+      "category": "Restorative",
+      "condition": "缺失3颗后牙",
+      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-implant-transformation-john-after.jpg",
+      "beforeImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-implant-transformation-john-before.jpg"
+    },
+    {
+      "id": "smile-makeover-lisa",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-smile-makeover-lisa-main.jpg",
+      "summary": "Lisa，34岁，自大学起就因前牙色素沉着、轻微不整齐而感到自卑。6颗瓷贴面让她拥有了一直渴望的亮白整齐笑容，自信心也大幅提升。",
+      "category": "Cosmetic",
+      "condition": "前牙色素沉着及轻微不齐",
+      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-smile-makeover-lisa-after.jpg",
+      "beforeImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-smile-makeover-lisa-before.jpg"
+    },
+    {
+      "id": "invisalign-journey-maria",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-invisalign-journey-maria-main.jpg",
+      "summary": "Maria，28岁，牙齿中度拥挤并伴有反颌，但不希望佩戴金属托槽矫治器。经过14个月的Invisalign隐适美治疗，她的牙齿排列完美——而且同事们根本没有察觉她在佩戴矫治器。",
+      "category": "Orthodontic",
+      "condition": "中度拥挤及反颌",
+      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-invisalign-journey-maria-after.jpg",
+      "beforeImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-invisalign-journey-maria-before.jpg"
+    },
+    {
+      "id": "emergency-cracked-tooth-david",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-emergency-cracked-tooth-david-main.jpg",
+      "summary": "David，42岁，在一个周六吃硬糖时崩裂了一颗磨牙。我们当天即为他进行了紧急稳定处理，随后在下周使用CEREC当日牙冠技术完成了牙齿修复——仅用7天便恢复如常。",
+      "category": "Emergency",
+      "condition": "磨牙崩裂",
+      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-emergency-cracked-tooth-david-after.jpg",
+      "beforeImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-emergency-cracked-tooth-david-before.jpg"
+    }
+  ],
+  "introduction": {
+    "note": "所有患者姓名均已更改以保护隐私。照片经患者同意后分享。",
+    "text": "每一个笑容背后都有一段故事。浏览我们的案例研究，了解我们如何帮助患者克服各种牙科难题——从缺牙、美容顾虑到急诊修复。每个案例都体现了我们对个性化、高质量护理的承诺。"
+  }
+}

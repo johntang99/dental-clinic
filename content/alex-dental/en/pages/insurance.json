@@ -1,20 +1,34 @@
 {
+  "faqs": [
+    {
+      "answer": "Call us at (845) 555-0180 and our team will verify your benefits before your visit. You can also bring your insurance card to your appointment.",
+      "question": "How do I know if my insurance is accepted?"
+    },
+    {
+      "answer": "We offer our Alex Wellness Plan — a membership plan that covers preventive care and provides discounts on all other services. We also offer CareCredit, LendingClub, and Sunbit financing.",
+      "question": "What if I don't have dental insurance?"
+    },
+    {
+      "answer": "Yes! Through CareCredit, LendingClub, and Sunbit, we offer monthly payment plans with promotional 0% interest periods. Apply in our office in just minutes.",
+      "question": "Do you offer payment plans?"
+    },
+    {
+      "answer": "Most plans cover preventive care (cleanings, exams) at 100%, basic procedures (fillings) at 80%, and major procedures (crowns, implants) at 50%. Annual maximums vary by plan.",
+      "question": "What does dental insurance typically cover?"
+    }
+  ],
   "hero": {
     "title": "We Make Dental Care Affordable",
-    "subtitle": "Insurance accepted, financing available, and a membership plan for those without coverage"
-  },
-  "howInsuranceWorks": {
-    "title": "How Dental Insurance Works",
-    "body": "Dental insurance is different from medical insurance. Most plans cover preventive care (cleanings, exams, X-rays) at 100%. Basic procedures like fillings are typically covered at 80%, and major procedures like crowns and implants at 50%. Most plans have an annual maximum of $1,000-$2,000.\n\nWe verify your benefits before treatment so you know exactly what your out-of-pocket cost will be. No surprises."
+    "variant": "split-photo-right",
+    "subtitle": "Insurance accepted, financing available, and a membership plan for those without coverage",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425031311-hero-insurance.jpg"
   },
   "networkInfo": {
-    "title": "In-Network vs. Out-of-Network",
-    "body": "We are in-network with most major PPO dental plans, which means you'll receive the maximum insurance benefit when you visit us. If you have an out-of-network plan, we can still see you — your insurance will cover a portion of the cost, and we'll help you understand your benefits before treatment."
+    "body": "We are in-network with most major PPO dental plans, which means you'll receive the maximum insurance benefit when you visit us. If you have an out-of-network plan, we can still see you — your insurance will cover a portion of the cost, and we'll help you understand your benefits before treatment.",
+    "title": "In-Network vs. Out-of-Network"
   },
-  "faqs": [
-    { "question": "How do I know if my insurance is accepted?", "answer": "Call us at (845) 555-0180 and our team will verify your benefits before your visit. You can also bring your insurance card to your appointment." },
-    { "question": "What if I don't have dental insurance?", "answer": "We offer our Alex Wellness Plan — a membership plan that covers preventive care and provides discounts on all other services. We also offer CareCredit, LendingClub, and Sunbit financing." },
-    { "question": "Do you offer payment plans?", "answer": "Yes! Through CareCredit, LendingClub, and Sunbit, we offer monthly payment plans with promotional 0% interest periods. Apply in our office in just minutes." },
-    { "question": "What does dental insurance typically cover?", "answer": "Most plans cover preventive care (cleanings, exams) at 100%, basic procedures (fillings) at 80%, and major procedures (crowns, implants) at 50%. Annual maximums vary by plan." }
-  ]
+  "howInsuranceWorks": {
+    "body": "Dental insurance is different from medical insurance. Most plans cover preventive care (cleanings, exams, X-rays) at 100%. Basic procedures like fillings are typically covered at 80%, and major procedures like crowns and implants at 50%. Most plans have an annual maximum of $1,000-$2,000.\n\nWe verify your benefits before treatment so you know exactly what your out-of-pocket cost will be. No surprises.",
+    "title": "How Dental Insurance Works"
+  }
 }

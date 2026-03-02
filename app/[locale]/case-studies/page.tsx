@@ -2,11 +2,13 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
-import { getRequestSiteId, loadContent, loadPageContent } from '@/lib/content';
+import { getRequestSiteId, loadPageContent } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
 import { Locale } from '@/lib/types';
 import { Badge, Card, Icon, Tabs } from '@/components/ui';
 import CTASection from '@/components/sections/CTASection';
+import HeroSection from '@/components/sections/HeroSection';
+import { HeroVariant } from '@/lib/section-variants';
 
 interface CaseStudy {
   id: string;
@@ -69,11 +71,6 @@ interface PageLayoutConfig {
   sections: Array<{ id: string }>;
 }
 
-interface HeaderMenuConfig {
-  menu?: {
-    variant?: 'default' | 'centered' | 'transparent' | 'stacked';
-  };
-}
 
 export async function generateMetadata({ params }: CaseStudiesPageProps): Promise<Metadata> {
   const { locale } = params;
@@ -95,7 +92,6 @@ export default async function CaseStudiesPage({ params }: CaseStudiesPageProps) 
   const siteId = await getRequestSiteId();
   const content = await loadPageContent<CaseStudiesPageData>('case-studies', locale, siteId);
   const layout = await loadPageContent<PageLayoutConfig>('case-studies.layout', locale, siteId);
-  const headerConfig = await loadContent<HeaderMenuConfig>(siteId, locale, 'header.json');
 
   if (!content) {
     return (
@@ -124,12 +120,6 @@ export default async function CaseStudiesPage({ params }: CaseStudiesPageProps) 
   const isEnabled = (sectionId: string) => !useLayout || layoutOrder.has(sectionId);
   const sectionStyle = (sectionId: string) =>
     useLayout ? { order: layoutOrder.get(sectionId) ?? 0 } : undefined;
-  const heroVariant = hero.variant || 'split-photo-right';
-  const centeredHero = heroVariant === 'centered';
-  const imageLeftHero = heroVariant === 'split-photo-left';
-  const backgroundHero = heroVariant === 'photo-background' && Boolean(hero.backgroundImage);
-  const isTransparentMenu = headerConfig?.menu?.variant === 'transparent';
-  const heroTopPaddingClass = isTransparentMenu ? 'pt-30 md:pt-36' : 'pt-20 md:pt-24';
   const statsVariant = statistics.variant || 'grid-2x2';
 
   const caseStudiesByCategory = (categoryId: string) => {
@@ -149,56 +139,12 @@ export default async function CaseStudiesPage({ params }: CaseStudiesPageProps) 
     <main className="min-h-screen flex flex-col">
       {/* Hero Section */}
       {isEnabled('hero') && (
-        <section
-          className={`relative ${heroTopPaddingClass} pb-16 md:pb-20 px-4 overflow-hidden ${
-            backgroundHero
-              ? 'bg-cover bg-center before:absolute before:inset-0 before:bg-white/75'
-              : 'bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)]'
-          }`}
-          style={{
-            ...(sectionStyle('hero') || {}),
-            ...(backgroundHero ? { backgroundImage: `url(${hero.backgroundImage})` } : {}),
-          }}
-        >
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-primary-100 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-64 h-64 bg-secondary-50 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="container mx-auto max-w-7xl relative z-10">
-          <div className={`grid gap-12 items-center ${centeredHero ? 'max-w-4xl mx-auto' : 'lg:grid-cols-2'}`}>
-            <div className={`text-center ${centeredHero ? '' : 'lg:text-left'}`}>
-              <h1 className="text-display font-bold text-gray-900 mb-6 leading-tight">
-                {hero.title}
-              </h1>
-              <p className="text-subheading text-gray-600 leading-relaxed">
-                {hero.subtitle}
-              </p>
-            </div>
-
-            {!centeredHero && (
-            <div className={`hidden md:block w-full ${imageLeftHero ? 'lg:order-first' : ''}`}>
-              <div className="rounded-3xl overflow-hidden shadow-2xl">
-                {hero.backgroundImage ? (
-                  <Image
-                    src={hero.backgroundImage}
-                    alt={hero.title}
-                    width={1200}
-                    height={1200}
-                    className="w-full h-auto object-contain"
-                    priority
-                  />
-                ) : (
-                  <div className="w-full aspect-square flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10">
-                    <Icon name="Sparkles" className="text-primary/40" size="xl" />
-                  </div>
-                )}
-              </div>
-            </div>
-            )}
-          </div>
-        </div>
-        </section>
+        <HeroSection
+          variant={(hero.variant as HeroVariant) || 'split-photo-right'}
+          tagline={hero.title}
+          description={hero.subtitle}
+          image={hero.backgroundImage || undefined}
+        />
       )}
 
       {/* Introduction */}

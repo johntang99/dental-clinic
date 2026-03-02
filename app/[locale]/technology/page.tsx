@@ -5,11 +5,15 @@ import { buildPageMetadata } from '@/lib/seo';
 import { Locale } from '@/lib/types';
 import { Badge, Card, CardHeader, CardTitle, CardDescription, CardContent, Icon } from '@/components/ui';
 import CTASection from '@/components/sections/CTASection';
+import HeroSection from '@/components/sections/HeroSection';
+import { HeroVariant } from '@/lib/section-variants';
 
 interface TechnologyPageData {
   hero: {
     title: string;
     subtitle: string;
+    variant?: string;
+    backgroundImage?: string;
   };
   whyItMatters: {
     title: string;
@@ -32,10 +36,6 @@ interface TechnologyPageProps {
   params: { locale: Locale };
 }
 
-interface HeaderMenuConfig {
-  menu?: { variant?: 'default' | 'centered' | 'transparent' | 'stacked' };
-}
-
 export async function generateMetadata({ params }: TechnologyPageProps): Promise<Metadata> {
   const { locale } = params;
   const siteId = await getRequestSiteId();
@@ -54,7 +54,6 @@ export default async function TechnologyPage({ params }: TechnologyPageProps) {
   const { locale } = params;
   const siteId = await getRequestSiteId();
   const content = await loadPageContent<TechnologyPageData>('technology', locale, siteId);
-  const headerConfig = await loadContent<HeaderMenuConfig>(siteId, locale, 'header.json');
 
   // Load technology list
   const lists = await loadAllItems<TechnologyListData>(siteId, locale, 'technology');
@@ -68,25 +67,16 @@ export default async function TechnologyPage({ params }: TechnologyPageProps) {
   const technologies = listData?.technologies || [];
   const featuredTech = technologies.filter((t) => t.featured);
   const otherTech = technologies.filter((t) => !t.featured);
-  const isTransparentMenu = headerConfig?.menu?.variant === 'transparent';
-  const heroTopPaddingClass = isTransparentMenu ? 'pt-30 md:pt-36' : 'pt-16 md:pt-20';
-
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section
-        className={`relative bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)] ${heroTopPaddingClass} pb-16 md:pb-20 px-4`}
-      >
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-primary-100 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-64 h-64 bg-secondary-50 rounded-full blur-3xl" />
-        </div>
-        <div className="container mx-auto max-w-4xl text-center relative z-10">
-          <Badge variant="primary" className="mb-6">Our Technology</Badge>
-          <h1 className="text-display font-bold text-gray-900 mb-6">{hero.title}</h1>
-          <p className="text-subheading text-[var(--brand)] font-medium">{hero.subtitle}</p>
-        </div>
-      </section>
+      <HeroSection
+        variant={(hero.variant as HeroVariant) || 'centered'}
+        tagline={hero.title}
+        description={hero.subtitle}
+        badgeText="Our Technology"
+        image={hero.backgroundImage || undefined}
+      />
 
       {/* Why It Matters */}
       <section className="py-16 lg:py-20 bg-white">

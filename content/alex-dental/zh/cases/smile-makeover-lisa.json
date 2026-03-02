@@ -1,0 +1,32 @@
+{
+  "id": "smile-makeover-lisa",
+  "slug": "smile-makeover-lisa",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-smile-makeover-lisa-main.jpg",
+  "title": "瓷贴面打造自信美丽的新笑容",
+  "results": "改变效果令人惊叹，但整体外观依然十分自然。Lisa的牙齿从不整齐、暗沉，变得洁白、对称、光滑。瓷材料具有极强的抗染色性，她的效果将长期保持美观。在复诊时，Lisa提到同事们纷纷说她气色很好，却说不清楚究竟哪里变了——这正是她所期望的自然效果。",
+  "summary": "Lisa因前牙染色、轻度不齐而隐藏微笑超过十年。通过六枚定制瓷贴面，她终于拥有了一直梦想的洁白均匀笑容，并重新找回了展示笑容的自信。",
+  "category": "Cosmetic",
+  "featured": true,
+  "solution": "我们首先进行了数字微笑设计会诊，让Lisa在确定方案前可以在屏幕上预览不同效果。经过对其目标的深入沟通——希望颜色更亮但仍保持自然感，并改善排列——我们为她六颗上前牙选择了微创瓷贴面方案。微创方式意味着仅需去除极薄一层牙釉质，最大限度保留天然牙体结构。Lisa佩戴临时贴面试用两周，以便在正式粘接最终瓷贴面前充分体验其形态与感受。",
+  "challenge": "Lisa的前牙发生了深层内源性染色，专业漂白治疗对此无效。两颗上前牙还有轻微扭转，使她的笑容看起来不对称。她从大学起就对牙齿感到自卑，逐渐养成了大笑时捂嘴、拍照时紧闭嘴唇微笑的习惯。她希望改善效果自然——不要过度修饰——并担心需要去除过多牙体结构。",
+  "condition": "前牙染色及轻度扭转",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-smile-makeover-lisa-after.jpg",
+  "beforeImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-smile-makeover-lisa-before.jpg",
+  "patientProfile": {
+    "age": "30-35",
+    "name": "Lisa",
+    "concern": "前牙变色及轻度错位，在社交和职业场合感到自卑"
+  },
+  "testimonialQuote": "我花了好多年思考是否要修牙，但又怕效果看起来假。看到最终结果时，我忍不住哽咽了。这就是我一直梦想拥有的牙齿。现在每张照片我都大方地露出笑容。",
+  "treatmentDetails": {
+    "visits": "共4次就诊",
+    "duration": "从牙齿预备到最终粘接历时3周",
+    "procedures": [
+      "数字微笑设计会诊",
+      "专业洁牙",
+      "微创牙体预备",
+      "临时贴面试戴期",
+      "6枚定制瓷贴面（上前牙）"
+    ]
+  }
+}

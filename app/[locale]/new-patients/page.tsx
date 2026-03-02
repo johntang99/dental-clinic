@@ -1,12 +1,13 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getRequestSiteId, loadContent, loadPageContent } from '@/lib/content';
+import { getRequestSiteId, loadPageContent } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
 import { Locale } from '@/lib/types';
 import { Button, Badge, Card, CardHeader, CardTitle, CardDescription, CardContent, Icon, Accordion } from '@/components/ui';
 import CTASection from '@/components/sections/CTASection';
+import HeroSection from '@/components/sections/HeroSection';
+import { HeroVariant } from '@/lib/section-variants';
 
 interface NewPatientsPageData {
   hero: {
@@ -109,11 +110,6 @@ interface PageLayoutConfig {
   sections: Array<{ id: string }>;
 }
 
-interface HeaderMenuConfig {
-  menu?: {
-    variant?: 'default' | 'centered' | 'transparent' | 'stacked';
-  };
-}
 
 export async function generateMetadata({ params }: NewPatientsPageProps): Promise<Metadata> {
   const { locale } = params;
@@ -137,8 +133,7 @@ export default async function NewPatientsPage({ params }: NewPatientsPageProps) 
   const siteId = await getRequestSiteId();
   const content = await loadPageContent<NewPatientsPageData>('new-patients', locale, siteId);
   const layout = await loadPageContent<PageLayoutConfig>('new-patients.layout', locale, siteId);
-  const headerConfig = await loadContent<HeaderMenuConfig>(siteId, locale, 'header.json');
-  
+
   if (!content) {
     notFound();
   }
@@ -151,75 +146,18 @@ export default async function NewPatientsPage({ params }: NewPatientsPageProps) 
   const isEnabled = (sectionId: string) => !useLayout || layoutOrder.has(sectionId);
   const sectionStyle = (sectionId: string) =>
     useLayout ? { order: layoutOrder.get(sectionId) ?? 0 } : undefined;
-  const heroVariant = hero.variant || 'split-photo-right';
-  const centeredHero = heroVariant === 'centered';
-  const imageLeftHero = heroVariant === 'split-photo-left';
-  const backgroundHero = heroVariant === 'photo-background' && Boolean(hero.backgroundImage);
-  const isTransparentMenu = headerConfig?.menu?.variant === 'transparent';
-  const heroTopPaddingClass = isTransparentMenu ? 'pt-30 md:pt-36' : 'pt-24 md:pt-24';
 
   return (
     <main className="min-h-screen flex flex-col">
       {/* Hero Section */}
       {isEnabled('hero') && (
-        <section
-          className={`relative ${heroTopPaddingClass} pb-16 md:pb-20 px-4 overflow-hidden ${
-            backgroundHero
-              ? 'bg-cover bg-center before:absolute before:inset-0 before:bg-white/75'
-              : 'bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)]'
-          }`}
-          style={{
-            ...(sectionStyle('hero') || {}),
-            ...(backgroundHero ? { backgroundImage: `url(${hero.backgroundImage})` } : {}),
-          }}
-        >
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-primary-100 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-64 h-64 bg-secondary-50 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="container mx-auto max-w-7xl relative z-10">
-          <div className={`grid gap-12 items-center ${centeredHero ? 'max-w-4xl mx-auto' : 'lg:grid-cols-2'}`}>
-            <div className={`text-center ${centeredHero ? '' : 'lg:text-left'}`}>
-              <Badge variant="primary" className="mb-6">
-                {locale === 'en' ? 'New Visit' : '首次就诊'}
-              </Badge>
-              <h1 className="text-display font-bold text-gray-900 mb-6 leading-tight">
-                {hero.title}
-              </h1>
-              <p className="text-subheading text-[var(--brand)] font-medium">
-                {hero.subtitle}
-              </p>
-            </div>
-
-            {!centeredHero && (
-            <div className={`hidden md:block w-full ${imageLeftHero ? 'lg:order-first' : ''}`}>
-              <div className="rounded-3xl overflow-hidden shadow-2xl">
-                {hero.backgroundImage ? (
-                  <Image
-                    src={hero.backgroundImage}
-                    alt={hero.title}
-                    width={1200}
-                    height={1200}
-                    className="w-full h-auto object-contain"
-                  />
-                ) : (
-                  <div className="w-full aspect-square flex flex-col items-center justify-center bg-gradient-to-br from-[color-mix(in_srgb,var(--primary)_10%,transparent)] to-[color-mix(in_srgb,var(--secondary)_16%,transparent)]">
-                    <div className="text-8xl mb-6">🏛️</div>
-                    <p className="text-gray-700 font-semibold text-subheading mb-2">
-                      {locale === 'en' ? 'Your First Visit' : '首次就诊'}
-                    </p>
-                    <p className="text-gray-600 text-small">
-                      {locale === 'en' ? 'Everything you need to know' : '准备就诊所需信息'}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
-            )}
-          </div>
-        </div>
-        </section>
+        <HeroSection
+          variant={(hero.variant as HeroVariant) || 'split-photo-right'}
+          tagline={hero.title}
+          description={hero.subtitle}
+          badgeText={locale === 'en' ? 'New Visit' : '首次就诊'}
+          image={hero.backgroundImage || undefined}
+        />
       )}
 
       {/* Introduction */}

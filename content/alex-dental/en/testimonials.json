@@ -1,57 +1,57 @@
 [
   {
     "id": "t001",
-    "patientName": "Maria S.",
-    "rating": 5,
-    "text": "I had severe dental anxiety for 15 years and avoided the dentist completely. The team was so gentle and patient — they explained every single step before doing it. I've now completed my full treatment plan and my smile looks amazing.",
-    "serviceCategory": "General Dentistry",
-    "source": "google",
     "date": "2025-10-22",
+    "text": "I had severe dental anxiety for 15 years and avoided the dentist completely. The team was so gentle and patient — they explained every single step before doing it. I've now completed my full treatment plan and my smile looks amazing.",
+    "rating": 5,
+    "source": "google",
     "featured": true,
-    "language": "en"
+    "language": "en",
+    "patientName": "Maria S.",
+    "serviceCategory": "General Dentistry"
   },
   {
     "id": "t002",
-    "patientName": "James T.",
-    "rating": 5,
-    "text": "Got dental implants here after losing a tooth in an accident. The result is incredible — it looks and feels exactly like my real tooth. The staff speaks English and Mandarin which made bringing my parents much easier.",
-    "serviceCategory": "Dental Implants",
-    "source": "google",
     "date": "2025-09-14",
+    "text": "Got dental implants here after losing a tooth in an accident. The result is incredible — it looks and feels exactly like my real tooth. The staff speaks English and Mandarin which made bringing my parents much easier.",
+    "rating": 5,
+    "source": "google",
     "featured": true,
-    "language": "en"
+    "language": "en",
+    "patientName": "James T.",
+    "serviceCategory": "Dental Implants"
   },
   {
     "id": "t003",
-    "patientName": "李明",
-    "rating": 5,
-    "text": "终于找到一家能用普通话交流的牙医诊所！工作人员非常耐心，每个治疗步骤都解释得很清楚。强烈推荐给华人朋友！",
-    "serviceCategory": "Teeth Whitening",
-    "source": "google",
     "date": "2025-11-02",
+    "text": "终于找到一家能用普通话交流的牙医诊所！工作人员非常耐心，每个治疗步骤都解释得很清楚。强烈推荐给华人朋友！",
+    "rating": 5,
+    "source": "google",
     "featured": true,
-    "language": "zh"
+    "language": "zh",
+    "patientName": "李明",
+    "serviceCategory": "Teeth Whitening"
   },
   {
     "id": "t004",
-    "patientName": "Carlos M.",
-    "rating": 5,
-    "text": "Finalmente una clínica donde me pueden atender en español. Me atendieron el mismo día que llamé por una emergencia dental. Muy recomendado!",
-    "serviceCategory": "Emergency",
-    "source": "yelp",
     "date": "2025-10-08",
+    "text": "Finalmente una clínica donde me pueden atender en español. Me atendieron el mismo día que llamé por una emergencia dental. Muy recomendado!",
+    "rating": 5,
+    "source": "yelp",
     "featured": true,
-    "language": "es"
+    "language": "es",
+    "patientName": "Carlos M.",
+    "serviceCategory": "Emergency"
   },
   {
     "id": "t005",
-    "patientName": "박지연",
-    "rating": 5,
-    "text": "한국어로 소통할 수 있는 치과를 찾고 있었는데 정말 다행이에요. 인비절라인 결과에 매우 만족합니다.",
-    "serviceCategory": "Invisalign",
-    "source": "google",
     "date": "2025-10-30",
+    "text": "한국어로 소통할 수 있는 치과를 찾고 있었는데 정말 다행이에요. 인비절라인 결과에 매우 만족합니다.",
+    "rating": 5,
+    "source": "google",
     "featured": true,
-    "language": "ko"
+    "language": "ko",
+    "patientName": "박지연",
+    "serviceCategory": "Invisalign"
   }
 ]

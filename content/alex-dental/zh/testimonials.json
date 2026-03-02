@@ -1,0 +1,57 @@
+[
+  {
+    "id": "t001",
+    "date": "2025-10-22",
+    "text": "我有15年严重的牙科恐惧症，完全回避看牙医。这里的团队非常温柔耐心——他们在每一步操作前都会详细解释。我现在已经完成了全部治疗计划，笑容焕然一新，太棒了。",
+    "rating": 5,
+    "source": "google",
+    "featured": true,
+    "language": "en",
+    "patientName": "Maria S.",
+    "serviceCategory": "General Dentistry"
+  },
+  {
+    "id": "t002",
+    "date": "2025-09-14",
+    "text": "我因意外失去了一颗牙齿，在这里做了种植牙。效果令人难以置信——看起来和感觉上与真牙完全一样。工作人员会说英语和普通话，带父母来就诊方便多了。",
+    "rating": 5,
+    "source": "google",
+    "featured": true,
+    "language": "en",
+    "patientName": "James T.",
+    "serviceCategory": "Dental Implants"
+  },
+  {
+    "id": "t003",
+    "date": "2025-11-02",
+    "text": "终于找到一家能用普通话交流的牙医诊所！工作人员非常耐心，每个治疗步骤都解释得很清楚。强烈推荐给华人朋友！",
+    "rating": 5,
+    "source": "google",
+    "featured": true,
+    "language": "zh",
+    "patientName": "李明",
+    "serviceCategory": "Teeth Whitening"
+  },
+  {
+    "id": "t004",
+    "date": "2025-10-08",
+    "text": "终于找到一家可以用西班牙语为我服务的诊所。我打电话当天就因牙科急症得到了接诊。非常推荐！",
+    "rating": 5,
+    "source": "yelp",
+    "featured": true,
+    "language": "es",
+    "patientName": "Carlos M.",
+    "serviceCategory": "Emergency"
+  },
+  {
+    "id": "t005",
+    "date": "2025-10-30",
+    "text": "我一直在寻找可以用韩语沟通的牙科诊所，真的很幸运找到了这里。对Invisalign隐适美的治疗效果非常满意。",
+    "rating": 5,
+    "source": "google",
+    "featured": true,
+    "language": "ko",
+    "patientName": "박지연",
+    "serviceCategory": "Invisalign"
+  }
+]

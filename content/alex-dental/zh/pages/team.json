@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "image": "/images/team-photo.jpg",
+    "title": "认识我们的医生与团队",
+    "subtitle": "经验丰富的多语言牙科专家，致力于为您提供优质服务",
+    "backgroundImage": ""
+  },
+  "supportStaff": [
+    {
+      "name": "Jessica L.",
+      "title": "诊所经理",
+      "languages": [
+        "英语",
+        "西班牙语"
+      ]
+    },
+    {
+      "name": "Amy W.",
+      "title": "牙科卫生师",
+      "languages": [
+        "英语",
+        "普通话"
+      ]
+    },
+    {
+      "name": "Rosa G.",
+      "title": "牙科助理",
+      "languages": [
+        "英语",
+        "西班牙语"
+      ]
+    }
+  ],
+  "cultureStatement": "在Alex牙科诊所，团队中的每一位成员都秉持对患者舒适、临床卓越和真诚关怀的承诺。我们相信，出色的牙科服务始于倾听 — 我们随时准备用您最舒适的语言来倾听您的需求。",
+  "showSupportStaff": true
+}

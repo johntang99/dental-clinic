@@ -1,24 +1,60 @@
 {
-  "hero": {
-    "title": "Dental Health Blog",
-    "subtitle": "Tips, guides, and insights from our dental team to help you maintain a healthy, confident smile"
-  },
-  "introduction": {
-    "text": "Stay informed about your dental health with articles written by Dr. Alex Chen and Dr. Sarah Kim. From treatment comparisons to prevention tips, our blog is here to help you make confident decisions about your oral care."
-  },
-  "categories": [
-    { "id": "all", "name": "All Posts", "slug": "all" },
-    { "id": "Patient Guide", "name": "Patient Guides", "slug": "patient-guide" },
-    { "id": "Treatment Options", "name": "Treatment Options", "slug": "treatment-options" },
-    { "id": "Patient Comfort", "name": "Patient Comfort", "slug": "patient-comfort" },
-    { "id": "Pediatric", "name": "Pediatric", "slug": "pediatric" },
-    { "id": "Orthodontics", "name": "Orthodontics", "slug": "orthodontics" },
-    { "id": "Prevention", "name": "Prevention", "slug": "prevention" }
-  ],
   "cta": {
     "title": "Have a Question?",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Contact Us"
+    },
     "description": "Can't find what you're looking for? Our team is happy to answer your dental health questions.",
-    "primaryCta": { "text": "Contact Us", "link": "/contact" },
-    "secondaryCta": { "text": "Book an Appointment", "link": "/contact" }
+    "secondaryCta": {
+      "link": "/contact",
+      "text": "Book an Appointment"
+    }
+  },
+  "hero": {
+    "title": "Dental Health Blog",
+    "subtitle": "Tips, guides, and insights from our dental team to help you maintain a healthy, confident smile",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425034783-hero-blog.jpg",
+    "variant": "split-photo-right"
+  },
+  "categories": [
+    {
+      "id": "all",
+      "name": "All Posts",
+      "slug": "all"
+    },
+    {
+      "id": "Patient Guide",
+      "name": "Patient Guides",
+      "slug": "patient-guide"
+    },
+    {
+      "id": "Treatment Options",
+      "name": "Treatment Options",
+      "slug": "treatment-options"
+    },
+    {
+      "id": "Patient Comfort",
+      "name": "Patient Comfort",
+      "slug": "patient-comfort"
+    },
+    {
+      "id": "Pediatric",
+      "name": "Pediatric",
+      "slug": "pediatric"
+    },
+    {
+      "id": "Orthodontics",
+      "name": "Orthodontics",
+      "slug": "orthodontics"
+    },
+    {
+      "id": "Prevention",
+      "name": "Prevention",
+      "slug": "prevention"
+    }
+  ],
+  "introduction": {
+    "text": "Stay informed about your dental health with articles written by Dr. Alex Chen and Dr. Sarah Kim. From treatment comparisons to prevention tips, our blog is here to help you make confident decisions about your oral care."
   }
 }

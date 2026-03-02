@@ -1,0 +1,26 @@
+{
+  "cta": {
+    "title": "有问题想咨询？",
+    "primaryCta": { "link": "/contact", "text": "联系我们" },
+    "description": "没有找到您想要的内容？我们的团队很乐意解答您关于口腔健康的问题。",
+    "secondaryCta": { "link": "/contact", "text": "预约就诊" }
+  },
+  "hero": {
+    "title": "口腔健康博客",
+    "subtitle": "来自我们牙科团队的建议、指南与见解，助您保持健康自信的笑容",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425034783-hero-blog.jpg",
+    "variant": "split-photo-right"
+  },
+  "categories": [
+    { "id": "all", "name": "所有文章", "slug": "all" },
+    { "id": "Patient Guide", "name": "患者指南", "slug": "patient-guide" },
+    { "id": "Treatment Options", "name": "治疗方案", "slug": "treatment-options" },
+    { "id": "Patient Comfort", "name": "患者舒适度", "slug": "patient-comfort" },
+    { "id": "Pediatric", "name": "儿童牙科", "slug": "pediatric" },
+    { "id": "Orthodontics", "name": "正畸", "slug": "orthodontics" },
+    { "id": "Prevention", "name": "预防保健", "slug": "prevention" }
+  ],
+  "introduction": {
+    "text": "阅读由 Alex Chen医生 和 Sarah Kim医生 撰写的文章，及时了解口腔健康资讯。从治疗方案对比到预防保健技巧，我们的博客旨在帮助您自信地做出口腔护理决策。"
+  }
+}

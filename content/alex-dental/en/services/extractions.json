@@ -1,51 +1,51 @@
 {
-  "slug": "extractions",
-  "title": "Tooth Extractions",
-  "subtitle": "Safe, gentle removal when a tooth cannot be saved",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Appointment"
+    },
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "Call (845) 555-0180"
+    }
+  },
+  "faq": [
+    {
+      "answer": "Most patients feel significantly better within two to three days, though complete healing of the extraction site takes one to two weeks. Surgical extractions, such as impacted wisdom teeth, may require a slightly longer recovery period. Following the aftercare instructions provided by our team will help ensure a smooth and speedy recovery.",
+      "question": "How long does recovery take after a tooth extraction?"
+    },
+    {
+      "answer": "Yes, most extractions are performed under local anesthesia, which numbs the area so you feel no pain while remaining fully awake. If you experience dental anxiety, we offer sedation options to help you feel calm and relaxed throughout the procedure. Let us know about your comfort preferences when scheduling.",
+      "question": "Will I be awake during the extraction?"
+    },
+    {
+      "answer": "Not everyone needs their wisdom teeth extracted. However, if your wisdom teeth are impacted, causing pain, growing in at an angle, or threatening adjacent teeth, removal is typically recommended. Dr. Alex will evaluate your wisdom teeth with digital X-rays and provide a personalized recommendation.",
+      "question": "Do I need to have my wisdom teeth removed?"
+    },
+    {
+      "answer": "For the first 24 to 48 hours, stick to soft, cool foods such as yogurt, applesauce, smoothies, and mashed potatoes. Avoid hot foods, straws, and hard or crunchy items that could disturb the healing site. You can gradually return to your normal diet as comfort allows over the following days.",
+      "question": "What should I eat after a tooth extraction?"
+    }
+  ],
   "icon": "Unplug",
-  "image": "/images/services/extractions.jpg",
-  "shortDescription": "Comfortable tooth extractions including wisdom teeth removal, performed with care and precision.",
-  "fullDescription": "While we always prioritize saving natural teeth, there are situations where a tooth extraction is the best course of action for your overall oral health. Whether you are dealing with severe decay, advanced gum disease, crowding, or problematic wisdom teeth, our Middletown, NY team is experienced in performing both simple and surgical extractions with an emphasis on patient comfort.\n\nSimple extractions are performed on teeth that are visible above the gumline and can be loosened and removed with specialized instruments. Surgical extractions may be necessary for teeth that are impacted, broken below the gumline, or have complex root structures. Dr. Alex will evaluate your situation with digital imaging, explain the recommended approach, and ensure you fully understand the process before proceeding.\n\nWisdom tooth extractions are among the most common procedures we perform. Third molars frequently become impacted or emerge at awkward angles, leading to pain, infection, or damage to adjacent teeth. Early evaluation — often in the late teens or early twenties — allows us to address wisdom teeth before they cause complications. Regardless of the type of extraction, we provide thorough aftercare instructions and follow-up support to ensure a smooth recovery.",
+  "slug": "extractions",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423009618-extractions.jpg",
+  "price": "Starting from $200",
+  "title": "Tooth Extractions",
   "benefits": [
     "Eliminates pain and prevents the spread of infection",
     "Addresses crowding and prepares the mouth for orthodontic treatment",
     "Removes impacted or problematic wisdom teeth before complications arise",
     "Comprehensive aftercare guidance for a smooth, comfortable recovery"
   ],
-  "whatToExpect": "Your appointment will begin with a digital X-ray to assess the tooth and surrounding bone structure. Dr. Alex will discuss the extraction plan and answer any questions you have. A local anesthetic is administered to ensure the area is completely numb, and sedation options are available for patients who experience dental anxiety. During a simple extraction, the tooth is gently loosened and removed. For surgical extractions, a small incision in the gum tissue may be necessary to access the tooth. After removal, gauze is placed to control bleeding, and you will receive detailed post-operative care instructions covering pain management, diet, and activity restrictions. Most patients recover comfortably within a few days, and our team is available by phone at (845) 555-0180 if any questions arise during your healing.",
-  "price": "Starting from $200",
-  "durationMinutes": 60,
-  "featured": false,
-  "faq": [
-    {
-      "question": "How long does recovery take after a tooth extraction?",
-      "answer": "Most patients feel significantly better within two to three days, though complete healing of the extraction site takes one to two weeks. Surgical extractions, such as impacted wisdom teeth, may require a slightly longer recovery period. Following the aftercare instructions provided by our team will help ensure a smooth and speedy recovery."
-    },
-    {
-      "question": "Will I be awake during the extraction?",
-      "answer": "Yes, most extractions are performed under local anesthesia, which numbs the area so you feel no pain while remaining fully awake. If you experience dental anxiety, we offer sedation options to help you feel calm and relaxed throughout the procedure. Let us know about your comfort preferences when scheduling."
-    },
-    {
-      "question": "Do I need to have my wisdom teeth removed?",
-      "answer": "Not everyone needs their wisdom teeth extracted. However, if your wisdom teeth are impacted, causing pain, growing in at an angle, or threatening adjacent teeth, removal is typically recommended. Dr. Alex will evaluate your wisdom teeth with digital X-rays and provide a personalized recommendation."
-    },
-    {
-      "question": "What should I eat after a tooth extraction?",
-      "answer": "For the first 24 to 48 hours, stick to soft, cool foods such as yogurt, applesauce, smoothies, and mashed potatoes. Avoid hot foods, straws, and hard or crunchy items that could disturb the healing site. You can gradually return to your normal diet as comfort allows over the following days."
-    }
-  ],
   "category": "general",
-  "heroVariant": "centered",
-  "cta": {
-    "title": "Ready to Get Started?",
-    "subtitle": "Schedule an appointment to learn more about this service.",
-    "primaryCta": {
-      "text": "Book Appointment",
-      "link": "/contact"
-    },
-    "secondaryCta": {
-      "text": "Call (845) 555-0180",
-      "link": "tel:+18455550180"
-    }
-  }
+  "featured": false,
+  "subtitle": "Safe, gentle removal when a tooth cannot be saved",
+  "heroVariant": "split-photo-right",
+  "whatToExpect": "Your appointment will begin with a digital X-ray to assess the tooth and surrounding bone structure. Dr. Alex will discuss the extraction plan and answer any questions you have. A local anesthetic is administered to ensure the area is completely numb, and sedation options are available for patients who experience dental anxiety. During a simple extraction, the tooth is gently loosened and removed. For surgical extractions, a small incision in the gum tissue may be necessary to access the tooth. After removal, gauze is placed to control bleeding, and you will receive detailed post-operative care instructions covering pain management, diet, and activity restrictions. Most patients recover comfortably within a few days, and our team is available by phone at (845) 555-0180 if any questions arise during your healing.",
+  "durationMinutes": 60,
+  "fullDescription": "While we always prioritize saving natural teeth, there are situations where a tooth extraction is the best course of action for your overall oral health. Whether you are dealing with severe decay, advanced gum disease, crowding, or problematic wisdom teeth, our Middletown, NY team is experienced in performing both simple and surgical extractions with an emphasis on patient comfort.\n\nSimple extractions are performed on teeth that are visible above the gumline and can be loosened and removed with specialized instruments. Surgical extractions may be necessary for teeth that are impacted, broken below the gumline, or have complex root structures. Dr. Alex will evaluate your situation with digital imaging, explain the recommended approach, and ensure you fully understand the process before proceeding.\n\nWisdom tooth extractions are among the most common procedures we perform. Third molars frequently become impacted or emerge at awkward angles, leading to pain, infection, or damage to adjacent teeth. Early evaluation — often in the late teens or early twenties — allows us to address wisdom teeth before they cause complications. Regardless of the type of extraction, we provide thorough aftercare instructions and follow-up support to ensure a smooth recovery.",
+  "shortDescription": "Comfortable tooth extractions including wisdom teeth removal, performed with care and precision."
 }

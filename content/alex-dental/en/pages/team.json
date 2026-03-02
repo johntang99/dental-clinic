@@ -1,14 +1,36 @@
 {
   "hero": {
+    "image": "/images/team-photo.jpg",
     "title": "Meet Our Doctors & Team",
     "subtitle": "Experienced, multilingual dental professionals dedicated to your care",
-    "image": "/images/team-photo.jpg"
+    "backgroundImage": ""
   },
-  "showSupportStaff": true,
-  "cultureStatement": "At Alex Dental Clinic, every member of our team shares a commitment to patient comfort, clinical excellence, and genuine compassion. We believe great dental care starts with listening — and we're here to listen in the language you're most comfortable with.",
   "supportStaff": [
-    { "name": "Jessica L.", "title": "Office Manager", "languages": ["English", "Spanish"] },
-    { "name": "Amy W.", "title": "Dental Hygienist", "languages": ["English", "Mandarin Chinese"] },
-    { "name": "Rosa G.", "title": "Dental Assistant", "languages": ["English", "Spanish"] }
-  ]
+    {
+      "name": "Jessica L.",
+      "title": "Office Manager",
+      "languages": [
+        "English",
+        "Spanish"
+      ]
+    },
+    {
+      "name": "Amy W.",
+      "title": "Dental Hygienist",
+      "languages": [
+        "English",
+        "Mandarin Chinese"
+      ]
+    },
+    {
+      "name": "Rosa G.",
+      "title": "Dental Assistant",
+      "languages": [
+        "English",
+        "Spanish"
+      ]
+    }
+  ],
+  "cultureStatement": "At Alex Dental Clinic, every member of our team shares a commitment to patient comfort, clinical excellence, and genuine compassion. We believe great dental care starts with listening — and we're here to listen in the language you're most comfortable with.",
+  "showSupportStaff": true
 }

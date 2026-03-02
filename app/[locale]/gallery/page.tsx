@@ -1,14 +1,15 @@
 import type { Metadata } from 'next';
- import Image from 'next/image';
  import Link from 'next/link';
  import { notFound } from 'next/navigation';
-import { getRequestSiteId, loadContent, loadPageContent, loadSiteInfo } from '@/lib/content';
+import { getRequestSiteId, loadPageContent, loadSiteInfo } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
 import { Locale, SiteInfo } from '@/lib/types';
 import CTASection from '@/components/sections/CTASection';
+import HeroSection from '@/components/sections/HeroSection';
+import { HeroVariant } from '@/lib/section-variants';
  
  import GalleryGrid, { GalleryCategory, GalleryImage } from '@/components/gallery/GalleryGrid';
- import { Camera, Sparkles, Award, MapPin, Clock } from 'lucide-react';
+ import { MapPin, Clock } from 'lucide-react';
  
  interface GalleryPageData {
    hero: {
@@ -62,11 +63,6 @@ interface PageLayoutConfig {
   sections: Array<{ id: string }>;
 }
 
-interface HeaderMenuConfig {
-  menu?: {
-    variant?: 'default' | 'centered' | 'transparent' | 'stacked';
-  };
-}
 
  export async function generateMetadata({ params }: GalleryPageProps): Promise<Metadata> {
    const { locale } = params;
@@ -89,7 +85,6 @@ interface HeaderMenuConfig {
   const content = await loadPageContent<GalleryPageData>('gallery', locale, siteId);
   const layout = await loadPageContent<PageLayoutConfig>('gallery.layout', locale, siteId);
   const contactContent = await loadPageContent<ContactPageData>('contact', locale, siteId);
-  const headerConfig = await loadContent<HeaderMenuConfig>(siteId, locale, 'header.json');
   const siteInfo = await loadSiteInfo(siteId, locale) as SiteInfo | null;
  
    if (!content) {
@@ -101,11 +96,6 @@ interface HeaderMenuConfig {
     .filter((image) => Boolean(image?.src))
     .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
   const displayCategories = categories;
-   const heroFeatures = [
-     { icon: Camera, text: locale === 'en' ? 'Virtual tour' : '虚拟参观' },
-     { icon: Sparkles, text: locale === 'en' ? 'Clean & modern' : '干净现代' },
-     { icon: Award, text: locale === 'en' ? 'Professional care' : '专业护理' },
-   ];
   const layoutOrder = new Map<string, number>(
     layout?.sections?.map((section, index) => [section.id, index]) || []
   );
@@ -113,96 +103,17 @@ interface HeaderMenuConfig {
   const isEnabled = (sectionId: string) => !useLayout || layoutOrder.has(sectionId);
   const sectionStyle = (sectionId: string) =>
     useLayout ? { order: layoutOrder.get(sectionId) ?? 0 } : undefined;
-  const heroVariant = hero.variant || 'split-photo-right';
-  const centeredHero = heroVariant === 'centered';
-  const imageLeftHero = heroVariant === 'split-photo-left';
-  const backgroundHero = heroVariant === 'photo-background' && Boolean(hero.backgroundImage);
-  const isTransparentMenu = headerConfig?.menu?.variant === 'transparent';
-  const heroTopPaddingClass = isTransparentMenu ? 'pt-30 md:pt-36' : 'pt-20 md:pt-24';
- 
+
    return (
     <main className="flex flex-col">
        {/* Hero Section */}
       {isEnabled('hero') && (
-        <section
-          className={`relative ${heroTopPaddingClass} pb-16 md:pb-20 px-4 overflow-hidden ${
-            backgroundHero
-              ? 'bg-cover bg-center before:absolute before:inset-0 before:bg-white/75'
-              : 'bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)]'
-          }`}
-          style={{
-            ...(sectionStyle('hero') || {}),
-            ...(backgroundHero ? { backgroundImage: `url(${hero.backgroundImage})` } : {}),
-          }}
-        >
-         <div className="absolute inset-0 opacity-10">
-           <div className="absolute top-10 right-10 w-64 h-64 bg-primary-100 rounded-full blur-3xl"></div>
-           <div className="absolute bottom-10 left-10 w-64 h-64 bg-secondary-50 rounded-full blur-3xl"></div>
-         </div>
- 
-         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className={`grid gap-12 items-center ${centeredHero ? 'max-w-4xl mx-auto' : 'lg:grid-cols-2'}`}>
-            <div className={`text-center ${centeredHero ? '' : 'lg:text-left'}`}>
-               <h1 className="text-display font-bold text-gray-900 mb-6 leading-tight">
-                 {hero.title}
-               </h1>
-               <p className="text-subheading text-[var(--brand)] font-medium mb-4">
-                 {hero.subtitle}
-               </p>
-               {introduction?.text && (
-                 <p className="text-subheading text-gray-600 leading-relaxed mb-8">
-                   {introduction.text}
-                 </p>
-               )}
- 
-               <div className="grid sm:grid-cols-3 gap-4">
-                 {heroFeatures.map((item) => {
-                   const Icon = item.icon;
-                   return (
-                     <div
-                       key={item.text}
-                       className="flex flex-col items-center sm:items-start gap-3 bg-white/80 backdrop-blur rounded-xl p-4 border border-gray-200 shadow-sm"
-                     >
-                       <div className="w-10 h-10 rounded-lg bg-[color-mix(in_srgb,var(--brand)_10%,transparent)] flex items-center justify-center">
-                         <Icon className="w-5 h-5 text-[var(--brand)]" />
-                       </div>
-                       <span className="text-small font-semibold text-gray-900 text-center sm:text-left">
-                         {item.text}
-                       </span>
-                     </div>
-                   );
-                 })}
-               </div>
-             </div>
- 
-            {!centeredHero && (
-            <div className={`hidden md:block w-full ${imageLeftHero ? 'lg:order-first' : ''}`}>
-              <div className="rounded-3xl overflow-hidden shadow-2xl">
-                {hero.backgroundImage ? (
-                  <Image
-                    src={hero.backgroundImage}
-                    alt={hero.title}
-                    width={1200}
-                    height={1200}
-                    className="w-full h-auto object-contain"
-                  />
-                ) : (
-                  <div className="w-full aspect-square flex flex-col items-center justify-center bg-gradient-to-br from-[color-mix(in_srgb,var(--primary)_10%,transparent)] to-[color-mix(in_srgb,var(--secondary)_16%,transparent)]">
-                    <div className="text-8xl mb-6">🏛️</div>
-                    <p className="text-gray-700 font-semibold text-subheading mb-2">
-                      {locale === 'en' ? 'Our Workspace' : '我们的空间'}
-                    </p>
-                    <p className="text-gray-600 text-small">
-                      {locale === 'en' ? 'Designed for comfort and quality service' : '为舒适体验与高品质服务而设计'}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
-            )}
-           </div>
-         </div>
-        </section>
+        <HeroSection
+          variant={(hero.variant as HeroVariant) || 'split-photo-right'}
+          tagline={hero.title}
+          description={hero.subtitle}
+          image={hero.backgroundImage || undefined}
+        />
       )}
  
        {/* Gallery Grid */}

@@ -4,13 +4,15 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import fs from 'fs/promises';
 import path from 'path';
-import { getRequestSiteId, loadContent, loadPageContent, loadSiteInfo } from '@/lib/content';
+import { getRequestSiteId, loadPageContent, loadSiteInfo } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
 import { Locale, SiteInfo } from '@/lib/types';
 import { getSiteDisplayName } from '@/lib/siteInfo';
 import { resolveMediaUrl } from '@/lib/media-url';
 import { Button, Badge, Card, CardHeader, CardTitle, CardDescription, CardContent, Icon } from '@/components/ui';
 import CTASection from '@/components/sections/CTASection';
+import HeroSection from '@/components/sections/HeroSection';
+import { HeroVariant } from '@/lib/section-variants';
 import { CheckCircle2, MapPin, Clock } from 'lucide-react';
 
 interface AboutPageData {
@@ -131,11 +133,6 @@ interface PageLayoutConfig {
   sections: Array<{ id: string }>;
 }
 
-interface HeaderMenuConfig {
-  menu?: {
-    variant?: 'default' | 'centered' | 'transparent' | 'stacked';
-  };
-}
 
 function isSparseAboutContent(content: AboutPageData | null): boolean {
   if (!content) return true;
@@ -208,7 +205,6 @@ export default async function AboutPage({ params }: AboutPageProps) {
   }
   const layout = await loadPageContent<PageLayoutConfig>('about.layout', locale, siteId);
   const contactContent = await loadPageContent<ContactPageData>('contact', locale, siteId);
-  const headerConfig = await loadContent<HeaderMenuConfig>(siteId, locale, 'header.json');
   const siteInfo = await loadSiteInfo(siteId, locale) as SiteInfo | null;
   
   if (!content) {
@@ -292,15 +288,8 @@ export default async function AboutPage({ params }: AboutPageProps) {
   const isEnabled = (sectionId: string) => !useLayout || layoutOrder.has(sectionId);
   const sectionStyle = (sectionId: string) =>
     useLayout ? { order: layoutOrder.get(sectionId) ?? 0 } : undefined;
-  const heroVariant = hero.variant || 'split-photo-right';
-  const centeredHero = heroVariant === 'centered';
-  const imageLeftHero = heroVariant === 'split-photo-left';
   const resolvedHeroBackgroundImage = resolveMediaUrl(hero.backgroundImage);
   const resolvedProfileImage = resolveMediaUrl(profile.image);
-  const backgroundHero =
-    heroVariant === 'photo-background' && Boolean(resolvedHeroBackgroundImage);
-  const isTransparentMenu = headerConfig?.menu?.variant === 'transparent';
-  const heroTopPaddingClass = isTransparentMenu ? 'pt-30 md:pt-36' : 'pt-20 md:pt-24';
   const profileVariant = profile.variant || 'split';
   const credentialsVariant = credentials.variant || 'list';
   const specializationsVariant = specializations.variant || 'grid-2';
@@ -314,77 +303,13 @@ export default async function AboutPage({ params }: AboutPageProps) {
     <main className="min-h-screen flex flex-col">
       {/* Hero Section */}
       {isEnabled('hero') && (
-        <section
-          className={`relative ${heroTopPaddingClass} pb-16 md:pb-20 px-4 overflow-hidden ${
-            backgroundHero
-              ? 'bg-cover bg-center before:absolute before:inset-0 before:bg-white/75'
-              : 'bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)]'
-          }`}
-          style={{
-            ...(sectionStyle('hero') || {}),
-            ...(backgroundHero
-              ? { backgroundImage: `url(${resolvedHeroBackgroundImage})` }
-              : {}),
-          }}
-        >
-        {/* Decorative Background */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-primary-100 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-64 h-64 bg-secondary-50 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="container mx-auto max-w-7xl relative z-10">
-          <div className={`grid gap-12 items-center ${centeredHero ? 'max-w-4xl mx-auto' : 'lg:grid-cols-2'}`}>
-            {/* Left Column - Text Content */}
-            <div className={`text-center ${centeredHero ? '' : 'lg:text-left'}`}>
-              <h1 className="text-display font-bold text-gray-900 mb-6 leading-tight">
-                {hero.title}
-              </h1>
-              <p className="text-subheading text-primary font-medium mb-4">
-                {hero.subtitle}
-              </p>
-              {hero.description && (
-                <p className="text-subheading text-gray-600 leading-relaxed">
-                  {hero.description}
-                </p>
-              )}
-            </div>
-
-            {/* Right Column - Hero Image */}
-            {!centeredHero && (
-            <div className={`hidden md:block w-full ${imageLeftHero ? 'lg:order-first' : ''}`}>
-              <div className="rounded-3xl overflow-hidden shadow-2xl">
-                {resolvedHeroBackgroundImage ? (
-                  <Image
-                    src={resolvedHeroBackgroundImage}
-                    alt={hero.title}
-                    width={1200}
-                    height={1200}
-                    className="w-full h-auto object-contain"
-                    priority
-                  />
-                ) : (
-                  <div className="w-full aspect-square flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10 relative p-8">
-                    <div className="absolute top-10 left-10 w-24 h-24 bg-primary-50/20 rounded-full"></div>
-                    <div className="absolute bottom-10 right-10 w-32 h-32 bg-secondary-50/20 rounded-full"></div>
-
-                    <div className="relative z-10 text-center">
-                      <div className="text-8xl mb-6">🏢</div>
-                      <p className="text-gray-700 font-semibold text-subheading mb-2">
-                        {getSiteDisplayName(siteInfo, 'Our Team')}
-                      </p>
-                      <p className="text-gray-600 text-sm">
-                        {siteInfo?.tagline || 'Professional Services'}
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-            )}
-          </div>
-        </div>
-        </section>
+        <HeroSection
+          variant={(hero.variant as HeroVariant) || 'split-photo-right'}
+          tagline={hero.title}
+          description={hero.subtitle}
+          image={resolvedHeroBackgroundImage || undefined}
+          priority
+        />
       )}
 
       {/* Profile Section */}

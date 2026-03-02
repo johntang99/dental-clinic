@@ -1,32 +1,32 @@
 {
-  "slug": "implant-transformation-john",
   "id": "implant-transformation-john",
-  "category": "Restorative",
-  "condition": "Multiple Missing Back Teeth",
+  "slug": "implant-transformation-john",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-implant-transformation-john-main.jpg",
   "title": "A Complete Bite Restored with Dental Implants",
+  "results": "John's new implant-supported crowns restored his bite completely. Within a few weeks of the final crowns being placed, he reported that he had forgotten which side of his mouth had the implants while eating. His jaw soreness resolved, and he was able to return to eating all the foods he had been avoiding for years. At his one-year follow-up, the implants showed excellent integration and the surrounding gum tissue was healthy and stable.",
   "summary": "After living without three back teeth for over five years, John regained full chewing function with individually placed dental implants. The six-month treatment gave him back the ability to enjoy meals without pain or limitation.",
-  "image": "/images/cases/implant-transformation-john.jpg",
-  "beforeImage": "/images/cases/implant-transformation-john-before.jpg",
-  "afterImage": "/images/cases/implant-transformation-john-after.jpg",
+  "category": "Restorative",
+  "featured": true,
+  "solution": "After a thorough evaluation including a 3D cone beam scan, we developed a phased implant plan. The first step was placing three individual titanium implants, spaced to mimic the natural tooth roots. Because John had moderate bone loss in one area, a small bone graft was placed at the same time as one of the implants. After a four-month healing period to allow the implants to integrate with the jawbone, we took digital impressions and fabricated three individual porcelain crowns designed to match the shape and shade of his natural teeth.",
+  "challenge": "John had lost three adjacent molars on his lower right side over a span of several years due to a combination of old failing dental work and decay. He had been getting by without them, but over time he noticed he was only chewing on one side of his mouth. This led to jaw soreness, uneven wear on his remaining teeth, and difficulty eating foods he loved like steak, raw vegetables, and nuts. He had also started to experience some bone loss in the area where the teeth were missing, which meant implant placement would require careful planning.",
+  "condition": "Multiple Missing Back Teeth",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-implant-transformation-john-after.jpg",
+  "beforeImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-implant-transformation-john-before.jpg",
   "patientProfile": {
-    "name": "John",
     "age": "55-60",
+    "name": "John",
     "concern": "Inability to chew properly due to three missing molars on the lower right side"
   },
-  "challenge": "John had lost three adjacent molars on his lower right side over a span of several years due to a combination of old failing dental work and decay. He had been getting by without them, but over time he noticed he was only chewing on one side of his mouth. This led to jaw soreness, uneven wear on his remaining teeth, and difficulty eating foods he loved like steak, raw vegetables, and nuts. He had also started to experience some bone loss in the area where the teeth were missing, which meant implant placement would require careful planning.",
-  "solution": "After a thorough evaluation including a 3D cone beam scan, we developed a phased implant plan. The first step was placing three individual titanium implants, spaced to mimic the natural tooth roots. Because John had moderate bone loss in one area, a small bone graft was placed at the same time as one of the implants. After a four-month healing period to allow the implants to integrate with the jawbone, we took digital impressions and fabricated three individual porcelain crowns designed to match the shape and shade of his natural teeth.",
-  "results": "John's new implant-supported crowns restored his bite completely. Within a few weeks of the final crowns being placed, he reported that he had forgotten which side of his mouth had the implants while eating. His jaw soreness resolved, and he was able to return to eating all the foods he had been avoiding for years. At his one-year follow-up, the implants showed excellent integration and the surrounding gum tissue was healthy and stable.",
+  "testimonialQuote": "I put off getting implants for way too long because I was nervous about the process. Honestly, the surgery was easier than I expected, and now I can't believe I waited five years to do this. I bit into an apple last week without even thinking about it.",
   "treatmentDetails": {
+    "visits": "7 visits total",
+    "duration": "6 months from implant placement to final crowns",
     "procedures": [
       "3D Cone Beam CT Scan",
       "Localized Bone Graft",
       "3 Individual Titanium Implant Placements",
       "Digital Impressions",
       "3 Custom Porcelain Implant Crowns"
-    ],
-    "duration": "6 months from implant placement to final crowns",
-    "visits": "7 visits total"
-  },
-  "testimonialQuote": "I put off getting implants for way too long because I was nervous about the process. Honestly, the surgery was easier than I expected, and now I can't believe I waited five years to do this. I bit into an apple last week without even thinking about it.",
-  "featured": true
+    ]
+  }
 }

@@ -1,0 +1,49 @@
+{
+  "bio": "Alex Chen医生是Alex牙科诊所的创始人和首席牙科医生，拥有超过15年的临床经验，并对改善纽约州Middletown社区的微笑充满热情。Chen医生出生于台湾，青少年时期移居纽约，这段经历培养了他对文化多样性的深刻理解，以及让每位患者都感到受欢迎和被理解的承诺。\n\nChen医生于2012年在哥伦比亚大学牙科医学院获得牙科外科博士学位（DDS）后，进一步接受了种植牙和全口修复的高级培训，成为哈德逊河谷地区最具技术实力的种植牙专家之一。他被认证为Invisalign隐适美铂金级服务商，并持有国际口腔种植学家大会院士资格（FICOI），这体现了他始终走在现代牙科技术前沿的决心。\n\n工作之余，Chen医生是Middletown社区的活跃成员。无论是在当地健康博览会做志愿者、指导有志于牙科事业的学生，还是与家人在Gonzaga公园探索自然步道，他都相信建立真诚的关系是出色牙科服务的基础。他的理念很简单：用心倾听，详细解释，交付让患者多年引以为傲的治疗效果。",
+  "name": "Alex Chen医生",
+  "role": "首席牙科医生",
+  "slug": "dr-alex-chen",
+  "image": "/images/doctors/dr-alex-chen.jpg",
+  "order": 1,
+  "quote": "每一个微笑都讲述着一个故事。我的工作就是确保您的故事值得骄傲地分享。",
+  "title": "DDS",
+  "featured": true,
+  "languages": [
+    "英语",
+    "普通话"
+  ],
+  "credentials": [
+    {
+      "year": "2012",
+      "location": "纽约州纽约市",
+      "credential": "牙科外科博士（DDS）",
+      "institution": "哥伦比亚大学牙科医学院"
+    },
+    {
+      "year": "2008",
+      "location": "纽约州纽约市",
+      "credential": "生物学理学学士",
+      "institution": "纽约大学"
+    },
+    {
+      "year": "2013",
+      "location": "纽约州纽约市",
+      "credential": "种植牙高级培训",
+      "institution": "哥伦比亚大学牙科医学院"
+    }
+  ],
+  "certifications": [
+    "国际口腔种植学家大会院士（FICOI）",
+    "Invisalign隐适美铂金级服务商",
+    "美国牙科协会（ADA）",
+    "普通牙科学院（AGD）",
+    "纽约州牙科协会"
+  ],
+  "specializations": [
+    "种植牙",
+    "美容牙科",
+    "全口修复",
+    "Invisalign隐适美",
+    "普通牙科"
+  ]
+}

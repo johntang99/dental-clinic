@@ -1,0 +1,32 @@
+{
+  "id": "invisalign-journey-maria",
+  "slug": "invisalign-journey-maria",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-invisalign-journey-maria-main.jpg",
+  "title": "悄无声息地矫正牙齿，无人察觉",
+  "results": "经过14个月的治疗，Maria的牙列拥挤问题完全解决，反颌也得到了纠正。她的咬合现在完全对齐，之前出现的颞下颌关节弹响也随之消失。对Maria来说最棒的是，整个治疗过程在她的日常生活中几乎是隐形的。她告诉我们，整个疗程中没有一位同事或客户询问过牙套或矫治器的事。她现在每晚佩戴一副薄保持器以维持矫正效果。",
+  "summary": "Maria希望矫正拥挤的牙齿并纠正反颌，但作为一名需要直接面对客户的专业人士，她不希望佩戴明显的矫治器。历时14个月的Invisalign隐适美治疗让她获得了整齐美观的牙列——而整个公司没有一个同事发现她在进行矫正治疗。",
+  "category": "Orthodontic",
+  "featured": true,
+  "solution": "在进行数字扫描并使用Invisalign隐适美的ClinCheck软件制定治疗方案后，我们向Maria展示了牙齿在整个疗程中移动的三维模拟动画。方案涉及28副定制矫治器，每两周更换一副，同时在部分牙齿上粘接少量牙色附件，以辅助矫正反颌所需的复杂牙齿移动。Maria每天佩戴矫治器22小时，仅在进餐和刷牙时取下。我们每八周安排一次复诊，监测进展并进行必要的调整。",
+  "challenge": "Maria的下前牙多年来越来越拥挤，左侧还有一颗上牙的反颌——上牙咬合在下牙内侧而非外侧。这种反颌导致牙齿磨耗不均和偶尔的颞下颌关节弹响。她在青少年时期曾考虑过矫正，但当时家庭经济条件不允许。如今她在一家咨询公司担任客户经理，需要频繁向客户做演示，认为传统金属牙套在职业形象上不可行。她也担心隐形矫治器能否真正纠正反颌，而不只是单纯排齐牙齿。",
+  "condition": "中度牙列拥挤伴后牙反颌",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-invisalign-journey-maria-after.jpg",
+  "beforeImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-invisalign-journey-maria-before.jpg",
+  "patientProfile": {
+    "age": "25-30",
+    "name": "Maria",
+    "concern": "下牙列拥挤及一侧反颌，强烈希望选择隐蔽的矫正方案"
+  },
+  "testimonialQuote": "我矫正到一半时，我的闺蜜才注意到我牙上有东西——还是因为我主动指给她看的。公司里没有人知道。我终于拥有了一直渴望的整齐牙齿，而且完全是按照自己的方式实现的。",
+  "treatmentDetails": {
+    "visits": "共9次就诊，包括初诊会诊和最终保持器配戴",
+    "duration": "14个月主动矫正期",
+    "procedures": [
+      "数字化iTero三维扫描",
+      "ClinCheck治疗模拟",
+      "28副定制Invisalign隐适美矫治器",
+      "用于纠正反颌的牙色附件",
+      "固定保持器及夜间保持器"
+    ]
+  }
+}

@@ -1,39 +1,144 @@
 {
-  "hero": {
+  "cta": {
+    "title": "See It In Person",
     "variant": "centered",
-    "title": "Our Office & Results",
-    "subtitle": "Take a virtual tour of our modern Middletown dental office and see real patient transformations"
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book a Visit"
+    },
+    "description": "Schedule a visit and experience our office firsthand. New patients always welcome.",
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "Call (845) 555-0180"
+    }
   },
+  "hero": {
+    "title": "Our Office & Results",
+    "variant": "photo-background",
+    "subtitle": "Take a virtual tour of our modern Middletown dental office and see real patient transformations",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425032846-hero-gallery.jpg"
+  },
+  "images": [
+    {
+      "id": "office-1",
+      "alt": "Bright, welcoming reception area",
+      "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-office-1.jpg",
+      "title": "Reception Area",
+      "category": "office"
+    },
+    {
+      "id": "office-2",
+      "alt": "Comfortable waiting room with natural light",
+      "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-office-2.jpg",
+      "title": "Waiting Room",
+      "category": "office"
+    },
+    {
+      "id": "office-3",
+      "alt": "Modern treatment room with chairside monitor",
+      "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-office-3.jpg",
+      "title": "Treatment Room",
+      "category": "office"
+    },
+    {
+      "id": "office-4",
+      "alt": "State-of-the-art sterilization center",
+      "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-office-4.jpg",
+      "title": "Sterilization Center",
+      "category": "office"
+    },
+    {
+      "id": "team-1",
+      "alt": "Dr. Alex Chen with the dental team",
+      "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-team-1.jpg",
+      "title": "Dr. Chen & Team",
+      "category": "team"
+    },
+    {
+      "id": "team-2",
+      "alt": "Dr. Sarah Kim with a young patient",
+      "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-team-2.jpg",
+      "title": "Dr. Kim with Patient",
+      "category": "team"
+    },
+    {
+      "id": "team-3",
+      "alt": "Our friendly front desk staff",
+      "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-team-3.jpg",
+      "title": "Front Desk Team",
+      "category": "team"
+    },
+    {
+      "id": "tech-1",
+      "alt": "CEREC same-day crown machine",
+      "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-tech-1.jpg",
+      "title": "CEREC Technology",
+      "category": "technology"
+    },
+    {
+      "id": "tech-2",
+      "alt": "3D cone beam CT scanner",
+      "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-tech-2.jpg",
+      "title": "3D CT Scanner",
+      "category": "technology"
+    },
+    {
+      "id": "tech-3",
+      "alt": "Digital X-ray station",
+      "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-tech-3.jpg",
+      "title": "Digital X-Ray",
+      "category": "technology"
+    },
+    {
+      "id": "results-1",
+      "alt": "Porcelain veneer smile transformation",
+      "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-results-1.jpg",
+      "title": "Veneer Transformation",
+      "category": "results"
+    },
+    {
+      "id": "results-2",
+      "alt": "Dental implant before and after",
+      "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-results-2.jpg",
+      "title": "Implant Restoration",
+      "category": "results"
+    },
+    {
+      "id": "results-3",
+      "alt": "Professional whitening results",
+      "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-results-3.jpg",
+      "title": "Whitening Results",
+      "category": "results"
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "icon": "camera",
+      "name": "All Photos"
+    },
+    {
+      "id": "office",
+      "icon": "building-2",
+      "name": "Our Office"
+    },
+    {
+      "id": "team",
+      "icon": "users",
+      "name": "Our Team"
+    },
+    {
+      "id": "technology",
+      "icon": "cpu",
+      "name": "Technology"
+    },
+    {
+      "id": "results",
+      "icon": "sparkles",
+      "name": "Patient Results"
+    }
+  ],
   "introduction": {
     "text": "We've designed every detail of our office with your comfort in mind — from the warm reception area to our state-of-the-art treatment rooms. Browse photos of our space, our team, and real patient results."
-  },
-  "categories": [
-    { "id": "all", "name": "All Photos", "icon": "camera" },
-    { "id": "office", "name": "Our Office", "icon": "building-2" },
-    { "id": "team", "name": "Our Team", "icon": "users" },
-    { "id": "technology", "name": "Technology", "icon": "cpu" },
-    { "id": "results", "name": "Patient Results", "icon": "sparkles" }
-  ],
-  "images": [
-    { "id": "office-1", "src": "/images/gallery/reception-area.jpg", "alt": "Bright, welcoming reception area", "title": "Reception Area", "category": "office" },
-    { "id": "office-2", "src": "/images/gallery/waiting-room.jpg", "alt": "Comfortable waiting room with natural light", "title": "Waiting Room", "category": "office" },
-    { "id": "office-3", "src": "/images/gallery/treatment-room.jpg", "alt": "Modern treatment room with chairside monitor", "title": "Treatment Room", "category": "office" },
-    { "id": "office-4", "src": "/images/gallery/sterilization-center.jpg", "alt": "State-of-the-art sterilization center", "title": "Sterilization Center", "category": "office" },
-    { "id": "team-1", "src": "/images/gallery/dr-chen-team.jpg", "alt": "Dr. Alex Chen with the dental team", "title": "Dr. Chen & Team", "category": "team" },
-    { "id": "team-2", "src": "/images/gallery/dr-kim-patients.jpg", "alt": "Dr. Sarah Kim with a young patient", "title": "Dr. Kim with Patient", "category": "team" },
-    { "id": "team-3", "src": "/images/gallery/front-desk-team.jpg", "alt": "Our friendly front desk staff", "title": "Front Desk Team", "category": "team" },
-    { "id": "tech-1", "src": "/images/gallery/cerec-machine.jpg", "alt": "CEREC same-day crown machine", "title": "CEREC Technology", "category": "technology" },
-    { "id": "tech-2", "src": "/images/gallery/3d-scanner.jpg", "alt": "3D cone beam CT scanner", "title": "3D CT Scanner", "category": "technology" },
-    { "id": "tech-3", "src": "/images/gallery/digital-xray.jpg", "alt": "Digital X-ray station", "title": "Digital X-Ray", "category": "technology" },
-    { "id": "results-1", "src": "/images/gallery/veneer-result.jpg", "alt": "Porcelain veneer smile transformation", "title": "Veneer Transformation", "category": "results" },
-    { "id": "results-2", "src": "/images/gallery/implant-result.jpg", "alt": "Dental implant before and after", "title": "Implant Restoration", "category": "results" },
-    { "id": "results-3", "src": "/images/gallery/whitening-result.jpg", "alt": "Professional whitening results", "title": "Whitening Results", "category": "results" }
-  ],
-  "cta": {
-    "variant": "centered",
-    "title": "See It In Person",
-    "description": "Schedule a visit and experience our office firsthand. New patients always welcome.",
-    "primaryCta": { "text": "Book a Visit", "link": "/contact" },
-    "secondaryCta": { "text": "Call (845) 555-0180", "link": "tel:+18455550180" }
   }
 }

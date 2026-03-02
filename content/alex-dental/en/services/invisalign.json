@@ -1,51 +1,51 @@
 {
-  "slug": "invisalign",
-  "title": "Invisalign Clear Aligners",
-  "subtitle": "Straighten Your Teeth Discreetly with Invisalign",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Appointment"
+    },
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "Call (845) 555-0180"
+    }
+  },
+  "faq": [
+    {
+      "answer": "Treatment duration depends on the complexity of your case and typically ranges from six to eighteen months. Minor corrections may be completed in as few as six months, while more complex cases may take closer to eighteen months. During your initial consultation, we will provide a personalized timeline based on your specific needs.",
+      "question": "How long does Invisalign treatment take?"
+    },
+    {
+      "answer": "Yes, Invisalign can treat the majority of orthodontic issues that traditional braces address, including crowding, spacing, overbites, underbites, and crossbites. For highly complex cases, we will discuss all available options with you to determine the most effective treatment approach.",
+      "question": "Is Invisalign as effective as traditional braces?"
+    },
+    {
+      "answer": "For optimal results, you should wear your aligners for twenty to twenty-two hours per day. You only remove them to eat, drink anything other than water, and brush or floss your teeth. Consistent wear is essential for staying on schedule with your treatment plan.",
+      "question": "How many hours a day do I need to wear my aligners?"
+    },
+    {
+      "answer": "Many dental insurance plans that include orthodontic benefits will cover a portion of Invisalign treatment, just as they would for traditional braces. Our office staff will verify your benefits and help you understand your coverage before treatment begins. We also offer flexible payment plans to make treatment affordable.",
+      "question": "Does insurance cover Invisalign?"
+    }
+  ],
   "icon": "AlignCenter",
-  "image": "/images/services/invisalign.jpg",
-  "shortDescription": "Certified Invisalign provider offering clear aligner orthodontics for a straighter smile without metal braces.",
-  "fullDescription": "Achieving a beautifully straight smile no longer means spending months or years with metal brackets and wires. As a certified Invisalign provider in Middletown, NY, we offer clear aligner therapy that straightens your teeth comfortably and virtually invisibly — so you can smile confidently throughout your entire treatment.\n\nInvisalign uses a series of custom-made, removable clear aligners that gradually shift your teeth into their ideal positions. Each set of aligners is digitally designed using advanced 3D imaging technology, ensuring a precise treatment plan tailored to your unique dental anatomy. Because the aligners are removable, you can continue eating all your favorite foods and maintain your normal brushing and flossing routine without any hassle.\n\nWhether you are dealing with crowding, spacing, overbite, underbite, or crossbite, Invisalign can address a wide range of orthodontic concerns for teens and adults alike. Most patients complete treatment in six to eighteen months, with fewer office visits required compared to traditional braces. Schedule a consultation to find out if Invisalign is right for you.",
+  "slug": "invisalign",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423014760-invisalign.jpg",
+  "price": "Starting from $3,500",
+  "title": "Invisalign Clear Aligners",
   "benefits": [
     "Nearly invisible aligners that fit seamlessly into your daily life",
     "Removable for easy eating, brushing, and flossing",
     "Custom-designed with advanced 3D digital imaging",
     "Typically fewer office visits than traditional braces"
   ],
-  "whatToExpect": "Your Invisalign journey starts with a comprehensive consultation where we evaluate your teeth, take digital scans, and discuss your smile goals. Using Invisalign's advanced software, we map out your complete treatment plan and show you a digital preview of your expected results before you even begin. You will receive a series of custom aligners, each worn for about one to two weeks before moving to the next set. Check-in appointments are scheduled every six to eight weeks so we can monitor your progress and provide your next sets of aligners. Treatment duration varies from six to eighteen months depending on the complexity of your case. Throughout the process, our team at (845) 555-0180 is available to answer any questions and ensure your treatment stays on track.",
-  "price": "Starting from $3,500",
-  "durationMinutes": null,
-  "featured": true,
-  "faq": [
-    {
-      "question": "How long does Invisalign treatment take?",
-      "answer": "Treatment duration depends on the complexity of your case and typically ranges from six to eighteen months. Minor corrections may be completed in as few as six months, while more complex cases may take closer to eighteen months. During your initial consultation, we will provide a personalized timeline based on your specific needs."
-    },
-    {
-      "question": "Is Invisalign as effective as traditional braces?",
-      "answer": "Yes, Invisalign can treat the majority of orthodontic issues that traditional braces address, including crowding, spacing, overbites, underbites, and crossbites. For highly complex cases, we will discuss all available options with you to determine the most effective treatment approach."
-    },
-    {
-      "question": "How many hours a day do I need to wear my aligners?",
-      "answer": "For optimal results, you should wear your aligners for twenty to twenty-two hours per day. You only remove them to eat, drink anything other than water, and brush or floss your teeth. Consistent wear is essential for staying on schedule with your treatment plan."
-    },
-    {
-      "question": "Does insurance cover Invisalign?",
-      "answer": "Many dental insurance plans that include orthodontic benefits will cover a portion of Invisalign treatment, just as they would for traditional braces. Our office staff will verify your benefits and help you understand your coverage before treatment begins. We also offer flexible payment plans to make treatment affordable."
-    }
-  ],
   "category": "orthodontics",
+  "featured": true,
+  "subtitle": "Straighten Your Teeth Discreetly with Invisalign",
   "heroVariant": "centered",
-  "cta": {
-    "title": "Ready to Get Started?",
-    "subtitle": "Schedule an appointment to learn more about this service.",
-    "primaryCta": {
-      "text": "Book Appointment",
-      "link": "/contact"
-    },
-    "secondaryCta": {
-      "text": "Call (845) 555-0180",
-      "link": "tel:+18455550180"
-    }
-  }
+  "whatToExpect": "Your Invisalign journey starts with a comprehensive consultation where we evaluate your teeth, take digital scans, and discuss your smile goals. Using Invisalign's advanced software, we map out your complete treatment plan and show you a digital preview of your expected results before you even begin. You will receive a series of custom aligners, each worn for about one to two weeks before moving to the next set. Check-in appointments are scheduled every six to eight weeks so we can monitor your progress and provide your next sets of aligners. Treatment duration varies from six to eighteen months depending on the complexity of your case. Throughout the process, our team at (845) 555-0180 is available to answer any questions and ensure your treatment stays on track.",
+  "durationMinutes": null,
+  "fullDescription": "Achieving a beautifully straight smile no longer means spending months or years with metal brackets and wires. As a certified Invisalign provider in Middletown, NY, we offer clear aligner therapy that straightens your teeth comfortably and virtually invisibly — so you can smile confidently throughout your entire treatment.\n\nInvisalign uses a series of custom-made, removable clear aligners that gradually shift your teeth into their ideal positions. Each set of aligners is digitally designed using advanced 3D imaging technology, ensuring a precise treatment plan tailored to your unique dental anatomy. Because the aligners are removable, you can continue eating all your favorite foods and maintain your normal brushing and flossing routine without any hassle.\n\nWhether you are dealing with crowding, spacing, overbite, underbite, or crossbite, Invisalign can address a wide range of orthodontic concerns for teens and adults alike. Most patients complete treatment in six to eighteen months, with fewer office visits required compared to traditional braces. Schedule a consultation to find out if Invisalign is right for you.",
+  "shortDescription": "Certified Invisalign provider offering clear aligner orthodontics for a straighter smile without metal braces."
 }

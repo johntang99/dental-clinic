@@ -1,11 +1,13 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getRequestSiteId, loadContent, loadPageContent } from '@/lib/content';
+import { getRequestSiteId, loadPageContent } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
 import { Locale } from '@/lib/types';
 import { Button, Badge, Icon, Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui';
 import ContactForm from '@/components/ContactForm';
+import HeroSection from '@/components/sections/HeroSection';
+import { HeroVariant } from '@/lib/section-variants';
 
 interface ContactPageContent {
   hero: {
@@ -80,11 +82,6 @@ interface PageLayoutConfig {
   sections: Array<{ id: string }>;
 }
 
-interface HeaderMenuConfig {
-  menu?: {
-    variant?: 'default' | 'centered' | 'transparent' | 'stacked';
-  };
-}
 
 export async function generateMetadata({ params }: ContactPageProps): Promise<Metadata> {
   const { locale } = params;
@@ -108,16 +105,12 @@ export default async function ContactPage({ params }: ContactPageProps) {
   const siteId = await getRequestSiteId();
   const content = await loadPageContent<ContactPageContent>('contact', locale, siteId);
   const layout = await loadPageContent<PageLayoutConfig>('contact.layout', locale, siteId);
-  const headerConfig = await loadContent<HeaderMenuConfig>(siteId, locale, 'header.json');
-  
+
   if (!content) {
     notFound();
   }
 
   const { hero, introduction, contactMethods, hours, form, map, emergency, faq, cta } = content;
-  const heroVariant = hero.variant || 'centered';
-  const isCenteredHero = heroVariant === 'centered';
-  const backgroundHero = heroVariant === 'photo-background' && Boolean(hero.backgroundImage);
   const introVariant = introduction.variant || 'centered';
   const hoursVariant = hours.variant || 'grid';
   const showMap = map.variant === 'hidden' ? false : map.showMap;
@@ -129,35 +122,18 @@ export default async function ContactPage({ params }: ContactPageProps) {
   const isEnabled = (sectionId: string) => !useLayout || layoutOrder.has(sectionId);
   const sectionStyle = (sectionId: string) =>
     useLayout ? { order: layoutOrder.get(sectionId) ?? 0 } : undefined;
-  const isTransparentMenu = headerConfig?.menu?.variant === 'transparent';
-  const heroTopPaddingClass = isTransparentMenu ? 'pt-30 md:pt-36' : 'py-20 lg:py-32';
 
   return (
     <main className="min-h-screen flex flex-col">
       {/* Hero Section */}
       {isEnabled('hero') && (
-        <section
-          className={`relative ${heroTopPaddingClass} ${
-            backgroundHero
-              ? 'bg-cover bg-center before:absolute before:inset-0 before:bg-white/80'
-              : 'bg-gradient-to-br from-primary/10 via-backdrop-primary to-primary/5'
-          }`}
-          style={{
-            ...(sectionStyle('hero') || {}),
-            ...(backgroundHero ? { backgroundImage: `url(${hero.backgroundImage})` } : {}),
-          }}
-        >
-        <div className="container mx-auto px-4">
-          <div className={`max-w-4xl mx-auto relative z-10 ${isCenteredHero ? 'text-center' : 'text-left'}`}>
-            <h1 className="text-display font-bold text-gray-900 mb-6">
-              {hero.title}
-            </h1>
-            <p className="text-subheading text-gray-600">
-              {hero.subtitle}
-            </p>
-          </div>
-        </div>
-        </section>
+        <HeroSection
+          variant={(hero.variant as HeroVariant) || 'centered'}
+          tagline={hero.title}
+          description={hero.subtitle}
+          badgeText="Contact Us"
+          image={hero.backgroundImage || undefined}
+        />
       )}
 
       {/* Introduction */}

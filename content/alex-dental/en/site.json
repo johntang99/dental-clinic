@@ -1,69 +1,95 @@
 {
   "id": "alex-dental",
-  "businessName": "Alex Dental Clinic",
-  "tagline": "Expert Dental Care in Your Language",
-  "description": "Comprehensive dental services for the whole family in English, Chinese, Spanish, and Korean",
-  "phone": "(845) 555-0180",
-  "phoneEmergency": "(845) 555-0180",
-  "email": "info@alex-dental.com",
-  "emailAppointments": "appointments@alex-dental.com",
-  "address": "85 Crystal Run Road",
-  "city": "Middletown",
-  "state": "NY",
-  "zip": "10940",
-  "addressFull": "85 Crystal Run Road, Middletown, NY 10940",
-  "addressMapUrl": "https://maps.google.com/?q=85+Crystal+Run+Road+Middletown+NY+10940",
-  "mapsEmbedUrl": "https://www.google.com/maps/embed?pb=YOUR_EMBED_ID",
   "lat": 41.4459,
   "lng": -74.4229,
+  "zip": "10940",
+  "city": "Middletown",
+  "email": "info@alex-dental.com",
   "hours": {
-    "monday": "8:00 AM - 6:00 PM",
-    "tuesday": "8:00 AM - 6:00 PM",
-    "wednesday": "9:00 AM - 7:00 PM",
-    "thursday": "8:00 AM - 6:00 PM",
     "friday": "8:00 AM - 5:00 PM",
-    "saturday": "9:00 AM - 2:00 PM",
+    "monday": "8:00 AM - 6:00 PM",
     "sunday": "Closed",
+    "tuesday": "8:00 AM - 6:00 PM",
+    "saturday": "9:00 AM - 2:00 PM",
+    "thursday": "8:00 AM - 6:00 PM",
+    "wednesday": "9:00 AM - 7:00 PM",
     "emergencyNote": "Dental emergencies: call us — we will accommodate same-day urgent cases"
   },
-  "credentials": {
-    "licenseNumber": "NY-D-012345",
-    "licenseState": "NY",
-    "npiNumber": "1234567890",
-    "adaMembership": true,
-    "stateDentalAssociation": "New York State Dental Association",
-    "specializations": ["General Dentistry", "Cosmetic Dentistry", "Dental Implants", "Invisalign Provider", "Sedation Dentistry"]
-  },
-  "languages": [
-    { "code": "en", "label": "English", "flag": "US", "enabled": true },
-    { "code": "zh", "label": "中文", "flag": "CN", "enabled": true },
-    { "code": "es", "label": "Español", "flag": "MX", "enabled": true },
-    { "code": "ko", "label": "한국어", "flag": "KR", "enabled": true }
-  ],
+  "phone": "(845) 555-0180",
+  "state": "NY",
   "social": {
-    "facebook": "https://facebook.com/alexdental",
-    "instagram": "https://instagram.com/alexdental",
-    "youtube": "",
     "yelp": "https://yelp.com/biz/alex-dental-middletown",
-    "google": "https://g.page/alexdental"
+    "google": "https://g.page/alexdental",
+    "youtube": "",
+    "facebook": "https://facebook.com/alexdental",
+    "instagram": "https://instagram.com/alexdental"
   },
-  "insurance": {
-    "acceptsInsurance": true,
-    "inNetworkNote": "In-network with most major PPO plans. Call us to verify your specific plan.",
-    "financingNote": "CareCredit, LendingClub, and Sunbit financing available.",
-    "membershipPlanEnabled": true,
-    "membershipPlanName": "Alex Wellness Plan"
-  },
+  "address": "85 Crystal Run Road",
   "booking": {
-    "onlineBookingEnabled": true,
     "bookingUrl": "/book",
     "callToBook": true,
+    "onlineBookingEnabled": true,
     "preferredContactMethod": "both"
   },
   "display": {
-    "showEmergencyBanner": true,
+    "defaultLocale": "en",
     "emergencyBannerText": "Dental emergency? Call us now — same-day appointments available for urgent cases",
-    "showLanguageSwitcher": true,
-    "defaultLocale": "en"
-  }
+    "showEmergencyBanner": true,
+    "showLanguageSwitcher": true
+  },
+  "tagline": "Expert Dental Care in Your Language",
+  "insurance": {
+    "financingNote": "CareCredit, LendingClub, and Sunbit financing available.",
+    "inNetworkNote": "In-network with most major PPO plans. Call us to verify your specific plan.",
+    "acceptsInsurance": true,
+    "membershipPlanName": "Alex Wellness Plan",
+    "membershipPlanEnabled": true
+  },
+  "languages": [
+    {
+      "code": "en",
+      "flag": "US",
+      "label": "English",
+      "enabled": true
+    },
+    {
+      "code": "zh",
+      "flag": "CN",
+      "label": "中文",
+      "enabled": true
+    },
+    {
+      "code": "es",
+      "flag": "MX",
+      "label": "Español",
+      "enabled": true
+    },
+    {
+      "code": "ko",
+      "flag": "KR",
+      "label": "한국어",
+      "enabled": true
+    }
+  ],
+  "addressFull": "85 Crystal Run Road, Middletown, NY 10940",
+  "credentials": {
+    "npiNumber": "1234567890",
+    "licenseState": "NY",
+    "adaMembership": true,
+    "licenseNumber": "NY-D-012345",
+    "specializations": [
+      "General Dentistry",
+      "Cosmetic Dentistry",
+      "Dental Implants",
+      "Invisalign Provider",
+      "Sedation Dentistry"
+    ],
+    "stateDentalAssociation": "New York State Dental Association"
+  },
+  "description": "Comprehensive dental services for the whole family in English, Chinese, Spanish, and Korean",
+  "businessName": "Alex Dental Clinic",
+  "mapsEmbedUrl": "https://www.google.com/maps/embed?pb=YOUR_EMBED_ID",
+  "addressMapUrl": "https://maps.google.com/?q=85+Crystal+Run+Road+Middletown+NY+10940",
+  "phoneEmergency": "(845) 555-0180",
+  "emailAppointments": "appointments@alex-dental.com"
 }

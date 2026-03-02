@@ -13,6 +13,14 @@ interface FooterProps {
 export default function Footer({ locale, siteId, footer }: FooterProps) {
   const currentYear = new Date().getFullYear();
   const resolvedFooter = footer ?? getDefaultFooter(locale);
+
+  // Ensure internal URLs include the locale prefix
+  const localizeUrl = (url: string) => {
+    if (!url || url.startsWith('http') || url.startsWith('tel:') || url.startsWith('mailto:') || url.startsWith('#')) return url;
+    if (url.startsWith(`/${locale}/`) || url === `/${locale}`) return url;
+    if (url === '/') return `/${locale}`;
+    return `/${locale}${url.startsWith('/') ? '' : '/'}${url}`;
+  };
   const copyright =
     resolvedFooter.copyright.replace('{year}', String(currentYear));
   
@@ -45,7 +53,7 @@ export default function Footer({ locale, siteId, footer }: FooterProps) {
               {resolvedFooter.quickLinks.map((link) => (
                 <li key={link.url}>
                   <Link
-                    href={link.url}
+                    href={localizeUrl(link.url)}
                     className="text-sm text-gray-300 hover:text-white transition-colors"
                   >
                     {link.text}
@@ -64,7 +72,7 @@ export default function Footer({ locale, siteId, footer }: FooterProps) {
               {resolvedFooter.services.map((service) => (
                 <li key={service.url}>
                   <Link
-                    href={service.url}
+                    href={localizeUrl(service.url)}
                     className="text-sm text-gray-300 hover:text-white transition-colors"
                   >
                     {service.text}
@@ -132,7 +140,7 @@ export default function Footer({ locale, siteId, footer }: FooterProps) {
                 {resolvedFooter.legalLinks.map((link) => (
                   <Link
                     key={link.url}
-                    href={link.url}
+                    href={localizeUrl(link.url)}
                     className="text-gray-300 hover:text-white transition-colors"
                   >
                     {link.text}

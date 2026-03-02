@@ -1,16 +1,20 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getRequestSiteId, loadAllItems, loadContent, loadPageContent } from '@/lib/content';
+import { getRequestSiteId, loadAllItems, loadPageContent } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
 import { Locale } from '@/lib/types';
 import { Badge, Card, CardHeader, CardTitle, CardDescription, CardContent, Icon, Accordion } from '@/components/ui';
 import CTASection from '@/components/sections/CTASection';
+import HeroSection from '@/components/sections/HeroSection';
+import { HeroVariant } from '@/lib/section-variants';
 
 interface InsurancePageData {
   hero: {
     title: string;
     subtitle: string;
+    variant?: string;
+    backgroundImage?: string;
   };
   howInsuranceWorks: {
     title: string;
@@ -55,9 +59,6 @@ interface InsurancePageProps {
   params: { locale: Locale };
 }
 
-interface HeaderMenuConfig {
-  menu?: { variant?: 'default' | 'centered' | 'transparent' | 'stacked' };
-}
 
 export async function generateMetadata({ params }: InsurancePageProps): Promise<Metadata> {
   const { locale } = params;
@@ -77,7 +78,6 @@ export default async function InsurancePage({ params }: InsurancePageProps) {
   const { locale } = params;
   const siteId = await getRequestSiteId();
   const content = await loadPageContent<InsurancePageData>('insurance', locale, siteId);
-  const headerConfig = await loadContent<HeaderMenuConfig>(siteId, locale, 'header.json');
 
   // Load insurance list from the insurance directory
   const lists = await loadAllItems<InsuranceListData>(siteId, locale, 'insurance');
@@ -88,25 +88,17 @@ export default async function InsurancePage({ params }: InsurancePageProps) {
   }
 
   const { hero, howInsuranceWorks, networkInfo, faqs } = content;
-  const isTransparentMenu = headerConfig?.menu?.variant === 'transparent';
-  const heroTopPaddingClass = isTransparentMenu ? 'pt-30 md:pt-36' : 'pt-16 md:pt-20';
 
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section
-        className={`relative bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)] ${heroTopPaddingClass} pb-16 md:pb-20 px-4`}
-      >
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-primary-100 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-64 h-64 bg-secondary-50 rounded-full blur-3xl" />
-        </div>
-        <div className="container mx-auto max-w-4xl text-center relative z-10">
-          <Badge variant="primary" className="mb-6">Insurance & Payment</Badge>
-          <h1 className="text-display font-bold text-gray-900 mb-6">{hero.title}</h1>
-          <p className="text-subheading text-[var(--brand)] font-medium">{hero.subtitle}</p>
-        </div>
-      </section>
+      <HeroSection
+        variant={(hero.variant as HeroVariant) || 'centered'}
+        tagline={hero.title}
+        description={hero.subtitle}
+        badgeText="Insurance & Payment"
+        image={hero.backgroundImage || undefined}
+      />
 
       {/* How Insurance Works + Network Info */}
       <section className="py-16 lg:py-24 bg-white">

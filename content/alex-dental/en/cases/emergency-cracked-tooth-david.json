@@ -1,32 +1,32 @@
 {
-  "slug": "emergency-cracked-tooth-david",
   "id": "emergency-cracked-tooth-david",
-  "category": "Emergency",
-  "condition": "Cracked Molar Requiring Same-Day Emergency Care",
+  "slug": "emergency-cracked-tooth-david",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-emergency-cracked-tooth-david-main.jpg",
   "title": "From Cracked Tooth to Permanent Crown in One Week",
+  "results": "David went from a painful dental emergency on Saturday to a fully restored tooth by the following Thursday. The CEREC crown matched the color and shape of his natural teeth, and because it was milled from a single block of ceramic, it was extremely durable. David was relieved that the entire process — from emergency visit to permanent crown — took only seven days and two appointments, rather than the weeks of waiting he had expected. At his three-month check-up, the crown was functioning perfectly with no sensitivity.",
   "summary": "When David cracked a molar on a Saturday afternoon, he expected a long, drawn-out process to fix it. Instead, a same-day emergency visit stabilized the tooth, and a CEREC same-day crown the following week gave him a permanent restoration — all within seven days.",
-  "image": "/images/cases/emergency-cracked-tooth-david.jpg",
-  "beforeImage": "/images/cases/emergency-cracked-tooth-david-before.jpg",
-  "afterImage": "/images/cases/emergency-cracked-tooth-david-after.jpg",
+  "category": "Emergency",
+  "featured": false,
+  "solution": "David called our emergency line on Saturday and was seen within two hours. The emergency appointment included a digital X-ray to assess the extent of the crack and confirm that the fracture hadn't reached the nerve. Fortunately, the nerve was intact. We smoothed the sharp edges, placed a strong temporary filling to seal and protect the exposed tooth structure, and prescribed a short course of anti-inflammatory medication for the discomfort. The following Thursday, David returned for a CEREC same-day crown. Using our in-office milling system, we digitally scanned the tooth, designed the crown on screen, and milled it from a solid block of tooth-colored ceramic — all in a single appointment. The permanent crown was bonded in place before David left the office.",
+  "challenge": "David bit down on a piece of hard candy on a Saturday afternoon and immediately felt a sharp crack followed by intense pain in his lower left molar. A large piece of the tooth's outer wall had fractured off, exposing the sensitive inner layer of the tooth. He was in significant pain, couldn't close his mouth without the broken edge cutting into his cheek, and was worried the tooth might need to be extracted. As a new patient, he wasn't sure if he could be seen over the weekend.",
+  "condition": "Cracked Molar Requiring Same-Day Emergency Care",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-emergency-cracked-tooth-david-after.jpg",
+  "beforeImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-emergency-cracked-tooth-david-before.jpg",
   "patientProfile": {
-    "name": "David",
     "age": "40-45",
+    "name": "David",
     "concern": "Sharp pain from a cracked molar that occurred unexpectedly on a weekend"
   },
-  "challenge": "David bit down on a piece of hard candy on a Saturday afternoon and immediately felt a sharp crack followed by intense pain in his lower left molar. A large piece of the tooth's outer wall had fractured off, exposing the sensitive inner layer of the tooth. He was in significant pain, couldn't close his mouth without the broken edge cutting into his cheek, and was worried the tooth might need to be extracted. As a new patient, he wasn't sure if he could be seen over the weekend.",
-  "solution": "David called our emergency line on Saturday and was seen within two hours. The emergency appointment included a digital X-ray to assess the extent of the crack and confirm that the fracture hadn't reached the nerve. Fortunately, the nerve was intact. We smoothed the sharp edges, placed a strong temporary filling to seal and protect the exposed tooth structure, and prescribed a short course of anti-inflammatory medication for the discomfort. The following Thursday, David returned for a CEREC same-day crown. Using our in-office milling system, we digitally scanned the tooth, designed the crown on screen, and milled it from a solid block of tooth-colored ceramic — all in a single appointment. The permanent crown was bonded in place before David left the office.",
-  "results": "David went from a painful dental emergency on Saturday to a fully restored tooth by the following Thursday. The CEREC crown matched the color and shape of his natural teeth, and because it was milled from a single block of ceramic, it was extremely durable. David was relieved that the entire process — from emergency visit to permanent crown — took only seven days and two appointments, rather than the weeks of waiting he had expected. At his three-month check-up, the crown was functioning perfectly with no sensitivity.",
+  "testimonialQuote": "I cracked my tooth on a Saturday and honestly thought I'd be dealing with it for weeks. They got me in that same afternoon, took the pain away, and a few days later I had a permanent crown. The whole thing was done in a week. I didn't even have to take time off work.",
   "treatmentDetails": {
+    "visits": "2 visits — Saturday emergency and Thursday crown appointment",
+    "duration": "7 days from emergency visit to permanent crown",
     "procedures": [
       "Emergency Examination and Digital X-Ray",
       "Temporary Stabilization and Filling",
       "CEREC Digital Scan and Crown Design",
       "Same-Day Milled Ceramic Crown",
       "Permanent Crown Bonding"
-    ],
-    "duration": "7 days from emergency visit to permanent crown",
-    "visits": "2 visits — Saturday emergency and Thursday crown appointment"
-  },
-  "testimonialQuote": "I cracked my tooth on a Saturday and honestly thought I'd be dealing with it for weeks. They got me in that same afternoon, took the pain away, and a few days later I had a permanent crown. The whole thing was done in a week. I didn't even have to take time off work.",
-  "featured": false
+    ]
+  }
 }

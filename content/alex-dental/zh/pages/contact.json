@@ -1,0 +1,60 @@
+{
+  "faq": {
+    "items": [
+      { "answer": "请携带有效的带照片身份证件、牙科保险卡（如适用）以及当前用药清单。", "question": "首次就诊需要携带哪些物品？" },
+      { "answer": "我们优先安排预约患者，但会尽可能接待无预约的患者。如遇紧急情况，请先致电我们，我们将尽力安排您当天就诊。", "question": "你们接受无预约就诊吗？" },
+      { "answer": "是的，我们在85 Crystal Run Road诊所门前提供免费停车位。", "question": "有停车位吗？" }
+    ],
+    "title": "常见问题",
+    "variant": "simple"
+  },
+  "map": {
+    "title": "找到我们",
+    "showMap": true,
+    "variant": "shown",
+    "embedUrl": "https://www.google.com/maps/embed?pb=YOUR_EMBED_ID",
+    "directions": "地理位置优越，紧邻Crystal Run Crossing，为所有患者提供免费停车位。"
+  },
+  "form": {
+    "title": "给我们发送消息",
+    "fields": {
+      "name": { "label": "姓名", "required": true, "placeholder": "您的全名" },
+      "email": { "label": "电子邮件", "required": true, "placeholder": "your@email.com" },
+      "phone": { "label": "电话", "required": false, "placeholder": "(555) 123-4567" },
+      "reason": { "label": "联系原因", "options": ["一般咨询", "新患者预约", "保险问题", "账单问题", "其他"], "required": true, "placeholder": "请选择原因" },
+      "message": { "label": "留言内容", "required": true, "placeholder": "我们能为您提供什么帮助？" }
+    },
+    "variant": "single-column",
+    "subtitle": "填写下方表单，我们将在1个工作日内回复您",
+    "errorMessage": "出现错误，请重试或直接致电我们。",
+    "submitButton": { "text": "发送消息" },
+    "successMessage": "感谢您的联系！我们将在1个工作日内回复您。"
+  },
+  "hero": {
+    "title": "联系我们",
+    "variant": "split-photo-right",
+    "subtitle": "我们随时为您提供帮助——今天就与我们联系",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425036346-hero-contact.jpg"
+  },
+  "hours": {
+    "note": "在诊所开放时间内提供紧急当天预约",
+    "title": "诊所开放时间",
+    "variant": "grid",
+    "schedule": [
+      { "day": "周一", "time": "上午8:00 - 下午6:00", "isOpen": true },
+      { "day": "周二", "time": "上午8:00 - 下午6:00", "isOpen": true },
+      { "day": "周三", "time": "上午9:00 - 下午7:00", "isOpen": true },
+      { "day": "周四", "time": "上午8:00 - 下午6:00", "isOpen": true },
+      { "day": "周五", "time": "上午8:00 - 下午5:00", "isOpen": true },
+      { "day": "周六", "time": "上午9:00 - 下午2:00", "isOpen": true },
+      { "day": "周日", "time": "休息", "isOpen": false }
+    ]
+  },
+  "emergency": { "phone": "(845) 555-0180", "title": "牙科紧急情况？", "message": "如果您正在经历牙科紧急情况，请勿等待——立即致电我们，获得当天紧急救治。", "visible": true },
+  "introduction": { "text": "无论您需要预约就诊、咨询保险事宜，还是对某项治疗有疑问——我们很乐意为您提供帮助。请通过电话、电子邮件或下方表单与我们联系。", "variant": "centered" },
+  "contactMethods": [
+    { "icon": "phone", "title": "电话", "action": { "link": "tel:+18455550180", "text": "立即致电" }, "primary": "(845) 555-0180", "secondary": null, "description": "在诊所开放时间内致电，或随时留下语音留言" },
+    { "icon": "mail", "title": "电子邮件", "action": { "link": "mailto:info@alex-dental.com", "text": "发送邮件" }, "primary": "info@alex-dental.com", "secondary": null, "description": "我们将在1个工作日内回复所有电子邮件" },
+    { "icon": "map-pin", "title": "到访我们", "action": { "link": "https://maps.google.com/?q=85+Crystal+Run+Road+Middletown+NY+10940", "text": "获取路线" }, "primary": "85 Crystal Run Road", "secondary": "Middletown, NY 10940", "description": "地理位置优越，紧邻Crystal Run Crossing，提供免费停车位" }
+  ]
+}

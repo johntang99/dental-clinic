@@ -1,0 +1,294 @@
+{
+  "cta": {
+    "title": "准备好体验不一样的牙科服务了吗？",
+    "variant": "centered",
+    "subtitle": "立即预约您的首次就诊。随时欢迎新患者。",
+    "primaryCta": {
+      "link": "/book",
+      "text": "预约首次就诊"
+    },
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "致电 (845) 555-0180"
+    }
+  },
+  "blog": {
+    "badge": "健康知识",
+    "posts": [],
+    "title": "口腔健康知识与教育",
+    "variant": "cards-grid",
+    "moreLink": {
+      "url": "/blog",
+      "text": "访问健康知识中心"
+    },
+    "subtitle": "来自我们牙科团队的专业文章"
+  },
+  "hero": {
+    "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/general/1772354726463-photo-1629909613654-28e377c37b09.jpg",
+    "stats": [
+      {
+        "icon": "calendar",
+        "label": "年执业经验",
+        "number": "20+"
+      },
+      {
+        "icon": "users",
+        "label": "服务患者",
+        "number": "10,000+"
+      },
+      {
+        "icon": "star",
+        "label": "Google评分",
+        "number": "4.9"
+      }
+    ],
+    "tagline": "专业牙科服务，用您的语言。",
+    "variant": "split-photo-right",
+    "primaryCta": {
+      "link": "/book",
+      "text": "预约挂号"
+    },
+    "description": "服务纽约州Middletown，提供English、中文、Español和한국어服务。为全家提供综合牙科治疗。",
+    "trustBadges": [
+      "ADA会员",
+      "Invisalign认证",
+      "NYSDA会员"
+    ],
+    "businessName": "Alex牙科诊所",
+    "floatingTags": [
+      "温柔治疗",
+      "当天急诊",
+      "多语言服务",
+      "先进技术"
+    ],
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "致电 (845) 555-0180"
+    },
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425017732-hero-home.jpg"
+  },
+  "topBar": {
+    "badge": {
+      "text": "欢迎新患者",
+      "visible": true
+    },
+    "email": "info@alex-dental.com",
+    "phone": "(845) 555-0180",
+    "address": "85 Crystal Run Road, Middletown, NY 10940",
+    "addressMapUrl": "https://maps.google.com/?q=85+Crystal+Run+Road+Middletown+NY+10940"
+  },
+  "gallery": {
+    "badge": "诊所环境",
+    "title": "参观我们的现代化诊所",
+    "images": [],
+    "variant": "grid-uniform",
+    "moreLink": {
+      "url": "/about",
+      "text": "查看更多"
+    },
+    "subtitle": "在舒适温馨的环境中使用先进设备"
+  },
+  "location": {
+    "title": "来访我们的诊所",
+    "ctaUrl": "https://maps.google.com/?q=85+Crystal+Run+Road+Middletown+NY+10940",
+    "address": "85 Crystal Run Road, Middletown, NY 10940",
+    "ctaText": "获取导航",
+    "directions": "位于Crystal Run Crossing附近，便利交通。提供免费停车。",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=YOUR_EMBED_ID"
+  },
+  "services": {
+    "badge": "我们的服务",
+    "title": "一站式综合牙科服务",
+    "variant": "grid-cards",
+    "moreLink": {
+      "url": "/services",
+      "text": "查看全部服务"
+    },
+    "services": [
+      {
+        "id": "general",
+        "icon": "shield-check",
+        "link": "/services#general",
+        "title": "普通牙科",
+        "shortDescription": "洁牙、检查、补牙、根管治疗和拔牙"
+      },
+      {
+        "id": "cosmetic",
+        "icon": "sparkles",
+        "link": "/services#cosmetic",
+        "title": "美容牙科",
+        "shortDescription": "牙齿美白、瓷贴面、牙齿粘接和微笑改造"
+      },
+      {
+        "id": "restorative",
+        "icon": "refresh-cw",
+        "link": "/services#restorative",
+        "title": "修复牙科",
+        "shortDescription": "种植牙、牙冠、牙桥和假牙"
+      },
+      {
+        "id": "orthodontics",
+        "icon": "align-center",
+        "link": "/services#orthodontics",
+        "title": "正畸治疗",
+        "shortDescription": "透明矫正器，无需传统牙套即可矫正牙齿"
+      },
+      {
+        "id": "pediatric",
+        "icon": "baby",
+        "link": "/services#pediatric",
+        "title": "儿童牙科",
+        "shortDescription": "为各年龄段儿童提供温柔、有趣的牙科治疗"
+      },
+      {
+        "id": "comfort",
+        "icon": "moon",
+        "link": "/services#comfort",
+        "title": "镇静与舒适",
+        "shortDescription": "轻松无忧的治疗方案"
+      }
+    ],
+    "subtitle": "从日常洁牙到高级种植牙和Invisalign隐适美"
+  },
+  "howItWorks": {
+    "steps": [
+      {
+        "icon": "phone",
+        "title": "预约就诊",
+        "number": 1,
+        "description": "在线预约或致电我们。我们将在数小时内确认。"
+      },
+      {
+        "icon": "clipboard",
+        "title": "会见您的医生",
+        "number": 2,
+        "description": "全面检查、数字X光和个性化治疗方案。"
+      },
+      {
+        "icon": "smile",
+        "title": "收获最美笑容",
+        "number": 3,
+        "description": "我们以温柔专业的技术完成您的治疗。"
+      }
+    ],
+    "title": "首次就诊 — 简单轻松",
+    "variant": "horizontal",
+    "subtitle": "从开始到结束，让您的牙科体验毫无压力"
+  },
+  "caseStudies": {
+    "badge": "真实效果",
+    "title": "治疗前后对比",
+    "moreLink": {
+      "url": "/cases",
+      "text": "查看全部案例"
+    },
+    "subtitle": "看看正确的牙科治疗能带来什么样的改变"
+  },
+  "whyChooseUs": {
+    "badge": "选择Alex牙科",
+    "title": "患者为什么选择我们",
+    "features": [
+      {
+        "icon": "award",
+        "title": "卓越医术",
+        "description": "经过认证的牙科医生，拥有超过20年的综合经验。"
+      },
+      {
+        "icon": "heart",
+        "title": "患者舒适",
+        "description": "温柔的技术、镇静选择，以及真正倾听您的团队。"
+      },
+      {
+        "icon": "globe",
+        "title": "多语言服务",
+        "description": "我们用中文、英语、西班牙语和韩语为患者服务。"
+      },
+      {
+        "icon": "cpu",
+        "title": "先进技术",
+        "description": "3D扫描、当天牙冠、数字X光 — 减少不适的先进技术。"
+      },
+      {
+        "icon": "dollar-sign",
+        "title": "透明价格",
+        "description": "费用清晰、提供分期付款、接受保险 — 没有隐藏费用。"
+      }
+    ],
+    "subtitle": "不同之处在于我们的服务理念"
+  },
+  "testimonials": {
+    "badge": "患者故事",
+    "title": "患者怎么说",
+    "variant": "carousel",
+    "moreLink": {
+      "url": "/reviews",
+      "text": "阅读全部评价"
+    },
+    "subtitle": "来自信任我们微笑服务的真实患者的真实评价",
+    "testimonials": []
+  },
+  "emergencyBand": {
+    "title": "牙科急诊？",
+    "ctaUrl": "tel:+18455550180",
+    "ctaText": "立即致电",
+    "description": "立即致电我们 — 当天可预约紧急病例"
+  },
+  "fearDisruptor": {
+    "badge": "我们理解您",
+    "cards": [
+      {
+        "icon": "heart",
+        "title": "温柔技术",
+        "description": "我们的牙科医生专门接受过温柔、微创治疗方法的培训。"
+      },
+      {
+        "icon": "shield",
+        "title": "提供镇静",
+        "description": "笑气、口服镇静和静脉镇静选择，满足各种舒适需求。"
+      },
+      {
+        "icon": "message-circle",
+        "title": "全程解释",
+        "description": "没有意外。开始治疗前，我们会详细解释每一个步骤。"
+      }
+    ],
+    "title": "害怕看牙医？您并不孤单。",
+    "ctaUrl": "/services/sedation-dentistry",
+    "ctaText": "了解舒适治疗方案",
+    "subtitle": "我们已经帮助数千名紧张的患者舒适地获得了他们需要的治疗。"
+  },
+  "insuranceStrip": {
+    "title": "保险与付款轻松搞定",
+    "ctaUrl": "/insurance",
+    "ctaText": "查询您的保险",
+    "subtitle": "我们接受大多数主要牙科保险计划",
+    "membershipNote": "没有保险？了解我们的Alex健康计划 — 每月仅$35起的综合牙科服务。"
+  },
+  "technologyStrip": {
+    "items": [
+      {
+        "icon": "scan",
+        "name": "3D CT扫描仪",
+        "benefit": "精准成像"
+      },
+      {
+        "icon": "zap",
+        "name": "数字X光",
+        "benefit": "减少90%辐射"
+      },
+      {
+        "icon": "cpu",
+        "name": "当天牙冠",
+        "benefit": "CEREC技术"
+      },
+      {
+        "icon": "target",
+        "name": "牙科激光",
+        "benefit": "更快愈合"
+      }
+    ],
+    "title": "先进技术带来更好的治疗",
+    "ctaUrl": "/technology",
+    "ctaText": "我们的技术"
+  }
+}

@@ -1,27 +1,71 @@
 {
-  "topbar": {
-    "phone": "",
-    "phoneHref": "",
-    "address": "",
-    "addressHref": "",
-    "hours": "",
-    "badge": ""
-  },
   "menu": {
-    "logo": {
-      "emoji": "",
-      "text": "",
-      "subtext": "",
-      "image": {
-        "src": "",
-        "alt": ""
+    "items": [
+      {
+        "url": "/",
+        "text": "首页"
+      },
+      {
+        "url": "/services",
+        "text": "服务项目"
+      },
+      {
+        "url": "/about",
+        "text": "关于我们"
+      },
+      {
+        "url": "/technology",
+        "text": "技术设备"
+      },
+      {
+        "url": "/new-patients",
+        "text": "新患者"
+      },
+      {
+        "url": "/case-studies",
+        "text": "案例展示"
+      },
+      {
+        "url": "/insurance",
+        "text": "保险付款"
+      },
+      {
+        "url": "/gallery",
+        "text": "诊所相册"
+      },
+      {
+        "url": "/blog",
+        "text": "博客"
+      },
+      {
+        "url": "/contact",
+        "text": "联系我们"
       }
-    },
-    "items": []
+    ],
+    "variant": "default"
   },
-  "languages": [],
-  "cta": {
-    "text": "",
-    "link": ""
-  }
+  "logoText": "Alex牙科",
+  "logoType": "both",
+  "showPhone": true,
+  "ctaPrimary": {
+    "url": "/book",
+    "text": "预约挂号",
+    "style": "filled"
+  },
+  "ctaSecondary": {
+    "url": "tel:+18455550180",
+    "text": "立即致电",
+    "style": "outline"
+  },
+  "logoImageUrl": "/images/alex-dental-logo.svg",
+  "stickyHeader": true,
+  "announcementBar": {
+    "text": "欢迎新患者！提及此横幅可享免费首次就诊。",
+    "enabled": true,
+    "linkUrl": "/book",
+    "linkText": "立即预约",
+    "dismissible": true,
+    "backgroundColor": "primary"
+  },
+  "transparentOnHero": true
 }

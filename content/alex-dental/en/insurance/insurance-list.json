@@ -1,106 +1,106 @@
 {
-  "insurances": [
-    {
-      "id": "delta-dental",
-      "name": "Delta Dental",
-      "icon": "shield-check",
-      "acceptanceLevel": "full",
-      "coverage": "Most PPO plans accepted in-network",
-      "description": "One of the largest dental insurance providers in the US"
-    },
-    {
-      "id": "aetna",
-      "name": "Aetna",
-      "icon": "shield-check",
-      "acceptanceLevel": "full",
-      "coverage": "PPO and DMO plans accepted",
-      "description": "Nationwide dental coverage with comprehensive PPO network"
-    },
-    {
-      "id": "cigna",
-      "name": "Cigna",
-      "icon": "shield-check",
-      "acceptanceLevel": "full",
-      "coverage": "Cigna Dental PPO plans accepted in-network",
-      "description": "Global health services company offering extensive dental benefits"
-    },
-    {
-      "id": "metlife",
-      "name": "MetLife",
-      "icon": "shield-check",
-      "acceptanceLevel": "full",
-      "coverage": "PDP and PDP Plus plans accepted",
-      "description": "Leading dental benefits provider with one of the largest networks nationwide"
-    },
-    {
-      "id": "united-healthcare-dental",
-      "name": "United Healthcare Dental",
-      "icon": "shield-check",
-      "acceptanceLevel": "full",
-      "coverage": "PPO and dual-network plans accepted",
-      "description": "Part of UnitedHealth Group, offering flexible dental benefit options"
-    },
-    {
-      "id": "guardian",
-      "name": "Guardian",
-      "icon": "shield-check",
-      "acceptanceLevel": "full",
-      "coverage": "Guardian PPO dental plans accepted in-network",
-      "description": "Trusted provider of dental benefits with a broad national network"
-    },
-    {
-      "id": "humana",
-      "name": "Humana",
-      "icon": "shield-check",
-      "acceptanceLevel": "full",
-      "coverage": "Humana PPO dental plans accepted",
-      "description": "Major health and dental insurer with competitive preventive care coverage"
-    },
-    {
-      "id": "bluecross-blueshield",
-      "name": "BlueCross BlueShield",
-      "icon": "shield-check",
-      "acceptanceLevel": "full",
-      "coverage": "BCBS dental PPO plans accepted in-network",
-      "description": "Federation of independent insurers providing dental coverage across all 50 states"
-    }
-  ],
   "financing": [
     {
       "id": "carecredit",
-      "name": "CareCredit",
       "icon": "credit-card",
+      "name": "CareCredit",
+      "terms": "Up to 24 months",
       "description": "Healthcare credit card with promotional 0% interest periods",
-      "interestRate": "0% promotional periods available",
-      "terms": "Up to 24 months"
+      "interestRate": "0% promotional periods available"
     },
     {
       "id": "lendingclub",
-      "name": "LendingClub",
       "icon": "credit-card",
+      "name": "LendingClub",
+      "terms": "Up to 84 months",
       "description": "Patient financing with fixed monthly payments and flexible terms",
-      "interestRate": "Starting at 4.99% APR",
-      "terms": "Up to 84 months"
+      "interestRate": "Starting at 4.99% APR"
     },
     {
       "id": "sunbit",
-      "name": "Sunbit",
       "icon": "credit-card",
+      "name": "Sunbit",
+      "terms": "Up to 72 months",
       "description": "Easy approval buy-now-pay-later option with no hard credit check",
-      "interestRate": "0% to 35.99% APR",
-      "terms": "Up to 72 months"
+      "interestRate": "0% to 35.99% APR"
+    }
+  ],
+  "insurances": [
+    {
+      "id": "delta-dental",
+      "icon": "shield-check",
+      "name": "Delta Dental",
+      "coverage": "Most PPO plans accepted in-network",
+      "description": "One of the largest dental insurance providers in the US",
+      "acceptanceLevel": "full"
+    },
+    {
+      "id": "aetna",
+      "icon": "shield-check",
+      "name": "Aetna",
+      "coverage": "PPO and DMO plans accepted",
+      "description": "Nationwide dental coverage with comprehensive PPO network",
+      "acceptanceLevel": "full"
+    },
+    {
+      "id": "cigna",
+      "icon": "shield-check",
+      "name": "Cigna",
+      "coverage": "Cigna Dental PPO plans accepted in-network",
+      "description": "Global health services company offering extensive dental benefits",
+      "acceptanceLevel": "full"
+    },
+    {
+      "id": "metlife",
+      "icon": "shield-check",
+      "name": "MetLife",
+      "coverage": "PDP and PDP Plus plans accepted",
+      "description": "Leading dental benefits provider with one of the largest networks nationwide",
+      "acceptanceLevel": "full"
+    },
+    {
+      "id": "united-healthcare-dental",
+      "icon": "shield-check",
+      "name": "United Healthcare Dental",
+      "coverage": "PPO and dual-network plans accepted",
+      "description": "Part of UnitedHealth Group, offering flexible dental benefit options",
+      "acceptanceLevel": "full"
+    },
+    {
+      "id": "guardian",
+      "icon": "shield-check",
+      "name": "Guardian",
+      "coverage": "Guardian PPO dental plans accepted in-network",
+      "description": "Trusted provider of dental benefits with a broad national network",
+      "acceptanceLevel": "full"
+    },
+    {
+      "id": "humana",
+      "icon": "shield-check",
+      "name": "Humana",
+      "coverage": "Humana PPO dental plans accepted",
+      "description": "Major health and dental insurer with competitive preventive care coverage",
+      "acceptanceLevel": "full"
+    },
+    {
+      "id": "bluecross-blueshield",
+      "icon": "shield-check",
+      "name": "BlueCross BlueShield",
+      "coverage": "BCBS dental PPO plans accepted in-network",
+      "description": "Federation of independent insurers providing dental coverage across all 50 states",
+      "acceptanceLevel": "full"
     }
   ],
   "membershipPlan": {
     "name": "Alex Wellness Plan",
     "price": "$299/year",
-    "description": "For patients without dental insurance — covers all preventive care and provides discounts on treatments",
     "includes": [
       "2 professional cleanings per year",
       "2 comprehensive exams per year",
       "Full set of digital X-rays",
       "1 emergency exam per year",
       "15% off all other treatments"
-    ]
+    ],
+    "description": "For patients without dental insurance — covers all preventive care and provides discounts on treatments"
   }
 }

@@ -1,0 +1,32 @@
+{
+  "id": "implant-transformation-john",
+  "slug": "implant-transformation-john",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-implant-transformation-john-main.jpg",
+  "title": "种植牙全面恢复咬合功能",
+  "results": "John的新种植体支持冠修复彻底恢复了他的咬合功能。最终冠修复完成后的几周内，他表示在进食时已完全忘记哪一侧装了种植体。他的颞下颌关节酸痛消失了，多年来一直回避的食物也能重新享用。在一年复诊时，种植体显示出极佳的骨整合效果，周围牙龈组织健康稳定。",
+  "summary": "John在缺失三颗后牙超过五年后，通过单独种植牙全面恢复了咀嚼功能。历时六个月的治疗让他重新享受无痛、不受限制的饮食生活。",
+  "category": "Restorative",
+  "featured": true,
+  "solution": "经过全面评估（包括三维锥形束CT扫描）后，我们制定了分阶段种植方案。第一步是植入三枚独立的钛种植体，间距仿照天然牙根的排列。由于John在某一区域存在中度骨量不足，我们在植入其中一枚种植体的同时进行了局部植骨。经过四个月的愈合期，待种植体与颌骨完成骨整合后，我们进行了数字化印模，并制作了三枚独立的瓷冠，其形态和色泽均与天然牙完美匹配。",
+  "challenge": "John在数年内相继失去了右下颌三颗相邻磨牙，原因是多颗旧修复体失败加上龋坏。他一直勉强应对缺牙问题，但随着时间推移，他发现自己只用一侧口腔咀嚼，这导致了颞下颌关节酸痛、余留牙磨耗不均，以及无法进食他喜爱的牛排、生蔬菜和坚果等食物。缺牙区域还出现了一定程度的骨量丧失，这意味着种植手术需要精心规划。",
+  "condition": "多颗后牙缺失",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-implant-transformation-john-after.jpg",
+  "beforeImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-implant-transformation-john-before.jpg",
+  "patientProfile": {
+    "age": "55-60",
+    "name": "John",
+    "concern": "右下颌三颗磨牙缺失导致无法正常咀嚼"
+  },
+  "testimonialQuote": "我因为对手术感到紧张而拖延了太久。说实话，手术比我预想的轻松多了，现在我真不敢相信自己等了五年才下定决心。上周我咬苹果时根本没想到嘴里有种植体。",
+  "treatmentDetails": {
+    "visits": "共7次就诊",
+    "duration": "从种植体植入到最终冠修复历时6个月",
+    "procedures": [
+      "三维锥形束CT扫描",
+      "局部植骨",
+      "3枚独立钛种植体植入",
+      "数字化印模",
+      "3枚个性化瓷种植冠"
+    ]
+  }
+}

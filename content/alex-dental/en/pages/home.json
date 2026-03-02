@@ -64,7 +64,8 @@
     "secondaryCta": {
       "link": "tel:+18455550180",
       "text": "Call (845) 555-0180"
-    }
+    },
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425017732-hero-home.jpg"
   },
   "topBar": {
     "badge": {

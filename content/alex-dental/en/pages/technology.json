@@ -1,7 +1,9 @@
 {
   "hero": {
     "title": "Advanced Technology for Better Dental Care",
-    "subtitle": "We invest in the latest dental technology so your care is more precise, comfortable, and efficient"
+    "variant": "split-photo-right",
+    "subtitle": "We invest in the latest dental technology so your care is more precise, comfortable, and efficient",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425025148-hero-technology.jpg"
   },
   "whyItMatters": {
     "title": "Why Technology Matters for Your Dental Care",

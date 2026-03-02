@@ -1,0 +1,32 @@
+{
+  "id": "emergency-cracked-tooth-david",
+  "slug": "emergency-cracked-tooth-david",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-emergency-cracked-tooth-david-main.jpg",
+  "title": "一周之内：从牙齿折裂到永久冠修复",
+  "results": "David从周六的紧急牙科就诊，到次周四完成患牙的永久修复，全程仅用七天。CEREC瓷冠的颜色和形态与天然牙完美匹配，且由单块瓷块研磨而成，极为坚固耐用。David庆幸整个过程——从急诊到永久冠——只需七天两次就诊，而不是他预想中漫长的等待。三个月复诊时，冠修复功能完好，无任何敏感症状。",
+  "summary": "David在周六下午磨牙折裂，原以为修复过程将旷日持久。然而，当天急诊就诊稳定了患牙，次周CEREC当日冠修复为他提供了永久解决方案——全程仅历时七天。",
+  "category": "Emergency",
+  "featured": false,
+  "solution": "David在周六拨打了我们的急诊热线，两小时内即获得就诊。急诊检查包括数字X光片，用于评估裂纹范围并确认骨折是否波及牙神经。所幸牙神经完好无损。我们磨平了尖锐的断缘，放置了坚固的临时充填体以封闭并保护暴露的牙体结构，并开具了短期消炎止痛药物。次周四，David返诊进行CEREC当日冠修复。利用诊室内研磨系统，我们对患牙进行数字扫描，在屏幕上完成冠设计，并由单块牙色瓷块研磨成型——全程在一次就诊内完成。永久冠在David离诊前即完成粘接。",
+  "challenge": "David在周六下午咬到一块硬糖时，立刻感到左下磨牙发出一声清脆的裂响，随即剧烈疼痛。牙齿外壁一大块碎片折裂脱落，暴露出敏感的牙本质层。他疼痛难忍，断裂的尖锐边缘不断划伤口腔内侧，合口困难，并担心患牙可能需要拔除。作为新患者，他不确定周末能否得到就诊。",
+  "condition": "磨牙折裂，需要当日紧急处理",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-emergency-cracked-tooth-david-after.jpg",
+  "beforeImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-emergency-cracked-tooth-david-before.jpg",
+  "patientProfile": {
+    "age": "40-45",
+    "name": "David",
+    "concern": "周末意外磨牙折裂引起剧烈疼痛"
+  },
+  "testimonialQuote": "我周六磨牙折了，以为要拖好几周才能解决。结果当天下午就有人接诊，帮我止了痛，几天后我就有了一颗永久冠。整件事一周内搞定，我连班都没请假。",
+  "treatmentDetails": {
+    "visits": "共2次就诊——周六急诊和周四冠修复",
+    "duration": "从急诊就诊到永久冠修复历时7天",
+    "procedures": [
+      "急诊检查及数字X光片",
+      "临时稳定处理与充填",
+      "CEREC数字扫描与冠设计",
+      "当日研磨瓷冠",
+      "永久冠粘接"
+    ]
+  }
+}

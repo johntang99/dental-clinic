@@ -1,0 +1,68 @@
+{
+  "technologies": [
+    {
+      "id": "digital-xrays",
+      "icon": "zap",
+      "name": "数字X光",
+      "benefit": "辐射量比传统胶片减少90%",
+      "featured": true,
+      "description": "先进的数字影像技术以极低辐射量提供更清晰、更详细的图像，图像即时显示在屏幕上。"
+    },
+    {
+      "id": "3d-cone-beam-ct",
+      "icon": "box",
+      "name": "3D锥形束CT扫描仪",
+      "benefit": "完整呈现牙齿、颌骨及神经的三维视图",
+      "featured": true,
+      "description": "单次扫描即可捕捉您牙齿结构的完整三维图像，为种植牙、拔牙及正畸治疗提供精准的诊断和方案规划。"
+    },
+    {
+      "id": "cerec-same-day-crowns",
+      "icon": "clock",
+      "name": "CEREC当日牙冠",
+      "benefit": "单次就诊即可完成定制瓷冠",
+      "featured": true,
+      "description": "CAD/CAM技术直接在诊所内设计并切削出完美贴合的全瓷牙冠，无需临时牙冠，也无需多次预约复诊。"
+    },
+    {
+      "id": "intraoral-camera",
+      "icon": "camera",
+      "name": "口腔内窥镜",
+      "benefit": "实时查看与医生相同的口腔画面",
+      "featured": true,
+      "description": "笔形小型摄像头可在口腔内捕捉高分辨率图像，让您能与医生一同查看并了解自己的口腔健康状况。"
+    },
+    {
+      "id": "dental-laser-diode",
+      "icon": "sparkles",
+      "name": "牙科激光（二极管）",
+      "benefit": "微创软组织治疗",
+      "featured": false,
+      "description": "软组织激光可进行精准、舒适的牙龈治疗，与传统方法相比出血更少、肿胀更轻、愈合更快。"
+    },
+    {
+      "id": "digital-impressions-itero",
+      "icon": "scan",
+      "name": "数字印模（iTero）",
+      "benefit": "告别繁琐的藻酸盐印模",
+      "featured": false,
+      "description": "iTero扫描仪可在数分钟内采集高精度的3D数字印模，提升牙冠、矫治器及其他修复体制作的舒适度与精准度。"
+    },
+    {
+      "id": "led-curing-lights",
+      "icon": "lightbulb",
+      "name": "LED固化灯",
+      "benefit": "更快固化，树脂充填更耐用",
+      "featured": false,
+      "description": "高强度LED灯可在数秒内固化牙色充填材料，形成更强的粘接效果，制作出更耐用的修复体，同时缩短椅旁操作时间。"
+    },
+    {
+      "id": "panoramic-xray",
+      "icon": "monitor",
+      "name": "全景X光",
+      "benefit": "单张图像呈现全口视图",
+      "featured": false,
+      "description": "一次弧形扫描即可捕捉您整个口腔、颞颌关节及鼻窦的完整视图，是制定综合治疗方案和发现隐匿病变的必要手段。"
+    }
+  ]
+}

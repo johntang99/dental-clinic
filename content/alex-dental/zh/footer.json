@@ -1,80 +1,91 @@
 {
   "brand": {
-    "logoText": "BIZ",
-    "name": "Business Name",
-    "description": "以高品质、专业的服务支持客户需求。"
-  },
-  "quickLinks": [
-    {
-      "text": "关于我们",
-      "url": "/zh/about"
-    },
-    {
-      "text": "服务项目",
-      "url": "/zh/services"
-    },
-    {
-      "text": "治疗病症",
-      "url": "/zh/conditions"
-    },
-    {
-      "text": "案例研究",
-      "url": "/zh/case-studies"
-    },
-    {
-      "text": "新用户指南",
-      "url": "/zh/new-patients"
-    },
-    {
-      "text": "博客",
-      "url": "/zh/blog"
-    },
-    {
-      "text": "联系我们",
-      "url": "/zh/contact"
-    }
-  ],
-  "services": [
-    {
-      "text": "特色服务",
-      "url": "/zh/services"
-    },
-    {
-      "text": "方案与套餐",
-      "url": "/zh/services"
-    },
-    {
-      "text": "服务流程",
-      "url": "/zh/services"
-    },
-    {
-      "text": "支持与帮助",
-      "url": "/zh/contact"
-    }
-  ],
-  "contact": {
-    "addressLines": [
-      "地址第一行",
-      "城市, 省/州 邮编"
-    ],
-    "phone": "(000) 000-0000",
-    "phoneLink": "tel:+10000000000",
-    "email": "info@alex-dental.com",
-    "emailLink": "mailto:info@alex-dental.com"
+    "name": "Alex牙科诊所",
+    "logoText": "Alex牙科",
+    "description": "为全家提供中文、英语、西班牙语和韩语的专业牙科服务。服务Middletown, NY及周边社区。"
   },
   "hours": [
-    "Mon-Fri: 9:00 AM - 6:00 PM",
-    "Sat: 10:00 AM - 2:00 PM"
+    "周一、周二、周四：上午8点 - 下午6点",
+    "周三：上午9点 - 晚上7点",
+    "周五：上午8点 - 下午5点",
+    "周六：上午9点 - 下午2点",
+    "周日：休息"
   ],
-  "legalLinks": [
+  "contact": {
+    "email": "info@alex-dental.com",
+    "phone": "(845) 555-0180",
+    "emailLink": "mailto:info@alex-dental.com",
+    "phoneLink": "tel:+18455550180",
+    "addressLines": [
+      "85 Crystal Run Road",
+      "Middletown, NY 10940"
+    ]
+  },
+  "services": [
     {
-      "text": "隐私政策",
-      "url": "/zh/privacy"
+      "url": "/services/dental-implants",
+      "text": "种植牙"
     },
     {
-      "text": "服务条款",
-      "url": "/zh/terms"
+      "url": "/services/invisalign",
+      "text": "Invisalign隐适美"
+    },
+    {
+      "url": "/services/teeth-whitening",
+      "text": "牙齿美白"
+    },
+    {
+      "url": "/services/crowns-and-bridges",
+      "text": "牙冠与牙桥"
+    },
+    {
+      "url": "/emergency",
+      "text": "牙科急诊"
+    },
+    {
+      "url": "/services",
+      "text": "全部服务"
     }
   ],
-  "copyright": "© {year} Business Name. 版权所有。"
+  "copyright": "© 2026 Alex牙科诊所。版权所有。",
+  "legalLinks": [
+    {
+      "url": "/privacy",
+      "text": "隐私政策"
+    },
+    {
+      "url": "/accessibility",
+      "text": "无障碍声明"
+    },
+    {
+      "url": "/terms",
+      "text": "服务条款"
+    }
+  ],
+  "quickLinks": [
+    {
+      "url": "/about",
+      "text": "关于我们"
+    },
+    {
+      "url": "/new-patients",
+      "text": "新患者"
+    },
+    {
+      "url": "/case-studies",
+      "text": "案例展示"
+    },
+    {
+      "url": "/insurance",
+      "text": "保险与付款"
+    },
+    {
+      "url": "/blog",
+      "text": "博客"
+    },
+    {
+      "url": "/contact",
+      "text": "联系我们"
+    }
+  ]
 }

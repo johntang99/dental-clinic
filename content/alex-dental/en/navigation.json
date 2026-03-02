@@ -3,45 +3,133 @@
     {
       "label": "Services",
       "children": [
-        { "label": "General Dentistry", "url": "/services#general", "description": "Cleanings, fillings, root canals, extractions" },
-        { "label": "Cleanings & Exams", "url": "/services/cleanings-and-exams" },
-        { "label": "Root Canal Treatment", "url": "/services/root-canal" },
-        { "label": "Extractions", "url": "/services/extractions" },
-        { "label": "Gum Disease Treatment", "url": "/services/gum-disease-treatment" },
-        { "label": "Cosmetic Dentistry", "url": "/services#cosmetic", "description": "Whitening, veneers, smile makeovers" },
-        { "label": "Teeth Whitening", "url": "/services/teeth-whitening" },
-        { "label": "Porcelain Veneers", "url": "/services/veneers" },
-        { "label": "Smile Makeover", "url": "/services/smile-makeover" },
-        { "label": "Restorative", "url": "/services#restorative", "description": "Implants, crowns, bridges, dentures" },
-        { "label": "Dental Implants", "url": "/services/dental-implants" },
-        { "label": "Crowns & Bridges", "url": "/services/crowns-and-bridges" },
-        { "label": "Dentures & Partials", "url": "/services/dentures" },
-        { "label": "Orthodontics & More", "url": "/services#ortho", "description": "Invisalign, pediatric, sedation" },
-        { "label": "Invisalign", "url": "/services/invisalign" },
-        { "label": "Children's Dentistry", "url": "/services/pediatric-dentistry" },
-        { "label": "Sedation Dentistry", "url": "/services/sedation-dentistry" }
+        {
+          "url": "/services#general",
+          "label": "General Dentistry",
+          "description": "Cleanings, fillings, root canals, extractions"
+        },
+        {
+          "url": "/services/cleanings-and-exams",
+          "label": "Cleanings & Exams"
+        },
+        {
+          "url": "/services/root-canal",
+          "label": "Root Canal Treatment"
+        },
+        {
+          "url": "/services/extractions",
+          "label": "Extractions"
+        },
+        {
+          "url": "/services/gum-disease-treatment",
+          "label": "Gum Disease Treatment"
+        },
+        {
+          "url": "/services#cosmetic",
+          "label": "Cosmetic Dentistry",
+          "description": "Whitening, veneers, smile makeovers"
+        },
+        {
+          "url": "/services/teeth-whitening",
+          "label": "Teeth Whitening"
+        },
+        {
+          "url": "/services/veneers",
+          "label": "Porcelain Veneers"
+        },
+        {
+          "url": "/services/smile-makeover",
+          "label": "Smile Makeover"
+        },
+        {
+          "url": "/services#restorative",
+          "label": "Restorative",
+          "description": "Implants, crowns, bridges, dentures"
+        },
+        {
+          "url": "/services/dental-implants",
+          "label": "Dental Implants"
+        },
+        {
+          "url": "/services/crowns-and-bridges",
+          "label": "Crowns & Bridges"
+        },
+        {
+          "url": "/services/dentures",
+          "label": "Dentures & Partials"
+        },
+        {
+          "url": "/services#ortho",
+          "label": "Orthodontics & More",
+          "description": "Invisalign, pediatric, sedation"
+        },
+        {
+          "url": "/services/invisalign",
+          "label": "Invisalign"
+        },
+        {
+          "url": "/services/pediatric-dentistry",
+          "label": "Children's Dentistry"
+        },
+        {
+          "url": "/services/sedation-dentistry",
+          "label": "Sedation Dentistry"
+        }
       ]
     },
-    { "label": "About", "url": "/about" },
-    { "label": "Technology", "url": "/technology" },
+    {
+      "url": "/about",
+      "label": "About"
+    },
+    {
+      "url": "/technology",
+      "label": "Technology"
+    },
     {
       "label": "Patients",
       "children": [
-        { "label": "New Patient Info", "url": "/new-patients", "description": "What to expect at your first visit" },
-        { "label": "Case Studies", "url": "/case-studies", "description": "Real before & after transformations" },
-        { "label": "Insurance & Financing", "url": "/insurance", "description": "Coverage, financing, membership plan" }
+        {
+          "url": "/new-patients",
+          "label": "New Patient Info",
+          "description": "What to expect at your first visit"
+        },
+        {
+          "url": "/case-studies",
+          "label": "Case Studies",
+          "description": "Real before & after transformations"
+        },
+        {
+          "url": "/insurance",
+          "label": "Insurance & Financing",
+          "description": "Coverage, financing, membership plan"
+        }
       ]
     },
     {
       "label": "Resources",
       "children": [
-        { "label": "Blog", "url": "/blog", "description": "Dental health education & tips" },
-        { "label": "Gallery", "url": "/gallery", "description": "Our office and team photos" }
+        {
+          "url": "/blog",
+          "label": "Blog",
+          "description": "Dental health education & tips"
+        },
+        {
+          "url": "/gallery",
+          "label": "Gallery",
+          "description": "Our office and team photos"
+        }
       ]
     },
-    { "label": "Contact", "url": "/contact" },
-    { "label": "Dental Emergency", "url": "/emergency", "highlight": true }
+    {
+      "url": "/contact",
+      "label": "Contact"
+    },
+    {
+      "url": "/emergency",
+      "label": "Dental Emergency",
+      "highlight": true
+    }
   ],
-  "mobileCtaText": "Book Appointment",
-  "mobileCtaUrl": "/book"
+  "mobileCtaUrl": "/book",
+  "mobileCtaText": "Book Appointment"
 }

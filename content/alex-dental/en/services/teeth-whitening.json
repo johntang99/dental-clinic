@@ -1,47 +1,47 @@
 {
-  "slug": "teeth-whitening",
-  "title": "Professional Teeth Whitening",
-  "subtitle": "Brighter smiles start here",
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule an appointment to learn more about this service.",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Appointment"
+    },
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "Call (845) 555-0180"
+    }
+  },
+  "faq": [
+    {
+      "answer": "With good oral hygiene and occasional touch-ups, in-office whitening results typically last one to three years. Avoiding highly pigmented foods and beverages such as coffee, red wine, and berries can help extend the longevity of your results.",
+      "question": "How long do teeth whitening results last?"
+    },
+    {
+      "answer": "Some patients experience mild, temporary sensitivity during or after whitening. We take precautions to minimize discomfort, including using desensitizing agents and adjusting the treatment intensity as needed. Any sensitivity typically resolves within a day or two.",
+      "question": "Will teeth whitening cause sensitivity?"
+    },
+    {
+      "answer": "Professional whitening uses higher-concentration formulas that deliver faster, more even, and more dramatic results than store-bought strips or trays. Because the treatment is supervised by a dentist, it is also safer for your enamel and gum tissue.",
+      "question": "Is professional whitening better than over-the-counter products?"
+    }
+  ],
   "icon": "Sparkles",
-  "image": "/images/services/teeth-whitening.jpg",
-  "shortDescription": "Achieve a noticeably whiter smile with our professional in-office Zoom whitening or customized take-home kits.",
-  "fullDescription": "A bright, white smile can make a lasting impression and boost your confidence in both personal and professional settings. At our Middletown, NY practice, we offer two proven approaches to teeth whitening so you can choose the option that fits your lifestyle best.\n\nOur in-office Zoom whitening treatment delivers dramatic results in a single visit. Using a professional-grade hydrogen peroxide gel activated by a specialized LED light, we can lighten your teeth by several shades in about 75 minutes. For patients who prefer a more gradual approach, our take-home whitening kits include custom-fitted trays and professional-strength whitening gel that you use on your own schedule over the course of two to three weeks.\n\nBefore beginning any whitening treatment, we perform a thorough examination to ensure your teeth and gums are healthy and to discuss realistic expectations based on your starting shade and goals. We also address any existing sensitivity concerns so you can whiten comfortably and with confidence.",
+  "slug": "teeth-whitening",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423026439-teeth-whitening.jpg",
+  "price": "Starting from $350",
+  "title": "Professional Teeth Whitening",
   "benefits": [
     "Results visible after a single in-office session",
     "Custom take-home trays for convenient at-home whitening",
     "Safe, dentist-supervised treatment with professional-grade materials",
     "Long-lasting results with proper care and occasional touch-ups"
   ],
-  "whatToExpect": "Your teeth whitening appointment begins with a brief consultation and shade assessment so we can track your progress. For in-office Zoom whitening, we protect your gums with a specialized barrier, apply the whitening gel to your teeth, and activate it with our Zoom LED light in several short cycles over approximately 75 minutes. You can relax, listen to music, or watch TV during the process. Afterward, we compare your new shade to your starting point and provide care instructions to help maintain your results. If you choose the take-home option, we take impressions of your teeth to fabricate custom trays and provide detailed instructions for use at home.",
-  "price": "Starting from $350",
-  "durationMinutes": 75,
-  "featured": true,
-  "faq": [
-    {
-      "question": "How long do teeth whitening results last?",
-      "answer": "With good oral hygiene and occasional touch-ups, in-office whitening results typically last one to three years. Avoiding highly pigmented foods and beverages such as coffee, red wine, and berries can help extend the longevity of your results."
-    },
-    {
-      "question": "Will teeth whitening cause sensitivity?",
-      "answer": "Some patients experience mild, temporary sensitivity during or after whitening. We take precautions to minimize discomfort, including using desensitizing agents and adjusting the treatment intensity as needed. Any sensitivity typically resolves within a day or two."
-    },
-    {
-      "question": "Is professional whitening better than over-the-counter products?",
-      "answer": "Professional whitening uses higher-concentration formulas that deliver faster, more even, and more dramatic results than store-bought strips or trays. Because the treatment is supervised by a dentist, it is also safer for your enamel and gum tissue."
-    }
-  ],
   "category": "cosmetic",
-  "heroVariant": "centered",
-  "cta": {
-    "title": "Ready to Get Started?",
-    "subtitle": "Schedule an appointment to learn more about this service.",
-    "primaryCta": {
-      "text": "Book Appointment",
-      "link": "/contact"
-    },
-    "secondaryCta": {
-      "text": "Call (845) 555-0180",
-      "link": "tel:+18455550180"
-    }
-  }
+  "featured": true,
+  "subtitle": "Brighter smiles start here",
+  "heroVariant": "split-photo-right",
+  "whatToExpect": "Your teeth whitening appointment begins with a brief consultation and shade assessment so we can track your progress. For in-office Zoom whitening, we protect your gums with a specialized barrier, apply the whitening gel to your teeth, and activate it with our Zoom LED light in several short cycles over approximately 75 minutes. You can relax, listen to music, or watch TV during the process. Afterward, we compare your new shade to your starting point and provide care instructions to help maintain your results. If you choose the take-home option, we take impressions of your teeth to fabricate custom trays and provide detailed instructions for use at home.",
+  "durationMinutes": 75,
+  "fullDescription": "A bright, white smile can make a lasting impression and boost your confidence in both personal and professional settings. At our Middletown, NY practice, we offer two proven approaches to teeth whitening so you can choose the option that fits your lifestyle best.\n\nOur in-office Zoom whitening treatment delivers dramatic results in a single visit. Using a professional-grade hydrogen peroxide gel activated by a specialized LED light, we can lighten your teeth by several shades in about 75 minutes. For patients who prefer a more gradual approach, our take-home whitening kits include custom-fitted trays and professional-strength whitening gel that you use on your own schedule over the course of two to three weeks.\n\nBefore beginning any whitening treatment, we perform a thorough examination to ensure your teeth and gums are healthy and to discuss realistic expectations based on your starting shade and goals. We also address any existing sensitivity concerns so you can whiten comfortably and with confidence.",
+  "shortDescription": "Achieve a noticeably whiter smile with our professional in-office Zoom whitening or customized take-home kits."
 }

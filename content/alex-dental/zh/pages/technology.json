@@ -1,0 +1,12 @@
+{
+  "hero": {
+    "title": "先进技术，提供更优质的牙科护理",
+    "variant": "split-photo-right",
+    "subtitle": "我们持续投资最新的牙科技术，让您的治疗更精准、更舒适、更高效",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425025148-hero-technology.jpg"
+  },
+  "whyItMatters": {
+    "title": "技术为何对您的牙科护理至关重要",
+    "description": "现代牙科技术不仅令人印象深刻，更能直接提升您的就诊体验。数字X光可减少90%的辐射量。3D CT扫描可实现更精准的种植体植入。当日牙冠意味着一次就诊即可完成，无需多次复诊。我们投资的每一项技术，都是因为它能让您的治疗效果更出色。"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "cta": {
+    "title": "亲身感受",
+    "variant": "centered",
+    "primaryCta": { "link": "/contact", "text": "预约参观" },
+    "description": "预约参观，亲身体验我们的诊所环境。欢迎新患者随时到来。",
+    "secondaryCta": { "link": "tel:+18455550180", "text": "致电 (845) 555-0180" }
+  },
+  "hero": {
+    "title": "诊所环境与治疗成果",
+    "variant": "photo-background",
+    "subtitle": "虚拟参观我们位于米德尔顿的现代化牙科诊所，欣赏真实患者的蜕变成果",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425032846-hero-gallery.jpg"
+  },
+  "images": [
+    { "id": "office-1", "alt": "明亮温馨的前台接待区", "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-office-1.jpg", "title": "前台接待区", "category": "office" },
+    { "id": "office-2", "alt": "采光充足的舒适候诊室", "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-office-2.jpg", "title": "候诊室", "category": "office" },
+    { "id": "office-3", "alt": "配备椅旁显示屏的现代化治疗室", "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-office-3.jpg", "title": "治疗室", "category": "office" },
+    { "id": "office-4", "alt": "最先进的消毒中心", "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-office-4.jpg", "title": "消毒中心", "category": "office" },
+    { "id": "team-1", "alt": "Alex Chen医生与牙科团队合影", "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-team-1.jpg", "title": "Chen医生与团队", "category": "team" },
+    { "id": "team-2", "alt": "Sarah Kim医生与小患者合影", "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-team-2.jpg", "title": "Kim医生与患者", "category": "team" },
+    { "id": "team-3", "alt": "热情友善的前台工作人员", "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-team-3.jpg", "title": "前台团队", "category": "team" },
+    { "id": "tech-1", "alt": "CEREC当日牙冠制作设备", "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-tech-1.jpg", "title": "CEREC技术", "category": "technology" },
+    { "id": "tech-2", "alt": "3D锥形束CT扫描仪", "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-tech-2.jpg", "title": "3D CT扫描仪", "category": "technology" },
+    { "id": "tech-3", "alt": "数字X光检查站", "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-tech-3.jpg", "title": "数字X光", "category": "technology" },
+    { "id": "results-1", "alt": "瓷贴面笑容蜕变", "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-results-1.jpg", "title": "贴面蜕变", "category": "results" },
+    { "id": "results-2", "alt": "牙种植体治疗前后对比", "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-results-2.jpg", "title": "种植修复", "category": "results" },
+    { "id": "results-3", "alt": "专业美白效果展示", "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/gallery/1772428620035-results-3.jpg", "title": "美白效果", "category": "results" }
+  ],
+  "categories": [
+    { "id": "all", "icon": "camera", "name": "所有照片" },
+    { "id": "office", "icon": "building-2", "name": "诊所环境" },
+    { "id": "team", "icon": "users", "name": "我们的团队" },
+    { "id": "technology", "icon": "cpu", "name": "技术设备" },
+    { "id": "results", "icon": "sparkles", "name": "患者成果" }
+  ],
+  "introduction": {
+    "text": "我们在诊所的每一个细节上都以您的舒适为优先考量——从温馨的接待区到最先进的治疗室。欢迎浏览我们的空间、团队以及真实患者成果的照片。"
+  }
+}

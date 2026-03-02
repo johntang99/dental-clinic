@@ -1,37 +1,35 @@
 {
-  "slug": "dr-alex-chen",
-  "name": "Dr. Alex Chen",
-  "title": "DDS",
-  "role": "Lead Dentist",
-  "image": "/images/doctors/dr-alex-chen.jpg",
   "bio": "Dr. Alex Chen is the founder and lead dentist at Alex Dental, bringing over 15 years of clinical experience and a genuine passion for transforming smiles throughout the Middletown, NY community. Born in Taiwan, Dr. Chen moved to New York as a teenager, an experience that shaped his deep appreciation for cultural diversity and his commitment to making every patient feel welcome and understood.\n\nAfter earning his Doctor of Dental Surgery degree from Columbia University College of Dental Medicine in 2012, Dr. Chen pursued advanced training in implant dentistry and full-arch rehabilitation, becoming one of the most skilled implant providers in the Hudson Valley region. He is recognized as an Invisalign Platinum Provider and holds a Fellowship with the International Congress of Oral Implantologists, reflecting his dedication to staying at the forefront of modern dental techniques.\n\nWhen he's not in the office, Dr. Chen is an active member of the Middletown community. Whether volunteering at local health fairs, mentoring aspiring dental students, or exploring the trails at Gonzaga Park with his family, he believes that building genuine relationships is the foundation of great dentistry. His philosophy is simple: listen carefully, explain thoroughly, and deliver results that patients can feel proud of for years to come.",
+  "name": "Dr. Alex Chen",
+  "role": "Lead Dentist",
+  "slug": "dr-alex-chen",
+  "image": "/images/doctors/dr-alex-chen.jpg",
+  "order": 1,
   "quote": "Every smile tells a story. My job is to make sure yours is one you're proud to share.",
-  "languages": ["English", "Mandarin Chinese"],
-  "specializations": [
-    "Dental Implants",
-    "Cosmetic Dentistry",
-    "Full-Arch Rehabilitation",
-    "Invisalign",
-    "General Dentistry"
+  "title": "DDS",
+  "featured": true,
+  "languages": [
+    "English",
+    "Mandarin Chinese"
   ],
   "credentials": [
     {
-      "credential": "Doctor of Dental Surgery (DDS)",
-      "institution": "Columbia University College of Dental Medicine",
       "year": "2012",
-      "location": "New York, NY"
+      "location": "New York, NY",
+      "credential": "Doctor of Dental Surgery (DDS)",
+      "institution": "Columbia University College of Dental Medicine"
     },
     {
-      "credential": "Bachelor of Science in Biology",
-      "institution": "New York University",
       "year": "2008",
-      "location": "New York, NY"
+      "location": "New York, NY",
+      "credential": "Bachelor of Science in Biology",
+      "institution": "New York University"
     },
     {
-      "credential": "Advanced Training in Implant Dentistry",
-      "institution": "Columbia University College of Dental Medicine",
       "year": "2013",
-      "location": "New York, NY"
+      "location": "New York, NY",
+      "credential": "Advanced Training in Implant Dentistry",
+      "institution": "Columbia University College of Dental Medicine"
     }
   ],
   "certifications": [
@@ -41,6 +39,11 @@
     "Academy of General Dentistry (AGD)",
     "New York State Dental Association"
   ],
-  "featured": true,
-  "order": 1
+  "specializations": [
+    "Dental Implants",
+    "Cosmetic Dentistry",
+    "Full-Arch Rehabilitation",
+    "Invisalign",
+    "General Dentistry"
+  ]
 }

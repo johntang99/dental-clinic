@@ -1,0 +1,106 @@
+{
+  "financing": [
+    {
+      "id": "carecredit",
+      "icon": "credit-card",
+      "name": "CareCredit",
+      "terms": "最长24个月",
+      "description": "医疗健康信用卡，提供促销零利率分期付款期",
+      "interestRate": "可享受0%促销利率期"
+    },
+    {
+      "id": "lendingclub",
+      "icon": "credit-card",
+      "name": "LendingClub",
+      "terms": "最长84个月",
+      "description": "患者融资方案，提供固定月供和灵活还款期限",
+      "interestRate": "年利率（APR）最低4.99%起"
+    },
+    {
+      "id": "sunbit",
+      "icon": "credit-card",
+      "name": "Sunbit",
+      "terms": "最长72个月",
+      "description": "免硬查征信、审核便捷的先购后付选项",
+      "interestRate": "年利率（APR）0%至35.99%"
+    }
+  ],
+  "insurances": [
+    {
+      "id": "delta-dental",
+      "icon": "shield-check",
+      "name": "Delta Dental",
+      "coverage": "接受大多数PPO计划网络内保险",
+      "description": "美国最大的牙科保险提供商之一",
+      "acceptanceLevel": "full"
+    },
+    {
+      "id": "aetna",
+      "icon": "shield-check",
+      "name": "Aetna",
+      "coverage": "接受PPO和DMO计划",
+      "description": "提供全国范围牙科保障的综合PPO网络保险",
+      "acceptanceLevel": "full"
+    },
+    {
+      "id": "cigna",
+      "icon": "shield-check",
+      "name": "Cigna",
+      "coverage": "接受Cigna牙科PPO计划网络内保险",
+      "description": "全球健康服务公司，提供全面的牙科福利",
+      "acceptanceLevel": "full"
+    },
+    {
+      "id": "metlife",
+      "icon": "shield-check",
+      "name": "MetLife",
+      "coverage": "接受PDP和PDP Plus计划",
+      "description": "领先的牙科福利提供商，拥有全国最大的医疗网络之一",
+      "acceptanceLevel": "full"
+    },
+    {
+      "id": "united-healthcare-dental",
+      "icon": "shield-check",
+      "name": "United Healthcare Dental",
+      "coverage": "接受PPO及双网络计划",
+      "description": "隶属于联合健康集团，提供灵活的牙科福利选项",
+      "acceptanceLevel": "full"
+    },
+    {
+      "id": "guardian",
+      "icon": "shield-check",
+      "name": "Guardian",
+      "coverage": "接受Guardian PPO牙科计划网络内保险",
+      "description": "值得信赖的牙科福利提供商，拥有广泛的全国医疗网络",
+      "acceptanceLevel": "full"
+    },
+    {
+      "id": "humana",
+      "icon": "shield-check",
+      "name": "Humana",
+      "coverage": "接受Humana PPO牙科计划",
+      "description": "主要健康及牙科保险公司，提供具竞争力的预防保健保障",
+      "acceptanceLevel": "full"
+    },
+    {
+      "id": "bluecross-blueshield",
+      "icon": "shield-check",
+      "name": "BlueCross BlueShield",
+      "coverage": "接受BCBS牙科PPO计划网络内保险",
+      "description": "独立保险商联合体，在全美50个州提供牙科保障",
+      "acceptanceLevel": "full"
+    }
+  ],
+  "membershipPlan": {
+    "name": "Alex牙科健康计划",
+    "price": "$299/年",
+    "includes": [
+      "每年2次专业洁牙",
+      "每年2次全面检查",
+      "完整数字X光片套装",
+      "每年1次急诊检查",
+      "其他所有治疗项目享9折优惠"
+    ],
+    "description": "专为没有牙科保险的患者设计——涵盖所有预防保健项目，并对其他治疗提供折扣"
+  }
+}

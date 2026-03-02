@@ -1,31 +1,29 @@
 {
-  "slug": "dr-sarah-kim",
-  "name": "Dr. Sarah Kim",
-  "title": "DMD",
-  "role": "Associate Dentist",
-  "image": "/images/doctors/dr-sarah-kim.jpg",
   "bio": "Dr. Sarah Kim joined Alex Dental as an associate dentist with a heartfelt mission: to make every dental visit a positive experience, especially for the youngest members of the Middletown community. With her gentle chairside manner and infectious enthusiasm, she has quickly become a favorite among families throughout Orange County and the greater Hudson Valley area.\n\nDr. Kim earned her Doctor of Medicine in Dentistry from Stony Brook University School of Dental Medicine in 2018, where she developed a strong focus on pediatric dentistry and preventive care. She is a proud member of the American Academy of Pediatric Dentistry and continually pursues advanced education in the latest techniques for treating children and teens. As a certified Invisalign provider, she also helps patients of all ages achieve straighter, healthier smiles without the hassle of traditional braces.\n\nRaised in a bilingual Korean-American household, Dr. Kim understands the importance of clear communication and cultural sensitivity in healthcare. She is fluent in both English and Korean, ensuring that more families in the Middletown area can receive care in the language they are most comfortable with. Outside the office, you can find her supporting local school events, volunteering with community outreach programs, or enjoying a weekend hike along the Heritage Trail. Dr. Kim believes that when patients feel safe and cared for, great oral health follows naturally.",
+  "name": "Dr. Sarah Kim",
+  "role": "Associate Dentist",
+  "slug": "dr-sarah-kim",
+  "image": "/images/doctors/dr-sarah-kim.jpg",
+  "order": 2,
   "quote": "I want every child to leave our office smiling and actually looking forward to their next visit.",
-  "languages": ["English", "Korean"],
-  "specializations": [
-    "Pediatric Dentistry",
-    "Preventive Care",
-    "Invisalign",
-    "General Dentistry",
-    "Patient Education"
+  "title": "DMD",
+  "featured": true,
+  "languages": [
+    "English",
+    "Korean"
   ],
   "credentials": [
     {
-      "credential": "Doctor of Medicine in Dentistry (DMD)",
-      "institution": "Stony Brook University School of Dental Medicine",
       "year": "2018",
-      "location": "Stony Brook, NY"
+      "location": "Stony Brook, NY",
+      "credential": "Doctor of Medicine in Dentistry (DMD)",
+      "institution": "Stony Brook University School of Dental Medicine"
     },
     {
-      "credential": "Bachelor of Science in Health Sciences",
-      "institution": "Stony Brook University",
       "year": "2014",
-      "location": "Stony Brook, NY"
+      "location": "Stony Brook, NY",
+      "credential": "Bachelor of Science in Health Sciences",
+      "institution": "Stony Brook University"
     }
   ],
   "certifications": [
@@ -35,6 +33,11 @@
     "New York State Dental Association",
     "CPR and Pediatric Advanced Life Support (PALS) Certified"
   ],
-  "featured": true,
-  "order": 2
+  "specializations": [
+    "Pediatric Dentistry",
+    "Preventive Care",
+    "Invisalign",
+    "General Dentistry",
+    "Patient Education"
+  ]
 }

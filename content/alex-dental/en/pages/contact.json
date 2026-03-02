@@ -1,93 +1,164 @@
 {
+  "faq": {
+    "items": [
+      {
+        "answer": "Please bring a valid photo ID, your dental insurance card (if applicable), and a list of current medications.",
+        "question": "What should I bring to my first appointment?"
+      },
+      {
+        "answer": "We prioritize scheduled appointments but will accommodate walk-ins when possible. For emergencies, call us first and we'll work to get you in the same day.",
+        "question": "Do you accept walk-ins?"
+      },
+      {
+        "answer": "Yes, we have free parking directly in front of our office at 85 Crystal Run Road.",
+        "question": "Is parking available?"
+      }
+    ],
+    "title": "Common Questions",
+    "variant": "simple"
+  },
+  "map": {
+    "title": "Find Us",
+    "showMap": true,
+    "variant": "shown",
+    "embedUrl": "https://www.google.com/maps/embed?pb=YOUR_EMBED_ID",
+    "directions": "Conveniently located near Crystal Run Crossing, with free parking available for all patients."
+  },
+  "form": {
+    "title": "Send Us a Message",
+    "fields": {
+      "name": {
+        "label": "Full Name",
+        "required": true,
+        "placeholder": "Your full name"
+      },
+      "email": {
+        "label": "Email",
+        "required": true,
+        "placeholder": "your@email.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "required": false,
+        "placeholder": "(555) 123-4567"
+      },
+      "reason": {
+        "label": "Reason for Contact",
+        "options": [
+          "General Inquiry",
+          "New Patient Appointment",
+          "Insurance Question",
+          "Billing Question",
+          "Other"
+        ],
+        "required": true,
+        "placeholder": "Select a reason"
+      },
+      "message": {
+        "label": "Message",
+        "required": true,
+        "placeholder": "How can we help you?"
+      }
+    },
+    "variant": "single-column",
+    "subtitle": "Fill out the form below and we'll get back to you within 1 business day",
+    "errorMessage": "Something went wrong. Please try again or call us directly.",
+    "submitButton": {
+      "text": "Send Message"
+    },
+    "successMessage": "Thank you for reaching out! We'll get back to you within 1 business day."
+  },
   "hero": {
-    "variant": "centered",
     "title": "Contact Us",
-    "subtitle": "We're here to help — reach out today"
+    "variant": "split-photo-right",
+    "subtitle": "We're here to help — reach out today",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425036346-hero-contact.jpg"
+  },
+  "hours": {
+    "note": "Same-day emergency appointments available during office hours",
+    "title": "Office Hours",
+    "variant": "grid",
+    "schedule": [
+      {
+        "day": "Monday",
+        "time": "8:00 AM - 6:00 PM",
+        "isOpen": true
+      },
+      {
+        "day": "Tuesday",
+        "time": "8:00 AM - 6:00 PM",
+        "isOpen": true
+      },
+      {
+        "day": "Wednesday",
+        "time": "9:00 AM - 7:00 PM",
+        "isOpen": true
+      },
+      {
+        "day": "Thursday",
+        "time": "8:00 AM - 6:00 PM",
+        "isOpen": true
+      },
+      {
+        "day": "Friday",
+        "time": "8:00 AM - 5:00 PM",
+        "isOpen": true
+      },
+      {
+        "day": "Saturday",
+        "time": "9:00 AM - 2:00 PM",
+        "isOpen": true
+      },
+      {
+        "day": "Sunday",
+        "time": "Closed",
+        "isOpen": false
+      }
+    ]
+  },
+  "emergency": {
+    "phone": "(845) 555-0180",
+    "title": "Dental Emergency?",
+    "message": "If you're experiencing a dental emergency, don't wait — call us now for same-day care.",
+    "visible": true
   },
   "introduction": {
-    "variant": "centered",
-    "text": "Whether you need to schedule an appointment, ask about insurance, or have a question about a procedure — we're happy to help. Reach out by phone, email, or the form below."
+    "text": "Whether you need to schedule an appointment, ask about insurance, or have a question about a procedure — we're happy to help. Reach out by phone, email, or the form below.",
+    "variant": "centered"
   },
   "contactMethods": [
     {
       "icon": "phone",
       "title": "Phone",
+      "action": {
+        "link": "tel:+18455550180",
+        "text": "Call Now"
+      },
       "primary": "(845) 555-0180",
       "secondary": null,
-      "description": "Call us during office hours or leave a message anytime",
-      "action": { "text": "Call Now", "link": "tel:+18455550180" }
+      "description": "Call us during office hours or leave a message anytime"
     },
     {
       "icon": "mail",
       "title": "Email",
+      "action": {
+        "link": "mailto:info@alex-dental.com",
+        "text": "Send Email"
+      },
       "primary": "info@alex-dental.com",
       "secondary": null,
-      "description": "We respond to all emails within 1 business day",
-      "action": { "text": "Send Email", "link": "mailto:info@alex-dental.com" }
+      "description": "We respond to all emails within 1 business day"
     },
     {
       "icon": "map-pin",
       "title": "Visit Us",
+      "action": {
+        "link": "https://maps.google.com/?q=85+Crystal+Run+Road+Middletown+NY+10940",
+        "text": "Get Directions"
+      },
       "primary": "85 Crystal Run Road",
       "secondary": "Middletown, NY 10940",
-      "description": "Conveniently located near Crystal Run Crossing with free parking",
-      "action": { "text": "Get Directions", "link": "https://maps.google.com/?q=85+Crystal+Run+Road+Middletown+NY+10940" }
+      "description": "Conveniently located near Crystal Run Crossing with free parking"
     }
-  ],
-  "hours": {
-    "variant": "grid",
-    "title": "Office Hours",
-    "schedule": [
-      { "day": "Monday", "time": "8:00 AM - 6:00 PM", "isOpen": true },
-      { "day": "Tuesday", "time": "8:00 AM - 6:00 PM", "isOpen": true },
-      { "day": "Wednesday", "time": "9:00 AM - 7:00 PM", "isOpen": true },
-      { "day": "Thursday", "time": "8:00 AM - 6:00 PM", "isOpen": true },
-      { "day": "Friday", "time": "8:00 AM - 5:00 PM", "isOpen": true },
-      { "day": "Saturday", "time": "9:00 AM - 2:00 PM", "isOpen": true },
-      { "day": "Sunday", "time": "Closed", "isOpen": false }
-    ],
-    "note": "Same-day emergency appointments available during office hours"
-  },
-  "form": {
-    "variant": "single-column",
-    "title": "Send Us a Message",
-    "subtitle": "Fill out the form below and we'll get back to you within 1 business day",
-    "fields": {
-      "name": { "label": "Full Name", "placeholder": "Your full name", "required": true },
-      "email": { "label": "Email", "placeholder": "your@email.com", "required": true },
-      "phone": { "label": "Phone", "placeholder": "(555) 123-4567", "required": false },
-      "reason": {
-        "label": "Reason for Contact",
-        "placeholder": "Select a reason",
-        "required": true,
-        "options": ["General Inquiry", "New Patient Appointment", "Insurance Question", "Billing Question", "Other"]
-      },
-      "message": { "label": "Message", "placeholder": "How can we help you?", "required": true }
-    },
-    "submitButton": { "text": "Send Message" },
-    "successMessage": "Thank you for reaching out! We'll get back to you within 1 business day.",
-    "errorMessage": "Something went wrong. Please try again or call us directly."
-  },
-  "map": {
-    "variant": "shown",
-    "title": "Find Us",
-    "embedUrl": "https://www.google.com/maps/embed?pb=YOUR_EMBED_ID",
-    "showMap": true,
-    "directions": "Conveniently located near Crystal Run Crossing, with free parking available for all patients."
-  },
-  "emergency": {
-    "title": "Dental Emergency?",
-    "message": "If you're experiencing a dental emergency, don't wait — call us now for same-day care.",
-    "phone": "(845) 555-0180",
-    "visible": true
-  },
-  "faq": {
-    "variant": "simple",
-    "title": "Common Questions",
-    "items": [
-      { "question": "What should I bring to my first appointment?", "answer": "Please bring a valid photo ID, your dental insurance card (if applicable), and a list of current medications." },
-      { "question": "Do you accept walk-ins?", "answer": "We prioritize scheduled appointments but will accommodate walk-ins when possible. For emergencies, call us first and we'll work to get you in the same day." },
-      { "question": "Is parking available?", "answer": "Yes, we have free parking directly in front of our office at 85 Crystal Run Road." }
-    ]
-  }
+  ]
 }

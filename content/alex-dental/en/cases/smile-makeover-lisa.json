@@ -1,32 +1,32 @@
 {
-  "slug": "smile-makeover-lisa",
   "id": "smile-makeover-lisa",
-  "category": "Cosmetic",
-  "condition": "Stained and Slightly Crooked Front Teeth",
+  "slug": "smile-makeover-lisa",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-smile-makeover-lisa-main.jpg",
   "title": "A Confident New Smile with Porcelain Veneers",
+  "results": "The transformation was striking but still looked entirely natural. Lisa's teeth went from uneven and discolored to bright, symmetrical, and smooth. The porcelain material is highly stain-resistant, so her results will maintain their appearance for years. At her follow-up appointment, Lisa mentioned that coworkers had commented that she looked great but couldn't quite pinpoint what had changed — exactly the kind of natural result she was hoping for.",
   "summary": "Lisa had spent over a decade hiding her smile because of stained, slightly uneven front teeth. With six custom porcelain veneers, she achieved the bright, uniform smile she had always wanted — and the confidence to show it off.",
-  "image": "/images/cases/smile-makeover-lisa.jpg",
-  "beforeImage": "/images/cases/smile-makeover-lisa-before.jpg",
-  "afterImage": "/images/cases/smile-makeover-lisa-after.jpg",
+  "category": "Cosmetic",
+  "featured": true,
+  "solution": "We started with a digital smile design session where Lisa could preview different options on screen before committing to anything. After discussing her goals — a brighter but still natural-looking shade and better alignment — we chose minimal-prep porcelain veneers for her six upper front teeth. The minimal-prep approach meant we only needed to remove a thin layer of enamel, preserving as much natural tooth structure as possible. Lisa wore a set of temporary veneers for two weeks so she could test-drive the shape and feel before the final porcelain veneers were bonded in place.",
+  "challenge": "Lisa's front teeth had developed deep intrinsic staining that didn't respond to professional whitening treatments. Two of her upper front teeth were also slightly rotated, giving her smile an uneven appearance. She had been self-conscious about her teeth since college and had developed a habit of covering her mouth when she laughed or smiling with her lips closed in photos. She wanted a natural-looking improvement — nothing that looked overdone — and was concerned about how much tooth structure would need to be removed.",
+  "condition": "Stained and Slightly Crooked Front Teeth",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-smile-makeover-lisa-after.jpg",
+  "beforeImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/cases/1772426755287-smile-makeover-lisa-before.jpg",
   "patientProfile": {
-    "name": "Lisa",
     "age": "30-35",
+    "name": "Lisa",
     "concern": "Discolored and slightly misaligned front teeth causing self-consciousness in social and professional settings"
   },
-  "challenge": "Lisa's front teeth had developed deep intrinsic staining that didn't respond to professional whitening treatments. Two of her upper front teeth were also slightly rotated, giving her smile an uneven appearance. She had been self-conscious about her teeth since college and had developed a habit of covering her mouth when she laughed or smiling with her lips closed in photos. She wanted a natural-looking improvement — nothing that looked overdone — and was concerned about how much tooth structure would need to be removed.",
-  "solution": "We started with a digital smile design session where Lisa could preview different options on screen before committing to anything. After discussing her goals — a brighter but still natural-looking shade and better alignment — we chose minimal-prep porcelain veneers for her six upper front teeth. The minimal-prep approach meant we only needed to remove a thin layer of enamel, preserving as much natural tooth structure as possible. Lisa wore a set of temporary veneers for two weeks so she could test-drive the shape and feel before the final porcelain veneers were bonded in place.",
-  "results": "The transformation was striking but still looked entirely natural. Lisa's teeth went from uneven and discolored to bright, symmetrical, and smooth. The porcelain material is highly stain-resistant, so her results will maintain their appearance for years. At her follow-up appointment, Lisa mentioned that coworkers had commented that she looked great but couldn't quite pinpoint what had changed — exactly the kind of natural result she was hoping for.",
+  "testimonialQuote": "I spent years thinking about getting my teeth fixed but was afraid they'd look fake. When I saw the final result, I actually got emotional. They look like the teeth I always wished I had. I smile in every photo now.",
   "treatmentDetails": {
+    "visits": "4 visits total",
+    "duration": "3 weeks from preparation to final bonding",
     "procedures": [
       "Digital Smile Design Consultation",
       "Professional Teeth Cleaning",
       "Minimal-Prep Tooth Preparation",
       "Temporary Veneers Trial Period",
       "6 Custom Porcelain Veneers (Upper Front Teeth)"
-    ],
-    "duration": "3 weeks from preparation to final bonding",
-    "visits": "4 visits total"
-  },
-  "testimonialQuote": "I spent years thinking about getting my teeth fixed but was afraid they'd look fake. When I saw the final result, I actually got emotional. They look like the teeth I always wished I had. I smile in every photo now.",
-  "featured": true
+    ]
+  }
 }

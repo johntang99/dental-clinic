@@ -2,47 +2,110 @@
   "hero": {
     "title": "Dental Emergency?",
     "subtitle": "Call us now — we see same-day emergencies",
-    "phoneDisplay": "(845) 555-0180"
+    "phoneDisplay": "(845) 555-0180",
+    "backgroundImage": ""
   },
-  "whatQualifies": {
-    "title": "What Counts as a Dental Emergency?",
-    "items": [
-      { "icon": "alert-triangle", "title": "Severe Tooth Pain", "description": "Persistent, intense pain that won't go away with over-the-counter medication" },
-      { "icon": "alert-circle", "title": "Knocked-Out Tooth", "description": "A tooth that has been completely knocked out — time is critical" },
-      { "icon": "x-circle", "title": "Broken or Cracked Tooth", "description": "A tooth that is visibly broken, cracked, or chipped from trauma" },
-      { "icon": "thermometer", "title": "Abscess or Swelling", "description": "Facial swelling, gum swelling, or a pimple-like bump on your gums" },
-      { "icon": "minus-circle", "title": "Lost Crown or Filling", "description": "A dental crown or filling that has come loose or fallen out" },
-      { "icon": "droplet", "title": "Uncontrolled Bleeding", "description": "Bleeding from the gums or mouth that won't stop after 15 minutes" }
-    ]
+  "process": {
+    "steps": [
+      {
+        "title": "Call Us",
+        "number": 1,
+        "description": "Tell us what happened. We'll get you in today."
+      },
+      {
+        "title": "Immediate Assessment",
+        "number": 2,
+        "description": "We evaluate your situation and manage your pain first."
+      },
+      {
+        "title": "Same-Day Treatment",
+        "number": 3,
+        "description": "We treat the emergency and plan any follow-up care needed."
+      }
+    ],
+    "title": "How We Handle Emergencies"
   },
   "firstAid": {
     "title": "What to Do Right Now",
     "scenarios": [
-      { "condition": "Knocked-Out Tooth", "steps": ["Pick up the tooth by the crown (not the root)", "Gently rinse with water — do NOT scrub", "Try to place it back in the socket", "If you can't, keep it in milk or saliva", "Call us immediately — every minute counts"] },
-      { "condition": "Severe Pain", "steps": ["Rinse with warm salt water", "Take over-the-counter pain reliever (not aspirin on the gum)", "Apply a cold compress to your cheek", "Call us for a same-day appointment"] },
-      { "condition": "Broken Tooth", "steps": ["Rinse your mouth with warm water", "Save any tooth fragments", "Apply gauze if bleeding", "Use a cold compress for swelling", "Call us immediately"] }
-    ]
-  },
-  "whenToGoER": {
-    "title": "When to Go to the Emergency Room Instead",
-    "description": "Go to the nearest ER if you experience:",
-    "items": [
-      "Difficulty breathing or swallowing",
-      "Jaw fracture or dislocation",
-      "Severe facial trauma from an accident",
-      "Uncontrollable bleeding that won't stop"
-    ]
-  },
-  "process": {
-    "title": "How We Handle Emergencies",
-    "steps": [
-      { "number": 1, "title": "Call Us", "description": "Tell us what happened. We'll get you in today." },
-      { "number": 2, "title": "Immediate Assessment", "description": "We evaluate your situation and manage your pain first." },
-      { "number": 3, "title": "Same-Day Treatment", "description": "We treat the emergency and plan any follow-up care needed." }
+      {
+        "steps": [
+          "Pick up the tooth by the crown (not the root)",
+          "Gently rinse with water — do NOT scrub",
+          "Try to place it back in the socket",
+          "If you can't, keep it in milk or saliva",
+          "Call us immediately — every minute counts"
+        ],
+        "condition": "Knocked-Out Tooth"
+      },
+      {
+        "steps": [
+          "Rinse with warm salt water",
+          "Take over-the-counter pain reliever (not aspirin on the gum)",
+          "Apply a cold compress to your cheek",
+          "Call us for a same-day appointment"
+        ],
+        "condition": "Severe Pain"
+      },
+      {
+        "steps": [
+          "Rinse your mouth with warm water",
+          "Save any tooth fragments",
+          "Apply gauze if bleeding",
+          "Use a cold compress for swelling",
+          "Call us immediately"
+        ],
+        "condition": "Broken Tooth"
+      }
     ]
   },
   "afterHours": {
     "title": "After Hours?",
     "description": "If our office is closed and you're in pain, call our main number and follow the prompts for after-hours guidance. For life-threatening emergencies, call 911 or go to the nearest emergency room."
+  },
+  "whenToGoER": {
+    "items": [
+      "Difficulty breathing or swallowing",
+      "Jaw fracture or dislocation",
+      "Severe facial trauma from an accident",
+      "Uncontrollable bleeding that won't stop"
+    ],
+    "title": "When to Go to the Emergency Room Instead",
+    "description": "Go to the nearest ER if you experience:"
+  },
+  "whatQualifies": {
+    "items": [
+      {
+        "icon": "alert-triangle",
+        "title": "Severe Tooth Pain",
+        "description": "Persistent, intense pain that won't go away with over-the-counter medication"
+      },
+      {
+        "icon": "alert-circle",
+        "title": "Knocked-Out Tooth",
+        "description": "A tooth that has been completely knocked out — time is critical"
+      },
+      {
+        "icon": "x-circle",
+        "title": "Broken or Cracked Tooth",
+        "description": "A tooth that is visibly broken, cracked, or chipped from trauma"
+      },
+      {
+        "icon": "thermometer",
+        "title": "Abscess or Swelling",
+        "description": "Facial swelling, gum swelling, or a pimple-like bump on your gums"
+      },
+      {
+        "icon": "minus-circle",
+        "title": "Lost Crown or Filling",
+        "description": "A dental crown or filling that has come loose or fallen out"
+      },
+      {
+        "icon": "droplet",
+        "title": "Uncontrolled Bleeding",
+        "description": "Bleeding from the gums or mouth that won't stop after 15 minutes"
+      }
+    ],
+    "title": "What Counts as a Dental Emergency?"
   }
 }

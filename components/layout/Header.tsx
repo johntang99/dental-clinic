@@ -71,8 +71,16 @@ export default function Header({
   const logoConfig = headerConfig?.menu?.logo;
   const logoImage = logoConfig?.image;
 
-  // Navigation menu items
-  const navigation =
+  // Ensure internal URLs include the locale prefix
+  const localizeUrl = (url: string) => {
+    if (!url || url.startsWith('http') || url.startsWith('tel:') || url.startsWith('mailto:') || url.startsWith('#')) return url;
+    if (url.startsWith(`/${locale}/`) || url === `/${locale}`) return url;
+    if (url === '/') return `/${locale}`;
+    return `/${locale}${url.startsWith('/') ? '' : '/'}${url}`;
+  };
+
+  // Navigation menu items — localize URLs to include the current locale prefix
+  const rawNavItems =
     menu?.items && menu.items.length > 0
       ? menu.items
       : headerConfig?.menu?.items && headerConfig.menu.items.length > 0
@@ -88,11 +96,13 @@ export default function Header({
           { text: locale === 'en' ? 'Blog' : '博客', url: `/${locale}/blog` },
           { text: locale === 'en' ? 'Contact' : '联系我们', url: `/${locale}/contact` },
         ];
+  const navigation = rawNavItems.map((item) => ({ ...item, url: localizeUrl(item.url) }));
 
-  const cta = menu?.cta || {
+  const rawCta = menu?.cta || {
     text: headerConfig?.cta?.text || (locale === 'en' ? 'Book Online' : '在线预约'),
     link: headerConfig?.cta?.link || `/${locale}/contact`,
   };
+  const cta = { ...rawCta, link: localizeUrl(rawCta.link) };
   const menuFontWeightClass =
     (menu?.fontWeight || headerConfig?.menu?.fontWeight || 'semibold') === 'regular'
       ? 'font-normal'
@@ -127,7 +137,7 @@ export default function Header({
           alt={logoImage.alt || logoConfig?.text || siteDisplayName || 'Logo'}
           width={width}
           height={height}
-          className={`${sizeClass} hover:opacity-90 transition-opacity`}
+          className={`${sizeClass} hover:opacity-90 transition-opacity ${transparentLight ? 'brightness-0 invert' : ''}`}
         />
       );
     }
@@ -135,12 +145,15 @@ export default function Header({
     const text = logoConfig?.text || siteDisplayName;
     const emoji = logoConfig?.emoji;
     return (
-      <div className="inline-flex items-center gap-2 text-primary">
+      <div className={`inline-flex items-center gap-2 transition-colors ${transparentLight ? 'text-white' : 'text-primary'}`}>
         {emoji && <span className="text-lg leading-none">{emoji}</span>}
         <span className="font-semibold">{text}</span>
       </div>
     );
   };
+
+  // When transparent header is over a dark hero and not yet scrolled, use light text
+  const transparentLight = variant === 'transparent' && !scrolled;
 
   const topbarPhone = topbarConfig?.phone || siteInfo?.phone;
   const topbarPhoneHref = topbarConfig?.phoneHref || (topbarPhone ? `tel:${topbarPhone}` : undefined);
@@ -251,8 +264,10 @@ export default function Header({
                   key={item.url}
                   href={item.url}
                   className={`${
-                    isMenuItemActive(item.url) ? 'text-primary' : 'text-gray-700'
-                  } hover:text-primary ${menuFontWeightClass} transition-colors text-sm`}
+                    transparentLight
+                      ? isMenuItemActive(item.url) ? 'text-white' : 'text-white/80'
+                      : isMenuItemActive(item.url) ? 'text-primary' : 'text-gray-700'
+                  } ${transparentLight ? 'hover:text-white' : 'hover:text-primary'} ${menuFontWeightClass} transition-colors text-sm`}
                 >
                   {item.text}
                 </Link>
@@ -267,7 +282,7 @@ export default function Header({
             <div className="flex lg:hidden justify-center gap-4 mt-4">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-gray-700 hover:text-primary"
+                className={`p-2 transition-colors ${transparentLight ? 'text-white hover:text-white/80' : 'text-gray-700 hover:text-primary'}`}
                 aria-label="Toggle menu"
                 aria-expanded={mobileMenuOpen}
               >
@@ -295,8 +310,10 @@ export default function Header({
                     key={item.url}
                     href={item.url}
                     className={`${
-                      isMenuItemActive(item.url) ? 'text-primary' : 'text-gray-700'
-                    } hover:text-primary ${menuFontWeightClass} transition-colors text-sm whitespace-nowrap`}
+                      transparentLight
+                        ? isMenuItemActive(item.url) ? 'text-white' : 'text-white/80'
+                        : isMenuItemActive(item.url) ? 'text-primary' : 'text-gray-700'
+                    } ${transparentLight ? 'hover:text-white' : 'hover:text-primary'} ${menuFontWeightClass} transition-colors text-sm whitespace-nowrap`}
                   >
                     {item.text}
                   </Link>
@@ -312,7 +329,7 @@ export default function Header({
               <div className="flex xl:hidden items-center gap-4">
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="p-2 text-gray-700 hover:text-primary"
+                  className={`p-2 transition-colors ${transparentLight ? 'text-white hover:text-white/80' : 'text-gray-700 hover:text-primary'}`}
                   aria-label="Toggle menu"
                 >
                   {mobileMenuOpen ? (

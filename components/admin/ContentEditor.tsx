@@ -202,7 +202,11 @@ export function ContentEditor({
         fileFilter === 'caseStudiesItems'
       ) {
         const allowedPaths = new Set(FILE_FILTER_PATHS[fileFilter]);
-        nextFiles = nextFiles.filter((file) => allowedPaths.has(file.path));
+        const isServiceFilter = fileFilter === 'services' || fileFilter === 'servicesItems';
+        const isCaseFilter = fileFilter === 'caseStudies' || fileFilter === 'caseStudiesItems';
+        nextFiles = nextFiles.filter(
+          (file) => allowedPaths.has(file.path) || (isServiceFilter && file.path.startsWith('services/')) || (isCaseFilter && file.path.startsWith('cases/'))
+        );
         nextFiles = [...nextFiles].sort((a, b) => a.label.localeCompare(b.label));
       } else {
         const moduleManagedPaths = new Set([
@@ -213,6 +217,8 @@ export function ContentEditor({
         nextFiles = nextFiles.filter(
           (file) =>
             !file.path.startsWith('blog/') &&
+            !file.path.startsWith('services/') &&
+            !file.path.startsWith('cases/') &&
             !SITE_SETTINGS_PATHS.has(file.path) &&
             !moduleManagedPaths.has(file.path)
         );
