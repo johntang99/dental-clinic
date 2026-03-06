@@ -2,13 +2,25 @@
   "domains": [
     {
       "siteId": "alex-dental",
-      "domain": "localhost:3004",
+      "domain": "alex.local",
       "environment": "dev",
       "enabled": true
     },
     {
       "siteId": "alex-dental",
       "domain": "alex-dental.com",
+      "environment": "prod",
+      "enabled": true
+    },
+    {
+      "siteId": "bright-smile-dental",
+      "domain": "bright.local",
+      "environment": "dev",
+      "enabled": true
+    },
+    {
+      "siteId": "bright-smile-dental",
+      "domain": "bright-smile-dental.com",
       "environment": "prod",
       "enabled": true
     }

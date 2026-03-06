@@ -1,0 +1,55 @@
+{
+  "home": {
+    "title": "Bright Smile Dental | Dentist in Flushing, NY",
+    "description": "Premier Flushing dentist providing comprehensive dental care including cleanings, implants, and cosmetic services. Bilingual staff. Schedule your visit today!"
+  },
+  "pages": {
+    "blog": {
+      "title": "Dental Health Blog | Bright Smile Dental",
+      "description": "Expert dental health tips from Bright Smile Dental in Flushing, NY. Learn about oral care, treatments, and maintaining your smile. Read our latest posts!"
+    },
+    "team": {
+      "title": "Meet Our Team | Bright Smile Dental",
+      "description": "Meet the caring dental professionals at Bright Smile Dental in Flushing, NY. Our experienced, bilingual team is dedicated to your oral health!"
+    },
+    "about": {
+      "title": "About Us | Bright Smile Dental",
+      "description": "Learn about Bright Smile Dental's experienced team in Flushing, NY. We provide personalized dental care with English & Korean services. Meet us today!"
+    },
+    "cases": {
+      "title": "Before & After Cases | Bright Smile Dental",
+      "description": "View real patient transformations at Bright Smile Dental in Flushing, NY. See results from our cosmetic and restorative treatments. Book consultation!"
+    },
+    "contact": {
+      "title": "Contact Us | Bright Smile Dental | Flushing, NY",
+      "description": "Contact Bright Smile Dental in Flushing, NY at (718) 555-0234. Convenient location, flexible hours, bilingual staff. Schedule your appointment now!"
+    },
+    "gallery": {
+      "title": "Office Gallery | Bright Smile Dental",
+      "description": "Tour our modern dental office in Flushing, NY. Bright Smile Dental features comfortable treatment rooms and advanced equipment. Visit us today!"
+    },
+    "services": {
+      "title": "Dental Services in Flushing | Bright Smile Dental",
+      "description": "Complete dental services in Flushing, NY: cleanings, fillings, implants, Invisalign, whitening & more. Bright Smile Dental accepts new patients!"
+    },
+    "emergency": {
+      "title": "Emergency Dentist in Flushing | Bright Smile Dental",
+      "description": "Need urgent dental care in Flushing, NY? Bright Smile Dental provides emergency services for tooth pain, injuries & more. Call (718) 555-0234 now!"
+    },
+    "insurance": {
+      "title": "Insurance & Financing | Bright Smile Dental",
+      "description": "Bright Smile Dental in Flushing, NY accepts most insurance plans and offers flexible financing. Quality dental care made affordable. Learn more today!"
+    },
+    "technology": {
+      "title": "Our Technology | Bright Smile Dental",
+      "description": "State-of-the-art dental technology at Bright Smile Dental in Flushing, NY ensures comfortable, precise treatment. Experience modern dentistry today!"
+    },
+    "new-patients": {
+      "title": "New Patients | Bright Smile Dental | Flushing",
+      "description": "Welcome new patients! Bright Smile Dental in Flushing, NY offers comprehensive exams, cleanings & treatment plans. English & Korean spoken. Schedule now!"
+    }
+  },
+  "title": "Bright Smile Dental | Dentist in Flushing, NY",
+  "ogImage": "/images/og-default.jpg",
+  "description": "Top dentist in Flushing, NY offering cleanings, implants, Invisalign & more. English & Korean spoken. Call Bright Smile Dental (718) 555-0234 today!"
+}

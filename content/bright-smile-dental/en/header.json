@@ -1,0 +1,71 @@
+{
+  "menu": {
+    "items": [
+      {
+        "url": "/",
+        "text": "Home"
+      },
+      {
+        "url": "/services",
+        "text": "Services"
+      },
+      {
+        "url": "/about",
+        "text": "About"
+      },
+      {
+        "url": "/technology",
+        "text": "Technology"
+      },
+      {
+        "url": "/new-patients",
+        "text": "New Patients"
+      },
+      {
+        "url": "/case-studies",
+        "text": "Case Studies"
+      },
+      {
+        "url": "/insurance",
+        "text": "Insurance"
+      },
+      {
+        "url": "/gallery",
+        "text": "Gallery"
+      },
+      {
+        "url": "/blog",
+        "text": "Blog"
+      },
+      {
+        "url": "/contact",
+        "text": "Contact"
+      }
+    ],
+    "variant": "default"
+  },
+  "logoText": "Bright Smile Dental",
+  "logoType": "both",
+  "showPhone": true,
+  "ctaPrimary": {
+    "url": "/book",
+    "text": "Book Appointment",
+    "style": "filled"
+  },
+  "ctaSecondary": {
+    "url": "tel:+17185550234",
+    "text": "Call Now",
+    "style": "outline"
+  },
+  "logoImageUrl": "/images/alex-dental-logo.svg",
+  "stickyHeader": true,
+  "announcementBar": {
+    "text": "New patients welcome! Free consultation for Invisalign and cosmetic treatments.",
+    "enabled": true,
+    "linkUrl": "/book",
+    "linkText": "Book Today",
+    "dismissible": true,
+    "backgroundColor": "primary"
+  },
+  "transparentOnHero": true
+}

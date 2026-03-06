@@ -1,0 +1,11 @@
+{
+  "sections": [
+    { "id": "hero" },
+    { "id": "individualTreatments" },
+    { "id": "packages" },
+    { "id": "insurance" },
+    { "id": "policies" },
+    { "id": "faq" },
+    { "id": "cta" }
+  ]
+}

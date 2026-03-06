@@ -1,0 +1,93 @@
+{
+  "brand": {
+    "name": "Bright Smile Dental",
+    "logoText": "Bright Smile Dental",
+    "description": "Expert dental care for the whole family in English, Chinese, Spanish, and Korean. Serving Flushing, NY and surrounding communities."
+  },
+  "hours": [
+    "Mon: 9:00 AM - 6:00 PM",
+    "Tue: 9:00 AM - 6:00 PM",
+    "Wed: 10:00 AM - 7:00 PM",
+    "Thu: 9:00 AM - 6:00 PM",
+    "Fri: 9:00 AM - 5:00 PM",
+    "Sat: 9:00 AM - 3:00 PM",
+    "Sun: Closed"
+  ],
+  "contact": {
+    "email": "info@bright-smile-dental.com",
+    "phone": "(718) 555-0234",
+    "emailLink": "mailto:info@bright-smile-dental.com",
+    "phoneLink": "tel:+17185550234",
+    "addressLines": [
+      "136-20 38th Avenue, Suite 2B",
+      "Flushing, NY 11354"
+    ]
+  },
+  "services": [
+    {
+      "url": "/services/dental-implants",
+      "text": "Dental Implants"
+    },
+    {
+      "url": "/services/invisalign",
+      "text": "Invisalign"
+    },
+    {
+      "url": "/services/teeth-whitening",
+      "text": "Teeth Whitening"
+    },
+    {
+      "url": "/services/crowns-and-bridges",
+      "text": "Crowns & Bridges"
+    },
+    {
+      "url": "/emergency",
+      "text": "Emergency Dental"
+    },
+    {
+      "url": "/services",
+      "text": "All Services"
+    }
+  ],
+  "copyright": "© 2026 Bright Smile Dental. All rights reserved.",
+  "legalLinks": [
+    {
+      "url": "/privacy",
+      "text": "Privacy Policy"
+    },
+    {
+      "url": "/accessibility",
+      "text": "Accessibility"
+    },
+    {
+      "url": "/terms",
+      "text": "Terms of Service"
+    }
+  ],
+  "quickLinks": [
+    {
+      "url": "/about",
+      "text": "About Us"
+    },
+    {
+      "url": "/new-patients",
+      "text": "New Patients"
+    },
+    {
+      "url": "/case-studies",
+      "text": "Case Studies"
+    },
+    {
+      "url": "/insurance",
+      "text": "Insurance & Financing"
+    },
+    {
+      "url": "/blog",
+      "text": "Blog"
+    },
+    {
+      "url": "/contact",
+      "text": "Contact"
+    }
+  ]
+}

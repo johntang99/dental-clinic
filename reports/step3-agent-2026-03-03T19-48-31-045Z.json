@@ -1,0 +1,985 @@
+{
+  "generatedAt": "2026-03-03T19:48:25.192Z",
+  "mode": "fix+audit",
+  "targetHost": "mmcmvmwcktqdeflcwfks.supabase.co",
+  "bucket": "dental-media",
+  "checks": {
+    "urlReachability": true,
+    "variantCompatibility": true,
+    "adminFormCoverage": true
+  },
+  "gate": {
+    "failOnBroken": false,
+    "failOnVariant": false,
+    "failed": false,
+    "reasons": []
+  },
+  "formCoveredPrefixes": [
+    "author",
+    "caseStudies",
+    "categories",
+    "category",
+    "conditions",
+    "contentMarkdown",
+    "cta",
+    "excerpt",
+    "featured",
+    "hero",
+    "image",
+    "images",
+    "introduction",
+    "languages",
+    "menu",
+    "menu.items",
+    "pages",
+    "profile",
+    "publishDate",
+    "readingTime",
+    "relatedReading",
+    "relatedReading.preferredSlugs",
+    "seoDescription",
+    "seoTitle",
+    "servicesList",
+    "servicesList.items",
+    "slug",
+    "status",
+    "tags",
+    "title",
+    "trustBar",
+    "trustBar.items"
+  ],
+  "sites": [
+    {
+      "siteId": "alex-dental",
+      "contentEntries": 121,
+      "mediaAssets": 37,
+      "imageRefs": {
+        "legacyUploadPathCount": 0,
+        "bucketUrlCount": 190,
+        "externalImageUrlCount": 0
+      },
+      "variantKeyCount": 114,
+      "variantIssuesCount": 6,
+      "variantIssuesPreview": [
+        {
+          "type": "unknown_variant_key",
+          "path": "menu.variant",
+          "key": "variant",
+          "value": "default"
+        },
+        {
+          "type": "unsupported_variant_value",
+          "path": "services.variant",
+          "key": "variant",
+          "value": "grid-cards",
+          "allowed": [
+            "grid-cards-2x",
+            "grid-cards-3x",
+            "featured-large",
+            "list-horizontal",
+            "accordion",
+            "tabs",
+            "detail-alternating",
+            "detail-image-right"
+          ]
+        },
+        {
+          "type": "unknown_variant_key",
+          "path": "layoutVariant",
+          "key": "layoutVariant",
+          "value": "category-detail-alternating"
+        },
+        {
+          "type": "unknown_variant_key",
+          "path": "menu.variant",
+          "key": "variant",
+          "value": "default"
+        },
+        {
+          "type": "unsupported_variant_value",
+          "path": "services.variant",
+          "key": "variant",
+          "value": "grid-cards",
+          "allowed": [
+            "grid-cards-2x",
+            "grid-cards-3x",
+            "featured-large",
+            "list-horizontal",
+            "accordion",
+            "tabs",
+            "detail-alternating",
+            "detail-image-right"
+          ]
+        },
+        {
+          "type": "unknown_variant_key",
+          "path": "layoutVariant",
+          "key": "layoutVariant",
+          "value": "category-detail-alternating"
+        }
+      ],
+      "urlReachability": {
+        "checked": 61,
+        "broken": 0,
+        "brokenPreview": []
+      },
+      "formCoverage": {
+        "filesFlagged": 80,
+        "mismatchesPreview": [
+          {
+            "file": "en:blog/childrens-dental-health-guide.json",
+            "missingPaths": [
+              "type",
+              "readTime",
+              "published",
+              "relatedPosts",
+              "relatedServices[0]"
+            ]
+          },
+          {
+            "file": "en:blog/dental-implants-vs-bridges.json",
+            "missingPaths": [
+              "type",
+              "readTime",
+              "published",
+              "relatedPosts",
+              "relatedServices[0]",
+              "relatedServices[1]"
+            ]
+          },
+          {
+            "file": "en:blog/foods-that-damage-teeth.json",
+            "missingPaths": [
+              "type",
+              "readTime",
+              "published",
+              "relatedPosts",
+              "relatedServices[0]"
+            ]
+          },
+          {
+            "file": "en:blog/how-to-overcome-dental-anxiety.json",
+            "missingPaths": [
+              "type",
+              "readTime",
+              "published",
+              "relatedPosts",
+              "relatedServices[0]"
+            ]
+          },
+          {
+            "file": "en:blog/invisalign-vs-braces.json",
+            "missingPaths": [
+              "type",
+              "readTime",
+              "published",
+              "relatedPosts",
+              "relatedServices[0]"
+            ]
+          },
+          {
+            "file": "en:blog/what-to-expect-first-dental-visit.json",
+            "missingPaths": [
+              "type",
+              "readTime",
+              "published",
+              "relatedPosts",
+              "relatedServices[0]"
+            ]
+          },
+          {
+            "file": "en:header.json",
+            "missingPaths": [
+              "logoText",
+              "logoType",
+              "showPhone",
+              "ctaPrimary.url",
+              "ctaPrimary.text",
+              "ctaPrimary.style",
+              "ctaSecondary.url",
+              "ctaSecondary.text",
+              "ctaSecondary.style",
+              "logoImageUrl",
+              "stickyHeader",
+              "announcementBar.text",
+              "announcementBar.enabled",
+              "announcementBar.linkUrl",
+              "announcementBar.linkText"
+            ]
+          },
+          {
+            "file": "en:pages/about.json",
+            "missingPaths": [
+              "clinic.title",
+              "clinic.values[0].icon",
+              "clinic.values[0].title",
+              "clinic.values[0].description",
+              "clinic.values[1].icon",
+              "clinic.values[1].title",
+              "clinic.values[1].description",
+              "clinic.values[2].icon",
+              "clinic.values[2].title",
+              "clinic.values[2].description",
+              "clinic.values[3].icon",
+              "clinic.values[3].title",
+              "clinic.values[3].description",
+              "clinic.variant",
+              "clinic.features[0]"
+            ]
+          },
+          {
+            "file": "en:pages/case-studies.json",
+            "missingPaths": [
+              "statistics.stats[0].icon",
+              "statistics.stats[0].label",
+              "statistics.stats[0].number",
+              "statistics.stats[1].icon",
+              "statistics.stats[1].label",
+              "statistics.stats[1].number",
+              "statistics.stats[2].icon",
+              "statistics.stats[2].label",
+              "statistics.stats[2].number",
+              "statistics.stats[3].icon",
+              "statistics.stats[3].label",
+              "statistics.stats[3].number",
+              "statistics.title",
+              "statistics.variant"
+            ]
+          },
+          {
+            "file": "en:pages/contact.json",
+            "missingPaths": [
+              "faq.items[0].answer",
+              "faq.items[0].question",
+              "faq.items[1].answer",
+              "faq.items[1].question",
+              "faq.items[2].answer",
+              "faq.items[2].question",
+              "faq.title",
+              "faq.variant",
+              "map.title",
+              "map.showMap",
+              "map.variant",
+              "map.embedUrl",
+              "map.directions",
+              "form.title",
+              "form.fields.name.label"
+            ]
+          },
+          {
+            "file": "en:pages/emergency.json",
+            "missingPaths": [
+              "process.steps[0].title",
+              "process.steps[0].number",
+              "process.steps[0].description",
+              "process.steps[1].title",
+              "process.steps[1].number",
+              "process.steps[1].description",
+              "process.steps[2].title",
+              "process.steps[2].number",
+              "process.steps[2].description",
+              "process.title",
+              "firstAid.title",
+              "firstAid.scenarios[0].steps[0]",
+              "firstAid.scenarios[0].steps[1]",
+              "firstAid.scenarios[0].steps[2]",
+              "firstAid.scenarios[0].steps[3]"
+            ]
+          },
+          {
+            "file": "en:pages/home.json",
+            "missingPaths": [
+              "blog.badge",
+              "blog.posts",
+              "blog.title",
+              "blog.variant",
+              "blog.moreLink.url",
+              "blog.moreLink.text",
+              "blog.subtitle",
+              "topBar.badge.text",
+              "topBar.badge.visible",
+              "topBar.email",
+              "topBar.phone",
+              "topBar.address",
+              "topBar.addressMapUrl",
+              "gallery.badge",
+              "gallery.title"
+            ]
+          },
+          {
+            "file": "en:pages/insurance.json",
+            "missingPaths": [
+              "faqs[0].answer",
+              "faqs[0].question",
+              "faqs[1].answer",
+              "faqs[1].question",
+              "faqs[2].answer",
+              "faqs[2].question",
+              "faqs[3].answer",
+              "faqs[3].question",
+              "networkInfo.body",
+              "networkInfo.title",
+              "howInsuranceWorks.body",
+              "howInsuranceWorks.title"
+            ]
+          },
+          {
+            "file": "en:pages/new-patient.json",
+            "missingPaths": [
+              "faqs[0].answer",
+              "faqs[0].question",
+              "faqs[1].answer",
+              "faqs[1].question",
+              "faqs[2].answer",
+              "faqs[2].question",
+              "whatToBring[0]",
+              "whatToBring[1]",
+              "whatToBring[2]",
+              "whatToBring[3]",
+              "whatToBring[4]",
+              "patientForms.title",
+              "patientForms.downloads[0].url",
+              "patientForms.downloads[0].name",
+              "patientForms.downloads[1].url"
+            ]
+          },
+          {
+            "file": "en:pages/new-patients.json",
+            "missingPaths": [
+              "faq.items[0].answer",
+              "faq.items[0].question",
+              "faq.items[1].answer",
+              "faq.items[1].question",
+              "faq.items[2].answer",
+              "faq.items[2].question",
+              "faq.items[3].answer",
+              "faq.items[3].question",
+              "faq.items[4].answer",
+              "faq.items[4].question",
+              "faq.items[5].answer",
+              "faq.items[5].question",
+              "faq.title",
+              "insurance.link.url",
+              "insurance.link.text"
+            ]
+          },
+          {
+            "file": "en:pages/services-hub.json",
+            "missingPaths": [
+              "technologyPromise.title",
+              "technologyPromise.description"
+            ]
+          },
+          {
+            "file": "en:pages/services.json",
+            "missingPaths": [
+              "faq.faqs[0].answer",
+              "faq.faqs[0].question",
+              "faq.faqs[1].answer",
+              "faq.faqs[1].question",
+              "faq.faqs[2].answer",
+              "faq.faqs[2].question",
+              "faq.faqs[3].answer",
+              "faq.faqs[3].question",
+              "faq.title",
+              "faq.variant",
+              "overview.title",
+              "overview.variant",
+              "overview.benefits[0]",
+              "overview.benefits[1]",
+              "overview.benefits[2]"
+            ]
+          },
+          {
+            "file": "en:pages/team.json",
+            "missingPaths": [
+              "supportStaff[0].name",
+              "supportStaff[0].title",
+              "supportStaff[0].languages[0]",
+              "supportStaff[0].languages[1]",
+              "supportStaff[1].name",
+              "supportStaff[1].title",
+              "supportStaff[1].languages[0]",
+              "supportStaff[1].languages[1]",
+              "supportStaff[2].name",
+              "supportStaff[2].title",
+              "supportStaff[2].languages[0]",
+              "supportStaff[2].languages[1]",
+              "cultureStatement",
+              "showSupportStaff"
+            ]
+          },
+          {
+            "file": "en:pages/technology.json",
+            "missingPaths": [
+              "whyItMatters.title",
+              "whyItMatters.description"
+            ]
+          },
+          {
+            "file": "en:seo.json",
+            "missingPaths": [
+              "home.title",
+              "home.description",
+              "ogImage",
+              "description"
+            ]
+          },
+          {
+            "file": "en:services/bonding.json",
+            "missingPaths": [
+              "faq[0].answer",
+              "faq[0].question",
+              "faq[1].answer",
+              "faq[1].question",
+              "faq[2].answer",
+              "faq[2].question",
+              "icon",
+              "price",
+              "benefits[0]",
+              "benefits[1]",
+              "benefits[2]",
+              "benefits[3]",
+              "subtitle",
+              "heroVariant",
+              "whatToExpect"
+            ]
+          },
+          {
+            "file": "en:services/cleanings-and-exams.json",
+            "missingPaths": [
+              "faq[0].answer",
+              "faq[0].question",
+              "faq[1].answer",
+              "faq[1].question",
+              "faq[2].answer",
+              "faq[2].question",
+              "faq[3].answer",
+              "faq[3].question",
+              "icon",
+              "price",
+              "benefits[0]",
+              "benefits[1]",
+              "benefits[2]",
+              "benefits[3]",
+              "subtitle"
+            ]
+          },
+          {
+            "file": "en:services/crowns-and-bridges.json",
+            "missingPaths": [
+              "faq[0].answer",
+              "faq[0].question",
+              "faq[1].answer",
+              "faq[1].question",
+              "faq[2].answer",
+              "faq[2].question",
+              "icon",
+              "price",
+              "benefits[0]",
+              "benefits[1]",
+              "benefits[2]",
+              "benefits[3]",
+              "subtitle",
+              "heroVariant",
+              "whatToExpect"
+            ]
+          },
+          {
+            "file": "en:services/dental-implants.json",
+            "missingPaths": [
+              "faq[0].answer",
+              "faq[0].question",
+              "faq[1].answer",
+              "faq[1].question",
+              "faq[2].answer",
+              "faq[2].question",
+              "icon",
+              "price",
+              "benefits[0]",
+              "benefits[1]",
+              "benefits[2]",
+              "benefits[3]",
+              "subtitle",
+              "heroVariant",
+              "whatToExpect"
+            ]
+          },
+          {
+            "file": "en:services/dentures.json",
+            "missingPaths": [
+              "faq[0].answer",
+              "faq[0].question",
+              "faq[1].answer",
+              "faq[1].question",
+              "faq[2].answer",
+              "faq[2].question",
+              "faq[3].answer",
+              "faq[3].question",
+              "icon",
+              "price",
+              "benefits[0]",
+              "benefits[1]",
+              "benefits[2]",
+              "benefits[3]",
+              "subtitle"
+            ]
+          }
+        ]
+      },
+      "filesWithLegacyPathsPreview": []
+    },
+    {
+      "siteId": "bright-smile-dental",
+      "contentEntries": 64,
+      "mediaAssets": 0,
+      "imageRefs": {
+        "legacyUploadPathCount": 0,
+        "bucketUrlCount": 84,
+        "externalImageUrlCount": 0
+      },
+      "variantKeyCount": 52,
+      "variantIssuesCount": 3,
+      "variantIssuesPreview": [
+        {
+          "type": "unknown_variant_key",
+          "path": "menu.variant",
+          "key": "variant",
+          "value": "default"
+        },
+        {
+          "type": "unsupported_variant_value",
+          "path": "services.variant",
+          "key": "variant",
+          "value": "grid-cards",
+          "allowed": [
+            "grid-cards-2x",
+            "grid-cards-3x",
+            "featured-large",
+            "list-horizontal",
+            "accordion",
+            "tabs",
+            "detail-alternating",
+            "detail-image-right"
+          ]
+        },
+        {
+          "type": "unknown_variant_key",
+          "path": "layoutVariant",
+          "key": "layoutVariant",
+          "value": "category-detail-alternating"
+        }
+      ],
+      "urlReachability": {
+        "checked": 56,
+        "broken": 0,
+        "brokenPreview": []
+      },
+      "formCoverage": {
+        "filesFlagged": 36,
+        "mismatchesPreview": [
+          {
+            "file": "en:blog/childrens-dental-health-guide.json",
+            "missingPaths": [
+              "type",
+              "readTime",
+              "published",
+              "relatedPosts",
+              "relatedServices[0]"
+            ]
+          },
+          {
+            "file": "en:blog/dental-implants-vs-bridges.json",
+            "missingPaths": [
+              "type",
+              "readTime",
+              "published",
+              "relatedPosts",
+              "relatedServices[0]",
+              "relatedServices[1]"
+            ]
+          },
+          {
+            "file": "en:blog/foods-that-damage-teeth.json",
+            "missingPaths": [
+              "type",
+              "readTime",
+              "published",
+              "relatedPosts",
+              "relatedServices[0]"
+            ]
+          },
+          {
+            "file": "en:blog/how-to-overcome-dental-anxiety.json",
+            "missingPaths": [
+              "type",
+              "readTime",
+              "published",
+              "relatedPosts",
+              "relatedServices[0]"
+            ]
+          },
+          {
+            "file": "en:blog/invisalign-vs-braces.json",
+            "missingPaths": [
+              "type",
+              "readTime",
+              "published",
+              "relatedPosts",
+              "relatedServices[0]"
+            ]
+          },
+          {
+            "file": "en:blog/what-to-expect-first-dental-visit.json",
+            "missingPaths": [
+              "type",
+              "readTime",
+              "published",
+              "relatedPosts",
+              "relatedServices[0]"
+            ]
+          },
+          {
+            "file": "en:header.json",
+            "missingPaths": [
+              "logoText",
+              "logoType",
+              "showPhone",
+              "ctaPrimary.url",
+              "ctaPrimary.text",
+              "ctaPrimary.style",
+              "ctaSecondary.url",
+              "ctaSecondary.text",
+              "ctaSecondary.style",
+              "logoImageUrl",
+              "stickyHeader",
+              "announcementBar.text",
+              "announcementBar.enabled",
+              "announcementBar.linkUrl",
+              "announcementBar.linkText"
+            ]
+          },
+          {
+            "file": "en:pages/about.json",
+            "missingPaths": [
+              "clinic.title",
+              "clinic.values[0].icon",
+              "clinic.values[0].title",
+              "clinic.values[0].description",
+              "clinic.values[1].icon",
+              "clinic.values[1].title",
+              "clinic.values[1].description",
+              "clinic.values[2].icon",
+              "clinic.values[2].title",
+              "clinic.values[2].description",
+              "clinic.values[3].icon",
+              "clinic.values[3].title",
+              "clinic.values[3].description",
+              "clinic.variant",
+              "clinic.features[0]"
+            ]
+          },
+          {
+            "file": "en:pages/case-studies.json",
+            "missingPaths": [
+              "statistics.stats[0].icon",
+              "statistics.stats[0].label",
+              "statistics.stats[0].number",
+              "statistics.stats[1].icon",
+              "statistics.stats[1].label",
+              "statistics.stats[1].number",
+              "statistics.stats[2].icon",
+              "statistics.stats[2].label",
+              "statistics.stats[2].number",
+              "statistics.stats[3].icon",
+              "statistics.stats[3].label",
+              "statistics.stats[3].number",
+              "statistics.title",
+              "statistics.variant"
+            ]
+          },
+          {
+            "file": "en:pages/contact.json",
+            "missingPaths": [
+              "faq.items[0].answer",
+              "faq.items[0].question",
+              "faq.items[1].answer",
+              "faq.items[1].question",
+              "faq.items[2].answer",
+              "faq.items[2].question",
+              "faq.title",
+              "faq.variant",
+              "map.title",
+              "map.showMap",
+              "map.variant",
+              "map.embedUrl",
+              "map.directions",
+              "form.title",
+              "form.fields.name.label"
+            ]
+          },
+          {
+            "file": "en:pages/emergency.json",
+            "missingPaths": [
+              "process.steps[0].title",
+              "process.steps[0].number",
+              "process.steps[0].description",
+              "process.steps[1].title",
+              "process.steps[1].number",
+              "process.steps[1].description",
+              "process.steps[2].title",
+              "process.steps[2].number",
+              "process.steps[2].description",
+              "process.title",
+              "firstAid.title",
+              "firstAid.scenarios[0].steps[0]",
+              "firstAid.scenarios[0].steps[1]",
+              "firstAid.scenarios[0].steps[2]",
+              "firstAid.scenarios[0].steps[3]"
+            ]
+          },
+          {
+            "file": "en:pages/home.json",
+            "missingPaths": [
+              "blog.badge",
+              "blog.posts",
+              "blog.title",
+              "blog.variant",
+              "blog.moreLink.url",
+              "blog.moreLink.text",
+              "blog.subtitle",
+              "topBar.badge.text",
+              "topBar.badge.visible",
+              "topBar.email",
+              "topBar.phone",
+              "topBar.address",
+              "topBar.addressMapUrl",
+              "gallery.badge",
+              "gallery.title"
+            ]
+          },
+          {
+            "file": "en:pages/insurance.json",
+            "missingPaths": [
+              "faqs[0].answer",
+              "faqs[0].question",
+              "faqs[1].answer",
+              "faqs[1].question",
+              "faqs[2].answer",
+              "faqs[2].question",
+              "faqs[3].answer",
+              "faqs[3].question",
+              "networkInfo.body",
+              "networkInfo.title",
+              "howInsuranceWorks.body",
+              "howInsuranceWorks.title"
+            ]
+          },
+          {
+            "file": "en:pages/new-patient.json",
+            "missingPaths": [
+              "faqs[0].answer",
+              "faqs[0].question",
+              "faqs[1].answer",
+              "faqs[1].question",
+              "faqs[2].answer",
+              "faqs[2].question",
+              "whatToBring[0]",
+              "whatToBring[1]",
+              "whatToBring[2]",
+              "whatToBring[3]",
+              "whatToBring[4]",
+              "patientForms.title",
+              "patientForms.downloads[0].url",
+              "patientForms.downloads[0].name",
+              "patientForms.downloads[1].url"
+            ]
+          },
+          {
+            "file": "en:pages/new-patients.json",
+            "missingPaths": [
+              "faq.items[0].answer",
+              "faq.items[0].question",
+              "faq.items[1].answer",
+              "faq.items[1].question",
+              "faq.items[2].answer",
+              "faq.items[2].question",
+              "faq.items[3].answer",
+              "faq.items[3].question",
+              "faq.items[4].answer",
+              "faq.items[4].question",
+              "faq.items[5].answer",
+              "faq.items[5].question",
+              "faq.title",
+              "insurance.link.url",
+              "insurance.link.text"
+            ]
+          },
+          {
+            "file": "en:pages/services-hub.json",
+            "missingPaths": [
+              "technologyPromise.title",
+              "technologyPromise.description"
+            ]
+          },
+          {
+            "file": "en:pages/services.json",
+            "missingPaths": [
+              "faq.faqs[0].answer",
+              "faq.faqs[0].question",
+              "faq.faqs[1].answer",
+              "faq.faqs[1].question",
+              "faq.faqs[2].answer",
+              "faq.faqs[2].question",
+              "faq.faqs[3].answer",
+              "faq.faqs[3].question",
+              "faq.title",
+              "faq.variant",
+              "overview.title",
+              "overview.variant",
+              "overview.benefits[0]",
+              "overview.benefits[1]",
+              "overview.benefits[2]"
+            ]
+          },
+          {
+            "file": "en:pages/team.json",
+            "missingPaths": [
+              "supportStaff[0].name",
+              "supportStaff[0].title",
+              "supportStaff[0].languages[0]",
+              "supportStaff[0].languages[1]",
+              "supportStaff[1].name",
+              "supportStaff[1].title",
+              "supportStaff[1].languages[0]",
+              "supportStaff[1].languages[1]",
+              "supportStaff[2].name",
+              "supportStaff[2].title",
+              "supportStaff[2].languages[0]",
+              "supportStaff[2].languages[1]",
+              "cultureStatement",
+              "showSupportStaff"
+            ]
+          },
+          {
+            "file": "en:pages/technology.json",
+            "missingPaths": [
+              "whyItMatters.title",
+              "whyItMatters.description"
+            ]
+          },
+          {
+            "file": "en:seo.json",
+            "missingPaths": [
+              "home.title",
+              "home.description",
+              "ogImage",
+              "description"
+            ]
+          },
+          {
+            "file": "en:services/bonding.json",
+            "missingPaths": [
+              "faq[0].answer",
+              "faq[0].question",
+              "faq[1].answer",
+              "faq[1].question",
+              "faq[2].answer",
+              "faq[2].question",
+              "icon",
+              "price",
+              "benefits[0]",
+              "benefits[1]",
+              "benefits[2]",
+              "benefits[3]",
+              "subtitle",
+              "heroVariant",
+              "whatToExpect"
+            ]
+          },
+          {
+            "file": "en:services/cleanings-and-exams.json",
+            "missingPaths": [
+              "faq[0].answer",
+              "faq[0].question",
+              "faq[1].answer",
+              "faq[1].question",
+              "faq[2].answer",
+              "faq[2].question",
+              "faq[3].answer",
+              "faq[3].question",
+              "icon",
+              "price",
+              "benefits[0]",
+              "benefits[1]",
+              "benefits[2]",
+              "benefits[3]",
+              "subtitle"
+            ]
+          },
+          {
+            "file": "en:services/crowns-and-bridges.json",
+            "missingPaths": [
+              "faq[0].answer",
+              "faq[0].question",
+              "faq[1].answer",
+              "faq[1].question",
+              "faq[2].answer",
+              "faq[2].question",
+              "icon",
+              "price",
+              "benefits[0]",
+              "benefits[1]",
+              "benefits[2]",
+              "benefits[3]",
+              "subtitle",
+              "heroVariant",
+              "whatToExpect"
+            ]
+          },
+          {
+            "file": "en:services/dental-implants.json",
+            "missingPaths": [
+              "faq[0].answer",
+              "faq[0].question",
+              "faq[1].answer",
+              "faq[1].question",
+              "faq[2].answer",
+              "faq[2].question",
+              "icon",
+              "price",
+              "benefits[0]",
+              "benefits[1]",
+              "benefits[2]",
+              "benefits[3]",
+              "subtitle",
+              "heroVariant",
+              "whatToExpect"
+            ]
+          },
+          {
+            "file": "en:services/extractions.json",
+            "missingPaths": [
+              "faq[0].answer",
+              "faq[0].question",
+              "faq[1].answer",
+              "faq[1].question",
+              "faq[2].answer",
+              "faq[2].question",
+              "faq[3].answer",
+              "faq[3].question",
+              "icon",
+              "price",
+              "benefits[0]",
+              "benefits[1]",
+              "benefits[2]",
+              "benefits[3]",
+              "subtitle"
+            ]
+          }
+        ]
+      },
+      "filesWithLegacyPathsPreview": []
+    }
+  ]
+}

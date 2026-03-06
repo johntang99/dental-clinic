@@ -8,6 +8,7 @@ import {
   Image,
   Layers,
   LayoutGrid,
+  Rocket,
   Settings,
   SlidersHorizontal,
   Users,
@@ -16,6 +17,7 @@ import { getSession } from '@/lib/admin/auth';
 import { isSuperAdmin } from '@/lib/admin/permissions';
 
 const navigation = [
+  { name: 'Onboarding', href: '/admin/onboarding', icon: Rocket, superAdminOnly: true },
   { name: 'Sites', href: '/admin/sites', icon: Building2 },
   { name: 'Site Settings', href: '/admin/site-settings', icon: SlidersHorizontal },
   { name: 'Content', href: '/admin/content', icon: FileText },
@@ -27,11 +29,13 @@ const navigation = [
     name: 'Master Services',
     href: '/admin/shared-library/master-services',
     icon: FolderGit2,
+    superAdminOnly: true,
   },
   {
     name: 'Site Voice Profiles',
     href: '/admin/shared-library/site-voice-profiles',
     icon: FolderGit2,
+    superAdminOnly: true,
   },
   { name: 'Bookings', href: '/admin/bookings', icon: Calendar },
   { name: 'Booking Settings', href: '/admin/booking-settings', icon: SlidersHorizontal },
@@ -45,7 +49,7 @@ const navigation = [
 export async function AdminSidebar() {
   const session = await getSession();
   const isAdmin = session?.user ? isSuperAdmin(session.user) : false;
-  const items = isAdmin ? navigation : navigation.filter((item) => item.name !== 'Users');
+  const items = isAdmin ? navigation : navigation.filter((item) => !item.superAdminOnly && item.name !== 'Users');
   return (
     <aside className="hidden lg:flex lg:flex-col lg:w-64 lg:fixed lg:inset-y-0 bg-white border-r border-gray-200">
       <div className="flex items-center h-16 px-6 border-b border-gray-200">

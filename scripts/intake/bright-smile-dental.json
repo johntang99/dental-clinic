@@ -1,0 +1,147 @@
+{
+  "clientId": "bright-smile-dental",
+  "templateSiteId": "alex-dental",
+  "industry": "dental",
+
+  "business": {
+    "name": "Bright Smile Dental",
+    "tagline": "",
+    "description": "",
+    "ownerName": "Dr. Emily Park",
+    "ownerTitle": "DDS",
+    "ownerCredentials": [
+      { "credential": "Doctor of Dental Surgery (DDS)", "institution": "NYU College of Dentistry", "year": "2016", "location": "New York, NY" },
+      { "credential": "Bachelor of Science in Biology", "institution": "Stony Brook University", "year": "2012", "location": "Stony Brook, NY" }
+    ],
+    "ownerCertifications": ["American Dental Association (ADA)", "Invisalign Certified Provider", "New York State Dental Association", "CPR and ACLS Certified"],
+    "ownerSpecializations": ["General Dentistry", "Cosmetic Dentistry", "Invisalign", "Pediatric Dentistry"],
+    "ownerLanguages": ["English", "Korean"],
+    "ownerBio": "",
+    "teamMembers": [
+      {
+        "name": "Dr. Jay Lee",
+        "title": "DMD",
+        "role": "Associate Dentist",
+        "languages": ["English", "Korean"],
+        "specializations": ["Pediatric Dentistry", "Preventive Care", "Dental Implants"],
+        "credentials": [
+          { "credential": "Doctor of Dental Medicine (DMD)", "institution": "Rutgers School of Dental Medicine", "year": "2019", "location": "Newark, NJ" }
+        ],
+        "certifications": ["ADA Member", "Pediatric Dentistry Certificate"],
+        "bio": ""
+      }
+    ],
+    "foundedYear": 2018,
+    "yearsExperience": "8+"
+  },
+
+  "location": {
+    "address": "136-20 38th Avenue, Suite 2B",
+    "city": "Flushing",
+    "state": "NY",
+    "zip": "11354",
+    "lat": 40.7591,
+    "lng": -73.8302,
+    "phone": "(718) 555-0234",
+    "phoneEmergency": "(718) 555-0234",
+    "email": "info@bright-smile-dental.com",
+    "emailAppointments": "appointments@bright-smile-dental.com",
+    "mapsEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022!2d-73.8302!3d40.7591",
+    "addressMapUrl": "https://maps.google.com/?q=136-20+38th+Avenue+Flushing+NY+11354"
+  },
+
+  "hours": {
+    "monday": "9:00 AM - 6:00 PM",
+    "tuesday": "9:00 AM - 6:00 PM",
+    "wednesday": "10:00 AM - 7:00 PM",
+    "thursday": "9:00 AM - 6:00 PM",
+    "friday": "9:00 AM - 5:00 PM",
+    "saturday": "9:00 AM - 3:00 PM",
+    "sunday": "Closed",
+    "emergencyNote": "Dental emergencies: call us for same-day urgent care"
+  },
+
+  "social": {
+    "facebook": "https://facebook.com/brightsmiledental",
+    "instagram": "https://instagram.com/brightsmiledental",
+    "google": "https://g.page/brightsmiledental",
+    "yelp": "",
+    "youtube": ""
+  },
+
+  "domains": {
+    "production": "bright-smile-dental.com",
+    "dev": "localhost:3005"
+  },
+
+  "locales": {
+    "default": "en",
+    "supported": ["en", "ko"]
+  },
+
+  "brand": {
+    "variant": "blue-silver",
+    "primaryColor": "#1A56DB",
+    "secondaryColor": "",
+    "fonts": {
+      "display": "",
+      "body": ""
+    }
+  },
+
+  "services": {
+    "enabled": [
+      "cleanings-and-exams",
+      "fillings",
+      "root-canal",
+      "extractions",
+      "gum-disease-treatment",
+      "teeth-whitening",
+      "veneers",
+      "bonding",
+      "dental-implants",
+      "crowns-and-bridges",
+      "invisalign",
+      "pediatric-dentistry"
+    ]
+  },
+
+  "insurance": {
+    "acceptsInsurance": true,
+    "inNetworkNote": "In-network with most major PPO plans including Aetna, Delta Dental, MetLife, and Cigna.",
+    "financingNote": "CareCredit and Sunbit financing available.",
+    "membershipPlanEnabled": true,
+    "membershipPlanName": "Bright Smile Wellness Plan"
+  },
+
+  "booking": {
+    "onlineBookingEnabled": true,
+    "bookingUrl": "/book",
+    "callToBook": true,
+    "preferredContactMethod": "both"
+  },
+
+  "display": {
+    "showLanguageSwitcher": true,
+    "showEmergencyBanner": true,
+    "emergencyBannerText": "Dental emergency? Call us now for same-day appointments"
+  },
+
+  "contentTone": {
+    "voice": "warm-professional",
+    "uniqueSellingPoints": [
+      "Korean and English speaking team",
+      "Convenient Flushing location near 7 train",
+      "Modern technology in a comfortable setting",
+      "Family-friendly care for all ages"
+    ],
+    "targetDemographic": "Korean-American families in Flushing, Queens"
+  },
+
+  "stats": [
+    { "icon": "calendar", "number": "8+", "label": "Years Experience" },
+    { "icon": "users", "number": "5,000+", "label": "Patients Served" },
+    { "icon": "star", "number": "4.8", "label": "Google Rating" },
+    { "icon": "heart", "number": "2", "label": "Languages Spoken" }
+  ]
+}
