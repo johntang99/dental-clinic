@@ -1,62 +1,111 @@
 {
   "id": "hu-orthodontics",
-  "lat": 40.7580,
+  "lat": 40.758,
   "lng": -73.8306,
   "zip": "11354",
   "city": "Flushing",
-  "state": "NY",
-  "address": "38-08 Union Street, Suite 4B",
-  "addressFull": "38-08 Union Street, Suite 4B, Flushing, NY 11354",
   "email": "info@hulinorthodontics.com",
-  "phone": "(718) 353-0880",
-  "phoneEmergency": "(718) 353-0880",
-  "emailAppointments": "info@hulinorthodontics.com",
-
   "hours": {
-    "monday": "10:00 AM - 6:00 PM",
-    "tuesday": "10:00 AM - 6:00 PM",
-    "wednesday": "大颈诊所: 10:00 AM - 6:00 PM",
-    "thursday": "10:00 AM - 6:00 PM",
     "friday": "10:00 AM - 6:00 PM",
-    "saturday": "9:00 AM - 3:00 PM",
+    "monday": "10:00 AM - 6:00 PM",
     "sunday": "休息",
+    "tuesday": "10:00 AM - 6:00 PM",
+    "saturday": "9:00 AM - 3:00 PM",
+    "thursday": "10:00 AM - 6:00 PM",
+    "wednesday": "大颈诊所: 10:00 AM - 6:00 PM",
     "emergencyNote": "正畸紧急情况请致电，我们将尽快安排处理"
   },
-
+  "phone": "(718) 353-0880",
+  "state": "NY",
   "social": {
-    "facebook": "https://www.facebook.com/hulinorthodontics",
-    "instagram": "https://www.instagram.com/hulinorthodontics",
-    "google": "",
     "yelp": "",
-    "youtube": "https://www.youtube.com/@hulinorthodontics"
+    "google": "",
+    "youtube": "https://www.youtube.com/@hulinorthodontics",
+    "facebook": "https://www.facebook.com/hulinorthodontics",
+    "instagram": "https://www.instagram.com/hulinorthodontics"
   },
-
+  "address": "38-08 Union Street, Suite 4B",
   "booking": {
     "bookingUrl": "/book",
-    "onlineBookingEnabled": true,
     "callToBook": true,
+    "onlineBookingEnabled": true,
     "preferredContactMethod": "both"
   },
-
-  "insurance": {
-    "acceptsInsurance": true,
-    "inNetworkNote": "我们接受大部分主流牙科和正畸保险计划。我们的团队将在治疗开始前帮您核实保险福利。",
-    "financingNote": "提供灵活的分期付款方案，符合条件的患者可享受免息分期。",
-    "membershipPlanEnabled": false,
-    "membershipPlanName": ""
+  "display": {
+    "defaultLocale": "zh",
+    "emergencyBannerText": "",
+    "showEmergencyBanner": false,
+    "showLanguageSwitcher": true
   },
-
+  "tagline": "ABO认证正畸专家 · 法拉盛与大颈",
+  "insurance": {
+    "financingNote": "提供灵活的分期付款方案，符合条件的患者可享受免息分期。",
+    "inNetworkNote": "我们接受大部分主流牙科和正畸保险计划。我们的团队将在治疗开始前帮您核实保险福利。",
+    "acceptsInsurance": true,
+    "membershipPlanName": "",
+    "membershipPlanEnabled": false
+  },
   "languages": [
-    { "code": "zh", "flag": "CN", "label": "中文", "enabled": true },
-    { "code": "en", "flag": "US", "label": "English", "enabled": true }
+    {
+      "code": "zh",
+      "flag": "CN",
+      "label": "中文",
+      "enabled": true
+    },
+    {
+      "code": "en",
+      "flag": "US",
+      "label": "English",
+      "enabled": true
+    }
   ],
-
+  "locations": [
+    {
+      "id": "flushing",
+      "city": "Flushing, NY 11354",
+      "name": "法拉盛诊所（总部）",
+      "hours": {
+        "friday": "10:00 AM - 6:00 PM",
+        "monday": "10:00 AM - 6:00 PM",
+        "sunday": "休息",
+        "tuesday": "10:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 3:00 PM",
+        "thursday": "10:00 AM - 6:00 PM",
+        "wednesday": "休息"
+      },
+      "phone": "(718) 353-0880",
+      "address": "38-08 Union Street, Suite 4B",
+      "isPrimary": true,
+      "mapsEmbedUrl": "https://maps.google.com/maps?q=Hu+Lin+Orthodontics+38-08+Union+St+Flushing+NY+11354&t=m&z=17&output=embed",
+      "addressMapUrl": "https://maps.google.com/?q=38-08+Union+St+Suite+4B+Flushing+NY+11354"
+    },
+    {
+      "id": "great-neck",
+      "city": "Great Neck, NY 11021",
+      "name": "大颈诊所",
+      "hours": {
+        "friday": "休息",
+        "monday": "休息",
+        "sunday": "休息",
+        "tuesday": "休息",
+        "saturday": "休息",
+        "thursday": "休息",
+        "wednesday": "10:00 AM - 6:00 PM"
+      },
+      "phone": "(516) 809-8686",
+      "address": "79 Cutter Mill Road",
+      "isPrimary": false,
+      "mapsEmbedUrl": "https://maps.google.com/maps?q=HU+LIN+Great+Neck+Orthodontics+79+Cutter+Mill+Rd+Great+Neck+NY+11021&t=m&z=17&output=embed",
+      "addressMapUrl": "https://maps.google.com/?q=79+Cutter+Mill+Rd+Great+Neck+NY+11021"
+    }
+  ],
+  "taglineEN": "ABO Board Certified Orthodontist · Flushing & Great Neck",
+  "addressFull": "38-08 Union Street, Suite 4B, Flushing, NY 11354",
   "credentials": {
     "npiNumber": "",
-    "licenseNumber": "",
     "licenseState": "NY",
     "adaMembership": true,
-    "stateDentalAssociation": "American Association of Orthodontists",
+    "licenseNumber": "",
     "specializations": [
       "正畸矫治",
       "隐适美",
@@ -65,63 +114,14 @@
       "儿童正畸",
       "成人正畸",
       "复杂正畸病例"
-    ]
+    ],
+    "stateDentalAssociation": "American Association of Orthodontists"
   },
-
-  "businessName": "胡林正畸中心",
-  "businessNameEN": "Hu Lin Orthodontics",
-  "tagline": "ABO认证正畸专家 · 法拉盛与大颈",
-  "taglineEN": "ABO Board Certified Orthodontist · Flushing & Great Neck",
   "description": "胡林医生是三次获得美国正畸学会（ABO）认证的正畸专家，拥有DMD、DDS、MS、PhD四重学位。在法拉盛和大颈设有两家诊所，以中英双语为华人社区提供专业的正畸治疗服务。",
-
-  "display": {
-    "defaultLocale": "zh",
-    "showLanguageSwitcher": true,
-    "showEmergencyBanner": false,
-    "emergencyBannerText": ""
-  },
-
-  "locations": [
-    {
-      "id": "flushing",
-      "name": "法拉盛诊所（总部）",
-      "address": "38-08 Union Street, Suite 4B",
-      "city": "Flushing, NY 11354",
-      "phone": "(718) 353-0880",
-      "isPrimary": true,
-      "hours": {
-        "monday": "10:00 AM - 6:00 PM",
-        "tuesday": "10:00 AM - 6:00 PM",
-        "wednesday": "休息",
-        "thursday": "10:00 AM - 6:00 PM",
-        "friday": "10:00 AM - 6:00 PM",
-        "saturday": "9:00 AM - 3:00 PM",
-        "sunday": "休息"
-      },
-      "mapsEmbedUrl": "https://maps.google.com/maps?q=Hu+Lin+Orthodontics+38-08+Union+St+Flushing+NY+11354&t=m&z=17&output=embed",
-      "addressMapUrl": "https://maps.google.com/?q=38-08+Union+St+Suite+4B+Flushing+NY+11354"
-    },
-    {
-      "id": "great-neck",
-      "name": "大颈诊所",
-      "address": "79 Cutter Mill Road",
-      "city": "Great Neck, NY 11021",
-      "phone": "(516) 809-8686",
-      "isPrimary": false,
-      "hours": {
-        "monday": "休息",
-        "tuesday": "休息",
-        "wednesday": "10:00 AM - 6:00 PM",
-        "thursday": "休息",
-        "friday": "休息",
-        "saturday": "休息",
-        "sunday": "休息"
-      },
-      "mapsEmbedUrl": "https://maps.google.com/maps?q=HU+LIN+Great+Neck+Orthodontics+79+Cutter+Mill+Rd+Great+Neck+NY+11021&t=m&z=17&output=embed",
-      "addressMapUrl": "https://maps.google.com/?q=79+Cutter+Mill+Rd+Great+Neck+NY+11021"
-    }
-  ],
-
+  "businessName": "胡林正畸中心",
   "mapsEmbedUrl": "https://maps.google.com/maps?q=Hu+Lin+Orthodontics+38-08+Union+St+Flushing+NY+11354&t=m&z=17&output=embed",
-  "addressMapUrl": "https://maps.google.com/?q=38-08+Union+St+Suite+4B+Flushing+NY+11354"
+  "addressMapUrl": "https://maps.google.com/?q=38-08+Union+St+Suite+4B+Flushing+NY+11354",
+  "businessNameEN": "Hu Lin Orthodontics",
+  "phoneEmergency": "(718) 353-0880",
+  "emailAppointments": "info@hulinorthodontics.com"
 }

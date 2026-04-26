@@ -10,31 +10,51 @@ import { locales, defaultLocale } from './lib/i18n';
 import sitesData from './content/_sites.json';
 import domainsData from './content/_site-domains.json';
 
+function normalizeDomain(raw: string): string {
+  return (raw || '')
+    .trim()
+    .replace(/^https?:\/\//, '')
+    .replace(/\/.*$/, '')
+    .replace(/:\d+$/, '')
+    .replace(/^www\./, '')
+    .toLowerCase();
+}
+
 function getSiteDefaultLocale(host: string): string {
-  const normalizedHost = (host || '').replace(/:\d+$/, '').replace(/^www\./, '').toLowerCase();
+  const normalizedHost = normalizeDomain(host);
+  const sites = (sitesData as any).sites || [];
+  const domains = (domainsData as any).domains || [];
 
   // Check domain mapping first
-  const domainEntry = (domainsData as any).domains?.find(
-    (d: any) => d.enabled && d.domain === normalizedHost
+  const domainEntry = domains.find(
+    (d: any) => d.enabled && normalizeDomain(String(d.domain || '')) === normalizedHost
   );
   if (domainEntry) {
-    const site = (sitesData as any).sites?.find(
+    const site = sites.find(
       (s: any) => s.id === domainEntry.siteId && s.enabled
     );
     if (site?.defaultLocale) return site.defaultLocale;
   }
 
-  // Localhost/dev: use first enabled site
-  if (normalizedHost.includes('localhost') || normalizedHost.startsWith('127.0.0.1')) {
-    const envSiteId = process.env.NEXT_PUBLIC_DEFAULT_SITE;
-    if (envSiteId) {
-      const site = (sitesData as any).sites?.find(
-        (s: any) => s.id === envSiteId && s.enabled
-      );
-      if (site?.defaultLocale) return site.defaultLocale;
-    }
-    const firstSite = (sitesData as any).sites?.find((s: any) => s.enabled);
-    if (firstSite?.defaultLocale) return firstSite.defaultLocale;
+  // Environment default site (works for both localhost and production fallback)
+  const envSiteId = process.env.NEXT_PUBLIC_DEFAULT_SITE;
+  if (envSiteId) {
+    const site = sites.find(
+      (s: any) => s.id === envSiteId && s.enabled
+    );
+    if (site?.defaultLocale) return site.defaultLocale;
+  }
+
+  // Match host directly against site.domain as a secondary fallback.
+  const hostSite = sites.find(
+    (s: any) => s.enabled && normalizeDomain(String(s.domain || '')) === normalizedHost
+  );
+  if (hostSite?.defaultLocale) return hostSite.defaultLocale;
+
+  // Final fallback: first enabled site's default locale.
+  const firstEnabledSite = sites.find((s: any) => s.enabled);
+  if (firstEnabledSite?.defaultLocale) {
+    return firstEnabledSite.defaultLocale;
   }
 
   return defaultLocale;
