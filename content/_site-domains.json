@@ -38,7 +38,19 @@
     },
     {
       "siteId": "hu-orthodontics",
+      "domain": "drhuortho.com",
+      "environment": "prod",
+      "enabled": true
+    },
+    {
+      "siteId": "hu-orthodontics",
       "domain": "cn.hulinorthodontics.com",
+      "environment": "prod",
+      "enabled": true
+    },
+    {
+      "siteId": "hu-orthodontics",
+      "domain": "cn.drhuortho.com",
       "environment": "prod",
       "enabled": true
     }
