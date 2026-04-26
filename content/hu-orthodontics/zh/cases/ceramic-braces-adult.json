@@ -1,0 +1,28 @@
+{
+  "id": "ceramic-braces-adult",
+  "category": "braces",
+  "condition": "成人牙齿拥挤",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-ceramic-braces-adult.jpg",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-ceramic-braces-adult.jpg",
+  "summary": "陈女士，40岁，一直对拥挤的牙齿感到不满意但担心传统牙套影响形象。选择了陶瓷牙套，透明托槽在社交场合几乎不可见。经过22个月治疗，牙齿排列整齐，咬合完美，她说这是她做过的最好的决定。",
+  "title": "40岁陶瓷牙套矫正案例",
+  "featured": false,
+  "slug": "ceramic-braces-adult",
+  "patientProfile": {
+    "name": "陈女士",
+    "age": "40岁",
+    "concern": "牙齿拥挤，担心牙套影响形象"
+  },
+  "treatmentDetails": {
+    "visits": "每月复诊",
+    "duration": "22个月",
+    "procedures": [
+      "陶瓷透明牙套",
+      "精细调整",
+      "保持器"
+    ]
+  },
+  "challenge": "陈女士上下颌中度拥挤，但因担心金属牙套影响社交形象而犹豫多年。",
+  "solution": "选择陶瓷透明托槽，外观接近牙色，在保持传统牙套精确矫治力的同时大大减少了视觉影响。",
+  "results": "22个月后牙齿完美排列。陈女士非常庆幸自己终于迈出了这一步，说这是她40岁给自己最好的礼物。"
+}

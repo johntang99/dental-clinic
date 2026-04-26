@@ -14,7 +14,9 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <AdminSidebar />
       <div className="lg:pl-64">
         <AdminTopbar />
-        <main className="px-6 py-6">{children}</main>
+        <main id="main-content" tabIndex={-1} className="px-6 py-6">
+          {children}
+        </main>
       </div>
     </div>
   );

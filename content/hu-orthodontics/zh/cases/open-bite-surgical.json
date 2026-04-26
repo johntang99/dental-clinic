@@ -1,0 +1,28 @@
+{
+  "id": "open-bite-surgical",
+  "category": "complex",
+  "condition": "骨性开合",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-open-bite-surgical.jpg",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-open-bite-surgical.jpg",
+  "summary": "赵女士，25岁，前牙完全无法咬合（开合），无法用前牙咬断食物。经过正畸与正颌外科联合治疗，24个月完成。术后前牙可以正常咬合，面部轮廓显著改善，患者对治疗结果极其满意。",
+  "title": "正畸外科联合治疗骨性开合",
+  "featured": false,
+  "slug": "open-bite-surgical",
+  "patientProfile": {
+    "name": "赵女士",
+    "age": "25岁",
+    "concern": "前牙无法咬合，无法咬断食物"
+  },
+  "treatmentDetails": {
+    "visits": "术前正畸12个月+术后正畸12个月",
+    "duration": "24个月",
+    "procedures": [
+      "术前正畸",
+      "正颌外科手术",
+      "术后精细调整"
+    ]
+  },
+  "challenge": "赵女士骨性开合，上下前牙之间有8mm间隙，无法用前牙咬断任何食物。单纯正畸无法解决骨骼层面的问题。",
+  "solution": "胡林医生与口腔外科医生协作，先通过12个月正畸排齐牙齿并建立术前最佳牙位，再进行正颌手术，术后继续精细调整。",
+  "results": "前牙恢复正常咬合功能，开合完全纠正。面部轮廓显著改善，赵女士终于可以自如地咬食各种食物。"
+}

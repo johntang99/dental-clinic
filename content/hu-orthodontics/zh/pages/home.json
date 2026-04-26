@@ -1,0 +1,229 @@
+{
+  "cta": {
+    "title": "准备好拥有自信的笑容了吗？",
+    "variant": "centered",
+    "subtitle": "预约免费初次咨询，让胡林医生为您量身定制矫治方案",
+    "primaryCta": {
+      "link": "/book",
+      "text": "预约免费咨询"
+    },
+    "secondaryCta": {
+      "link": "tel:+17183530880",
+      "text": "(718) 353-0880"
+    }
+  },
+  "blog": {
+    "badge": "知识中心",
+    "posts": [],
+    "title": "正畸科普文章",
+    "variant": "cards-grid",
+    "moreLink": {
+      "url": "/blog",
+      "text": "查看更多文章"
+    },
+    "subtitle": "了解牙齿矫正的方方面面"
+  },
+  "hero": {
+    "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1776476343753-dr.-hu-at-hu-lin-orthodontics.png",
+    "stats": [
+      {
+        "icon": "award",
+        "label": "ABO认证",
+        "number": "3×"
+      },
+      {
+        "icon": "calendar",
+        "label": "年执业经验",
+        "number": "25+"
+      },
+      {
+        "icon": "users",
+        "label": "成功案例",
+        "number": "10,000+"
+      },
+      {
+        "icon": "map-pin",
+        "label": "处诊所",
+        "number": "2"
+      }
+    ],
+    "tagline": "ABO认证正畸权威 · 法拉盛与大颈",
+    "variant": "split-photo-right",
+    "badgeText": "正在接受新患者预约",
+    "primaryCta": {
+      "link": "/book",
+      "text": "预约免费咨询"
+    },
+    "description": "胡林博士是正畸权威（Authority），三次获得美国正畸学会（ABO）认证，拥有DMD、DDS、MS、PhD四重学位。胡林正畸中心在法拉盛和大颈两处诊所，以中英双语为各年龄段患者提供专业的牙齿矫正服务。",
+    "trustBadges": [
+      "ABO三次认证",
+      "隐适美认证",
+      "15年以上经验"
+    ],
+    "businessName": "胡林正畸中心",
+    "floatingTags": [
+      "中英双语",
+      "周末就诊",
+      "免费咨询",
+      "灵活付款"
+    ],
+    "secondaryCta": {
+      "link": "tel:+17183530880",
+      "text": "(718) 353-0880"
+    },
+    "backgroundImage": ""
+  },
+  "topBar": {
+    "badge": {
+      "text": "新患者免费咨询",
+      "visible": true
+    },
+    "email": "info@hulinorthodontics.com",
+    "phone": "(718) 353-0880",
+    "address": "38-08 Union Street, Suite 4B, Flushing, NY 11354",
+    "addressMapUrl": "https://maps.google.com/?q=38-08+Union+St+Suite+4B+Flushing+NY+11354"
+  },
+  "location": {
+    "title": "诊所位置",
+    "subtitle": "法拉盛与大颈两处诊所",
+    "locations": [
+      {
+        "name": "法拉盛诊所（总部）",
+        "phone": "(718) 353-0880",
+        "address": "38-08 Union Street, Suite 4B, Flushing, NY 11354",
+        "directions": "位于联合街和39大道交汇处，靠近7号地铁线终点站和法拉盛市政停车场",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Hu+Lin+Orthodontics+38-08+Union+St+Flushing+NY+11354&t=m&z=17&output=embed"
+      },
+      {
+        "name": "大颈诊所",
+        "phone": "(516) 809-8686",
+        "address": "79 Cutter Mill Road, Great Neck, NY 11021",
+        "directions": "靠近大颈LIRR火车站",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=HU+LIN+Great+Neck+Orthodontics+79+Cutter+Mill+Rd+Great+Neck+NY+11021&t=m&z=17&output=embed"
+      }
+    ]
+  },
+  "services": {
+    "badge": "正畸服务",
+    "title": "全面的正畸治疗方案",
+    "variant": "grid-cards-3x",
+    "moreLink": {
+      "url": "/services",
+      "text": "查看全部服务"
+    },
+    "services": [
+      {
+        "id": "traditional-braces",
+        "icon": "AlignCenter",
+        "link": "/services/traditional-braces",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1776280200449-photo-1633951450008-8ad6dd373874.jpg",
+        "title": "传统金属牙套",
+        "category": "braces",
+        "featured": true,
+        "shortDescription": "经典的金属牙套矫正，适用于各种复杂的牙齿排列问题，是最广泛使用的正畸治疗方式。"
+      },
+      {
+        "id": "invisalign",
+        "icon": "Sparkles",
+        "link": "/services/invisalign",
+        "image": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop",
+        "title": "隐适美",
+        "category": "aligners",
+        "featured": true,
+        "shortDescription": "全球领先的透明矫正器品牌，几乎看不见的矫治方式，可自由摘取，不影响日常生活。"
+      },
+      {
+        "id": "early-orthodontics",
+        "icon": "Baby",
+        "link": "/services/early-orthodontics",
+        "image": "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=800&h=600&fit=crop",
+        "title": "儿童早期矫治",
+        "category": "by-age",
+        "featured": false,
+        "shortDescription": "针对6-10岁儿童的第一阶段矫治，利用生长发育窗口期纠正颌骨发育问题。"
+      },
+      {
+        "id": "adult-orthodontics",
+        "icon": "User",
+        "link": "/services/adult-orthodontics",
+        "image": "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&h=600&fit=crop",
+        "title": "成人正畸",
+        "category": "by-age",
+        "featured": true,
+        "shortDescription": "任何年龄都不晚。多种隐蔽的矫治选择，让您在不影响职业形象的情况下获得理想笑容。"
+      },
+      {
+        "id": "ceramic-braces",
+        "icon": "Sparkles",
+        "link": "/services/ceramic-braces",
+        "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop",
+        "title": "陶瓷牙套",
+        "category": "braces",
+        "featured": false,
+        "shortDescription": "透明或牙色的陶瓷托槽，在保持传统牙套矫治效果的同时，提供更美观的外观。"
+      },
+      {
+        "id": "teen-orthodontics",
+        "icon": "GraduationCap",
+        "link": "/services/teen-orthodontics",
+        "image": "https://images.unsplash.com/photo-1445527815219-ecbfec455359?w=800&h=600&fit=crop",
+        "title": "青少年矫正",
+        "category": "by-age",
+        "featured": true,
+        "shortDescription": "为青少年量身定制的全面正畸治疗，利用生长发育的黄金时期高效完成矫正。"
+      }
+    ],
+    "subtitle": "从儿童早期矫治到成人隐形矫正，量身定制您的完美笑容"
+  },
+  "whyChooseUs": {
+    "badge": "为什么选择我们",
+    "title": "选择胡林正畸中心的理由",
+    "features": [
+      {
+        "icon": "medal",
+        "title": "ABO三次认证",
+        "description": "美国正畸学会（ABO）认证是正畸领域的最高专业认可。仅约三分之一的正畸医生获得此认证，而胡林医生已三次通过认证。"
+      },
+      {
+        "icon": "graduation-cap",
+        "title": "四重学位",
+        "description": "DMD（口腔医学博士）、DDS（牙科博士）、MS（硕士）、PhD（博士）——卓越的学术背景确保您获得最专业的治疗。"
+      },
+      {
+        "icon": "languages",
+        "title": "中英双语服务",
+        "description": "团队精通普通话和英语，确保您在整个治疗过程中都能无障碍沟通，充分理解治疗方案。"
+      },
+      {
+        "icon": "calendar-check",
+        "title": "便利的就诊安排",
+        "description": "法拉盛和大颈两处诊所，提供周末就诊时间。法拉盛诊所靠近7号线终点站，交通便利。"
+      },
+      {
+        "icon": "brain-circuit",
+        "title": "先进的治疗理念",
+        "description": "将正畸技术与外科原则相结合的多学科方法，能够有效解决传统方法难以处理的复杂病例。"
+      },
+      {
+        "icon": "banknote",
+        "title": "灵活的付款方案",
+        "description": "接受大部分保险计划，提供免息分期付款方案，让专业的正畸治疗触手可及。"
+      }
+    ]
+  },
+  "testimonials": {
+    "badge": "患者评价",
+    "title": "听听他们怎么说",
+    "subtitle": "来自Google和Yelp的真实患者评价",
+    "variant": "masonry"
+  },
+  "caseStudies": {
+    "badge": "真实案例",
+    "title": "矫正前后对比",
+    "subtitle": "查看胡林医生的真实矫正案例，了解不同治疗方案的实际效果",
+    "moreLink": {
+      "url": "/case-studies",
+      "text": "查看全部案例"
+    }
+  }
+}

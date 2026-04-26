@@ -1,6 +1,19 @@
 {
   "sites": [
     {
+      "id": "hu-orthodontics",
+      "name": "胡林正畸中心 Hu Lin Orthodontics",
+      "domain": "hulinorthodontics.com",
+      "enabled": true,
+      "defaultLocale": "zh",
+      "supportedLocales": [
+        "zh",
+        "en"
+      ],
+      "createdAt": "2026-04-15T00:00:00Z",
+      "updatedAt": "2026-04-15T00:00:00Z"
+    },
+    {
       "id": "alex-dental",
       "name": "Alex Dental Clinic",
       "domain": "alex-dental.com",

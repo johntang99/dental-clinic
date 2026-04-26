@@ -8,6 +8,18 @@ import { buildPageMetadata } from '@/lib/seo';
 import { Badge, Card, CardHeader, CardTitle, CardContent, Icon, Accordion } from '@/components/ui';
 import CTASection from '@/components/sections/CTASection';
 
+interface ServiceSection {
+  type: 'intro' | 'candidates' | 'advantages' | 'process' | 'whyUs';
+  title: string;
+  subtitle?: string;
+  content?: string;
+  content2?: string;
+  image?: string;
+  imagePosition?: 'left' | 'right';
+  items?: any[];
+  steps?: Array<{ number: number; title: string; description: string }>;
+}
+
 interface ServiceData {
   slug: string;
   title: string;
@@ -21,6 +33,7 @@ interface ServiceData {
   price?: string | null;
   durationMinutes?: number | null;
   featured?: boolean;
+  sections?: ServiceSection[];
   faq?: Array<{
     question: string;
     answer: string;
@@ -96,11 +109,11 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
   const breadcrumb = (textColorClass = 'text-gray-500') => (
     <nav className={`flex items-center gap-2 text-sm ${textColorClass} mb-8`}>
       <Link href={`/${locale}`} className="hover:text-primary transition-colors">
-        Home
+        {locale === 'zh' ? '首页' : 'Home'}
       </Link>
       <Icon name="ChevronRight" size="sm" />
       <Link href={`/${locale}/services`} className="hover:text-primary transition-colors">
-        Services
+        {locale === 'zh' ? '正畸服务' : 'Services'}
       </Link>
       <Icon name="ChevronRight" size="sm" />
       <span className={isPhotoBackground ? 'text-white font-medium' : 'text-gray-900 font-medium'}>
@@ -124,7 +137,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
         </Badge>
       )}
       {service.featured && (
-        <Badge variant="primary">Popular Service</Badge>
+        <Badge variant="primary">{locale === 'zh' ? '热门服务' : 'Popular Service'}</Badge>
       )}
     </div>
   );
@@ -230,70 +243,266 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
         </section>
       )}
 
-      {/* Main Content */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            {/* Full Description */}
-            {service.fullDescription && (
-              <div className="mb-12">
-                {service.fullDescription.split('\n\n').map((paragraph, i) => (
-                  <p key={i} className="text-gray-700 leading-relaxed mb-5 last:mb-0 text-lg">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            )}
-
-            {/* Benefits */}
-            {service.benefits && service.benefits.length > 0 && (
-              <div className="mb-12">
-                <h2 className="text-heading font-bold text-gray-900 mb-6">Key Benefits</h2>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {service.benefits.map((benefit, i) => (
-                    <div
-                      key={i}
-                      className="flex items-start gap-3 p-4 bg-gradient-to-br from-primary/5 to-transparent rounded-xl"
-                    >
-                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Icon name="Check" className="text-primary" size="sm" />
+      {/* Premium Structured Sections */}
+      {service.sections && service.sections.length > 0 ? (
+        <>
+          {service.sections.map((section, sIdx) => {
+            switch (section.type) {
+              case 'intro': {
+                const imgPos = section.imagePosition || 'right';
+                const hasImg = Boolean(section.image);
+                const textBlock = (
+                  <div>
+                    <h2 className="text-heading font-bold text-gray-900 mb-6">{section.title}</h2>
+                    <p className="text-lg text-gray-700 leading-relaxed mb-4">{section.content}</p>
+                    {section.content2 && (
+                      <p className="text-lg text-gray-600 leading-relaxed">{section.content2}</p>
+                    )}
+                  </div>
+                );
+                const imgBlock = hasImg ? (
+                  <div className="rounded-2xl overflow-hidden shadow-xl">
+                    <Image src={section.image!} alt={section.title} width={600} height={450} className="w-full h-auto object-cover" />
+                  </div>
+                ) : null;
+                return (
+                  <section key={sIdx} className={`py-16 lg:py-24 ${sIdx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+                    <div className="container mx-auto px-4">
+                      <div className={hasImg ? 'max-w-6xl mx-auto' : 'max-w-4xl mx-auto'}>
+                        {hasImg ? (
+                          <div className="grid lg:grid-cols-2 gap-12 items-center">
+                            {imgPos === 'left' ? <>{imgBlock}{textBlock}</> : <>{textBlock}{imgBlock}</>}
+                          </div>
+                        ) : textBlock}
                       </div>
-                      <span className="text-gray-700">{benefit}</span>
                     </div>
+                  </section>
+                );
+              }
+
+              case 'candidates':
+                return (
+                  <section key={sIdx} className={`py-16 lg:py-24 ${sIdx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+                    <div className="container mx-auto px-4">
+                      <div className="max-w-6xl mx-auto">
+                        <div className={`grid ${section.image ? 'lg:grid-cols-2 gap-12 items-center' : ''}`}>
+                          {section.image && (
+                            <div className="rounded-2xl overflow-hidden shadow-xl">
+                              <Image src={section.image} alt={section.title} width={600} height={450} className="w-full h-auto object-cover" />
+                            </div>
+                          )}
+                          <div>
+                            <h2 className="text-heading font-bold text-gray-900 mb-4">{section.title}</h2>
+                            {section.content && (
+                              <p className="text-lg text-gray-600 mb-8">{section.content}</p>
+                            )}
+                            {section.items && (
+                              <div className="grid sm:grid-cols-2 gap-3">
+                                {section.items.map((item: string, i: number) => (
+                                  <div key={i} className="flex items-center gap-3 p-3 bg-white rounded-xl border border-gray-100 shadow-sm">
+                                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                      <Icon name="Check" className="text-primary" size="sm" />
+                                    </div>
+                                    <span className="text-gray-700 font-medium">{item}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                );
+
+              case 'advantages':
+                return (
+                  <section key={sIdx} className="py-16 lg:py-24 bg-gradient-to-br from-[var(--backdrop-primary)] via-white to-[var(--backdrop-secondary)]">
+                    <div className="container mx-auto px-4">
+                      <div className="max-w-6xl mx-auto">
+                        <div className="text-center mb-12">
+                          <h2 className="text-heading font-bold text-gray-900 mb-3">{section.title}</h2>
+                          {section.subtitle && (
+                            <p className="text-lg text-gray-600">{section.subtitle}</p>
+                          )}
+                        </div>
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                          {section.items?.map((item: any, i: number) => (
+                            <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                                <Icon name={item.icon as any || 'Check'} className="text-primary" />
+                              </div>
+                              <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                              <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                );
+
+              case 'process':
+                return (
+                  <section key={sIdx} className="py-16 lg:py-24 text-white" style={{ background: 'linear-gradient(135deg, var(--color-primary-dark, #1a1a2e), var(--color-primary, #0d6e6e))' }}>
+                    <div className="container mx-auto px-4">
+                      <div className="max-w-5xl mx-auto">
+                        <div className="text-center mb-14">
+                          <h2 className="text-heading font-bold text-white mb-3">{section.title}</h2>
+                          {section.subtitle && (
+                            <p className="text-lg text-gray-300">{section.subtitle}</p>
+                          )}
+                        </div>
+                        <div className="relative">
+                          {/* Connector line */}
+                          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-white/20" />
+                          <div className="space-y-8 lg:space-y-0">
+                            {section.steps?.map((step, i) => (
+                              <div key={i} className={`lg:grid lg:grid-cols-2 lg:gap-12 ${i > 0 ? 'lg:mt-0' : ''}`}>
+                                <div className={`${i % 2 === 0 ? 'lg:text-right lg:pr-12' : 'lg:col-start-2 lg:pl-12'} relative pb-8 lg:pb-16`}>
+                                  {/* Step number bubble */}
+                                  <div className={`hidden lg:flex absolute top-0 ${i % 2 === 0 ? '-right-6' : '-left-6'} w-12 h-12 rounded-full bg-primary text-white font-bold items-center justify-center text-lg z-10 shadow-lg`}>
+                                    {step.number}
+                                  </div>
+                                  <div className="flex items-start gap-4 lg:block">
+                                    <div className="lg:hidden w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center text-sm flex-shrink-0">
+                                      {step.number}
+                                    </div>
+                                    <div>
+                                      <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
+                                      <p className="text-gray-300 leading-relaxed">{step.description}</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                {i % 2 === 0 && <div className="hidden lg:block" />}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                );
+
+              case 'whyUs':
+                return (
+                  <section key={sIdx} className="py-16 lg:py-24 bg-white">
+                    <div className="container mx-auto px-4">
+                      <div className="max-w-6xl mx-auto">
+                        <div className="text-center mb-12">
+                          <h2 className="text-heading font-bold text-gray-900 mb-3">{section.title}</h2>
+                          {section.subtitle && (
+                            <p className="text-lg text-gray-600">{section.subtitle}</p>
+                          )}
+                        </div>
+                        <div className="grid sm:grid-cols-2 gap-8">
+                          {section.items?.map((item: any, i: number) => (
+                            <div key={i} className="flex gap-5 p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent border border-primary/10">
+                              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <Icon name={item.icon as any || 'Star'} className="text-primary" size="lg" />
+                              </div>
+                              <div>
+                                <h3 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h3>
+                                <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                );
+
+              default:
+                return null;
+            }
+          })}
+
+          {/* FAQ */}
+          {service.faq && service.faq.length > 0 && (
+            <section className="py-16 lg:py-24 bg-gray-50">
+              <div className="container mx-auto px-4">
+                <div className="max-w-4xl mx-auto">
+                  <h2 className="text-heading font-bold text-gray-900 mb-8 text-center">
+                    {locale === 'zh' ? '常见问题解答' : 'Frequently Asked Questions'}
+                  </h2>
+                  <Accordion
+                    items={service.faq.map((item, i) => ({
+                      id: `faq-${i}`,
+                      title: item.question,
+                      content: item.answer,
+                    }))}
+                    allowMultiple
+                  />
+                </div>
+              </div>
+            </section>
+          )}
+        </>
+      ) : (
+        /* Legacy flat layout for services without sections */
+        <section className="py-16 lg:py-24 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              {service.fullDescription && (
+                <div className="mb-12">
+                  {service.fullDescription.split('\n\n').map((paragraph, i) => (
+                    <p key={i} className="text-gray-700 leading-relaxed mb-5 last:mb-0 text-lg">
+                      {paragraph}
+                    </p>
                   ))}
                 </div>
-              </div>
-            )}
-
-            {/* What to Expect */}
-            {service.whatToExpect && (
-              <div className="mb-12">
-                <h2 className="text-heading font-bold text-gray-900 mb-6">What to Expect</h2>
-                <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                  <p className="text-gray-700 leading-relaxed text-lg">{service.whatToExpect}</p>
+              )}
+              {service.benefits && service.benefits.length > 0 && (
+                <div className="mb-12">
+                  <h2 className="text-heading font-bold text-gray-900 mb-6">
+                    {locale === 'zh' ? '主要优势' : 'Key Benefits'}
+                  </h2>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {service.benefits.map((benefit, i) => (
+                      <div key={i} className="flex items-start gap-3 p-4 bg-gradient-to-br from-primary/5 to-transparent rounded-xl">
+                        <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Icon name="Check" className="text-primary" size="sm" />
+                        </div>
+                        <span className="text-gray-700">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
-
-            {/* FAQ */}
-            {service.faq && service.faq.length > 0 && (
-              <div className="mb-12">
-                <h2 className="text-heading font-bold text-gray-900 mb-6">
-                  Frequently Asked Questions
-                </h2>
-                <Accordion
-                  items={service.faq.map((item, i) => ({
-                    id: `faq-${i}`,
-                    title: item.question,
-                    content: item.answer,
-                  }))}
-                  allowMultiple
-                />
-              </div>
-            )}
+              )}
+              {service.whatToExpect && (
+                <div className="mb-12">
+                  <h2 className="text-heading font-bold text-gray-900 mb-6">
+                    {locale === 'zh' ? '治疗流程' : 'What to Expect'}
+                  </h2>
+                  <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                    {service.whatToExpect.split('\n\n').map((paragraph, i) => (
+                      <p key={i} className="text-gray-700 leading-relaxed text-lg mb-4 last:mb-0">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {service.faq && service.faq.length > 0 && (
+                <div className="mb-12">
+                  <h2 className="text-heading font-bold text-gray-900 mb-6">
+                    {locale === 'zh' ? '常见问题解答' : 'Frequently Asked Questions'}
+                  </h2>
+                  <Accordion
+                    items={service.faq.map((item, i) => ({
+                      id: `faq-${i}`,
+                      title: item.question,
+                      content: item.answer,
+                    }))}
+                    allowMultiple
+                  />
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Other Services */}
       {otherServices.length > 0 && (
@@ -301,7 +510,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-heading font-bold text-gray-900 mb-8 text-center">
-                Explore Other Services
+                {locale === 'zh' ? '其他正畸服务' : 'Explore Other Services'}
               </h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {otherServices.map((s) => (
@@ -329,7 +538,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
                   href={`/${locale}/services`}
                   className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
                 >
-                  View All Services
+                  {locale === 'zh' ? '查看全部服务' : 'View All Services'}
                   <Icon name="ArrowRight" size="sm" />
                 </Link>
               </div>

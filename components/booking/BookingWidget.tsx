@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useId, useMemo, useState } from 'react';
 import type { BookingService } from '@/lib/types';
 import { Button } from '@/components/ui';
 
@@ -23,6 +23,22 @@ interface BookingForm {
 }
 
 export function BookingWidget({ locale }: BookingWidgetProps) {
+  const idPrefix = useId();
+  const fieldIds = {
+    date: `${idPrefix}-date`,
+    name: `${idPrefix}-name`,
+    phone: `${idPrefix}-phone`,
+    email: `${idPrefix}-email`,
+    note: `${idPrefix}-note`,
+    pickupAddress: `${idPrefix}-pickup-address`,
+    unitOrApt: `${idPrefix}-unit-or-apt`,
+    zipCode: `${idPrefix}-zip-code`,
+    bags: `${idPrefix}-bags`,
+    estimatedWeightLb: `${idPrefix}-estimated-weight`,
+    requestType: `${idPrefix}-request-type`,
+    timeLabel: `${idPrefix}-time-label`,
+    slots: `${idPrefix}-slots`,
+  };
   const [services, setServices] = useState<BookingService[]>([]);
   const [selectedService, setSelectedService] = useState<BookingService | null>(null);
   const [selectedDate, setSelectedDate] = useState('');
@@ -212,10 +228,12 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             <div>
-              <label className="block text-xs text-gray-500">
+              <label htmlFor={fieldIds.date} className="block text-xs text-gray-500">
                 {locale === 'en' ? 'Date' : '日期'}
               </label>
               <input
+                id={fieldIds.date}
+                name="date"
                 type="date"
                 className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                 value={selectedDate}
@@ -227,10 +245,15 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
               />
             </div>
             <div>
-              <label className="block text-xs text-gray-500">
+              <p id={fieldIds.timeLabel} className="block text-xs text-gray-500">
                 {locale === 'en' ? 'Time' : '时间'}
-              </label>
-              <div className="mt-1 grid grid-cols-2 gap-3">
+              </p>
+              <div
+                id={fieldIds.slots}
+                role="group"
+                aria-labelledby={fieldIds.timeLabel}
+                className="mt-1 grid grid-cols-2 gap-3"
+              >
                 {slots.length === 0 && selectedDate && (
                   <div className="col-span-2 rounded-xl border border-dashed border-gray-200 px-3 py-4 text-xs text-gray-500 text-center">
                     {locale === 'en' ? 'No slots available.' : '暂无可用时段。'}
@@ -244,6 +267,7 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
                       setSelectedTime(slot);
                       setStep(3);
                     }}
+                    aria-pressed={selectedTime === slot}
                     className={`rounded-xl border px-3 py-2 text-xs font-semibold transition ${
                       selectedTime === slot
                         ? 'border-[var(--primary)] bg-[color-mix(in_srgb,var(--primary)_10%,white)] shadow-sm'
@@ -257,7 +281,9 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
             </div>
           </div>
           {status && (
-            <div className="text-sm text-red-500">{status}</div>
+            <div role="alert" aria-live="assertive" aria-atomic="true" className="text-sm text-red-500">
+              {status}
+            </div>
           )}
         </div>
 
@@ -280,41 +306,53 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             <div>
-              <label className="block text-xs text-gray-500">
+              <label htmlFor={fieldIds.name} className="block text-xs text-gray-500">
                 {locale === 'en' ? 'Full name' : '姓名'}
               </label>
               <input
+                id={fieldIds.name}
+                name="name"
+                autoComplete="name"
                 className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                 value={form.name}
                 onChange={(event) => setForm({ ...form, name: event.target.value })}
               />
             </div>
             <div>
-              <label className="block text-xs text-gray-500">
+              <label htmlFor={fieldIds.phone} className="block text-xs text-gray-500">
                 {locale === 'en' ? 'Phone number' : '电话'}
               </label>
               <input
+                id={fieldIds.phone}
+                name="phone"
+                type="tel"
+                autoComplete="tel"
                 className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                 value={form.phone}
                 onChange={(event) => setForm({ ...form, phone: event.target.value })}
               />
             </div>
             <div className="md:col-span-2">
-              <label className="block text-xs text-gray-500">
+              <label htmlFor={fieldIds.email} className="block text-xs text-gray-500">
                 {locale === 'en' ? 'Email address' : '邮箱'}
               </label>
               <input
+                id={fieldIds.email}
+                name="email"
                 type="email"
+                autoComplete="email"
                 className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                 value={form.email}
                 onChange={(event) => setForm({ ...form, email: event.target.value })}
               />
             </div>
             <div className="md:col-span-2">
-              <label className="block text-xs text-gray-500">
+              <label htmlFor={fieldIds.note} className="block text-xs text-gray-500">
                 {locale === 'en' ? 'Note (optional)' : '备注（可选）'}
               </label>
               <textarea
+                id={fieldIds.note}
+                name="note"
                 className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                 rows={3}
                 value={form.note}
@@ -329,20 +367,26 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
             {requiresAddress && (
               <>
                 <div className="md:col-span-2">
-                  <label className="block text-xs text-gray-500">
+                  <label htmlFor={fieldIds.pickupAddress} className="block text-xs text-gray-500">
                     {locale === 'en' ? 'Address' : '地址'}
                   </label>
                   <input
+                    id={fieldIds.pickupAddress}
+                    name="pickupAddress"
+                    autoComplete="street-address"
                     className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                     value={form.pickupAddress}
                     onChange={(event) => setForm({ ...form, pickupAddress: event.target.value })}
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-gray-500">
+                  <label htmlFor={fieldIds.unitOrApt} className="block text-xs text-gray-500">
                     {locale === 'en' ? 'Unit/Apt (optional)' : '单元/房号（可选）'}
                   </label>
                   <input
+                    id={fieldIds.unitOrApt}
+                    name="unitOrApt"
+                    autoComplete="address-line2"
                     className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                     value={form.unitOrApt}
                     onChange={(event) => setForm({ ...form, unitOrApt: event.target.value })}
@@ -350,10 +394,13 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
                 </div>
                 {requiresZipCode && (
                   <div>
-                    <label className="block text-xs text-gray-500">
+                    <label htmlFor={fieldIds.zipCode} className="block text-xs text-gray-500">
                       {locale === 'en' ? 'Zip code' : '邮编'}
                     </label>
                     <input
+                      id={fieldIds.zipCode}
+                      name="zipCode"
+                      autoComplete="postal-code"
                       className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                       value={form.zipCode}
                       onChange={(event) => setForm({ ...form, zipCode: event.target.value })}
@@ -363,10 +410,12 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
                 {requiresLoadMetrics && (
                   <>
                     <div>
-                      <label className="block text-xs text-gray-500">
+                      <label htmlFor={fieldIds.bags} className="block text-xs text-gray-500">
                         {locale === 'en' ? 'Quantity (optional)' : '数量（可选）'}
                       </label>
                       <input
+                        id={fieldIds.bags}
+                        name="bags"
                         type="number"
                         className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                         value={form.bags}
@@ -374,10 +423,12 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs text-gray-500">
+                      <label htmlFor={fieldIds.estimatedWeightLb} className="block text-xs text-gray-500">
                         {locale === 'en' ? 'Estimated size/weight (optional)' : '预估体量/重量（可选）'}
                       </label>
                       <input
+                        id={fieldIds.estimatedWeightLb}
+                        name="estimatedWeightLb"
                         type="number"
                         className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                         value={form.estimatedWeightLb}
@@ -389,10 +440,12 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
                   </>
                 )}
                 <div className="md:col-span-2">
-                  <label className="block text-xs text-gray-500">
+                  <label htmlFor={fieldIds.requestType} className="block text-xs text-gray-500">
                     {locale === 'en' ? 'Request type' : '预约类型'}
                   </label>
                   <select
+                    id={fieldIds.requestType}
+                    name="requestType"
                     className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 text-sm"
                     value={form.requestType}
                     onChange={(event) =>
@@ -423,7 +476,12 @@ export function BookingWidget({ locale }: BookingWidgetProps) {
         </div>
 
         {step === 4 && (
-          <div className="bg-emerald-50 border border-emerald-200 rounded-3xl p-6">
+          <div
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            className="bg-emerald-50 border border-emerald-200 rounded-3xl p-6"
+          >
             <div className="text-lg font-semibold text-emerald-900">
               {locale === 'en' ? 'Booking confirmed!' : '预约已确认'}
             </div>

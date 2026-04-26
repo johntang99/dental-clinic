@@ -1,0 +1,28 @@
+{
+  "id": "child-early-intervention",
+  "category": "children",
+  "condition": "儿童反颌（地包天）",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-child-early-intervention.jpg",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-child-early-intervention.jpg",
+  "summary": "小陈，8岁，前牙反颌（地包天），下牙咬在上牙前面。胡林医生在生长发育关键期进行早期干预，使用功能矫治器引导颌骨正确生长。10个月后反颌纠正，避免了日后可能需要的复杂手术治疗。",
+  "title": "8岁儿童反颌早期矫治",
+  "featured": true,
+  "slug": "child-early-intervention",
+  "patientProfile": {
+    "name": "小陈",
+    "age": "8岁",
+    "concern": "前牙反颌（地包天）"
+  },
+  "treatmentDetails": {
+    "visits": "每6周复诊",
+    "duration": "10个月",
+    "procedures": [
+      "功能矫治器",
+      "上颌前方牵引",
+      "咬合调整"
+    ]
+  },
+  "challenge": "8岁的小陈出现前牙反颌，下颌发育过度。如果不及时干预，随着生长可能发展为严重的骨性反颌，需要正颌外科手术。",
+  "solution": "利用生长发育窗口期，使用功能矫治器和上颌前方牵引，促进上颌骨向前生长，同时抑制下颌过度生长。",
+  "results": "10个月后反颌完全纠正，上下牙恢复正常覆合关系。早期干预成功避免了未来可能需要的外科手术。"
+}

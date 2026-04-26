@@ -1,21 +1,31 @@
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { Card, CardHeader, CardTitle, CardContent, Badge, Tabs, Accordion, Icon } from '@/components/ui';
 import { ServicesVariant, getSectionClasses } from '@/lib/section-variants';
 import { Service } from '@/lib/types';
 import { cn } from '@/lib/utils';
 
+function normalizeMarkdown(text: string) {
+  return text
+    .replace(/\r\n/g, '\n')
+    .replace(/\|\s+\|(?=(?:-+:?|:?-+|[A-Za-z0-9"']))/g, '|\n|')
+    .replace(/([^\n])\n-\s+/g, '$1\n\n- ')
+    .replace(/([^\n])\n\*\s+/g, '$1\n\n- ');
+}
+
 function MarkdownText({ text, className }: { text: string; className?: string }) {
   return (
     <div className={cn('prose prose-sm max-w-none text-gray-700', className)}>
       <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
         components={{
           ul: (props) => <ul className="list-disc pl-5" {...props} />,
           ol: (props) => <ol className="list-decimal pl-5" {...props} />,
           p: (props) => <p className="mb-2 last:mb-0" {...props} />,
         }}
       >
-        {text}
+        {normalizeMarkdown(text)}
       </ReactMarkdown>
     </div>
   );

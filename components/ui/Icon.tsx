@@ -9,6 +9,7 @@ export interface IconProps extends Omit<LucideProps, 'ref'> {
 
 const Icon = forwardRef<SVGSVGElement, IconProps>(
   ({ name, size = 'md', className, ...props }, ref) => {
+    if (!name) return null;
     const aliasMap: Record<string, keyof typeof icons> = {
       Certificate: 'BadgeCheck',
       ShirtIcon: 'Shirt',

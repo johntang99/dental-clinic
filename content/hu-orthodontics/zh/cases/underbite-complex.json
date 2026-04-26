@@ -1,0 +1,28 @@
+{
+  "id": "underbite-complex",
+  "category": "complex",
+  "condition": "骨性反颌（地包天）",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-underbite-complex.jpg",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-underbite-complex.jpg",
+  "summary": "周先生，22岁，严重骨性反颌，下颌明显前突，面部凹陷。通过正畸-正颌外科联合治疗，术前正畸10个月排齐牙齿，正颌手术后继续精细调整8个月。治疗后面部轮廓恢复和谐，咬合功能完全正常。",
+  "title": "骨性反颌正畸外科联合治疗",
+  "featured": false,
+  "slug": "underbite-complex",
+  "patientProfile": {
+    "name": "周先生",
+    "age": "22岁",
+    "concern": "严重骨性反颌，面中部凹陷"
+  },
+  "treatmentDetails": {
+    "visits": "术前10个月+术后8个月",
+    "duration": "18个月",
+    "procedures": [
+      "术前正畸",
+      "下颌后退术",
+      "术后精细调整"
+    ]
+  },
+  "challenge": "周先生骨性III类错合，下颌骨过度发育导致严重反颌和面中部凹陷，单纯正畸无法解决骨骼不调。",
+  "solution": "胡林医生制定了正畸-外科联合方案：术前正畸去除牙齿代偿，正颌手术将下颌后退至正常位置，术后精细调整咬合。",
+  "results": "反颌完全纠正，面部轮廓恢复和谐。周先生的自信心得到极大提升，他说这改变了他的人生。"
+}

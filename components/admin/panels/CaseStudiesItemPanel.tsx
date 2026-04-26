@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { normalizeMarkdown, toSlug } from '@/components/admin/utils/editorHelpers';
 
 interface CaseStudyCategoryItemPanelProps {
@@ -119,6 +120,7 @@ export function CaseStudyItemPanel({
       {markdownPreview[`caseStudies-${index}-summary`] ? (
         <div className="prose prose-sm max-w-none rounded-md border border-gray-200 px-3 py-2 mb-2">
           <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
             components={{
               ul: (props) => <ul className="list-disc pl-5" {...props} />,
               ol: (props) => <ol className="list-decimal pl-5" {...props} />,

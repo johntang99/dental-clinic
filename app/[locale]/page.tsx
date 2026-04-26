@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import { notFound } from 'next/navigation';
 import { type Locale } from '@/lib/i18n';
-import { getRequestSiteId, loadPageContent, loadSiteInfo, loadContent } from '@/lib/content';
+import { getRequestSiteId, loadPageContent, loadSiteInfo, loadContent, loadAllItems } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
-import type { SiteInfo } from '@/lib/types';
+import type { SiteInfo, BlogPost } from '@/lib/types';
 import HeroSection, { CredentialsSection } from '@/components/sections/HeroSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import HowItWorksSection from '@/components/sections/HowItWorksSection';
@@ -14,6 +14,7 @@ import GalleryPreviewSection from '@/components/sections/GalleryPreviewSection';
 import FirstVisitSection from '@/components/sections/FirstVisitSection';
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection';
 import CTASection from '@/components/sections/CTASection';
+import CaseStudiesPreviewSection from '@/components/sections/CaseStudiesPreviewSection';
 import { getSiteDisplayName } from '@/lib/siteInfo';
 
 interface PageProps {
@@ -58,6 +59,7 @@ interface HomePageContent {
   gallery?: any;
   firstVisit?: any;
   whyChooseUs?: any;
+  caseStudies?: any;
   cta?: any;
 }
 
@@ -105,9 +107,24 @@ export default async function HomePage({ params }: PageProps) {
   const content = await loadPageContent<HomePageContent>('home', locale, siteId);
   const layout = await loadPageContent<PageLayoutConfig>('home.layout', locale, siteId);
   const servicesPageData = await loadPageContent<{ categories?: Array<{ id: string; image?: string }> }>('services', locale, siteId);
+  const blogPosts = await loadAllItems<BlogPost>(siteId, locale, 'blog');
+  const caseStudiesPage = await loadPageContent<{ caseStudies?: any[] }>('case-studies', locale, siteId);
+  const testimonialsData = await loadContent<any[]>(siteId, locale as Locale, 'testimonials.json') || [];
 
   if (!content) {
     notFound();
+  }
+
+  // Auto-populate blog posts on homepage from blog directory
+  if (content.blog) {
+    const publishedPosts = blogPosts
+      .filter((p) => p.published !== false)
+      .sort((a, b) => (b.publishDate || '').localeCompare(a.publishDate || ''));
+    const homePosts =
+      content.blog.posts && content.blog.posts.length > 0
+        ? content.blog.posts
+        : publishedPosts.slice(0, 3);
+    content.blog = { ...content.blog, posts: homePosts };
   }
 
   // Merge category images from services.json into home services
@@ -138,6 +155,7 @@ export default async function HomePage({ params }: PageProps) {
     'gallery',
     'firstVisit',
     'whyChooseUs',
+    'caseStudies',
     'cta',
   ];
   const layoutSections =
@@ -166,10 +184,22 @@ export default async function HomePage({ params }: PageProps) {
         return hero.credentials && hero.credentials.length > 0 ? (
           <CredentialsSection credentials={hero.credentials} />
         ) : null;
-      case 'testimonials':
-        return content.testimonials ? (
-          <TestimonialsSection {...content.testimonials} />
-        ) : null;
+      case 'testimonials': {
+        if (!content.testimonials) return null;
+        // Auto-populate testimonials from testimonials.json if not inline
+        const rawTestimonials = Array.isArray(testimonialsData) ? testimonialsData : (testimonialsData as any)?.testimonials || [];
+        const testimonialsList = content.testimonials.testimonials?.length > 0
+          ? content.testimonials.testimonials
+          : rawTestimonials
+              .filter((t: any) => t.language === locale || !t.language)
+              .map((t: any) => ({ quote: t.text, name: t.patientName, condition: t.serviceCategory }));
+        return (
+          <TestimonialsSection
+            {...content.testimonials}
+            testimonials={testimonialsList}
+          />
+        );
+      }
       case 'howItWorks':
         return content.howItWorks ? <HowItWorksSection {...content.howItWorks} /> : null;
       case 'conditions':
@@ -180,6 +210,14 @@ export default async function HomePage({ params }: PageProps) {
         return content.blog ? <BlogPreviewSection locale={locale} {...content.blog} /> : null;
       case 'gallery':
         return content.gallery ? <GalleryPreviewSection {...content.gallery} /> : null;
+      case 'caseStudies':
+        return content.caseStudies ? (
+          <CaseStudiesPreviewSection
+            locale={locale}
+            {...content.caseStudies}
+            cases={caseStudiesPage?.caseStudies?.filter((c: any) => c.image).slice(0, 3) || []}
+          />
+        ) : null;
       case 'firstVisit':
         return content.firstVisit ? <FirstVisitSection {...content.firstVisit} /> : null;
       case 'whyChooseUs':

@@ -1,0 +1,305 @@
+{
+  "clientId": "hu-orthodontics",
+  "templateSiteId": "alex-dental",
+  "industry": "orthodontics",
+
+  "business": {
+    "name": "Hu Lin Orthodontics",
+    "nameZh": "胡林正畸中心",
+    "tagline": "ABO Board Certified Orthodontist in Flushing & Great Neck",
+    "taglineZh": "法拉盛与大颈 ABO 认证正畸专家",
+    "description": "Dr. Hu Lin is a triple ABO board-certified orthodontist serving the Chinese community in Flushing, Queens and Great Neck, Long Island. Specializing in braces, Invisalign, and complex orthodontic cases for children, teens, and adults.",
+    "descriptionZh": "胡林医生是三次获得美国正畸学会（ABO）认证的正畸专家，在法拉盛和大颈设有诊所。专注于儿童、青少年和成人的牙齿矫正治疗，包括传统牙套、隐适美和复杂正畸病例。",
+    "ownerName": "Dr. Lin Hu",
+    "ownerNameZh": "胡林医生",
+    "ownerTitle": "DMD, DDS, MS, PhD",
+    "ownerCredentials": [
+      {
+        "credential": "Doctor of Dental Medicine (DMD)",
+        "institution": "",
+        "year": "",
+        "location": ""
+      },
+      {
+        "credential": "Doctor of Dental Surgery (DDS)",
+        "institution": "",
+        "year": "",
+        "location": ""
+      },
+      {
+        "credential": "Master of Science (MS) in Orthodontics",
+        "institution": "",
+        "year": "",
+        "location": ""
+      },
+      {
+        "credential": "Doctor of Philosophy (PhD)",
+        "institution": "",
+        "year": "",
+        "location": ""
+      }
+    ],
+    "ownerCertifications": [
+      "American Board of Orthodontics (ABO) — Certified 2007",
+      "American Board of Orthodontics (ABO) — Recertified 2008",
+      "American Board of Orthodontics (ABO) — Recertified 2020",
+      "Invisalign Certified Provider"
+    ],
+    "ownerSpecializations": [
+      "Orthodontics",
+      "Invisalign",
+      "Traditional Braces",
+      "Ceramic Braces",
+      "Children's Orthodontics",
+      "Teen Orthodontics",
+      "Adult Orthodontics",
+      "Complex Orthodontic Cases",
+      "Surgical Orthodontics"
+    ],
+    "ownerLanguages": ["English", "Mandarin Chinese"],
+    "ownerBio": "Dr. Lin Hu is a triple ABO board-certified orthodontist with over 15 years of experience. He combines advanced orthodontic techniques with a multidisciplinary perspective incorporating surgical principles, representing a paradigm shift in the field. This comprehensive approach enables more effective interventions and significantly improved treatment outcomes, especially in complex cases that were previously considered challenging or requiring surgery. Dr. Hu practices in Flushing, Queens and Great Neck, Long Island, serving the Chinese-American community with bilingual care.",
+    "ownerBioZh": "胡林医生是三次获得美国正畸学会（ABO）认证的正畸专家，拥有超过15年的临床经验。他将先进的正畸技术与融合外科原则的多学科视角相结合，代表了该领域的范式转变。这种综合方法能够实现更有效的干预，并显著改善治疗效果，尤其是在以往被认为具有挑战性或需要手术的复杂病例中。胡医生在法拉盛和大颈设有诊所，以中英双语为华人社区提供专业的正畸服务。",
+    "teamMembers": [],
+    "foundedYear": 2005,
+    "yearsExperience": "15+"
+  },
+
+  "locations": [
+    {
+      "id": "flushing",
+      "name": "Flushing Office",
+      "nameZh": "法拉盛诊所",
+      "isPrimary": true,
+      "address": "38-08 Union Street, Suite 4B",
+      "city": "Flushing",
+      "state": "NY",
+      "zip": "11354",
+      "lat": 40.7580,
+      "lng": -73.8306,
+      "phone": "(718) 353-0880",
+      "email": "info@hulinorthodontics.com",
+      "mapsEmbedUrl": "https://maps.google.com/maps?q=Hu+Lin+Orthodontics+38-08+Union+St+Flushing+NY+11354&t=m&z=17&output=embed",
+      "addressMapUrl": "https://maps.google.com/?q=38-08+Union+St+Suite+4B+Flushing+NY+11354",
+      "hours": {
+        "monday": "10:00 AM - 6:00 PM",
+        "tuesday": "10:00 AM - 6:00 PM",
+        "wednesday": "Closed",
+        "thursday": "10:00 AM - 6:00 PM",
+        "friday": "10:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 3:00 PM",
+        "sunday": "Closed"
+      },
+      "nearbyLandmarks": "Near 7 train terminus, Flushing Municipal Parking"
+    },
+    {
+      "id": "great-neck",
+      "name": "Great Neck Office",
+      "nameZh": "大颈诊所",
+      "isPrimary": false,
+      "address": "79 Cutter Mill Road",
+      "city": "Great Neck",
+      "state": "NY",
+      "zip": "11021",
+      "lat": 40.7857,
+      "lng": -73.7316,
+      "phone": "(516) 809-8686",
+      "email": "info@hulinorthodontics.com",
+      "mapsEmbedUrl": "https://maps.google.com/maps?q=HU+LIN+Great+Neck+Orthodontics+79+Cutter+Mill+Rd+Great+Neck+NY+11021&t=m&z=17&output=embed",
+      "addressMapUrl": "https://maps.google.com/?q=79+Cutter+Mill+Rd+Great+Neck+NY+11021",
+      "hours": {
+        "monday": "Closed",
+        "tuesday": "Closed",
+        "wednesday": "10:00 AM - 6:00 PM",
+        "thursday": "Closed",
+        "friday": "Closed",
+        "saturday": "Closed",
+        "sunday": "Closed"
+      },
+      "nearbyLandmarks": "Near Great Neck LIRR Station"
+    }
+  ],
+
+  "social": {
+    "facebook": "https://www.facebook.com/hulinorthodontics",
+    "instagram": "https://www.instagram.com/hulinorthodontics",
+    "youtube": "https://www.youtube.com/@hulinorthodontics",
+    "google": "",
+    "yelp": ""
+  },
+
+  "domains": {
+    "production": "hulinorthodontics.com",
+    "productionZh": "cn.hulinorthodontics.com",
+    "dev": "hu-ortho.local:3004"
+  },
+
+  "locales": {
+    "default": "zh",
+    "supported": ["zh", "en"]
+  },
+
+  "brand": {
+    "variant": "forest-green",
+    "primaryColor": "#204e17",
+    "secondaryColor": "#C9A84C",
+    "fonts": {
+      "display": "'Noto Serif SC', serif",
+      "body": "'Noto Sans SC', 'Inter', sans-serif"
+    }
+  },
+
+  "services": {
+    "enabled": [
+      "traditional-braces",
+      "ceramic-braces",
+      "self-ligating-braces",
+      "invisalign",
+      "invisalign-teen",
+      "early-orthodontics",
+      "teen-orthodontics",
+      "adult-orthodontics",
+      "surgical-orthodontics",
+      "retainers",
+      "emergency-orthodontics",
+      "palatal-expanders"
+    ],
+    "categories": {
+      "braces": ["traditional-braces", "ceramic-braces", "self-ligating-braces"],
+      "aligners": ["invisalign", "invisalign-teen"],
+      "by-age": ["early-orthodontics", "teen-orthodontics", "adult-orthodontics"],
+      "specialized": ["surgical-orthodontics", "palatal-expanders", "retainers", "emergency-orthodontics"]
+    }
+  },
+
+  "conditions": [
+    {
+      "id": "crowding",
+      "nameZh": "牙齿拥挤",
+      "name": "Crowded Teeth"
+    },
+    {
+      "id": "overbite",
+      "nameZh": "深覆合（龅牙）",
+      "name": "Overbite"
+    },
+    {
+      "id": "underbite",
+      "nameZh": "地包天（反颌）",
+      "name": "Underbite"
+    },
+    {
+      "id": "crossbite",
+      "nameZh": "错颌",
+      "name": "Crossbite"
+    },
+    {
+      "id": "open-bite",
+      "nameZh": "开颌",
+      "name": "Open Bite"
+    },
+    {
+      "id": "spacing",
+      "nameZh": "牙齿间隙",
+      "name": "Spacing / Gaps"
+    },
+    {
+      "id": "midline-shift",
+      "nameZh": "中线偏移",
+      "name": "Midline Misalignment"
+    },
+    {
+      "id": "impacted-teeth",
+      "nameZh": "阻生牙",
+      "name": "Impacted Teeth"
+    }
+  ],
+
+  "insurance": {
+    "acceptsInsurance": true,
+    "inNetworkNote": "We accept most major dental and orthodontic insurance plans. Our office will verify your benefits before treatment begins.",
+    "inNetworkNoteZh": "我们接受大部分主流牙科和正畸保险计划。我们的团队将在治疗开始前帮您核实保险福利。",
+    "financingNote": "Flexible payment plans available. Interest-free financing options for qualified patients.",
+    "financingNoteZh": "提供灵活的分期付款方案，符合条件的患者可享受免息分期。",
+    "membershipPlanEnabled": false,
+    "membershipPlanName": ""
+  },
+
+  "booking": {
+    "onlineBookingEnabled": true,
+    "bookingUrl": "/book",
+    "callToBook": true,
+    "preferredContactMethod": "both"
+  },
+
+  "display": {
+    "showLanguageSwitcher": true,
+    "showEmergencyBanner": false,
+    "emergencyBannerText": ""
+  },
+
+  "contentTone": {
+    "voice": "authoritative-warm",
+    "uniqueSellingPoints": [
+      "Triple ABO Board Certified — only a small percentage of orthodontists achieve this",
+      "DMD, DDS, MS, PhD — exceptional academic credentials",
+      "Bilingual English and Mandarin service",
+      "Two convenient locations — Flushing and Great Neck",
+      "Weekend hours available",
+      "Advanced techniques combining orthodontics with surgical principles",
+      "15+ years of specialized orthodontic experience",
+      "Serving the Chinese-American community"
+    ],
+    "uniqueSellingPointsZh": [
+      "三次获得美国正畸学会（ABO）认证 — 仅极少数正畸医生能达到",
+      "DMD、DDS、MS、PhD — 卓越的学术资质",
+      "中英双语服务",
+      "法拉盛和大颈两处诊所，交通便利",
+      "提供周末就诊时间",
+      "先进的正畸技术结合外科原则",
+      "超过15年的正畸专业经验",
+      "服务华人社区"
+    ],
+    "targetDemographic": "Chinese-American families in Flushing/Queens and Great Neck/Long Island seeking orthodontic treatment",
+    "authoritySignals": [
+      "ABO certification is the gold standard — Dr. Hu has been certified three times",
+      "PhD-level research background in orthodontics",
+      "Multi-disciplinary approach incorporating surgical principles",
+      "Published researcher and continuing education leader"
+    ]
+  },
+
+  "stats": [
+    { "icon": "award", "number": "3x", "label": "ABO Certified", "labelZh": "ABO认证" },
+    { "icon": "calendar", "number": "15+", "label": "Years Experience", "labelZh": "年执业经验" },
+    { "icon": "users", "number": "10,000+", "label": "Smiles Created", "labelZh": "成功案例" },
+    { "icon": "map-pin", "number": "2", "label": "Locations", "labelZh": "处诊所" }
+  ],
+
+  "seoStrategy": {
+    "primaryKeywords": [
+      "正畸医生法拉盛",
+      "牙齿矫正法拉盛",
+      "隐适美法拉盛",
+      "orthodontist flushing ny",
+      "orthodontist great neck",
+      "chinese orthodontist near me",
+      "牙套",
+      "儿童正畸",
+      "成人正畸"
+    ],
+    "localSeoTargets": [
+      "Flushing",
+      "Great Neck",
+      "Bayside",
+      "Fresh Meadows",
+      "Elmhurst",
+      "Jackson Heights",
+      "Forest Hills",
+      "Whitestone",
+      "College Point",
+      "Little Neck",
+      "Manhasset",
+      "Roslyn"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "sections": [
+    { "id": "hero" },
+    { "id": "services" },
+    { "id": "whyChooseUs" },
+    { "id": "caseStudies" },
+    { "id": "testimonials" },
+    { "id": "blog" },
+    { "id": "cta" }
+  ]
+}

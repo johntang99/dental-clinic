@@ -1,0 +1,28 @@
+{
+  "id": "crossbite-teen",
+  "category": "braces",
+  "condition": "后牙交叉咬合",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-crossbite-teen.jpg",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-crossbite-teen.jpg",
+  "summary": "小林，13岁，左侧后牙交叉咬合，导致咀嚼时下颌偏移。经过16个月的牙套治疗配合腭扩展器，交叉咬合完全纠正，下颌居中，面部对称性显著改善。",
+  "title": "青少年交叉咬合与面部不对称矫治",
+  "featured": false,
+  "slug": "crossbite-teen",
+  "patientProfile": {
+    "name": "小林",
+    "age": "13岁",
+    "concern": "后牙交叉咬合，面部不对称"
+  },
+  "treatmentDetails": {
+    "visits": "每月复诊",
+    "duration": "16个月",
+    "procedures": [
+      "腭扩展器",
+      "传统金属牙套",
+      "弹力橡皮圈"
+    ]
+  },
+  "challenge": "小林左侧后牙交叉咬合，闭口时下颌被迫向左偏移，导致面部不对称。长期可能影响颞下颌关节健康。",
+  "solution": "先使用腭扩展器扩大上颌宽度，再配合传统牙套排齐牙齿，使用弹力橡皮圈调整咬合关系。",
+  "results": "交叉咬合完全纠正，下颌回到中线位置，面部对称性明显改善。颞下颌关节功能正常。"
+}

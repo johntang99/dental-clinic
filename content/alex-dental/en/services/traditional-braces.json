@@ -1,0 +1,52 @@
+{
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule a consultation to learn more.",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Consultation"
+    },
+    "secondaryCta": {
+      "link": "tel:+10000000000",
+      "text": "Call Us"
+    }
+  },
+  "faq": [
+    {
+      "answer": "Treatment duration varies based on the complexity of your orthodontic needs and typically ranges from twelve to thirty-six months. Minor alignment corrections may be resolved in as few as twelve months, while more severe crowding, spacing, or bite issues may require up to three years. During your initial consultation, we will evaluate your teeth and provide a personalized treatment timeline.",
+      "question": "How long does treatment with traditional braces take?"
+    },
+    {
+      "answer": "Modern braces are significantly more comfortable than they were in the past. You may experience mild soreness for a few days after initial placement and after each adjustment appointment. Over-the-counter pain relievers and orthodontic wax can help manage any discomfort. Most patients adapt quickly and find that any tenderness subsides within a few days.",
+      "question": "Do traditional braces hurt?"
+    },
+    {
+      "answer": "You should avoid hard, sticky, and chewy foods that can damage brackets or wires. This includes items like popcorn, hard candies, caramel, chewing gum, and biting directly into whole apples or corn on the cob. We will provide a comprehensive list of foods to avoid and tips for protecting your braces during treatment.",
+      "question": "Are there foods I need to avoid with braces?"
+    },
+    {
+      "answer": "Many dental insurance plans with orthodontic benefits cover a portion of traditional braces treatment. Coverage varies by plan, but traditional braces are one of the most widely covered orthodontic treatments. Our team will verify your insurance benefits before treatment begins and help you understand your out-of-pocket costs. We also offer flexible payment plans to make treatment affordable.",
+      "question": "Does insurance cover traditional braces?"
+    }
+  ],
+  "icon": "Brackets",
+  "slug": "traditional-braces",
+  "image": "",
+  "price": "Starting from $3,000",
+  "title": "Traditional Metal Braces",
+  "benefits": [
+    "Effective for treating the full range of orthodontic issues including severe crowding and complex bite problems",
+    "Proven track record with decades of clinical research and success",
+    "More affordable than many alternative orthodontic treatments",
+    "No compliance concerns since brackets are fixed in place throughout treatment",
+    "Customizable with colored elastics for a fun, personalized look"
+  ],
+  "category": "braces",
+  "featured": true,
+  "subtitle": "Comprehensive Orthodontic Correction with Time-Tested Metal Braces",
+  "heroVariant": "centered",
+  "shortDescription": "Traditional metal braces remain the gold standard for comprehensive orthodontic treatment, effectively correcting crowding, spacing, and bite irregularities for patients of all ages.",
+  "fullDescription": "Traditional metal braces continue to be one of the most reliable and versatile orthodontic treatment options available. Using high-grade stainless steel brackets bonded to each tooth and connected by archwires, metal braces apply gentle, continuous pressure to guide teeth into their ideal positions. Modern braces are smaller, more comfortable, and more efficient than ever before, making them an excellent choice for patients of all ages.\n\nMetal braces are uniquely capable of addressing the full spectrum of orthodontic concerns. Whether you are dealing with severe crowding, significant spacing, deep overbites, underbites, crossbites, or open bites, traditional braces provide the precise control needed to achieve optimal results. For complex cases that involve jaw discrepancies or require significant tooth movement, metal braces often deliver outcomes that other treatments cannot match.\n\nThroughout your treatment, you will visit our office approximately every four to eight weeks for adjustments. During these appointments, we replace the elastic ties and may change the archwire to continue progressing your teeth toward their final positions. Each adjustment brings you one step closer to a healthy, beautifully aligned smile.\n\nOnce your braces are removed, you will receive custom retainers to maintain your results and protect your investment. With proper retainer wear, the results achieved with traditional braces can last a lifetime.",
+  "whatToExpect": "Your orthodontic journey begins with a thorough consultation that includes a clinical examination, digital X-rays, photographs, and impressions or digital scans of your teeth. We use these records to develop a customized treatment plan that addresses your specific orthodontic needs and goals.\n\nAt your bonding appointment, we carefully attach each bracket to the surface of your teeth using a dental adhesive and connect them with an archwire. The entire placement process typically takes about one to two hours. You may experience mild pressure and soreness during the first few days as your teeth begin to move, which is completely normal.\n\nThroughout treatment, you will return to our office every four to eight weeks for adjustments. These visits are typically brief, lasting about twenty to thirty minutes. As your teeth progressively shift into alignment, you will begin to see noticeable improvements in your smile. When treatment is complete, we remove the brackets, polish your teeth, and fit you with custom retainers to ensure your beautiful new smile stays in place for years to come.",
+  "durationMinutes": null
+}

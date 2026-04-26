@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { getRequestSiteId, loadAllItems, loadContent, loadPageContent } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
 import { Locale } from '@/lib/types';
@@ -81,6 +82,14 @@ interface HeaderMenuConfig {
   menu?: {
     variant?: 'default' | 'centered' | 'transparent' | 'stacked';
   };
+}
+
+function normalizeMarkdown(text: string) {
+  return text
+    .replace(/\r\n/g, '\n')
+    .replace(/\|\s+\|(?=(?:-+:?|:?-+|[A-Za-z0-9"']))/g, '|\n|')
+    .replace(/([^\n])\n-\s+/g, '$1\n\n- ')
+    .replace(/([^\n])\n\*\s+/g, '$1\n\n- ');
 }
 
 export async function generateMetadata({ params }: ConditionsPageProps): Promise<Metadata> {
@@ -450,12 +459,13 @@ export default async function ConditionsPage({ params }: ConditionsPageProps) {
                             )}
                             <div className="prose prose-sm max-w-none text-gray-600 leading-relaxed">
                               <ReactMarkdown
+                                remarkPlugins={[remarkGfm]}
                                 components={{
                                   ul: (props) => <ul className="list-disc pl-5" {...props} />,
                                   ol: (props) => <ol className="list-decimal pl-5" {...props} />,
                                 }}
                               >
-                                {String(categoryGroup.description || '')}
+                                {normalizeMarkdown(String(categoryGroup.description || ''))}
                               </ReactMarkdown>
                             </div>
                           </div>
@@ -512,12 +522,13 @@ export default async function ConditionsPage({ params }: ConditionsPageProps) {
                           )}
                           <div className="prose prose-sm max-w-none text-gray-700">
                             <ReactMarkdown
+                              remarkPlugins={[remarkGfm]}
                               components={{
                                 ul: (props) => <ul className="list-disc pl-5" {...props} />,
                                 ol: (props) => <ol className="list-decimal pl-5" {...props} />,
                               }}
                             >
-                              {String(category.description || '')}
+                              {normalizeMarkdown(String(category.description || ''))}
                             </ReactMarkdown>
                           </div>
                         </div>

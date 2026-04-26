@@ -1,0 +1,28 @@
+{
+  "id": "deep-bite-correction",
+  "category": "braces",
+  "condition": "严重深覆合",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-deep-bite-correction.jpg",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-deep-bite-correction.jpg",
+  "summary": "李先生，28岁，上牙过度覆盖下牙超过6mm，导致下前牙咬到上颚。经过20个月的传统牙套配合垂直向弹力橡皮圈治疗，深覆合完全纠正，咬合功能恢复正常，面部比例更加协调。",
+  "title": "严重深覆合综合矫治",
+  "featured": false,
+  "slug": "deep-bite-correction",
+  "patientProfile": {
+    "name": "李先生",
+    "age": "28岁",
+    "concern": "深覆合导致下前牙咬到上颚"
+  },
+  "treatmentDetails": {
+    "visits": "每月复诊",
+    "duration": "20个月",
+    "procedures": [
+      "传统金属牙套",
+      "垂直向弹力橡皮圈",
+      "咬合调整"
+    ]
+  },
+  "challenge": "李先生深覆合超过6mm，下前牙已经咬伤上颚黏膜，影响进食和长期口腔健康。",
+  "solution": "采用传统牙套配合垂直向弹力橡皮圈，通过压低上前牙和伸长下前牙来纠正深覆合。",
+  "results": "深覆合从6mm以上降至正常范围（2-3mm），咬合功能完全恢复，面部下三分之一比例更加协调。"
+}

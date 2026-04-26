@@ -1,0 +1,46 @@
+{
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule a consultation to learn more.",
+    "primaryCta": { "link": "/contact", "text": "Book Consultation" },
+    "secondaryCta": { "link": "tel:+10000000000", "text": "Call Us" }
+  },
+  "faq": [
+    {
+      "answer": "Yes, retainers are essential after orthodontic treatment. Without retention, teeth have a natural tendency to shift back toward their original positions, a process known as orthodontic relapse. The periodontal ligaments and bone surrounding your teeth need time to stabilize in their new positions, and a retainer provides the support needed to maintain your results long-term.",
+      "question": "Do I really need to wear a retainer after braces?"
+    },
+    {
+      "answer": "Initially, most patients are instructed to wear their removable retainer full-time, removing it only to eat and brush, for the first three to six months after treatment. After this stabilization period, wear is typically reduced to nighttime only. Many orthodontists recommend indefinite nighttime retainer wear to ensure lasting results, as teeth can shift at any age.",
+      "question": "How often do I need to wear my retainer?"
+    },
+    {
+      "answer": "We offer several retainer types to suit your needs. Hawley retainers feature a durable acrylic base with a metal wire and are adjustable. Clear Essix retainers are made from transparent plastic and are virtually invisible. Bonded permanent retainers consist of a thin wire cemented to the back of your teeth for continuous, maintenance-free retention. We will recommend the best option based on your treatment and lifestyle.",
+      "question": "What types of retainers are available?"
+    },
+    {
+      "answer": "Removable retainers should be cleaned daily with a soft toothbrush and mild soap or a retainer cleaning solution. Avoid using hot water, as it can warp the material. When not in your mouth, always store your retainer in its protective case. For bonded retainers, use a floss threader or interdental brush to clean around the wire during your regular brushing and flossing routine.",
+      "question": "How do I care for my retainer?"
+    }
+  ],
+  "icon": "Shield",
+  "slug": "retainers",
+  "image": "",
+  "price": "Starting from $300",
+  "title": "Retainers",
+  "benefits": [
+    "Prevents teeth from shifting back after orthodontic treatment",
+    "Multiple retainer types available to match your preferences and lifestyle",
+    "Protects your investment in orthodontic care for long-term results",
+    "Custom-fitted for comfort and optimal retention",
+    "Bonded options provide continuous retention with no daily compliance required"
+  ],
+  "category": "specialized",
+  "featured": false,
+  "subtitle": "Protect Your Smile for a Lifetime",
+  "heroVariant": "centered",
+  "shortDescription": "Custom retainers designed to maintain your orthodontic results and keep your teeth in their ideal positions after treatment.",
+  "fullDescription": "Completing orthodontic treatment is a significant milestone, but the work does not end when your braces come off or you finish your last aligner. Retention is the critical final phase of every orthodontic case, and wearing a retainer as directed is the single most important thing you can do to protect the beautiful smile you worked so hard to achieve.\n\nTeeth are held in place by periodontal ligament fibers and surrounding bone, and after orthodontic movement these tissues need time to remodel and stabilize around the new tooth positions. Without a retainer, the elastic memory of the periodontal ligaments can gradually pull teeth back toward their original alignment. This natural tendency toward relapse is strongest in the first year after treatment, but some degree of shifting risk persists throughout life.\n\nWe offer three main types of retainers to suit different clinical needs and patient preferences. Hawley retainers are the classic removable design with an acrylic body and adjustable metal wire, offering durability and the ability to make minor adjustments if needed. Clear Essix retainers are made from thin, transparent thermoplastic material and are popular for their near-invisible appearance. Bonded permanent retainers consist of a thin stainless steel wire adhered to the tongue side of the front teeth, providing continuous retention without any daily compliance.\n\nOur team will recommend the retainer type that best fits your situation and provide detailed instructions for care and wear. We also schedule periodic retainer check appointments to ensure fit and function over time, making adjustments or replacements as needed.",
+  "whatToExpect": "On the day your braces are removed or you complete your aligner treatment, we will take impressions or digital scans of your newly aligned teeth to fabricate your custom retainer. If you are receiving a bonded retainer, it is typically placed at the same appointment as your debonding. For removable retainers, your appliance is usually ready within one to two weeks, and we will schedule a short fitting appointment to ensure proper fit and comfort.\n\nDuring the fitting appointment, we will show you how to properly insert and remove your retainer, explain your prescribed wear schedule, and provide care instructions. Initially, you will wear your removable retainer full-time for three to six months, then transition to nighttime-only wear. We will see you for follow-up visits to check your retainer fit and confirm that your teeth are maintaining their positions.\n\nOver the long term, we recommend continuing nighttime retainer wear indefinitely. Retainers may need to be replaced periodically due to normal wear, so keeping up with your scheduled visits allows us to monitor the condition of your appliance and address any concerns before they become problems.",
+  "durationMinutes": null
+}

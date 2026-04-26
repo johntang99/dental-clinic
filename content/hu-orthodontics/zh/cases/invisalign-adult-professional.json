@@ -1,0 +1,28 @@
+{
+  "id": "invisalign-adult-professional",
+  "category": "invisalign",
+  "condition": "成人牙齿不齐",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-invisalign-adult-professional.jpg",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-invisalign-adult-professional.jpg",
+  "summary": "张女士，32岁，职场白领，因工作需要不希望佩戴传统牙套。选择隐适美透明矫正器，14个月完成治疗。整个治疗过程同事几乎未察觉，成功矫正了前牙拥挤和轻微深覆合问题。",
+  "title": "职场女性隐适美隐形矫正",
+  "featured": true,
+  "slug": "invisalign-adult-professional",
+  "patientProfile": {
+    "name": "张女士",
+    "age": "32岁",
+    "concern": "前牙拥挤，希望隐形矫正"
+  },
+  "treatmentDetails": {
+    "visits": "每6-8周复诊",
+    "duration": "14个月",
+    "procedures": [
+      "隐适美透明矫正器",
+      "附件粘接",
+      "精细调整"
+    ]
+  },
+  "challenge": "张女士前牙轻度拥挤伴有深覆合，作为职场专业人士，她需要在不影响外观的情况下完成矫正。",
+  "solution": "胡林医生为她设计了隐适美方案，使用ClinCheck 3D模拟预览效果。每天佩戴22小时，每1-2周更换新矫正器。",
+  "results": "14个月后牙齿完美排列，深覆合得到改善。张女士对结果非常满意，同事们直到她分享才知道她一直在矫正牙齿。"
+}

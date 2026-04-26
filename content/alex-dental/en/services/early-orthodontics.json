@@ -1,0 +1,52 @@
+{
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule a consultation to learn more.",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Consultation"
+    },
+    "secondaryCta": {
+      "link": "tel:+10000000000",
+      "text": "Call Us"
+    }
+  },
+  "faq": [
+    {
+      "answer": "The American Association of Orthodontists recommends that every child receive an orthodontic evaluation by age seven. At this age, enough permanent teeth have typically erupted for an orthodontist to identify developing problems with jaw growth, tooth eruption patterns, and bite alignment. An early evaluation does not necessarily mean treatment will begin right away, but it allows us to monitor growth and intervene at the ideal time if needed.",
+      "question": "Why should my child see an orthodontist by age seven?"
+    },
+    {
+      "answer": "Phase 1 treatment, also known as interceptive orthodontics, addresses orthodontic problems while a child's jaws are still actively growing. This early intervention can correct crossbites, create space for crowded permanent teeth, guide jaw growth to improve facial symmetry, and reduce the risk of trauma to protruding front teeth. By treating these issues early, we can often simplify or shorten any future Phase 2 treatment needed during adolescence.",
+      "question": "What is Phase 1 orthodontic treatment?"
+    },
+    {
+      "answer": "Phase 1 treatment typically lasts six to eighteen months, depending on the specific issues being addressed. After the active treatment phase, your child enters a monitoring period where we observe the eruption of remaining permanent teeth and jaw development. This monitoring continues with periodic check-ups until it is time to evaluate whether Phase 2 treatment is needed.",
+      "question": "How long does early orthodontic treatment take?"
+    },
+    {
+      "answer": "Not every child requires early intervention. Phase 1 treatment is recommended when specific issues are identified that could become significantly more difficult or invasive to treat if left until all permanent teeth have erupted. Common indicators include crossbites, severe crowding with risk of impacted teeth, habits like thumb sucking that are affecting jaw development, and significant discrepancies between the upper and lower jaws. If early treatment is not needed, we will monitor your child and recommend the optimal time to begin comprehensive treatment.",
+      "question": "Does every child need Phase 1 treatment?"
+    }
+  ],
+  "icon": "Baby",
+  "slug": "early-orthodontics",
+  "image": "",
+  "price": "Starting from $2,500",
+  "title": "Early Orthodontics",
+  "benefits": [
+    "Guides jaw growth to create a more favorable environment for permanent teeth",
+    "Reduces the severity and duration of future orthodontic treatment",
+    "Corrects harmful oral habits before they cause lasting damage",
+    "Lowers the risk of trauma to protruding front teeth",
+    "Can eliminate the need for tooth extractions or jaw surgery later in life"
+  ],
+  "category": "by-age",
+  "featured": false,
+  "subtitle": "Phase 1 Interceptive Treatment to Guide Your Child's Growing Smile",
+  "heroVariant": "centered",
+  "shortDescription": "Early orthodontics provides Phase 1 interceptive treatment for children ages six to ten, addressing developing jaw and tooth alignment issues while growth is still occurring to set the stage for a healthy smile.",
+  "fullDescription": "Early orthodontics, often referred to as Phase 1 or interceptive treatment, is a targeted approach to correcting specific orthodontic problems in young children while their jaws and facial bones are still actively developing. By intervening during this critical growth window, typically between ages six and ten, we can influence the way the jaws grow, guide emerging permanent teeth into better positions, and address habits or structural issues that could lead to more serious problems if left untreated.\n\nPhase 1 treatment is not a one-size-fits-all approach. It is recommended only when specific conditions are present that would benefit significantly from early intervention. Common issues that warrant Phase 1 treatment include posterior crossbites that could cause asymmetric jaw growth, severe crowding that may lead to impacted permanent teeth, protruding upper incisors at risk of traumatic injury, underbites caused by jaw growth discrepancies, and persistent oral habits such as thumb sucking or tongue thrusting.\n\nThe appliances used in Phase 1 treatment vary based on the individual child's needs and may include palatal expanders to widen a narrow upper jaw, partial braces on the front teeth, space maintainers to preserve room for unerupted permanent teeth, or habit-breaking appliances. Each treatment plan is carefully tailored to address the specific developmental concern while keeping the child comfortable and cooperative.\n\nFollowing Phase 1 treatment, most children enter a resting period where we monitor the eruption of remaining permanent teeth and continued jaw growth. Some children may need a shorter, simpler Phase 2 treatment with full braces or aligners during adolescence, while others may find that early intervention has resolved enough of the underlying issues that additional treatment is minimal or unnecessary.",
+  "whatToExpect": "Your child's first visit includes a friendly, low-pressure examination where we assess their teeth, jaw development, and bite relationship. We take age-appropriate digital X-rays and photographs to evaluate the positions of both erupted and unerupted teeth. If we identify concerns that would benefit from early treatment, we will explain our findings in clear, parent-friendly terms and outline a recommended treatment plan.\n\nIf Phase 1 treatment is recommended, the type of appliance or approach depends on your child's specific needs. Placement of appliances such as expanders or partial braces is a comfortable process, and we take extra care to ensure young patients feel at ease throughout. Appointments are typically scheduled every four to eight weeks to monitor progress and make any necessary adjustments.\n\nPhase 1 treatment generally lasts six to eighteen months. Once the treatment objectives have been achieved, the active appliances are removed and your child transitions to a monitoring phase. During this period, we see your child every six to twelve months to track the development of their remaining permanent teeth and jaw growth. This ongoing observation allows us to determine the optimal timing for any Phase 2 treatment that may be needed and ensures that the gains from early intervention are preserved as your child's smile continues to develop.",
+  "durationMinutes": null
+}

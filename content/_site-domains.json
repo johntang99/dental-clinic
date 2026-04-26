@@ -23,6 +23,24 @@
       "domain": "bright-smile-dental.com",
       "environment": "prod",
       "enabled": true
+    },
+    {
+      "siteId": "hu-orthodontics",
+      "domain": "hu-ortho.local",
+      "environment": "dev",
+      "enabled": true
+    },
+    {
+      "siteId": "hu-orthodontics",
+      "domain": "hulinorthodontics.com",
+      "environment": "prod",
+      "enabled": true
+    },
+    {
+      "siteId": "hu-orthodontics",
+      "domain": "cn.hulinorthodontics.com",
+      "environment": "prod",
+      "enabled": true
     }
   ]
 }

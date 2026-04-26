@@ -1,0 +1,70 @@
+{
+  "introduction": {
+    "text": "胡林医生团队定期发布正畸科普文章，涵盖矫正方式对比、牙套护理、治疗流程等实用知识，帮助您和家人做出明智的矫治决策。"
+  },
+  "hero": {
+    "title": "正畸知识中心",
+    "subtitle": "胡林医生团队为您提供专业的正畸科普文章，帮助您了解牙齿矫正的方方面面",
+    "variant": "split-photo-right",
+    "backgroundImage": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop"
+  },
+  "categories": [
+    {
+      "id": "all",
+      "name": "全部文章",
+      "slug": "all"
+    },
+    {
+      "id": "treatment-guide",
+      "name": "治疗指南",
+      "slug": "treatment-guide"
+    },
+    {
+      "id": "braces-care",
+      "name": "牙套护理",
+      "slug": "braces-care"
+    },
+    {
+      "id": "invisalign",
+      "name": "隐适美",
+      "slug": "invisalign"
+    },
+    {
+      "id": "children",
+      "name": "儿童正畸",
+      "slug": "children"
+    },
+    {
+      "id": "adult",
+      "name": "成人正畸",
+      "slug": "adult"
+    },
+    {
+      "id": "patient-care",
+      "name": "患者须知",
+      "slug": "patient-care"
+    },
+    {
+      "id": "aftercare",
+      "name": "矫正后护理",
+      "slug": "aftercare"
+    },
+    {
+      "id": "orthodontics-knowledge",
+      "name": "正畸知识",
+      "slug": "orthodontics-knowledge"
+    }
+  ],
+  "cta": {
+    "title": "有正畸方面的问题？",
+    "description": "我们的团队很乐意为您解答任何关于牙齿矫正的问题。",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "联系我们"
+    },
+    "secondaryCta": {
+      "link": "/book",
+      "text": "预约咨询"
+    }
+  }
+}

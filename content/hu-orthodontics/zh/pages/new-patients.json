@@ -1,0 +1,207 @@
+{
+  "hero": {
+    "title": "欢迎来到胡林正畸中心",
+    "variant": "split-photo-right",
+    "subtitle": "了解首次就诊流程，让您的正畸之旅轻松开始",
+    "backgroundImage": "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=800&h=600&fit=crop"
+  },
+  "introduction": {
+    "text": "我们非常期待您的首次光临。首次就诊让我们有机会更好地了解您，评估您的正畸需求，并为您制定个性化的治疗方案。我们的团队精通普通话和英语，确保您在整个过程中都能无障碍沟通。",
+    "highlight": "首次正畸咨询完全免费。胡医生会详细评估您的情况，讨论治疗方案、预计时间和费用，让您在充分了解的基础上做出决定。"
+  },
+  "whatToExpect": {
+    "title": "首次就诊流程",
+    "subtitle": "从预约到制定方案，全程专业指导",
+    "totalDuration": "约45-60分钟",
+    "note": "如果胡医生评估后认为您已准备好开始治疗，某些情况下可以在同一次就诊时采集诊断资料。",
+    "steps": [
+      {
+        "number": 1,
+        "icon": "clipboard",
+        "title": "登记与了解",
+        "duration": "10分钟",
+        "description": "到达后完成登记手续。治疗协调员会了解您的顾虑和矫治目标。",
+        "details": [
+          "填写病史表格",
+          "提供保险信息（如有）",
+          "描述您的主要顾虑"
+        ]
+      },
+      {
+        "number": 2,
+        "icon": "camera",
+        "title": "拍摄照片与影像",
+        "duration": "10分钟",
+        "description": "拍摄口腔数码照片，记录治疗前的牙齿状况。",
+        "details": [
+          "面部和口腔数码照片",
+          "用于诊断分析的影像",
+          "高分辨率数字成像"
+        ]
+      },
+      {
+        "number": 3,
+        "icon": "stethoscope",
+        "title": "全面检查",
+        "duration": "15-20分钟",
+        "description": "胡医生将对您的牙齿、颌骨和咬合关系进行全面检查和评估。",
+        "details": [
+          "牙齿排列评估",
+          "咬合关系分析",
+          "颌骨发育评估",
+          "面部比例分析"
+        ]
+      },
+      {
+        "number": 4,
+        "icon": "file-text",
+        "title": "方案讨论",
+        "duration": "15-20分钟",
+        "description": "胡医生会详细说明您的情况，推荐最适合的治疗方案，并回答您的所有问题。",
+        "details": [
+          "治疗方案选择",
+          "矫治器类型推荐",
+          "预计治疗时间",
+          "费用和付款方案"
+        ]
+      }
+    ]
+  },
+  "preparation": {
+    "title": "就诊前准备",
+    "subtitle": "几个简单步骤，让您的就诊更顺利",
+    "tips": [
+      {
+        "icon": "shield-check",
+        "title": "携带保险卡",
+        "importance": "important",
+        "description": "如果您有正畸保险，请携带保险卡，我们将帮您核实保险福利。"
+      },
+      {
+        "icon": "file-text",
+        "title": "携带既往记录",
+        "importance": "important",
+        "description": "如有之前的牙科X光片或正畸记录，请一并带来供参考。"
+      },
+      {
+        "icon": "list",
+        "title": "列出您的问题",
+        "importance": "normal",
+        "description": "提前写下您关心的问题和矫治目标，以便在咨询时充分讨论。"
+      },
+      {
+        "icon": "clock",
+        "title": "提前15分钟到达",
+        "importance": "normal",
+        "description": "留出时间完成登记手续，确保就诊准时开始。"
+      },
+      {
+        "icon": "users",
+        "title": "家长陪同",
+        "importance": "normal",
+        "description": "如果是为孩子预约，请家长或监护人陪同出席。"
+      },
+      {
+        "icon": "phone",
+        "title": "有疑问请来电",
+        "importance": "normal",
+        "description": "不确定的事情？请拨打 (718) 353-0880，我们的团队很乐意为您解答。"
+      }
+    ]
+  },
+  "whatToBring": {
+    "title": "请携带以下物品",
+    "items": [
+      {
+        "icon": "badge-check",
+        "item": "有效身份证件",
+        "description": "驾照、护照或其他政府颁发的身份证件"
+      },
+      {
+        "icon": "shield-check",
+        "item": "保险卡",
+        "description": "如有正畸保险，请携带保险卡以便核实福利"
+      },
+      {
+        "icon": "file-text",
+        "item": "既往牙科记录",
+        "description": "之前的X光片、牙科报告或正畸记录（如有）"
+      },
+      {
+        "icon": "credit-card",
+        "item": "付款方式",
+        "description": "接受主流信用卡，提供灵活分期付款方案"
+      }
+    ]
+  },
+  "downloadForms": {
+    "title": "表格下载",
+    "subtitle": "提前填写以下表格，节省就诊时间",
+    "note": "您也可以在到达诊所后现场填写。",
+    "forms": [
+      {
+        "name": "新患者登记表",
+        "description": "包含基本信息、病史和保险信息",
+        "pages": "2页",
+        "fileUrl": "",
+        "required": true
+      }
+    ]
+  },
+  "insurance": {
+    "title": "保险与付款",
+    "text": "我们接受大部分主流牙科和正畸保险计划。如果您没有保险，我们提供灵活的分期付款方案，让专业的正畸治疗触手可及。",
+    "pricing": {
+      "initial": "免费",
+      "followUp": "根据方案而定",
+      "description": "首次正畸咨询完全免费。具体治疗费用将在咨询时根据您的情况详细说明。"
+    },
+    "link": {
+      "url": "/contact",
+      "text": "了解更多付款方案 →"
+    }
+  },
+  "faq": {
+    "title": "首次就诊常见问题",
+    "items": [
+      {
+        "question": "首次就诊需要多长时间？",
+        "answer": "首次咨询通常需要45分钟到1小时。如果当天需要采集诊断记录（X光片、照片、印模），可能需要额外时间。"
+      },
+      {
+        "question": "首次咨询是免费的吗？",
+        "answer": "是的，我们提供完全免费的初次正畸咨询。胡医生会评估您的情况，讨论可能的治疗方案，并回答所有问题。"
+      },
+      {
+        "question": "需要牙医转介吗？",
+        "answer": "不需要转介，您可以直接预约。不过，我们建议您在开始正畸治疗前先完成常规的牙科检查和洗牙。"
+      },
+      {
+        "question": "首次就诊当天能开始治疗吗？",
+        "answer": "在某些情况下是可以的。如果胡医生评估后认为您已准备好，我们可以在同一次就诊时采集诊断资料。具体情况因人而异。"
+      },
+      {
+        "question": "孩子几岁应该来做第一次正畸评估？",
+        "answer": "美国正畸学会建议儿童在7岁左右进行第一次正畸评估。在这个年龄，胡医生可以发现早期问题并在最佳时机干预。"
+      },
+      {
+        "question": "你们说中文吗？",
+        "answer": "是的！我们的团队精通普通话和英语，确保您在整个就诊过程中都能用最舒适的语言沟通。"
+      }
+    ]
+  },
+  "cta": {
+    "title": "准备好预约首次咨询了吗？",
+    "variant": "centered",
+    "description": "免费初次咨询，让胡林医生为您制定个性化矫治方案",
+    "note": "提供周末就诊时间",
+    "primaryCta": {
+      "link": "/book",
+      "text": "预约免费咨询"
+    },
+    "secondaryCta": {
+      "link": "tel:+17183530880",
+      "text": "(718) 353-0880"
+    }
+  }
+}

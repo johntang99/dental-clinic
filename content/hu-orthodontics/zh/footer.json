@@ -1,0 +1,46 @@
+{
+  "brand": {
+    "name": "胡林正畸中心",
+    "logoText": "胡林正畸中心",
+    "description": "ABO认证正畸专家，法拉盛与大颈两处诊所，中英双语服务，为各年龄段患者提供专业的牙齿矫正治疗。"
+  },
+
+  "hours": [
+    "周一、二、四、五: 10AM - 6PM",
+    "周三: 大颈诊所 10AM - 6PM",
+    "周六: 9AM - 3PM",
+    "周日: 休息"
+  ],
+
+  "contact": {
+    "phone": "(718) 353-0880",
+    "phoneLink": "tel:+17183530880",
+    "email": "info@hulinorthodontics.com",
+    "emailLink": "mailto:info@hulinorthodontics.com",
+    "addressLines": ["38-08 Union Street, Suite 4B", "Flushing, NY 11354"]
+  },
+
+  "services": [
+    { "url": "/services/traditional-braces", "text": "传统牙套" },
+    { "url": "/services/invisalign", "text": "隐适美" },
+    { "url": "/services/early-orthodontics", "text": "儿童早期矫治" },
+    { "url": "/services/adult-orthodontics", "text": "成人正畸" },
+    { "url": "/services/ceramic-braces", "text": "陶瓷牙套" },
+    { "url": "/services", "text": "全部服务" }
+  ],
+
+  "quickLinks": [
+    { "url": "/about", "text": "关于胡林医生" },
+    { "url": "/new-patients", "text": "首次访问" },
+    { "url": "/case-studies", "text": "案例展示" },
+    { "url": "/blog", "text": "知识中心" },
+    { "url": "/contact", "text": "联系我们" }
+  ],
+
+  "legalLinks": [
+    { "url": "/privacy", "text": "隐私政策" },
+    { "url": "/terms", "text": "服务条款" }
+  ],
+
+  "copyright": "© 2026 胡林正畸中心 Hu Lin Orthodontics. 保留所有权利。"
+}

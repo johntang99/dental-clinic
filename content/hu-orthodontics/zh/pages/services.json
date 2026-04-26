@@ -1,0 +1,252 @@
+{
+  "cta": {
+    "title": "准备好开始您的矫正之旅了吗？",
+    "variant": "centered",
+    "subtitle": "预约免费初次咨询，让胡林医生为您制定个性化的矫治方案",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "预约免费咨询"
+    },
+    "secondaryCta": {
+      "link": "tel:+17183530880",
+      "text": "(718) 353-0880"
+    }
+  },
+  "faq": {
+    "faqs": [
+      {
+        "answer": "矫治时间因个人情况而异，通常在12到24个月之间。简单的病例可能只需6到12个月，而复杂的病例可能需要更长时间。在初次咨询时，胡林医生会根据您的具体情况给出准确的时间预估。",
+        "question": "牙齿矫正需要多长时间？"
+      },
+      {
+        "answer": "美国正畸学会建议儿童在7岁左右进行第一次正畸评估。然而，牙齿矫正并没有年龄限制——青少年和成年人同样可以获得出色的矫治效果。最重要的是尽早评估，找到最佳治疗时机。",
+        "question": "矫正牙齿的最佳年龄是什么时候？"
+      },
+      {
+        "answer": "两种方式各有优势。隐适美更美观、舒适，可以自由摘取；传统牙套在处理复杂病例时可能更有效。胡林医生会根据您的具体情况，帮您选择最合适的治疗方案。",
+        "question": "隐适美和传统牙套哪个更好？"
+      },
+      {
+        "answer": "在牙套调整或更换新的隐适美矫正器后，牙齿可能会有几天的酸胀感，这是正常的牙齿移动反应。大多数患者表示不适感在2-3天内消失，可以通过软食和非处方止痛药缓解。",
+        "question": "牙齿矫正会痛吗？"
+      },
+      {
+        "answer": "费用取决于治疗的复杂程度和所选择的矫治方式。我们提供免费初次咨询和详细的费用说明，并提供灵活的分期付款方案。许多牙科保险计划也涵盖部分正畸费用。",
+        "question": "正畸治疗的费用是多少？"
+      },
+      {
+        "answer": "美国正畸学会（ABO）认证是正畸领域的最高专业认可。仅有约三分之一的正畸医生获得此认证，而胡林医生是三次获得ABO认证的正畸专家。这意味着您的治疗由经过最严格专业审核的正畸医生负责。",
+        "question": "什么是ABO认证？为什么很重要？"
+      }
+    ],
+    "title": "正畸常见问题",
+    "variant": "accordion"
+  },
+  "hero": {
+    "title": "正畸治疗服务",
+    "variant": "split-photo-left",
+    "subtitle": "从传统牙套到隐适美，为儿童、青少年和成人提供全面的牙齿矫正方案",
+    "backgroundImage": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop"
+  },
+  "overview": {
+    "title": "一站式专业正畸中心",
+    "variant": "centered",
+    "benefits": [
+      "三次ABO认证 — 正畸领域最高专业认可",
+      "中英双语服务，沟通无障碍",
+      "法拉盛和大颈两处诊所，交通便利",
+      "提供周末就诊时间",
+      "灵活的分期付款方案",
+      "先进的数字化诊疗技术"
+    ],
+    "introduction": "胡林正畸中心由三次获得美国正畸学会（ABO）认证的胡林医生领衔，提供涵盖所有年龄段的正畸治疗服务。无论您是希望为孩子进行早期矫治评估，还是作为成年人考虑改善笑容，我们都能为您量身定制最适合的治疗方案。"
+  },
+  "trustBar": {
+    "items": [
+      {
+        "icon": "award",
+        "title": "ABO三次认证",
+        "description": "美国正畸学会最高专业认可"
+      },
+      {
+        "icon": "graduation-cap",
+        "title": "四重学位",
+        "description": "DMD, DDS, MS, PhD"
+      },
+      {
+        "icon": "calendar",
+        "title": "15年以上经验",
+        "description": "超过10,000例成功矫治"
+      },
+      {
+        "icon": "globe",
+        "title": "中英双语",
+        "description": "团队精通普通话和英语"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "braces",
+      "icon": "align-center",
+      "name": "牙套矫正",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/categories/1776497160017-category-braces.jpg",
+      "order": 1,
+      "subtitle": "传统牙套、陶瓷牙套、自锁牙套",
+      "description": "多种类型的牙套选择，适合不同程度的牙齿排列问题。从经典的金属牙套到更美观的陶瓷牙套，我们帮您找到最适合的方案。"
+    },
+    {
+      "id": "aligners",
+      "icon": "sparkles",
+      "name": "隐形矫正",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/categories/1776497160017-category-aligners.jpg",
+      "order": 2,
+      "subtitle": "隐适美成人版和青少年版",
+      "description": "使用透明可拆卸的矫正器，在几乎不被察觉的情况下完成牙齿矫正。享受自由饮食、方便清洁的矫治体验。"
+    },
+    {
+      "id": "by-age",
+      "icon": "users",
+      "name": "各年龄段正畸",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/categories/1776497180069-category-by-age.jpg",
+      "order": 3,
+      "subtitle": "儿童早期矫治、青少年矫正、成人正畸",
+      "description": "不同年龄有不同的矫治需求和最佳时机。我们为6岁儿童到成年人提供针对性的正畸方案。"
+    },
+    {
+      "id": "specialized",
+      "icon": "shield-check",
+      "name": "专项治疗",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/categories/1776497160017-category-specialized.jpg",
+      "order": 4,
+      "subtitle": "正畸外科、腭扩展器、保持器",
+      "description": "针对复杂病例的专项治疗方案，包括需要外科联合治疗的严重颌骨不调、儿童腭扩展以及矫治后的保持方案。"
+    }
+  ],
+  "servicesList": {
+    "items": [
+      {
+        "id": "traditional-braces",
+        "icon": "Brackets",
+        "link": "/services/traditional-braces",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1776280200449-photo-1633951450008-8ad6dd373874.jpg",
+        "title": "传统金属牙套",
+        "category": "braces",
+        "featured": true,
+        "shortDescription": "传统金属牙套仍然是全面正畸治疗的金标准，可有效矫正各年龄段患者的拥挤、间隙和咬合不齐问题。"
+      },
+      {
+        "id": "ceramic-braces",
+        "icon": "Sparkles",
+        "link": "/services/ceramic-braces",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/services/1776497740586-ceramic-braces.jpg",
+        "title": "陶瓷牙套",
+        "category": "braces",
+        "featured": false,
+        "shortDescription": "透明或牙色的陶瓷托槽，在保持传统牙套矫治效果的同时，提供更美观的外观。"
+      },
+      {
+        "id": "self-ligating-braces",
+        "icon": "Zap",
+        "link": "/services/self-ligating-braces",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/services/1776497741182-self-ligating-braces.jpg",
+        "title": "自锁牙套",
+        "category": "braces",
+        "featured": false,
+        "shortDescription": "采用特殊夹持机制，无需传统橡皮圈，减少摩擦力，加快矫治速度，减少就诊次数。"
+      },
+      {
+        "id": "invisalign",
+        "icon": "AlignCenter",
+        "link": "/services/invisalign",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/services/1776497741732-invisalign.jpg",
+        "title": "隐适美",
+        "category": "aligners",
+        "featured": true,
+        "shortDescription": "全球领先的透明矫正器品牌，几乎看不见的矫治方式，可自由摘取，不影响日常生活。"
+      },
+      {
+        "id": "invisalign-teen",
+        "icon": "Smile",
+        "link": "/services/invisalign-teen",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/services/1776497742176-invisalign-teen.jpg",
+        "title": "青少年隐适美",
+        "category": "aligners",
+        "featured": true,
+        "shortDescription": "专为青少年设计的隐适美方案，配有佩戴指示器和备用矫正器，适合活跃的青少年生活方式。"
+      },
+      {
+        "id": "early-orthodontics",
+        "icon": "Baby",
+        "link": "/services/early-orthodontics",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/services/1776497742725-early-orthodontics.jpg",
+        "title": "儿童早期矫治",
+        "category": "by-age",
+        "featured": false,
+        "shortDescription": "针对6-10岁儿童的第一阶段矫治，利用生长发育窗口期纠正颌骨发育问题，为日后矫治打好基础。"
+      },
+      {
+        "id": "teen-orthodontics",
+        "icon": "GraduationCap",
+        "link": "/services/teen-orthodontics",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/services/1776497762783-teen-orthodontics.jpg",
+        "title": "青少年矫正",
+        "category": "by-age",
+        "featured": true,
+        "shortDescription": "为青少年量身定制的全面正畸治疗，利用生长发育的黄金时期，高效完成牙齿矫正。"
+      },
+      {
+        "id": "adult-orthodontics",
+        "icon": "User",
+        "link": "/services/adult-orthodontics",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/services/1776497743517-adult-orthodontics.jpg",
+        "title": "成人正畸",
+        "category": "by-age",
+        "featured": true,
+        "shortDescription": "任何年龄都不晚。多种隐蔽的矫治选择，让您在不影响职业形象的情况下获得理想的笑容。"
+      },
+      {
+        "id": "surgical-orthodontics",
+        "icon": "Stethoscope",
+        "link": "/services/surgical-orthodontics",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/services/1776497743940-surgical-orthodontics.jpg",
+        "title": "正畸外科联合治疗",
+        "category": "specialized",
+        "featured": false,
+        "shortDescription": "针对严重颌骨不调的联合治疗方案，通过正畸与外科手术相结合，实现最佳功能和美观效果。"
+      },
+      {
+        "id": "palatal-expanders",
+        "icon": "Maximize",
+        "link": "/services/palatal-expanders",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/services/1776497744415-palatal-expanders.jpg",
+        "title": "腭扩展器",
+        "category": "specialized",
+        "featured": false,
+        "shortDescription": "用于扩展上颌骨的矫治器，帮助解决牙弓狭窄、交叉咬合等问题，最适合正在发育中的儿童。"
+      },
+      {
+        "id": "retainers",
+        "icon": "Shield",
+        "link": "/services/retainers",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/services/1776497744861-retainers.jpg",
+        "title": "保持器",
+        "category": "specialized",
+        "featured": false,
+        "shortDescription": "矫治完成后的关键一步，确保您的牙齿保持在理想位置，维护来之不易的矫治成果。"
+      },
+      {
+        "id": "emergency-orthodontics",
+        "icon": "AlertCircle",
+        "link": "/services/emergency-orthodontics",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/services/1776497745496-emergency-orthodontics.jpg",
+        "title": "正畸急诊",
+        "category": "specialized",
+        "featured": false,
+        "shortDescription": "牙套托槽脱落、弓丝扎嘴等紧急情况的及时处理，确保您的矫治计划不受影响。"
+      }
+    ],
+    "title": "全部正畸服务",
+    "variant": "grid-cards-3x"
+  }
+}

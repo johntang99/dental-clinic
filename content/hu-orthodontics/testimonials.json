@@ -1,0 +1,79 @@
+[
+  {
+    "id": "t001",
+    "date": "2025-10-15",
+    "patientName": "王女士",
+    "rating": 5,
+    "text": "胡医生非常专业和耐心。我女儿今年12岁，牙齿比较拥挤。胡医生详细解释了治疗方案和时间表，让我们非常放心。中文沟通让整个过程轻松很多。",
+    "source": "google",
+    "featured": true,
+    "language": "zh",
+    "serviceCategory": "青少年矫正"
+  },
+  {
+    "id": "t002",
+    "date": "2025-09-20",
+    "patientName": "陈先生",
+    "rating": 5,
+    "text": "作为一个成年人，一直觉得矫正牙齿太晚了。胡医生给我用了隐适美，戴着几乎看不出来，同事都没发现。现在治疗快结束了，效果非常满意。",
+    "source": "google",
+    "featured": true,
+    "language": "zh",
+    "serviceCategory": "隐适美"
+  },
+  {
+    "id": "t003",
+    "date": "2025-11-05",
+    "patientName": "李妈妈",
+    "rating": 5,
+    "text": "胡医生发现我儿子的上颌太窄，建议先做腭扩展再矫正。虽然需要分两个阶段，但效果比直接矫正要好得多。胡医生的诊断非常精准，值得信赖。",
+    "source": "google",
+    "featured": true,
+    "language": "zh",
+    "serviceCategory": "儿童早期矫治"
+  },
+  {
+    "id": "t004",
+    "date": "2025-08-12",
+    "patientName": "张先生",
+    "rating": 5,
+    "text": "之前在别的诊所咨询，说我的情况需要做正颌手术。找到胡医生后，他用了一种综合治疗方法，避免了手术，效果也非常好。三次ABO认证确实名不虚传。",
+    "source": "google",
+    "featured": true,
+    "language": "zh",
+    "serviceCategory": "复杂正畸"
+  },
+  {
+    "id": "t005",
+    "date": "2026-01-08",
+    "patientName": "赵女士",
+    "rating": 5,
+    "text": "法拉盛诊所位置很方便，坐7号线到终点站走几步就到了。周六也开门，对我们上班族来说太方便了。工作人员都说中文，感觉很亲切。",
+    "source": "google",
+    "featured": false,
+    "language": "zh",
+    "serviceCategory": "传统牙套"
+  },
+  {
+    "id": "t006",
+    "date": "2026-03-10",
+    "patientName": "黄女士",
+    "rating": 5,
+    "text": "我在大颈诊所做的陶瓷牙套，从第一次咨询到最后取牙套，整个体验都非常好。胡医生每次都亲自检查调整，从不敷衍。最感动的是他记得我每次复诊的进展，真的是把每个患者放在心上。",
+    "source": "yelp",
+    "featured": true,
+    "language": "zh",
+    "serviceCategory": "陶瓷牙套"
+  },
+  {
+    "id": "t007",
+    "date": "2026-02-15",
+    "patientName": "Michael L.",
+    "rating": 5,
+    "text": "Dr. Hu is simply the best orthodontist. His triple ABO certification speaks for itself. My treatment was efficient, and the results exceeded my expectations. The bilingual staff made communication easy for my parents who prefer Mandarin.",
+    "source": "google",
+    "featured": true,
+    "language": "en",
+    "serviceCategory": "Adult Orthodontics"
+  }
+]

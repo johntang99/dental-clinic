@@ -1,0 +1,34 @@
+{
+  "colors": {
+    "primary": {
+      "50": "#E8F5E3",
+      "100": "#C8E6C0",
+      "dark": "#163D10",
+      "light": "#2D7A22",
+      "DEFAULT": "#204e17"
+    },
+    "secondary": {
+      "50": "#FFF8E7",
+      "dark": "#9E8338",
+      "light": "#E0C56A",
+      "DEFAULT": "#C9A84C"
+    },
+    "backdrop": {
+      "primary": "#F8FAF7",
+      "secondary": "#FFF8E7"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "display": "'Noto Serif SC', Georgia, serif",
+      "heading": "'Noto Serif SC', Georgia, serif",
+      "body": "'Noto Sans SC', 'Inter', -apple-system, sans-serif",
+      "small": "'Noto Sans SC', 'Inter', -apple-system, sans-serif"
+    },
+    "display": "3rem",
+    "heading": "2.25rem",
+    "subheading": "1.25rem",
+    "body": "1rem",
+    "small": "0.875rem"
+  }
+}

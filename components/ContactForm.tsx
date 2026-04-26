@@ -155,9 +155,14 @@ export default function ContactForm({ formConfig, locale }: ContactFormProps) {
       </Button>
 
       {/* Status Messages */}
-      <div role="status" aria-live="polite">
+      <div>
         {submitStatus === 'success' && (
-          <div className="p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
+          <div
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            className="p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3"
+          >
             <Icon name="CheckCircle" className="text-green-600 flex-shrink-0" />
             <p className="text-green-800 text-sm">
               {successMessage}
@@ -166,7 +171,12 @@ export default function ContactForm({ formConfig, locale }: ContactFormProps) {
         )}
 
         {submitStatus === 'error' && (
-          <div className="p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
+          <div
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+            className="p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3"
+          >
             <Icon name="AlertCircle" className="text-red-600 flex-shrink-0" />
             <p className="text-red-800 text-sm">
               {errorMessage}

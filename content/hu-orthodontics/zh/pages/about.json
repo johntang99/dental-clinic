@@ -1,0 +1,156 @@
+{
+  "cta": {
+    "title": "预约与胡林医生面对面咨询",
+    "variant": "centered",
+    "subtitle": "免费初次咨询，让我们一起规划您的矫治之旅",
+    "primaryCta": {
+      "link": "/book",
+      "text": "预约免费咨询"
+    },
+    "secondaryCta": {
+      "link": "tel:+17183530880",
+      "text": "(718) 353-0880"
+    }
+  },
+  "hero": {
+    "title": "关于胡林医生",
+    "variant": "split-photo-right",
+    "subtitle": "ABO三次认证正畸专家 · DMD, DDS, MS, PhD",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1776465509800-team-discussion-2.png"
+  },
+  "clinic": {
+    "title": "关于胡林正畸中心",
+    "images": [],
+    "variant": "split",
+    "features": [
+      "ABO三次认证正畸专家",
+      "中英双语服务团队",
+      "法拉盛和大颈两处诊所",
+      "提供周末就诊时间",
+      "先进的数字化正畸设备",
+      "灵活的分期付款方案",
+      "接受大部分保险计划",
+      "免费初次咨询评估"
+    ],
+    "description": "胡林正畸中心在法拉盛和大颈设有两处诊所，配备先进的数字化正畸设备，营造温馨舒适的就诊环境。我们的团队精通普通话和英语，致力于为华人社区提供最高水准的正畸服务。\n\n无论是在法拉盛的总诊所还是大颈分诊所，您都将体验到专业、高效、贴心的正畸服务。法拉盛诊所位于华人社区中心地带，靠近7号地铁线终点站，交通极为便利。"
+  },
+  "profile": {
+    "bio": "胡林医生是一位在正畸领域享有盛誉的专家，拥有DMD（口腔医学博士）、DDS（牙科博士）、MS（硕士）和 PhD（博士）四重学位。\n\n他于2007年首次获得美国正畸学会（ABO）认证，随后于2008年和2020年两次成功再认证，成为极少数获得三次ABO认证的正畸医生之一。ABO认证是正畸领域的最高专业认可，仅约三分之一的正畸医生能够获得此认证。\n\n胡医生将先进的正畸技术与融合外科原则的多学科视角相结合，代表了该领域的范式转变。这种综合方法能够实现更有效的干预，并显著改善治疗效果，尤其是在以往被认为具有挑战性或需要手术的复杂病例中。\n\n胡医生在纽约市皇后区法拉盛和长岛大颈设有两家诊所。法拉盛总诊所位于华人社区中心地带，靠近7号地铁线终点站，交通极为便利。他的团队精通普通话和英语，致力于为华人社区提供最高水准的正畸服务。",
+    "name": "胡林医生",
+    "role": "创始人 / 正畸专家",
+    "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1776474656154-photo-bio-3.jpg",
+    "quote": "每一个微笑都值得被精心雕琢。先进的技术与真诚的关怀，是我对每位患者的承诺。",
+    "title": "DMD, DDS, MS, PhD",
+    "nameEN": "Dr. Lin Hu"
+  },
+  "philosophy": {
+    "title": "治疗理念",
+    "variant": "cards",
+    "principles": [
+      {
+        "title": "精准诊断",
+        "description": "运用先进的数字化技术进行全面检查和精确诊断，确保每一个治疗方案都建立在详尽的分析基础之上。"
+      },
+      {
+        "title": "个性化方案",
+        "description": "每位患者的牙齿状况和需求都是独一无二的。我们根据您的具体情况，量身定制最适合您的矫治方案。"
+      },
+      {
+        "title": "多学科融合",
+        "description": "将正畸技术与外科原则相结合，为复杂病例提供更有效的治疗路径，避免不必要的手术。"
+      },
+      {
+        "title": "持续关怀",
+        "description": "从初次咨询到矫治完成后的保持阶段，我们始终陪伴您，确保您的笑容长久保持完美。"
+      }
+    ]
+  },
+  "credentials": {
+    "items": [
+      {
+        "year": "",
+        "location": "",
+        "credential": "口腔医学博士 (DMD)",
+        "institution": ""
+      },
+      {
+        "year": "",
+        "location": "",
+        "credential": "牙科博士 (DDS)",
+        "institution": ""
+      },
+      {
+        "year": "",
+        "location": "",
+        "credential": "正畸学硕士 (MS)",
+        "institution": ""
+      },
+      {
+        "year": "",
+        "location": "",
+        "credential": "哲学博士 (PhD)",
+        "institution": ""
+      }
+    ],
+    "title": "专业资质",
+    "variant": "list"
+  },
+  "affiliations": {
+    "title": "专业认证与会员资格",
+    "variant": "detailed",
+    "organizations": [
+      {
+        "name": "美国正畸学会 (ABO)",
+        "role": "认证正畸专家 — 2007年首次认证，2008年、2020年再认证"
+      },
+      {
+        "name": "美国牙科协会 (ADA)",
+        "role": "会员"
+      },
+      {
+        "name": "美国正畸医师协会 (AAO)",
+        "role": "会员"
+      },
+      {
+        "name": "隐适美 (Invisalign)",
+        "role": "认证提供商"
+      }
+    ]
+  },
+  "specializations": {
+    "areas": [
+      {
+        "icon": "align-center",
+        "title": "传统牙套矫正",
+        "description": "金属牙套、陶瓷牙套、自锁托槽系统，针对各种复杂的牙齿排列问题"
+      },
+      {
+        "icon": "sparkles",
+        "title": "隐适美隐形矫正",
+        "description": "透明可拆卸矫正器，几乎看不见，不影响日常生活和职业形象"
+      },
+      {
+        "icon": "baby",
+        "title": "儿童早期正畸",
+        "description": "利用6-10岁生长发育窗口期，早期干预颌骨发育问题"
+      },
+      {
+        "icon": "graduation-cap",
+        "title": "青少年矫正",
+        "description": "在生长发育的黄金时期，高效完成牙齿矫正治疗"
+      },
+      {
+        "icon": "user",
+        "title": "成人正畸",
+        "description": "任何年龄都不晚，多种隐蔽矫治方案可选"
+      },
+      {
+        "icon": "stethoscope",
+        "title": "复杂病例与正畸外科",
+        "description": "将正畸技术与外科原则相结合，解决传统方法难以处理的严重颌骨不调"
+      }
+    ],
+    "title": "专业领域",
+    "variant": "grid-3"
+  }
+}

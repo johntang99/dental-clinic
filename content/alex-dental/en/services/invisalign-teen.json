@@ -1,0 +1,52 @@
+{
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule a consultation to learn more.",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Consultation"
+    },
+    "secondaryCta": {
+      "link": "tel:+10000000000",
+      "text": "Call Us"
+    }
+  },
+  "faq": [
+    {
+      "answer": "Invisalign Teen is specifically designed for the unique dental needs of adolescent patients. The aligners include compliance indicators that fade from blue to clear over approximately two weeks, helping parents and orthodontists gauge whether the aligners are being worn enough. The system also includes features to accommodate teeth that have not yet fully erupted, and each treatment plan comes with complimentary replacement aligners in case any are lost or damaged.",
+      "question": "How is Invisalign Teen different from regular Invisalign?"
+    },
+    {
+      "answer": "One of the biggest advantages of Invisalign Teen is that the aligners are removed for eating and drinking. This means your teen can enjoy all their favorite foods without restrictions. There are no brackets to break or wires to bend from eating hard or sticky foods. Simply remove the aligners before meals and snacks, brush afterward, and place the aligners back in.",
+      "question": "Can my teen eat normally with Invisalign Teen?"
+    },
+    {
+      "answer": "For best results, aligners should be worn twenty to twenty-two hours per day. They are removed only for eating, drinking anything other than water, and brushing and flossing. The built-in compliance indicators help ensure your teen is wearing the aligners enough to stay on track with the treatment plan. Consistent wear is the single most important factor in achieving successful results on schedule.",
+      "question": "How often does my teen need to wear the aligners?"
+    },
+    {
+      "answer": "Invisalign Teen is an excellent option for teens who play sports or musical instruments. Since there are no metal brackets or wires, there is no risk of mouth injuries from impacts during athletic activities. Teens who play wind or brass instruments often find that clear aligners interfere far less with their embouchure than traditional braces. A standard mouthguard can be worn over the aligners during sports for additional protection.",
+      "question": "Can my teen play sports or instruments with Invisalign Teen?"
+    }
+  ],
+  "icon": "Smile",
+  "slug": "invisalign-teen",
+  "image": "",
+  "price": "Starting from $4,000",
+  "title": "Invisalign Teen",
+  "benefits": [
+    "Virtually invisible aligners that do not affect your teen's confidence or appearance",
+    "Removable design allows unrestricted eating and easy oral hygiene",
+    "Built-in compliance indicators help parents monitor consistent wear",
+    "Complimentary replacement aligners included in case of loss or damage",
+    "No emergency visits for broken brackets or poking wires"
+  ],
+  "category": "aligners",
+  "featured": true,
+  "subtitle": "Clear Aligner Orthodontics Designed Specifically for Teenage Lifestyles",
+  "heroVariant": "centered",
+  "shortDescription": "Invisalign Teen provides clear aligner orthodontic treatment specially designed for adolescents, with features like compliance indicators and replacement aligners to support teens throughout treatment.",
+  "fullDescription": "Invisalign Teen brings the benefits of clear aligner orthodontics to adolescent patients with features specifically designed to address the unique challenges of treating teenage smiles. Using the same advanced SmartTrack material and 3D digital planning technology as adult Invisalign, this system straightens teeth discreetly while accommodating the active, social lifestyles of today's teens.\n\nUnlike traditional braces, Invisalign Teen aligners are virtually invisible when worn, which is a significant consideration for self-conscious teenagers navigating school, social events, and extracurricular activities. The removable design means there are no dietary restrictions and no complicated cleaning routines around brackets and wires. Teens simply remove their aligners to eat, brush, and floss normally.\n\nInvisalign Teen includes several features that set it apart from the standard adult system. Blue compliance indicators on each aligner gradually fade as the aligner is worn, providing a visual cue for both parents and the orthodontist to confirm the aligners are being used as directed. The treatment plan can also accommodate erupting teeth, such as second premolars and second molars that are still growing into position. Additionally, each Invisalign Teen treatment includes complimentary replacement aligners to cover the occasional lost or damaged set.\n\nClinical studies have demonstrated that Invisalign Teen achieves comparable outcomes to traditional braces for a wide range of orthodontic concerns, including crowding, spacing, and mild to moderate bite issues. For teens who are motivated to wear their aligners consistently, this treatment offers an effective and comfortable path to a straighter smile.",
+  "whatToExpect": "The process begins with a consultation where we examine your teen's teeth, take digital scans and X-rays, and discuss treatment goals. We use Invisalign's ClinCheck software to create a detailed 3D treatment simulation that shows the projected movement of each tooth from its current position to its final alignment. You and your teen can preview the expected results before committing to treatment.\n\nOnce the treatment plan is approved, a series of custom aligners are fabricated and shipped to our office. Your teen will receive several sets of aligners at each visit and will switch to a new set every one to two weeks as directed. Each aligner makes incremental adjustments, gradually guiding the teeth toward their target positions. Check-in appointments are typically scheduled every six to eight weeks to monitor progress and distribute additional aligner sets.\n\nTreatment duration for Invisalign Teen generally ranges from twelve to eighteen months, depending on the complexity of the case. Throughout treatment, the compliance indicators on each aligner help ensure your teen is wearing them enough hours each day. When the final aligner is completed, your teen will be fitted with retainers to protect their new smile and ensure the results last well into adulthood.",
+  "durationMinutes": null
+}

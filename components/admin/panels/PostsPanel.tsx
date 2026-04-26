@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { normalizeMarkdown } from '@/components/admin/utils/editorHelpers';
 
 interface PostsPanelProps {
@@ -24,6 +25,8 @@ export function PostsPanel({
   updateFormValue,
   openImagePicker,
 }: PostsPanelProps) {
+  const hideBodyPreview = markdownPreview['blog-article-body'] === false;
+
   return (
     <>
       {formData?.featuredPost && (
@@ -210,36 +213,50 @@ export function PostsPanel({
             </div>
           )}
           <div className="mt-4">
-            <div className="flex items-center justify-between mb-2">
+            <div className="mb-2 flex items-center justify-between">
               <span className="text-xs text-gray-500">Body (Markdown)</span>
               <button
                 type="button"
                 onClick={() => toggleMarkdownPreview('blog-article-body')}
-                className="text-xs text-gray-600 hover:text-gray-900"
+                className="text-xs text-gray-500 hover:text-gray-800"
               >
-                {markdownPreview['blog-article-body'] ? 'Edit' : 'Preview'}
+                {hideBodyPreview ? 'Show Preview' : 'Hide Preview'}
               </button>
             </div>
-            {markdownPreview['blog-article-body'] ? (
-              <div className="prose prose-sm max-w-none rounded-md border border-gray-200 px-3 py-2">
+            <textarea
+              className="w-full min-h-[220px] rounded-md border border-gray-200 px-3 py-2 text-sm"
+              placeholder="Write the article body in Markdown"
+              value={formData.contentMarkdown || ''}
+              onChange={(event) => updateFormValue(['contentMarkdown'], event.target.value)}
+            />
+            <div className={`mt-3 rounded-md border border-gray-200 p-3 ${hideBodyPreview ? 'hidden' : ''}`}>
+              <div className="mb-2 text-xs font-semibold uppercase text-gray-500">Preview</div>
+              <div className="prose prose-sm max-w-none">
                 <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
                   components={{
                     ul: (props) => <ul className="list-disc pl-5" {...props} />,
                     ol: (props) => <ol className="list-decimal pl-5" {...props} />,
                     li: (props) => <li className="mb-1" {...props} />,
+                    table: (props) => (
+                      <div className="my-4 overflow-x-auto">
+                        <table className="min-w-full border border-gray-200 rounded-md" {...props} />
+                      </div>
+                    ),
+                    thead: (props) => <thead className="bg-gray-50" {...props} />,
+                    tr: (props) => <tr className="border-b border-gray-200" {...props} />,
+                    th: (props) => (
+                      <th className="px-3 py-2 text-left text-xs font-semibold text-gray-800 align-top border-r border-gray-200 last:border-r-0" {...props} />
+                    ),
+                    td: (props) => (
+                      <td className="px-3 py-2 text-xs text-gray-700 align-top border-r border-gray-200 last:border-r-0" {...props} />
+                    ),
                   }}
                 >
                   {normalizeMarkdown(formData.contentMarkdown || '')}
                 </ReactMarkdown>
               </div>
-            ) : (
-              <textarea
-                className="w-full min-h-[220px] rounded-md border border-gray-200 px-3 py-2 text-sm"
-                placeholder="Write the article body in Markdown"
-                value={formData.contentMarkdown || ''}
-                onChange={(event) => updateFormValue(['contentMarkdown'], event.target.value)}
-              />
-            )}
+            </div>
           </div>
         </div>
       )}

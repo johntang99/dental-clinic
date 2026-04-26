@@ -2,7 +2,13 @@ import Image from 'next/image';
 import { Badge, Card, CardHeader, CardTitle, CardContent } from '@/components/ui';
 import { cn } from '@/lib/utils';
 import { Feature } from '@/lib/types';
-import { Award, Heart, Users, Star, Shield, Clock } from 'lucide-react';
+import {
+  Award, Heart, Users, Star, Shield, Clock,
+  GraduationCap, Globe, Lightbulb, CreditCard,
+  MapPin, Stethoscope, BadgeCheck, CalendarCheck,
+  Sparkles, HeartHandshake, Building2, Languages,
+  Banknote, BrainCircuit, Medal, CheckCircle,
+} from 'lucide-react';
 
 export interface WhyChooseUsSectionProps {
   badge?: string;
@@ -76,7 +82,7 @@ function FeaturesCards({ features }: { features: Feature[] }) {
           ) : (
             <div className="p-6 pb-0">
               <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center mb-4 shadow-lg">
-                <FeatureIcon icon={feature.icon} />
+                <FeatureIcon icon={feature.icon} className="text-white" />
               </div>
             </div>
           )}
@@ -164,17 +170,40 @@ function FeaturesList({ features }: { features: Feature[] }) {
 // FEATURE ICON COMPONENT
 // ============================================
 
-const iconMap = {
-  Award,
-  Heart,
-  Users,
-  Star,
-  Shield,
-  Clock,
+const iconMap: Record<string, React.ComponentType<any>> = {
+  // PascalCase keys (legacy)
+  Award, Heart, Users, Star, Shield, Clock,
+  GraduationCap, Globe, Lightbulb, CreditCard,
+  MapPin, Stethoscope, BadgeCheck, CalendarCheck,
+  Sparkles, HeartHandshake, Building2, Languages,
+  Banknote, BrainCircuit, Medal, CheckCircle,
+  // kebab-case keys (content JSON format)
+  'award': Award,
+  'heart': Heart,
+  'users': Users,
+  'star': Star,
+  'shield': Shield,
+  'clock': Clock,
+  'graduation-cap': GraduationCap,
+  'globe': Globe,
+  'lightbulb': Lightbulb,
+  'credit-card': CreditCard,
+  'map-pin': MapPin,
+  'stethoscope': Stethoscope,
+  'badge-check': BadgeCheck,
+  'calendar-check': CalendarCheck,
+  'sparkles': Sparkles,
+  'hand-heart': HeartHandshake,
+  'building-2': Building2,
+  'languages': Languages,
+  'banknote': Banknote,
+  'brain-circuit': BrainCircuit,
+  'medal': Medal,
+  'check-circle': CheckCircle,
 };
 
 function FeatureIcon({ icon, className }: { icon?: string; className?: string }) {
-  const IconComponent = icon && iconMap[icon as keyof typeof iconMap] ? iconMap[icon as keyof typeof iconMap] : Star;
-  
+  const IconComponent = (icon && iconMap[icon]) || Star;
+
   return <IconComponent size={24} className={cn('text-primary', className)} />;
 }

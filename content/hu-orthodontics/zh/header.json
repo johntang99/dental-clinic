@@ -1,0 +1,64 @@
+{
+  "menu": {
+    "logo": {
+      "image": {
+        "src": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1776663578610-dr.hu-orthodontics-logo-2-.png"
+      }
+    },
+    "items": [
+      {
+        "url": "/",
+        "text": "首页"
+      },
+      {
+        "url": "/about",
+        "text": "关于医生"
+      },
+      {
+        "url": "/services",
+        "text": "正畸服务"
+      },
+      {
+        "url": "/new-patients",
+        "text": "首次访问"
+      },
+      {
+        "url": "/case-studies",
+        "text": "案例展示"
+      },
+      {
+        "url": "/blog",
+        "text": "知识中心"
+      },
+      {
+        "url": "/contact",
+        "text": "联系我们"
+      }
+    ],
+    "variant": "default"
+  },
+  "logoText": "胡林正畸中心",
+  "logoType": "text",
+  "showPhone": true,
+  "ctaPrimary": {
+    "url": "/book",
+    "text": "预约咨询",
+    "style": "filled"
+  },
+  "ctaSecondary": {
+    "url": "tel:+17183530880",
+    "text": "(718) 353-0880",
+    "style": "outline"
+  },
+  "logoImageUrl": "",
+  "stickyHeader": true,
+  "announcementBar": {
+    "text": "",
+    "enabled": false,
+    "linkUrl": "",
+    "linkText": "",
+    "dismissible": true,
+    "backgroundColor": "primary"
+  },
+  "transparentOnHero": false
+}

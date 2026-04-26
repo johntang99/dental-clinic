@@ -1,0 +1,52 @@
+{
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule a consultation to learn more.",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Consultation"
+    },
+    "secondaryCta": {
+      "link": "tel:+10000000000",
+      "text": "Call Us"
+    }
+  },
+  "faq": [
+    {
+      "answer": "Ceramic braces are made from translucent or tooth-colored polycrystalline alumina materials that blend naturally with your teeth. While they are not completely invisible, they are significantly less noticeable than metal braces. Many patients find that ceramic brackets are difficult to spot in everyday conversation, photographs, and professional settings.",
+      "question": "How visible are ceramic braces?"
+    },
+    {
+      "answer": "Ceramic braces are highly effective and can treat the same range of orthodontic issues as traditional metal braces, including crowding, spacing, overbites, underbites, and crossbites. The primary difference is cosmetic rather than functional. In some very complex cases, your orthodontist may recommend metal braces for certain teeth to achieve the most precise results.",
+      "question": "Are ceramic braces as effective as metal braces?"
+    },
+    {
+      "answer": "Ceramic brackets themselves are stain-resistant, but the clear or white elastic ties used to hold the archwire in place can discolor between adjustment appointments. To minimize staining, we recommend limiting consumption of coffee, tea, red wine, curry, and other heavily pigmented foods and beverages. We replace the elastic ties at each adjustment visit, so any discoloration is temporary.",
+      "question": "Do ceramic braces stain easily?"
+    },
+    {
+      "answer": "Ceramic braces typically cost more than traditional metal braces due to the higher material costs of the ceramic brackets and the additional care required during treatment. However, many patients find the cosmetic advantages well worth the difference. Insurance coverage for ceramic braces is similar to metal braces, and we offer payment plans to help manage the investment.",
+      "question": "Why do ceramic braces cost more than metal braces?"
+    }
+  ],
+  "icon": "Sparkles",
+  "slug": "ceramic-braces",
+  "image": "",
+  "price": "Starting from $4,000",
+  "title": "Ceramic Braces",
+  "benefits": [
+    "Tooth-colored brackets that blend with your natural smile for a discreet appearance",
+    "Same corrective power as traditional metal braces for comprehensive treatment",
+    "Ideal for adult professionals and image-conscious patients",
+    "Smooth, rounded bracket design for improved comfort",
+    "Compatible with tooth-colored or clear archwires for an even subtler look"
+  ],
+  "category": "braces",
+  "featured": false,
+  "subtitle": "Effective Orthodontic Treatment with a Discreet, Tooth-Colored Approach",
+  "heroVariant": "centered",
+  "shortDescription": "Ceramic braces offer the same comprehensive orthodontic correction as metal braces with tooth-colored brackets that blend naturally with your smile for a more discreet treatment experience.",
+  "fullDescription": "Ceramic braces provide an excellent balance between the proven effectiveness of traditional bracket-and-wire orthodontics and the aesthetic discretion that many adult and teen patients desire. The brackets are crafted from advanced polycrystalline alumina ceramic material that is translucent or closely matches the natural color of your teeth, making them far less noticeable than conventional metal braces.\n\nFrom a clinical standpoint, ceramic braces function identically to metal braces. They use the same bracket-and-archwire system to apply controlled forces that gradually move teeth into their correct positions. This means ceramic braces can treat the same broad range of orthodontic conditions, including moderate to severe crowding, spacing issues, and various bite irregularities such as overbites, underbites, crossbites, and open bites.\n\nCeramic braces are particularly popular among working professionals, college students, and older teens who want effective orthodontic treatment without the prominent metallic appearance. When combined with tooth-colored or frosted archwires, ceramic braces become even more subtle, allowing you to undergo treatment with minimal impact on your appearance.\n\nAs with all fixed orthodontic appliances, proper oral hygiene is essential during treatment with ceramic braces. We provide detailed instructions on brushing and flossing around your brackets and recommend regular professional cleanings to keep your teeth and gums healthy throughout the treatment process.",
+  "whatToExpect": "Your ceramic braces journey begins with a comprehensive evaluation that includes digital imaging, X-rays, and impressions or scans of your teeth. We use these diagnostic records to design a precise treatment plan that maps out each stage of your tooth movement from start to finish.\n\nDuring the bonding appointment, each ceramic bracket is carefully positioned and bonded to the front surface of your teeth. The process is painless and typically takes one to two hours. An archwire is then threaded through the brackets and secured with elastic ties. You may opt for clear or tooth-colored ties to further minimize the visibility of your braces.\n\nAdjustment appointments are scheduled every four to eight weeks throughout your treatment, which typically lasts twelve to thirty months depending on the complexity of your case. At each visit, we assess your progress, change the elastic ties, and may adjust or replace the archwire. As treatment progresses, you will see your teeth steadily moving into a straighter, more harmonious alignment. Upon completion, your brackets are gently removed, your teeth are polished, and you receive custom retainers to preserve your new smile.",
+  "durationMinutes": null
+}

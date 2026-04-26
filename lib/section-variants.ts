@@ -10,7 +10,8 @@ export type HeroVariant =
   | 'overlap'               // Text overlaps photo
   | 'photo-background'      // Photo as full background
   | 'video-background'      // Video as background
-  | 'gallery-background';   // Photo carousel/gallery background
+  | 'gallery-background'    // Photo carousel/gallery background
+  | 'smile-draw';           // Smile draw animation + parallax floating elements
 
 export type TestimonialsVariant =
   | 'carousel'              // Horizontal carousel
@@ -125,6 +126,12 @@ export const heroVariantConfig: Record<HeroVariant, SectionVariantConfig> = {
     layout: 'full-width',
     padding: 'xl',
     className: 'relative',
+  },
+  'smile-draw': {
+    variant: 'smile-draw',
+    layout: 'container',
+    padding: 'lg',
+    className: 'relative overflow-hidden',
   },
 };
 

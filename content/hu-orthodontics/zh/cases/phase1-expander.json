@@ -1,0 +1,27 @@
+{
+  "id": "phase1-expander",
+  "category": "children",
+  "condition": "上颌骨狭窄",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-phase1-expander.jpg",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-phase1-expander.jpg",
+  "summary": "小美，7岁，上颌骨过窄导致后牙交叉咬合和前牙拥挤。胡林医生在最佳生长期使用腭扩展器扩大上颌骨，8个月后上颌宽度增加了6mm，为恒牙萌出创造了充足空间，避免了未来拔牙的可能。",
+  "title": "7岁儿童腭扩展早期矫治",
+  "featured": true,
+  "slug": "phase1-expander",
+  "patientProfile": {
+    "name": "小美",
+    "age": "7岁",
+    "concern": "上颌骨过窄，恒牙没有足够空间"
+  },
+  "treatmentDetails": {
+    "visits": "每月复诊",
+    "duration": "8个月",
+    "procedures": [
+      "腭扩展器",
+      "定期观察"
+    ]
+  },
+  "challenge": "小美上颌骨过窄，导致后牙交叉咬合，恒牙萌出空间严重不足，如不干预将面临严重拥挤。",
+  "solution": "利用7岁时上颌骨中缝尚未完全愈合的优势，使用腭扩展器逐步扩大上颌骨宽度。",
+  "results": "8个月内上颌成功扩展6mm，交叉咬合纠正。后续恒牙有充足空间正常萌出，避免了未来拔牙矫正的需要。"
+}

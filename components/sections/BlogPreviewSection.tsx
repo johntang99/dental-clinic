@@ -55,20 +55,14 @@ export default function BlogPreviewSection({
         </div>
 
         {/* Render based on variant */}
-        {variant === 'cards-grid' && (
-          <BlogCardsGrid posts={posts} locale={locale} />
-        )}
-        
-        {variant === 'featured-side' && (
+        {variant === 'featured-side' ? (
           <BlogFeaturedSide posts={posts} locale={locale} />
-        )}
-        
-        {variant === 'list-detailed' && (
+        ) : variant === 'list-detailed' ? (
           <BlogListDetailed posts={posts} locale={locale} />
-        )}
-        
-        {variant === 'carousel' && (
+        ) : variant === 'carousel' ? (
           <BlogCarousel posts={posts} locale={locale} />
+        ) : (
+          <BlogCardsGrid posts={posts} locale={locale} />
         )}
 
         {/* More Link */}

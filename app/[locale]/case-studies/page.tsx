@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { getRequestSiteId, loadPageContent } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
 import { Locale } from '@/lib/types';
@@ -132,6 +133,7 @@ export default async function CaseStudiesPage({ params }: CaseStudiesPageProps) 
   const normalizeMarkdown = (text: string) =>
     text
       .replace(/\r\n/g, '\n')
+      .replace(/\|\s+\|(?=(?:-+:?|:?-+|[A-Za-z0-9"']))/g, '|\n|')
       .replace(/([^\n])\n-\s+/g, '$1\n\n- ')
       .replace(/([^\n])\n\*\s+/g, '$1\n\n- ');
 
@@ -247,6 +249,7 @@ export default async function CaseStudiesPage({ params }: CaseStudiesPageProps) 
                                 </h4>
                                 <div className="prose prose-sm max-w-none text-gray-700">
                                   <ReactMarkdown
+                                    remarkPlugins={[remarkGfm]}
                                     components={{
                                       ul: (props) => (
                                         <ul className="list-disc pl-5" {...props} />

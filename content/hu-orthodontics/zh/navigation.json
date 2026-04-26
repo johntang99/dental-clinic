@@ -1,0 +1,91 @@
+{
+  "primary": [
+    {
+      "url": "/about",
+      "label": "关于医生",
+      "children": [
+        {
+          "url": "/about",
+          "label": "胡林医生简介",
+          "description": "ABO三次认证，DMD/DDS/MS/PhD四重学位"
+        },
+        {
+          "url": "/about#team",
+          "label": "我们的团队"
+        }
+      ]
+    },
+    {
+      "label": "正畸服务",
+      "children": [
+        {
+          "url": "/services#braces",
+          "label": "牙套矫正",
+          "description": "传统牙套、陶瓷牙套、自锁牙套"
+        },
+        {
+          "url": "/services/traditional-braces",
+          "label": "传统金属牙套"
+        },
+        {
+          "url": "/services/ceramic-braces",
+          "label": "陶瓷牙套"
+        },
+        {
+          "url": "/services/self-ligating-braces",
+          "label": "自锁牙套"
+        },
+        { "divider": true },
+        {
+          "url": "/services#aligners",
+          "label": "隐形矫正",
+          "description": "隐适美成人版和青少年版"
+        },
+        {
+          "url": "/services/invisalign",
+          "label": "隐适美"
+        },
+        {
+          "url": "/services/invisalign-teen",
+          "label": "青少年隐适美"
+        },
+        { "divider": true },
+        {
+          "url": "/services#by-age",
+          "label": "各年龄段正畸",
+          "description": "儿童、青少年、成人"
+        },
+        {
+          "url": "/services/early-orthodontics",
+          "label": "儿童早期矫治"
+        },
+        {
+          "url": "/services/teen-orthodontics",
+          "label": "青少年矫正"
+        },
+        {
+          "url": "/services/adult-orthodontics",
+          "label": "成人正畸"
+        }
+      ]
+    },
+    {
+      "url": "/new-patients",
+      "label": "首次访问"
+    },
+    {
+      "url": "/case-studies",
+      "label": "案例展示"
+    },
+    {
+      "url": "/blog",
+      "label": "知识中心"
+    },
+    {
+      "url": "/contact",
+      "label": "联系我们"
+    }
+  ],
+  "mobileCtaUrl": "/book",
+  "mobileCtaText": "预约咨询"
+}

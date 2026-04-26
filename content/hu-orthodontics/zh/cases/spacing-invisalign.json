@@ -1,0 +1,27 @@
+{
+  "id": "spacing-invisalign",
+  "category": "invisalign",
+  "condition": "牙齿间隙过大",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-spacing-invisalign.jpg",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-spacing-invisalign.jpg",
+  "summary": "刘先生，35岁，上前牙之间有多处明显间隙，说话时漏风。使用隐适美矫正器关闭所有间隙，仅用10个月完成治疗。治疗后笑容自然，说话清晰，效果超出预期。",
+  "title": "隐适美关闭牙齿间隙",
+  "featured": false,
+  "slug": "spacing-invisalign",
+  "patientProfile": {
+    "name": "刘先生",
+    "age": "35岁",
+    "concern": "前牙间隙影响美观和说话"
+  },
+  "treatmentDetails": {
+    "visits": "每8周复诊",
+    "duration": "10个月",
+    "procedures": [
+      "隐适美透明矫正器",
+      "间隙关闭"
+    ]
+  },
+  "challenge": "刘先生上前牙区有多处2-3mm的间隙，不仅影响美观，说话时还会漏风，影响发音。",
+  "solution": "隐适美矫正器通过精确计算的力量逐步关闭间隙，整个过程舒适且隐蔽。",
+  "results": "10个月内所有间隙完全关闭，牙齿排列紧密。刘先生的笑容焕然一新，发音问题也得到解决。"
+}

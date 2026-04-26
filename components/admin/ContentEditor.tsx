@@ -806,14 +806,18 @@ export function ContentEditor({
         ? JSON.parse(conditionsPayload.content)
         : null;
 
-      const servicesOptions = Array.isArray(servicesData?.services)
-        ? servicesData.services
-            .map((service: any) => ({
-              id: String(service?.id || ''),
-              title: String(service?.title || service?.name || ''),
-            }))
-            .filter((item: any) => item.id && item.title)
-        : [];
+      const servicesArray =
+        Array.isArray(servicesData?.services)
+          ? servicesData.services
+          : Array.isArray(servicesData?.servicesList?.items)
+            ? servicesData.servicesList.items
+            : [];
+      const servicesOptions = servicesArray
+        .map((service: any) => ({
+          id: String(service?.id || ''),
+          title: String(service?.title || service?.name || ''),
+        }))
+        .filter((item: any) => item.id && item.title);
       const conditionsOptions = Array.isArray(conditionsData?.conditions)
         ? conditionsData.conditions
             .map((condition: any) => ({

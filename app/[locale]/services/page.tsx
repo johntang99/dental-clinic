@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { getRequestSiteId, loadAllItems, loadPageContent } from '@/lib/content';
 import { buildPageMetadata } from '@/lib/seo';
 import { ServicesPage, Locale } from '@/lib/types';
@@ -39,6 +40,14 @@ const trustIconMap = {
   Shield,
 } as const;
 
+function normalizeMarkdown(text: string) {
+  return text
+    .replace(/\r\n/g, '\n')
+    .replace(/\|\s+\|(?=(?:-+:?|:?-+|[A-Za-z0-9"']))/g, '|\n|')
+    .replace(/([^\n])\n-\s+/g, '$1\n\n- ')
+    .replace(/([^\n])\n\*\s+/g, '$1\n\n- ');
+}
+
 export async function generateMetadata({ params }: ServicesPageProps): Promise<Metadata> {
   const { locale } = params;
   const siteId = await getRequestSiteId();
@@ -71,6 +80,12 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
     slug: string;
     benefits?: string[];
     whatToExpect?: string;
+    sections?: Array<{
+      type: string;
+      items?: Array<{ title?: string; description?: string } | string>;
+      content?: string;
+      steps?: Array<{ title?: string; description?: string }>;
+    }>;
   }>(siteId, locale, 'services');
   const serviceDetailMap = new Map(
     serviceDetailFiles.map((d) => [d.slug, d])
@@ -79,11 +94,29 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
   const services = rawServices.map((s: any) => {
     const detail = s.id ? serviceDetailMap.get(s.id) : null;
     if (!detail) return s;
-    return {
-      ...s,
-      benefits: s.benefits || detail.benefits,
-      whatToExpect: s.whatToExpect || detail.whatToExpect,
-    };
+
+    // Extract benefits from sections[type=advantages].items
+    let benefits = s.benefits || detail.benefits;
+    if (!benefits && detail.sections) {
+      const advSection = detail.sections.find((sec) => sec.type === 'advantages');
+      if (advSection?.items) {
+        benefits = advSection.items
+          .map((item) => (typeof item === 'string' ? item : item.title))
+          .filter(Boolean)
+          .slice(0, 4);
+      }
+    }
+
+    // Extract whatToExpect from sections[type=intro].content
+    let whatToExpect = s.whatToExpect || detail.whatToExpect;
+    if (!whatToExpect && detail.sections) {
+      const introSection = detail.sections.find((sec) => sec.type === 'intro');
+      if (introSection?.content) {
+        whatToExpect = introSection.content.slice(0, 200);
+      }
+    }
+
+    return { ...s, benefits, whatToExpect };
   });
   const categories = (content as any).categories || [];
   const layoutVariant = (content as any).layoutVariant || 'category-detail-alternating';
@@ -194,10 +227,11 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
 
       {/* Services by Category */}
       {isEnabled('services') && categories.length > 0 && services.length > 0 && (
-        <section className="py-16 lg:py-24 bg-white" style={sectionStyle('services')}>
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
+        <div style={sectionStyle('services')}>
+          {/* Section Header */}
+          <section className="pt-16 lg:pt-24 pb-8 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="max-w-6xl mx-auto text-center">
                 <Badge variant="primary" className="mb-4">
                   {servicesBadge}
                 </Badge>
@@ -205,171 +239,191 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
                   {content.servicesList?.title || servicesTitleFallback}
                 </h2>
                 {content.servicesList?.subtitle && (
-                  <p className="text-gray-600">{content.servicesList.subtitle}</p>
+                  <p className="text-gray-600 max-w-2xl mx-auto">{content.servicesList.subtitle}</p>
                 )}
               </div>
+            </div>
+          </section>
 
-              <div className="space-y-24">
-                {servicesByCategory
-                  .filter((categoryGroup: any) => categoryGroup.services.length > 0)
-                  .map((categoryGroup: any, categoryIndex: number) => {
-                    const categoryImage =
-                      categoryGroup.image ||
-                      categoryGroup.services.find((s: any) => Boolean(s.image))?.image;
-                    const imageOnRight = categoryIndex % 2 === 0;
-                    return (
-                      <div key={categoryGroup.id} id={categoryGroup.id} className="space-y-6 scroll-mt-32">
-                        <div className="grid lg:grid-cols-2 gap-8 items-center">
-                          <div className={imageOnRight ? 'lg:order-1' : 'lg:order-2'}>
-                            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary mb-4">
-                              <Icon name={categoryGroup.icon as any} size="sm" />
-                              <span>{categoryGroup.name}</span>
-                            </div>
-                            <h3 className="text-3xl font-bold text-gray-900 mb-2">
-                              {categoryGroup.name}
-                            </h3>
-                            {categoryGroup.subtitle && (
-                              <p className="text-base font-semibold text-gray-800 mb-3">
-                                {categoryGroup.subtitle}
-                              </p>
-                            )}
-                            <div className="prose prose-sm max-w-none text-gray-600 leading-relaxed">
-                              <ReactMarkdown
-                                components={{
-                                  ul: (props) => <ul className="list-disc pl-5" {...props} />,
-                                  ol: (props) => <ol className="list-decimal pl-5" {...props} />,
-                                }}
-                              >
-                                {String(categoryGroup.description || '')}
-                              </ReactMarkdown>
-                            </div>
+          {/* Category Sections with alternating backgrounds */}
+          {servicesByCategory
+            .filter((categoryGroup: any) => categoryGroup.services.length > 0)
+            .map((categoryGroup: any, categoryIndex: number) => {
+              const categoryImage =
+                categoryGroup.image ||
+                categoryGroup.services.find((s: any) => Boolean(s.image))?.image;
+              const imageOnRight = categoryIndex % 2 === 0;
+              const isEven = categoryIndex % 2 === 0;
+
+              return (
+                <section
+                  key={categoryGroup.id}
+                  id={categoryGroup.id}
+                  className={`py-16 lg:py-20 scroll-mt-20 ${
+                    isEven
+                      ? 'bg-white'
+                      : 'bg-gradient-to-b from-gray-100 to-gray-200/60'
+                  }`}
+                >
+                  <div className="container mx-auto px-4">
+                    <div className="max-w-6xl mx-auto">
+                      {/* Category Header — image + description zig-zag */}
+                      <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-12">
+                        <div className={imageOnRight ? 'lg:order-1' : 'lg:order-2'}>
+                          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary uppercase tracking-wider mb-5">
+                            <Icon name={categoryGroup.icon as any} size="sm" />
+                            <span>{categoryGroup.name}</span>
                           </div>
-                          <div className={imageOnRight ? 'lg:order-2' : 'lg:order-1'}>
-                            <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-md bg-gradient-to-br from-gray-50 to-white">
-                              {categoryImage ? (
-                                <Image
-                                  src={categoryImage}
-                                  alt={categoryGroup.name}
-                                  width={1200}
-                                  height={780}
-                                  className="w-full h-auto object-cover"
-                                />
-                              ) : (
-                                <div className="aspect-[16/9] w-full flex items-center justify-center">
-                                  <Icon name={categoryGroup.icon as any} className="text-primary" />
-                                </div>
-                              )}
-                            </div>
+                          <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
+                            {categoryGroup.name}
+                          </h3>
+                          {categoryGroup.subtitle && (
+                            <p className="text-base font-medium text-primary/80 mb-4">
+                              {categoryGroup.subtitle}
+                            </p>
+                          )}
+                          <div className="prose prose-sm max-w-none text-gray-600 leading-relaxed">
+                            <ReactMarkdown
+                              remarkPlugins={[remarkGfm]}
+                              components={{
+                                ul: (props) => <ul className="list-disc pl-5" {...props} />,
+                                ol: (props) => <ol className="list-decimal pl-5" {...props} />,
+                              }}
+                            >
+                              {normalizeMarkdown(String(categoryGroup.description || ''))}
+                            </ReactMarkdown>
                           </div>
                         </div>
-                        <div className="grid gap-4">
-                          {categoryGroup.services.map((service: any) => {
-                            const benefits = Array.isArray(service.benefits) ? service.benefits : [];
-                            const whatToExpect = typeof service.whatToExpect === 'string' ? service.whatToExpect : '';
-                            const hasBenefits = benefits.length > 0;
-                            const hasWhatToExpect = whatToExpect.length > 0;
-                            const hasDetails = hasBenefits || hasWhatToExpect;
-
-                            return (
-                              <div
-                                key={service.id}
-                                className="bg-white border border-gray-100 rounded-xl p-6 shadow-md hover:border-primary/30 hover:shadow-xl transition-all"
-                              >
-                                <div className={`grid ${hasDetails ? 'lg:grid-cols-3' : ''} gap-6`}>
-                                  {/* Column 1: Title & Description */}
-                                  <div className="lg:col-span-1">
-                                    <div className="flex items-center gap-3 mb-3">
-                                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                                        <Icon name={service.icon as any} className="text-primary" size="sm" />
-                                      </div>
-                                      <Link href={`/${locale}${service.link}`} className="group">
-                                        <h4 className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors">
-                                          {service.title}
-                                        </h4>
-                                      </Link>
-                                    </div>
-                                    {service.image ? (
-                                      <div className="flex gap-3">
-                                        <div className="w-28 h-28 rounded-lg overflow-hidden flex-shrink-0">
-                                          <Image
-                                            src={service.image}
-                                            alt={service.title}
-                                            width={112}
-                                            height={112}
-                                            className="w-full h-full object-cover"
-                                          />
-                                        </div>
-                                        <p className="text-gray-600 text-sm">
-                                          {service.shortDescription}
-                                        </p>
-                                      </div>
-                                    ) : (
-                                      <p className="text-gray-600 text-sm">
-                                        {service.shortDescription}
-                                      </p>
-                                    )}
-                                  </div>
-
-                                  {/* Column 2: Key Benefits */}
-                                  {hasBenefits && (
-                                    <div>
-                                      <h5 className="text-sm font-semibold text-gray-900 mb-3">
-                                        {locale === 'en' ? 'Key Benefits' : '主要优势'}
-                                      </h5>
-                                      <div className="space-y-2">
-                                        {benefits.slice(0, 4).map((benefit: string, idx: number) => (
-                                          <div key={idx} className="flex items-start gap-2">
-                                            <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size="sm" />
-                                            <span className="text-sm text-gray-600">{benefit}</span>
-                                          </div>
-                                        ))}
-                                      </div>
-                                    </div>
-                                  )}
-
-                                  {/* Column 3: What to Expect */}
-                                  {hasWhatToExpect && (
-                                    <div>
-                                      <h5 className="text-sm font-semibold text-gray-900 mb-3">
-                                        {locale === 'en' ? 'What to Expect' : '就诊流程'}
-                                      </h5>
-                                      <p className="text-sm text-gray-600 mb-4 line-clamp-4">
-                                        {whatToExpect}
-                                      </p>
-                                      <Link
-                                        href={`/${locale}${service.link}`}
-                                        className="inline-flex items-center gap-1 text-primary font-medium text-sm hover:text-primary-dark"
-                                      >
-                                        <span>{locale === 'en' ? 'Learn More' : '了解更多'}</span>
-                                        <Icon name="ChevronRight" size="sm" />
-                                      </Link>
-                                    </div>
-                                  )}
-
-                                  {/* Fallback link when no details */}
-                                  {!hasDetails && (
-                                    <div className="flex items-center">
-                                      <Link
-                                        href={`/${locale}${service.link}`}
-                                        className="inline-flex items-center gap-1 text-primary font-medium text-sm hover:text-primary-dark"
-                                      >
-                                        <span>{locale === 'en' ? 'Learn More' : '了解更多'}</span>
-                                        <Icon name="ChevronRight" size="sm" />
-                                      </Link>
-                                    </div>
-                                  )}
-                                </div>
-                              </div>
-                            );
-                          })}
+                        <div className={imageOnRight ? 'lg:order-2' : 'lg:order-1'}>
+                          {categoryImage ? (
+                            <div className="rounded-2xl overflow-hidden shadow-lg ring-1 ring-black/5">
+                              <Image
+                                src={categoryImage}
+                                alt={categoryGroup.name}
+                                width={1200}
+                                height={780}
+                                className="w-full h-auto object-cover"
+                              />
+                            </div>
+                          ) : (
+                            <div className="rounded-2xl overflow-hidden border border-gray-200 bg-gradient-to-br from-gray-50 to-white aspect-[16/10] flex items-center justify-center">
+                              <Icon name={categoryGroup.icon as any} className="text-primary" />
+                            </div>
+                          )}
                         </div>
                       </div>
-                    );
-                  })}
-              </div>
-            </div>
-          </div>
-        </section>
+
+                      {/* Service Cards */}
+                      <div className="grid gap-4">
+                        {categoryGroup.services.map((service: any) => {
+                          const benefits = Array.isArray(service.benefits) ? service.benefits : [];
+                          const whatToExpect = typeof service.whatToExpect === 'string' ? service.whatToExpect : '';
+                          const hasBenefits = benefits.length > 0;
+                          const hasWhatToExpect = whatToExpect.length > 0;
+                          const hasDetails = hasBenefits || hasWhatToExpect;
+                          const cardBg = isEven
+                            ? 'bg-gray-50/70 border-gray-100 hover:bg-white'
+                            : 'bg-white border-gray-100';
+
+                          return (
+                            <div
+                              key={service.id}
+                              className={`${cardBg} border rounded-xl p-6 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300`}
+                            >
+                              <div className={`grid ${hasDetails ? 'lg:grid-cols-3' : ''} gap-6`}>
+                                {/* Column 1: Title & Description */}
+                                <div className="lg:col-span-1">
+                                  <div className="flex items-center gap-3 mb-3">
+                                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                      <Icon name={service.icon as any} className="text-primary" size="sm" />
+                                    </div>
+                                    <Link href={`/${locale}${service.link}`} className="group">
+                                      <h4 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">
+                                        {service.title}
+                                      </h4>
+                                    </Link>
+                                  </div>
+                                  {service.image ? (
+                                    <div className="flex gap-3">
+                                      <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 ring-1 ring-black/5">
+                                        <Image
+                                          src={service.image}
+                                          alt={service.title}
+                                          width={96}
+                                          height={96}
+                                          className="w-full h-full object-cover"
+                                        />
+                                      </div>
+                                      <p className="text-gray-600 text-sm leading-relaxed">
+                                        {service.shortDescription}
+                                      </p>
+                                    </div>
+                                  ) : (
+                                    <p className="text-gray-600 text-sm leading-relaxed">
+                                      {service.shortDescription}
+                                    </p>
+                                  )}
+                                </div>
+
+                                {/* Column 2: Key Benefits */}
+                                {hasBenefits && (
+                                  <div className="lg:border-l lg:border-gray-200 lg:pl-6">
+                                    <h5 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                                      {locale === 'en' ? 'Key Benefits' : '主要优势'}
+                                    </h5>
+                                    <div className="space-y-2">
+                                      {benefits.slice(0, 4).map((benefit: string, idx: number) => (
+                                        <div key={idx} className="flex items-start gap-2">
+                                          <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size="sm" />
+                                          <span className="text-sm text-gray-700">{benefit}</span>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+                                )}
+
+                                {/* Column 3: What to Expect + CTA */}
+                                {hasWhatToExpect && (
+                                  <div className="lg:border-l lg:border-gray-200 lg:pl-6 flex flex-col">
+                                    <h5 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                                      {locale === 'en' ? 'What to Expect' : '服务简介'}
+                                    </h5>
+                                    <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3 flex-1">
+                                      {whatToExpect}
+                                    </p>
+                                    <Link
+                                      href={`/${locale}${service.link}`}
+                                      className="inline-flex items-center gap-1 text-primary font-semibold text-sm hover:text-primary-dark transition-colors group"
+                                    >
+                                      <span>{locale === 'en' ? 'Learn More' : '了解更多'}</span>
+                                      <Icon name="ChevronRight" size="sm" className="group-hover:translate-x-0.5 transition-transform" />
+                                    </Link>
+                                  </div>
+                                )}
+
+                                {/* Fallback link when no details */}
+                                {!hasDetails && (
+                                  <div className="flex items-center">
+                                    <Link
+                                      href={`/${locale}${service.link}`}
+                                      className="inline-flex items-center gap-1 text-primary font-semibold text-sm hover:text-primary-dark transition-colors group"
+                                    >
+                                      <span>{locale === 'en' ? 'Learn More' : '了解更多'}</span>
+                                      <Icon name="ChevronRight" size="sm" className="group-hover:translate-x-0.5 transition-transform" />
+                                    </Link>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              );
+            })}
+        </div>
       )}
 
       {/* FAQ Section */}

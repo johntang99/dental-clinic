@@ -164,12 +164,18 @@ async function runStep(name, fn) {
 
 // ── Service category mapping ─────────────────────────────────────────
 const SERVICE_CATEGORIES = {
+  // General dental
   general: ['cleanings-and-exams', 'fillings', 'root-canal', 'extractions', 'gum-disease-treatment', 'oral-cancer-screening'],
   cosmetic: ['teeth-whitening', 'veneers', 'bonding', 'smile-makeover'],
   restorative: ['dental-implants', 'crowns-and-bridges', 'dentures', 'full-arch-implants'],
   orthodontics: ['invisalign'],
   pediatric: ['pediatric-dentistry'],
   comfort: ['sedation-dentistry'],
+  // Orthodontics specialty
+  braces: ['traditional-braces', 'ceramic-braces', 'self-ligating-braces'],
+  aligners: ['invisalign', 'invisalign-teen'],
+  'by-age': ['early-orthodontics', 'teen-orthodontics', 'adult-orthodontics'],
+  specialized: ['surgical-orthodontics', 'palatal-expanders', 'retainers', 'emergency-orthodontics'],
 };
 const ALL_SERVICE_SLUGS = Object.values(SERVICE_CATEGORIES).flat();
 

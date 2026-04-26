@@ -1,0 +1,52 @@
+{
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Schedule a consultation to learn more.",
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Consultation"
+    },
+    "secondaryCta": {
+      "link": "tel:+10000000000",
+      "text": "Call Us"
+    }
+  },
+  "faq": [
+    {
+      "answer": "The ideal time to begin comprehensive orthodontic treatment is typically between ages eleven and fourteen, when most or all permanent teeth have erupted and the jaw is still experiencing active growth. However, each patient develops at a different rate, so we evaluate dental development individually rather than relying solely on age. An orthodontic consultation can determine whether your teen is ready to begin treatment or whether it would be beneficial to wait.",
+      "question": "What is the best age to start orthodontic treatment for teens?"
+    },
+    {
+      "answer": "We offer several treatment options for teens, including traditional metal braces, ceramic braces, self-ligating braces, and Invisalign Teen. The best option depends on your teen's specific orthodontic needs, lifestyle preferences, and level of responsibility. During the consultation, we will discuss the advantages of each option and recommend the approach that will deliver the best results for your teen's unique situation.",
+      "question": "What treatment options are available for my teen?"
+    },
+    {
+      "answer": "Comprehensive orthodontic treatment for teens typically lasts twelve to twenty-four months, though some complex cases may take longer. Treatment duration depends on factors such as the severity of misalignment, the type of bite correction needed, patient compliance with elastics and appliance wear, and individual biological response to orthodontic forces. We will provide a projected timeline during the consultation based on your teen's specific needs.",
+      "question": "How long will my teen need to wear braces or aligners?"
+    },
+    {
+      "answer": "Absolutely. We strongly encourage teens to continue participating in sports throughout their orthodontic treatment. For contact sports and activities with risk of facial impact, we recommend wearing a properly fitted orthodontic mouthguard over the braces to protect both the appliance and the soft tissues of the mouth. If your teen plays a musical instrument, there may be a brief adjustment period, but most musicians adapt within a few weeks.",
+      "question": "Can my teen still play sports and musical instruments during treatment?"
+    }
+  ],
+  "icon": "GraduationCap",
+  "slug": "teen-orthodontics",
+  "image": "",
+  "price": "Starting from $3,500",
+  "title": "Teen Orthodontics",
+  "benefits": [
+    "Comprehensive correction of alignment and bite issues during the optimal growth window",
+    "Multiple treatment options including braces and clear aligners to match your teen's preferences",
+    "Improved oral health by making teeth easier to clean and maintain",
+    "Boosted self-confidence with a straighter, more attractive smile",
+    "Long-lasting results when paired with proper retainer wear after treatment"
+  ],
+  "category": "by-age",
+  "featured": true,
+  "subtitle": "Comprehensive Orthodontic Treatment Tailored for Adolescent Smiles",
+  "heroVariant": "centered",
+  "shortDescription": "Teen orthodontics provides comprehensive treatment for adolescents using braces or clear aligners to correct crowding, spacing, and bite issues during the ideal window of growth and development.",
+  "fullDescription": "The teenage years represent the most common and often the most advantageous time to pursue comprehensive orthodontic treatment. By this stage, most permanent teeth have erupted and the jaws are still experiencing enough residual growth to facilitate efficient tooth movement and bite correction. Treating orthodontic issues during adolescence takes advantage of this natural growth potential to achieve results that can be more complex or time-consuming to attain in adulthood.\n\nComprehensive teen orthodontics addresses the full range of alignment and bite concerns, including crowding, spacing, rotated teeth, overbites, underbites, crossbites, and open bites. Treatment is customized to each patient's unique dental anatomy and goals, taking into account the specific movements needed, the growth pattern of the jaws, and the overall facial profile. The result is not just straighter teeth but a properly functioning bite that supports long-term oral health.\n\nWe understand that appearance matters to teenagers, which is why we offer a variety of treatment options to fit different preferences and lifestyles. Traditional metal braces remain a popular and highly effective choice, while ceramic braces and Invisalign Teen offer more discreet alternatives for teens who are conscious about their appearance. We work with each teen and their parents to select the treatment modality that best balances clinical effectiveness, aesthetics, and practicality.\n\nBeyond the physical benefits, orthodontic treatment during the teen years often delivers a meaningful boost in self-confidence. A straighter smile can positively impact social interactions, school participation, and overall well-being. We are committed to making the orthodontic experience positive, comfortable, and rewarding for every teen in our care.",
+  "whatToExpect": "The journey starts with a comprehensive consultation that includes a clinical examination, panoramic and cephalometric X-rays, intraoral photographs, and digital impressions of your teen's teeth. We use these records to diagnose the specific orthodontic issues present and develop a detailed treatment plan. During this visit, we discuss treatment options, anticipated duration, and financial considerations with both the teen and their parents.\n\nOnce a treatment approach is selected, the next appointment involves placing braces or delivering the first set of aligners. For braces, each bracket is carefully bonded to the teeth and connected with an archwire, a process that takes about one to two hours. For Invisalign Teen, your teen receives their first several sets of aligners along with instructions for wear and care. Regardless of the treatment type, we provide thorough guidance on oral hygiene, dietary considerations, and what to expect during the first few days.\n\nRegular progress appointments are scheduled every four to eight weeks throughout treatment. At each visit, we assess tooth movement, make adjustments to the braces or distribute new aligners, and address any questions or concerns. Treatment typically lasts twelve to twenty-four months. When the active phase is complete, braces are removed and teeth are polished, or the final aligner is completed. Your teen then receives custom retainers, which are essential for maintaining the results. We provide clear instructions on retainer wear and schedule follow-up visits to ensure everything stays perfectly in place.",
+  "durationMinutes": null
+}

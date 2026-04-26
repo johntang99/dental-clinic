@@ -1,0 +1,28 @@
+{
+  "id": "crowding-teen-braces",
+  "category": "braces",
+  "condition": "严重牙齿拥挤",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-crowding-teen-braces.jpg",
+  "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-crowding-teen-braces.jpg",
+  "summary": "小王，15岁，上下颌严重拥挤，多颗牙齿重叠扭转。经过18个月的传统金属牙套治疗，所有牙齿排列整齐，咬合关系正常。治疗过程中未拔牙，通过扩弓和精确的牙齿移动实现了理想效果。",
+  "title": "青少年严重拥挤矫正案例",
+  "featured": true,
+  "slug": "crowding-teen-braces",
+  "patientProfile": {
+    "name": "小王",
+    "age": "15岁",
+    "concern": "牙齿严重拥挤，排列不齐"
+  },
+  "treatmentDetails": {
+    "visits": "每月复诊，共18次",
+    "duration": "18个月",
+    "procedures": [
+      "传统金属牙套",
+      "扩弓治疗",
+      "精细调整"
+    ]
+  },
+  "challenge": "小王上下颌骨空间不足，导致多颗牙齿严重拥挤、重叠和扭转。前牙区尤为明显，影响美观和口腔清洁。",
+  "solution": "胡林医生采用传统金属牙套进行全面矫治，通过扩弓创造空间，避免了拔牙。利用青少年生长发育优势，牙齿移动高效且稳定。",
+  "results": "18个月后，所有牙齿排列整齐，咬合关系恢复正常。小王的笑容焕然一新，口腔清洁也变得更加容易。"
+}

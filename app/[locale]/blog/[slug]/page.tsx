@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { Locale, SiteInfo } from '@/lib/types';
 import { getRequestSiteId, loadAllItems, loadItemBySlug, loadPageContent, loadSiteInfo } from '@/lib/content';
 import { buildPageMetadata, getBaseUrlFromRequest } from '@/lib/seo';
@@ -146,6 +147,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const normalizeMarkdown = (text: string) =>
     text
       .replace(/\r\n/g, '\n')
+      .replace(/\|\s+\|(?=(?:-+:?|:?-+|[A-Za-z0-9"']))/g, '|\n|')
       .replace(/([^\n])\n-\s+/g, '$1\n\n- ')
       .replace(/([^\n])\n\*\s+/g, '$1\n\n- ');
 
@@ -286,6 +288,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
             <div className="prose max-w-none">
               {post.contentMarkdown ? (
                 <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
                   components={{
                     h1: (props) => (
                       <h1 className="text-3xl font-bold text-gray-900 mt-10 mb-4" {...props} />
@@ -302,6 +305,19 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     ul: (props) => <ul className="list-disc pl-6 mb-5" {...props} />,
                     ol: (props) => <ol className="list-decimal pl-6 mb-5" {...props} />,
                     li: (props) => <li className="mb-2" {...props} />,
+                    table: (props) => (
+                      <div className="my-6 overflow-x-auto">
+                        <table className="min-w-full border border-gray-200 rounded-lg" {...props} />
+                      </div>
+                    ),
+                    thead: (props) => <thead className="bg-gray-50" {...props} />,
+                    tr: (props) => <tr className="border-b border-gray-200" {...props} />,
+                    th: (props) => (
+                      <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900 align-top border-r border-gray-200 last:border-r-0" {...props} />
+                    ),
+                    td: (props) => (
+                      <td className="px-4 py-3 text-sm text-gray-700 align-top border-r border-gray-200 last:border-r-0" {...props} />
+                    ),
                   }}
                 >
                   {normalizeMarkdown(post.contentMarkdown)}
