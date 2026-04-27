@@ -37,6 +37,12 @@ npm run build
 npm start
 ```
 
+## Key Docs
+
+- `LOCALE_ROUTING_SOP.md`
+- `SITE_ONBOARDING_SOP.md`
+- `SITE_DELETION_SOP.md`
+
 ## Project Structure
 
 - `app/` — Next.js app router pages

@@ -137,6 +137,7 @@ export default function Header({
           alt={logoImage.alt || logoConfig?.text || siteDisplayName || 'Logo'}
           width={width}
           height={height}
+          sizes="(max-width: 1024px) 220px, 320px"
           className={`${sizeClass} hover:opacity-90 transition-opacity ${transparentLight ? 'brightness-0 invert' : ''}`}
         />
       );
@@ -253,7 +254,7 @@ export default function Header({
             {/* Logo - Centered */}
             <div className="flex justify-center mb-4">
               <Link href={`/${locale}`}>
-                {renderLogo('w-auto h-16', 60, 60)}
+                {renderLogo('w-auto h-16', 320, 96)}
             </Link>
             </div>
             
@@ -300,7 +301,7 @@ export default function Header({
             <div className="flex items-center h-20">
               {/* Logo */}
               <Link href={`/${locale}`} className="flex-shrink-0">
-                {renderLogo('w-auto h-12', 48, 48)}
+                {renderLogo('w-auto h-12', 280, 84)}
               </Link>
               
               {/* Desktop Navigation - All in one line */}
