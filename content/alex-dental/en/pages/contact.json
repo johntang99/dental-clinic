@@ -66,7 +66,13 @@
     "submitButton": {
       "text": "Send Message"
     },
-    "successMessage": "Thank you for reaching out! We'll get back to you within 1 business day."
+    "successMessage": "Thank you for reaching out! We'll get back to you within 1 business day.",
+    "notificationEmail": "info@alex-dental.com",
+    "notificationEmails": [],
+    "senderName": "Alex Dental Clinic",
+    "senderEmail": "no-reply@baamplatform.com",
+    "notificationMessage": "⚡ Action Required: New customer inquiry",
+    "autoReplyMessage": "Thank you for contacting <strong>{businessName}</strong>. We've received your message and will respond shortly."
   },
   "hero": {
     "title": "Contact Us",

@@ -13,6 +13,7 @@ import { SectionVariantsPanel } from '@/components/admin/panels/SectionVariantsP
 import { ConditionsLayoutPanel } from '@/components/admin/panels/ConditionsLayoutPanel';
 import { HomeSectionPhotosPanel } from '@/components/admin/panels/HomeSectionPhotosPanel';
 import { HeroPanel } from '@/components/admin/panels/HeroPanel';
+import { ContactNotificationPanel } from '@/components/admin/panels/ContactNotificationPanel';
 import { ProfilePanel } from '@/components/admin/panels/ProfilePanel';
 import { IntroductionPanel } from '@/components/admin/panels/IntroductionPanel';
 import { JourneyPanel } from '@/components/admin/panels/JourneyPanel';
@@ -910,6 +911,7 @@ export function ContentEditor({
   const isHeaderFile = activeFile?.path === 'header.json';
   const isThemeFile = activeFile?.path === 'theme.json';
   const isHomePageFile = activeFile?.path === 'pages/home.json';
+  const isContactPageFile = activeFile?.path === 'pages/contact.json';
   const isAboutPageFile = activeFile?.path === 'pages/about.json';
   const isConditionsPageFile = activeFile?.path === 'pages/conditions.json';
   const isCaseStudiesPageFile = activeFile?.path === 'pages/case-studies.json';
@@ -2367,6 +2369,13 @@ export function ContentEditor({
                   hero={formData.hero}
                   updateFormValue={updateFormValue}
                   openImagePicker={openImagePicker}
+                />
+              )}
+
+              {isContactPageFile && formData && (
+                <ContactNotificationPanel
+                  form={formData.form ?? {}}
+                  updateFormValue={updateFormValue}
                 />
               )}
 

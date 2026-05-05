@@ -78,7 +78,13 @@
     "submitButton": {
       "text": "发送留言"
     },
-    "successMessage": "感谢您的留言！我们将在1个工作日内回复您。"
+    "successMessage": "感谢您的留言！我们将在1个工作日内回复您。",
+    "notificationEmail": "info@hulinorthodontics.com",
+    "notificationEmails": [],
+    "senderName": "胡林正畸中心",
+    "senderEmail": "no-reply@baamplatform.com",
+    "notificationMessage": "⚡ 需要处理：收到新的客户咨询",
+    "autoReplyMessage": "感谢您联系 <strong>{businessName}</strong>。我们已收到您的留言，会尽快与您联系。"
   },
   "hero": {
     "title": "联系我们",

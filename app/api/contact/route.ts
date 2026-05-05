@@ -1,11 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { loadSiteInfo } from '@/lib/content';
-import { getDefaultSite, getSiteByHost } from '@/lib/sites';
+import { loadPageContent, loadSiteInfo } from '@/lib/content';
+import { getDefaultSite, getSiteByHost, getSiteById, normalizeHost } from '@/lib/sites';
 import type { Locale, SiteInfo } from '@/lib/types';
 import { getSiteDisplayName } from '@/lib/siteInfo';
+import fs from 'fs';
+import path from 'path';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const SITES_CONFIG_PATH = path.join(process.cwd(), 'content', '_sites.json');
 
 interface ContactFormData {
   name: string;
@@ -21,15 +24,152 @@ interface ContactEmailContext {
   businessName: string;
   phone: string;
   addressLine: string;
+  notificationMessage: string;
+  autoReplyMessage: string;
+}
+
+interface ContactPageEmailConfig {
+  form?: {
+    notificationEmail?: string;
+    notificationEmails?: string[] | string;
+    senderName?: string;
+    senderEmail?: string | string[];
+    senderFrom?: string;
+    notificationMessage?: string;
+    autoReplyMessage?: string;
+  };
 }
 
 function toLocale(rawLocale: unknown): Locale {
   return rawLocale === 'zh' ? 'zh' : 'en';
 }
 
-async function resolveRequestSiteInfo(request: NextRequest, locale: Locale): Promise<SiteInfo | null> {
+function uniqueEmails(values: string[]): string[] {
+  return Array.from(new Set(values.map((value) => value.trim().toLowerCase()).filter(Boolean)));
+}
+
+function normalizeEmailList(value: unknown): string[] {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const values: unknown[] = [];
+  const appendValue = (input: unknown) => {
+    if (Array.isArray(input)) {
+      input.forEach(appendValue);
+      return;
+    }
+    if (typeof input === 'string') {
+      values.push(...input.split(/[\n,;]/));
+    }
+  };
+  appendValue(value);
+
+  return uniqueEmails(
+    values
+      .map((item) => (typeof item === 'string' ? item.trim() : ''))
+      .filter((item) => emailRegex.test(item))
+  );
+}
+
+async function resolveContactPageEmailConfig(
+  siteId: string | undefined,
+  locale: Locale
+): Promise<ContactPageEmailConfig | null> {
+  if (!siteId) return null;
+  return loadPageContent<ContactPageEmailConfig>('contact', locale, siteId);
+}
+
+function resolveTemplateValue(
+  value: unknown,
+  fallback: string,
+  variables: Record<string, string>
+): string {
+  if (typeof value !== 'string' || !value.trim()) return fallback;
+  return value.replace(/\{(\w+)\}/g, (_, token) => variables[token] || '');
+}
+
+function resolveNotificationRecipients(
+  emailConfig: ContactPageEmailConfig | null,
+  siteInfo: SiteInfo | null
+): string[] {
+  const configuredFromPage = normalizeEmailList([
+    emailConfig?.form?.notificationEmail,
+    emailConfig?.form?.notificationEmails,
+  ]);
+  if (configuredFromPage.length > 0) return configuredFromPage;
+
+  const siteEmail = normalizeEmailList(siteInfo?.email);
+  if (siteEmail.length > 0) return siteEmail;
+
+  const envFallback = normalizeEmailList(process.env.CONTACT_FALLBACK_TO);
+  if (envFallback.length > 0) return envFallback;
+
+  return ['info@alex-dental.com'];
+}
+
+function resolveSenderFrom(
+  emailConfig: ContactPageEmailConfig | null,
+  businessName: string
+): string {
+  const explicitFrom =
+    typeof emailConfig?.form?.senderFrom === 'string' ? emailConfig.form.senderFrom.trim() : '';
+  if (explicitFrom) return explicitFrom;
+
+  const senderEmail = normalizeEmailList(emailConfig?.form?.senderEmail)[0];
+  if (!senderEmail) {
+    return process.env.RESEND_FROM || 'No-Reply<no-reply@alex-dental.com>';
+  }
+
+  const senderNameRaw =
+    typeof emailConfig?.form?.senderName === 'string' && emailConfig.form.senderName.trim()
+      ? emailConfig.form.senderName.trim()
+      : businessName || 'No-Reply';
+  const senderName = senderNameRaw.replace(/[<>]/g, '').trim() || 'No-Reply';
+  return `${senderName}<${senderEmail}>`;
+}
+
+async function getLocalDefaultSiteId(): Promise<string | null> {
+  try {
+    const raw = await fs.promises.readFile(SITES_CONFIG_PATH, 'utf-8');
+    const parsed = JSON.parse(raw) as {
+      sites?: Array<{ id?: string; enabled?: boolean }>;
+    };
+    const sites = Array.isArray(parsed.sites) ? parsed.sites : [];
+    const firstEnabled = sites.find((site) => site.enabled !== false && site.id);
+    return firstEnabled?.id ?? sites[0]?.id ?? null;
+  } catch {
+    return null;
+  }
+}
+
+async function resolveRequestSite(request: NextRequest) {
   const host = request.headers.get('host');
-  const site = (await getSiteByHost(host)) || (await getDefaultSite());
+  const normalizedHost = normalizeHost(host || '');
+  const isLocalHost =
+    normalizedHost.includes('localhost') ||
+    normalizedHost.startsWith('127.0.0.1') ||
+    normalizedHost.startsWith('0.0.0.0');
+
+  // Keep localhost behavior consistent with page content loading:
+  // prefer local _sites.json default over shared DB default.
+  if (isLocalHost || !host) {
+    const localSiteId = await getLocalDefaultSiteId();
+    if (localSiteId) {
+      const localSite = await getSiteById(localSiteId);
+      if (localSite?.enabled) return localSite;
+    }
+  }
+
+  const matchedSite = await getSiteByHost(host);
+  if (matchedSite?.enabled) return matchedSite;
+
+  return getDefaultSite();
+}
+
+async function resolveRequestSiteInfo(
+  request: NextRequest,
+  locale: Locale,
+  resolvedSite?: Awaited<ReturnType<typeof resolveRequestSite>> | null
+): Promise<SiteInfo | null> {
+  const site = resolvedSite ?? (await resolveRequestSite(request));
   if (!site) return null;
   return loadSiteInfo(site.id, locale) as Promise<SiteInfo | null>;
 }
@@ -45,7 +185,7 @@ function getAddressLine(siteInfo: SiteInfo | null): string {
 
 function createEmailHTML(data: ContactFormData, context: ContactEmailContext): string {
   const { name, email, phone, reason, message } = data;
-  const { businessName, locale } = context;
+  const { businessName, locale, notificationMessage } = context;
   const reasonLabel = getReasonLabel(reason);
   const timestamp = new Date().toLocaleString(locale === 'zh' ? 'zh-CN' : 'en-US', { 
     timeZone: 'America/New_York',
@@ -78,7 +218,7 @@ function createEmailHTML(data: ContactFormData, context: ContactEmailContext): s
                 <tr>
                   <td style="padding: 32px;">
                     <div style="background-color: #f0fdf4; border-left: 4px solid #059669; padding: 16px; margin-bottom: 24px; border-radius: 4px;">
-                      <p style="margin: 0; color: #065f46; font-weight: 600; font-size: 14px;">⚡ Action Required: New customer inquiry</p>
+                      <p style="margin: 0; color: #065f46; font-weight: 600; font-size: 14px;">${notificationMessage}</p>
                     </div>
 
                     <table role="presentation" style="width: 100%; border-collapse: collapse;">
@@ -150,7 +290,7 @@ function createEmailHTML(data: ContactFormData, context: ContactEmailContext): s
 }
 
 function createAutoReplyHTML(name: string, context: ContactEmailContext): string {
-  const { businessName, phone, addressLine } = context;
+  const { businessName, phone, addressLine, autoReplyMessage } = context;
   return `
     <!DOCTYPE html>
     <html>
@@ -177,7 +317,7 @@ function createAutoReplyHTML(name: string, context: ContactEmailContext): string
                     <p style="margin: 0 0 16px; color: #111827; font-size: 16px; line-height: 1.6;">Dear ${name},</p>
                     
                     <p style="margin: 0 0 16px; color: #111827; font-size: 16px; line-height: 1.6;">
-                      Thank you for contacting <strong>${businessName}</strong>. We've received your message and will respond shortly.
+                      ${autoReplyMessage}
                     </p>
 
                     <div style="margin: 24px 0; padding: 20px; background-color: #f0fdf4; border-left: 4px solid #059669; border-radius: 4px;">
@@ -231,15 +371,34 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { name, email, phone, reason, message, locale: rawLocale } = body as ContactFormData;
     const locale = toLocale(rawLocale);
-    const siteInfo = await resolveRequestSiteInfo(request, locale);
+    const resolvedSite = await resolveRequestSite(request);
+    const siteInfo = await resolveRequestSiteInfo(request, locale, resolvedSite);
+    const emailConfig = await resolveContactPageEmailConfig(resolvedSite?.id, locale);
     const businessName = getSiteDisplayName(siteInfo, 'Business');
     const businessPhone = siteInfo?.phone || process.env.CONTACT_PHONE_FALLBACK || '(845) 381-1106';
-    const businessEmail = siteInfo?.email || process.env.CONTACT_FALLBACK_TO || 'info@alex-dental.com';
+    const notificationRecipients = resolveNotificationRecipients(emailConfig, siteInfo);
+    const senderFrom = resolveSenderFrom(emailConfig, businessName);
+    const alertRecipients = normalizeEmailList(process.env.ALERT_TO);
+    const ccRecipients = uniqueEmails(
+      alertRecipients.filter((item) => !notificationRecipients.includes(item))
+    );
+    const notificationMessage = resolveTemplateValue(
+      emailConfig?.form?.notificationMessage,
+      '⚡ Action Required: New customer inquiry',
+      { businessName }
+    );
+    const autoReplyMessage = resolveTemplateValue(
+      emailConfig?.form?.autoReplyMessage,
+      `Thank you for contacting <strong>{businessName}</strong>. We've received your message and will respond shortly.`,
+      { businessName }
+    );
     const context: ContactEmailContext = {
       locale,
       businessName,
       phone: businessPhone,
       addressLine: getAddressLine(siteInfo),
+      notificationMessage,
+      autoReplyMessage,
     };
 
     // Validate required fields
@@ -274,9 +433,9 @@ export async function POST(request: NextRequest) {
 
     // Send notification email to business inbox
     const notificationEmail = await resend.emails.send({
-      from: process.env.RESEND_FROM || 'No-Reply<no-reply@alex-dental.com>',
-      to: process.env.CONTACT_FALLBACK_TO || businessEmail,
-      cc: process.env.ALERT_TO ? [process.env.ALERT_TO] : undefined,
+      from: senderFrom,
+      to: notificationRecipients,
+      cc: ccRecipients.length > 0 ? ccRecipients : undefined,
       reply_to: email,
       subject: `New Contact: ${reasonLabel} - ${name}`,
       html: emailHTML,
@@ -284,7 +443,7 @@ export async function POST(request: NextRequest) {
 
     // Send auto-reply to customer
     const autoReplyEmail = await resend.emails.send({
-      from: process.env.RESEND_FROM || 'No-Reply<no-reply@alex-dental.com>',
+      from: senderFrom,
       to: email,
       subject: locale === 'zh' ? `感谢联系${businessName}` : `Thank you for contacting ${businessName}`,
       html: autoReplyHTML,
