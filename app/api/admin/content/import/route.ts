@@ -22,6 +22,35 @@ interface ImportCandidate {
   sourceMtimeMs: number;
 }
 
+async function collectJsonPathsRecursive(
+  rootDir: string,
+  currentDir = rootDir
+): Promise<string[]> {
+  let entries: Array<{ name: string; isDirectory: () => boolean; isFile: () => boolean }>;
+  try {
+    entries = (await fs.readdir(currentDir, {
+      withFileTypes: true,
+    })) as Array<{ name: string; isDirectory: () => boolean; isFile: () => boolean }>;
+  } catch {
+    return [];
+  }
+
+  const paths: string[] = [];
+  for (const entry of entries) {
+    const fullPath = path.join(currentDir, entry.name);
+    if (entry.isDirectory()) {
+      const nested = await collectJsonPathsRecursive(rootDir, fullPath);
+      paths.push(...nested);
+      continue;
+    }
+    if (entry.isFile() && entry.name.endsWith('.json')) {
+      const relativePath = path.relative(rootDir, fullPath).split(path.sep).join('/');
+      paths.push(relativePath);
+    }
+  }
+  return paths;
+}
+
 function deepEqual(a: any, b: any): boolean {
   if (a === b) return true;
   if (typeof a !== typeof b) return false;
@@ -64,47 +93,11 @@ async function collectImportCandidates(siteId: string, locale: string): Promise<
     });
   };
 
-  // Root locale JSON files
-  try {
-    const rootFiles = await fs.readdir(localeRoot);
-    for (const file of rootFiles.filter((item) => item.endsWith('.json'))) {
-      await addCandidate(locale, file, path.join(localeRoot, file));
-    }
-  } catch {
-    // ignore missing locale root
-  }
-
-  // Pages
-  const pagesDir = path.join(localeRoot, 'pages');
-  try {
-    const pageFiles = await fs.readdir(pagesDir);
-    for (const file of pageFiles.filter((item) => item.endsWith('.json'))) {
-      await addCandidate(locale, `pages/${file}`, path.join(pagesDir, file));
-    }
-  } catch {
-    // ignore missing pages dir
-  }
-
-  // Blog posts
-  const blogDir = path.join(localeRoot, 'blog');
-  try {
-    const blogFiles = await fs.readdir(blogDir);
-    for (const file of blogFiles.filter((item) => item.endsWith('.json'))) {
-      await addCandidate(locale, `blog/${file}`, path.join(blogDir, file));
-    }
-  } catch {
-    // ignore missing blog dir
-  }
-
-  // Services (individual files)
-  const servicesDir = path.join(localeRoot, 'services');
-  try {
-    const serviceFiles = await fs.readdir(servicesDir);
-    for (const file of serviceFiles.filter((item) => item.endsWith('.json'))) {
-      await addCandidate(locale, `services/${file}`, path.join(servicesDir, file));
-    }
-  } catch {
-    // ignore missing services dir
+  // Include every locale-scoped JSON recursively:
+  // pages/, blog/, services/, cases/, insurance/, doctors/, etc.
+  const localeJsonPaths = await collectJsonPathsRecursive(localeRoot);
+  for (const relativePath of localeJsonPaths) {
+    await addCandidate(locale, relativePath, path.join(localeRoot, relativePath));
   }
 
   // Theme (site scope) - mirrored to all locales

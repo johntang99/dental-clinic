@@ -8,14 +8,14 @@
       "text": "Book Appointment"
     },
     "secondaryCta": {
-      "link": "tel:+18455550180",
-      "text": "Call (845) 555-0180"
+      "link": "tel:7185550234",
+      "text": "Call (718) 555-0234"
     }
   },
   "faq": {
     "faqs": [
       {
-        "answer": "No referral is needed. You can schedule directly by calling (845) 555-0180 or using our online booking form.",
+        "answer": "No referral is needed. You can schedule directly by calling (718) 555-0234 or using our online booking form.",
         "question": "Do I need a referral to see you?"
       },
       {
@@ -38,7 +38,7 @@
     "title": "Our Dental Services",
     "variant": "split-photo-left",
     "subtitle": "Comprehensive care for your entire family — from routine cleanings to advanced restorative treatments",
-    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/general/1772420721626-photo-1619450565660-2a93ba8603fd.jpg"
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425022174-hero-services.jpg"
   },
   "overview": {
     "title": "Complete Dental Care Under One Roof",
@@ -50,7 +50,7 @@
       "Multilingual team (English, Chinese, Spanish, Korean)",
       "Advanced technology for faster, more precise treatment"
     ],
-    "introduction": "At Alex Dental Clinic, we offer a full range of dental services so you never have to be referred elsewhere. From preventive care to cosmetic transformations to complex restorative work, our team has the training and technology to handle it all — comfortably and affordably."
+    "introduction": "At Bright Smile Dental, we offer a full range of dental services so you never have to be referred elsewhere. From preventive care to cosmetic transformations to complex restorative work, our team has the training and technology to handle it all — comfortably and affordably."
   },
   "trustBar": {
     "items": [
@@ -85,6 +85,7 @@
       "id": "cosmetic",
       "icon": "sparkles",
       "name": "Cosmetic Dentistry",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423026439-teeth-whitening.jpg",
       "order": 2,
       "subtitle": "Whitening, veneers & smile makeovers",
       "description": "Transform your smile with professional whitening, porcelain veneers, bonding, and complete smile makeovers designed to give you confidence."
@@ -93,6 +94,7 @@
       "id": "restorative",
       "icon": "refresh-cw",
       "name": "Restorative Dentistry",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423005890-dental-implants.jpg",
       "order": 3,
       "subtitle": "Implants, crowns, bridges & dentures",
       "description": "Replace missing teeth and restore damaged ones with implants, crowns, bridges, and dentures — using the latest technology for natural-looking, long-lasting results."
@@ -101,6 +103,7 @@
       "id": "orthodontics",
       "icon": "align-center",
       "name": "Orthodontics",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423014760-invisalign.jpg",
       "order": 4,
       "subtitle": "Clear aligners for a straighter smile",
       "description": "Straighten your teeth discreetly with Invisalign clear aligners — no metal braces needed. Custom treatment plans for teens and adults."
@@ -109,17 +112,10 @@
       "id": "pediatric",
       "icon": "baby",
       "name": "Children's Dentistry",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423017529-pediatric-dentistry.jpg",
       "order": 5,
       "subtitle": "Gentle, fun care for kids",
       "description": "Kid-friendly dental care from first tooth through teen years. We make visits fun, comfortable, and educational for your child."
-    },
-    {
-      "id": "comfort",
-      "icon": "moon",
-      "name": "Sedation & Comfort",
-      "order": 6,
-      "subtitle": "Anxiety-free treatment options",
-      "description": "Nervous about the dentist? We offer nitrous oxide, oral sedation, and a gentle approach so you can relax through any procedure."
     }
   ],
   "servicesList": {
@@ -175,16 +171,6 @@
         "shortDescription": "Deep cleanings, scaling and root planing, and periodontal therapy to treat gum disease and restore gum health."
       },
       {
-        "id": "oral-cancer-screening",
-        "icon": "ScanSearch",
-        "link": "/services/oral-cancer-screening",
-        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423016350-oral-cancer-screening.jpg",
-        "title": "Oral Cancer Screening",
-        "category": "general",
-        "featured": false,
-        "shortDescription": "Comprehensive oral cancer screenings using advanced VELscope technology, included with every comprehensive exam."
-      },
-      {
         "id": "teeth-whitening",
         "icon": "Sparkles",
         "link": "/services/teeth-whitening",
@@ -215,17 +201,10 @@
         "shortDescription": "Repair chips, close gaps, and correct discoloration with natural-looking composite bonding in a single visit."
       },
       {
-        "id": "smile-makeover",
-        "icon": "star",
-        "link": "/services/smile-makeover",
-        "title": "Smile Makeover",
-        "category": "cosmetic",
-        "shortDescription": "Comprehensive cosmetic treatment plans combining multiple procedures for a complete transformation"
-      },
-      {
         "id": "dental-implants",
         "icon": "anchor",
         "link": "/services/dental-implants",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423005890-dental-implants.jpg",
         "title": "Dental Implants",
         "category": "restorative",
         "featured": true,
@@ -235,30 +214,16 @@
         "id": "crowns-and-bridges",
         "icon": "crown",
         "link": "/services/crowns-and-bridges",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772422998934-crowns-and-bridges.jpg",
         "title": "Crowns & Bridges",
         "category": "restorative",
         "shortDescription": "Custom crowns and bridges to restore damaged or missing teeth — same-day options available"
       },
       {
-        "id": "dentures",
-        "icon": "smile",
-        "link": "/services/dentures",
-        "title": "Dentures",
-        "category": "restorative",
-        "shortDescription": "Full and partial dentures crafted for comfort, function, and a natural appearance"
-      },
-      {
-        "id": "full-arch-implants",
-        "icon": "maximize",
-        "link": "/services/full-arch-implants",
-        "title": "Full-Arch Implants",
-        "category": "restorative",
-        "shortDescription": "All-on-4 and All-on-6 full-arch implant solutions for complete smile restoration"
-      },
-      {
         "id": "invisalign",
         "icon": "align-center",
         "link": "/services/invisalign",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423014760-invisalign.jpg",
         "title": "Invisalign",
         "category": "orthodontics",
         "featured": true,
@@ -268,17 +233,10 @@
         "id": "pediatric-dentistry",
         "icon": "baby",
         "link": "/services/pediatric-dentistry",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/services/1772423017529-pediatric-dentistry.jpg",
         "title": "Pediatric Dentistry",
         "category": "pediatric",
         "shortDescription": "Gentle, kid-friendly dental care from first tooth through teen years"
-      },
-      {
-        "id": "sedation-dentistry",
-        "icon": "moon",
-        "link": "/services/sedation-dentistry",
-        "title": "Sedation Dentistry",
-        "category": "comfort",
-        "shortDescription": "Nitrous oxide and oral sedation options so you can relax through any procedure"
       }
     ],
     "title": "All Services",

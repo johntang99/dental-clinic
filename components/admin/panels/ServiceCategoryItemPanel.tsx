@@ -1,6 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { normalizeMarkdown, toSlug } from '@/components/admin/utils/editorHelpers';
+import { resolveMediaUrl } from '@/lib/media-url';
 
 interface ServiceCategoryItemPanelProps {
   category: any;
@@ -20,6 +21,10 @@ export function ServiceCategoryItemPanel({
   openImagePicker,
 }: ServiceCategoryItemPanelProps) {
   const markdownPreviewKey = `service-category-${index}-description`;
+  const categoryImagePreview =
+    typeof category?.image === 'string' && category.image.trim()
+      ? resolveMediaUrl(category.image.trim())
+      : '';
 
   return (
     <div className="border border-gray-200 rounded-lg p-4">
@@ -79,6 +84,16 @@ export function ServiceCategoryItemPanel({
           Choose
         </button>
       </div>
+      {categoryImagePreview && (
+        <div className="mb-2">
+          <img
+            src={categoryImagePreview}
+            alt={`${category?.name || `Category ${index + 1}`} image preview`}
+            className="h-20 w-36 rounded-md border border-gray-200 object-cover"
+            loading="lazy"
+          />
+        </div>
+      )}
       <input
         className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm mb-2"
         type="number"

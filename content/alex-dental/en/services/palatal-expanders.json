@@ -2,8 +2,14 @@
   "cta": {
     "title": "Ready to Get Started?",
     "subtitle": "Schedule a consultation to learn more.",
-    "primaryCta": { "link": "/contact", "text": "Book Consultation" },
-    "secondaryCta": { "link": "tel:+10000000000", "text": "Call Us" }
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Consultation"
+    },
+    "secondaryCta": {
+      "link": "tel:+10000000000",
+      "text": "Call Us"
+    }
   },
   "faq": [
     {
@@ -39,8 +45,8 @@
   "featured": false,
   "subtitle": "Creating Room for a Healthy, Balanced Smile",
   "heroVariant": "centered",
-  "shortDescription": "Palatal expansion treatment for children with narrow upper jaws, creating the space needed for proper tooth eruption and a balanced bite.",
-  "fullDescription": "A palatal expander is an orthodontic appliance designed to widen the upper jaw in growing children. When the upper jaw is too narrow, it can lead to crowding, crossbites, impacted teeth, and breathing difficulties. By gently separating the midpalatal suture before it fully fuses, a palatal expander creates real skeletal width that provides lasting space for the permanent teeth to erupt into proper alignment.\n\nThe appliance is custom-fitted to your child's upper teeth and sits against the roof of the mouth. It contains a small screw mechanism that is activated daily by a parent using a special key. Each turn produces a tiny amount of expansion, and over the course of two to four weeks, the accumulated widening can be substantial. Because the expansion occurs gradually, the process is well-tolerated by most children and produces predictable, controlled results.\n\nPalatal expansion is most commonly recommended between the ages of six and fourteen, when the midpalatal suture is still responsive to orthopedic forces. Treating a narrow palate during this window of growth can reduce the complexity and duration of future orthodontic treatment, and in many cases eliminates the need for permanent tooth extractions that might otherwise be required to relieve crowding.\n\nIn addition to dental benefits, palatal expansion can improve nasal airway volume, which may help children who experience mouth breathing, snoring, or other mild airway concerns. Our team monitors your child's progress closely throughout treatment to ensure the expansion is proceeding as planned and the appliance remains comfortable.",
   "whatToExpect": "Treatment begins with a comprehensive evaluation including digital X-rays, intraoral scans, and a clinical examination to assess the width of your child's upper jaw and determine whether expansion is appropriate. If a palatal expander is recommended, we will take impressions or digital scans to fabricate a custom appliance that fits precisely over the upper molars.\n\nAt the delivery appointment, the expander is cemented into place and we will demonstrate exactly how to activate the screw using the provided key. You will turn the expander once or twice daily as prescribed, and your child will visit our office periodically so we can monitor the expansion and ensure everything is progressing correctly. The active turning phase typically lasts two to four weeks.\n\nOnce the target expansion is reached, the appliance remains in place as a passive retainer for three to six months while new bone fills in the expanded suture. After this stabilization period, the expander is removed, and we will discuss the next steps in your child's orthodontic care, which may include braces or continued monitoring as the remaining permanent teeth come in.",
-  "durationMinutes": null
+  "durationMinutes": null,
+  "fullDescription": "A palatal expander is an orthodontic appliance designed to widen the upper jaw in growing children. When the upper jaw is too narrow, it can lead to crowding, crossbites, impacted teeth, and breathing difficulties. By gently separating the midpalatal suture before it fully fuses, a palatal expander creates real skeletal width that provides lasting space for the permanent teeth to erupt into proper alignment.\n\nThe appliance is custom-fitted to your child's upper teeth and sits against the roof of the mouth. It contains a small screw mechanism that is activated daily by a parent using a special key. Each turn produces a tiny amount of expansion, and over the course of two to four weeks, the accumulated widening can be substantial. Because the expansion occurs gradually, the process is well-tolerated by most children and produces predictable, controlled results.\n\nPalatal expansion is most commonly recommended between the ages of six and fourteen, when the midpalatal suture is still responsive to orthopedic forces. Treating a narrow palate during this window of growth can reduce the complexity and duration of future orthodontic treatment, and in many cases eliminates the need for permanent tooth extractions that might otherwise be required to relieve crowding.\n\nIn addition to dental benefits, palatal expansion can improve nasal airway volume, which may help children who experience mouth breathing, snoring, or other mild airway concerns. Our team monitors your child's progress closely throughout treatment to ensure the expansion is proceeding as planned and the appliance remains comfortable.",
+  "shortDescription": "Palatal expansion treatment for children with narrow upper jaws, creating the space needed for proper tooth eruption and a balanced bite."
 }

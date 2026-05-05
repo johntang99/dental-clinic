@@ -1,3 +1,5 @@
+import { resolveMediaUrl } from '@/lib/media-url';
+
 interface HeroPanelProps {
   hero: Record<string, any>;
   updateFormValue: (path: string[], value: any) => void;
@@ -5,6 +7,15 @@ interface HeroPanelProps {
 }
 
 export function HeroPanel({ hero, updateFormValue, openImagePicker }: HeroPanelProps) {
+  const getPreviewUrl = (value: unknown) => {
+    if (typeof value !== 'string') return '';
+    const trimmed = value.trim();
+    if (!trimmed) return '';
+    return resolveMediaUrl(trimmed);
+  };
+
+  const backgroundPreviewUrl = getPreviewUrl(hero.backgroundImage);
+  const imagePreviewUrl = getPreviewUrl(hero.image);
   const overlayOpacityValue =
     typeof hero.photoOverlayOpacity === 'number' ? hero.photoOverlayOpacity : 0.2;
   const contentPositionValue =
@@ -95,6 +106,16 @@ export function HeroPanel({ hero, updateFormValue, openImagePicker }: HeroPanelP
               Choose
             </button>
           </div>
+          {backgroundPreviewUrl && (
+            <div className="mt-2">
+              <img
+                src={backgroundPreviewUrl}
+                alt="Hero background preview"
+                className="h-20 w-36 rounded-md border border-gray-200 object-cover"
+                loading="lazy"
+              />
+            </div>
+          )}
         </div>
       )}
       {'image' in hero && (
@@ -114,6 +135,16 @@ export function HeroPanel({ hero, updateFormValue, openImagePicker }: HeroPanelP
               Choose
             </button>
           </div>
+          {imagePreviewUrl && (
+            <div className="mt-2">
+              <img
+                src={imagePreviewUrl}
+                alt="Hero image preview"
+                className="h-20 w-36 rounded-md border border-gray-200 object-cover"
+                loading="lazy"
+              />
+            </div>
+          )}
         </div>
       )}
 
@@ -132,33 +163,43 @@ export function HeroPanel({ hero, updateFormValue, openImagePicker }: HeroPanelP
         </div>
         <div className="space-y-2">
           {galleryImages.map((imageUrl: string, index: number) => (
-            <div key={index} className="flex gap-2">
-              <input
-                className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
-                value={imageUrl || ''}
-                onChange={(event) =>
-                  updateFormValue(['hero', 'gallery', String(index)], event.target.value)
-                }
-              />
-              <button
-                type="button"
-                onClick={() => openImagePicker(['hero', 'gallery', String(index)])}
-                className="px-3 rounded-md border border-gray-200 text-xs"
-              >
-                Choose
-              </button>
-              <button
-                type="button"
-                onClick={() =>
-                  updateFormValue(
-                    ['hero', 'gallery'],
-                    galleryImages.filter((_, imageIndex) => imageIndex !== index)
-                  )
-                }
-                className="px-3 rounded-md border border-red-200 text-xs text-red-600 hover:bg-red-50"
-              >
-                Remove
-              </button>
+            <div key={index} className="space-y-2">
+              <div className="flex gap-2">
+                <input
+                  className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+                  value={imageUrl || ''}
+                  onChange={(event) =>
+                    updateFormValue(['hero', 'gallery', String(index)], event.target.value)
+                  }
+                />
+                <button
+                  type="button"
+                  onClick={() => openImagePicker(['hero', 'gallery', String(index)])}
+                  className="px-3 rounded-md border border-gray-200 text-xs"
+                >
+                  Choose
+                </button>
+                <button
+                  type="button"
+                  onClick={() =>
+                    updateFormValue(
+                      ['hero', 'gallery'],
+                      galleryImages.filter((_, imageIndex) => imageIndex !== index)
+                    )
+                  }
+                  className="px-3 rounded-md border border-red-200 text-xs text-red-600 hover:bg-red-50"
+                >
+                  Remove
+                </button>
+              </div>
+              {getPreviewUrl(imageUrl) && (
+                <img
+                  src={getPreviewUrl(imageUrl)}
+                  alt={`Hero gallery preview ${index + 1}`}
+                  className="h-20 w-36 rounded-md border border-gray-200 object-cover"
+                  loading="lazy"
+                />
+              )}
             </div>
           ))}
         </div>

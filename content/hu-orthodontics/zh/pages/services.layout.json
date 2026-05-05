@@ -1,9 +1,19 @@
 {
   "sections": [
-    { "id": "hero" },
-    { "id": "overview" },
-    { "id": "services" },
-    { "id": "faq" },
-    { "id": "cta" }
+    {
+      "id": "hero"
+    },
+    {
+      "id": "overview"
+    },
+    {
+      "id": "services"
+    },
+    {
+      "id": "faq"
+    },
+    {
+      "id": "cta"
+    }
   ]
 }

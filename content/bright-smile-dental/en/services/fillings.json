@@ -7,8 +7,8 @@
       "text": "Book Appointment"
     },
     "secondaryCta": {
-      "link": "tel:+18455550180",
-      "text": "Call (845) 555-0180"
+      "link": "tel:7185550234",
+      "text": "Call (718) 555-0234"
     }
   },
   "faq": [
@@ -25,13 +25,13 @@
       "question": "Can I replace my old silver fillings with composite?"
     },
     {
-      "answer": "Most dental insurance plans cover composite fillings for front teeth and often for back teeth as well, though coverage levels can vary. Our office team will help you understand your benefits and any out-of-pocket costs before treatment. Contact us at (845) 555-0180 for details.",
+      "answer": "Most dental insurance plans cover composite fillings for front teeth and often for back teeth as well, though coverage levels can vary. Our office team will help you understand your benefits and any out-of-pocket costs before treatment. Contact us at (718) 555-0234 for details.",
       "question": "Does insurance cover tooth-colored fillings?"
     }
   ],
   "icon": "Shield",
   "slug": "fillings",
-  "image": "/images/services/fillings.jpg",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/general/1772411469718-photo-1758205308181-d52b41e00cef.jpg",
   "price": "Starting from $150",
   "title": "Tooth-Colored Fillings",
   "benefits": [
@@ -43,9 +43,9 @@
   "category": "general",
   "featured": false,
   "subtitle": "Seamless restorations that blend naturally with your smile",
-  "heroVariant": "centered",
+  "heroVariant": "split-photo-right",
   "whatToExpect": "After numbing the area with a gentle local anesthetic, Dr. Alex will remove the decayed portion of the tooth and clean the prepared surface. The composite resin is then applied in layers, with each layer shaped and hardened using a special curing light. Once the filling is complete, it is polished and your bite is checked to ensure a perfect fit. Most patients experience little to no discomfort during the procedure, and you can eat and drink normally shortly after your appointment.",
   "durationMinutes": 45,
-  "fullDescription": "When a cavity or minor tooth damage is detected, a filling is one of the most effective and straightforward ways to restore the tooth's structure and function. At our Middletown, NY office, we exclusively use tooth-colored composite resin fillings that bond directly to your tooth and blend seamlessly with your natural enamel.\n\nUnlike traditional silver amalgam fillings, composite fillings are metal-free and require less removal of healthy tooth structure. The resin is carefully shade-matched to your tooth, sculpted into place, and hardened with a curing light — resulting in a durable restoration that is virtually invisible. Composite fillings are suitable for both front and back teeth, and they strengthen the remaining tooth structure rather than simply filling the space.\n\nWe also offer replacement of old metal fillings for patients who want a more natural, mercury-free alternative. Whether you need a new filling or wish to upgrade existing ones, our team will ensure a comfortable experience and a result you can feel confident about.",
+  "fullDescription": "When a cavity or minor tooth damage is detected, a filling is one of the most effective and straightforward ways to restore the tooth's structure and function. At our Flushing, NY office, we exclusively use tooth-colored composite resin fillings that bond directly to your tooth and blend seamlessly with your natural enamel.\n\nUnlike traditional silver amalgam fillings, composite fillings are metal-free and require less removal of healthy tooth structure. The resin is carefully shade-matched to your tooth, sculpted into place, and hardened with a curing light — resulting in a durable restoration that is virtually invisible. Composite fillings are suitable for both front and back teeth, and they strengthen the remaining tooth structure rather than simply filling the space.\n\nWe also offer replacement of old metal fillings for patients who want a more natural, mercury-free alternative. Whether you need a new filling or wish to upgrade existing ones, our team will ensure a comfortable experience and a result you can feel confident about.",
   "shortDescription": "Natural-looking composite fillings that restore decayed or damaged teeth while preserving your smile's appearance."
 }

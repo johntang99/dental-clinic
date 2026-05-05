@@ -2,8 +2,14 @@
   "cta": {
     "title": "Ready to Get Started?",
     "subtitle": "Schedule a consultation to learn more.",
-    "primaryCta": { "link": "/contact", "text": "Book Consultation" },
-    "secondaryCta": { "link": "tel:+10000000000", "text": "Call Us" }
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Consultation"
+    },
+    "secondaryCta": {
+      "link": "tel:+10000000000",
+      "text": "Call Us"
+    }
   },
   "faq": [
     {
@@ -39,8 +45,8 @@
   "featured": true,
   "subtitle": "A Straighter Smile at Any Age",
   "heroVariant": "centered",
-  "shortDescription": "Comprehensive orthodontic treatment tailored for adult patients, offering discreet and effective options to achieve a beautifully aligned smile.",
-  "fullDescription": "Orthodontic treatment is not just for children and teenagers. An increasing number of adults are choosing to straighten their teeth and correct bite problems, and for good reason. Misaligned teeth can contribute to uneven wear, jaw pain, difficulty cleaning between teeth, and even speech issues. Adult orthodontics addresses all of these concerns with treatment plans specifically designed around the demands of an adult lifestyle.\n\nAs an adult patient, you have access to a full range of orthodontic solutions, including traditional metal braces, tooth-colored ceramic braces, lingual braces placed behind the teeth, and clear aligner systems. Each option has distinct advantages, and we will help you select the approach that best fits your clinical needs, aesthetic preferences, and daily routine. Our practice uses digital imaging and 3D treatment planning to map every stage of your tooth movement with precision.\n\nAdult teeth can move just as effectively as those of younger patients, though treatment may take slightly longer due to denser bone tissue. We carefully monitor your progress at each visit to ensure your teeth are tracking according to plan. Whether you are preparing for a milestone event or simply investing in your long-term oral health, adult orthodontics delivers lasting results that improve both function and appearance.\n\nOur team understands the unique considerations that come with adult treatment, including existing dental work such as crowns, bridges, or implants. We coordinate with your general dentist and any specialists involved in your care to ensure a seamless, comprehensive approach from start to finish.",
   "whatToExpect": "Your adult orthodontic journey begins with a thorough consultation, during which we perform a clinical examination, take digital X-rays and intraoral scans, and discuss your goals and concerns. We will evaluate your bite, jaw alignment, and overall dental health to determine the most effective treatment approach for your situation.\n\nOnce your treatment plan is finalized, we will walk you through a digital simulation showing the projected movement of your teeth at each stage. Depending on the option you choose, you will either have brackets and wires placed during your bonding appointment or receive your first set of custom aligners. Adjustment appointments are typically scheduled every four to eight weeks, and each visit is designed to be efficient so you can return to your day with minimal disruption.\n\nAs your teeth move into their final positions, we will discuss your retention plan to ensure your results last a lifetime. Most adult patients transition to a custom retainer worn at night, which keeps teeth stable and prevents any gradual shifting over time.",
-  "durationMinutes": null
+  "durationMinutes": null,
+  "fullDescription": "Orthodontic treatment is not just for children and teenagers. An increasing number of adults are choosing to straighten their teeth and correct bite problems, and for good reason. Misaligned teeth can contribute to uneven wear, jaw pain, difficulty cleaning between teeth, and even speech issues. Adult orthodontics addresses all of these concerns with treatment plans specifically designed around the demands of an adult lifestyle.\n\nAs an adult patient, you have access to a full range of orthodontic solutions, including traditional metal braces, tooth-colored ceramic braces, lingual braces placed behind the teeth, and clear aligner systems. Each option has distinct advantages, and we will help you select the approach that best fits your clinical needs, aesthetic preferences, and daily routine. Our practice uses digital imaging and 3D treatment planning to map every stage of your tooth movement with precision.\n\nAdult teeth can move just as effectively as those of younger patients, though treatment may take slightly longer due to denser bone tissue. We carefully monitor your progress at each visit to ensure your teeth are tracking according to plan. Whether you are preparing for a milestone event or simply investing in your long-term oral health, adult orthodontics delivers lasting results that improve both function and appearance.\n\nOur team understands the unique considerations that come with adult treatment, including existing dental work such as crowns, bridges, or implants. We coordinate with your general dentist and any specialists involved in your care to ensure a seamless, comprehensive approach from start to finish.",
+  "shortDescription": "Comprehensive orthodontic treatment tailored for adult patients, offering discreet and effective options to achieve a beautifully aligned smile."
 }

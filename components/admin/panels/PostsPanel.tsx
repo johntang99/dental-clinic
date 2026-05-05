@@ -1,6 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { normalizeMarkdown } from '@/components/admin/utils/editorHelpers';
+import { resolveMediaUrl } from '@/lib/media-url';
 
 interface PostsPanelProps {
   formData: Record<string, any>;
@@ -26,6 +27,12 @@ export function PostsPanel({
   openImagePicker,
 }: PostsPanelProps) {
   const hideBodyPreview = markdownPreview['blog-article-body'] === false;
+  const getPreviewUrl = (value: unknown) => {
+    if (typeof value !== 'string') return '';
+    const trimmed = value.trim();
+    if (!trimmed) return '';
+    return resolveMediaUrl(trimmed);
+  };
 
   return (
     <>
@@ -59,6 +66,16 @@ export function PostsPanel({
               Choose
             </button>
           </div>
+          {getPreviewUrl(formData.featuredPost.image) && (
+            <div className="mt-2">
+              <img
+                src={getPreviewUrl(formData.featuredPost.image)}
+                alt="Featured post preview"
+                className="h-20 w-36 rounded-md border border-gray-200 object-cover"
+                loading="lazy"
+              />
+            </div>
+          )}
         </div>
       )}
 
@@ -102,6 +119,16 @@ export function PostsPanel({
                     Choose
                   </button>
                 </div>
+                {getPreviewUrl(post.image) && (
+                  <div className="mt-2">
+                    <img
+                      src={getPreviewUrl(post.image)}
+                      alt={`Post ${index + 1} preview`}
+                      className="h-20 w-36 rounded-md border border-gray-200 object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -138,6 +165,16 @@ export function PostsPanel({
               Choose
             </button>
           </div>
+          {getPreviewUrl(formData.image) && (
+            <div className="mb-2">
+              <img
+                src={getPreviewUrl(formData.image)}
+                alt="Blog article preview"
+                className="h-20 w-36 rounded-md border border-gray-200 object-cover"
+                loading="lazy"
+              />
+            </div>
+          )}
           <div className="grid gap-2 md:grid-cols-3">
             <input
               className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm"

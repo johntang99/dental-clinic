@@ -2,8 +2,14 @@
   "cta": {
     "title": "Ready to Get Started?",
     "subtitle": "Schedule a consultation to learn more.",
-    "primaryCta": { "link": "/contact", "text": "Book Consultation" },
-    "secondaryCta": { "link": "tel:+10000000000", "text": "Call Us" }
+    "primaryCta": {
+      "link": "/contact",
+      "text": "Book Consultation"
+    },
+    "secondaryCta": {
+      "link": "tel:+10000000000",
+      "text": "Call Us"
+    }
   },
   "faq": [
     {
@@ -39,8 +45,8 @@
   "featured": false,
   "subtitle": "Fast Relief When You Need It Most",
   "heroVariant": "centered",
-  "shortDescription": "Urgent orthodontic care for broken brackets, loose wires, and appliance-related discomfort to get your treatment back on track quickly.",
-  "fullDescription": "Orthodontic emergencies can happen at any time, whether from biting into hard food, a sports injury, or normal wear on your appliances. A broken bracket, a loose band, or a poking wire can cause significant discomfort and, if left unaddressed, may slow your treatment progress or lead to unwanted tooth movement. Our emergency orthodontic services are designed to provide prompt, effective care so you can get back to your normal routine as quickly as possible.\n\nThe most common orthodontic emergencies we see include brackets that have detached from a tooth, archwires that have slipped out of a bracket or are poking the soft tissues, loose or broken bands, and general soreness or irritation from appliances. While most of these situations are not medically dangerous, they can be uncomfortable and should be addressed promptly to keep your treatment moving in the right direction.\n\nWhen you contact our office with an orthodontic concern, our team will triage the situation over the phone and provide immediate at-home instructions to manage your discomfort until we can see you. We stock all commonly needed replacement parts and materials, so repairs can typically be completed in a single visit without delay. For patients with clear aligners, we can address issues such as ill-fitting trays, lost aligners, and sharp aligner edges.\n\nWe encourage all of our orthodontic patients to keep a small emergency kit at home that includes orthodontic wax, a pencil eraser for repositioning wires, over-the-counter pain relief, and our office phone number. Being prepared can make a significant difference in your comfort if an issue arises outside of regular office hours.",
   "whatToExpect": "When you experience an orthodontic emergency, the first step is to call our office. Our team will ask about your symptoms, determine the urgency, and provide step-by-step instructions for managing the issue at home until your appointment. We will schedule you as quickly as possible, often the same day or the next business day.\n\nAt your emergency visit, we will examine the affected area, assess any damage to your appliances, and perform the necessary repairs. This may include rebonding a bracket, replacing a broken band, trimming or replacing a wire, or adjusting your appliance to eliminate a source of irritation. Most emergency repairs can be completed in fifteen to thirty minutes. If additional parts need to be ordered, we will place a temporary fix to keep you comfortable in the meantime.\n\nAfter the repair, we will review what caused the issue and provide tips to help prevent similar problems in the future. This may include dietary reminders, guidance on mouthguard use during sports, or adjustments to your oral hygiene technique around your appliances. Our goal is to resolve the immediate concern and help you avoid disruptions to your treatment timeline going forward.",
-  "durationMinutes": null
+  "durationMinutes": null,
+  "fullDescription": "Orthodontic emergencies can happen at any time, whether from biting into hard food, a sports injury, or normal wear on your appliances. A broken bracket, a loose band, or a poking wire can cause significant discomfort and, if left unaddressed, may slow your treatment progress or lead to unwanted tooth movement. Our emergency orthodontic services are designed to provide prompt, effective care so you can get back to your normal routine as quickly as possible.\n\nThe most common orthodontic emergencies we see include brackets that have detached from a tooth, archwires that have slipped out of a bracket or are poking the soft tissues, loose or broken bands, and general soreness or irritation from appliances. While most of these situations are not medically dangerous, they can be uncomfortable and should be addressed promptly to keep your treatment moving in the right direction.\n\nWhen you contact our office with an orthodontic concern, our team will triage the situation over the phone and provide immediate at-home instructions to manage your discomfort until we can see you. We stock all commonly needed replacement parts and materials, so repairs can typically be completed in a single visit without delay. For patients with clear aligners, we can address issues such as ill-fitting trays, lost aligners, and sharp aligner edges.\n\nWe encourage all of our orthodontic patients to keep a small emergency kit at home that includes orthodontic wax, a pencil eraser for repositioning wires, over-the-counter pain relief, and our office phone number. Being prepared can make a significant difference in your comfort if an issue arises outside of regular office hours.",
+  "shortDescription": "Urgent orthodontic care for broken brackets, loose wires, and appliance-related discomfort to get your treatment back on track quickly."
 }
