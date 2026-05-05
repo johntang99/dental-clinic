@@ -1,160 +1,160 @@
 {
-  "hero": {
-    "title": "矫正案例展示",
-    "subtitle": "查看我们的牙齿矫正前后对比，了解胡林医生如何帮助患者获得自信笑容",
-    "variant": "split-photo-left",
-    "backgroundImage": "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&h=600&fit=crop"
-  },
-  "introduction": {
-    "text": "以下案例展示了胡林医生在不同类型正畸治疗中的专业成果。每个案例都经过患者同意后分享，旨在帮助您了解各种矫治方案的实际效果。",
-    "note": "所有案例照片均为真实患者，治疗效果因个人情况而异。"
-  },
-  "categories": [
-    {
-      "id": "all",
-      "name": "全部案例",
-      "icon": "grid"
-    },
-    {
-      "id": "braces",
-      "name": "牙套矫正",
-      "icon": "align-center"
-    },
-    {
-      "id": "invisalign",
-      "name": "隐适美",
-      "icon": "sparkles"
-    },
-    {
-      "id": "children",
-      "name": "儿童正畸",
-      "icon": "baby"
-    },
-    {
-      "id": "complex",
-      "name": "复杂病例",
-      "icon": "stethoscope"
-    }
-  ],
-  "caseStudies": [
-    {
-      "id": "crowding-teen-braces",
-      "category": "braces",
-      "condition": "严重牙齿拥挤",
-      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-crowding-teen-braces.jpg",
-      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-crowding-teen-braces.jpg",
-      "summary": "小王，15岁，上下颌严重拥挤，多颗牙齿重叠扭转。经过18个月的传统金属牙套治疗，所有牙齿排列整齐，咬合关系正常。治疗过程中未拔牙，通过扩弓和精确的牙齿移动实现了理想效果。"
-    },
-    {
-      "id": "invisalign-adult-professional",
-      "category": "invisalign",
-      "condition": "成人牙齿不齐",
-      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-invisalign-adult-professional.jpg",
-      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-invisalign-adult-professional.jpg",
-      "summary": "张女士，32岁，职场白领，因工作需要不希望佩戴传统牙套。选择隐适美透明矫正器，14个月完成治疗。整个治疗过程同事几乎未察觉，成功矫正了前牙拥挤和轻微深覆合问题。"
-    },
-    {
-      "id": "deep-bite-correction",
-      "category": "braces",
-      "condition": "严重深覆合",
-      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-deep-bite-correction.jpg",
-      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-deep-bite-correction.jpg",
-      "summary": "李先生，28岁，上牙过度覆盖下牙超过6mm，导致下前牙咬到上颚。经过20个月的传统牙套配合垂直向弹力橡皮圈治疗，深覆合完全纠正，咬合功能恢复正常，面部比例更加协调。"
-    },
-    {
-      "id": "child-early-intervention",
-      "category": "children",
-      "condition": "儿童反颌（地包天）",
-      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-child-early-intervention.jpg",
-      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-child-early-intervention.jpg",
-      "summary": "小陈，8岁，前牙反颌（地包天），下牙咬在上牙前面。胡林医生在生长发育关键期进行早期干预，使用功能矫治器引导颌骨正确生长。10个月后反颌纠正，避免了日后可能需要的复杂手术治疗。"
-    },
-    {
-      "id": "open-bite-surgical",
-      "category": "complex",
-      "condition": "骨性开合",
-      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-open-bite-surgical.jpg",
-      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-open-bite-surgical.jpg",
-      "summary": "赵女士，25岁，前牙完全无法咬合（开合），无法用前牙咬断食物。经过正畸与正颌外科联合治疗，24个月完成。术后前牙可以正常咬合，面部轮廓显著改善，患者对治疗结果极其满意。"
-    },
-    {
-      "id": "spacing-invisalign",
-      "category": "invisalign",
-      "condition": "牙齿间隙过大",
-      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-spacing-invisalign.jpg",
-      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-spacing-invisalign.jpg",
-      "summary": "刘先生，35岁，上前牙之间有多处明显间隙，说话时漏风。使用隐适美矫正器关闭所有间隙，仅用10个月完成治疗。治疗后笑容自然，说话清晰，效果超出预期。"
-    },
-    {
-      "id": "crossbite-teen",
-      "category": "braces",
-      "condition": "后牙交叉咬合",
-      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-crossbite-teen.jpg",
-      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-crossbite-teen.jpg",
-      "summary": "小林，13岁，左侧后牙交叉咬合，导致咀嚼时下颌偏移。经过16个月的牙套治疗配合腭扩展器，交叉咬合完全纠正，下颌居中，面部对称性显著改善。"
-    },
-    {
-      "id": "ceramic-braces-adult",
-      "category": "braces",
-      "condition": "成人牙齿拥挤",
-      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-ceramic-braces-adult.jpg",
-      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-ceramic-braces-adult.jpg",
-      "summary": "陈女士，40岁，一直对拥挤的牙齿感到不满意但担心传统牙套影响形象。选择了陶瓷牙套，透明托槽在社交场合几乎不可见。经过22个月治疗，牙齿排列整齐，咬合完美，她说这是她做过的最好的决定。"
-    },
-    {
-      "id": "phase1-expander",
-      "category": "children",
-      "condition": "上颌骨狭窄",
-      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-phase1-expander.jpg",
-      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-phase1-expander.jpg",
-      "summary": "小美，7岁，上颌骨过窄导致后牙交叉咬合和前牙拥挤。胡林医生在最佳生长期使用腭扩展器扩大上颌骨，8个月后上颌宽度增加了6mm，为恒牙萌出创造了充足空间，避免了未来拔牙的可能。"
-    },
-    {
-      "id": "underbite-complex",
-      "category": "complex",
-      "condition": "骨性反颌（地包天）",
-      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-underbite-complex.jpg",
-      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-underbite-complex.jpg",
-      "summary": "周先生，22岁，严重骨性反颌，下颌明显前突，面部凹陷。通过正畸-正颌外科联合治疗，术前正畸10个月排齐牙齿，正颌手术后继续精细调整8个月。治疗后面部轮廓恢复和谐，咬合功能完全正常。"
-    }
-  ],
-  "statistics": {
-    "variant": "horizontal-row",
-    "title": "治疗成就",
-    "stats": [
-      {
-        "number": "10,000+",
-        "label": "成功案例",
-        "icon": "smile"
-      },
-      {
-        "number": "3×",
-        "label": "ABO认证",
-        "icon": "award"
-      },
-      {
-        "number": "15+",
-        "label": "年执业经验",
-        "icon": "calendar"
-      },
-      {
-        "number": "98%",
-        "label": "患者满意度",
-        "icon": "heart"
-      }
-    ]
-  },
   "cta": {
-    "variant": "centered",
     "title": "想了解您的矫正方案？",
-    "description": "预约免费初次咨询，让胡林医生评估您的情况并推荐最适合的治疗方案",
+    "variant": "centered",
     "primaryCta": {
       "link": "/book",
       "text": "预约免费咨询"
     },
+    "description": "预约免费初次咨询，让胡林医生评估您的情况并推荐最适合的治疗方案",
     "secondaryCta": {
       "link": "tel:+17183530880",
       "text": "(718) 353-0880"
     }
+  },
+  "hero": {
+    "title": "矫正案例展示",
+    "variant": "photo-background",
+    "subtitle": "查看我们的牙齿矫正前后对比，了解胡林医生如何帮助患者获得自信笑容",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/blog/1776495604071-adult-orthodontics-guide.jpg"
+  },
+  "categories": [
+    {
+      "id": "all",
+      "icon": "grid",
+      "name": "全部案例"
+    },
+    {
+      "id": "braces",
+      "icon": "align-center",
+      "name": "牙套矫正"
+    },
+    {
+      "id": "invisalign",
+      "icon": "sparkles",
+      "name": "隐适美"
+    },
+    {
+      "id": "children",
+      "icon": "baby",
+      "name": "儿童正畸"
+    },
+    {
+      "id": "complex",
+      "icon": "stethoscope",
+      "name": "复杂病例"
+    }
+  ],
+  "statistics": {
+    "stats": [
+      {
+        "icon": "smile",
+        "label": "成功案例",
+        "number": "10,000+"
+      },
+      {
+        "icon": "award",
+        "label": "ABO认证",
+        "number": "3×"
+      },
+      {
+        "icon": "calendar",
+        "label": "年执业经验",
+        "number": "15+"
+      },
+      {
+        "icon": "heart",
+        "label": "患者满意度",
+        "number": "98%"
+      }
+    ],
+    "title": "治疗成就",
+    "variant": "horizontal-row"
+  },
+  "caseStudies": [
+    {
+      "id": "crowding-teen-braces",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-crowding-teen-braces.jpg",
+      "summary": "小王，15岁，上下颌严重拥挤，多颗牙齿重叠扭转。经过18个月的传统金属牙套治疗，所有牙齿排列整齐，咬合关系正常。治疗过程中未拔牙，通过扩弓和精确的牙齿移动实现了理想效果。",
+      "category": "braces",
+      "condition": "严重牙齿拥挤",
+      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-crowding-teen-braces.jpg"
+    },
+    {
+      "id": "invisalign-adult-professional",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-invisalign-adult-professional.jpg",
+      "summary": "张女士，32岁，职场白领，因工作需要不希望佩戴传统牙套。选择隐适美透明矫正器，14个月完成治疗。整个治疗过程同事几乎未察觉，成功矫正了前牙拥挤和轻微深覆合问题。",
+      "category": "invisalign",
+      "condition": "成人牙齿不齐",
+      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-invisalign-adult-professional.jpg"
+    },
+    {
+      "id": "deep-bite-correction",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-deep-bite-correction.jpg",
+      "summary": "李先生，28岁，上牙过度覆盖下牙超过6mm，导致下前牙咬到上颚。经过20个月的传统牙套配合垂直向弹力橡皮圈治疗，深覆合完全纠正，咬合功能恢复正常，面部比例更加协调。",
+      "category": "braces",
+      "condition": "严重深覆合",
+      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-deep-bite-correction.jpg"
+    },
+    {
+      "id": "child-early-intervention",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-child-early-intervention.jpg",
+      "summary": "小陈，8岁，前牙反颌（地包天），下牙咬在上牙前面。胡林医生在生长发育关键期进行早期干预，使用功能矫治器引导颌骨正确生长。10个月后反颌纠正，避免了日后可能需要的复杂手术治疗。",
+      "category": "children",
+      "condition": "儿童反颌（地包天）",
+      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-child-early-intervention.jpg"
+    },
+    {
+      "id": "open-bite-surgical",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-open-bite-surgical.jpg",
+      "summary": "赵女士，25岁，前牙完全无法咬合（开合），无法用前牙咬断食物。经过正畸与正颌外科联合治疗，24个月完成。术后前牙可以正常咬合，面部轮廓显著改善，患者对治疗结果极其满意。",
+      "category": "complex",
+      "condition": "骨性开合",
+      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-open-bite-surgical.jpg"
+    },
+    {
+      "id": "spacing-invisalign",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-spacing-invisalign.jpg",
+      "summary": "刘先生，35岁，上前牙之间有多处明显间隙，说话时漏风。使用隐适美矫正器关闭所有间隙，仅用10个月完成治疗。治疗后笑容自然，说话清晰，效果超出预期。",
+      "category": "invisalign",
+      "condition": "牙齿间隙过大",
+      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-spacing-invisalign.jpg"
+    },
+    {
+      "id": "crossbite-teen",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-crossbite-teen.jpg",
+      "summary": "小林，13岁，左侧后牙交叉咬合，导致咀嚼时下颌偏移。经过16个月的牙套治疗配合腭扩展器，交叉咬合完全纠正，下颌居中，面部对称性显著改善。",
+      "category": "braces",
+      "condition": "后牙交叉咬合",
+      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-crossbite-teen.jpg"
+    },
+    {
+      "id": "ceramic-braces-adult",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-ceramic-braces-adult.jpg",
+      "summary": "陈女士，40岁，一直对拥挤的牙齿感到不满意但担心传统牙套影响形象。选择了陶瓷牙套，透明托槽在社交场合几乎不可见。经过22个月治疗，牙齿排列整齐，咬合完美，她说这是她做过的最好的决定。",
+      "category": "braces",
+      "condition": "成人牙齿拥挤",
+      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-ceramic-braces-adult.jpg"
+    },
+    {
+      "id": "phase1-expander",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-phase1-expander.jpg",
+      "summary": "小美，7岁，上颌骨过窄导致后牙交叉咬合和前牙拥挤。胡林医生在最佳生长期使用腭扩展器扩大上颌骨，8个月后上颌宽度增加了6mm，为恒牙萌出创造了充足空间，避免了未来拔牙的可能。",
+      "category": "children",
+      "condition": "上颌骨狭窄",
+      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-phase1-expander.jpg"
+    },
+    {
+      "id": "underbite-complex",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-underbite-complex.jpg",
+      "summary": "周先生，22岁，严重骨性反颌，下颌明显前突，面部凹陷。通过正畸-正颌外科联合治疗，术前正畸10个月排齐牙齿，正颌手术后继续精细调整8个月。治疗后面部轮廓恢复和谐，咬合功能完全正常。",
+      "category": "complex",
+      "condition": "骨性反颌（地包天）",
+      "afterImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/cases/1776499977378-underbite-complex.jpg"
+    }
+  ],
+  "introduction": {
+    "note": "所有案例照片均为真实患者，治疗效果因个人情况而异。",
+    "text": "以下案例展示了胡林医生在不同类型正畸治疗中的专业成果。每个案例都经过患者同意后分享，旨在帮助您了解各种矫治方案的实际效果。"
   }
 }

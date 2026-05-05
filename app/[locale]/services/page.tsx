@@ -195,6 +195,21 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
           tagline={hero.title}
           description={hero.subtitle}
           image={hero.backgroundImage || undefined}
+          gallery={Array.isArray((hero as any).gallery) ? (hero as any).gallery : undefined}
+          photoOverlayOpacity={
+            typeof (hero as any).photoOverlayOpacity === 'number'
+              ? (hero as any).photoOverlayOpacity
+              : 0.2
+          }
+          photoContentPosition={
+            (hero as any).photoContentPosition === 'center' ||
+            (hero as any).photoContentPosition === 'center-below' ||
+            (hero as any).photoContentPosition === 'left' ||
+            (hero as any).photoContentPosition === 'left-below' ||
+            (hero as any).photoContentPosition === 'lower'
+              ? (hero as any).photoContentPosition
+              : 'left-below'
+          }
         />
       )}
 

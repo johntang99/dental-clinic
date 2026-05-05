@@ -37,6 +37,9 @@
     ],
     "variant": "default"
   },
+  "topbar": {
+    "showLanguageSwitcher": false
+  },
   "logoText": "胡林正畸中心",
   "logoType": "text",
   "showPhone": true,

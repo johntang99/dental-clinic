@@ -23,10 +23,18 @@ interface CaseStudy {
 
 interface CaseStudiesPageData {
   hero: {
-    variant?: 'centered' | 'split-photo-right' | 'split-photo-left' | 'photo-background';
+    variant?:
+      | 'centered'
+      | 'split-photo-right'
+      | 'split-photo-left'
+      | 'photo-background'
+      | 'gallery-background';
     title: string;
     subtitle: string;
     backgroundImage?: string;
+    gallery?: string[];
+    photoOverlayOpacity?: number;
+    photoContentPosition?: 'center' | 'center-below' | 'left' | 'left-below' | 'lower';
   };
   introduction: {
     text: string;
@@ -146,6 +154,19 @@ export default async function CaseStudiesPage({ params }: CaseStudiesPageProps) 
           tagline={hero.title}
           description={hero.subtitle}
           image={hero.backgroundImage || undefined}
+          gallery={Array.isArray(hero.gallery) ? hero.gallery : undefined}
+          photoOverlayOpacity={
+            typeof hero.photoOverlayOpacity === 'number' ? hero.photoOverlayOpacity : 0.2
+          }
+          photoContentPosition={
+            hero.photoContentPosition === 'center' ||
+            hero.photoContentPosition === 'center-below' ||
+            hero.photoContentPosition === 'left' ||
+            hero.photoContentPosition === 'left-below' ||
+            hero.photoContentPosition === 'lower'
+              ? hero.photoContentPosition
+              : 'left-below'
+          }
         />
       )}
 

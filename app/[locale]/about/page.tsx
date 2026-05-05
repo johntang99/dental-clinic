@@ -17,11 +17,19 @@ import { CheckCircle2, MapPin, Clock } from 'lucide-react';
 
 interface AboutPageData {
   hero: {
-    variant?: 'centered' | 'split-photo-right' | 'split-photo-left' | 'photo-background';
+    variant?:
+      | 'centered'
+      | 'split-photo-right'
+      | 'split-photo-left'
+      | 'photo-background'
+      | 'gallery-background';
     title: string;
     subtitle: string;
     description?: string;
     backgroundImage?: string;
+    gallery?: string[];
+    photoOverlayOpacity?: number;
+    photoContentPosition?: 'center' | 'center-below' | 'left' | 'left-below' | 'lower';
   };
   profile: {
     variant?: 'split' | 'stacked';
@@ -289,6 +297,11 @@ export default async function AboutPage({ params }: AboutPageProps) {
   const sectionStyle = (sectionId: string) =>
     useLayout ? { order: layoutOrder.get(sectionId) ?? 0 } : undefined;
   const resolvedHeroBackgroundImage = resolveMediaUrl(hero.backgroundImage);
+  const resolvedHeroGallery = Array.isArray(hero.gallery)
+    ? hero.gallery
+        .map((entry) => resolveMediaUrl(entry))
+        .filter((entry): entry is string => Boolean(entry))
+    : [];
   const resolvedProfileImage = resolveMediaUrl(profile.image);
   const profileVariant = profile.variant || 'split';
   const credentialsVariant = credentials.variant || 'list';
@@ -308,6 +321,19 @@ export default async function AboutPage({ params }: AboutPageProps) {
           tagline={hero.title}
           description={hero.subtitle}
           image={resolvedHeroBackgroundImage || undefined}
+          gallery={resolvedHeroGallery}
+          photoOverlayOpacity={
+            typeof hero.photoOverlayOpacity === 'number' ? hero.photoOverlayOpacity : 0.2
+          }
+          photoContentPosition={
+            hero.photoContentPosition === 'center' ||
+            hero.photoContentPosition === 'center-below' ||
+            hero.photoContentPosition === 'left' ||
+            hero.photoContentPosition === 'left-below' ||
+            hero.photoContentPosition === 'lower'
+              ? hero.photoContentPosition
+              : 'left-below'
+          }
           priority
         />
       )}

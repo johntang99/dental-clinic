@@ -24,7 +24,7 @@
     "subtitle": "了解牙齿矫正的方方面面"
   },
   "hero": {
-    "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1776476343753-dr.-hu-at-hu-lin-orthodontics.png",
+    "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1777960423154-home-photo-3.png",
     "stats": [
       {
         "icon": "award",
@@ -48,7 +48,7 @@
       }
     ],
     "tagline": "ABO认证正畸权威 · 法拉盛与大颈",
-    "variant": "split-photo-right",
+    "variant": "photo-background",
     "badgeText": "正在接受新患者预约",
     "primaryCta": {
       "link": "/book",
@@ -71,7 +71,9 @@
       "link": "tel:+17183530880",
       "text": "(718) 353-0880"
     },
-    "backgroundImage": ""
+    "backgroundImage": "",
+    "photoOverlayOpacity": 0.1,
+    "photoContentPosition": "lower"
   },
   "topBar": {
     "badge": {
@@ -175,6 +177,15 @@
     ],
     "subtitle": "从儿童早期矫治到成人隐形矫正，量身定制您的完美笑容"
   },
+  "caseStudies": {
+    "badge": "真实案例",
+    "title": "矫正前后对比",
+    "moreLink": {
+      "url": "/case-studies",
+      "text": "查看全部案例"
+    },
+    "subtitle": "查看胡林医生的真实矫正案例，了解不同治疗方案的实际效果"
+  },
   "whyChooseUs": {
     "badge": "为什么选择我们",
     "title": "选择胡林正畸中心的理由",
@@ -214,16 +225,7 @@
   "testimonials": {
     "badge": "患者评价",
     "title": "听听他们怎么说",
-    "subtitle": "来自Google和Yelp的真实患者评价",
-    "variant": "masonry"
-  },
-  "caseStudies": {
-    "badge": "真实案例",
-    "title": "矫正前后对比",
-    "subtitle": "查看胡林医生的真实矫正案例，了解不同治疗方案的实际效果",
-    "moreLink": {
-      "url": "/case-studies",
-      "text": "查看全部案例"
-    }
+    "variant": "masonry",
+    "subtitle": "来自Google和Yelp的真实患者评价"
   }
 }

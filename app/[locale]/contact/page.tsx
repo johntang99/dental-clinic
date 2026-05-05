@@ -11,10 +11,18 @@ import { HeroVariant } from '@/lib/section-variants';
 
 interface ContactPageContent {
   hero: {
-    variant?: 'centered' | 'split-photo-right' | 'split-photo-left' | 'photo-background';
+    variant?:
+      | 'centered'
+      | 'split-photo-right'
+      | 'split-photo-left'
+      | 'photo-background'
+      | 'gallery-background';
     title: string;
     subtitle: string;
     backgroundImage?: string;
+    gallery?: string[];
+    photoOverlayOpacity?: number;
+    photoContentPosition?: 'center' | 'center-below' | 'left' | 'left-below' | 'lower';
   };
   introduction: { variant?: 'centered' | 'left'; text: string };
   contactMethods: Array<{
@@ -133,6 +141,19 @@ export default async function ContactPage({ params }: ContactPageProps) {
           description={hero.subtitle}
           badgeText="Contact Us"
           image={hero.backgroundImage || undefined}
+          gallery={Array.isArray(hero.gallery) ? hero.gallery : undefined}
+          photoOverlayOpacity={
+            typeof hero.photoOverlayOpacity === 'number' ? hero.photoOverlayOpacity : 0.2
+          }
+          photoContentPosition={
+            hero.photoContentPosition === 'center' ||
+            hero.photoContentPosition === 'center-below' ||
+            hero.photoContentPosition === 'left' ||
+            hero.photoContentPosition === 'left-below' ||
+            hero.photoContentPosition === 'lower'
+              ? hero.photoContentPosition
+              : 'left-below'
+          }
         />
       )}
 

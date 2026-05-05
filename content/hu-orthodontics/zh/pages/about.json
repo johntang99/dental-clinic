@@ -13,10 +13,15 @@
     }
   },
   "hero": {
-    "title": "关于胡林医生",
-    "variant": "split-photo-right",
-    "subtitle": "ABO三次认证正畸专家 · DMD, DDS, MS, PhD",
-    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1776465509800-team-discussion-2.png"
+    "title": "胡林医生团队",
+    "variant": "gallery-background",
+    "subtitle": "胡林医生是美国正畸专科医师协会认证的正畸医生，也是纽约华人社区中少数几位在2007年、2008年和2020年三次获得重新认证的正畸医生之一。他是美国正畸医师协会的活跃成员。目前，他在皇后区和长岛大颈地区开展最先进的正畸治疗业务。",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1777952545168-medical-team-in-modern-office-2.png",
+    "photoOverlayOpacity": 0.05,
+    "photoContentPosition": "left-below",
+    "gallery": [
+      "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1776465509800-team-discussion-2.png"
+    ]
   },
   "clinic": {
     "title": "关于胡林正畸中心",
@@ -33,6 +38,10 @@
       "免费初次咨询评估"
     ],
     "description": "胡林正畸中心在法拉盛和大颈设有两处诊所，配备先进的数字化正畸设备，营造温馨舒适的就诊环境。我们的团队精通普通话和英语，致力于为华人社区提供最高水准的正畸服务。\n\n无论是在法拉盛的总诊所还是大颈分诊所，您都将体验到专业、高效、贴心的正畸服务。法拉盛诊所位于华人社区中心地带，靠近7号地铁线终点站，交通极为便利。"
+  },
+  "journey": {
+    "story": "胡医生是一位获得美国正畸学会（ABO）认证的正畸专科医生，其ABO认证资格分别于2007年、2008年和2020年获得复审。他是蒙特菲奥里医疗中心/阿尔伯特·爱因斯坦医学院的正畸学助理临床教授，同时也是蒙特菲奥里医疗中心的正畸主治医师，并在儿童评估与康复中心/罗斯·F·肯尼迪中心兼职任教。\n\n胡医生毕业于宾夕法尼亚大学，获得美国牙科医学博士学位。他获得了蒙特菲奥里医疗中心/阿尔伯特·爱因斯坦医学院颁发的正畸专科证书，该中心已获得美国牙科协会（ADA）的认证。\n\n胡医生来自中国。他毕业于四川医学院（后更名为华西医科大学），获得牙科学士学位。之后，他分别在华西医科大学获得正畸学硕士和正畸外科治疗学博士学位。他曾任华西医科大学附属医院正畸科副教授及正畸主治医师。他是两位荣获国务院和中国教育委员会颁发的“中国杰出医生”称号的正畸医生之一，这是中国授予正畸医学最高荣誉。",
+    "title": "中国杰出医生"
   },
   "profile": {
     "bio": "胡林医生是一位在正畸领域享有盛誉的专家，拥有DMD（口腔医学博士）、DDS（牙科博士）、MS（硕士）和 PhD（博士）四重学位。\n\n他于2007年首次获得美国正畸学会（ABO）认证，随后于2008年和2020年两次成功再认证，成为极少数获得三次ABO认证的正畸医生之一。ABO认证是正畸领域的最高专业认可，仅约三分之一的正畸医生能够获得此认证。\n\n胡医生将先进的正畸技术与融合外科原则的多学科视角相结合，代表了该领域的范式转变。这种综合方法能够实现更有效的干预，并显著改善治疗效果，尤其是在以往被认为具有挑战性或需要手术的复杂病例中。\n\n胡医生在纽约市皇后区法拉盛和长岛大颈设有两家诊所。法拉盛总诊所位于华人社区中心地带，靠近7号地铁线终点站，交通极为便利。他的团队精通普通话和英语，致力于为华人社区提供最高水准的正畸服务。",

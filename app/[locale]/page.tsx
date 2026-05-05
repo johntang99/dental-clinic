@@ -40,7 +40,10 @@ interface HomePageContent {
     secondaryCta?: { text: string; link: string };
     image?: string;
     video?: string;
+    gallery?: string[];
     floatingTags?: string[];
+    photoOverlayOpacity?: number;
+    photoContentPosition?: 'center' | 'center-below' | 'left' | 'left-below' | 'lower';
     stats?: Array<{
       icon?: string;
       number: string;
@@ -175,8 +178,21 @@ export default async function HomePage({ params }: PageProps) {
             secondaryCta={hero.secondaryCta}
             image={hero.image}
             video={hero.video}
+            gallery={Array.isArray(hero.gallery) ? hero.gallery : undefined}
             floatingTags={hero.floatingTags}
             stats={hero.stats}
+            photoOverlayOpacity={
+              typeof hero.photoOverlayOpacity === 'number' ? hero.photoOverlayOpacity : 0.2
+            }
+            photoContentPosition={
+              hero.photoContentPosition === 'center' ||
+              hero.photoContentPosition === 'center-below' ||
+              hero.photoContentPosition === 'left' ||
+              hero.photoContentPosition === 'left-below' ||
+              hero.photoContentPosition === 'lower'
+                ? hero.photoContentPosition
+                : 'left-below'
+            }
             priority
           />
         );

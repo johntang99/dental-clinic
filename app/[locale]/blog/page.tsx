@@ -15,6 +15,9 @@ interface BlogPageData {
     subtitle: string;
     variant?: string;
     backgroundImage?: string;
+    gallery?: string[];
+    photoOverlayOpacity?: number;
+    photoContentPosition?: 'center' | 'center-below' | 'left' | 'left-below' | 'lower';
   };
   introduction: {
     text: string;
@@ -129,6 +132,19 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
         description={hero.subtitle}
         badgeText="Learn & Explore"
         image={hero.backgroundImage || undefined}
+        gallery={Array.isArray(hero.gallery) ? hero.gallery : undefined}
+        photoOverlayOpacity={
+          typeof hero.photoOverlayOpacity === 'number' ? hero.photoOverlayOpacity : 0.2
+        }
+        photoContentPosition={
+          hero.photoContentPosition === 'center' ||
+          hero.photoContentPosition === 'center-below' ||
+          hero.photoContentPosition === 'left' ||
+          hero.photoContentPosition === 'left-below' ||
+          hero.photoContentPosition === 'lower'
+            ? hero.photoContentPosition
+            : 'left-below'
+        }
       />
 
       {/* Introduction */}

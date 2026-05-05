@@ -15,6 +15,7 @@ import { HomeSectionPhotosPanel } from '@/components/admin/panels/HomeSectionPho
 import { HeroPanel } from '@/components/admin/panels/HeroPanel';
 import { ProfilePanel } from '@/components/admin/panels/ProfilePanel';
 import { IntroductionPanel } from '@/components/admin/panels/IntroductionPanel';
+import { JourneyPanel } from '@/components/admin/panels/JourneyPanel';
 import { GalleryPhotosPanel } from '@/components/admin/panels/GalleryPhotosPanel';
 import { CtaPanel } from '@/components/admin/panels/CtaPanel';
 import { ServicesPanel } from '@/components/admin/panels/ServicesPanel';
@@ -909,6 +910,7 @@ export function ContentEditor({
   const isHeaderFile = activeFile?.path === 'header.json';
   const isThemeFile = activeFile?.path === 'theme.json';
   const isHomePageFile = activeFile?.path === 'pages/home.json';
+  const isAboutPageFile = activeFile?.path === 'pages/about.json';
   const isConditionsPageFile = activeFile?.path === 'pages/conditions.json';
   const isCaseStudiesPageFile = activeFile?.path === 'pages/case-studies.json';
   const allowCreateOrDuplicate =
@@ -2373,6 +2375,13 @@ export function ContentEditor({
                   profile={formData.profile}
                   updateFormValue={updateFormValue}
                   openImagePicker={openImagePicker}
+                />
+              )}
+
+              {showSharedPanels && isAboutPageFile && formData && (
+                <JourneyPanel
+                  journey={formData?.journey ?? { variant: 'prose', title: '', story: '' }}
+                  updateFormValue={updateFormValue}
                 />
               )}
 

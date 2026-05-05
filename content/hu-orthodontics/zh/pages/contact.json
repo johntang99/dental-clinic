@@ -1,64 +1,95 @@
 {
+  "cta": {
+    "title": "准备好预约了吗？",
+    "primaryCta": {
+      "link": "/book",
+      "text": "在线预约"
+    },
+    "description": "免费初次咨询，让胡林医生为您制定个性化矫治方案",
+    "secondaryCta": {
+      "link": "tel:+17183530880",
+      "text": "(718) 353-0880"
+    }
+  },
+  "faq": {
+    "items": [
+      {
+        "answer": "是的，我们提供完全免费的初次正畸咨询评估。",
+        "question": "首次咨询是免费的吗？"
+      },
+      {
+        "answer": "我们接受大部分主流牙科和正畸保险计划。请携带您的保险卡，我们的团队将帮您核实福利。",
+        "question": "你们接受哪些保险？"
+      },
+      {
+        "answer": "法拉盛诊所附近有市政停车场。大颈诊所提供免费停车位。",
+        "question": "诊所有停车位吗？"
+      }
+    ],
+    "title": "联系常见问题",
+    "variant": "simple"
+  },
+  "map": {
+    "title": "诊所位置",
+    "showMap": true,
+    "variant": "shown",
+    "embedUrl": "https://maps.google.com/maps?q=Hu+Lin+Orthodontics+38-08+Union+St+Flushing+NY+11354&t=m&z=17&output=embed",
+    "directions": "法拉盛诊所位于联合街和39大道交汇处，靠近7号地铁线终点站，交通便利。"
+  },
+  "form": {
+    "title": "在线留言",
+    "fields": {
+      "name": {
+        "label": "姓名",
+        "required": true,
+        "placeholder": "请输入您的姓名"
+      },
+      "email": {
+        "label": "电子邮箱",
+        "required": true,
+        "placeholder": "your@email.com"
+      },
+      "phone": {
+        "label": "电话号码",
+        "required": false,
+        "placeholder": "(555) 123-4567"
+      },
+      "reason": {
+        "label": "联系原因",
+        "options": [
+          "预约咨询",
+          "保险问题",
+          "费用咨询",
+          "治疗进展",
+          "其他"
+        ],
+        "required": true,
+        "placeholder": "请选择"
+      },
+      "message": {
+        "label": "留言内容",
+        "required": true,
+        "placeholder": "请描述您的问题或需求"
+      }
+    },
+    "variant": "single-column",
+    "subtitle": "填写以下表格，我们将在1个工作日内回复您",
+    "errorMessage": "发送失败，请稍后重试或直接拨打电话联系我们。",
+    "submitButton": {
+      "text": "发送留言"
+    },
+    "successMessage": "感谢您的留言！我们将在1个工作日内回复您。"
+  },
   "hero": {
     "title": "联系我们",
-    "variant": "split-photo-left",
+    "variant": "photo-background",
     "subtitle": "预约免费正畸咨询，开启您的矫治之旅",
-    "backgroundImage": "https://images.unsplash.com/photo-1629909615957-be38d6c1f0d0?w=800&h=600&fit=crop"
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1777960118479-home-photo-2.png"
   },
-  "introduction": {
-    "text": "无论您是想预约咨询、了解保险信息，还是有关于正畸治疗的问题，我们都很乐意为您提供帮助。您可以通过电话、邮件或以下表格联系我们。",
-    "variant": "centered"
-  },
-  "contactMethods": [
-    {
-      "icon": "phone",
-      "title": "法拉盛诊所",
-      "primary": "(718) 353-0880",
-      "secondary": null,
-      "description": "法拉盛总部，周一至周六",
-      "action": {
-        "link": "tel:+17183530880",
-        "text": "立即拨打"
-      }
-    },
-    {
-      "icon": "phone",
-      "title": "大颈诊所",
-      "primary": "(516) 809-8686",
-      "secondary": null,
-      "description": "大颈分所，仅周三",
-      "action": {
-        "link": "tel:+15168098686",
-        "text": "立即拨打"
-      }
-    },
-    {
-      "icon": "mail",
-      "title": "电子邮件",
-      "primary": "info@hulinorthodontics.com",
-      "secondary": null,
-      "description": "我们将在1个工作日内回复",
-      "action": {
-        "link": "mailto:info@hulinorthodontics.com",
-        "text": "发送邮件"
-      }
-    },
-    {
-      "icon": "map-pin",
-      "title": "法拉盛诊所地址",
-      "primary": "38-08 Union Street, Suite 4B",
-      "secondary": "Flushing, NY 11354",
-      "description": "靠近7号地铁线终点站和法拉盛市政停车场",
-      "action": {
-        "link": "https://maps.google.com/?q=38-08+Union+St+Suite+4B+Flushing+NY+11354",
-        "text": "查看地图"
-      }
-    }
-  ],
   "hours": {
+    "note": "法拉盛诊所时间如下。大颈诊所仅周三开放 10AM-6PM。",
     "title": "就诊时间",
     "variant": "grid",
-    "note": "法拉盛诊所时间如下。大颈诊所仅周三开放 10AM-6PM。",
     "schedule": [
       {
         "day": "周一",
@@ -97,91 +128,60 @@
       }
     ]
   },
-  "form": {
-    "title": "在线留言",
-    "variant": "single-column",
-    "subtitle": "填写以下表格，我们将在1个工作日内回复您",
-    "submitButton": {
-      "text": "发送留言"
-    },
-    "successMessage": "感谢您的留言！我们将在1个工作日内回复您。",
-    "errorMessage": "发送失败，请稍后重试或直接拨打电话联系我们。",
-    "fields": {
-      "name": {
-        "label": "姓名",
-        "required": true,
-        "placeholder": "请输入您的姓名"
-      },
-      "email": {
-        "label": "电子邮箱",
-        "required": true,
-        "placeholder": "your@email.com"
-      },
-      "phone": {
-        "label": "电话号码",
-        "required": false,
-        "placeholder": "(555) 123-4567"
-      },
-      "reason": {
-        "label": "联系原因",
-        "required": true,
-        "placeholder": "请选择",
-        "options": [
-          "预约咨询",
-          "保险问题",
-          "费用咨询",
-          "治疗进展",
-          "其他"
-        ]
-      },
-      "message": {
-        "label": "留言内容",
-        "required": true,
-        "placeholder": "请描述您的问题或需求"
-      }
-    }
-  },
-  "map": {
-    "title": "诊所位置",
-    "variant": "shown",
-    "showMap": true,
-    "embedUrl": "https://maps.google.com/maps?q=Hu+Lin+Orthodontics+38-08+Union+St+Flushing+NY+11354&t=m&z=17&output=embed",
-    "directions": "法拉盛诊所位于联合街和39大道交汇处，靠近7号地铁线终点站，交通便利。"
-  },
   "emergency": {
+    "phone": "(718) 353-0880",
     "title": "正畸急诊？",
     "message": "托槽脱落、弓丝扎嘴等紧急情况，请立即拨打我们的电话。",
-    "phone": "(718) 353-0880",
     "visible": true
   },
-  "faq": {
-    "title": "联系常见问题",
-    "variant": "simple",
-    "items": [
-      {
-        "question": "首次咨询是免费的吗？",
-        "answer": "是的，我们提供完全免费的初次正畸咨询评估。"
-      },
-      {
-        "question": "你们接受哪些保险？",
-        "answer": "我们接受大部分主流牙科和正畸保险计划。请携带您的保险卡，我们的团队将帮您核实福利。"
-      },
-      {
-        "question": "诊所有停车位吗？",
-        "answer": "法拉盛诊所附近有市政停车场。大颈诊所提供免费停车位。"
-      }
-    ]
+  "introduction": {
+    "text": "无论您是想预约咨询、了解保险信息，还是有关于正畸治疗的问题，我们都很乐意为您提供帮助。您可以通过电话、邮件或以下表格联系我们。",
+    "variant": "centered"
   },
-  "cta": {
-    "title": "准备好预约了吗？",
-    "description": "免费初次咨询，让胡林医生为您制定个性化矫治方案",
-    "primaryCta": {
-      "link": "/book",
-      "text": "在线预约"
+  "contactMethods": [
+    {
+      "icon": "phone",
+      "title": "法拉盛诊所",
+      "action": {
+        "link": "tel:+17183530880",
+        "text": "立即拨打"
+      },
+      "primary": "(718) 353-0880",
+      "secondary": null,
+      "description": "法拉盛总部，周一至周六"
     },
-    "secondaryCta": {
-      "link": "tel:+17183530880",
-      "text": "(718) 353-0880"
+    {
+      "icon": "phone",
+      "title": "大颈诊所",
+      "action": {
+        "link": "tel:+15168098686",
+        "text": "立即拨打"
+      },
+      "primary": "(516) 809-8686",
+      "secondary": null,
+      "description": "大颈分所，仅周三"
+    },
+    {
+      "icon": "mail",
+      "title": "电子邮件",
+      "action": {
+        "link": "mailto:info@hulinorthodontics.com",
+        "text": "发送邮件"
+      },
+      "primary": "info@hulinorthodontics.com",
+      "secondary": null,
+      "description": "我们将在1个工作日内回复"
+    },
+    {
+      "icon": "map-pin",
+      "title": "法拉盛诊所地址",
+      "action": {
+        "link": "https://maps.google.com/?q=38-08+Union+St+Suite+4B+Flushing+NY+11354",
+        "text": "查看地图"
+      },
+      "primary": "38-08 Union Street, Suite 4B",
+      "secondary": "Flushing, NY 11354",
+      "description": "靠近7号地铁线终点站和法拉盛市政停车场"
     }
-  }
+  ]
 }

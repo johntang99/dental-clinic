@@ -18,6 +18,7 @@ export interface HeaderConfig {
     addressHref?: string;
     hours?: string;
     badge?: string;
+    showLanguageSwitcher?: boolean;
   };
   menu?: {
     variant?: 'default' | 'centered' | 'transparent' | 'stacked';
@@ -163,6 +164,7 @@ export default function Header({
     (siteInfo?.address ? `${siteInfo.address}, ${siteInfo.city}, ${siteInfo.state} ${siteInfo.zip}` : undefined);
   const topbarAddressHref = topbarConfig?.addressHref || siteInfo?.addressMapUrl || '#';
   const topbarBadge = topbarConfig?.badge || (locale === 'en' ? 'Now accepting new customers' : '欢迎新客户');
+  const showTopbarLanguageSwitcher = topbarConfig?.showLanguageSwitcher !== false;
   
   useEffect(() => {
     if (variant !== 'transparent') return;
@@ -230,7 +232,9 @@ export default function Header({
                 </a>
               )}
             </div>
-            <LanguageSwitcher currentLocale={locale} variant="topbar" />
+            {showTopbarLanguageSwitcher && (
+              <LanguageSwitcher currentLocale={locale} variant="topbar" />
+            )}
           </div>
         </div>
       </div>

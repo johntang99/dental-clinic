@@ -5,7 +5,8 @@
     "address": "",
     "addressHref": "",
     "hours": "",
-    "badge": ""
+    "badge": "",
+    "showLanguageSwitcher": false
   },
   "menu": {
     "logo": {

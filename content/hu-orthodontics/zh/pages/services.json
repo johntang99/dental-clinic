@@ -44,9 +44,9 @@
   },
   "hero": {
     "title": "正畸治疗服务",
-    "variant": "split-photo-left",
+    "variant": "photo-background",
     "subtitle": "从传统牙套到隐适美，为儿童、青少年和成人提供全面的牙齿矫正方案",
-    "backgroundImage": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop"
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1777960918101-photo-1486049125644-f35e226a5e14.jpg"
   },
   "overview": {
     "title": "一站式专业正畸中心",
