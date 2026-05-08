@@ -13,7 +13,6 @@ import ServicesSection from '@/components/sections/ServicesSection';
 import HeroSection from '@/components/sections/HeroSection';
 import { HeroVariant } from '@/lib/section-variants';
 import { Award, Users, Shield } from 'lucide-react';
-import { buildPrimaryServiceSeoLinkMap, type LocalSeoEntryBrief } from '@/lib/localSeo';
 
 interface ServicesPageProps {
   params: {
@@ -71,7 +70,6 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
   const content = await loadPageContent<ServicesPage>('services', locale, siteId);
   const layout = await loadPageContent<PageLayoutConfig>('services.layout', locale, siteId);
   const blogPosts = await loadAllItems<BlogListItem>(siteId, locale, 'blog');
-  const localSeoEntries = await loadAllItems<LocalSeoEntryBrief>(siteId, locale, 'local-seo');
 
   if (!content) {
     notFound();
@@ -92,7 +90,6 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
   const serviceDetailMap = new Map(
     serviceDetailFiles.map((d) => [d.slug, d])
   );
-  const primaryServiceSeoLinks = buildPrimaryServiceSeoLinkMap(localSeoEntries, locale);
   const rawServices = servicesList?.items || [];
   const services = rawServices.map((s: any) => {
     const detail = s.id ? serviceDetailMap.get(s.id) : null;
@@ -119,19 +116,10 @@ export default async function ServicesPageComponent({ params }: ServicesPageProp
       }
     }
 
-    const serviceKey =
-      typeof s.id === 'string'
-        ? s.id
-        : typeof s.slug === 'string'
-          ? s.slug
-          : '';
-    const seoLink = serviceKey ? primaryServiceSeoLinks.get(serviceKey) : undefined;
-
     return {
       ...s,
       benefits,
       whatToExpect,
-      link: seoLink || s.link,
     };
   });
   const categories = (content as any).categories || [];

@@ -106,6 +106,7 @@ function buildCoreLocationPage(location) {
   return {
     slug: `${location.id}-orthodontist`,
     pageType: 'core-location',
+    locationId: location.id,
     topicType: 'core',
     topicSlug: 'orthodontist',
     topicName: `${location.name}正畸医生`,
@@ -138,6 +139,7 @@ function buildServiceLocationPage(location, service) {
   return {
     slug: `${location.id}-${service.slug}`,
     pageType: 'service-location',
+    locationId: location.id,
     topicType: 'service',
     topicSlug: service.slug,
     topicName: service.name,
@@ -174,6 +176,7 @@ function buildConditionLocationPage(location, condition) {
   return {
     slug: `${location.id}-${condition.slug}`,
     pageType: 'condition-location',
+    locationId: location.id,
     topicType: 'condition',
     topicSlug: condition.slug,
     topicName: condition.name,
@@ -210,6 +213,7 @@ function buildResourceLocationPages(location) {
     {
       slug: `${location.id}-orthodontics-cost`,
       pageType: 'resource-location',
+      locationId: location.id,
       topicType: 'resource',
       topicSlug: 'orthodontics-cost',
       topicName: '正畸费用',
@@ -234,6 +238,7 @@ function buildResourceLocationPages(location) {
     {
       slug: `${location.id}-orthodontics-insurance`,
       pageType: 'resource-location',
+      locationId: location.id,
       topicType: 'resource',
       topicSlug: 'orthodontics-insurance',
       topicName: '正畸保险',
@@ -258,6 +263,7 @@ function buildResourceLocationPages(location) {
     {
       slug: `${location.id}-braces-vs-invisalign`,
       pageType: 'resource-location',
+      locationId: location.id,
       topicType: 'resource',
       topicSlug: 'braces-vs-invisalign',
       topicName: '牙套与隐适美对比',

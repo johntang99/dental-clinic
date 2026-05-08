@@ -1,6 +1,7 @@
 {
   "slug": "flushing-spacing",
   "pageType": "condition-location",
+  "locationId": "flushing",
   "topicType": "condition",
   "topicSlug": "spacing",
   "topicName": "牙缝过大",
