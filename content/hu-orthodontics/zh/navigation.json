@@ -35,7 +35,9 @@
           "url": "/services/self-ligating-braces",
           "label": "自锁牙套"
         },
-        { "divider": true },
+        {
+          "divider": true
+        },
         {
           "url": "/services#aligners",
           "label": "隐形矫正",
@@ -49,7 +51,9 @@
           "url": "/services/invisalign-teen",
           "label": "青少年隐适美"
         },
-        { "divider": true },
+        {
+          "divider": true
+        },
         {
           "url": "/services#by-age",
           "label": "各年龄段正畸",

@@ -14,14 +14,14 @@
   },
   "hero": {
     "title": "胡林医生团队",
+    "gallery": [
+      "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1776465509800-team-discussion-2.png"
+    ],
     "variant": "gallery-background",
     "subtitle": "胡林医生是美国正畸专科医师协会认证的正畸医生，也是纽约华人社区中少数几位在2007年、2008年和2020年三次获得重新认证的正畸医生之一。他是美国正畸医师协会的活跃成员。目前，他在皇后区和长岛大颈地区开展最先进的正畸治疗业务。",
     "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1777952545168-medical-team-in-modern-office-2.png",
     "photoOverlayOpacity": 0.05,
-    "photoContentPosition": "left-below",
-    "gallery": [
-      "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1776465509800-team-discussion-2.png"
-    ]
+    "photoContentPosition": "left-below"
   },
   "clinic": {
     "title": "关于胡林正畸中心",

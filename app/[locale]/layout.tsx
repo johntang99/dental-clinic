@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { headers } from 'next/headers';
-import { defaultLocale, locales, type Locale } from '@/lib/i18n';
+import { locales, type Locale } from '@/lib/i18n';
 import { getDefaultSite, getSiteById } from '@/lib/sites';
 import {
   getRequestSiteId,
@@ -13,7 +13,7 @@ import {
 import type { FooterSection, SeoConfig, SiteInfo } from '@/lib/types';
 import Header, { type HeaderConfig } from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { getBaseUrlFromHost } from '@/lib/seo';
+import { getBaseUrlFromHost, resolveSeoLocalesForPage } from '@/lib/seo';
 import { getSiteDisplayName } from '@/lib/siteInfo';
 
 export async function generateStaticParams() {
@@ -54,8 +54,18 @@ export async function generateMetadata({
     siteInfo?.description ||
     'Professional services, scheduling, and customer support.';
   const titleDefault = seo?.title || titleBase;
-  const canonical = new URL(`/${locale}`, baseUrl).toString();
-  const languageAlternates = locales.reduce<Record<string, string>>((acc, entry) => {
+  const siteLocales = (site.supportedLocales?.length ? site.supportedLocales : locales) as Locale[];
+  const activeLocales = await resolveSeoLocalesForPage({
+    siteId: site.id,
+    candidateLocales: siteLocales,
+    slug: 'home',
+  });
+  const xDefaultLocale = activeLocales.includes(site.defaultLocale)
+    ? site.defaultLocale
+    : activeLocales[0] || locale;
+  const isIndexableLocale = activeLocales.includes(locale);
+  const canonicalUrl = new URL(`/${isIndexableLocale ? locale : xDefaultLocale}`, baseUrl).toString();
+  const languageAlternates = activeLocales.reduce<Record<string, string>>((acc, entry) => {
     acc[entry] = new URL(`/${entry}`, baseUrl).toString();
     return acc;
   }, {});
@@ -68,16 +78,28 @@ export async function generateMetadata({
     },
     description,
     alternates: {
-      canonical,
+      canonical: canonicalUrl,
       languages: {
         ...languageAlternates,
-        'x-default': new URL(`/${defaultLocale}`, baseUrl).toString(),
+        'x-default': new URL(`/${xDefaultLocale}`, baseUrl).toString(),
       },
     },
+    robots: isIndexableLocale
+      ? undefined
+      : {
+          index: false,
+          follow: false,
+          nocache: true,
+          googleBot: {
+            index: false,
+            follow: false,
+            noimageindex: true,
+          },
+        },
     openGraph: {
       title: titleDefault,
       description,
-      url: canonical,
+      url: canonicalUrl,
       siteName: titleBase,
       locale,
       type: 'website',
@@ -117,6 +139,15 @@ export default async function LocaleLayout({
   
   if (!site) {
     return <div>No site configured</div>;
+  }
+  const siteLocales = (site.supportedLocales?.length ? site.supportedLocales : locales) as Locale[];
+  const activeLocales = await resolveSeoLocalesForPage({
+    siteId: site.id,
+    candidateLocales: siteLocales,
+    slug: 'home',
+  });
+  if (!activeLocales.includes(locale as Locale)) {
+    notFound();
   }
   
   // Load theme

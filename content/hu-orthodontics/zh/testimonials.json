@@ -1,0 +1,68 @@
+[
+  {
+    "id": "t001",
+    "date": "2025-10-15",
+    "text": "胡医生非常专业和耐心。我女儿今年12岁，牙齿比较拥挤。胡医生详细解释了治疗方案和时间表，让我们非常放心。中文沟通让整个过程轻松很多。",
+    "rating": 5,
+    "source": "google",
+    "featured": true,
+    "language": "zh",
+    "patientName": "王女士",
+    "serviceCategory": "青少年矫正"
+  },
+  {
+    "id": "t002",
+    "date": "2025-09-20",
+    "text": "作为一个成年人，一直觉得矫正牙齿太晚了。胡医生给我用了隐适美，戴着几乎看不出来，同事都没发现。现在治疗快结束了，效果非常满意。",
+    "rating": 5,
+    "source": "google",
+    "featured": true,
+    "language": "zh",
+    "patientName": "陈先生",
+    "serviceCategory": "隐适美"
+  },
+  {
+    "id": "t003",
+    "date": "2025-11-05",
+    "text": "胡医生发现我儿子的上颌太窄，建议先做腭扩展再矫正。虽然需要分两个阶段，但效果比直接矫正要好得多。胡医生的诊断非常精准，值得信赖。",
+    "rating": 5,
+    "source": "google",
+    "featured": true,
+    "language": "zh",
+    "patientName": "李妈妈",
+    "serviceCategory": "儿童早期矫治"
+  },
+  {
+    "id": "t004",
+    "date": "2025-08-12",
+    "text": "之前在别的诊所咨询，说我的情况需要做正颌手术。找到胡医生后，他用了一种综合治疗方法，避免了手术，效果也非常好。三次ABO认证确实名不虚传。",
+    "rating": 5,
+    "source": "google",
+    "featured": true,
+    "language": "zh",
+    "patientName": "张先生",
+    "serviceCategory": "复杂正畸"
+  },
+  {
+    "id": "t005",
+    "date": "2026-01-08",
+    "text": "法拉盛诊所位置很方便，坐7号线到终点站走几步就到了。周六也开门，对我们上班族来说太方便了。工作人员都说中文，感觉很亲切。",
+    "rating": 5,
+    "source": "google",
+    "featured": false,
+    "language": "zh",
+    "patientName": "赵女士",
+    "serviceCategory": "传统牙套"
+  },
+  {
+    "id": "t006",
+    "date": "2026-02-15",
+    "text": "Dr. Hu is simply the best orthodontist. His triple ABO certification speaks for itself. My treatment was efficient, and the results exceeded my expectations. The bilingual staff made communication easy for my parents who prefer Mandarin.",
+    "rating": 5,
+    "source": "google",
+    "featured": true,
+    "language": "en",
+    "patientName": "Michael L.",
+    "serviceCategory": "Adult Orthodontics"
+  }
+]

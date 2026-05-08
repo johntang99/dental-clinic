@@ -7,28 +7,28 @@
       "light": "#2D7A22",
       "DEFAULT": "#204e17"
     },
+    "backdrop": {
+      "primary": "#F8FAF7",
+      "secondary": "#FFF8E7"
+    },
     "secondary": {
       "50": "#FFF8E7",
       "dark": "#9E8338",
       "light": "#E0C56A",
       "DEFAULT": "#C9A84C"
-    },
-    "backdrop": {
-      "primary": "#F8FAF7",
-      "secondary": "#FFF8E7"
     }
   },
   "typography": {
+    "body": "1rem",
     "fonts": {
-      "display": "'Noto Serif SC', Georgia, serif",
-      "heading": "'Noto Serif SC', Georgia, serif",
       "body": "'Noto Sans SC', 'Inter', -apple-system, sans-serif",
-      "small": "'Noto Sans SC', 'Inter', -apple-system, sans-serif"
+      "small": "'Noto Sans SC', 'Inter', -apple-system, sans-serif",
+      "display": "'Noto Serif SC', Georgia, serif",
+      "heading": "'Noto Serif SC', Georgia, serif"
     },
+    "small": "0.875rem",
     "display": "3rem",
     "heading": "2.25rem",
-    "subheading": "1.25rem",
-    "body": "1rem",
-    "small": "0.875rem"
+    "subheading": "1.25rem"
   }
 }
