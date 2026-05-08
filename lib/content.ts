@@ -174,18 +174,20 @@ export async function loadAllItems<T>(
   locale: Locale,
   directory: string
 ): Promise<T[]> {
+  const resolvedSiteId = await resolveSiteId(siteId);
+
   if (canUseContentDb()) {
-    const resolvedSiteId = await resolveSiteId(siteId);
     const entries = await listContentEntriesByPrefix(
       resolvedSiteId,
       locale,
       `${directory}/`
     );
-    return entries.map((entry) => entry.data as T);
+    if (entries.length > 0) {
+      return entries.map((entry) => entry.data as T);
+    }
   }
 
   try {
-    const resolvedSiteId = await resolveSiteId(siteId);
     const dirPath = path.join(CONTENT_DIR, resolvedSiteId, locale, directory);
     
     if (!fs.existsSync(dirPath)) {

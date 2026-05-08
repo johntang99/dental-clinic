@@ -1,0 +1,67 @@
+{
+  "slug": "flushing-orthodontics-cost",
+  "pageType": "resource-location",
+  "topicType": "resource",
+  "topicSlug": "orthodontics-cost",
+  "topicName": "正畸费用",
+  "title": "法拉盛正畸费用指南｜胡林正畸中心",
+  "description": "法拉盛正畸费用结构说明，了解初诊、疗程、分期与保险核实流程。",
+  "intro": "本页汇总法拉盛门诊常见正畸费用问题，包括评估流程、疗程变量、分期付款和保险协助。",
+  "highlights": [
+    "费用透明说明",
+    "支持分期",
+    "保险协助核实",
+    "治疗方案按复杂度评估"
+  ],
+  "treatmentSummary": "建议在初诊后确认完整治疗计划，再结合预算与保险方案制定付款节奏。",
+  "relatedServiceSlugs": [
+    "flushing-invisalign",
+    "flushing-adult-orthodontics",
+    "flushing-traditional-braces",
+    "flushing-teen-orthodontics",
+    "flushing-ceramic-braces",
+    "flushing-early-orthodontics"
+  ],
+  "relatedConditionSlugs": [
+    "flushing-crowding",
+    "flushing-deep-bite",
+    "flushing-underbite",
+    "flushing-crossbite"
+  ],
+  "siblingSlug": "great-neck-orthodontics-cost",
+  "location": {
+    "id": "flushing",
+    "name": "法拉盛",
+    "cityState": "Flushing, NY 11354",
+    "clinicName": "法拉盛诊所（总部）",
+    "address": "38-08 Union Street, Suite 4B",
+    "phone": "(718) 353-0880",
+    "addressMapUrl": "https://maps.google.com/?q=38-08+Union+St+Suite+4B+Flushing+NY+11354",
+    "mapsEmbedUrl": "https://maps.google.com/maps?q=Hu+Lin+Orthodontics+38-08+Union+St+Flushing+NY+11354&t=m&z=17&output=embed",
+    "phoneHref": "tel:+17183530880"
+  },
+  "faq": [
+    {
+      "question": "法拉盛正畸费用需要先预约初诊吗？",
+      "answer": "建议先预约免费初诊。胡林医生团队会先做口腔与咬合评估，再给出分阶段治疗建议与时间预估。"
+    },
+    {
+      "question": "法拉盛这项治疗是否支持分期付款？",
+      "answer": "支持。我们提供灵活付款方案，并可协助核实保险福利，帮助您清晰了解自付费用。"
+    },
+    {
+      "question": "法拉盛门诊可以讲中文吗？",
+      "answer": "可以。胡林正畸中心提供中英双语服务，咨询、复诊与治疗说明都可用中文沟通。"
+    },
+    {
+      "question": "多久能看到正畸费用的改善？",
+      "answer": "每位患者起始条件不同，通常在前几个月可以看到牙齿排列变化。完整疗程会在初诊后给出个性化预计。"
+    }
+  ],
+  "cta": {
+    "primaryText": "预约费用评估",
+    "primaryLink": "/zh/book",
+    "secondaryText": "(718) 353-0880",
+    "secondaryLink": "tel:+17183530880"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "great-neck-crowding",
+  "pageType": "condition-location",
+  "topicType": "condition",
+  "topicSlug": "crowding",
+  "topicName": "牙齿拥挤",
+  "title": "大颈牙齿拥挤矫正方案｜胡林正畸中心",
+  "description": "大颈牙齿拥挤正畸评估与治疗建议，ABO认证团队为您定制功能与美观兼顾的方案。",
+  "intro": "牙齿拥挤可能影响咬合功能、口腔清洁效率与面部协调。大颈门诊会先进行咬合分析，再制定分阶段矫正路径。",
+  "highlights": [
+    "先明确问题类型与严重程度",
+    "给出对应治疗路径与风险说明",
+    "提供复诊节奏与家庭护理建议",
+    "支持跨门诊连续随访"
+  ],
+  "treatmentSummary": "治疗方案会结合牙槽骨条件、年龄阶段和配合度综合制定，目标是稳定改善咬合与笑容协调性。",
+  "serviceDetailLink": "/zh/services/traditional-braces",
+  "relatedServiceSlugs": [
+    "great-neck-invisalign",
+    "great-neck-adult-orthodontics",
+    "great-neck-traditional-braces",
+    "great-neck-teen-orthodontics",
+    "great-neck-ceramic-braces",
+    "great-neck-early-orthodontics"
+  ],
+  "relatedConditionSlugs": [
+    "great-neck-deep-bite",
+    "great-neck-underbite",
+    "great-neck-crossbite"
+  ],
+  "siblingSlug": "flushing-crowding",
+  "location": {
+    "id": "great-neck",
+    "name": "大颈",
+    "cityState": "Great Neck, NY 11021",
+    "clinicName": "大颈诊所",
+    "address": "79 Cutter Mill Road",
+    "phone": "(516) 809-8686",
+    "addressMapUrl": "https://maps.google.com/?q=79+Cutter+Mill+Rd+Great+Neck+NY+11021",
+    "mapsEmbedUrl": "https://maps.google.com/maps?q=HU+LIN+Great+Neck+Orthodontics+79+Cutter+Mill+Rd+Great+Neck+NY+11021&t=m&z=17&output=embed",
+    "phoneHref": "tel:+15168098686"
+  },
+  "faq": [
+    {
+      "question": "大颈牙齿拥挤需要先预约初诊吗？",
+      "answer": "建议先预约免费初诊。胡林医生团队会先做口腔与咬合评估，再给出分阶段治疗建议与时间预估。"
+    },
+    {
+      "question": "大颈这项治疗是否支持分期付款？",
+      "answer": "支持。我们提供灵活付款方案，并可协助核实保险福利，帮助您清晰了解自付费用。"
+    },
+    {
+      "question": "大颈门诊可以讲中文吗？",
+      "answer": "可以。胡林正畸中心提供中英双语服务，咨询、复诊与治疗说明都可用中文沟通。"
+    },
+    {
+      "question": "多久能看到牙齿拥挤的改善？",
+      "answer": "每位患者起始条件不同，通常在前几个月可以看到牙齿排列变化。完整疗程会在初诊后给出个性化预计。"
+    }
+  ],
+  "cta": {
+    "primaryText": "预约问题评估",
+    "primaryLink": "/zh/book",
+    "secondaryText": "(516) 809-8686",
+    "secondaryLink": "tel:+15168098686"
+  }
+}

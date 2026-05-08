@@ -1,0 +1,65 @@
+{
+  "slug": "flushing-braces-vs-invisalign",
+  "pageType": "resource-location",
+  "topicType": "resource",
+  "topicSlug": "braces-vs-invisalign",
+  "topicName": "牙套与隐适美对比",
+  "title": "法拉盛牙套 vs 隐适美｜胡林正畸中心",
+  "description": "法拉盛牙套与隐适美对比指南，帮助您结合咬合情况与生活方式选择合适方案。",
+  "intro": "牙套和隐适美各有适应症。法拉盛门诊会根据牙齿移动难度、外观需求和配合度，给出更适合的方案建议。",
+  "highlights": [
+    "复杂病例可考虑牙套",
+    "外观需求高可评估隐适美",
+    "疗程与复诊节奏可对比",
+    "以功能稳定为最终目标"
+  ],
+  "treatmentSummary": "不是单纯选“更美观”或“更传统”，关键是与咬合目标、时间安排和配合能力匹配。",
+  "relatedServiceSlugs": [
+    "flushing-invisalign",
+    "flushing-traditional-braces",
+    "flushing-ceramic-braces",
+    "flushing-adult-orthodontics"
+  ],
+  "relatedConditionSlugs": [
+    "flushing-crowding",
+    "flushing-deep-bite",
+    "flushing-underbite",
+    "flushing-crossbite"
+  ],
+  "siblingSlug": "great-neck-braces-vs-invisalign",
+  "location": {
+    "id": "flushing",
+    "name": "法拉盛",
+    "cityState": "Flushing, NY 11354",
+    "clinicName": "法拉盛诊所（总部）",
+    "address": "38-08 Union Street, Suite 4B",
+    "phone": "(718) 353-0880",
+    "addressMapUrl": "https://maps.google.com/?q=38-08+Union+St+Suite+4B+Flushing+NY+11354",
+    "mapsEmbedUrl": "https://maps.google.com/maps?q=Hu+Lin+Orthodontics+38-08+Union+St+Flushing+NY+11354&t=m&z=17&output=embed",
+    "phoneHref": "tel:+17183530880"
+  },
+  "faq": [
+    {
+      "question": "法拉盛牙套与隐适美对比需要先预约初诊吗？",
+      "answer": "建议先预约免费初诊。胡林医生团队会先做口腔与咬合评估，再给出分阶段治疗建议与时间预估。"
+    },
+    {
+      "question": "法拉盛这项治疗是否支持分期付款？",
+      "answer": "支持。我们提供灵活付款方案，并可协助核实保险福利，帮助您清晰了解自付费用。"
+    },
+    {
+      "question": "法拉盛门诊可以讲中文吗？",
+      "answer": "可以。胡林正畸中心提供中英双语服务，咨询、复诊与治疗说明都可用中文沟通。"
+    },
+    {
+      "question": "多久能看到牙套与隐适美对比的改善？",
+      "answer": "每位患者起始条件不同，通常在前几个月可以看到牙齿排列变化。完整疗程会在初诊后给出个性化预计。"
+    }
+  ],
+  "cta": {
+    "primaryText": "预约方案对比咨询",
+    "primaryLink": "/zh/book",
+    "secondaryText": "(718) 353-0880",
+    "secondaryLink": "tel:+17183530880"
+  }
+}

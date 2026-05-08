@@ -53,6 +53,11 @@ async function listServiceSlugs(siteId: string, locale: Locale) {
   return listJsonEntries(servicesDir);
 }
 
+async function listLocalSeoSlugs(siteId: string, locale: Locale) {
+  const localSeoDir = path.join(CONTENT_DIR, siteId, locale, 'local-seo');
+  return listJsonEntries(localSeoDir);
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const host = headers().get('host');
   const baseUrl = getBaseUrlFromHost(host);
@@ -85,6 +90,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Pages
     const pageEntries = await listPageSlugs(site.id, locale);
+    const pageSlugSet = new Set(pageEntries.map((entry) => entry.slug));
     for (const pageEntry of pageEntries) {
       entries.push({
         url: new URL(`/${locale}/${pageEntry.slug}`, baseUrl).toString(),
@@ -107,6 +113,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       entries.push({
         url: new URL(`/${locale}/services/${serviceEntry.slug}`, baseUrl).toString(),
         lastModified: serviceEntry.lastModified,
+      });
+    }
+
+    // Local SEO landing pages (e.g., /zh/flushing-invisalign)
+    const localSeoEntries = await listLocalSeoSlugs(site.id, locale);
+    for (const localSeoEntry of localSeoEntries) {
+      if (pageSlugSet.has(localSeoEntry.slug)) continue;
+      entries.push({
+        url: new URL(`/${locale}/${localSeoEntry.slug}`, baseUrl).toString(),
+        lastModified: localSeoEntry.lastModified,
       });
     }
   }

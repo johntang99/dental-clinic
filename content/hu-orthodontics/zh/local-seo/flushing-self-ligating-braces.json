@@ -1,0 +1,68 @@
+{
+  "slug": "flushing-self-ligating-braces",
+  "pageType": "service-location",
+  "topicType": "service",
+  "topicSlug": "self-ligating-braces",
+  "topicName": "自锁牙套",
+  "title": "法拉盛自锁牙套｜胡林正畸中心",
+  "description": "法拉盛自锁牙套专业评估与治疗方案，ABO认证正畸团队，支持中英双语沟通与分期付款。",
+  "intro": "法拉盛门诊提供自锁牙套评估与治疗。我们会根据牙齿排列、咬合关系与生活习惯制定个性化方案，兼顾治疗效率与舒适度。",
+  "highlights": [
+    "法拉盛门诊可预约初诊与复诊",
+    "个性化治疗计划与阶段目标",
+    "治疗过程可视化追踪",
+    "适合华人家庭的中英双语沟通"
+  ],
+  "treatmentSummary": "先评估再治疗：明确适应症、疗程预估、复诊节奏与护理重点，帮助患者稳定推进矫正进度。",
+  "serviceDetailLink": "/zh/services/self-ligating-braces",
+  "relatedServiceSlugs": [
+    "flushing-invisalign",
+    "flushing-adult-orthodontics",
+    "flushing-traditional-braces",
+    "flushing-teen-orthodontics",
+    "flushing-ceramic-braces",
+    "flushing-early-orthodontics"
+  ],
+  "relatedConditionSlugs": [
+    "flushing-crowding",
+    "flushing-deep-bite",
+    "flushing-underbite",
+    "flushing-crossbite"
+  ],
+  "siblingSlug": "great-neck-self-ligating-braces",
+  "location": {
+    "id": "flushing",
+    "name": "法拉盛",
+    "cityState": "Flushing, NY 11354",
+    "clinicName": "法拉盛诊所（总部）",
+    "address": "38-08 Union Street, Suite 4B",
+    "phone": "(718) 353-0880",
+    "addressMapUrl": "https://maps.google.com/?q=38-08+Union+St+Suite+4B+Flushing+NY+11354",
+    "mapsEmbedUrl": "https://maps.google.com/maps?q=Hu+Lin+Orthodontics+38-08+Union+St+Flushing+NY+11354&t=m&z=17&output=embed",
+    "phoneHref": "tel:+17183530880"
+  },
+  "faq": [
+    {
+      "question": "法拉盛自锁牙套需要先预约初诊吗？",
+      "answer": "建议先预约免费初诊。胡林医生团队会先做口腔与咬合评估，再给出分阶段治疗建议与时间预估。"
+    },
+    {
+      "question": "法拉盛这项治疗是否支持分期付款？",
+      "answer": "支持。我们提供灵活付款方案，并可协助核实保险福利，帮助您清晰了解自付费用。"
+    },
+    {
+      "question": "法拉盛门诊可以讲中文吗？",
+      "answer": "可以。胡林正畸中心提供中英双语服务，咨询、复诊与治疗说明都可用中文沟通。"
+    },
+    {
+      "question": "多久能看到自锁牙套的改善？",
+      "answer": "每位患者起始条件不同，通常在前几个月可以看到牙齿排列变化。完整疗程会在初诊后给出个性化预计。"
+    }
+  ],
+  "cta": {
+    "primaryText": "预约该项目咨询",
+    "primaryLink": "/zh/book",
+    "secondaryText": "(718) 353-0880",
+    "secondaryLink": "tel:+17183530880"
+  }
+}

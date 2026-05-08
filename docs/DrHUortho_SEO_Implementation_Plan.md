@@ -98,7 +98,7 @@ Expected principles:
 
 Validation:
 ```bash
-curl -H "Host: drhuortho.com" https://drhuortho.com/robots.txt
+curl https://www.drhuortho.com/robots.txt
 ```
 
 Pass criteria:
@@ -114,7 +114,7 @@ Expected principles:
 
 Validation:
 ```bash
-curl -H "Host: drhuortho.com" https://drhuortho.com/sitemap.xml
+curl https://www.drhuortho.com/sitemap.xml
 ```
 
 Pass criteria:

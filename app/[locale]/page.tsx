@@ -16,6 +16,7 @@ import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection';
 import CTASection from '@/components/sections/CTASection';
 import CaseStudiesPreviewSection from '@/components/sections/CaseStudiesPreviewSection';
 import { getSiteDisplayName } from '@/lib/siteInfo';
+import { buildPrimaryServiceSeoLinkMap, type LocalSeoEntryBrief } from '@/lib/localSeo';
 
 interface PageProps {
   params: {
@@ -111,6 +112,7 @@ export default async function HomePage({ params }: PageProps) {
   const layout = await loadPageContent<PageLayoutConfig>('home.layout', locale, siteId);
   const servicesPageData = await loadPageContent<{ categories?: Array<{ id: string; image?: string }> }>('services', locale, siteId);
   const blogPosts = await loadAllItems<BlogPost>(siteId, locale, 'blog');
+  const localSeoEntries = await loadAllItems<LocalSeoEntryBrief>(siteId, locale, 'local-seo');
   const caseStudiesPage = await loadPageContent<{ caseStudies?: any[] }>('case-studies', locale, siteId);
   const testimonialsData = await loadContent<any[]>(siteId, locale as Locale, 'testimonials.json') || [];
 
@@ -130,18 +132,27 @@ export default async function HomePage({ params }: PageProps) {
     content.blog = { ...content.blog, posts: homePosts };
   }
 
-  // Merge category images from services.json into home services
-  if (content.services?.services && servicesPageData?.categories) {
+  // Merge service SEO links and category images into homepage services cards.
+  if (content.services?.services) {
+    const primaryServiceSeoLinks = buildPrimaryServiceSeoLinkMap(localSeoEntries, locale);
     const categoryImageMap = new Map(
-      servicesPageData.categories
+      (servicesPageData?.categories || [])
         .filter((c) => c.image)
         .map((c) => [c.id, c.image])
     );
     content.services.services = content.services.services.map((service: any) => {
+      const serviceKey =
+        typeof service.id === 'string'
+          ? service.id
+          : typeof service.slug === 'string'
+            ? service.slug
+            : '';
+      const seoLink = serviceKey ? primaryServiceSeoLinks.get(serviceKey) : undefined;
+      const resolvedLink = seoLink || service.link;
       if (!service.image && service.id && categoryImageMap.has(service.id)) {
-        return { ...service, image: categoryImageMap.get(service.id) };
+        return { ...service, image: categoryImageMap.get(service.id), link: resolvedLink };
       }
-      return service;
+      return resolvedLink ? { ...service, link: resolvedLink } : service;
     });
   }
 
