@@ -293,6 +293,29 @@ Every indexed page must receive:
 - at least 1 nav/footer/internal entry link;
 - at least 1 contextual in-content link.
 
+### 4.4 Homepage SEO hub block (implemented)
+
+Implementation decision:
+- Keep `hero.primaryCta` for booking only (do not replace with SEO landing URL).
+- Add a dedicated homepage block: `seoHub` to surface local SEO entries.
+
+Where configured:
+- `content/hu-orthodontics/zh/pages/home.json` -> `seoHub`
+- `content/hu-orthodontics/zh/pages/home.layout.json` -> section id `seoHub`
+- rendered by `components/sections/SeoHubLinksSection.tsx`
+
+Homepage SEO hub links (10):
+- `/zh/flushing-orthodontist`
+- `/zh/great-neck-orthodontist`
+- `/zh/flushing-invisalign`
+- `/zh/great-neck-invisalign`
+- `/zh/flushing-adult-orthodontics`
+- `/zh/great-neck-teen-orthodontics`
+- `/zh/flushing-traditional-braces`
+- `/zh/great-neck-traditional-braces`
+- `/zh/flushing-orthodontics-cost`
+- `/zh/great-neck-braces-vs-invisalign`
+
 ---
 
 ## Phase 5 — Schema + GBP + Citation System (P1)

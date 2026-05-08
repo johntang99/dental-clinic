@@ -35,7 +35,7 @@
   ],
   "icon": "GraduationCap",
   "slug": "teen-orthodontics",
-  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/blog/1776495604071-invisalign-complete-guide.jpg",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1778008886322-article-20240606165543-c7c0a384141a437c94b5c03652e859a6.jpg",
   "price": "起价 $3,500",
   "title": "青少年正畸",
   "category": "by-age",
@@ -43,7 +43,7 @@
   "sections": [
     {
       "type": "intro",
-      "image": "https://images.unsplash.com/photo-1445527815219-ecbfec455359?w=600&h=450&fit=crop",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/blog/1776495604071-invisalign-complete-guide.jpg",
       "title": "什么是青少年全面正畸？",
       "content": "青少年时期（通常十一到十四岁）是进行全面正畸治疗最有利的时期。在这个阶段，大多数恒牙已经萌出，颌骨仍有足够的残余生长潜力来促进高效的牙齿移动和咬合矫正。利用青少年的自然生长潜力，可以实现在成年后可能更复杂或更耗时的矫正效果。",
       "content2": "我们为青少年提供多种治疗选择，包括传统金属牙套、陶瓷牙套、自锁牙套和隐适美青少年版。胡林医生将与每位青少年及其家长合作，根据临床需求、生活方式偏好和个人意愿，选择在矫正效果、美观性和实用性之间最佳平衡的治疗方式。",
@@ -51,7 +51,7 @@
     },
     {
       "type": "candidates",
-      "image": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=450&fit=crop",
+      "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/blog/1776495604071-invisalign-complete-guide.jpg",
       "items": [
         "恒牙已基本萌出的青少年（通常十一至十四岁）",
         "牙齿拥挤、排列不齐或扭转",

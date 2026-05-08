@@ -15,6 +15,7 @@ import FirstVisitSection from '@/components/sections/FirstVisitSection';
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection';
 import CTASection from '@/components/sections/CTASection';
 import CaseStudiesPreviewSection from '@/components/sections/CaseStudiesPreviewSection';
+import SeoHubLinksSection from '@/components/sections/SeoHubLinksSection';
 import { getSiteDisplayName } from '@/lib/siteInfo';
 
 interface PageProps {
@@ -63,12 +64,38 @@ interface HomePageContent {
   firstVisit?: any;
   whyChooseUs?: any;
   caseStudies?: any;
+  seoHub?: {
+    badge?: string;
+    title: string;
+    subtitle?: string;
+    links: Array<{ text: string; url: string }>;
+  };
   cta?: any;
 }
 
 interface PageLayoutConfig {
   sections: Array<{ id: string }>;
 }
+
+const huOrthodonticsSeoHubDefault = {
+  badge: '本地专题入口',
+  title: '法拉盛 / 大颈正畸专题',
+  subtitle: '快速进入高需求项目页面：门诊入口、隐适美、牙套、费用与对比。',
+  links: [
+    { text: '法拉盛正畸医生', url: '/zh/flushing-orthodontist' },
+    { text: '大颈正畸医生', url: '/zh/great-neck-orthodontist' },
+    { text: '法拉盛隐适美', url: '/zh/flushing-invisalign' },
+    { text: '大颈隐适美', url: '/zh/great-neck-invisalign' },
+    { text: '法拉盛成人正畸', url: '/zh/flushing-adult-orthodontics' },
+    { text: '大颈青少年正畸', url: '/zh/great-neck-teen-orthodontics' },
+    { text: '法拉盛传统牙套', url: '/zh/flushing-traditional-braces' },
+    { text: '大颈传统牙套', url: '/zh/great-neck-traditional-braces' },
+    { text: '法拉盛正畸费用', url: '/zh/flushing-orthodontics-cost' },
+    { text: '大颈正畸费用', url: '/zh/great-neck-orthodontics-cost' },
+    { text: '法拉盛牙套 vs 隐适美', url: '/zh/flushing-braces-vs-invisalign' },
+    { text: '大颈牙套 vs 隐适美', url: '/zh/great-neck-braces-vs-invisalign' },
+  ],
+};
 
 export async function generateMetadata({ params }: PageProps) {
   const { locale } = params;
@@ -118,6 +145,11 @@ export default async function HomePage({ params }: PageProps) {
     notFound();
   }
 
+  // Ensure hu-orthodontics homepage always has a dedicated local SEO hub block.
+  if (siteId === 'hu-orthodontics' && locale === 'zh' && !content.seoHub) {
+    content.seoHub = huOrthodonticsSeoHubDefault;
+  }
+
   // Auto-populate blog posts on homepage from blog directory
   if (content.blog) {
     const publishedPosts = blogPosts
@@ -154,6 +186,7 @@ export default async function HomePage({ params }: PageProps) {
     'howItWorks',
     'conditions',
     'services',
+    'seoHub',
     'blog',
     'gallery',
     'firstVisit',
@@ -163,6 +196,14 @@ export default async function HomePage({ params }: PageProps) {
   ];
   const layoutSections =
     layout?.sections?.map((section) => section.id).filter(Boolean) || defaultSections;
+  if (content.seoHub && !layoutSections.includes('seoHub')) {
+    const servicesIndex = layoutSections.indexOf('services');
+    if (servicesIndex >= 0) {
+      layoutSections.splice(servicesIndex + 1, 0, 'seoHub');
+    } else {
+      layoutSections.push('seoHub');
+    }
+  }
 
   const renderSection = (sectionId: string) => {
     switch (sectionId) {
@@ -222,6 +263,8 @@ export default async function HomePage({ params }: PageProps) {
         return content.conditions ? <ConditionsSection {...content.conditions} /> : null;
       case 'services':
         return content.services ? <ServicesSection {...content.services} /> : null;
+      case 'seoHub':
+        return content.seoHub ? <SeoHubLinksSection {...content.seoHub} /> : null;
       case 'blog':
         return content.blog ? <BlogPreviewSection locale={locale} {...content.blog} /> : null;
       case 'gallery':
