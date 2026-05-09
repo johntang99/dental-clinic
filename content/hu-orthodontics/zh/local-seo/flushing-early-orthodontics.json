@@ -5,8 +5,9 @@
   "topicType": "service",
   "topicSlug": "early-orthodontics",
   "topicName": "早期正畸",
-  "title": "法拉盛早期正畸｜胡林正畸中心",
-  "description": "法拉盛早期正畸专业评估与治疗方案，ABO认证正畸团队，支持中英双语沟通与分期付款。",
+  "useServiceRichTemplate": true,
+  "title": "法拉盛早期正畸｜7-10岁早期干预｜胡林正畸中心",
+  "description": "法拉盛儿童一期矫治重点解决颌骨发育与咬合风险，帮助降低后续治疗复杂度并预留牙列空间。",
   "intro": "法拉盛门诊提供早期正畸评估与治疗。我们会根据牙齿排列、咬合关系与生活习惯制定个性化方案，兼顾治疗效率与舒适度。",
   "highlights": [
     "法拉盛门诊可预约初诊与复诊",
@@ -21,7 +22,13 @@
     "flushing-adult-orthodontics",
     "flushing-traditional-braces",
     "flushing-teen-orthodontics",
-    "flushing-ceramic-braces"
+    "flushing-ceramic-braces",
+    "flushing-self-ligating-braces",
+    "flushing-invisalign-teen",
+    "flushing-surgical-orthodontics",
+    "flushing-palatal-expanders",
+    "flushing-retainers",
+    "flushing-emergency-orthodontics"
   ],
   "relatedConditionSlugs": [
     "flushing-crowding",
@@ -43,20 +50,16 @@
   },
   "faq": [
     {
-      "question": "法拉盛早期正畸需要先预约初诊吗？",
-      "answer": "建议先预约免费初诊。胡林医生团队会先做口腔与咬合评估，再给出分阶段治疗建议与时间预估。"
+      "question": "法拉盛儿童早期正畸建议几岁初评？",
+      "answer": "通常建议7岁左右进行首次正畸评估，便于及早识别颌骨发育与牙列空间问题，抓住生长窗口进行干预。"
     },
     {
-      "question": "法拉盛这项治疗是否支持分期付款？",
-      "answer": "支持。我们提供灵活付款方案，并可协助核实保险福利，帮助您清晰了解自付费用。"
+      "question": "法拉盛一期干预的目标是什么？",
+      "answer": "目标是改善颌骨发育方向、缓解拥挤风险、优化咬合关系，并为二期全面矫治创造更稳定的基础。"
     },
     {
-      "question": "法拉盛门诊可以讲中文吗？",
-      "answer": "可以。胡林正畸中心提供中英双语服务，咨询、复诊与治疗说明都可用中文沟通。"
-    },
-    {
-      "question": "多久能看到早期正畸的改善？",
-      "answer": "每位患者起始条件不同，通常在前几个月可以看到牙齿排列变化。完整疗程会在初诊后给出个性化预计。"
+      "question": "法拉盛做早期正畸后还需要二期治疗吗？",
+      "answer": "部分孩子后续仍需二期精细排齐。早期干预并非替代全部治疗，而是降低复杂度、提升长期稳定性的关键步骤。"
     }
   ],
   "cta": {

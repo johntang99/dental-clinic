@@ -5,8 +5,9 @@
   "topicType": "service",
   "topicSlug": "emergency-orthodontics",
   "topicName": "正畸急诊",
-  "title": "法拉盛正畸急诊｜胡林正畸中心",
-  "description": "法拉盛正畸急诊专业评估与治疗方案，ABO认证正畸团队，支持中英双语沟通与分期付款。",
+  "useServiceRichTemplate": true,
+  "title": "法拉盛正畸急诊｜托槽脱落与弓丝扎嘴急诊｜胡林正畸中心",
+  "description": "法拉盛针对托槽脱落、弓丝刺激、附件松脱等突发问题，提供快速处理与疗程衔接，减少治疗中断。",
   "intro": "法拉盛门诊提供正畸急诊评估与治疗。我们会根据牙齿排列、咬合关系与生活习惯制定个性化方案，兼顾治疗效率与舒适度。",
   "highlights": [
     "法拉盛门诊可预约初诊与复诊",
@@ -22,7 +23,12 @@
     "flushing-traditional-braces",
     "flushing-teen-orthodontics",
     "flushing-ceramic-braces",
-    "flushing-early-orthodontics"
+    "flushing-early-orthodontics",
+    "flushing-self-ligating-braces",
+    "flushing-invisalign-teen",
+    "flushing-surgical-orthodontics",
+    "flushing-palatal-expanders",
+    "flushing-retainers"
   ],
   "relatedConditionSlugs": [
     "flushing-crowding",
@@ -44,20 +50,16 @@
   },
   "faq": [
     {
-      "question": "法拉盛正畸急诊需要先预约初诊吗？",
-      "answer": "建议先预约免费初诊。胡林医生团队会先做口腔与咬合评估，再给出分阶段治疗建议与时间预估。"
+      "question": "法拉盛哪些情况属于正畸急诊？",
+      "answer": "常见包括托槽脱落、弓丝扎嘴、附件松动、器械破损引发疼痛等。建议尽快联系门诊评估处理。"
     },
     {
-      "question": "法拉盛这项治疗是否支持分期付款？",
-      "answer": "支持。我们提供灵活付款方案，并可协助核实保险福利，帮助您清晰了解自付费用。"
+      "question": "法拉盛急诊当天能做哪些处理？",
+      "answer": "会先缓解不适并恢复装置基本功能，再评估是否需要后续复诊调整，尽量减少对整体疗程的影响。"
     },
     {
-      "question": "法拉盛门诊可以讲中文吗？",
-      "answer": "可以。胡林正畸中心提供中英双语服务，咨询、复诊与治疗说明都可用中文沟通。"
-    },
-    {
-      "question": "多久能看到正畸急诊的改善？",
-      "answer": "每位患者起始条件不同，通常在前几个月可以看到牙齿排列变化。完整疗程会在初诊后给出个性化预计。"
+      "question": "法拉盛急诊后会影响原本疗程吗？",
+      "answer": "多数情况可通过及时处理快速回到原计划。拖延处理更可能导致进度延后或额外复诊。"
     }
   ],
   "cta": {

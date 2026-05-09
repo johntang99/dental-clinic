@@ -5,8 +5,9 @@
   "topicType": "service",
   "topicSlug": "retainers",
   "topicName": "保持器",
-  "title": "法拉盛保持器｜胡林正畸中心",
-  "description": "法拉盛保持器专业评估与治疗方案，ABO认证正畸团队，支持中英双语沟通与分期付款。",
+  "useServiceRichTemplate": true,
+  "title": "法拉盛保持器｜矫正后稳定保持｜胡林正畸中心",
+  "description": "法拉盛保持器阶段用于稳定矫治结果，降低复发风险，提供佩戴周期、复查节奏与维护指导。",
   "intro": "法拉盛门诊提供保持器评估与治疗。我们会根据牙齿排列、咬合关系与生活习惯制定个性化方案，兼顾治疗效率与舒适度。",
   "highlights": [
     "法拉盛门诊可预约初诊与复诊",
@@ -22,7 +23,12 @@
     "flushing-traditional-braces",
     "flushing-teen-orthodontics",
     "flushing-ceramic-braces",
-    "flushing-early-orthodontics"
+    "flushing-early-orthodontics",
+    "flushing-self-ligating-braces",
+    "flushing-invisalign-teen",
+    "flushing-surgical-orthodontics",
+    "flushing-palatal-expanders",
+    "flushing-emergency-orthodontics"
   ],
   "relatedConditionSlugs": [
     "flushing-crowding",
@@ -44,20 +50,16 @@
   },
   "faq": [
     {
-      "question": "法拉盛保持器需要先预约初诊吗？",
-      "answer": "建议先预约免费初诊。胡林医生团队会先做口腔与咬合评估，再给出分阶段治疗建议与时间预估。"
+      "question": "法拉盛为什么矫正后一定要戴保持器？",
+      "answer": "牙齿在矫治后有回弹趋势，保持器用于稳定新位置，降低复发风险，是长期效果管理的关键阶段。"
     },
     {
-      "question": "法拉盛这项治疗是否支持分期付款？",
-      "answer": "支持。我们提供灵活付款方案，并可协助核实保险福利，帮助您清晰了解自付费用。"
+      "question": "法拉盛保持器要戴多久？",
+      "answer": "具体周期因人而异，通常先全时佩戴再过渡到夜间佩戴。我们会根据复查结果给出个体化安排。"
     },
     {
-      "question": "法拉盛门诊可以讲中文吗？",
-      "answer": "可以。胡林正畸中心提供中英双语服务，咨询、复诊与治疗说明都可用中文沟通。"
-    },
-    {
-      "question": "多久能看到保持器的改善？",
-      "answer": "每位患者起始条件不同，通常在前几个月可以看到牙齿排列变化。完整疗程会在初诊后给出个性化预计。"
+      "question": "法拉盛保持器损坏或遗失怎么办？",
+      "answer": "建议尽快联系门诊重做，避免间隔过长导致牙齿位移。及时处理能显著降低返工风险。"
     }
   ],
   "cta": {

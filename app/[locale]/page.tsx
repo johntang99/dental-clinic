@@ -32,7 +32,17 @@ interface HomePageContent {
     };
   };
   hero: {
-    variant: 'centered' | 'split-photo-right' | 'split-photo-left' | 'overlap' | 'photo-background' | 'video-background';
+    variant:
+      | 'centered'
+      | 'split-photo-right'
+      | 'split-photo-left'
+      | 'overlap'
+      | 'photo-background'
+      | 'photo-screenwide-top'
+      | 'video-background'
+      | 'gallery-background'
+      | 'gallery-screenwide-top'
+      | 'smile-draw';
     businessName?: string;
     clinicName?: string;
     tagline: string;
@@ -45,6 +55,7 @@ interface HomePageContent {
     floatingTags?: string[];
     photoOverlayOpacity?: number;
     photoContentPosition?: 'center' | 'center-below' | 'left' | 'left-below' | 'lower';
+    screenwideHeightDesktop?: number;
     stats?: Array<{
       icon?: string;
       number: string;
@@ -80,7 +91,7 @@ interface PageLayoutConfig {
 const huOrthodonticsSeoHubDefault = {
   badge: '本地专题入口',
   title: '法拉盛 / 大颈正畸专题',
-  subtitle: '快速进入高需求项目页面：门诊入口、隐适美、牙套、费用与对比。',
+  subtitle: '快速进入高需求项目页面：门诊入口、隐适美、牙套、费用与问题总览。',
   links: [
     { text: '法拉盛正畸医生', url: '/zh/flushing-orthodontist' },
     { text: '大颈正畸医生', url: '/zh/great-neck-orthodontist' },
@@ -92,8 +103,8 @@ const huOrthodonticsSeoHubDefault = {
     { text: '大颈传统牙套', url: '/zh/great-neck-traditional-braces' },
     { text: '法拉盛正畸费用', url: '/zh/flushing-orthodontics-cost' },
     { text: '大颈正畸费用', url: '/zh/great-neck-orthodontics-cost' },
-    { text: '法拉盛牙套 vs 隐适美', url: '/zh/flushing-braces-vs-invisalign' },
-    { text: '大颈牙套 vs 隐适美', url: '/zh/great-neck-braces-vs-invisalign' },
+    { text: '法拉盛问题总览', url: '/zh/flushing-conditions' },
+    { text: '大颈问题总览', url: '/zh/great-neck-conditions' },
   ],
 };
 
@@ -145,9 +156,21 @@ export default async function HomePage({ params }: PageProps) {
     notFound();
   }
 
-  // Ensure hu-orthodontics homepage always has a dedicated local SEO hub block.
-  if (siteId === 'hu-orthodontics' && locale === 'zh' && !content.seoHub) {
-    content.seoHub = huOrthodonticsSeoHubDefault;
+  // Ensure hu-orthodontics homepage keeps a stable local SEO hub set and order.
+  if (siteId === 'hu-orthodontics' && locale === 'zh') {
+    const currentSeoHub = content.seoHub;
+    const existingLinks: Array<{ text: string; url: string }> = Array.isArray(currentSeoHub?.links)
+      ? currentSeoHub.links
+      : [];
+    const existingByUrl = new Map(existingLinks.map((link) => [link.url, link]));
+    const normalizedLinks = huOrthodonticsSeoHubDefault.links.map(
+      (link) => existingByUrl.get(link.url) ?? link
+    );
+    content.seoHub = {
+      ...huOrthodonticsSeoHubDefault,
+      ...(currentSeoHub ?? {}),
+      links: normalizedLinks,
+    };
   }
 
   // Auto-populate blog posts on homepage from blog directory
@@ -233,6 +256,11 @@ export default async function HomePage({ params }: PageProps) {
               hero.photoContentPosition === 'lower'
                 ? hero.photoContentPosition
                 : 'left-below'
+            }
+            screenwideHeightDesktop={
+              typeof hero.screenwideHeightDesktop === 'number'
+                ? hero.screenwideHeightDesktop
+                : undefined
             }
             priority
           />

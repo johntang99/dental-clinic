@@ -5,8 +5,9 @@
   "topicType": "service",
   "topicSlug": "traditional-braces",
   "topicName": "传统金属牙套",
-  "title": "法拉盛传统金属牙套｜胡林正畸中心",
-  "description": "法拉盛传统金属牙套专业评估与治疗方案，ABO认证正畸团队，支持中英双语沟通与分期付款。",
+  "useServiceRichTemplate": true,
+  "title": "法拉盛传统金属牙套｜中重度咬合不齐矫治｜胡林正畸中心",
+  "description": "法拉盛适合中重度牙齿拥挤、深覆合与咬合不齐。ABO认证团队提供分阶段调弓与咬合精调方案。",
   "intro": "法拉盛门诊提供传统金属牙套评估与治疗。我们会根据牙齿排列、咬合关系与生活习惯制定个性化方案，兼顾治疗效率与舒适度。",
   "highlights": [
     "法拉盛门诊可预约初诊与复诊",
@@ -21,7 +22,13 @@
     "flushing-adult-orthodontics",
     "flushing-teen-orthodontics",
     "flushing-ceramic-braces",
-    "flushing-early-orthodontics"
+    "flushing-early-orthodontics",
+    "flushing-self-ligating-braces",
+    "flushing-invisalign-teen",
+    "flushing-surgical-orthodontics",
+    "flushing-palatal-expanders",
+    "flushing-retainers",
+    "flushing-emergency-orthodontics"
   ],
   "relatedConditionSlugs": [
     "flushing-crowding",
@@ -43,20 +50,16 @@
   },
   "faq": [
     {
-      "question": "法拉盛传统金属牙套需要先预约初诊吗？",
-      "answer": "建议先预约免费初诊。胡林医生团队会先做口腔与咬合评估，再给出分阶段治疗建议与时间预估。"
+      "question": "法拉盛传统金属牙套适合哪些情况？",
+      "answer": "传统金属牙套通常适合中重度拥挤、深覆合、错位明显或需要精细咬合调整的病例。是否适合仍需结合面型、牙周条件与咬合评估后确定。"
     },
     {
-      "question": "法拉盛这项治疗是否支持分期付款？",
-      "answer": "支持。我们提供灵活付款方案，并可协助核实保险福利，帮助您清晰了解自付费用。"
+      "question": "法拉盛传统牙套复诊频率一般是多久？",
+      "answer": "多数患者每4-8周复诊一次。胡林正畸中心会根据牙齿移动节奏和佩戴配合度，动态调整复诊间隔与调弓计划。"
     },
     {
-      "question": "法拉盛门诊可以讲中文吗？",
-      "answer": "可以。胡林正畸中心提供中英双语服务，咨询、复诊与治疗说明都可用中文沟通。"
-    },
-    {
-      "question": "多久能看到传统金属牙套的改善？",
-      "answer": "每位患者起始条件不同，通常在前几个月可以看到牙齿排列变化。完整疗程会在初诊后给出个性化预计。"
+      "question": "法拉盛戴传统牙套会影响吃东西吗？",
+      "answer": "治疗初期建议以软食为主，避免过硬、过黏食物。适应后大多数患者可正常饮食，但仍要注意器械保护和口腔清洁。"
     }
   ],
   "cta": {

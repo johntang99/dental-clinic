@@ -22,12 +22,23 @@
     "flushing-traditional-braces",
     "flushing-teen-orthodontics",
     "flushing-ceramic-braces",
-    "flushing-early-orthodontics"
+    "flushing-early-orthodontics",
+    "flushing-self-ligating-braces",
+    "flushing-invisalign-teen",
+    "flushing-surgical-orthodontics",
+    "flushing-palatal-expanders",
+    "flushing-retainers",
+    "flushing-emergency-orthodontics"
   ],
   "relatedConditionSlugs": [
+    "flushing-conditions",
     "flushing-crowding",
     "flushing-deep-bite",
-    "flushing-underbite"
+    "flushing-underbite",
+    "flushing-open-bite",
+    "flushing-spacing",
+    "flushing-narrow-palate",
+    "flushing-early-intervention"
   ],
   "siblingSlug": "great-neck-crossbite",
   "location": {

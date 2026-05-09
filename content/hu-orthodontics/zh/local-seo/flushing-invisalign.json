@@ -5,8 +5,9 @@
   "topicType": "service",
   "topicSlug": "invisalign",
   "topicName": "隐适美",
-  "title": "法拉盛隐适美｜胡林正畸中心",
-  "description": "法拉盛隐适美专业评估与治疗方案，ABO认证正畸团队，支持中英双语沟通与分期付款。",
+  "useServiceRichTemplate": true,
+  "title": "法拉盛隐适美｜透明矫正与咬合评估｜胡林正畸中心",
+  "description": "法拉盛隐适美透明矫正适合成人与青少年，兼顾外观、清洁便利与咬合改善，支持数字化方案预览。",
   "intro": "法拉盛门诊提供隐适美评估与治疗。我们会根据牙齿排列、咬合关系与生活习惯制定个性化方案，兼顾治疗效率与舒适度。",
   "highlights": [
     "法拉盛门诊可预约初诊与复诊",
@@ -21,7 +22,13 @@
     "flushing-traditional-braces",
     "flushing-teen-orthodontics",
     "flushing-ceramic-braces",
-    "flushing-early-orthodontics"
+    "flushing-early-orthodontics",
+    "flushing-self-ligating-braces",
+    "flushing-invisalign-teen",
+    "flushing-surgical-orthodontics",
+    "flushing-palatal-expanders",
+    "flushing-retainers",
+    "flushing-emergency-orthodontics"
   ],
   "relatedConditionSlugs": [
     "flushing-crowding",
@@ -43,20 +50,16 @@
   },
   "faq": [
     {
-      "question": "法拉盛隐适美需要先预约初诊吗？",
-      "answer": "建议先预约免费初诊。胡林医生团队会先做口腔与咬合评估，再给出分阶段治疗建议与时间预估。"
+      "question": "法拉盛隐适美每天需要佩戴多久？",
+      "answer": "通常建议每天20-22小时，仅在进食和刷牙时取下。佩戴时长直接影响牙齿移动效率和疗程稳定性。"
     },
     {
-      "question": "法拉盛这项治疗是否支持分期付款？",
-      "answer": "支持。我们提供灵活付款方案，并可协助核实保险福利，帮助您清晰了解自付费用。"
+      "question": "法拉盛隐适美适合复杂咬合问题吗？",
+      "answer": "许多复杂问题可以通过隐适美联合附件与阶段计划完成，但极复杂病例可能更适合固定矫治或联合方案，需面诊后判断。"
     },
     {
-      "question": "法拉盛门诊可以讲中文吗？",
-      "answer": "可以。胡林正畸中心提供中英双语服务，咨询、复诊与治疗说明都可用中文沟通。"
-    },
-    {
-      "question": "多久能看到隐适美的改善？",
-      "answer": "每位患者起始条件不同，通常在前几个月可以看到牙齿排列变化。完整疗程会在初诊后给出个性化预计。"
+      "question": "法拉盛隐适美复诊频率是怎样的？",
+      "answer": "多数患者每6-8周复诊一次。复诊会检查贴合度、牙齿移动趋势以及下一阶段矫治器安排。"
     }
   ],
   "cta": {

@@ -28,8 +28,10 @@ const SECTIONS: SectionDefinition[] = [
       { id: 'split-photo-left', label: 'Split Photo Left', description: 'Text right, image left.' },
       { id: 'overlap', label: 'Overlap', description: 'Text card overlaps photo.' },
       { id: 'photo-background', label: 'Photo Background', description: 'Full-bleed photo background.' },
+      { id: 'photo-screenwide-top', label: 'Photo Screenwide Top', description: 'Top full-width photo, text below.' },
       { id: 'video-background', label: 'Video Background', description: 'Full-bleed video background.' },
       { id: 'gallery-background', label: 'Gallery Background', description: 'Rotating gallery background.' },
+      { id: 'gallery-screenwide-top', label: 'Gallery Screenwide Top', description: 'Top rotating gallery, text below.' },
     ],
   },
   {

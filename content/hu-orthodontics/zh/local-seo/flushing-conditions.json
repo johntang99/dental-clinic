@@ -1,0 +1,74 @@
+{
+  "slug": "flushing-conditions",
+  "pageType": "resource-location",
+  "locationId": "flushing",
+  "topicType": "resource",
+  "topicSlug": "conditions",
+  "topicName": "法拉盛正畸问题总览",
+  "title": "法拉盛牙齿咬合问题总览｜胡林正畸中心",
+  "description": "法拉盛常见正畸问题总览页面，集中查看拥挤、深覆合、地包天、开咬等8类问题与处理方向。",
+  "intro": "本页面汇总法拉盛门诊最常见的8类牙齿与咬合问题。您可以先快速定位自身情况，再进入对应专题页面查看详细方案与预约建议。",
+  "highlights": [
+    "一次查看8类常见问题",
+    "每类问题都有独立专题页",
+    "可直接跳转对应门诊咨询",
+    "中英双语团队提供评估支持"
+  ],
+  "treatmentSummary": "先明确问题类型，再匹配服务路径（隐适美、固定矫治、早期干预或联合治疗），可显著提高方案决策效率。",
+  "relatedServiceSlugs": [
+    "flushing-invisalign",
+    "flushing-adult-orthodontics",
+    "flushing-traditional-braces",
+    "flushing-teen-orthodontics",
+    "flushing-ceramic-braces",
+    "flushing-early-orthodontics",
+    "flushing-self-ligating-braces",
+    "flushing-invisalign-teen",
+    "flushing-surgical-orthodontics",
+    "flushing-palatal-expanders",
+    "flushing-retainers",
+    "flushing-emergency-orthodontics"
+  ],
+  "relatedConditionSlugs": [
+    "flushing-crowding",
+    "flushing-deep-bite",
+    "flushing-underbite",
+    "flushing-open-bite",
+    "flushing-crossbite",
+    "flushing-spacing",
+    "flushing-narrow-palate",
+    "flushing-early-intervention"
+  ],
+  "siblingSlug": "great-neck-conditions",
+  "location": {
+    "id": "flushing",
+    "name": "法拉盛",
+    "cityState": "Flushing, NY 11354",
+    "clinicName": "法拉盛诊所（总部）",
+    "address": "38-08 Union Street, Suite 4B",
+    "phone": "(718) 353-0880",
+    "addressMapUrl": "https://maps.google.com/?q=38-08+Union+St+Suite+4B+Flushing+NY+11354",
+    "mapsEmbedUrl": "https://maps.google.com/maps?q=Hu+Lin+Orthodontics+38-08+Union+St+Flushing+NY+11354&t=m&z=17&output=embed",
+    "phoneHref": "tel:+17183530880"
+  },
+  "faq": [
+    {
+      "question": "法拉盛如何判断自己属于哪类咬合问题？",
+      "answer": "可先从本页面的8类问题入口对照症状，再预约面诊做咬合检查与影像评估，获取更准确的分型和治疗建议。"
+    },
+    {
+      "question": "法拉盛不同问题会对应不同治疗方式吗？",
+      "answer": "会。不同问题在移动难度、疗程节奏和器械选择上差异较大，医生会根据功能目标与美观目标综合制定方案。"
+    },
+    {
+      "question": "法拉盛看完专题页后下一步该做什么？",
+      "answer": "建议直接预约初诊，确认问题优先级、治疗路径和时间预估，再决定是否立即进入治疗计划。"
+    }
+  ],
+  "cta": {
+    "primaryText": "预约问题评估",
+    "primaryLink": "/zh/book",
+    "secondaryText": "(718) 353-0880",
+    "secondaryLink": "tel:+17183530880"
+  }
+}

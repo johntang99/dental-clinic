@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import Image from 'next/image';
 import { CheckCircle2 } from 'lucide-react';
 import { Button, Badge, Icon } from '@/components/ui';
@@ -40,6 +40,7 @@ export interface HeroSectionProps {
   priority?: boolean;
   photoOverlayOpacity?: number;
   photoContentPosition?: 'center' | 'center-below' | 'left' | 'left-below' | 'lower';
+  screenwideHeightDesktop?: number;
 }
 
 export default function HeroSection({
@@ -62,6 +63,7 @@ export default function HeroSection({
   priority,
   photoOverlayOpacity = 0.5,
   photoContentPosition = 'center',
+  screenwideHeightDesktop,
 }: HeroSectionProps) {
   const config = heroVariantConfig[variant];
   const sectionClasses = getSectionClasses(config);
@@ -86,20 +88,28 @@ export default function HeroSection({
     [gallery]
   );
   const galleryBackgroundImages = useMemo(() => {
-    if (variant !== 'gallery-background') return galleryImages;
+    if (variant !== 'gallery-background' && variant !== 'gallery-screenwide-top') return galleryImages;
     const merged = [image, ...galleryImages].filter(
       (src): src is string => typeof src === 'string' && src.trim().length > 0
     );
     return Array.from(new Set(merged));
   }, [variant, image, galleryImages]);
   const useGalleryBackground =
-    variant === 'gallery-background' && galleryBackgroundImages.length > 0;
+    (variant === 'gallery-background' || variant === 'gallery-screenwide-top') &&
+    galleryBackgroundImages.length > 0;
   const shouldRotateGallery = useGalleryBackground && galleryBackgroundImages.length > 1;
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
+  const normalizedScreenwideDesktopHeight =
+    typeof screenwideHeightDesktop === 'number' && Number.isFinite(screenwideHeightDesktop)
+      ? Math.min(1200, Math.max(320, Math.round(screenwideHeightDesktop)))
+      : 600;
+  const screenwideMediaStyle = {
+    '--hero-screenwide-height-lg': `${normalizedScreenwideDesktopHeight}px`,
+  } as CSSProperties;
 
   useEffect(() => {
     setActiveGalleryIndex(0);
-  }, [variant, galleryImages]);
+  }, [variant, galleryBackgroundImages]);
 
   useEffect(() => {
     if (!shouldRotateGallery) return;
@@ -285,7 +295,7 @@ export default function HeroSection({
                 />
               </>
             )}
-            
+
             {/* Content */}
             <div
               className={cn(
@@ -329,7 +339,7 @@ export default function HeroSection({
               </div>
             </div>
           </section>
-          
+
           {/* Stats Bar - 1/3 Overlap */}
           {stats && (
             <div className="relative -mt-12 z-20">
@@ -339,6 +349,79 @@ export default function HeroSection({
             </div>
           )}
         </>
+      );
+
+    case 'gallery-screenwide-top':
+    case 'photo-screenwide-top':
+      return (
+        <section className={cn('relative w-full', className)}>
+          {(image || useGalleryBackground) && (
+            <div
+              className="relative w-full h-[320px] sm:h-[420px] md:h-[520px] lg:h-[var(--hero-screenwide-height-lg)] overflow-hidden"
+              style={screenwideMediaStyle}
+            >
+              {shouldRotateGallery ? (
+                <>
+                  {galleryBackgroundImages.map((galleryImage, index) => (
+                    <div
+                      key={`${galleryImage}-${index}`}
+                      className={cn(
+                        'absolute inset-0 transition-opacity duration-1000',
+                        index === activeGalleryIndex ? 'opacity-100' : 'opacity-0'
+                      )}
+                    >
+                      <Image
+                        src={galleryImage}
+                        alt={`${displayName} ${index + 1}`}
+                        fill
+                        className="object-cover"
+                        priority={priority && index === 0}
+                      />
+                    </div>
+                  ))}
+                </>
+              ) : (
+                <Image
+                  src={useGalleryBackground ? galleryBackgroundImages[0] : image!}
+                  alt={displayName}
+                  fill
+                  className="object-cover"
+                  priority={priority}
+                />
+              )}
+              {photoOverlayOpacity > 0 && (
+                <div
+                  className="absolute inset-0"
+                  style={{ backgroundColor: `rgba(0, 0, 0, ${photoOverlayOpacity})` }}
+                />
+              )}
+            </div>
+          )}
+
+          <div style={backdropGradientStyle}>
+            <div className="container-custom py-10 md:py-14">
+              <div className="max-w-4xl mx-auto">
+                <HeroContent
+                  businessName={displayName}
+                  tagline={tagline}
+                  description={description}
+                  badgeText={badgeText}
+                  primaryCta={primaryCta}
+                  secondaryCta={secondaryCta}
+                  floatingTags={floatingTags}
+                  trustBadges={trustBadges}
+                  align="center"
+                />
+              </div>
+
+              {stats && (
+                <div className="mt-6">
+                  <HeroStats stats={stats} style="bar" />
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
       );
     
     case 'video-background':

@@ -9,8 +9,10 @@ export type HeroVariant =
   | 'split-photo-left'      // Text right, photo left
   | 'overlap'               // Text overlaps photo
   | 'photo-background'      // Photo as full background
+  | 'photo-screenwide-top'  // Full-width top photo + text below
   | 'video-background'      // Video as background
   | 'gallery-background'    // Photo carousel/gallery background
+  | 'gallery-screenwide-top'// Full-width top gallery + text below
   | 'smile-draw';           // Smile draw animation + parallax floating elements
 
 export type TestimonialsVariant =
@@ -114,6 +116,13 @@ export const heroVariantConfig: Record<HeroVariant, SectionVariantConfig> = {
     background: 'image',
     className: 'relative bg-cover bg-center',
   },
+  'photo-screenwide-top': {
+    variant: 'photo-screenwide-top',
+    layout: 'full-width',
+    padding: 'none',
+    background: 'image',
+    className: 'relative',
+  },
   'video-background': {
     variant: 'video-background',
     layout: 'full-width',
@@ -125,6 +134,12 @@ export const heroVariantConfig: Record<HeroVariant, SectionVariantConfig> = {
     variant: 'gallery-background',
     layout: 'full-width',
     padding: 'xl',
+    className: 'relative',
+  },
+  'gallery-screenwide-top': {
+    variant: 'gallery-screenwide-top',
+    layout: 'full-width',
+    padding: 'none',
     className: 'relative',
   },
   'smile-draw': {

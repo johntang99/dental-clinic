@@ -5,8 +5,9 @@
   "topicType": "service",
   "topicSlug": "adult-orthodontics",
   "topicName": "成人正畸",
-  "title": "大颈成人正畸｜胡林正畸中心",
-  "description": "大颈成人正畸专业评估与治疗方案，ABO认证正畸团队，支持中英双语沟通与分期付款。",
+  "useServiceRichTemplate": true,
+  "title": "大颈成人正畸｜上班族隐形与固定矫治｜胡林正畸中心",
+  "description": "大颈成人正畸覆盖隐形与固定方案，重点改善拥挤、间隙与咬合功能，兼顾职业形象与生活节奏。",
   "intro": "大颈门诊提供成人正畸评估与治疗。我们会根据牙齿排列、咬合关系与生活习惯制定个性化方案，兼顾治疗效率与舒适度。",
   "highlights": [
     "大颈门诊可预约初诊与复诊",
@@ -21,7 +22,13 @@
     "great-neck-traditional-braces",
     "great-neck-teen-orthodontics",
     "great-neck-ceramic-braces",
-    "great-neck-early-orthodontics"
+    "great-neck-early-orthodontics",
+    "great-neck-self-ligating-braces",
+    "great-neck-invisalign-teen",
+    "great-neck-surgical-orthodontics",
+    "great-neck-palatal-expanders",
+    "great-neck-retainers",
+    "great-neck-emergency-orthodontics"
   ],
   "relatedConditionSlugs": [
     "great-neck-crowding",
@@ -43,20 +50,16 @@
   },
   "faq": [
     {
-      "question": "大颈成人正畸需要先预约初诊吗？",
-      "answer": "建议先预约免费初诊。胡林医生团队会先做口腔与咬合评估，再给出分阶段治疗建议与时间预估。"
+      "question": "大颈成人现在做正畸还来得及吗？",
+      "answer": "来得及。只要牙周和骨条件允许，成人同样可以获得稳定改善。治疗重点在于功能恢复与美观平衡。"
     },
     {
-      "question": "大颈这项治疗是否支持分期付款？",
-      "answer": "支持。我们提供灵活付款方案，并可协助核实保险福利，帮助您清晰了解自付费用。"
+      "question": "大颈成人正畸会影响工作形象吗？",
+      "answer": "可通过陶瓷牙套或隐形矫治等方案降低可见度。初诊会结合职业场景和社交需求进行方案匹配。"
     },
     {
-      "question": "大颈门诊可以讲中文吗？",
-      "answer": "可以。胡林正畸中心提供中英双语服务，咨询、复诊与治疗说明都可用中文沟通。"
-    },
-    {
-      "question": "多久能看到成人正畸的改善？",
-      "answer": "每位患者起始条件不同，通常在前几个月可以看到牙齿排列变化。完整疗程会在初诊后给出个性化预计。"
+      "question": "大颈成人正畸疗程通常多长？",
+      "answer": "常见疗程约12-30个月，取决于咬合复杂度、牙周状态和配合度。医生会在初诊后提供阶段性时间预估。"
     }
   ],
   "cta": {

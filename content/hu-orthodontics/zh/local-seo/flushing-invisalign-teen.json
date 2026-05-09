@@ -5,8 +5,9 @@
   "topicType": "service",
   "topicSlug": "invisalign-teen",
   "topicName": "隐适美青少年版",
-  "title": "法拉盛隐适美青少年版｜胡林正畸中心",
-  "description": "法拉盛隐适美青少年版专业评估与治疗方案，ABO认证正畸团队，支持中英双语沟通与分期付款。",
+  "useServiceRichTemplate": true,
+  "title": "法拉盛隐适美青少年版｜青少年透明矫治｜胡林正畸中心",
+  "description": "法拉盛针对青少年生长阶段设计，兼顾学习社交需求与咬合发育管理，支持佩戴依从性追踪。",
   "intro": "法拉盛门诊提供隐适美青少年版评估与治疗。我们会根据牙齿排列、咬合关系与生活习惯制定个性化方案，兼顾治疗效率与舒适度。",
   "highlights": [
     "法拉盛门诊可预约初诊与复诊",
@@ -22,7 +23,12 @@
     "flushing-traditional-braces",
     "flushing-teen-orthodontics",
     "flushing-ceramic-braces",
-    "flushing-early-orthodontics"
+    "flushing-early-orthodontics",
+    "flushing-self-ligating-braces",
+    "flushing-surgical-orthodontics",
+    "flushing-palatal-expanders",
+    "flushing-retainers",
+    "flushing-emergency-orthodontics"
   ],
   "relatedConditionSlugs": [
     "flushing-crowding",
@@ -44,20 +50,16 @@
   },
   "faq": [
     {
-      "question": "法拉盛隐适美青少年版需要先预约初诊吗？",
-      "answer": "建议先预约免费初诊。胡林医生团队会先做口腔与咬合评估，再给出分阶段治疗建议与时间预估。"
+      "question": "法拉盛青少年做隐适美需要满足什么条件？",
+      "answer": "通常需要恒牙萌出进展达到一定阶段，并具备较好的佩戴配合度。初诊会先评估咬合、发育期和依从性。"
     },
     {
-      "question": "法拉盛这项治疗是否支持分期付款？",
-      "answer": "支持。我们提供灵活付款方案，并可协助核实保险福利，帮助您清晰了解自付费用。"
+      "question": "法拉盛青少年隐适美会影响上学和运动吗？",
+      "answer": "一般不会明显影响。隐适美可摘戴，日常学习、社交和运动更灵活，但必须保证每日佩戴时长。"
     },
     {
-      "question": "法拉盛门诊可以讲中文吗？",
-      "answer": "可以。胡林正畸中心提供中英双语服务，咨询、复诊与治疗说明都可用中文沟通。"
-    },
-    {
-      "question": "多久能看到隐适美青少年版的改善？",
-      "answer": "每位患者起始条件不同，通常在前几个月可以看到牙齿排列变化。完整疗程会在初诊后给出个性化预计。"
+      "question": "法拉盛家长如何判断孩子是否按要求佩戴？",
+      "answer": "我们会在复诊中追踪贴合和移动进度，并给出家庭协作建议。家长可结合复诊反馈与日常管理共同监督。"
     }
   ],
   "cta": {

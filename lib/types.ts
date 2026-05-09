@@ -130,7 +130,16 @@ export interface Stat {
 }
 
 export interface HeroSection {
-  variant?: 'centered' | 'split-photo-right' | 'split-photo-left' | 'overlap' | 'photo-background' | 'video-background' | 'gallery-background';
+  variant?:
+    | 'centered'
+    | 'split-photo-right'
+    | 'split-photo-left'
+    | 'overlap'
+    | 'photo-background'
+    | 'photo-screenwide-top'
+    | 'video-background'
+    | 'gallery-background'
+    | 'gallery-screenwide-top';
   businessName?: string;
   // Legacy alias kept for backward compatibility with existing content.
   clinicName?: string;
@@ -147,6 +156,7 @@ export interface HeroSection {
   image?: string;
   video?: string;
   gallery?: string[];
+  screenwideHeightDesktop?: number;
   floatingTags: string[];
   stats: Stat[];
   trustBadges: string[];
@@ -523,8 +533,10 @@ export interface ServicesPage {
       | 'split-photo-left'
       | 'overlap'
       | 'photo-background'
+      | 'photo-screenwide-top'
       | 'video-background'
-      | 'gallery-background';
+      | 'gallery-background'
+      | 'gallery-screenwide-top';
     title: string;
     subtitle: string;
     backgroundImage?: string;
@@ -621,7 +633,16 @@ export interface PricingPackage {
 
 export interface ContactPage {
   hero: {
-    variant?: 'centered' | 'split-photo-right' | 'split-photo-left' | 'overlap' | 'photo-background' | 'video-background' | 'gallery-background';
+    variant?:
+      | 'centered'
+      | 'split-photo-right'
+      | 'split-photo-left'
+      | 'overlap'
+      | 'photo-background'
+      | 'photo-screenwide-top'
+      | 'video-background'
+      | 'gallery-background'
+      | 'gallery-screenwide-top';
     title: string;
     subtitle: string;
   };

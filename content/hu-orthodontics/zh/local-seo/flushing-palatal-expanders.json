@@ -5,8 +5,9 @@
   "topicType": "service",
   "topicSlug": "palatal-expanders",
   "topicName": "上颌扩弓器",
-  "title": "法拉盛上颌扩弓器｜胡林正畸中心",
-  "description": "法拉盛上颌扩弓器专业评估与治疗方案，ABO认证正畸团队，支持中英双语沟通与分期付款。",
+  "useServiceRichTemplate": true,
+  "title": "法拉盛上颌扩弓器｜儿童上颌扩弓管理｜胡林正畸中心",
+  "description": "法拉盛针对上颌狭窄与交叉咬合进行扩弓干预，改善咬合空间与呼吸相关口颌发育条件。",
   "intro": "法拉盛门诊提供上颌扩弓器评估与治疗。我们会根据牙齿排列、咬合关系与生活习惯制定个性化方案，兼顾治疗效率与舒适度。",
   "highlights": [
     "法拉盛门诊可预约初诊与复诊",
@@ -22,7 +23,12 @@
     "flushing-traditional-braces",
     "flushing-teen-orthodontics",
     "flushing-ceramic-braces",
-    "flushing-early-orthodontics"
+    "flushing-early-orthodontics",
+    "flushing-self-ligating-braces",
+    "flushing-invisalign-teen",
+    "flushing-surgical-orthodontics",
+    "flushing-retainers",
+    "flushing-emergency-orthodontics"
   ],
   "relatedConditionSlugs": [
     "flushing-crowding",
@@ -44,20 +50,16 @@
   },
   "faq": [
     {
-      "question": "法拉盛上颌扩弓器需要先预约初诊吗？",
-      "answer": "建议先预约免费初诊。胡林医生团队会先做口腔与咬合评估，再给出分阶段治疗建议与时间预估。"
+      "question": "法拉盛扩弓器主要用于哪些儿童问题？",
+      "answer": "多用于上颌狭窄、后牙交叉咬合、牙列空间不足等情况，尤其适合处于生长期的儿童进行发育引导。"
     },
     {
-      "question": "法拉盛这项治疗是否支持分期付款？",
-      "answer": "支持。我们提供灵活付款方案，并可协助核实保险福利，帮助您清晰了解自付费用。"
+      "question": "法拉盛扩弓治疗会很不舒服吗？",
+      "answer": "初期可能有轻微胀感或发音适应期，多数孩子可在短时间内适应。我们会提供家庭操作和护理指导。"
     },
     {
-      "question": "法拉盛门诊可以讲中文吗？",
-      "answer": "可以。胡林正畸中心提供中英双语服务，咨询、复诊与治疗说明都可用中文沟通。"
-    },
-    {
-      "question": "多久能看到上颌扩弓器的改善？",
-      "answer": "每位患者起始条件不同，通常在前几个月可以看到牙齿排列变化。完整疗程会在初诊后给出个性化预计。"
+      "question": "法拉盛扩弓后是否一定还要戴牙套？",
+      "answer": "是否进入后续全面矫治取决于牙列与咬合演变。扩弓是发育期管理的一部分，不同孩子路径会不同。"
     }
   ],
   "cta": {

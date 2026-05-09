@@ -18,6 +18,8 @@ export function HeroPanel({ hero, updateFormValue, openImagePicker }: HeroPanelP
   const imagePreviewUrl = getPreviewUrl(hero.image);
   const overlayOpacityValue =
     typeof hero.photoOverlayOpacity === 'number' ? hero.photoOverlayOpacity : 0.2;
+  const screenwideDesktopHeightValue =
+    typeof hero.screenwideHeightDesktop === 'number' ? hero.screenwideHeightDesktop : 600;
   const contentPositionValue =
     hero.photoContentPosition === 'center' ||
     hero.photoContentPosition === 'center-below' ||
@@ -205,7 +207,7 @@ export function HeroPanel({ hero, updateFormValue, openImagePicker }: HeroPanelP
         </div>
       </div>
 
-      <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-3">
         <div>
           <label className="block text-xs text-gray-500">Photo Overlay Opacity (0-1)</label>
           <input
@@ -238,6 +240,29 @@ export function HeroPanel({ hero, updateFormValue, openImagePicker }: HeroPanelP
             <option value="left">Left</option>
             <option value="left-below">Left Below</option>
           </select>
+        </div>
+        <div>
+          <label className="block text-xs text-gray-500">
+            Screenwide Desktop Height (px)
+          </label>
+          <input
+            type="number"
+            min={320}
+            max={1200}
+            step={10}
+            className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
+            value={screenwideDesktopHeightValue}
+            onChange={(event) => {
+              const next = Number(event.target.value);
+              const normalized = Number.isFinite(next)
+                ? Math.min(1200, Math.max(320, Math.round(next)))
+                : 600;
+              updateFormValue(['hero', 'screenwideHeightDesktop'], normalized);
+            }}
+          />
+          <p className="mt-1 text-[11px] text-gray-500">
+            Applies to `photo-screenwide-top` and `gallery-screenwide-top`.
+          </p>
         </div>
       </div>
     </div>

@@ -181,8 +181,9 @@ Add (where available):
 | Core location landing pages | 2 | `/zh/flushing-orthodontist`, `/zh/great-neck-orthodontist` | Highest local intent pages |
 | Service + location pages | 24 | `/zh/{location}-{service}` | 12 services x 2 locations |
 | Condition + location pages | 16 | `/zh/{location}-{condition}` | 8 conditions x 2 locations |
+| Location condition hub pages | 2 | `/zh/flushing-conditions`, `/zh/great-neck-conditions` | Condition cluster entry per location |
 | Cost/insurance/comparison pages | 6 | `/zh/{location}-orthodontics-cost` etc. | Money-page + conversion intent |
-| **Total new local SEO pages** | **48** |  | Phased rollout required |
+| **Total new local SEO pages** | **50** |  | Phased rollout required |
 
 ### 3.2 Service page matrix (24 pages)
 
@@ -272,6 +273,30 @@ Implementation tasks:
 | Wave 2 | Remaining 16 service pages + 2 insurance pages | 18 | Week 2-3 |
 | Wave 3 | 16 condition pages + 2 comparison pages | 18 | Week 4-5 |
 
+### 3.8 Rich local-service template rollout (implemented for Wave 1 core set)
+
+Current implementation:
+- Keep canonical rich service pages under `/zh/services/[slug]`.
+- Local SEO pages stay at `/zh/{location}-{service}`.
+- For high-value service slugs, local pages now reuse rich service content blocks and inject location-specific clinic module.
+
+Service slugs currently enabled with rich local template (full 12):
+- `invisalign`
+- `adult-orthodontics`
+- `traditional-braces`
+- `teen-orthodontics`
+- `ceramic-braces`
+- `early-orthodontics`
+ - `self-ligating-braces`
+ - `invisalign-teen`
+ - `surgical-orthodontics`
+ - `palatal-expanders`
+ - `retainers`
+ - `emergency-orthodontics`
+
+Status:
+- Rich template rollout has been extended to all service-location pages.
+
 ---
 
 ## Phase 4 — Internal Linking Model (P1)
@@ -304,7 +329,7 @@ Where configured:
 - `content/hu-orthodontics/zh/pages/home.layout.json` -> section id `seoHub`
 - rendered by `components/sections/SeoHubLinksSection.tsx`
 
-Homepage SEO hub links (10):
+Homepage SEO hub links (12):
 - `/zh/flushing-orthodontist`
 - `/zh/great-neck-orthodontist`
 - `/zh/flushing-invisalign`
@@ -314,7 +339,9 @@ Homepage SEO hub links (10):
 - `/zh/flushing-traditional-braces`
 - `/zh/great-neck-traditional-braces`
 - `/zh/flushing-orthodontics-cost`
-- `/zh/great-neck-braces-vs-invisalign`
+- `/zh/great-neck-orthodontics-cost`
+- `/zh/flushing-conditions`
+- `/zh/great-neck-conditions`
 
 ---
 
@@ -447,7 +474,13 @@ https://www.drhuortho.com/zh/great-neck-narrow-palate
 https://www.drhuortho.com/zh/great-neck-early-intervention
 ```
 
-#### 6.2.5 Phase 3 resource/comparison pages (6)
+#### 6.2.5 Phase 3 location condition hub pages (2)
+```text
+https://www.drhuortho.com/zh/flushing-conditions
+https://www.drhuortho.com/zh/great-neck-conditions
+```
+
+#### 6.2.6 Phase 3 resource/comparison pages (6)
 ```text
 https://www.drhuortho.com/zh/flushing-orthodontics-cost
 https://www.drhuortho.com/zh/great-neck-orthodontics-cost
@@ -463,8 +496,9 @@ https://www.drhuortho.com/zh/great-neck-braces-vs-invisalign
 3. Submit core location landing pages (6.2.2).
 4. Submit service+location pages (6.2.3), high-value services first: `invisalign`, `adult-orthodontics`, `traditional-braces`, `teen-orthodontics`.
 5. Submit condition+location pages (6.2.4).
-6. Submit resource/comparison pages (6.2.5).
-7. Re-check any "Crawled - currently not indexed" URLs after 7-14 days.
+6. Submit location condition hub pages (6.2.5).
+7. Submit resource/comparison pages (6.2.6).
+8. Re-check any "Crawled - currently not indexed" URLs after 7-14 days.
 
 ### 6.4 Weekly monitoring views
 - Coverage: indexed vs excluded
@@ -516,7 +550,7 @@ Important:
 - [ ] `sitemap.xml` contains only valid Chinese URLs
 - [ ] Canonical is correct on all core pages
 - [ ] Metadata titles/descriptions are unique and intent-aligned
-- [ ] 48 new local SEO pages are created and indexable (2 + 24 + 16 + 6)
+- [ ] 50 new local SEO pages are created and indexable (2 + 24 + 16 + 2 + 6)
 - [ ] Flushing + Great Neck intent is explicit on core pages
 - [ ] No orphan indexable pages
 - [ ] Required schema is valid on local landing pages

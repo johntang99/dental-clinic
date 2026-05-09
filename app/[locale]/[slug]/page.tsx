@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import {
   getRequestSiteId,
   loadAllItems,
@@ -40,6 +42,7 @@ interface LocalSeoPageData {
   topicType?: 'service' | 'condition' | 'resource' | 'core';
   topicSlug?: string;
   topicName?: string;
+  useServiceRichTemplate?: boolean;
   title: string;
   description: string;
   intro: string;
@@ -61,6 +64,38 @@ interface LocalSeoPageProps {
   };
 }
 
+interface ServiceDetailSectionItem {
+  title?: string;
+  description?: string;
+}
+
+interface ServiceDetailSectionStep {
+  number?: number;
+  title?: string;
+  description?: string;
+}
+
+interface ServiceDetailSection {
+  type?: string;
+  title?: string;
+  subtitle?: string;
+  content?: string;
+  content2?: string;
+  items?: Array<string | ServiceDetailSectionItem>;
+  steps?: ServiceDetailSectionStep[];
+}
+
+interface ServiceDetailData {
+  slug: string;
+  title: string;
+  subtitle?: string;
+  shortDescription?: string;
+  fullDescription?: string;
+  benefits?: string[];
+  whatToExpect?: string;
+  sections?: ServiceDetailSection[];
+}
+
 function pickPagesBySlug(
   pageMap: Map<string, LocalSeoPageData>,
   slugs: string[] | undefined
@@ -75,6 +110,35 @@ function normalizePhoneLink(phone: string): string {
   const digits = phone.replace(/[^\d+]/g, '');
   if (digits.startsWith('+')) return `tel:${digits}`;
   return `tel:+1${digits.replace(/[^\d]/g, '')}`;
+}
+
+function normalizeMarkdown(text: string): string {
+  return text
+    .replace(/\r\n/g, '\n')
+    .replace(/\|\s+\|(?=(?:-+:?|:?-+|[A-Za-z0-9"']))/g, '|\n|')
+    .replace(/([^\n])\n-\s+/g, '$1\n\n- ')
+    .replace(/([^\n])\n\*\s+/g, '$1\n\n- ');
+}
+
+function pickSectionByType(
+  sections: ServiceDetailSection[] | undefined,
+  type: string
+): ServiceDetailSection | undefined {
+  if (!Array.isArray(sections)) return undefined;
+  return sections.find((section) => section.type === type);
+}
+
+function toDisplayItems(items: Array<string | ServiceDetailSectionItem> | undefined): string[] {
+  if (!Array.isArray(items)) return [];
+  return items
+    .map((item) => {
+      if (typeof item === 'string') return item.trim();
+      const title = typeof item.title === 'string' ? item.title.trim() : '';
+      const description = typeof item.description === 'string' ? item.description.trim() : '';
+      if (title && description) return `${title}：${description}`;
+      return title || description;
+    })
+    .filter(Boolean);
 }
 
 export async function generateMetadata({ params }: LocalSeoPageProps): Promise<Metadata> {
@@ -115,6 +179,18 @@ export default async function LocalSeoPage({ params }: LocalSeoPageProps) {
   if (!page) {
     notFound();
   }
+
+  const shouldUseRichServiceTemplate = Boolean(
+    page.pageType === 'service-location' &&
+      page.topicType === 'service' &&
+      page.useServiceRichTemplate === true &&
+      typeof page.topicSlug === 'string' &&
+      page.topicSlug.trim()
+  );
+
+  const serviceDetail = shouldUseRichServiceTemplate
+    ? await loadItemBySlug<ServiceDetailData>(siteId, locale, 'services', page.topicSlug as string)
+    : null;
 
   const pageMap = new Map(allPages.map((entry) => [entry.slug, entry]));
   const siblingPage = page.siblingSlug ? pageMap.get(page.siblingSlug) : null;
@@ -162,11 +238,45 @@ export default async function LocalSeoPage({ params }: LocalSeoPageProps) {
     availableLanguage: ['zh', 'en'],
   };
 
+  const serviceSchema = serviceDetail
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: `${page.location.name}${serviceDetail.title}`,
+        description: page.description,
+        provider: {
+          '@type': 'Dentist',
+          name: businessName,
+        },
+        areaServed: page.location.cityState,
+        url: canonicalUrl,
+      }
+    : null;
+
   const ctaPrimaryText = page.cta?.primaryText || '预约免费咨询';
   const ctaPrimaryLink = page.cta?.primaryLink || `/${locale}/book`;
   const ctaSecondaryText = page.cta?.secondaryText || page.location.phone;
   const ctaSecondaryLink = page.cta?.secondaryLink || normalizePhoneLink(page.location.phone);
   const highlights = Array.isArray(page.highlights) ? page.highlights : [];
+  const introSection = pickSectionByType(serviceDetail?.sections, 'intro');
+  const candidatesSection = pickSectionByType(serviceDetail?.sections, 'candidates');
+  const advantagesSection = pickSectionByType(serviceDetail?.sections, 'advantages');
+  const processSection = pickSectionByType(serviceDetail?.sections, 'process');
+  const whyUsSection = pickSectionByType(serviceDetail?.sections, 'whyUs');
+
+  const richIntroPrimary =
+    (serviceDetail?.fullDescription || serviceDetail?.shortDescription || introSection?.content || page.intro).trim();
+  const richIntroSecondary = (introSection?.content2 || '').trim();
+  const candidateItems = toDisplayItems(candidatesSection?.items);
+  const advantageItems =
+    Array.isArray(serviceDetail?.benefits) && serviceDetail.benefits.length > 0
+      ? serviceDetail.benefits
+      : toDisplayItems(advantagesSection?.items);
+  const processSteps = Array.isArray(processSection?.steps) ? processSection.steps : [];
+  const whyUsItems = toDisplayItems(whyUsSection?.items);
+  const showRichServiceBlocks =
+    Boolean(serviceDetail) &&
+    (candidateItems.length > 0 || advantageItems.length > 0 || processSteps.length > 0 || whyUsItems.length > 0);
 
   return (
     <main className="min-h-screen bg-white">
@@ -178,6 +288,12 @@ export default async function LocalSeoPage({ params }: LocalSeoPageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      {serviceSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
       )}
 
@@ -215,9 +331,27 @@ export default async function LocalSeoPage({ params }: LocalSeoPageProps) {
           <div className="grid gap-6 lg:grid-cols-3">
             <div className="lg:col-span-2 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                {locale === 'zh' ? '页面简介' : 'Overview'}
+                {serviceDetail ? (locale === 'zh' ? '服务介绍' : 'Service Overview') : locale === 'zh' ? '页面简介' : 'Overview'}
               </h2>
-              <p className="text-gray-700 leading-relaxed">{page.intro}</p>
+              <div className="prose prose-sm max-w-none text-gray-700">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {normalizeMarkdown(richIntroPrimary)}
+                </ReactMarkdown>
+              </div>
+
+              {serviceDetail?.subtitle && (
+                <p className="mt-4 text-sm font-medium text-primary">
+                  {serviceDetail.subtitle}
+                </p>
+              )}
+
+              {richIntroSecondary && (
+                <div className="mt-4 prose prose-sm max-w-none text-gray-700">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {normalizeMarkdown(richIntroSecondary)}
+                  </ReactMarkdown>
+                </div>
+              )}
 
               {page.treatmentSummary && (
                 <div className="mt-6 rounded-xl bg-gray-50 p-4 border border-gray-100">
@@ -271,11 +405,91 @@ export default async function LocalSeoPage({ params }: LocalSeoPageProps) {
                     {locale === 'zh' ? '查看服务详情页' : 'View Service Detail'}
                   </Link>
                 )}
+                {serviceDetail && (
+                  <p className="text-xs text-gray-500 pt-2 border-t border-gray-100">
+                    {locale === 'zh'
+                      ? `${page.location.name}页面已结合主服务内容与本地就诊信息，方便患者直接预约本门诊。`
+                      : 'This page combines detailed service content with local clinic logistics.'}
+                  </p>
+                )}
               </div>
             </aside>
           </div>
         </div>
       </section>
+
+      {showRichServiceBlocks && (
+        <section className="pb-12 lg:pb-16">
+          <div className="container mx-auto px-4 max-w-5xl grid gap-6 lg:grid-cols-2">
+            {candidateItems.length > 0 && (
+              <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+                <h2 className="text-lg font-bold text-gray-900 mb-4">
+                  {locale === 'zh' ? '适合人群与情况' : 'Who It Helps'}
+                </h2>
+                <ul className="space-y-2">
+                  {candidateItems.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2 text-gray-700">
+                      <span className="text-primary mt-1">●</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {advantageItems.length > 0 && (
+              <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+                <h2 className="text-lg font-bold text-gray-900 mb-4">
+                  {locale === 'zh' ? '核心优势' : 'Key Advantages'}
+                </h2>
+                <ul className="space-y-2">
+                  {advantageItems.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2 text-gray-700">
+                      <span className="text-primary mt-1">●</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {processSteps.length > 0 && (
+              <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm lg:col-span-2">
+                <h2 className="text-lg font-bold text-gray-900 mb-4">
+                  {locale === 'zh' ? '治疗流程' : 'Treatment Process'}
+                </h2>
+                <div className="grid gap-4 md:grid-cols-2">
+                  {processSteps.map((step, index) => (
+                    <div key={`${step.title || 'step'}-${index}`} className="rounded-xl bg-gray-50 border border-gray-100 p-4">
+                      <p className="text-xs uppercase tracking-wider text-primary font-semibold">
+                        {locale === 'zh' ? `步骤 ${step.number ?? index + 1}` : `Step ${step.number ?? index + 1}`}
+                      </p>
+                      {step.title && <h3 className="text-base font-semibold text-gray-900 mt-1">{step.title}</h3>}
+                      {step.description && <p className="text-sm text-gray-700 mt-2">{step.description}</p>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {whyUsItems.length > 0 && (
+              <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm lg:col-span-2">
+                <h2 className="text-lg font-bold text-gray-900 mb-4">
+                  {locale === 'zh' ? '为什么选择我们' : 'Why Choose Us'}
+                </h2>
+                <ul className="grid gap-2 md:grid-cols-2">
+                  {whyUsItems.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2 text-gray-700">
+                      <span className="text-primary mt-1">●</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       <section className="pb-12 lg:pb-16">
         <div className="container mx-auto px-4 max-w-5xl grid gap-6 lg:grid-cols-2">

@@ -1,0 +1,74 @@
+{
+  "slug": "great-neck-conditions",
+  "pageType": "resource-location",
+  "locationId": "great-neck",
+  "topicType": "resource",
+  "topicSlug": "conditions",
+  "topicName": "大颈正畸问题总览",
+  "title": "大颈牙齿咬合问题总览｜胡林正畸中心",
+  "description": "大颈常见正畸问题总览页面，集中查看拥挤、深覆合、地包天、开咬等8类问题与处理方向。",
+  "intro": "本页面汇总大颈门诊最常见的8类牙齿与咬合问题。您可以先快速定位自身情况，再进入对应专题页面查看详细方案与预约建议。",
+  "highlights": [
+    "一次查看8类常见问题",
+    "每类问题都有独立专题页",
+    "可直接跳转对应门诊咨询",
+    "中英双语团队提供评估支持"
+  ],
+  "treatmentSummary": "先明确问题类型，再匹配服务路径（隐适美、固定矫治、早期干预或联合治疗），可显著提高方案决策效率。",
+  "relatedServiceSlugs": [
+    "great-neck-invisalign",
+    "great-neck-adult-orthodontics",
+    "great-neck-traditional-braces",
+    "great-neck-teen-orthodontics",
+    "great-neck-ceramic-braces",
+    "great-neck-early-orthodontics",
+    "great-neck-self-ligating-braces",
+    "great-neck-invisalign-teen",
+    "great-neck-surgical-orthodontics",
+    "great-neck-palatal-expanders",
+    "great-neck-retainers",
+    "great-neck-emergency-orthodontics"
+  ],
+  "relatedConditionSlugs": [
+    "great-neck-crowding",
+    "great-neck-deep-bite",
+    "great-neck-underbite",
+    "great-neck-open-bite",
+    "great-neck-crossbite",
+    "great-neck-spacing",
+    "great-neck-narrow-palate",
+    "great-neck-early-intervention"
+  ],
+  "siblingSlug": "flushing-conditions",
+  "location": {
+    "id": "great-neck",
+    "name": "大颈",
+    "cityState": "Great Neck, NY 11021",
+    "clinicName": "大颈诊所",
+    "address": "79 Cutter Mill Road",
+    "phone": "(516) 809-8686",
+    "addressMapUrl": "https://maps.google.com/?q=79+Cutter+Mill+Rd+Great+Neck+NY+11021",
+    "mapsEmbedUrl": "https://maps.google.com/maps?q=HU+LIN+Great+Neck+Orthodontics+79+Cutter+Mill+Rd+Great+Neck+NY+11021&t=m&z=17&output=embed",
+    "phoneHref": "tel:+15168098686"
+  },
+  "faq": [
+    {
+      "question": "大颈如何判断自己属于哪类咬合问题？",
+      "answer": "可先从本页面的8类问题入口对照症状，再预约面诊做咬合检查与影像评估，获取更准确的分型和治疗建议。"
+    },
+    {
+      "question": "大颈不同问题会对应不同治疗方式吗？",
+      "answer": "会。不同问题在移动难度、疗程节奏和器械选择上差异较大，医生会根据功能目标与美观目标综合制定方案。"
+    },
+    {
+      "question": "大颈看完专题页后下一步该做什么？",
+      "answer": "建议直接预约初诊，确认问题优先级、治疗路径和时间预估，再决定是否立即进入治疗计划。"
+    }
+  ],
+  "cta": {
+    "primaryText": "预约问题评估",
+    "primaryLink": "/zh/book",
+    "secondaryText": "(516) 809-8686",
+    "secondaryLink": "tel:+15168098686"
+  }
+}

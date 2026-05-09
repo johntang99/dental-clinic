@@ -5,8 +5,9 @@
   "topicType": "service",
   "topicSlug": "teen-orthodontics",
   "topicName": "青少年正畸",
-  "title": "法拉盛青少年正畸｜胡林正畸中心",
-  "description": "法拉盛青少年正畸专业评估与治疗方案，ABO认证正畸团队，支持中英双语沟通与分期付款。",
+  "useServiceRichTemplate": true,
+  "title": "法拉盛青少年正畸｜发育期系统矫正｜胡林正畸中心",
+  "description": "法拉盛围绕青少年生长高峰制定矫治计划，兼顾牙列排齐、咬合稳定与长期保持管理。",
   "intro": "法拉盛门诊提供青少年正畸评估与治疗。我们会根据牙齿排列、咬合关系与生活习惯制定个性化方案，兼顾治疗效率与舒适度。",
   "highlights": [
     "法拉盛门诊可预约初诊与复诊",
@@ -21,7 +22,13 @@
     "flushing-adult-orthodontics",
     "flushing-traditional-braces",
     "flushing-ceramic-braces",
-    "flushing-early-orthodontics"
+    "flushing-early-orthodontics",
+    "flushing-self-ligating-braces",
+    "flushing-invisalign-teen",
+    "flushing-surgical-orthodontics",
+    "flushing-palatal-expanders",
+    "flushing-retainers",
+    "flushing-emergency-orthodontics"
   ],
   "relatedConditionSlugs": [
     "flushing-crowding",
@@ -43,20 +50,16 @@
   },
   "faq": [
     {
-      "question": "法拉盛青少年正畸需要先预约初诊吗？",
-      "answer": "建议先预约免费初诊。胡林医生团队会先做口腔与咬合评估，再给出分阶段治疗建议与时间预估。"
+      "question": "法拉盛青少年正畸最佳时机是什么时候？",
+      "answer": "通常在恒牙基本萌出并处于生长高峰期时效果更理想。我们会根据发育阶段、咬合问题和生活节奏制定个性化时机。"
     },
     {
-      "question": "法拉盛这项治疗是否支持分期付款？",
-      "answer": "支持。我们提供灵活付款方案，并可协助核实保险福利，帮助您清晰了解自付费用。"
+      "question": "法拉盛青少年更适合牙套还是隐适美？",
+      "answer": "两种都可能适合。关键看病例复杂度和配合度。面诊后会给出兼顾效果、舒适和学习生活的方案建议。"
     },
     {
-      "question": "法拉盛门诊可以讲中文吗？",
-      "answer": "可以。胡林正畸中心提供中英双语服务，咨询、复诊与治疗说明都可用中文沟通。"
-    },
-    {
-      "question": "多久能看到青少年正畸的改善？",
-      "answer": "每位患者起始条件不同，通常在前几个月可以看到牙齿排列变化。完整疗程会在初诊后给出个性化预计。"
+      "question": "法拉盛青少年矫治如何降低复发风险？",
+      "answer": "核心是按计划完成治疗并严格执行保持器阶段。我们会提供保持期复查与家庭管理建议，提升长期稳定性。"
     }
   ],
   "cta": {

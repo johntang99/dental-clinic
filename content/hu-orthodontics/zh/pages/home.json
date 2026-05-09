@@ -48,7 +48,7 @@
       }
     ],
     "tagline": "ABO认证正畸权威 · 法拉盛与大颈",
-    "variant": "photo-background",
+    "variant": "photo-screenwide-top",
     "badgeText": "正在接受新患者预约",
     "primaryCta": {
       "link": "/book",
@@ -72,8 +72,9 @@
       "text": "(718) 353-0880"
     },
     "backgroundImage": "",
-    "photoOverlayOpacity": 0.1,
-    "photoContentPosition": "lower"
+    "photoOverlayOpacity": 0.05,
+    "photoContentPosition": "lower",
+    "screenwideHeightDesktop": 700
   },
   "topBar": {
     "badge": {
@@ -176,61 +177,6 @@
       }
     ],
     "subtitle": "从儿童早期矫治到成人隐形矫正，量身定制您的完美笑容"
-  },
-  "seoHub": {
-    "badge": "本地专题入口",
-    "title": "法拉盛 / 大颈正畸专题",
-    "subtitle": "快速进入高需求项目页面：门诊入口、隐适美、牙套、费用与对比。",
-    "links": [
-      {
-        "text": "法拉盛正畸医生",
-        "url": "/zh/flushing-orthodontist"
-      },
-      {
-        "text": "大颈正畸医生",
-        "url": "/zh/great-neck-orthodontist"
-      },
-      {
-        "text": "法拉盛隐适美",
-        "url": "/zh/flushing-invisalign"
-      },
-      {
-        "text": "大颈隐适美",
-        "url": "/zh/great-neck-invisalign"
-      },
-      {
-        "text": "法拉盛成人正畸",
-        "url": "/zh/flushing-adult-orthodontics"
-      },
-      {
-        "text": "大颈青少年正畸",
-        "url": "/zh/great-neck-teen-orthodontics"
-      },
-      {
-        "text": "法拉盛传统牙套",
-        "url": "/zh/flushing-traditional-braces"
-      },
-      {
-        "text": "大颈传统牙套",
-        "url": "/zh/great-neck-traditional-braces"
-      },
-      {
-        "text": "法拉盛正畸费用",
-        "url": "/zh/flushing-orthodontics-cost"
-      },
-      {
-        "text": "大颈正畸费用",
-        "url": "/zh/great-neck-orthodontics-cost"
-      },
-      {
-        "text": "法拉盛牙套 vs 隐适美",
-        "url": "/zh/flushing-braces-vs-invisalign"
-      },
-      {
-        "text": "大颈牙套 vs 隐适美",
-        "url": "/zh/great-neck-braces-vs-invisalign"
-      }
-    ]
   },
   "caseStudies": {
     "badge": "真实案例",
