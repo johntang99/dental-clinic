@@ -2,9 +2,15 @@
   "cta": {
     "title": "欢迎来访",
     "variant": "centered",
-    "primaryCta": { "link": "/contact", "text": "预约挂号" },
+    "primaryCta": {
+      "link": "/contact",
+      "text": "预约挂号"
+    },
     "description": "我们期待欢迎您加入我们的诊所。预约到访，亲身体验Alex牙科的与众不同。",
-    "secondaryCta": { "link": "tel:+18455550180", "text": "致电 (845) 555-0180" }
+    "secondaryCta": {
+      "link": "tel:+18455550180",
+      "text": "致电 (845) 555-0180"
+    }
   },
   "hero": {
     "title": "关于Alex牙科诊所",
@@ -15,10 +21,26 @@
   "clinic": {
     "title": "我们的诊所",
     "values": [
-      { "icon": "heart", "title": "关怀", "description": "以同理心和理解对待每一位患者" },
-      { "icon": "award", "title": "卓越", "description": "持有委员会认证的牙医，并持续接受继续教育" },
-      { "icon": "globe", "title": "无障碍服务", "description": "提供4种语言的医疗服务，打破牙科健康的语言壁垒" },
-      { "icon": "shield", "title": "诚信", "description": "透明定价，诚实的治疗建议" }
+      {
+        "icon": "heart",
+        "title": "关怀",
+        "description": "以同理心和理解对待每一位患者"
+      },
+      {
+        "icon": "award",
+        "title": "卓越",
+        "description": "持有委员会认证的牙医，并持续接受继续教育"
+      },
+      {
+        "icon": "globe",
+        "title": "无障碍服务",
+        "description": "提供4种语言的医疗服务，打破牙科健康的语言壁垒"
+      },
+      {
+        "icon": "shield",
+        "title": "诚信",
+        "description": "透明定价，诚实的治疗建议"
+      }
     ],
     "variant": "cards",
     "features": [
@@ -49,18 +71,48 @@
     "title": "我们的理念",
     "variant": "cards",
     "principles": [
-      { "title": "诚信至上", "description": "我们只推荐您真正需要的治疗方案。没有过度推销，没有不必要的诊疗——只有诚实、循证的医疗服务。" },
-      { "title": "您的语言，您的舒适", "description": "我们的团队能说英语、中文、西班牙语和韩语，让每位患者都能自如沟通，充分了解自己的治疗方案。" },
-      { "title": "技术服务于目的", "description": "我们投资于真正能改善您就诊体验的技术——更少辐射、更高精准度、更少就诊次数。" },
-      { "title": "长期伙伴关系", "description": "我们不只是修复牙齿——我们是您终身健康笑容的伙伴。许多患者已与我们相伴逾十年。" }
+      {
+        "title": "诚信至上",
+        "description": "我们只推荐您真正需要的治疗方案。没有过度推销，没有不必要的诊疗——只有诚实、循证的医疗服务。"
+      },
+      {
+        "title": "您的语言，您的舒适",
+        "description": "我们的团队能说英语、中文、西班牙语和韩语，让每位患者都能自如沟通，充分了解自己的治疗方案。"
+      },
+      {
+        "title": "技术服务于目的",
+        "description": "我们投资于真正能改善您就诊体验的技术——更少辐射、更高精准度、更少就诊次数。"
+      },
+      {
+        "title": "长期伙伴关系",
+        "description": "我们不只是修复牙齿——我们是您终身健康笑容的伙伴。许多患者已与我们相伴逾十年。"
+      }
     ],
     "introduction": "我们相信，卓越的牙科医疗不仅仅在于精湛的临床技术，更在于建立信任、清晰沟通，以及将每位患者视为独立个体来对待。"
   },
   "credentials": {
     "items": [
-      { "icon": "graduation-cap", "year": "2012", "location": "纽约州纽约市", "credential": "牙科博士（DDS）", "institution": "哥伦比亚大学牙科医学院" },
-      { "icon": "graduation-cap", "year": "2008", "location": "纽约州纽约市", "credential": "理学学士，生物学专业", "institution": "纽约大学" },
-      { "icon": "award", "year": "2013", "location": "纽约州纽约市", "credential": "高级种植牙技术培训", "institution": "哥伦比亚大学" }
+      {
+        "icon": "graduation-cap",
+        "year": "2012",
+        "location": "纽约州纽约市",
+        "credential": "牙科博士（DDS）",
+        "institution": "哥伦比亚大学牙科医学院"
+      },
+      {
+        "icon": "graduation-cap",
+        "year": "2008",
+        "location": "纽约州纽约市",
+        "credential": "理学学士，生物学专业",
+        "institution": "纽约大学"
+      },
+      {
+        "icon": "award",
+        "year": "2013",
+        "location": "纽约州纽约市",
+        "credential": "高级种植牙技术培训",
+        "institution": "哥伦比亚大学"
+      }
     ],
     "title": "教育与培训",
     "variant": "grid"
@@ -69,21 +121,60 @@
     "title": "专业会员资格",
     "variant": "detailed",
     "organizations": [
-      { "name": "美国牙科协会", "role": "会员" },
-      { "name": "纽约州牙科协会", "role": "会员" },
-      { "name": "普通牙科学会", "role": "院士" },
-      { "name": "国际口腔种植学会", "role": "院士" },
-      { "name": "Invisalign隐适美", "role": "白金级服务商" }
+      {
+        "name": "美国牙科协会",
+        "role": "会员"
+      },
+      {
+        "name": "纽约州牙科协会",
+        "role": "会员"
+      },
+      {
+        "name": "普通牙科学会",
+        "role": "院士"
+      },
+      {
+        "name": "国际口腔种植学会",
+        "role": "院士"
+      },
+      {
+        "name": "Invisalign隐适美",
+        "role": "白金级服务商"
+      }
     ]
   },
   "specializations": {
     "areas": [
-      { "icon": "anchor", "title": "种植牙", "description": "已完成逾1,200例种植牙手术，包括复杂的全弓修复病例" },
-      { "icon": "sparkles", "title": "美容牙科", "description": "贴面、美白、粘接修复及全面笑容改造方案规划" },
-      { "icon": "align-center", "title": "Invisalign隐适美", "description": "白金级Invisalign隐适美服务商，已完成数百例病例" },
-      { "icon": "shield-check", "title": "预防保健", "description": "全面检查、数字成像及个性化预防计划" },
-      { "icon": "heart-pulse", "title": "修复牙科", "description": "牙冠、牙桥、根管治疗及CEREC当日修复" },
-      { "icon": "baby", "title": "家庭及儿童牙科", "description": "为各年龄层患者提供温和医疗，从第一颗乳牙到成年期全程呵护" }
+      {
+        "icon": "anchor",
+        "title": "种植牙",
+        "description": "已完成逾1,200例种植牙手术，包括复杂的全弓修复病例"
+      },
+      {
+        "icon": "sparkles",
+        "title": "美容牙科",
+        "description": "贴面、美白、粘接修复及全面笑容改造方案规划"
+      },
+      {
+        "icon": "align-center",
+        "title": "Invisalign隐适美",
+        "description": "白金级Invisalign隐适美服务商，已完成数百例病例"
+      },
+      {
+        "icon": "shield-check",
+        "title": "预防保健",
+        "description": "全面检查、数字成像及个性化预防计划"
+      },
+      {
+        "icon": "heart-pulse",
+        "title": "修复牙科",
+        "description": "牙冠、牙桥、根管治疗及CEREC当日修复"
+      },
+      {
+        "icon": "baby",
+        "title": "家庭及儿童牙科",
+        "description": "为各年龄层患者提供温和医疗，从第一颗乳牙到成年期全程呵护"
+      }
     ],
     "title": "专业领域",
     "variant": "grid-3",

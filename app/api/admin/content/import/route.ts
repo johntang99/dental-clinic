@@ -22,6 +22,18 @@ interface ImportCandidate {
   sourceMtimeMs: number;
 }
 
+function parseBooleanEnv(value: string | undefined): boolean | null {
+  if (typeof value !== 'string') return null;
+  const normalized = value.trim().toLowerCase();
+  if (['1', 'true', 'yes', 'on'].includes(normalized)) return true;
+  if (['0', 'false', 'no', 'off'].includes(normalized)) return false;
+  return null;
+}
+
+function shouldEnforceProdImportGuardrails(): boolean {
+  return process.env.NODE_ENV === 'production';
+}
+
 async function collectJsonPathsRecursive(
   rootDir: string,
   currentDir = rootDir
@@ -137,6 +149,8 @@ export async function POST(request: NextRequest) {
     ? payload.includePaths.filter((value: unknown): value is string => typeof value === 'string')
     : [];
   const includePathSet = includePaths.length > 0 ? new Set(includePaths) : null;
+  const guardToken = typeof payload.guardToken === 'string' ? payload.guardToken.trim() : '';
+  const source = typeof payload.source === 'string' ? payload.source.trim() : '';
 
   if (!siteId || !locale) {
     return NextResponse.json(
@@ -152,6 +166,47 @@ export async function POST(request: NextRequest) {
   }
   if (!canWriteContent(session.user)) {
     return NextResponse.json({ message: 'Forbidden' }, { status: 403 });
+  }
+
+  if (!dryRun && mode !== 'overwrite' && includePaths.length === 0) {
+    return NextResponse.json(
+      {
+        message:
+          'Guardrail: locale-wide import is blocked for missing mode. Use scoped includePaths (changed files only).',
+        code: 'SCOPED_IMPORT_REQUIRED',
+      },
+      { status: 400 }
+    );
+  }
+
+  if (!dryRun && mode === 'overwrite' && source !== 'admin-overwrite-button') {
+    return NextResponse.json(
+      {
+        message:
+          'Guardrail: locale-wide overwrite import is only allowed from the Overwrite Import button flow.',
+        code: 'OVERWRITE_SOURCE_REQUIRED',
+      },
+      { status: 403 }
+    );
+  }
+
+  if (shouldEnforceProdImportGuardrails() && !dryRun) {
+    if (mode === 'overwrite') {
+      const overwriteEnabled = parseBooleanEnv(process.env.ALLOW_PROD_OVERWRITE_IMPORT) === true;
+      const expectedToken = (process.env.PROD_IMPORT_GUARD_TOKEN || '').trim();
+      const tokenRequired = expectedToken.length > 0;
+      const tokenValid = !tokenRequired ? false : guardToken === expectedToken;
+      if (!overwriteEnabled || !tokenValid) {
+        return NextResponse.json(
+          {
+            message:
+              'Production guardrail: overwrite import is blocked unless break-glass env + valid guard token are provided.',
+            code: 'PROD_OVERWRITE_BLOCKED',
+          },
+          { status: 403 }
+        );
+      }
+    }
   }
 
   const allCandidates = await collectImportCandidates(siteId, locale);
