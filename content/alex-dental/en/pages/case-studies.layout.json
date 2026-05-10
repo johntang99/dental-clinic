@@ -1,9 +1,19 @@
 {
   "sections": [
-    { "id": "hero" },
-    { "id": "introduction" },
-    { "id": "studies" },
-    { "id": "statistics" },
-    { "id": "cta" }
+    {
+      "id": "hero"
+    },
+    {
+      "id": "introduction"
+    },
+    {
+      "id": "studies"
+    },
+    {
+      "id": "statistics"
+    },
+    {
+      "id": "cta"
+    }
   ]
 }

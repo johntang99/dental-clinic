@@ -14,6 +14,7 @@ const navigation: Array<{
   { name: 'Site Settings', href: '/admin/site-settings', iconKey: 'slidersHorizontal', group: 'site' },
   { name: 'Content', href: '/admin/content', iconKey: 'fileText', group: 'site' },
   { name: 'Services', href: '/admin/services', iconKey: 'fileText', group: 'site' },
+  { name: 'SEO Pages', href: '/admin/seo-pages', iconKey: 'fileText', group: 'site' },
   // { name: 'Conditions', href: '/admin/conditions', icon: FileText }, // TCM-specific — removed for dental
   { name: 'Case Studies', href: '/admin/case-studies', iconKey: 'fileText', group: 'site' },
   { name: 'Blog Posts', href: '/admin/blog-posts', iconKey: 'bookOpen', group: 'site' },

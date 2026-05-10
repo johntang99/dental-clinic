@@ -13,9 +13,9 @@
   },
   "hero": {
     "title": "Dental Health Blog",
+    "variant": "split-photo-right",
     "subtitle": "Tips, guides, and insights from our dental team to help you maintain a healthy, confident smile",
-    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425034783-hero-blog.jpg",
-    "variant": "split-photo-right"
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/alex-dental/heroes/1772425034783-hero-blog.jpg"
   },
   "categories": [
     {

@@ -14,6 +14,7 @@ import { ConditionsLayoutPanel } from '@/components/admin/panels/ConditionsLayou
 import { HomeSectionPhotosPanel } from '@/components/admin/panels/HomeSectionPhotosPanel';
 import { HeroPanel } from '@/components/admin/panels/HeroPanel';
 import { ContactNotificationPanel } from '@/components/admin/panels/ContactNotificationPanel';
+import { LocalSeoPagePanel } from '@/components/admin/panels/LocalSeoPagePanel';
 import { ProfilePanel } from '@/components/admin/panels/ProfilePanel';
 import { IntroductionPanel } from '@/components/admin/panels/IntroductionPanel';
 import { JourneyPanel } from '@/components/admin/panels/JourneyPanel';
@@ -27,6 +28,7 @@ import { ServiceDetailPanel } from '@/components/admin/panels/ServiceDetailPanel
 import { ConditionsPanel } from '@/components/admin/panels/ConditionsPanel';
 import { ConditionsModuleList } from '@/components/admin/panels/ConditionsModuleList';
 import { CaseStudiesModuleList } from '@/components/admin/panels/CaseStudiesModuleList';
+import { SeoProgramsModuleList } from '@/components/admin/panels/SeoProgramsModuleList';
 import { ItemJsonEditor } from '@/components/admin/panels/ItemJsonEditor';
 import {
   ConditionCategoryItemPanel,
@@ -47,6 +49,7 @@ interface ContentFileItem {
   path: string;
   scope: 'locale' | 'site';
   publishDate?: string;
+  groupKey?: string;
 }
 
 interface ContentEditorProps {
@@ -63,7 +66,8 @@ interface ContentEditorProps {
     | 'conditions'
     | 'conditionsItems'
     | 'caseStudies'
-    | 'caseStudiesItems';
+    | 'caseStudiesItems'
+    | 'seoPrograms';
   titleOverride?: string;
   basePath?: string;
 }
@@ -117,6 +121,7 @@ export function ContentEditor({
   const [activeCaseStudyIndex, setActiveCaseStudyIndex] = useState(-1);
   const [caseStudiesItemJsonDraft, setCaseStudiesItemJsonDraft] = useState('');
   const [caseStudiesItemJsonError, setCaseStudiesItemJsonError] = useState<string | null>(null);
+  const [activeSeoLocation, setActiveSeoLocation] = useState('');
   const filesTitle =
     fileFilter === 'blog'
       ? 'Blog Posts'
@@ -134,6 +139,8 @@ export function ContentEditor({
               ? 'Case Studies'
             : fileFilter === 'caseStudiesItems'
               ? 'Case Studies'
+            : fileFilter === 'seoPrograms'
+              ? 'SEO Pages'
         : 'Files';
   const FILE_FILTER_PATHS: Record<
     | 'services'
@@ -154,6 +161,7 @@ export function ContentEditor({
   const isServicesItemsMode = fileFilter === 'servicesItems';
   const isConditionsItemsMode = fileFilter === 'conditionsItems';
   const isCaseStudiesItemsMode = fileFilter === 'caseStudiesItems';
+  const isSeoProgramsMode = fileFilter === 'seoPrograms';
 
   const site = useMemo(
     () => sites.find((item) => item.id === siteId),
@@ -210,6 +218,9 @@ export function ContentEditor({
           (file) => allowedPaths.has(file.path) || (isServiceFilter && file.path.startsWith('services/')) || (isCaseFilter && file.path.startsWith('cases/'))
         );
         nextFiles = [...nextFiles].sort((a, b) => a.label.localeCompare(b.label));
+      } else if (fileFilter === 'seoPrograms') {
+        nextFiles = nextFiles.filter((file) => file.path.startsWith('local-seo/'));
+        nextFiles = [...nextFiles].sort((a, b) => a.label.localeCompare(b.label));
       } else {
         const moduleManagedPaths = new Set([
           ...FILE_FILTER_PATHS.servicesItems,
@@ -221,6 +232,7 @@ export function ContentEditor({
             !file.path.startsWith('blog/') &&
             !file.path.startsWith('services/') &&
             !file.path.startsWith('cases/') &&
+            !file.path.startsWith('local-seo/') &&
             !SITE_SETTINGS_PATHS.has(file.path) &&
             !moduleManagedPaths.has(file.path)
         );
@@ -854,6 +866,10 @@ export function ContentEditor({
       if (slug === 'home') return `/${locale}`;
       return `/${locale}/${slug}`;
     }
+    if (activeFile.path.startsWith('local-seo/')) {
+      const slug = activeFile.path.replace('local-seo/', '').replace('.json', '');
+      return `/${locale}/${slug}`;
+    }
     return `/${locale}`;
   };
 
@@ -925,11 +941,13 @@ export function ContentEditor({
   const isAboutPageFile = activeFile?.path === 'pages/about.json';
   const isConditionsPageFile = activeFile?.path === 'pages/conditions.json';
   const isCaseStudiesPageFile = activeFile?.path === 'pages/case-studies.json';
+  const isLocalSeoFile = Boolean(activeFile?.path?.startsWith('local-seo/'));
   const allowCreateOrDuplicate =
     fileFilter !== 'siteSettings' &&
     !isServicesItemsMode &&
     !isConditionsItemsMode &&
-    !isCaseStudiesItemsMode;
+    !isCaseStudiesItemsMode &&
+    !isSeoProgramsMode;
   const servicesPageFile = files.find((file) => file.path === 'pages/services.json') || null;
   const servicesLayoutFile =
     files.find((file) => file.path === 'pages/services.layout.json') || null;
@@ -1017,6 +1035,321 @@ export function ContentEditor({
     !isCaseStudiesItemsMode || isCaseStudiesPageSettingsSelected;
   const showSharedPanels =
     showGlobalPanels && showConditionsGlobalPanels && showCaseStudiesGlobalPanels;
+  const inferSeoLocationFromFile = (file: ContentFileItem) => {
+    if (typeof file.groupKey === 'string' && file.groupKey.trim()) {
+      return file.groupKey.trim().toLowerCase();
+    }
+    const slug = file.path.replace(/^local-seo\//, '').replace(/\.json$/, '');
+    if (slug.startsWith('great-neck-') || slug === 'great-neck') return 'great-neck';
+    if (slug.startsWith('flushing-') || slug === 'flushing') return 'flushing';
+    const firstDash = slug.indexOf('-');
+    return firstDash > 0 ? slug.slice(0, firstDash) : slug;
+  };
+  const seoProgramFiles = isSeoProgramsMode
+    ? files.filter((file) => file.path.startsWith('local-seo/'))
+    : [];
+  const seoLocations = useMemo(() => {
+    const unique = new Set<string>();
+    seoProgramFiles.forEach((file) => {
+      const key = inferSeoLocationFromFile(file);
+      if (key) unique.add(key);
+    });
+    return Array.from(unique).sort((a, b) => a.localeCompare(b));
+  }, [seoProgramFiles]);
+  const selectedSeoLocation = activeSeoLocation || seoLocations[0] || '';
+  const seoPagesForSelectedLocation = useMemo(
+    () =>
+      seoProgramFiles
+        .filter((file) => inferSeoLocationFromFile(file) === selectedSeoLocation)
+        .sort((a, b) => a.label.localeCompare(b.label)),
+    [seoProgramFiles, selectedSeoLocation]
+  );
+  const isSeoPageFileActive = Boolean(activeFile?.path?.startsWith('local-seo/'));
+  const locationNameByKey: Record<string, string> = {
+    flushing: '法拉盛',
+    'great-neck': '大颈',
+  };
+  const seoLocationDisplay = (locationKey: string) =>
+    locationNameByKey[locationKey] || toTitleCase(locationKey);
+
+  useEffect(() => {
+    if (!isSeoProgramsMode) return;
+    if (seoLocations.length === 0) {
+      if (activeSeoLocation) setActiveSeoLocation('');
+      return;
+    }
+    if (!activeSeoLocation || !seoLocations.includes(activeSeoLocation)) {
+      setActiveSeoLocation(seoLocations[0]);
+    }
+  }, [isSeoProgramsMode, seoLocations, activeSeoLocation]);
+
+  useEffect(() => {
+    if (!isSeoProgramsMode || !activeFile?.path?.startsWith('local-seo/')) return;
+    const locationKey = inferSeoLocationFromFile(activeFile);
+    if (!activeSeoLocation && locationKey && locationKey !== activeSeoLocation) {
+      setActiveSeoLocation(locationKey);
+    }
+  }, [isSeoProgramsMode, activeFile?.path, activeFile?.groupKey, activeSeoLocation]);
+
+  const handleSeoLocationSelect = (locationKey: string) => {
+    setActiveSeoLocation(locationKey);
+    const nextPages = seoProgramFiles
+      .filter((file) => inferSeoLocationFromFile(file) === locationKey)
+      .sort((a, b) => a.label.localeCompare(b.label));
+    if (nextPages.length > 0) {
+      setActiveFile(nextPages[0]);
+      return;
+    }
+    if (activeFile?.path?.startsWith('local-seo/')) {
+      setActiveFile(null);
+    }
+  };
+
+  const saveSeoProgramFile = async (filePath: string, data: Record<string, any>) => {
+    const response = await fetch('/api/admin/content/file', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        siteId,
+        locale,
+        path: filePath,
+        content: JSON.stringify(data, null, 2),
+      }),
+    });
+    const payload = await response.json();
+    if (!response.ok) {
+      throw new Error(payload.message || 'Save failed');
+    }
+    return payload as { message?: string };
+  };
+
+  const addSeoLocation = async () => {
+    if (!isSeoProgramsMode) return;
+    const slugInput = window.prompt('请输入新地点 slug（示例: bayside）');
+    if (!slugInput) return;
+    const normalizedLocation = slugInput
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9-]+/g, '-')
+      .replace(/-{2,}/g, '-')
+      .replace(/^-+|-+$/g, '');
+    if (!normalizedLocation) {
+      setStatus('Invalid location slug.');
+      return;
+    }
+    const defaultDisplay = seoLocationDisplay(normalizedLocation);
+    const locationNameInput = window.prompt(
+      '请输入地点展示名称（中文）',
+      defaultDisplay
+    );
+    const locationName = (locationNameInput || defaultDisplay).trim() || defaultDisplay;
+    const filePath = `local-seo/${normalizedLocation}-orthodontist.json`;
+    if (seoProgramFiles.some((file) => file.path === filePath)) {
+      setStatus(`Location already exists: ${normalizedLocation}`);
+      const existing = seoProgramFiles.find((file) => file.path === filePath) || null;
+      if (existing) setActiveFile(existing);
+      setActiveSeoLocation(normalizedLocation);
+      return;
+    }
+    const topicName = `${locationName}牙齿矫正`;
+    const payload = {
+      slug: `${normalizedLocation}-orthodontist`,
+      pageType: 'core-location',
+      locationId: normalizedLocation,
+      topicType: 'core',
+      topicSlug: 'orthodontist',
+      topicName,
+      title: `${topicName}｜胡林正畸中心`,
+      description: `${locationName}牙齿矫正门诊，提供隐适美、牙套、儿童正畸与成人正畸服务。`,
+      intro: `${locationName}门诊提供儿童、青少年与成人牙齿矫正评估与治疗。`,
+      highlights: [],
+      treatmentSummary: '',
+      relatedServiceSlugs: [],
+      relatedConditionSlugs: [],
+      siblingSlug: '',
+      location: {
+        id: normalizedLocation,
+        name: locationName,
+        cityState: '',
+        clinicName: '',
+        address: '',
+        phone: '',
+        addressMapUrl: '',
+        mapsEmbedUrl: '',
+        phoneHref: '',
+      },
+      faq: [],
+      cta: {
+        primaryText: '预约免费咨询',
+        primaryLink: `/${locale}/book`,
+        secondaryText: '',
+        secondaryLink: '',
+      },
+    };
+    try {
+      setLoading(true);
+      const result = await saveSeoProgramFile(filePath, payload);
+      await loadFiles(filePath);
+      setActiveSeoLocation(normalizedLocation);
+      setStatus(result.message || `Created SEO location: ${locationName}`);
+    } catch (error: any) {
+      setStatus(error?.message || 'Failed to create location.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const addSeoProgramPage = async () => {
+    if (!isSeoProgramsMode || !selectedSeoLocation) return;
+    const suffixInput = window.prompt('请输入页面 slug 后缀（示例: invisalign）');
+    if (!suffixInput) return;
+    const normalizedSuffix = suffixInput
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9-]+/g, '-')
+      .replace(/-{2,}/g, '-')
+      .replace(/^-+|-+$/g, '');
+    if (!normalizedSuffix) {
+      setStatus('Invalid page slug suffix.');
+      return;
+    }
+    const slug = `${selectedSeoLocation}-${normalizedSuffix}`;
+    const filePath = `local-seo/${slug}.json`;
+    if (seoProgramFiles.some((file) => file.path === filePath)) {
+      setStatus(`SEO page already exists: ${slug}`);
+      const existing = seoProgramFiles.find((file) => file.path === filePath) || null;
+      if (existing) setActiveFile(existing);
+      return;
+    }
+    const locationName = seoLocationDisplay(selectedSeoLocation);
+    const defaultTopic = `${locationName}牙齿矫正`;
+    const topicNameInput = window.prompt('请输入页面关键词（中文）', defaultTopic);
+    const topicName = (topicNameInput || defaultTopic).trim() || defaultTopic;
+    const isCoreLocation = normalizedSuffix === 'orthodontist';
+    const payload = {
+      slug,
+      pageType: isCoreLocation ? 'core-location' : 'service-location',
+      locationId: selectedSeoLocation,
+      topicType: isCoreLocation ? 'core' : 'service',
+      topicSlug: normalizedSuffix,
+      topicName,
+      useServiceRichTemplate: isCoreLocation ? undefined : true,
+      title: `${topicName}｜胡林正畸中心`,
+      description: `${locationName}${topicName}服务页面，支持初诊评估与治疗路径规划。`,
+      intro: `${locationName}门诊提供${topicName}相关评估与治疗。`,
+      highlights: [],
+      treatmentSummary: '',
+      serviceDetailLink: '',
+      relatedServiceSlugs: [],
+      relatedConditionSlugs: [],
+      siblingSlug: '',
+      location: {
+        id: selectedSeoLocation,
+        name: locationName,
+        cityState: '',
+        clinicName: '',
+        address: '',
+        phone: '',
+        addressMapUrl: '',
+        mapsEmbedUrl: '',
+        phoneHref: '',
+      },
+      faq: [],
+      cta: {
+        primaryText: '预约免费咨询',
+        primaryLink: `/${locale}/book`,
+        secondaryText: '',
+        secondaryLink: '',
+      },
+    };
+    try {
+      setLoading(true);
+      const result = await saveSeoProgramFile(filePath, payload as Record<string, any>);
+      await loadFiles(filePath);
+      setStatus(result.message || `Created SEO page: ${slug}`);
+    } catch (error: any) {
+      setStatus(error?.message || 'Failed to create SEO page.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const deleteSelectedSeoPage = async () => {
+    if (!isSeoProgramsMode || !isSeoPageFileActive || !activeFile) return;
+    const confirmed = window.confirm(`Delete ${activeFile.path}? This cannot be undone.`);
+    if (!confirmed) return;
+    try {
+      setLoading(true);
+      const response = await fetch(
+        `/api/admin/content/file?siteId=${siteId}&locale=${locale}&path=${encodeURIComponent(
+          activeFile.path
+        )}`,
+        { method: 'DELETE' }
+      );
+      const payload = await response.json();
+      if (!response.ok) {
+        throw new Error(payload.message || 'Delete failed');
+      }
+      await loadFiles();
+      setStatus(payload.message || 'SEO page deleted.');
+    } catch (error: any) {
+      setStatus(error?.message || 'Delete failed');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const deleteSelectedSeoLocation = async () => {
+    if (!isSeoProgramsMode || !selectedSeoLocation) return;
+    const targetFiles = seoProgramFiles.filter(
+      (file) => inferSeoLocationFromFile(file) === selectedSeoLocation
+    );
+    if (targetFiles.length === 0) {
+      setStatus('No SEO pages found for selected location.');
+      return;
+    }
+    const confirmed = window.confirm(
+      `Delete location "${seoLocationDisplay(selectedSeoLocation)}" and ${targetFiles.length} SEO page(s)? This cannot be undone.`
+    );
+    if (!confirmed) return;
+    try {
+      setLoading(true);
+      const results = await Promise.all(
+        targetFiles.map(async (file) => {
+          const response = await fetch(
+            `/api/admin/content/file?siteId=${siteId}&locale=${locale}&path=${encodeURIComponent(
+              file.path
+            )}`,
+            { method: 'DELETE' }
+          );
+          const payload = await response.json().catch(() => ({}));
+          return {
+            ok: response.ok,
+            path: file.path,
+            message: payload?.message as string | undefined,
+          };
+        })
+      );
+      const failed = results.filter((result) => !result.ok);
+      await loadFiles();
+      if (failed.length > 0) {
+        setStatus(
+          `Deleted ${results.length - failed.length} page(s), ${failed.length} failed: ${failed
+            .map((item) => item.path)
+            .join(', ')}`
+        );
+      } else {
+        setStatus(
+          `Deleted location ${seoLocationDisplay(selectedSeoLocation)} (${results.length} page(s)).`
+        );
+      }
+    } catch (error: any) {
+      setStatus(error?.message || 'Failed to delete selected location.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const scopedActionPaths = useMemo(() => {
     if (fileFilter === 'services' || fileFilter === 'servicesItems') {
       return ['pages/services.json', 'pages/services.layout.json'];
@@ -1026,6 +1359,9 @@ export function ContentEditor({
     }
     if (fileFilter === 'caseStudies' || fileFilter === 'caseStudiesItems') {
       return ['pages/case-studies.json', 'pages/case-studies.layout.json'];
+    }
+    if (fileFilter === 'seoPrograms') {
+      return files.filter((file) => file.path.startsWith('local-seo/')).map((file) => file.path);
     }
     if (fileFilter === 'blog') {
       return files.filter((file) => file.path.startsWith('blog/')).map((file) => file.path);
@@ -1040,6 +1376,8 @@ export function ContentEditor({
         ? 'Conditions'
         : fileFilter === 'caseStudies' || fileFilter === 'caseStudiesItems'
           ? 'Case Studies'
+          : fileFilter === 'seoPrograms'
+            ? 'SEO Pages'
           : fileFilter === 'blog'
             ? 'Blog Posts'
             : 'Current Section'
@@ -2122,6 +2460,19 @@ export function ContentEditor({
                   deleteSelectedCaseStudyItem={deleteSelectedCaseStudyItem}
                   setStatus={(message) => setStatus(message)}
                 />
+              ) : isSeoProgramsMode ? (
+                <SeoProgramsModuleList
+                  locations={seoLocations}
+                  selectedLocation={selectedSeoLocation}
+                  pages={seoPagesForSelectedLocation}
+                  activeFilePath={activeFile?.path}
+                  onSelectLocation={handleSeoLocationSelect}
+                  setActiveFile={(file) => setActiveFile(file as ContentFileItem | null)}
+                  addLocation={addSeoLocation}
+                  deleteSelectedLocation={deleteSelectedSeoLocation}
+                  addPage={addSeoProgramPage}
+                  deleteSelectedPage={deleteSelectedSeoPage}
+                />
               ) : (
                 files.map((file) => (
                   <button
@@ -2151,6 +2502,8 @@ export function ContentEditor({
                 <div className="text-sm text-gray-500">
                   {fileFilter === 'blog'
                     ? 'No blog posts found for this locale.'
+                    : fileFilter === 'seoPrograms'
+                      ? 'No SEO pages found for this locale. Click Add Location to start.'
                     : 'No content files found for this locale.'}
                 </div>
               )}
@@ -2426,8 +2779,15 @@ export function ContentEditor({
                 />
               )}
 
-              {showSharedPanels && formData?.cta && (
+              {showSharedPanels && formData?.cta && !isLocalSeoFile && (
                 <CtaPanel cta={formData.cta} updateFormValue={updateFormValue} />
+              )}
+
+              {isLocalSeoFile && formData && (
+                <LocalSeoPagePanel
+                  formData={formData}
+                  updateFormValue={updateFormValue}
+                />
               )}
 
               {isServicesItemsMode && isServiceCategorySelected && selectedServiceCategory && (
@@ -2616,7 +2976,7 @@ export function ContentEditor({
                 />
               )}
 
-              {formData && !formData.hero && !formData.introduction && !formData.cta && (
+              {formData && !isLocalSeoFile && !formData.hero && !formData.introduction && !formData.cta && (
                 <div className="text-sm text-gray-500">
                   No schema panels available for this file yet. Use the JSON tab.
                 </div>

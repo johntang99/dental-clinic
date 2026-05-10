@@ -1,8 +1,16 @@
 {
   "sections": [
-    { "id": "hero" },
-    { "id": "galleryGrid" },
-    { "id": "visitInfo" },
-    { "id": "cta" }
+    {
+      "id": "hero"
+    },
+    {
+      "id": "galleryGrid"
+    },
+    {
+      "id": "visitInfo"
+    },
+    {
+      "id": "cta"
+    }
   ]
 }

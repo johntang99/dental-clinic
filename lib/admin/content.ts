@@ -9,6 +9,7 @@ export interface ContentFileItem {
   path: string;
   scope: 'locale' | 'site';
   publishDate?: string;
+  groupKey?: string;
 }
 
 const CONTENT_DIR = path.join(process.cwd(), 'content');
@@ -163,6 +164,22 @@ export async function listContentFiles(
         return;
       }
 
+      if (entry.path.startsWith('local-seo/') && entry.path.endsWith('.json')) {
+        const slug = entry.path.replace('local-seo/', '').replace('.json', '');
+        const data = entry.data as Record<string, any>;
+        const topicName = typeof data?.topicName === 'string' ? data.topicName : '';
+        const title = typeof data?.title === 'string' ? data.title : '';
+        const locationId = typeof data?.locationId === 'string' ? data.locationId : '';
+        addItem({
+          id: `seo-program-${slug}`,
+          label: `SEO Page: ${topicName || title || titleCase(slug)}`,
+          path: entry.path,
+          scope: 'locale',
+          groupKey: locationId || undefined,
+        });
+        return;
+      }
+
       if (entry.path === 'navigation.json') {
         addItem({ id: 'navigation', label: 'Navigation', path: entry.path, scope: 'locale' });
       }
@@ -262,6 +279,39 @@ export async function listContentFiles(
     // ignore missing services directory
   }
 
+  const localSeoDir = path.join(CONTENT_DIR, siteId, locale, 'local-seo');
+  try {
+    const files = await fs.readdir(localSeoDir);
+    await Promise.all(
+      files
+        .filter((file) => file.endsWith('.json'))
+        .map(async (file) => {
+          const slug = file.replace('.json', '');
+          let topicName = '';
+          let title = '';
+          let locationId = '';
+          try {
+            const raw = await fs.readFile(path.join(localSeoDir, file), 'utf-8');
+            const parsed = JSON.parse(raw);
+            topicName = typeof parsed?.topicName === 'string' ? parsed.topicName : '';
+            title = typeof parsed?.title === 'string' ? parsed.title : '';
+            locationId = typeof parsed?.locationId === 'string' ? parsed.locationId : '';
+          } catch (error) {
+            // ignore parse errors
+          }
+          addItem({
+            id: `seo-program-${slug}`,
+            label: `SEO Page: ${topicName || title || titleCase(slug)}`,
+            path: `local-seo/${file}`,
+            scope: 'locale',
+            groupKey: locationId || undefined,
+          });
+        })
+    );
+  } catch (error) {
+    // ignore missing local-seo directory
+  }
+
   addItem({
     id: 'navigation',
     label: 'Navigation',
@@ -336,6 +386,10 @@ export function resolveContentPath(siteId: string, locale: string, filePath: str
   }
 
   if (filePath.startsWith('services/')) {
+    return path.join(CONTENT_DIR, siteId, locale, filePath);
+  }
+
+  if (filePath.startsWith('local-seo/')) {
     return path.join(CONTENT_DIR, siteId, locale, filePath);
   }
 

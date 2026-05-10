@@ -279,7 +279,7 @@ export async function POST(request: NextRequest) {
     if (!slug) {
       return NextResponse.json({ message: 'slug is required' }, { status: 400 });
     }
-    if (!['pages', 'blog', 'services'].includes(targetDir)) {
+    if (!['pages', 'blog', 'services', 'local-seo'].includes(targetDir)) {
       return NextResponse.json({ message: 'Invalid target directory' }, { status: 400 });
     }
     const normalized = slug.trim().toLowerCase();
@@ -332,15 +332,19 @@ export async function POST(request: NextRequest) {
       ? 'blog'
       : sourcePath.startsWith('services/')
         ? 'services'
-        : 'pages';
+        : sourcePath.startsWith('local-seo/')
+          ? 'local-seo'
+          : 'pages';
     const resolvedTargetDir =
       sourceDir === 'blog'
         ? 'blog'
         : sourceDir === 'services'
           ? 'services'
-          : targetDir && ['pages', 'blog', 'services'].includes(targetDir)
-            ? targetDir
-            : 'pages';
+          : sourceDir === 'local-seo'
+            ? 'local-seo'
+            : targetDir && ['pages', 'blog', 'services', 'local-seo'].includes(targetDir)
+              ? targetDir
+              : 'pages';
     if (sourceDir === 'blog' && resolvedTargetDir !== 'blog') {
       return NextResponse.json(
         { message: 'Blog posts must be duplicated into blog/' },
@@ -350,6 +354,12 @@ export async function POST(request: NextRequest) {
     if (sourceDir === 'services' && resolvedTargetDir !== 'services') {
       return NextResponse.json(
         { message: 'Services must be duplicated into services/' },
+        { status: 400 }
+      );
+    }
+    if (sourceDir === 'local-seo' && resolvedTargetDir !== 'local-seo') {
+      return NextResponse.json(
+        { message: 'SEO pages must be duplicated into local-seo/' },
         { status: 400 }
       );
     }

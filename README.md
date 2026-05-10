@@ -37,6 +37,16 @@ npm run build
 npm start
 ```
 
+## Content Sync Guardrail Policy (Required)
+
+- `Sync Current File to DB` is the default sync path and must stay scoped to one file.
+- Non-overwrite import requests must include `includePaths`; locale-wide missing-mode import is blocked.
+- Locale-wide content overwrite is allowed only through the `Overwrite Import` button flow.
+- Production overwrite requires break-glass controls:
+  - `ALLOW_PROD_OVERWRITE_IMPORT=true`
+  - valid `PROD_IMPORT_GUARD_TOKEN`
+- `Check Update From DB` and `Export Locale JSON` remain available for review/backup workflows.
+
 ## Key Docs
 
 - `LOCALE_ROUTING_SOP.md`

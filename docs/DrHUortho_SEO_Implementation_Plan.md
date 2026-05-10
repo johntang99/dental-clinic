@@ -398,97 +398,188 @@ https://www.drhuortho.com/sitemap.xml
 > This section centralizes all SEO program pages, including all Phase 3 pages.
 
 #### 6.2.1 Foundation URLs (existing)
-```text
+纽约牙齿矫正首页（主目标词）/ 纽约正畸（次目标词）
 https://www.drhuortho.com/zh
+
+牙齿矫正服务（主目标词）/ 正畸服务（次目标词）
 https://www.drhuortho.com/zh/services
+
+预约牙齿矫正咨询（主目标词）/ 预约正畸初诊（次目标词）
 https://www.drhuortho.com/zh/contact
+
+ABO认证牙齿矫正医生（主目标词）/ ABO认证正畸医生（次目标词）
 https://www.drhuortho.com/zh/about
+
+牙齿矫正知识中心（主目标词）/ 正畸知识（次目标词）
 https://www.drhuortho.com/zh/blog
+
+牙齿矫正案例展示（主目标词）/ 正畸案例（次目标词）
 https://www.drhuortho.com/zh/case-studies
+
+牙齿矫正初诊流程（主目标词）/ 正畸初诊流程（次目标词）
 https://www.drhuortho.com/zh/new-patients
-```
 
 #### 6.2.2 Phase 3 core location landing pages (2)
-```text
+法拉盛牙齿矫正（主目标词）/ 法拉盛正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-orthodontist
+
+大颈牙齿矫正（主目标词）/ 大颈正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-orthodontist
-```
 
 #### 6.2.3 Phase 3 service + location pages (24)
 
 Flushing (12):
-```text
+法拉盛传统金属牙套（主目标词）/ 法拉盛传统正畸牙套（次目标词）
 https://www.drhuortho.com/zh/flushing-traditional-braces
+
+法拉盛陶瓷牙套（主目标词）/ 法拉盛美观正畸牙套（次目标词）
 https://www.drhuortho.com/zh/flushing-ceramic-braces
+
+法拉盛自锁牙套（主目标词）/ 法拉盛自锁正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-self-ligating-braces
+
+法拉盛隐适美（主目标词）/ 法拉盛隐形正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-invisalign
+
+法拉盛隐适美青少年版（主目标词）/ 法拉盛青少年隐形正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-invisalign-teen
+
+法拉盛儿童牙齿矫正早期干预（主目标词）/ 法拉盛早期正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-early-orthodontics
+------
+
+法拉盛青少年牙齿矫正（主目标词）/ 法拉盛青少年正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-teen-orthodontics
+
+法拉盛成人牙齿矫正（主目标词）/ 法拉盛成人正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-adult-orthodontics
+
+法拉盛正颌联合牙齿矫正（主目标词）/ 法拉盛正畸正颌手术（次目标词）
 https://www.drhuortho.com/zh/flushing-surgical-orthodontics
+
+法拉盛上颌扩弓矫正（主目标词）/ 法拉盛上颌扩弓正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-palatal-expanders
+
+法拉盛保持器巩固矫正（主目标词）/ 法拉盛保持器正畸复诊（次目标词）
 https://www.drhuortho.com/zh/flushing-retainers
+
+法拉盛牙齿矫正急诊（主目标词）/ 法拉盛正畸急诊（次目标词）
 https://www.drhuortho.com/zh/flushing-emergency-orthodontics
-```
 
 Great Neck (12):
-```text
+大颈传统金属牙套（主目标词）/ 大颈传统正畸牙套（次目标词）
 https://www.drhuortho.com/zh/great-neck-traditional-braces
+
+大颈陶瓷牙套（主目标词）/ 大颈美观正畸牙套（次目标词）
 https://www.drhuortho.com/zh/great-neck-ceramic-braces
+
+大颈自锁牙套（主目标词）/ 大颈自锁正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-self-ligating-braces
+
+大颈隐适美（主目标词）/ 大颈隐形正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-invisalign
+
+大颈隐适美青少年版（主目标词）/ 大颈青少年隐形正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-invisalign-teen
+
+大颈儿童牙齿矫正早期干预（主目标词）/ 大颈早期正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-early-orthodontics
+
+大颈青少年牙齿矫正（主目标词）/ 大颈青少年正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-teen-orthodontics
+
+大颈成人牙齿矫正（主目标词）/ 大颈成人正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-adult-orthodontics
+
+大颈正颌联合牙齿矫正（主目标词）/ 大颈正畸正颌手术（次目标词）
 https://www.drhuortho.com/zh/great-neck-surgical-orthodontics
+
+大颈上颌扩弓矫正（主目标词）/ 大颈上颌扩弓正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-palatal-expanders
+
+大颈保持器巩固矫正（主目标词）/ 大颈保持器正畸复诊（次目标词）
 https://www.drhuortho.com/zh/great-neck-retainers
+
+大颈牙齿矫正急诊（主目标词）/ 大颈正畸急诊（次目标词）
 https://www.drhuortho.com/zh/great-neck-emergency-orthodontics
-```
 
 #### 6.2.4 Phase 3 condition + location pages (16)
 
 Flushing (8):
-```text
+法拉盛牙齿拥挤矫正（主目标词）/ 法拉盛拥挤正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-crowding
+
+法拉盛深覆合矫正（主目标词）/ 法拉盛深覆合正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-deep-bite
+
+法拉盛地包天/反颌矫正（主目标词）/ 法拉盛反颌正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-underbite
+
+法拉盛开颌矫正（主目标词）/ 法拉盛开颌正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-open-bite
+
+法拉盛交叉咬合矫正（主目标词）/ 法拉盛交叉咬合正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-crossbite
+
+法拉盛牙齿间隙矫正（主目标词）/ 法拉盛间隙正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-spacing
+
+法拉盛上颌狭窄矫正（主目标词）/ 法拉盛上颌狭窄正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-narrow-palate
+
+法拉盛儿童牙齿矫正早期干预（主目标词）/ 法拉盛早期干预正畸（次目标词）
 https://www.drhuortho.com/zh/flushing-early-intervention
-```
 
 Great Neck (8):
-```text
+大颈牙齿拥挤矫正（主目标词）/ 大颈拥挤正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-crowding
+
+大颈深覆合矫正（主目标词）/ 大颈深覆合正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-deep-bite
+
+大颈地包天/反颌矫正（主目标词）/ 大颈反颌正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-underbite
+
+大颈开颌矫正（主目标词）/ 大颈开颌正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-open-bite
+
+大颈交叉咬合矫正（主目标词）/ 大颈交叉咬合正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-crossbite
+
+大颈牙齿间隙矫正（主目标词）/ 大颈间隙正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-spacing
+
+大颈上颌狭窄矫正（主目标词）/ 大颈上颌狭窄正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-narrow-palate
+
+大颈儿童牙齿矫正早期干预（主目标词）/ 大颈早期干预正畸（次目标词）
 https://www.drhuortho.com/zh/great-neck-early-intervention
-```
 
 #### 6.2.5 Phase 3 location condition hub pages (2)
-```text
+法拉盛牙齿矫正问题总览（主目标词）/ 法拉盛正畸问题总览（次目标词）
 https://www.drhuortho.com/zh/flushing-conditions
+
+大颈牙齿矫正问题总览（主目标词）/ 大颈正畸问题总览（次目标词）
 https://www.drhuortho.com/zh/great-neck-conditions
-```
 
 #### 6.2.6 Phase 3 resource/comparison pages (6)
-```text
+法拉盛牙齿矫正费用（主目标词）/ 法拉盛正畸费用（次目标词）
 https://www.drhuortho.com/zh/flushing-orthodontics-cost
+
+大颈牙齿矫正费用（主目标词）/ 大颈正畸费用（次目标词）
 https://www.drhuortho.com/zh/great-neck-orthodontics-cost
+
+法拉盛牙齿矫正保险（主目标词）/ 法拉盛正畸保险（次目标词）
 https://www.drhuortho.com/zh/flushing-orthodontics-insurance
+
+大颈牙齿矫正保险（主目标词）/ 大颈正畸保险（次目标词）
 https://www.drhuortho.com/zh/great-neck-orthodontics-insurance
+
+法拉盛牙齿矫正方式对比：牙套 vs 隐适美（主目标词）/ 法拉盛正畸方式对比（次目标词）
 https://www.drhuortho.com/zh/flushing-braces-vs-invisalign
+
+大颈牙齿矫正方式对比：牙套 vs 隐适美（主目标词）/ 大颈正畸方式对比（次目标词）
 https://www.drhuortho.com/zh/great-neck-braces-vs-invisalign
-```
 
 ### 6.3 GSC submission order (execute exactly)
 1. Submit sitemap first.

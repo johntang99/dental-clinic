@@ -359,6 +359,7 @@ const allConditionSlugs = conditions.map((condition) => condition.slug);
 
 const otherLocationId = (locationId) =>
   locationId === 'flushing' ? 'great-neck' : 'flushing';
+const locationById = new Map(locations.map((location) => [location.id, location]));
 
 const buildFaq = ({ locationName, topicName }) => [
   {
@@ -397,6 +398,64 @@ function buildServiceFaq(locationName, service) {
   }));
 }
 
+function injectLocalKeywordPriority(page) {
+  const location = page.location || locationById.get(page.locationId);
+  if (!location) return page;
+
+  const primaryKeyword = `${location.name}牙齿矫正`;
+  const secondaryKeyword = `${location.name}正畸`;
+  const nextPage = { ...page };
+
+  if (typeof nextPage.title === 'string') {
+    if (!nextPage.title.includes(primaryKeyword)) {
+      nextPage.title = `${primaryKeyword}｜${nextPage.title}`;
+    }
+    if (!nextPage.title.includes(secondaryKeyword)) {
+      nextPage.title = `${nextPage.title}｜${secondaryKeyword}`;
+    }
+  }
+
+  if (typeof nextPage.description === 'string') {
+    if (!nextPage.description.includes(primaryKeyword)) {
+      nextPage.description = `${primaryKeyword}页面，${nextPage.description}`;
+    }
+    if (!nextPage.description.includes(secondaryKeyword)) {
+      nextPage.description = `${nextPage.description} 同时覆盖${secondaryKeyword}相关评估与治疗需求。`;
+    }
+  }
+
+  if (typeof nextPage.intro === 'string') {
+    if (!nextPage.intro.includes(primaryKeyword)) {
+      nextPage.intro = `围绕${primaryKeyword}需求，${nextPage.intro}`;
+    }
+    if (!nextPage.intro.includes(secondaryKeyword)) {
+      nextPage.intro = `${nextPage.intro} 并同步提供${secondaryKeyword}相关的个性化评估与方案建议。`;
+    }
+  }
+
+  if (Array.isArray(nextPage.faq) && nextPage.faq.length > 0) {
+    nextPage.faq = nextPage.faq.map((item) => ({ ...item }));
+    const firstFaq = nextPage.faq[0];
+    if (firstFaq && typeof firstFaq.question === 'string') {
+      if (!firstFaq.question.includes(primaryKeyword)) {
+        firstFaq.question = firstFaq.question.startsWith(location.name)
+          ? firstFaq.question.replace(location.name, `${primaryKeyword}`)
+          : `${primaryKeyword}：${firstFaq.question}`;
+      }
+      if (!firstFaq.question.includes(secondaryKeyword)) {
+        if (firstFaq.question.startsWith(primaryKeyword)) {
+          const questionTail = firstFaq.question.slice(primaryKeyword.length).replace(/^正畸/, '');
+          firstFaq.question = `${primaryKeyword}/${secondaryKeyword}${questionTail}`;
+        } else {
+          firstFaq.question = `${firstFaq.question}（含${secondaryKeyword}）`;
+        }
+      }
+    }
+  }
+
+  return nextPage;
+}
+
 function buildCoreLocationPage(location) {
   return {
     slug: `${location.id}-orthodontist`,
@@ -404,10 +463,10 @@ function buildCoreLocationPage(location) {
     locationId: location.id,
     topicType: 'core',
     topicSlug: 'orthodontist',
-    topicName: `${location.name}正畸医生`,
-    title: `${location.name}正畸医生｜ABO认证胡林正畸中心`,
-    description: `${location.name}专业正畸门诊，提供隐适美、牙套、儿童正畸与成人正畸服务。中英双语，预约便捷。`,
-    intro: `${location.name}门诊由三次获得ABO认证的胡林医生领衔。我们面向儿童、青少年和成人提供系统化正畸评估与治疗，帮助患者兼顾功能与美观。`,
+    topicName: `${location.name}牙齿矫正`,
+    title: `${location.name}牙齿矫正｜ABO认证胡林正畸中心`,
+    description: `${location.name}牙齿矫正门诊，提供隐适美、牙套、儿童正畸与成人正畸服务。中英双语，预约便捷。`,
+    intro: `${location.name}门诊由三次获得ABO认证的胡林医生领衔。针对${location.name}牙齿矫正需求，我们面向儿童、青少年和成人提供系统化正畸评估与治疗，帮助患者兼顾功能与美观。`,
     highlights: [
       'ABO三次认证正畸专家',
       '法拉盛与大颈双门诊联动',
@@ -664,16 +723,17 @@ async function main() {
     pages.push(...buildResourceLocationPages(location));
   }
 
-  pages.sort((a, b) => a.slug.localeCompare(b.slug));
+  const normalizedPages = pages.map((page) => injectLocalKeywordPriority(page));
+  normalizedPages.sort((a, b) => a.slug.localeCompare(b.slug));
 
   await Promise.all(
-    pages.map(async (page) => {
+    normalizedPages.map(async (page) => {
       const filePath = path.join(OUTPUT_DIR, `${page.slug}.json`);
       await fs.writeFile(filePath, `${JSON.stringify(page, null, 2)}\n`, 'utf8');
     })
   );
 
-  console.log(`Generated ${pages.length} local SEO pages at: ${OUTPUT_DIR}`);
+  console.log(`Generated ${normalizedPages.length} local SEO pages at: ${OUTPUT_DIR}`);
 }
 
 main().catch((error) => {

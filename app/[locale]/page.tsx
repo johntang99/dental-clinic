@@ -90,11 +90,11 @@ interface PageLayoutConfig {
 
 const huOrthodonticsSeoHubDefault = {
   badge: '本地专题入口',
-  title: '法拉盛 / 大颈正畸专题',
-  subtitle: '快速进入高需求项目页面：门诊入口、隐适美、牙套、费用与问题总览。',
+  title: '法拉盛 / 大颈牙齿矫正专题',
+  subtitle: '快速进入牙齿矫正高需求页面：门诊入口、隐适美、牙套、费用与问题总览。',
   links: [
-    { text: '法拉盛正畸医生', url: '/zh/flushing-orthodontist' },
-    { text: '大颈正畸医生', url: '/zh/great-neck-orthodontist' },
+    { text: '法拉盛牙齿矫正', url: '/zh/flushing-orthodontist' },
+    { text: '大颈牙齿矫正', url: '/zh/great-neck-orthodontist' },
     { text: '法拉盛隐适美', url: '/zh/flushing-invisalign' },
     { text: '大颈隐适美', url: '/zh/great-neck-invisalign' },
     { text: '法拉盛成人正畸', url: '/zh/flushing-adult-orthodontics' },

@@ -47,20 +47,20 @@
         "number": "2"
       }
     ],
-    "tagline": "ABO认证正畸权威 · 法拉盛与大颈",
+    "tagline": "纽约牙齿矫正专家 · 法拉盛与大颈ABO认证正畸专家",
     "variant": "photo-screenwide-top",
     "badgeText": "正在接受新患者预约",
     "primaryCta": {
       "link": "/book",
       "text": "预约免费咨询"
     },
-    "description": "胡林博士是正畸权威（Authority），三次获得美国正畸学会（ABO）认证，拥有DMD、DDS、MS、PhD四重学位。胡林正畸中心在法拉盛和大颈两处诊所，以中英双语为各年龄段患者提供专业的牙齿矫正服务。",
+    "description": "胡林博士三次获得美国正畸学会（ABO）认证，拥有DMD、DDS、MS、PhD四重学位。胡林正畸中心专注纽约华人牙齿矫正，提供法拉盛牙齿矫正与大颈牙齿矫正服务，涵盖隐适美、牙套、儿童与成人正畸，中英双语沟通。",
     "trustBadges": [
       "ABO三次认证",
       "隐适美认证",
       "15年以上经验"
     ],
-    "businessName": "胡林正畸中心",
+    "businessName": "胡林牙齿矫正、隐适美中心",
     "floatingTags": [
       "中英双语",
       "周末就诊",
@@ -108,7 +108,7 @@
   },
   "services": {
     "badge": "正畸服务",
-    "title": "全面的正畸治疗方案",
+    "title": "全面牙齿矫正治疗方案",
     "variant": "grid-cards-3x",
     "moreLink": {
       "url": "/services",
@@ -176,7 +176,7 @@
         "shortDescription": "为青少年量身定制的全面正畸治疗，利用生长发育的黄金时期高效完成矫正。"
       }
     ],
-    "subtitle": "从儿童早期矫治到成人隐形矫正，量身定制您的完美笑容"
+    "subtitle": "从儿童早期矫治到成人隐形矫正，提供牙齿矫正与正畸一体化方案"
   },
   "caseStudies": {
     "badge": "真实案例",
