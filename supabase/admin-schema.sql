@@ -118,3 +118,27 @@ alter table public.bookings
   add column if not exists service_type text;
 alter table public.bookings
   add column if not exists details jsonb not null default '{}'::jsonb;
+
+-- ================================================================
+-- Data API explicit grants (Supabase requirement)
+-- IMPORTANT: When adding new public tables, include explicit GRANTs.
+-- ================================================================
+grant usage on schema public to service_role;
+
+grant select, insert, update, delete on table public.sites to service_role;
+grant select, insert, update, delete on table public.site_domains to service_role;
+grant select, insert, update, delete on table public.admin_users to service_role;
+grant select, insert, update, delete on table public.media_assets to service_role;
+grant select, insert, update, delete on table public.booking_services to service_role;
+grant select, insert, update, delete on table public.booking_settings to service_role;
+grant select, insert, update, delete on table public.bookings to service_role;
+grant select, insert, update, delete on table public.admin_audit_logs to service_role;
+grant select, insert, update, delete on table public.content_entries to service_role;
+grant select, insert, update, delete on table public.content_revisions to service_role;
+grant usage, select on all sequences in schema public to service_role;
+
+alter default privileges in schema public
+grant select, insert, update, delete on tables to service_role;
+
+alter default privileges in schema public
+grant usage, select on sequences to service_role;

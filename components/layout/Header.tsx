@@ -38,6 +38,16 @@ export interface HeaderConfig {
     text?: string;
     link?: string;
   };
+  ctaPrimary?: {
+    text?: string;
+    url?: string;
+    style?: string;
+  };
+  ctaSecondary?: {
+    text?: string;
+    url?: string;
+    style?: string;
+  };
 }
 
 interface HeaderProps {
@@ -100,8 +110,11 @@ export default function Header({
   const navigation = rawNavItems.map((item) => ({ ...item, url: localizeUrl(item.url) }));
 
   const rawCta = menu?.cta || {
-    text: headerConfig?.cta?.text || (locale === 'en' ? 'Book Online' : '在线预约'),
-    link: headerConfig?.cta?.link || `/${locale}/contact`,
+    text:
+      headerConfig?.cta?.text ||
+      headerConfig?.ctaPrimary?.text ||
+      (locale === 'en' ? 'Book Online' : '在线预约'),
+    link: headerConfig?.cta?.link || headerConfig?.ctaPrimary?.url || `/${locale}/contact`,
   };
   const cta = { ...rawCta, link: localizeUrl(rawCta.link) };
   const menuFontWeightClass =

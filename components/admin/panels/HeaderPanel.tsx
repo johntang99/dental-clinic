@@ -17,6 +17,9 @@ export function HeaderPanel({
   addHeaderLanguage,
   removeHeaderLanguage,
 }: HeaderPanelProps) {
+  const ctaTextValue = formData.cta?.text ?? formData.ctaPrimary?.text ?? '';
+  const ctaLinkValue = formData.cta?.link ?? formData.ctaPrimary?.url ?? '';
+
   return (
     <div className="border border-gray-200 rounded-lg p-4">
       <div className="text-xs font-semibold text-gray-500 uppercase mb-3">Header</div>
@@ -288,7 +291,7 @@ export function HeaderPanel({
               <label className="block text-xs text-gray-500">Text</label>
               <input
                 className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
-                value={formData.cta?.text || ''}
+                value={ctaTextValue}
                 onChange={(event) => updateFormValue(['cta', 'text'], event.target.value)}
               />
             </div>
@@ -296,7 +299,7 @@ export function HeaderPanel({
               <label className="block text-xs text-gray-500">Link</label>
               <input
                 className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
-                value={formData.cta?.link || ''}
+                value={ctaLinkValue}
                 onChange={(event) => updateFormValue(['cta', 'link'], event.target.value)}
               />
             </div>

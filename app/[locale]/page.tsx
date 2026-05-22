@@ -142,6 +142,13 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function HomePage({ params }: PageProps) {
   const { locale } = params;
+  const getLocalizedUrl = (url?: string) => {
+    if (!url || !url.startsWith('/')) return url;
+    if (url === `/${locale}` || url.startsWith(`/${locale}/`)) return url;
+    return `/${locale}${url}`;
+  };
+  const localizeCta = <T extends { text: string; link: string },>(cta?: T) =>
+    cta ? { ...cta, link: getLocalizedUrl(cta.link) || cta.link } : undefined;
   
   // Load homepage content
   const siteId = await getRequestSiteId();
@@ -202,6 +209,10 @@ export default async function HomePage({ params }: PageProps) {
 
   const { hero } = content;
   const heroBusinessName = hero.businessName || hero.clinicName || 'Business';
+  const localizedHeroPrimaryCta = localizeCta(hero.primaryCta);
+  const localizedHeroSecondaryCta = localizeCta(hero.secondaryCta);
+  const localizedSectionCtaPrimary = localizeCta(content.cta?.primaryCta);
+  const localizedSectionCtaSecondary = localizeCta(content.cta?.secondaryCta);
   const defaultSections = [
     'hero',
     'credentials',
@@ -238,8 +249,8 @@ export default async function HomePage({ params }: PageProps) {
             tagline={hero.tagline}
             description={hero.description}
             badgeText={content.topBar?.badge?.visible ? content.topBar.badge.text : undefined}
-            primaryCta={hero.primaryCta}
-            secondaryCta={hero.secondaryCta}
+            primaryCta={localizedHeroPrimaryCta}
+            secondaryCta={localizedHeroSecondaryCta}
             image={hero.image}
             video={hero.video}
             gallery={Array.isArray(hero.gallery) ? hero.gallery : undefined}
@@ -310,7 +321,13 @@ export default async function HomePage({ params }: PageProps) {
       case 'whyChooseUs':
         return content.whyChooseUs ? <WhyChooseUsSection {...content.whyChooseUs} /> : null;
       case 'cta':
-        return content.cta ? <CTASection {...content.cta} /> : null;
+        return content.cta ? (
+          <CTASection
+            {...content.cta}
+            primaryCta={localizedSectionCtaPrimary}
+            secondaryCta={localizedSectionCtaSecondary}
+          />
+        ) : null;
       default:
         return null;
     }
