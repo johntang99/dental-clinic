@@ -6,9 +6,10 @@ export async function POST(request: NextRequest) {
   const payload = await request.json();
   const email = String(payload?.email || '').trim().toLowerCase();
   const phone = String(payload?.phone || '').trim();
+  const normalizedPhone = phone.replace(/[^\d+]/g, '');
 
-  if (!email || !phone) {
-    return NextResponse.json({ message: 'Email and phone are required' }, { status: 400 });
+  if (!email) {
+    return NextResponse.json({ message: 'Email is required' }, { status: 400 });
   }
 
   const siteId = await getRequestSiteId();
@@ -22,9 +23,11 @@ export async function POST(request: NextRequest) {
 
   const bookings = await listBookings(siteId, startDate, endDate);
   const filtered = bookings.filter(
-    (booking) =>
-      booking.email.toLowerCase() === email &&
-      booking.phone.replace(/[^\d+]/g, '') === phone.replace(/[^\d+]/g, '')
+    (booking) => {
+      if (booking.email.toLowerCase() !== email) return false;
+      if (!normalizedPhone) return true;
+      return booking.phone.replace(/[^\d+]/g, '') === normalizedPhone;
+    }
   );
 
   return NextResponse.json({ bookings: filtered });

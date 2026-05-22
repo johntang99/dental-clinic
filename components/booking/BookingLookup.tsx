@@ -40,7 +40,7 @@ export function BookingLookup({ locale }: BookingLookupProps) {
       const response = await fetch('/api/booking/list', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, phone }),
+        body: JSON.stringify({ email, phone: phone || undefined }),
       });
       if (!response.ok) {
         const payload = await response.json();
@@ -128,8 +128,8 @@ export function BookingLookup({ locale }: BookingLookupProps) {
         </h2>
         <p className="text-sm text-gray-600 mt-1">
           {locale === 'en'
-            ? 'Enter the email and phone used for booking.'
-            : '请输入预约时使用的邮箱和电话。'}
+            ? 'Enter the booking email. Phone is optional.'
+            : '请输入预约邮箱（电话可选）。'}
         </p>
       </div>
 
@@ -142,12 +142,12 @@ export function BookingLookup({ locale }: BookingLookupProps) {
         />
         <input
           className="rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
-          placeholder={locale === 'en' ? 'Phone' : '电话'}
+          placeholder={locale === 'en' ? 'Phone (optional)' : '电话（可选）'}
           value={phone}
           onChange={(event) => setPhone(event.target.value)}
         />
       </div>
-      <Button type="button" onClick={lookup} disabled={loading || !email || !phone}>
+      <Button type="button" onClick={lookup} disabled={loading || !email}>
         {locale === 'en' ? 'Find My Bookings' : '查找我的预约'}
       </Button>
 

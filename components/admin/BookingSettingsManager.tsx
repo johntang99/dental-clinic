@@ -14,7 +14,7 @@ const DEFAULT_SETTINGS: BookingSettings = {
   bufferMinutes: 10,
   minNoticeHours: 12,
   maxDaysAhead: 60,
-  defaultServiceType: 'pickup_delivery',
+  defaultServiceType: 'appointment',
   serviceAreaZips: [],
   blackoutWindows: [],
   rushLeadHours: 6,
@@ -104,7 +104,7 @@ export function BookingSettingsManager({
       {
         id: `service-${Date.now()}`,
         name: 'New Service',
-        serviceType: 'pickup_delivery',
+        serviceType: 'appointment',
         pricingModel: 'flat',
         category: 'residential',
         durationMinutes: 30,
@@ -309,13 +309,17 @@ export function BookingSettingsManager({
                     />
                     <select
                       className="rounded-md border border-gray-200 px-3 py-2 text-sm"
-                      value={service.serviceType || 'pickup_delivery'}
+                      value={service.serviceType || 'appointment'}
                       onChange={(event) =>
                         updateService(index, {
                           serviceType: event.target.value as BookingService['serviceType'],
                         })
                       }
                     >
+                      <option value="appointment">Appointment</option>
+                      <option value="onsite">On-site</option>
+                      <option value="remote">Remote</option>
+                      <option value="delivery">Delivery</option>
                       <option value="pickup_delivery">Pickup & Delivery</option>
                       <option value="dropoff">Drop-off</option>
                       <option value="self_service">Self-service</option>
@@ -468,13 +472,17 @@ export function BookingSettingsManager({
                 <label className="block text-xs text-gray-500">Default service type</label>
                 <select
                   className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-sm"
-                  value={settings.defaultServiceType || 'pickup_delivery'}
+                  value={settings.defaultServiceType || 'appointment'}
                   onChange={(event) =>
                     updateSettings({
                       defaultServiceType: event.target.value as BookingSettings['defaultServiceType'],
                     })
                   }
                 >
+                  <option value="appointment">Appointment</option>
+                  <option value="onsite">On-site</option>
+                  <option value="remote">Remote</option>
+                  <option value="delivery">Delivery</option>
                   <option value="pickup_delivery">Pickup & Delivery</option>
                   <option value="dropoff">Drop-off</option>
                   <option value="self_service">Self-service</option>

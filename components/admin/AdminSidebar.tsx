@@ -12,14 +12,14 @@ const navigation: Array<{
   superAdminOnly?: boolean;
 }> = [
   { name: 'Site Settings', href: '/admin/site-settings', iconKey: 'slidersHorizontal', group: 'site' },
+  { name: 'Booking', href: '/admin/bookings', iconKey: 'calendar', group: 'site' },
+  { name: 'Booking Settings', href: '/admin/booking-settings', iconKey: 'slidersHorizontal', group: 'site' },
   { name: 'Content', href: '/admin/content', iconKey: 'fileText', group: 'site' },
   { name: 'Services', href: '/admin/services', iconKey: 'fileText', group: 'site' },
   { name: 'SEO Pages', href: '/admin/seo-pages', iconKey: 'fileText', group: 'site' },
   // { name: 'Conditions', href: '/admin/conditions', icon: FileText }, // TCM-specific — removed for dental
   { name: 'Case Studies', href: '/admin/case-studies', iconKey: 'fileText', group: 'site' },
   { name: 'Blog Posts', href: '/admin/blog-posts', iconKey: 'bookOpen', group: 'site' },
-  { name: 'Bookings', href: '/admin/bookings', iconKey: 'calendar', group: 'site' },
-  { name: 'Booking Settings', href: '/admin/booking-settings', iconKey: 'slidersHorizontal', group: 'site' },
   { name: 'Media', href: '/admin/media', iconKey: 'image', group: 'site' },
 
   { name: 'Onboarding', href: '/admin/onboarding', iconKey: 'rocket', group: 'system', preserveContext: false, superAdminOnly: true },
