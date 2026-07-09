@@ -2,10 +2,10 @@
   "cta": {
     "title": "准备好开始您的矫正之旅了吗？",
     "variant": "centered",
-    "subtitle": "预约免费初次咨询，让胡林医生为您制定个性化的矫治方案",
+    "subtitle": "预约初次咨询，让胡林医生为您制定个性化的矫治方案",
     "primaryCta": {
       "link": "/contact",
-      "text": "预约免费咨询"
+      "text": "预约咨询"
     },
     "secondaryCta": {
       "link": "tel:+17183530880",
@@ -130,17 +130,17 @@
         "icon": "Brackets",
         "link": "/services/traditional-braces",
         "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1778104447097-pexels-photo-19147369.jpeg",
-        "title": "传统金属牙套",
+        "title": "传统金属托槽",
         "category": "braces",
         "featured": true,
-        "shortDescription": "传统金属牙套仍然是全面正畸治疗的金标准，可有效矫正各年龄段患者的拥挤、间隙和咬合不齐问题。"
+        "shortDescription": "传统金属托槽仍然是全面正畸治疗的金标准，可有效矫正各年龄段患者的拥挤、间隙和咬合不齐问题。"
       },
       {
         "id": "ceramic-braces",
         "icon": "Sparkles",
         "link": "/services/ceramic-braces",
-        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1778105840611-chatgpt-image-may-6-2026-06-16-21-pm.png",
-        "title": "陶瓷牙套",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1780026986111-ceramic-bracelets-1.png",
+        "title": "陶瓷托槽",
         "category": "braces",
         "featured": false,
         "shortDescription": "陶瓷牙套提供与金属牙套相同的全面正畸矫正效果，采用与笑容自然融合的牙色托槽，带来更加隐蔽的治疗体验。"

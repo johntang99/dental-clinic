@@ -1180,7 +1180,7 @@ export function ContentEditor({
       },
       faq: [],
       cta: {
-        primaryText: '预约免费咨询',
+        primaryText: '预约咨询',
         primaryLink: `/${locale}/book`,
         secondaryText: '',
         secondaryLink: '',
@@ -1256,7 +1256,7 @@ export function ContentEditor({
       },
       faq: [],
       cta: {
-        primaryText: '预约免费咨询',
+        primaryText: '预约咨询',
         primaryLink: `/${locale}/book`,
         secondaryText: '',
         secondaryLink: '',

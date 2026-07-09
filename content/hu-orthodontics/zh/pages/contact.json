@@ -5,7 +5,7 @@
       "link": "/book",
       "text": "在线预约"
     },
-    "description": "免费初次咨询，让胡林医生为您制定个性化矫治方案",
+    "description": "初次咨询，让胡林医生为您制定个性化矫治方案",
     "secondaryCta": {
       "link": "tel:+17183530880",
       "text": "(718) 353-0880"
@@ -14,15 +14,15 @@
   "faq": {
     "items": [
       {
-        "answer": "是的，我们提供完全免费的初次正畸咨询评估。",
-        "question": "首次咨询是免费的吗？"
+        "answer": "是的，我们提供专业的初次正畸咨询评估。",
+        "question": "首次咨询需要预约吗？"
       },
       {
         "answer": "我们接受大部分主流牙科和正畸保险计划。请携带您的保险卡，我们的团队将帮您核实福利。",
         "question": "你们接受哪些保险？"
       },
       {
-        "answer": "法拉盛诊所附近有市政停车场。大颈诊所提供免费停车位。",
+        "answer": "法拉盛诊所附近有市政停车场。大颈诊所提供停车位。",
         "question": "诊所有停车位吗？"
       }
     ],
@@ -82,14 +82,14 @@
     },
     "successMessage": "感谢您的留言！我们将在1个工作日内回复您。",
     "autoReplyMessage": "感谢您联系 <strong>{businessName}</strong>。我们已收到您的留言，会尽快与您联系。",
-    "notificationEmail": "info@hulinorthodontics.com",
+    "notificationEmail": "linhudmd@yahoo.com",
     "notificationEmails": [],
     "notificationMessage": "⚡ 需要处理：收到新的客户咨询"
   },
   "hero": {
     "title": "联系我们",
     "variant": "photo-background",
-    "subtitle": "预约免费正畸咨询，开启您的矫治之旅",
+    "subtitle": "预约正畸咨询，开启您的矫治之旅",
     "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1777960118479-home-photo-2.png"
   },
   "hours": {
@@ -171,10 +171,10 @@
       "icon": "mail",
       "title": "电子邮件",
       "action": {
-        "link": "mailto:info@hulinorthodontics.com",
+        "link": "mailto:linhudmd@yahoo.com",
         "text": "发送邮件"
       },
-      "primary": "info@hulinorthodontics.com",
+      "primary": "linhudmd@yahoo.com",
       "secondary": null,
       "description": "我们将在1个工作日内回复"
     },

@@ -364,7 +364,7 @@ const locationById = new Map(locations.map((location) => [location.id, location]
 const buildFaq = ({ locationName, topicName }) => [
   {
     question: `${locationName}${topicName}需要先预约初诊吗？`,
-    answer: `建议先预约免费初诊。胡林医生团队会先做口腔与咬合评估，再给出分阶段治疗建议与时间预估。`,
+    answer: `建议先预约初诊。胡林医生团队会先做口腔与咬合评估，再给出分阶段治疗建议与时间预估。`,
   },
   {
     question: `${locationName}这项治疗是否支持分期付款？`,
@@ -481,7 +481,7 @@ function buildCoreLocationPage(location) {
     location,
     faq: buildFaq({ locationName: location.name, topicName: '正畸治疗' }),
     cta: {
-      primaryText: '预约免费咨询',
+      primaryText: '预约咨询',
       primaryLink: '/zh/book',
       secondaryText: location.phone,
       secondaryLink: location.phoneHref,

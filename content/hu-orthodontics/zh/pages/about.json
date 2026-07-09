@@ -5,7 +5,7 @@
     "subtitle": "免费初次咨询，让我们一起规划您的矫治之旅",
     "primaryCta": {
       "link": "/book",
-      "text": "预约免费咨询"
+      "text": "预约咨询"
     },
     "secondaryCta": {
       "link": "tel:+17183530880",
@@ -19,7 +19,7 @@
     ],
     "variant": "gallery-background",
     "subtitle": "胡林医生是美国正畸专科医师协会认证的正畸医生，也是纽约华人社区中少数几位在2007年、2008年和2020年三次获得重新认证的正畸医生之一。他是美国正畸医师协会的活跃成员。目前，他在皇后区和长岛大颈地区开展最先进的正畸治疗业务。",
-    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1777952545168-medical-team-in-modern-office-2.png",
+    "backgroundImage": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1779862865656-medical-team-in-modern-office-3.png",
     "photoOverlayOpacity": 0.05,
     "photoContentPosition": "left-below"
   },
@@ -47,7 +47,7 @@
     "bio": "胡林医生是一位在正畸领域享有盛誉的专家，拥有DMD（口腔医学博士）、DDS（牙科博士）、MS（硕士）和 PhD（博士）四重学位。\n\n他于2007年首次获得美国正畸学会（ABO）认证，随后于2008年和2020年两次成功再认证，成为极少数获得三次ABO认证的正畸医生之一。ABO认证是正畸领域的最高专业认可，仅约三分之一的正畸医生能够获得此认证。\n\n胡医生将先进的正畸技术与融合外科原则的多学科视角相结合，代表了该领域的范式转变。这种综合方法能够实现更有效的干预，并显著改善治疗效果，尤其是在以往被认为具有挑战性或需要手术的复杂病例中。\n\n胡医生在纽约市皇后区法拉盛和长岛大颈设有两家诊所。法拉盛总诊所位于华人社区中心地带，靠近7号地铁线终点站，交通极为便利。他的团队精通普通话和英语，致力于为华人社区提供最高水准的正畸服务。",
     "name": "胡林医生",
     "role": "创始人 / 正畸专家",
-    "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1776474656154-photo-bio-3.jpg",
+    "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1779862907070-photo-bio-4.png",
     "quote": "每一个微笑都值得被精心雕琢。先进的技术与真诚的关怀，是我对每位患者的承诺。",
     "title": "DMD, DDS, MS, PhD",
     "nameEN": "Dr. Lin Hu"

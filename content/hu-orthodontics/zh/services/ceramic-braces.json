@@ -1,10 +1,10 @@
 {
   "cta": {
     "title": "准备好开始陶瓷牙套矫正了吗？",
-    "subtitle": "预约免费咨询，让胡林医生为您评估最佳矫正方案",
+    "subtitle": "预约咨询，让胡林医生为您评估最佳矫正方案",
     "primaryCta": {
       "link": "/contact",
-      "text": "预约免费咨询"
+      "text": "预约咨询"
     },
     "secondaryCta": {
       "link": "tel:+17183530880",
@@ -31,9 +31,9 @@
   ],
   "icon": "Sparkles",
   "slug": "ceramic-braces",
-  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1778105840611-chatgpt-image-may-6-2026-06-16-21-pm.png",
+  "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1780026986111-ceramic-bracelets-1.png",
   "price": "起价 $4,000",
-  "title": "陶瓷牙套",
+  "title": "陶瓷托槽",
   "category": "braces",
   "featured": false,
   "sections": [

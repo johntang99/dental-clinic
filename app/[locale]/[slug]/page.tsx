@@ -253,7 +253,7 @@ export default async function LocalSeoPage({ params }: LocalSeoPageProps) {
       }
     : null;
 
-  const ctaPrimaryText = page.cta?.primaryText || '预约免费咨询';
+  const ctaPrimaryText = page.cta?.primaryText || '预约咨询';
   const ctaPrimaryLink = page.cta?.primaryLink || `/${locale}/book`;
   const ctaSecondaryText = page.cta?.secondaryText || page.location.phone;
   const ctaSecondaryLink = page.cta?.secondaryLink || normalizePhoneLink(page.location.phone);

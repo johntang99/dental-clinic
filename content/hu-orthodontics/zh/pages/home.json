@@ -2,10 +2,10 @@
   "cta": {
     "title": "准备好拥有自信的笑容了吗？",
     "variant": "centered",
-    "subtitle": "预约免费初次咨询，让胡林医生为您量身定制矫治方案",
+    "subtitle": "预约初次咨询，让胡林医生为您量身定制矫治方案",
     "primaryCta": {
       "link": "/book",
-      "text": "预约免费咨询"
+      "text": "预约咨询"
     },
     "secondaryCta": {
       "link": "tel:+17183530880",
@@ -24,7 +24,7 @@
     "subtitle": "了解牙齿矫正的方方面面"
   },
   "hero": {
-    "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1777960423154-home-photo-3.png",
+    "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1779862732607-home-photo-3.png",
     "stats": [
       {
         "icon": "award",
@@ -52,7 +52,7 @@
     "badgeText": "正在接受新患者预约",
     "primaryCta": {
       "link": "/book",
-      "text": "预约免费咨询"
+      "text": "预约咨询"
     },
     "description": "胡林博士三次获得美国正畸学会（ABO）认证，拥有DMD、DDS、MS、PhD四重学位。胡林正畸中心专注纽约华人牙齿矫正，提供法拉盛牙齿矫正与大颈牙齿矫正服务，涵盖隐适美、牙套、儿童与成人正畸，中英双语沟通。",
     "trustBadges": [
@@ -81,7 +81,7 @@
       "text": "新患者免费咨询",
       "visible": true
     },
-    "email": "info@hulinorthodontics.com",
+    "email": "linhudmd@yahoo.com",
     "phone": "(718) 353-0880",
     "address": "38-08 Union Street, Suite 4B, Flushing, NY 11354",
     "addressMapUrl": "https://maps.google.com/?q=38-08+Union+St+Suite+4B+Flushing+NY+11354"
@@ -119,11 +119,11 @@
         "id": "traditional-braces",
         "icon": "AlignCenter",
         "link": "/services/traditional-braces",
-        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1776280200449-photo-1633951450008-8ad6dd373874.jpg",
-        "title": "传统金属牙套",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1778104447097-pexels-photo-19147369.jpeg",
+        "title": "传统金属托槽",
         "category": "braces",
         "featured": true,
-        "shortDescription": "经典的金属牙套矫正，适用于各种复杂的牙齿排列问题，是最广泛使用的正畸治疗方式。"
+        "shortDescription": "经典的金属托槽矫正，适用于各种复杂的牙齿排列问题，是最广泛使用的正畸治疗方式。"
       },
       {
         "id": "invisalign",
@@ -159,8 +159,8 @@
         "id": "ceramic-braces",
         "icon": "Sparkles",
         "link": "/services/ceramic-braces",
-        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1778229256881-photo-1661701422675-c272cdcf8dbf.jpg",
-        "title": "陶瓷牙套",
+        "image": "https://mmcmvmwcktqdeflcwfks.supabase.co/storage/v1/object/public/dental-media/hu-orthodontics/general/1780026986111-ceramic-bracelets-1.png",
+        "title": "陶瓷牙套(托槽)",
         "category": "braces",
         "featured": false,
         "shortDescription": "透明或牙色的陶瓷托槽，在保持传统牙套矫治效果的同时，提供更美观的外观。"
