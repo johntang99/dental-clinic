@@ -64,7 +64,7 @@
     "floatingTags": [
       "中英双语",
       "周末就诊",
-      "免费咨询",
+      "初诊咨询",
       "灵活付款"
     ],
     "secondaryCta": {
@@ -78,7 +78,7 @@
   },
   "topBar": {
     "badge": {
-      "text": "新患者免费咨询",
+      "text": "新患者初诊咨询",
       "visible": true
     },
     "email": "linhudmd@yahoo.com",
