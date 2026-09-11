@@ -273,6 +273,8 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith('/apple-icon/') ||
     pathname === '/robots.txt' ||
     pathname === '/sitemap.xml' ||
+    // Site-wide, like robots.txt — must not be rewritten into a locale.
+    pathname === '/llms.txt' ||
     pathname.match(/\.(ico|png|jpg|jpeg|svg|css|js)$/)
   ) {
     return NextResponse.next();

@@ -10,7 +10,7 @@ import {
   removeLocaleFromPathname,
 } from '@/lib/i18n';
 import { getSiteById } from '@/lib/sites';
-import { loadSeo, loadSiteInfo } from '@/lib/content';
+import { loadContent, loadSeo, loadSiteInfo } from '@/lib/content';
 import type { SeoConfig, SiteInfo } from '@/lib/types';
 import { getSiteDisplayName } from '@/lib/siteInfo';
 
@@ -118,14 +118,22 @@ export async function buildPageMetadata({
   pathWithoutLocale?: string;
 }): Promise<Metadata> {
   const baseUrl = getBaseUrlFromRequest();
-  const [site, seo, siteInfo] = await Promise.all([
+  const [site, seo, siteInfo, header] = await Promise.all([
     getSiteById(siteId),
     loadSeo(siteId, locale) as Promise<SeoConfig | null>,
     loadSiteInfo(siteId, locale) as Promise<SiteInfo | null>,
+    loadContent<{ menu?: { logo?: { image?: { src?: string } } } }>(siteId, locale, 'header.json'),
   ]);
 
   const pageSeo = getPageSeo(seo, slug);
   const fallbackTitle = getSiteDisplayName(siteInfo, 'Business');
+  // A share card with no image is a grey box on every platform. Fall back to
+  // the page's own image, then the site's, then the logo, before giving up.
+  const ogImage =
+    (pageSeo as { ogImage?: string } | undefined)?.ogImage ||
+    seo?.ogImage ||
+    header?.menu?.logo?.image?.src ||
+    undefined;
   const resolvedTitle = title || pageSeo?.title || seo?.title || fallbackTitle;
   const resolvedDescription =
     description ||
@@ -184,13 +192,17 @@ export async function buildPageMetadata({
       title: resolvedTitle,
       description: resolvedDescription || undefined,
       url: canonical,
-      images: seo?.ogImage ? [{ url: seo.ogImage }] : undefined,
+      // Page metadata REPLACES the layout's openGraph object rather than
+      // merging into it, so every property the layout set must be repeated
+      // here or it disappears from the page. og:type was being lost this way.
+      type: 'website',
+      images: ogImage ? [{ url: ogImage }] : undefined,
     },
     twitter: {
       card: 'summary_large_image',
       title: resolvedTitle,
       description: resolvedDescription || undefined,
-      images: seo?.ogImage ? [seo.ogImage] : undefined,
+      images: ogImage ? [ogImage] : undefined,
     },
   };
 }

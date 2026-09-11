@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getRequestSiteId, loadPageContent } from '@/lib/content';
+import { buildFaqSchema } from '@/lib/structured-data';
 import { buildPageMetadata } from '@/lib/seo';
 import { Locale } from '@/lib/types';
 import { Button, Badge, Icon, Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui';
@@ -131,8 +132,18 @@ export default async function ContactPage({ params }: ContactPageProps) {
   const sectionStyle = (sectionId: string) =>
     useLayout ? { order: layoutOrder.get(sectionId) ?? 0 } : undefined;
 
+  // Same Q&A patients read, exposed to search and AI answer engines.
+  const faqSchema = buildFaqSchema(faq?.items);
+
   return (
     <main className="min-h-screen flex flex-col">
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
       {/* Hero Section */}
       {isEnabled('hero') && (
         <HeroSection

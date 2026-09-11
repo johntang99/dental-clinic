@@ -9,12 +9,34 @@ import {
   loadSeo,
   loadTheme,
   loadSiteInfo,
+  loadAllItems,
 } from '@/lib/content';
 import type { FooterSection, SeoConfig, SiteInfo } from '@/lib/types';
+
+/** Shape the Physician block reads from content/<site>/<locale>/doctors/*. */
+type DoctorContent = {
+  name?: string;
+  nameEN?: string;
+  title?: string;
+  role?: string;
+  image?: string;
+  bio?: string;
+  featured?: boolean;
+  order?: number;
+  languages?: string[];
+  credentials?: { credential?: string }[];
+  certifications?: string[];
+};
 import Header, { type HeaderConfig } from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { getBaseUrlFromHost, resolveSeoLocalesForPage } from '@/lib/seo';
 import { getSiteDisplayName } from '@/lib/siteInfo';
+import {
+  buildLocalBusinessSchema,
+  buildPhysicianSchema,
+  pruneSchema,
+  type SiteInfoForSchema,
+} from '@/lib/structured-data';
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -44,10 +66,14 @@ export async function generateMetadata({
     };
   }
 
-  const [siteInfo, seo] = await Promise.all([
+  const [siteInfo, seo, headerForOg] = await Promise.all([
     loadSiteInfo(site.id, locale) as Promise<SiteInfo | null>,
     loadSeo(site.id, locale) as Promise<SeoConfig | null>,
+    loadContent<HeaderConfig>(site.id, locale, 'header.json'),
   ]);
+  // Without og:image every share of this page is a grey box. Prefer a real
+  // configured image; fall back to the site's own logo rather than nothing.
+  const ogImage = seo?.ogImage || headerForOg?.menu?.logo?.image?.src || undefined;
   const titleBase = getSiteDisplayName(siteInfo, site.name);
   const description =
     seo?.description ||
@@ -103,13 +129,13 @@ export async function generateMetadata({
       siteName: titleBase,
       locale,
       type: 'website',
-      images: seo?.ogImage ? [{ url: seo.ogImage }] : undefined,
+      images: ogImage ? [{ url: ogImage }] : undefined,
     },
     twitter: {
       card: 'summary_large_image',
       title: titleDefault,
       description,
-      images: seo?.ogImage ? [seo.ogImage] : undefined,
+      images: ogImage ? [ogImage] : undefined,
     },
     icons: {
       icon: '/icon',
@@ -154,13 +180,30 @@ export default async function LocaleLayout({
   const theme = await loadTheme(site.id);
   
   // Load site info for header/footer
-  const [siteInfo, seo, footer, headerConfig] = await Promise.all([
+  const [siteInfo, seo, footer, headerConfig, doctors] = await Promise.all([
     loadSiteInfo(site.id, locale as Locale) as Promise<SiteInfo | null>,
     loadSeo(site.id, locale as Locale) as Promise<SeoConfig | null>,
     loadFooter<FooterSection>(site.id, locale as Locale),
     loadContent<HeaderConfig>(site.id, locale as Locale, 'header.json'),
+    // Lead practitioner, for the Physician block below. Optional: sites with no
+    // doctors directory simply emit no Person markup.
+    loadAllItems<DoctorContent>(site.id, locale as Locale, 'doctors'),
   ]);
   const baseUrl = getBaseUrlFromHost(host);
+
+  const doctorList = doctors ?? [];
+  const leadDoctor =
+    doctorList.find((d) => d?.featured) ??
+    [...doctorList].sort((a, b) => (a?.order ?? 99) - (b?.order ?? 99))[0];
+  const physicianSchema =
+    siteInfo && leadDoctor
+      ? buildPhysicianSchema({
+          doctor: leadDoctor,
+          url: new URL(`/${locale}/about`, baseUrl).toString(),
+          clinicName: getSiteDisplayName(siteInfo, site.name),
+          info: siteInfo as SiteInfoForSchema,
+        })
+      : null;
   
   // Generate inline style for theme variables
   const themeStyle = theme ? `
@@ -207,24 +250,26 @@ export default async function LocaleLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'LocalBusiness',
-              name: getSiteDisplayName(siteInfo, site.name),
-              url: new URL(`/${locale}`, baseUrl).toString(),
-              description: siteInfo.description,
-              telephone: siteInfo.phone,
-              email: siteInfo.email,
-              address: {
-                '@type': 'PostalAddress',
-                streetAddress: siteInfo.address,
-                addressLocality: siteInfo.city,
-                addressRegion: siteInfo.state,
-                postalCode: siteInfo.zip,
-                addressCountry: 'US',
-              },
-            }),
+            __html: JSON.stringify(
+              pruneSchema(
+                buildLocalBusinessSchema({
+                  info: siteInfo as SiteInfoForSchema,
+                  name: getSiteDisplayName(siteInfo, site.name),
+                  url: new URL(`/${locale}`, baseUrl).toString(),
+                  logo: headerConfig?.menu?.logo?.image?.src,
+                })
+              )
+            ),
           }}
+        />
+      )}
+
+      {/* The practitioner, separately: credentials and languages are what an
+          assistant needs to recommend a specific doctor rather than a clinic. */}
+      {physicianSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(pruneSchema(physicianSchema)) }}
         />
       )}
       
